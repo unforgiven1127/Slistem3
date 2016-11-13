@@ -3178,7 +3178,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $limitlessQuery = explode('LIMIT', $sQuery);
       $limitlessQuery = $limitlessQuery[0];
-//ChromePhp::log($limitlessQuery);
+ChromePhp::log($sQuery);
       $searchTitle = explode(':',$poQB->getTitle());
 
       if(isset($searchTitle[1]))
