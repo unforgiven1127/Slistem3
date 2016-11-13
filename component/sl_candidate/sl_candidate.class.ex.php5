@@ -1305,7 +1305,7 @@ class CSl_candidateEx extends CSl_candidate
       $sHTML.= $this->_oDisplay->getBlocEnd();
 
       $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTopSectRight candiTabContainer'));
-      $sHTML.= $this->_getCandidateRightTabs($asCandidate);
+      //$sHTML.= $this->_getCandidateRightTabs($asCandidate);
       $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getFloatHack();
 
@@ -2806,7 +2806,6 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -3179,7 +3178,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $limitlessQuery = explode('LIMIT', $sQuery);
       $limitlessQuery = $limitlessQuery[0];
-ChromePhp::log($sQuery);
+
       $searchTitle = explode(':',$poQB->getTitle());
 
       if(isset($searchTitle[1]))
