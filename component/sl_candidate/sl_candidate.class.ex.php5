@@ -1594,8 +1594,8 @@ class CSl_candidateEx extends CSl_candidate
         (empty($sCharSelected))? $sContactSelected = 'selected' : '';
       }
 
-      $asContact = $this->_getContactTab($pasCandidateData);
-
+      //$asContact = $this->_getContactTab($pasCandidateData);
+$asContact['nb_result'] = 0;
       if(empty($asContact['nb_result']))
       {
         $sContactSelected = '';
@@ -1678,7 +1678,7 @@ class CSl_candidateEx extends CSl_candidate
           $sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab1', $asCharacter['content'], array('class' => 'aTabContent hidden '.$sCharSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
+          //$sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab3', $asDocument['content'], array('class' => 'aTabContent hidden '.$sDocSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab4', $asCompanyFeed['content'], array('class' => 'aTabContent hidden'));
 
