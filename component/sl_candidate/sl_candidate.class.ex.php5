@@ -1545,14 +1545,14 @@ class CSl_candidateEx extends CSl_candidate
       $company_information = getCompanyInformation($company_id);
       $is_owner = true;
 
-      /*$latestFlag = checkSecurityAlert($user_id,'contact_mail',$company_id);
+      $latestFlag = checkSecurityAlert($user_id,'contact_mail',$company_id);
 
       if($latestFlag > 0)
       {
         $is_owner = false;
       }
 
-      $owners = getCompanyOwner($company_id);
+      /*$owners = getCompanyOwner($company_id);
 
       foreach ($owners as $key => $value)
       {
