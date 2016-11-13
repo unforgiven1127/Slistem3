@@ -1531,8 +1531,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-      $sHTML = "";
-      ChromePhp::log('_getRightTabsFull');
+
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1546,13 +1545,13 @@ class CSl_candidateEx extends CSl_candidate
       $is_owner = true;
 
       $latestFlag = checkSecurityAlert($user_id,'contact_mail',$company_id);
-ChromePhp::log($latestFlag);
+
       if($latestFlag > 0)
       {
         $is_owner = false;
       }
 
-      /*$owners = getCompanyOwner($company_id);
+      $owners = getCompanyOwner($company_id);
 
       foreach ($owners as $key => $value)
       {
@@ -1689,7 +1688,6 @@ ChromePhp::log($latestFlag);
 
         $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getBlocEnd();
-*/
 
       return $sHTML;
     }
