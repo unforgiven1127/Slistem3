@@ -779,11 +779,12 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+    $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_COMP);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['company_prev'] = array(
       'display' => array
       (
         'fts_type'=> null,
-        'type' => array('input', ''),
+        'type' => array('selector', $sURL),
         'label' => 'Previous company ',
         'group' => 'Company',
         'operator' => $oSearch->getFieldOperators('string'),
@@ -807,7 +808,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
          'join' => array(
              array('type' => 'inner', 'table' => 'event_link', 'alias' => 'elin',
              'clause' => 'elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ', 'select' => '', 'where' => ''),
-             array('type' => 'inner', 'table' => 'event', 'alias' => 'even',
+             array('type' => 'left', 'table' => 'event', 'alias' => 'even',
              'clause' => 'even.eventpk = elin.eventfk AND even.type = "cp_hidden" ', 'select' => '', 'where' => '')),
         'fts' => false,
         'unmanageable' => null

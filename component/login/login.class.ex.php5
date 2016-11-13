@@ -2025,13 +2025,19 @@ ChromePhp::log($clientFlag);
 
   private function _getIdentification($pbIsAjax = false, $pnCookiePk = 0, $bRedirect = true)
   {
+
     $oDB = CDependency::getComponentByName('database');
     $oSetting = CDependency::getComponentByName('settings');
 
+
     if(!empty($pnCookiePk) && is_integer($pnCookiePk))
+    {
+      ChromePhp::log('IF');
        $sQuery = 'SELECT * FROM `login` WHERE loginpk = '.$pnCookiePk.' AND status = 1 ';
+    }
     else
     {
+
       if(empty($_POST) || !isset($_POST['login']) || !isset($_POST['password']))
         return array('error' => __LINE__.' - '.$this->casText['LOGIN_PASSWORD_REQD']);
 
@@ -2085,11 +2091,13 @@ ChromePhp::log($clientFlag);
     //redirections
 
     $sRedirectUrl = getValue('redirect');
+ChromePhp::log($sRedirectUrl);
     if(!empty($sRedirectUrl))
     {
       //To connect to multiplateforms
       //manage requested redirection after login
       $asUrl = parse_url($sRedirectUrl);
+
 
       if(empty($asUrl['query']))
         $sUrl = $sRedirectUrl.'?pk='.$_SESSION['userData']['pk'];
@@ -2106,8 +2114,9 @@ ChromePhp::log($clientFlag);
       //no redirection => homepage
       $oPage = CDependency::getCpPage();
       $sUrl = $oPage->getUrlHome();
+      ChromePhp::log($sUrl);
     }
-
+ChromePhp::log($pbIsAjax);
     if($pbIsAjax)
       return array('url' => $sUrl);
 
@@ -2299,6 +2308,7 @@ ChromePhp::log($clientFlag);
 
   private function _redirectUser($psUrl = '')
   {
+    ChromePhp::log($psUrl);
     $oPage = CDependency::getCpPage();
     if(empty($psUrl))
     {

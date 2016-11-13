@@ -5,6 +5,7 @@ class CDbSessionHandler
 
   function _session_open()
   {
+
     if(trim($_SERVER['SERVER_NAME']) == "slistemlocal.com")
     {
       if ($this->coSessDb = mysqli_connect('localhost', 'slistem', '7088762')) // MCA ADDED FOR LOCAL VERSION !!!!!
@@ -22,6 +23,7 @@ class CDbSessionHandler
       {
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
       }
+
 
       exit('error - session unavailable');
       return false;

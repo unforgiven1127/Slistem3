@@ -474,7 +474,7 @@ order by m.candidatefk
     if ($group == 'consultant')
       $group_switch = 'attendeefk';
 
-    $query = 'SELECT sl_meetingpk, candidatefk , created_by, date_created, date_met, attendeefk, meeting_done';
+    $query = 'SELECT sl_meetingpk, candidatefk , created_by, date_created, date_met, attendeefk, meeting_done, date_updated';
     $query .= ' FROM sl_meeting';
     $query .= ' WHERE meeting_done != -1';
     $query .= ' ORDER BY '.$group_switch.', date_met ASC';
@@ -1457,7 +1457,7 @@ order by m.candidatefk
           $repeating_info[$row['created_by']][$status][$row['candidatefk']] = '';
       }
 
-      if (!isset($ccm_data[$row['created_by']]['ccm1']))
+      if(!isset($ccm_data[$row['created_by']]['ccm1']))
       {
         $ccm_data[$row['created_by']]['ccm1'] = 0;
         $ccm_data[$row['created_by']]['ccm1_done'] = 0;
@@ -1469,7 +1469,7 @@ order by m.candidatefk
         $ccm_data[$row['created_by']]['ccm_info']['ccm2'] = array();
         $ccm_data[$row['created_by']]['ccm_info']['mccm'] = array();
       }
-      if (!isset($row['meeting_created_by']) || !isset($ccm_data[$row['meeting_created_by']]['ccm1']))
+      if ($group == 'researcher' && (!isset($row['meeting_created_by']) || !isset($ccm_data[$row['meeting_created_by']]['ccm1'])))
       {
         $ccm_data[$row['meeting_created_by']]['ccm1'] = 0;
         $ccm_data[$row['meeting_created_by']]['ccm1_done'] = 0;
@@ -1662,6 +1662,10 @@ order by m.candidatefk
         {
             $previous_ccm_key = $row['positionfk'].$row['candidatefk'].'_placed_revenue';
 
+            if(!isset($ccm_data[$row['created_by']]['placedRevenue']))
+            {
+              $ccm_data[$row['created_by']]['placedRevenue'] = 0;
+            }
             $ccm_data[$row['created_by']]['placedRevenue'] += 1;
             //$ccm_data[$row['created_by']]['placedRevenue_info']['placedRevenue'][$previous_ccm_key]['candidate'][$row['status']] = $row['candidatefk'];
 
@@ -1670,6 +1674,10 @@ order by m.candidatefk
 
             if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'])
             {
+              if(!isset($ccm_data[$row['meeting_created_by']]['placedRevenue']))
+              {
+                $ccm_data[$row['meeting_created_by']]['placedRevenue'] = 0;
+              }
               $ccm_data[$row['meeting_created_by']]['placedRevenue'] += 1;
               //$ccm_data[$row['meeting_created_by']]['placedRevenue_info']['placedRevenue'][$previous_ccm_key]['candidate'][$row['status']] = $row['candidatefk'];
 
@@ -1838,7 +1846,7 @@ order by m.candidatefk
 //echo '<br><br>';
 
     $oDbResult = array();
-
+//ChromePhp::log($query);
     $oDbResult = $this->oDB->executeQuery($query);
     $read = $oDbResult->readFirst();
 

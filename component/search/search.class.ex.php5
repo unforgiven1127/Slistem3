@@ -1253,6 +1253,7 @@ class CSearchEx extends CSearch
       $asCondition = array();
       foreach($_POST['field_selector'][$nGroup] as $nRowNumber => $sFieldName)
       {
+        //ChromePhp::log($sFieldName);
         insertAILog("complex_search",$sFieldName,$user_id);
         $vFieldValue = @$_POST[$sFieldName][$nGroup][$nRowNumber];
         $allSalesFlag = false;
@@ -1406,7 +1407,14 @@ class CSearchEx extends CSearch
           if(empty($asFieldData))
             return array('error' => 'Could not find the field ['.$sFieldName.'] description');
 
-
+          if($sFieldName == 'company_prev' && isset($vFieldValue[0]))
+          {
+            $psNote = "sl_candidate_old_companies;".$vFieldValue[0];
+            $oQB->setNote($psNote);
+            //ChromePhp::log($vFieldValue);
+            //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
+          }
+//ChromePhp::log($asFieldData);
 
           if(!empty($asFieldData['sql']['join']))
           {
@@ -1525,9 +1533,24 @@ class CSearchEx extends CSearch
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
-
+                //ChromePhp::log($vValue);
+                //ChromePhp::log($sFieldName);
                 if(!empty($vValue))
-                  $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
+                {
+                  ChromePhp::log('TEST');
+                  if($sFieldName == 'company_prev')
+                  {
+                    $company_information = getCompanyInformation($vValue);
+                    $company_name = $company_information['name'];
+
+                    $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' OR slcoc.company_id = "'.$vValue.'") ';
+                    ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' OR slcoc.company_id = "'.$vValue.'") ');
+                  }
+                  else
+                  {
+                    $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
+                  }
+                }
               }
 
               if(!empty($asArrayCondition))
@@ -1624,6 +1647,8 @@ class CSearchEx extends CSearch
       $oQB->setTitle('CpxSearch: '.implode(' , ', $asMessage['long']));
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
+//$asSql = $oQB->getSqlArray();
+//ChromePhp::log($asSql);
 
     return $oQB;
   }
@@ -1775,7 +1800,7 @@ class CSearchEx extends CSearch
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
     if($pasFieldType['type'] == 'text')
     {
-      if(strlen(trim($pvValue)) < 2)
+      if(strlen(trim($pvValue)) < 2 && !is_numeric ($pvValue))
       {
         $this->_addError('line '.__LINE__.' - text field, value is less than 2 characters ['.$pvValue.']');
         return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';

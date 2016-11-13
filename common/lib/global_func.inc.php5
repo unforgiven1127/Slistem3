@@ -1424,11 +1424,14 @@ function _live_dump($pvTrace, $psTitle = null)
     }
 
     //We subtract the holidays
-    foreach($holidays as $holiday){
-        $time_stamp=strtotime($holiday);
-        //If the holiday doesn't fall in weekend
-        if ($startDate <= $time_stamp && $time_stamp <= $endDate && date("N",$time_stamp) != 6 && date("N",$time_stamp) != 7)
-            $workingDays--;
+    if(isset($holidays) && !empty($holidays))
+    {
+      foreach($holidays as $holiday){
+          $time_stamp=strtotime($holiday);
+          //If the holiday doesn't fall in weekend
+          if ($startDate <= $time_stamp && $time_stamp <= $endDate && date("N",$time_stamp) != 6 && date("N",$time_stamp) != 7)
+              $workingDays--;
+      }
     }
 
     return $workingDays;
@@ -1834,10 +1837,9 @@ var_dump($query);*/
         INNER JOIN sl_candidate slc on slc.sl_candidatepk = m.candidatefk AND slc._sys_status = 0
         WHERE (m.created_by IN ('.implode(',', $user_ids).') OR m.attendeefk IN ('.implode(',', $user_ids).'))
         AND m.date_met >= "'.$start_date.'"
-        AND m.date_met < "'.$end_date.'"
+        AND m.date_met <= "'.$end_date.'"
         group by m.sl_meetingpk
         order by m.candidatefk';
-
 
     $oDbResult = array();
 
@@ -1859,6 +1861,18 @@ var_dump($query);*/
       {
         $asData[$array_user] = array();
       }
+      if($array_user != $temp['created_by'])
+      {
+        if(!isset($asData[$user_id]))
+        {
+          $asData[$user_id] = array();
+        }
+        if($temp['min_date'] == $temp['sl_meetingpk'] && $temp['meeting_done'] == 1)
+        {
+          array_push($asData[$user_id], $temp);
+          //$asData[$temp['created_by']] = $temp;
+        }
+      }
 
       if($temp['min_date'] == $temp['sl_meetingpk'] && $temp['meeting_done'] == 1)
       {
@@ -1869,10 +1883,16 @@ var_dump($query);*/
     }
 
     $count = 0;
+    $meetingPKarray = array();
     if(isset($asData[$user_id]))
     {
-      foreach ($asData[$user_id] as $key => $value) {
-        $count++;
+      foreach ($asData[$user_id] as $key => $value)
+      {
+        if(!in_array($value['sl_meetingpk'],$meetingPKarray))
+        {
+          $meetingPKarray[] = $value['sl_meetingpk'];
+          $count++;
+        }
       }
     }
 
@@ -2772,9 +2792,23 @@ var_dump($query);*/
     $in_play2 = get_objectives_in_play($user_id, $start_date2, $end_date2);
     $in_play3 = get_objectives_in_play($user_id, $start_date3, $end_date3);
 
-    $count_in_play_candidate1 = count($in_play1[$user_id]['new_candidates']);
-    $count_in_play_candidate2 = count($in_play2[$user_id]['new_candidates']);
-    $count_in_play_candidate3 = count($in_play3[$user_id]['new_candidates']);
+    if(isset($in_play1[$user_id]['new_candidates']))
+    {$count_in_play_candidate1 = count($in_play1[$user_id]['new_candidates']);}
+    else
+    {$count_in_play_candidate1 = 0;}
+
+    if(isset($in_play2[$user_id]['new_candidates']))
+    {$count_in_play_candidate2 = count($in_play2[$user_id]['new_candidates']);}
+    else
+    {$count_in_play_candidate2 = 0;}
+
+    if(isset($in_play3[$user_id]['new_candidates']))
+    {$count_in_play_candidate3 = count($in_play3[$user_id]['new_candidates']);}
+    else
+    {$count_in_play_candidate3 = 0;}
+
+    //$count_in_play_candidate2 = count($in_play2[$user_id]['new_candidates']);
+    //$count_in_play_candidate3 = count($in_play3[$user_id]['new_candidates']);
 
     $candidate_in_plays = array($count_in_play_candidate1,$count_in_play_candidate2,$count_in_play_candidate3);
 
@@ -2831,9 +2865,23 @@ var_dump($query);*/
     $in_play2 = get_objectives_in_play($user_id, $start_date2, $end_date2);
     $in_play3 = get_objectives_in_play($user_id, $start_date3, $end_date3);
 
-    $count_in_play_candidate1 = count($in_play1[$user_id]['new_positions']);
-    $count_in_play_candidate2 = count($in_play2[$user_id]['new_positions']);
-    $count_in_play_candidate3 = count($in_play3[$user_id]['new_positions']);
+    if(isset($in_play1[$user_id]['new_positions']))
+    {$count_in_play_candidate1 = count($in_play1[$user_id]['new_positions']);}
+    else
+    {$count_in_play_candidate1 = 0;}
+
+    if(isset($in_play2[$user_id]['new_positions']))
+    {$count_in_play_candidate2 = count($in_play2[$user_id]['new_positions']);}
+    else
+    {$count_in_play_candidate2 = 0;}
+
+    if(isset($in_play3[$user_id]['new_positions']))
+    {$count_in_play_candidate3 = count($in_play3[$user_id]['new_positions']);}
+    else
+    {$count_in_play_candidate3 = 0;}
+    //$count_in_play_candidate1 = count($in_play1[$user_id]['new_positions']);
+    //$count_in_play_candidate2 = count($in_play2[$user_id]['new_positions']);
+    //$count_in_play_candidate3 = count($in_play3[$user_id]['new_positions']);
 
     $positions_in_plays = array($count_in_play_candidate1,$count_in_play_candidate2,$count_in_play_candidate3);
 
@@ -2857,18 +2905,27 @@ var_dump($query);*/
     $end_date3 = strtotime($end_date_3);
 
     $start_date2 = strtotime($start_date_3.' -1 months');
-    $end_date2 = strtotime($end_date_3.' -1 months');
-    if(date('m',$start_date2) != date('m',$end_date2))
+    //$end_date2 = strtotime($end_date_3.' -1 months');
+    $d2Y = date('Y',$start_date2);
+    $d2M = date('m',$start_date2);
+    $end_date2 = $d2Y."-".$d2M."-31 23:59:59";
+    /*if(date('m',$start_date2) != date('m',$end_date2))
     {
       $end_date2 = strtotime(date('Y-m-d H:i:s',$end_date2).' -1 days');
-    }
+    }*/
+
 
     $start_date1 = strtotime($start_date_3.' -2 months');
-    $end_date1 = strtotime($end_date_3.' -2 months');
-    if(date('m',$start_date1) != date('m',$end_date1))
+    //$end_date1 = strtotime($end_date_3.' -2 months');
+
+    $d1Y = date('Y',$start_date1);
+    $d1M = date('m',$start_date1);
+    $end_date1 = $d1Y."-".$d1M."-31 23:59:59";
+
+    /*if(date('m',$start_date1) != date('m',$end_date1))
     {
       $end_date1 = strtotime(date('Y-m-d H:i:s',$end_date1).' -1 days');
-    }
+    }*/
 
 
     $monthName3 = date('M',$start_date3);
@@ -2880,10 +2937,10 @@ var_dump($query);*/
     $end_date3 = date('Y-m-d H:i:s',$end_date3);
 
     $start_date2 = date('Y-m-d H:i:s',$start_date2);
-    $end_date2 = date('Y-m-d H:i:s',$end_date2);
+    //$end_date2 = date('Y-m-d H:i:s',$end_date2);
 
     $start_date1 = date('Y-m-d H:i:s',$start_date1);
-    $end_date1 = date('Y-m-d H:i:s',$end_date1);
+    //$end_date1 = date('Y-m-d H:i:s',$end_date1);
 
 
 
@@ -2959,6 +3016,7 @@ var_dump($query);*/
 
   }
 
+
   function getCandidateNotes($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -2975,8 +3033,12 @@ var_dump($query);*/
     $read = $db_result->readFirst();
     $result = $db_result->getData();
 
-    $result['content'] = str_replace("'","",$result['content']);
-    $result['content'] = str_replace('"',"",$result['content']);
+    if(isset($result['content']))
+    {
+      $result['content'] = str_replace("'","",$result['content']);
+      $result['content'] = str_replace('"',"",$result['content']);
+    }
+
     return $result;
   }
 
@@ -3001,6 +3063,25 @@ var_dump($query);*/
 
     $db_result = $oDB->executeQuery($sQuery);
 
+  }
+
+
+  function getCandidatePlacedFlag($candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT * FROM sl_position_link slpl WHERE slpl.candidatefk = '".$candidate_id."' AND status = '101'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    $count = count($result);
+
+    if($count > 0)
+      {return true;}
+    else
+      {return false;}
   }
 
   function getClientUsers()
@@ -3126,6 +3207,16 @@ var_dump($query);*/
     $result = $db_result->getAll();
 
     return $result;
+  }
+
+  function mergeCharacterAssassments($candidate_id, $target_candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $sDate = date('Y-m-d H:i:s');
+
+    $sQuery = "UPDATE sl_notes set candidate_id = '".$target_candidate_id."', last_activity = '".$sDate."', old_candidate_id = '".$candidate_id."' WHERE candidate_id = '".$candidate_id."'";
+    ChromePhp::log($sQuery);
+    $db_result = $oDB->executeQuery($sQuery);
   }
 
   function updateMergedCompanies($id,$id_name,$company_id,$company_id_name,$table_name)
@@ -4652,6 +4743,28 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
+    $sQuery = "SELECT * FROM login l WHERE l.loginpk = '".$user_id."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    if(isset($result[0]))
+    {
+      $result = $result[0];
+    }
+    else
+    {
+      $result = '';
+    }
+
+    return $result;
+  }
+
+  function _getUserInformaiton($user_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
     $sQuery = "SELECT * FROM login l WHERE l.loginpk = ".$user_id;
 
     $db_result = $oDB->executeQuery($sQuery);
@@ -5088,8 +5201,7 @@ function get_revenue_chart_loop()
   $loop[4] = '2016-totals_chart_ordered';//OK
   $loop[5] = '2016-candidates_met_bar_chart';//OK
   $loop[6] = '2016-candidate_in_play_bar_chart';//OK
-  $loop[7] = '2016-resume_bar_chart';//OK
-
+  //$loop[7] = '2016-resume_bar_chart';//OK
 
   return $loop;
 }

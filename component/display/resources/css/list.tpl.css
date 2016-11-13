@@ -59,16 +59,32 @@ ul li.tplListRowFloat
 
 li.tplListHeaderContainer div.tplListRow div
 {
-  height: 20px;
+  min-height: 20px;
   padding: 10px 0;
   font-size: 14px;
   text-align: center;
 }
 
 
+.tplListRowContainer div.tplListRow2 > div
+{
+  min-height: 30px;
+  padding: 5px 0;
+  margin: 0 2px;
+  font-size: 12px;
+  float: left;
+  border-right: 1px solid #cfcfcf;
+  position: relative;
+}
+
+.highClass > div
+{
+  height: 35px !important;
+}
+
 .tplListRowContainer div.tplListRow > div
 {
-  height: 20px;
+  min-height: 20px;
   padding: 5px 0;
   margin: 0 2px;
   font-size: 12px;

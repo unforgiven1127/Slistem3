@@ -1545,7 +1545,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $latestFlag = checkSecurityAlert($user_id,'contact_mail',$company_id);
 
-      if($latestFlag)
+      if($latestFlag > 0)
       {
         $is_owner = false;
       }
@@ -2142,37 +2142,52 @@ class CSl_candidateEx extends CSl_candidate
         {
           if (in_array($asHistoryData['action'], $skip_activity))
             continue;
-
+          //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
+            //continue;
+//ChromePhp::log($asHistoryData['userfk']);
           if(isset($asHistoryData['userfk']) && $asHistoryData['userfk'] > 0)
           {
             $user_info = getUserInformaiton($asHistoryData['userfk']);
           }
-
-          if(isset($user_info['phone_ext']))
+/*if($asHistoryData['userfk'] == '234')
+{
+  ChromePhp::log($user_info);
+}*/
+          if(is_null($user_info) || empty($user_info))
           {
-            $phone_ext = $user_info['phone_ext'];
+            //ChromePhp::log('NULL');
+            //ChromePhp::log($user_info);
+            //continue;
           }
           else
           {
-            $phone_ext = '';
+            if(isset($user_info['phone_ext']))
+            {
+              $phone_ext = $user_info['phone_ext'];
+            }
+            else
+            {
+              $phone_ext = '';
+            }
+            $sHTML.= '<div class="entry">';
+              $sHTML.= '<div class="note_header">';
+              $sHTML.= '&rarr;&nbsp;&nbsp; <span>  '.$this->_oLogin->getUserLink((int)$asHistoryData['userfk'], true).' - '.$phone_ext.'</span>';
+              $sHTML.= '<span class="note_date"> : '.$asHistoryData['date'].'</span>';
+              $sHTML.= '</div>';
+
+              $sHTML.= ' <div class="note_content">'.$asHistoryData['action'];
+
+              if(!empty($asHistoryData['description']))
+                 $sHTML.= '<br />'.$asHistoryData['description'];
+
+              $sHTML.= '</div>';
+            $sHTML.= '</div>';
+
+            $nCount++;
+            if($nCount > $nActivityToDisplay)
+              break;
           }
-          $sHTML.= '<div class="entry">';
-            $sHTML.= '<div class="note_header">';
-            $sHTML.= '&rarr;&nbsp;&nbsp; <span>  '.$this->_oLogin->getUserLink((int)$asHistoryData['userfk'], true).' - '.$phone_ext.'</span>';
-            $sHTML.= '<span class="note_date"> : '.$asHistoryData['date'].'</span>';
-            $sHTML.= '</div>';
 
-            $sHTML.= ' <div class="note_content">'.$asHistoryData['action'];
-
-            if(!empty($asHistoryData['description']))
-               $sHTML.= '<br />'.$asHistoryData['description'];
-
-            $sHTML.= '</div>';
-          $sHTML.= '</div>';
-
-          $nCount++;
-          if($nCount > $nActivityToDisplay)
-            break;
         }
 
         $sHTML.= $this->_oDisplay->getSpanEnd();
@@ -2809,7 +2824,7 @@ class CSl_candidateEx extends CSl_candidate
       $bDisplayPositionField = false;
       //$bLogged = false;
       $bFilteredList = (bool)getValue('__filtered');
-
+//ChromePhp::log('_getCandidateList');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
@@ -2866,6 +2881,7 @@ class CSl_candidateEx extends CSl_candidate
       $poQB->addJoin('left', 'sl_company', 'scom', 'scom.sl_companypk = scpr.companyfk');
       $poQB->addJoin('left', 'sl_industry', 'sind', 'sind.sl_industrypk = scpr.industryfk');
       $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
+      $poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
 
       $sNow = date('Y-m-d H:i:s');
       $poQB->addSelect('scan.*,
@@ -3004,6 +3020,7 @@ class CSl_candidateEx extends CSl_candidate
       }
       else
       {
+        //ChromePhp::log($sQuery);
         $oDbResult = $oDb->ExecuteQuery($sQuery);
         $bRead = $oDbResult->readFirst();
         $nResult = (int)$oDbResult->getFieldValue('nCount');
@@ -3031,7 +3048,7 @@ class CSl_candidateEx extends CSl_candidate
           $oPager->setOffset(1);
         }
       }
-
+//ChromePhp::log($sQuery);
       //Some joins are too heavy to make (notes, contacts...)
       //So we put the main query in a subquery, and join with the filtered / size-limited result
       if($bHeavyJoin)
@@ -3061,6 +3078,7 @@ class CSl_candidateEx extends CSl_candidate
         $limit = $limit[1];
 
         $sQuery = $sQuery[0];
+
 
         $sSortOrder = getValue('sortorder');
 
@@ -3142,6 +3160,7 @@ class CSl_candidateEx extends CSl_candidate
           $sQuery.= ' ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC ';
         }
 
+
         if(!empty($limit))
           $sQuery.= " LIMIT ".$limit;
         else
@@ -3151,12 +3170,17 @@ class CSl_candidateEx extends CSl_candidate
           //$sQuery.= 'ORDER BY scan.firstname DESC';
         }
 
+//
+      //$sQuery = str_replace('"','\'',$sQuery);
+
+
       $user_id = $oLogin->getUserPk();
 
       $limitlessQuery = explode('LIMIT', $sQuery);
       $limitlessQuery = $limitlessQuery[0];
-
+//ChromePhp::log($limitlessQuery);
       $searchTitle = explode(':',$poQB->getTitle());
+
       if(isset($searchTitle[1]))
       {
         $desc = $searchTitle[1];
@@ -3197,7 +3221,7 @@ class CSl_candidateEx extends CSl_candidate
           $rmResult = $rmResultDB->getAll();
         }
       }*/
-//ChromePhp::log($sQuery);
+
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -4436,7 +4460,7 @@ class CSl_candidateEx extends CSl_candidate
       $oForm->addField('input', 'loginfk', array('type' => 'hidden', 'value' => $nCreator));
       $oForm->addField('input', 'candidatefk', array('type' => 'hidden', 'value' => $pnCandiPk));
 
-      $sMessage = '<br /><p id="topTextP">By changing this meeting status to "done", you\'re atomatically changing the candidate status to "met"&sup1; .</p><br/>';
+      $sMessage = '<br /><p id="topTextP">By changing this meeting status to "done", you\'re automatically changing the candidate status to "met"&sup1; .</p><br/>';
       if($nCreator != $oLogin->getUserPk())
       {
         $sMessage.= '<p id="topTextP2">Plus, you\'ll credit&sup2; this meeting to '.$oLogin->getUserLink($nCreator).' who set the meeting up for you.</p><br/>';
@@ -6745,8 +6769,7 @@ class CSl_candidateEx extends CSl_candidate
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
-        $sQuery .= " LIMIT 500";
-        //ChromePhp::log($sQuery);
+        $sQuery .= " LIMIT 200";
 
         $db_result = $oDB->executeQuery($sQuery);
 
@@ -6754,7 +6777,7 @@ class CSl_candidateEx extends CSl_candidate
 
         $company_list = "";
         $adet = count($result);
-        //ChromePhp::log($adet);
+
         if($adet > 0)
         {
           foreach ($result as $key => $value)
@@ -6934,6 +6957,15 @@ class CSl_candidateEx extends CSl_candidate
       {
         $is_ns1N = 'selected';
         $is_ns2N = 'selected';
+      }
+
+      if(empty($pnPk))
+      {
+        $is_ns1Y = 'selected';
+        $is_ns2Y = 'selected';
+
+        $select01 = "selected";
+        $select0 = "selected";
       }
 
        $oForm->addField('select', 'level', array('label'=> 'Level'));
@@ -8020,14 +8052,15 @@ die();*/
             $asNote = $oNote->getNotes($pnCandidatePk, CONST_CANDIDATE_TYPE_CANDI, 'character');
             $newCharacterNotes = getSlNotes($pnCandidatePk);
 
-            if(empty($asNote) && empty($newCharacterNotes))
+            /*if(empty($asNote) && empty($newCharacterNotes))
             {
               //index.php5?uid=555-004&ppa=ppaa&ppt=event&ppk=0&cp_uid=555-001&cp_action=ppav&cp_type=candi&cp_pk=400006&default_type=note&pg=ajx
               $asItem = array('cp_uid' => '555-001', 'cp_action' => CONST_ACTION_VIEW, 'cp_type' => CONST_CANDIDATE_TYPE_CANDI, 'cp_pk' => $pnCandidatePk, 'default_type' =>'character', 'no_candi_refresh' => 1);
               $sURL = $this->_oPage->getAjaxUrl('555-004', CONST_ACTION_ADD, CONST_EVENT_TYPE_EVENT, 0, $asItem);
+              $sURL.= "&simpleCharacter=1";
               $asError[] = 'Character note is required for any assessed candidate.<br />
                 Add a <a href="javascript:;" style="color: red;" onclick="goPopup.removeActive(\'message\'); var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550; goPopup.setLayerFromAjax(oConf, \''.$sURL.'\');" >character note now</a> or change back the candidate status. ';
-            }
+            }*/
           }
         }
 
@@ -10224,6 +10257,7 @@ die();*/
 
       //1. merge profile data
       $adjusted_candidate_ids = $this->merge_candidate_profiles($candidate_id, $target_candidate_id);
+      mergeCharacterAssassments($candidate_id, $target_candidate_id);
 
       /*$asTarget = $this->_getModel()->getCandidateData($adjusted_candidate_ids['target'], true);
       if(empty($asTarget))

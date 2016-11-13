@@ -24,6 +24,7 @@ while($data = mysql_fetch_assoc($slistemQuery))
     foreach ($mailTos as $key => $mailTo)
     {
     	$sMessage.= '<div style="margin-top: 10px;">';
+    	
     	$sDate = date('Y-m-d H:i:s');
 		$to = $mailTo;
 		$subject = "Sl[i]stem daily reminders";

@@ -120,7 +120,7 @@
 			$flag = false;
 		}
 	}
-	if($value['promoteFlag'] == "true")
+	if(isset($value['promoteFlag']) && $value['promoteFlag'] == "true")
 	{
 		$flag = true;
 	}
@@ -146,7 +146,9 @@
 			<div class="stat_candi_info <?php echo $value['user_id']; ?>">
 			<?php
 			$line = 1;
-			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data):
+			if(isset($allCanidatesArray[$arrayPosition]))
+			{
+			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data){
 			 	if ($line % 2 === 0)
 			 	{
 			 		if($even == '')
@@ -178,17 +180,20 @@
 					}
 				?>
 				</div>
-			<?php endforeach ?>
+			<?php }
+			} ?>
 			</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="<?php echo $value['user_id']; ?>">
-			<?php echo $value['met']; ?>
+			<?php if(isset($value['met'])){echo $value['met'];}?>
 			</div>
 			<div class="stat_candi_info <?php echo $value['user_id']; ?>">
 			<?php
 			$line = 1;
-			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data):
+			if(isset($allCanidatesArray[$arrayPosition]))
+			{
+			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data){
 			 	if ($line % 2 === 0)
 			 	{
 			 		if($even == '')
@@ -219,7 +224,7 @@
 					}
 				?>
 				</div>
-			<?php endforeach ?>
+			<?php } } ?>
 			</div>
 		</td>
 		<td>
@@ -329,7 +334,7 @@
 			 	?>
 				<div class="hover_row <?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['ccm1DoneFlag']))
+					if(isset($data['ccm1DoneFlag']) && isset($data['hoverTooltip']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>
@@ -413,7 +418,7 @@
 			 	?>
 				<div class="hover_row <?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['ccm2DoneFlag']))
+					if(isset($data['ccm2DoneFlag']) && isset($data['hoverTooltip']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>
@@ -497,7 +502,7 @@
 			 	?>
 				<div class="hover_row <?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['mccmDoneFlag']))
+					if(isset($data['mccmDoneFlag']) && isset($data['hoverTooltip']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>
@@ -587,7 +592,7 @@
 			 	?>
 				<div class="hover_row <?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['newCandiPlayFlag']))
+					if(isset($data['newCandiPlayFlag']) && isset($data['hoverTooltip']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>

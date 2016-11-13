@@ -4057,7 +4057,7 @@ class CSl_statEx extends CSl_stat
       $loopChart = $loopInformation[1];
 
       $nextloop++;
-      if($nextloop > 7)// burasi duzelecek
+      if($nextloop > 6)// burasi duzelecek
       {
         $nextloop = 0;
       }
@@ -4099,7 +4099,7 @@ class CSl_statEx extends CSl_stat
         $start_date_title = date('F').' 01, '.$thisYear;
         $end_date = date('Y-m-d H:i:s');
 
-        $title = "Candidates Met ".$start_date_title." to Present";
+        $title = "New Candidates Met ".$start_date_title." to Present";
 
         $consultants = get_active_consultants();
         $new_candidate_met_json = '';
@@ -4181,6 +4181,10 @@ class CSl_statEx extends CSl_stat
         $inplay_count = "";
         $inplay_rsc = "";
 
+        $inplay_new_candi_met = '';
+        $inplay_new_candi_ip = '';
+        $inplay_new_position_ip = '';
+
         $consultants = get_active_consultants();
         $inplay = array();
 
@@ -4189,7 +4193,22 @@ class CSl_statEx extends CSl_stat
         $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
         $start_date_title = date('F').' 01, '.$thisYear;
 
-        $title = "Candidates in play / Resume sent ".$start_date_title." to Present";
+        $title = "New candidates met / New candidates in play / New positions in play ".$start_date_title." to Present";
+
+        $end_date = date('Y-m-t').' 23:59:59';
+        $temp_in_play = $this->_getModel()->get_new_in_play($consultants, $start_date, $end_date, 'consultant');
+
+        //$new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
+
+        //$new_in_plays = array();
+        /*foreach ($temp_in_play as $key => $value)
+        {
+          //key = user_id
+          $temp_in_play[$key]['new_candi_count'] = count($value['new_candidates']);
+          $temp_in_play[$key]['new_posi_count'] = count($value['new_positions']);
+        }*/
+
+        //ChromePhp::log($temp_in_play);
 
         foreach ($consultants as $key => $value)
         {
@@ -4200,18 +4219,37 @@ class CSl_statEx extends CSl_stat
           $candidate_inplay_temp = get_candidate_in_play($consultant_id, $start_date);
           $inplay[$consultant_id]['candidate_inplay'] = $candidate_inplay_temp;
 
-          $inplay[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$resume_sent_temp['count']."|"." |".$candidate_inplay_temp."|";
+          if(isset($temp_in_play[$consultant_id]['new_candidates']))
+          {
+            $new_candi_count_temp = count($temp_in_play[$consultant_id]['new_candidates']);
+            $inplay[$consultant_id]['new_candi_count'] = $new_candi_count_temp;
+          }
+          else
+          {
+            $inplay[$consultant_id]['new_candi_count'] = 0;
+          }
+
+          if(isset($temp_in_play[$consultant_id]['new_positions']))
+          {
+            $new_position_count_temp = count($temp_in_play[$consultant_id]['new_positions']);
+            $inplay[$consultant_id]['new_posi_count'] = $new_position_count_temp;
+          }
+          else
+          {
+            $inplay[$consultant_id]['new_posi_count'] = 0;
+          }
+
+          $new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
+          $inplay[$consultant_id]['new_candi_met'] = $new_candi_met;
+
+          $inplay[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$new_candi_met."|"." |".$inplay[$consultant_id]['new_candi_count']."|"." |".$inplay[$consultant_id]['new_posi_count']."|";
+
         }
-        uasort($inplay, sort_multi_array_by_value('candidate_inplay', 'reverse'));
+        uasort($inplay, sort_multi_array_by_value('new_candi_met', 'reverse'));
         $max_rabbit_1 = 0;
         $max_rabbit_2 = 0;
         foreach ($inplay as $key => $value)
         {
-          /*$cp = $value['candidate_inplay'] - $value['resume_sent'];
-          if($cp < 0)
-          {
-            $cp = 0;
-          }*/
           if($value['candidate_inplay'] > $max_rabbit_1)
           {
             $max_rabbit_1 = $value['candidate_inplay'];
@@ -4223,8 +4261,13 @@ class CSl_statEx extends CSl_stat
           $inplay_formatted.= $value['formatted'].";";
 
           $inplay_count.= $value['candidate_inplay'].";";
+
           //$inplay_count.= $cp.";";
           $inplay_rsc.= $value['resume_sent'].";";
+
+          $inplay_new_candi_met .= $value['new_candi_met'].";";
+          $inplay_new_candi_ip .= $value['new_candi_count'].";";
+          $inplay_new_position_ip .= $value['new_posi_count'].";";
         }
         //$inplay_formatted = " ;".$inplay_formatted;
         //$inplay_count = "0;".$inplay_count;
@@ -4233,6 +4276,10 @@ class CSl_statEx extends CSl_stat
         $inplay_formatted = rtrim($inplay_formatted,';');
         $inplay_count = rtrim($inplay_count,';');
         $inplay_rsc = rtrim($inplay_rsc,';');
+
+        $inplay_new_candi_met = rtrim($inplay_new_candi_met,';');
+        $inplay_new_candi_ip = rtrim($inplay_new_candi_ip,';');
+        $inplay_new_position_ip = rtrim($inplay_new_position_ip,';');
       }
       else
       {
@@ -4271,6 +4318,11 @@ class CSl_statEx extends CSl_stat
         $data['title'] = $title;
         $data['max_rabbit_1'] = $max_rabbit_1;
         $data['max_rabbit_2'] = $max_rabbit_2;
+
+        $data['new_candi_met'] = $inplay_new_candi_met;
+        $data['new_candi_count'] = $inplay_new_candi_ip;
+        $data['new_posi_count'] = $inplay_new_position_ip;
+
       }
 
       //$html = $this->_oDisplay->render('revenue_chart', $data);
@@ -4561,8 +4613,14 @@ class CSl_statEx extends CSl_stat
               $stats_data['consultant'][$id]['met'] = 0;
               $stats_data['consultant'][$id]['met_meeting_info'] = array();
             }
-
+            if(!isset($temp_ccm_promote[$id]['ccm1']))
+            {
+              $stats_data['consultant'][$id]['ccm1'] = 0;
+            }
+            else
+            {
               $stats_data['consultant'][$id]['ccm1'] = $temp_ccm_promote[$id]['ccm1'];
+            }
               $stats_data['consultant'][$id]['ccm1_done'] = $temp_ccm_promote[$id]['ccm1_done'];
               $stats_data['consultant'][$id]['ccm1_info'] = $temp_ccm_promote[$id]['ccm_info']['ccm1'];
 
@@ -4710,44 +4768,44 @@ class CSl_statEx extends CSl_stat
             $stats_data['consultant'][$id]['met_meeting_info'] = array();
           }
 
-          //if (!empty($temp_ccm[$id]['ccm1']) || !empty($temp_ccm[$id]['ccm1_done']))
-          //{
+          if(!empty($temp_ccm[$id]['ccm1']) || !empty($temp_ccm[$id]['ccm1_done']))
+          {
             $stats_data['consultant'][$id]['ccm1'] = $temp_ccm[$id]['ccm1'];
             $stats_data['consultant'][$id]['ccm1_done'] = $temp_ccm[$id]['ccm1_done'];
             $stats_data['consultant'][$id]['ccm1_info'] = $temp_ccm[$id]['ccm_info']['ccm1'];
-          //}
-          /*else
+          }
+          else
           {
             $stats_data['consultant'][$id]['ccm1'] = 0;
             $stats_data['consultant'][$id]['ccm1_done'] = 0;
             $stats_data['consultant'][$id]['ccm1_info'] = array();
-          }*/
+          }
 
-          //if (!empty($temp_ccm[$id]['ccm2']))
-          //{
+          if (!empty($temp_ccm[$id]['ccm2']))
+          {
             $stats_data['consultant'][$id]['ccm2'] = $temp_ccm[$id]['ccm2'];
             $stats_data['consultant'][$id]['ccm2_done'] = $temp_ccm[$id]['ccm2_done'];
             $stats_data['consultant'][$id]['ccm2_info'] = $temp_ccm[$id]['ccm_info']['ccm2'];
-          //}
-          /*else
+          }
+          else
           {
             $stats_data['consultant'][$id]['ccm2'] = 0;
             $stats_data['consultant'][$id]['ccm2_done'] = 0;
             $stats_data['consultant'][$id]['ccm2_info'] = array();
-          }*/
+          }
 
-          //if (!empty($temp_ccm[$id]['mccm']))
-          //{
+          if (!empty($temp_ccm[$id]['mccm']))
+          {
             $stats_data['consultant'][$id]['mccm'] = $temp_ccm[$id]['mccm'];
             $stats_data['consultant'][$id]['mccm_done'] = $temp_ccm[$id]['mccm_done'];
             $stats_data['consultant'][$id]['mccm_info'] = $temp_ccm[$id]['ccm_info']['mccm'];
-          //}
-          /*else
+          }
+          else
           {
             $stats_data['consultant'][$id]['mccm'] = 0;
             $stats_data['consultant'][$id]['mccm_done'] = 0;
             $stats_data['consultant'][$id]['mccm_info'] = array();
-          }*/
+          }
 
   //----------------------------------------------------------------------------------
           if (!empty($temp_in_play[$id]['new_candidates']))
@@ -4837,6 +4895,7 @@ class CSl_statEx extends CSl_stat
   //echo "<br><br>";
   //var_dump($stats_data['consultant']['457']);
         $temp_set_vs_met = $this->_getModel()->getKpiSetVsMet($researcher_ids, $start_date, $end_date);
+ChromePhp::log($temp_set_vs_met);
         $temp_resume_sent = $this->_getModel()->get_resume_sent($researcher_ids, $start_date, $end_date);
         $temp_ccm = $this->_getModel()->get_ccm_data($researcher_ids, $start_date, $end_date);
         $temp_in_play = $this->_getModel()->get_new_in_play($researcher_ids, $start_date, $end_date);
@@ -5056,11 +5115,22 @@ class CSl_statEx extends CSl_stat
             //$stats_data['researcher'][$id]['met_meeting_info'] = $temp_set_vs_met[$id]['met_meeting_info'];
 
   // NOTE: researcher larda met ile new candidate met ayni olsun istendi !!!!!!
-            $count = count($temp_new_candidate_met[$id]);
+            $count = 0;
+            if(isset($temp_new_candidate_met[$id]))
+            {
+              $count = count($temp_new_candidate_met[$id]);
+            }
 
-            $stats_data['researcher'][$id]['met'] = $count;
-            $stats_data['researcher'][$id]['met_meeting_info'] = $temp_new_candidate_met[$id];
-
+            if($count > 0)//$stats_data['researcher'][$id]['met']
+            {
+              $stats_data['researcher'][$id]['met'] = $count;
+              $stats_data['researcher'][$id]['met_meeting_info'] = $temp_new_candidate_met[$id];
+            }
+            else
+            {
+              $stats_data['researcher'][$id]['met'] = 0;
+              $stats_data['researcher'][$id]['met_meeting_info'] = array();
+            }
             //var_dump($stats_data['researcher'][$id]['met_meeting_info']);
           //}
           /*else
@@ -5219,183 +5289,228 @@ class CSl_statEx extends CSl_stat
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
         foreach ($consultant_ids as $key => $id)
         {
-          foreach ($stats_data['consultant'][$id]['set_meeting_info'] as $key => $candidate)
+          if(isset($stats_data['consultant'][$id]))
           {
-            if(isset($candidate['candidate']))
+            foreach ($stats_data['consultant'][$id]['set_meeting_info'] as $key => $candidate)
             {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['setFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['met_meeting_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-            }
-            else if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-            }
-            if(isset($candidate_id))
-            {
-              $allCanidatesArray['consultant'][$id][$candidate_id]['metFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['resumes_sent_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['ccm1_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // CCM1 SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['ccm1SetFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['consultant'][$id]['ccm1_info'] as $key => $candidate)
-          {
-            if(isset($candidate['ccm_done_candidate']))
-            {
-              $candidate_id = $candidate['ccm_done_candidate']; // CCM1 DONE
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['ccm1DoneFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['ccm2_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // CCM2 SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['ccm2SetFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['consultant'][$id]['ccm2_info'] as $key => $candidate)
-          {
-            if(isset($candidate['ccm_done_candidate']))
-            {
-              $candidate_id = $candidate['ccm_done_candidate']; // CCM2 DONE
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['ccm2DoneFlag'] = '1';
-            }
-
-          }
-
-          foreach ($stats_data['consultant'][$id]['mccm_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // MCCM SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['mccmSetFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['consultant'][$id]['mccm_info'] as $key => $candidate)
-          {
-
-            if(isset($candidate['ccm_done_candidate']))
-            {
-
-              $candidate_ids = $candidate['ccm_done_candidate']; // MCCM done
-
-              foreach ($candidate_ids as $key => $candidate_id)
+              if(isset($candidate['candidate']))
               {
-                $allCanidatesArray['consultant'][$id][$candidate_id]['mccmDoneFlag'] = '1';
+                $candidate_id = $candidate['candidate'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['setFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['met_meeting_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candidate_id = $candidate['candidate'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+              }
+              else if(isset($candidate['candidatefk']))
+              {
+                $candidate_id = $candidate['candidatefk'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+              }
+              if(isset($candidate_id))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $allCanidatesArray['consultant'][$id][$candidate_id]['metFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['resumes_sent_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['ccm1_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // CCM1 SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['ccm1SetFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['consultant'][$id]['ccm1_info'] as $key => $candidate)
+            {
+              if(isset($candidate['ccm_done_candidate']))
+              {
+                $candidate_id = $candidate['ccm_done_candidate']; // CCM1 DONE
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['ccm1DoneFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['ccm2_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // CCM2 SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['ccm2SetFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['consultant'][$id]['ccm2_info'] as $key => $candidate)
+            {
+              if(isset($candidate['ccm_done_candidate']))
+              {
+                $candidate_id = $candidate['ccm_done_candidate']; // CCM2 DONE
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['ccm2DoneFlag'] = '1';
+              }
+
+            }
+
+            foreach ($stats_data['consultant'][$id]['mccm_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // MCCM SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['mccmSetFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes ."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['consultant'][$id]['mccm_info'] as $key => $candidate)
+            {
+
+              if(isset($candidate['ccm_done_candidate']))
+              {
+
+                $candidate_ids = $candidate['ccm_done_candidate']; // MCCM done
+
+                foreach ($candidate_ids as $key => $candidate_id)
+                {
+                  $allCanidatesArray['consultant'][$id][$candidate_id]['mccmDoneFlag'] = '1';
+                }
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['new_candidate_met_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidatefk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // new candi met
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['newCandiMetFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['new_candidate_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidatefk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // new candidate in play
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['new_position_info'] as $key => $candidate)
+            {
+              //var_dump($candidate);
+              //echo "<br><br>";
+              if(isset($candidate['positionfk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // New position
+
+                $allCanidatesArray['consultant'][$id][$candidate_id]['newPositionPlayFlag'] = $candidate['positionfk'];
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['offer_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // Offer
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['offerFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+            }
+
+            foreach ($stats_data['consultant'][$id]['placed_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // Placed
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['consultant'][$id][$candidate_id]['placedFlag'] = '1';
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
               }
             }
           }
 
-          foreach ($stats_data['consultant'][$id]['new_candidate_met_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // new candi met
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['newCandiMetFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['new_candidate_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // new candidate in play
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['new_position_info'] as $key => $candidate)
-          {
-            //var_dump($candidate);
-            //echo "<br><br>";
-            if(isset($candidate['positionfk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // New position
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['newPositionPlayFlag'] = $candidate['positionfk'];
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['offer_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // Offer
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['offerFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
-          foreach ($stats_data['consultant'][$id]['placed_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // Placed
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['consultant'][$id][$candidate_id]['placedFlag'] = '1';
-              $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
 
         }
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
@@ -5414,178 +5529,226 @@ class CSl_statEx extends CSl_stat
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         foreach ($researcher_ids as $key => $id)
         {
-          foreach ($stats_data['researcher'][$id]['set_meeting_info'] as $key => $candidate)
+          if(isset($stats_data['researcher'][$id]))
           {
-            if(isset($candidate['candidate']))
+            foreach ($stats_data['researcher'][$id]['set_meeting_info'] as $key => $candidate)
             {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['setFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['setFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+            }
+
+            if(isset($stats_data['researcher'][$id]['met_meeting_info']) && !empty($stats_data['researcher'][$id]['met_meeting_info']))
+            {
+              foreach ($stats_data['researcher'][$id]['met_meeting_info'] as $key => $candidate)
+              {
+                if(isset($candidate['candidate']))
+                {
+                  $candidate_id = $candidate['candidate'];
+                  $candidateInfo = getCandidateInformation($candidate_id);
+                  $candidateNotes = getCandidateNotes($candidate_id);
+                }
+                else if(isset($candidate['candidatefk']))
+                {
+                  $candidate_id = $candidate['candidatefk'];
+                  $candidateInfo = getCandidateInformation($candidate_id);
+                  $candidateNotes = getCandidateNotes($candidate_id);
+                }
+                if(isset($candidate_id))
+                {
+                  $candiNotes = "";
+                  if(isset($candidateNotes['content']))
+                  {
+                    $candiNotes = $candidateNotes['content'];
+                  }
+                  $allCanidatesArray['researcher'][$id][$candidate_id]['metFlag'] = '1';
+                  $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                }
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['resumes_sent_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate'];
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['resumeSentFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // CCM1 SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['ccm1SetFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
+            {
+              if(isset($candidate['ccm_done_candidate']))
+              {
+                $candidate_id = $candidate['ccm_done_candidate']; // CCM1 DONE
+
+                $allCanidatesArray['researcher'][$id][$candidate_id]['ccm1DoneFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['ccm2_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // CCM2 SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['ccm2SetFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['researcher'][$id]['ccm2_info'] as $key => $candidate)
+            {
+              if(isset($candidate['ccm_done_candidate']))
+              {
+                $candidate_id = $candidate['ccm_done_candidate']; // CCM2 DONE
+
+                $allCanidatesArray['researcher'][$id][$candidate_id]['ccm2DoneFlag'] = '1';
+              }
+
+            }
+
+            foreach ($stats_data['researcher'][$id]['mccm_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // MCCM SET
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['mccmSetFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+
+            }
+
+            foreach ($stats_data['researcher'][$id]['mccm_info'] as $key => $candidate)
+            {
+              if(isset($candidate['ccm_done_candidate']))
+              {
+                foreach ($candidate['ccm_done_candidate'] as $key => $value)
+                {
+                  $candidate_id = $value;// array halinde geldiginden boyle yaptik
+                }
+                //$candidate_id = $candidate['ccm_done_candidate']; // MCCM done
+                $allCanidatesArray['researcher'][$id][$candidate_id]['mccmDoneFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['new_candidate_met_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidatefk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // new candi met
+
+                $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiMetFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['new_candidate_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidatefk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // new candidate in play
+
+                $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['new_position_info'] as $key => $candidate)
+            {
+              //var_dump($candidate);
+              //echo "<br><br>";
+              if(isset($candidate['positionfk']))
+              {
+                $candidate_id = $candidate['candidatefk']; // New position
+
+                $allCanidatesArray['researcher'][$id][$candidate_id]['newPositionPlayFlag'] = $candidate['positionfk'];
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['offer_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // Offer
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['offerFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
+            }
+
+            foreach ($stats_data['researcher'][$id]['placed_info'] as $key => $candidate)
+            {
+              if(isset($candidate['candidate']))
+              {
+                $candiNotes = "";
+                if(isset($candidateNotes['content']))
+                {
+                  $candiNotes = $candidateNotes['content'];
+                }
+                $candidate_id = $candidate['candidate']; // Placed
+                $candidateInfo = getCandidateInformation($candidate_id);
+                $candidateNotes = getCandidateNotes($candidate_id);
+                $allCanidatesArray['researcher'][$id][$candidate_id]['placedFlag'] = '1';
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+              }
             }
           }
-
-          foreach ($stats_data['researcher'][$id]['met_meeting_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-            }
-            else if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-            }
-            if(isset($candidate_id))
-            {
-              $allCanidatesArray['researcher'][$id][$candidate_id]['metFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['resumes_sent_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate'];
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['resumeSentFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // CCM1 SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['ccm1SetFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
-          {
-            if(isset($candidate['ccm_done_candidate']))
-            {
-              $candidate_id = $candidate['ccm_done_candidate']; // CCM1 DONE
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['ccm1DoneFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['ccm2_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // CCM2 SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['ccm2SetFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['researcher'][$id]['ccm2_info'] as $key => $candidate)
-          {
-            if(isset($candidate['ccm_done_candidate']))
-            {
-              $candidate_id = $candidate['ccm_done_candidate']; // CCM2 DONE
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['ccm2DoneFlag'] = '1';
-            }
-
-          }
-
-          foreach ($stats_data['researcher'][$id]['mccm_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // MCCM SET
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['mccmSetFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-
-          }
-
-          foreach ($stats_data['researcher'][$id]['mccm_info'] as $key => $candidate)
-          {
-            if(isset($candidate['ccm_done_candidate']))
-            {
-              $candidate_id = $candidate['ccm_done_candidate']; // MCCM done
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['mccmDoneFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['new_candidate_met_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // new candi met
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiMetFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['new_candidate_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidatefk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // new candidate in play
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['new_position_info'] as $key => $candidate)
-          {
-            //var_dump($candidate);
-            //echo "<br><br>";
-            if(isset($candidate['positionfk']))
-            {
-              $candidate_id = $candidate['candidatefk']; // New position
-
-              $allCanidatesArray['researcher'][$id][$candidate_id]['newPositionPlayFlag'] = $candidate['positionfk'];
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['offer_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // Offer
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['offerFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
-          foreach ($stats_data['researcher'][$id]['placed_info'] as $key => $candidate)
-          {
-            if(isset($candidate['candidate']))
-            {
-              $candidate_id = $candidate['candidate']; // Placed
-              $candidateInfo = getCandidateInformation($candidate_id);
-              $candidateNotes = getCandidateNotes($candidate_id);
-              $allCanidatesArray['researcher'][$id][$candidate_id]['placedFlag'] = '1';
-              $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candidateNotes['content']."</i>";
-            }
-          }
-
         }
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
@@ -5649,7 +5812,7 @@ class CSl_statEx extends CSl_stat
 
       $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
-//ChromePhp::log($nextloop);
+ChromePhp::log($stats_data);
 
       $data['nextloop'] = $nextloop;
 
