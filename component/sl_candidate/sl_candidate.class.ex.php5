@@ -1594,21 +1594,21 @@ class CSl_candidateEx extends CSl_candidate
         (empty($sCharSelected))? $sContactSelected = 'selected' : '';
       }
 
-      //$asContact = $this->_getContactTab($pasCandidateData);
-$asContact['nb_result'] = 0;
+      $asContact = $this->_getContactTab($pasCandidateData);
+
       if(empty($asContact['nb_result']))
       {
         $sContactSelected = '';
         (empty($sCharSelected) && empty($sNoteSelected))? $sDocSelected = 'selected' : '';
       }
 
-      $asDocument = $this->_getDocumentTab($pasCandidateData);
+      /*$asDocument = $this->_getDocumentTab($pasCandidateData);
       if(empty($asDocument['nb_result']))
       {
         $sDocSelected = '';
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
-      }
-
+      }*/
+$asDocument['nb_result'] = 0;
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
@@ -1678,7 +1678,7 @@ $asContact['nb_result'] = 0;
           $sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab1', $asCharacter['content'], array('class' => 'aTabContent hidden '.$sCharSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
-          //$sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
+          $sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab3', $asDocument['content'], array('class' => 'aTabContent hidden '.$sDocSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab4', $asCompanyFeed['content'], array('class' => 'aTabContent hidden'));
 
