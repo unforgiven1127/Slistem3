@@ -1586,8 +1586,7 @@ class CSl_candidateEx extends CSl_candidate
         $asCharNotes['nb_result'] = '';
       }
 
-      //$asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
-      $asNotes  = '';
+      $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
       if(empty($asNotes['nb_result']))
       {
         $sNoteSelected = '';
@@ -1682,9 +1681,9 @@ class CSl_candidateEx extends CSl_candidate
           $sHTML.= $this->_oDisplay->getBloc('candiTab3', $asDocument['content'], array('class' => 'aTabContent hidden '.$sDocSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab4', $asCompanyFeed['content'], array('class' => 'aTabContent hidden'));
 
-          $sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
+          //$sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
+          //$sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
+          //$sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
 
         $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getBlocEnd();
