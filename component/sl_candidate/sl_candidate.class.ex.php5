@@ -1305,7 +1305,7 @@ class CSl_candidateEx extends CSl_candidate
       $sHTML.= $this->_oDisplay->getBlocEnd();
 
       $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTopSectRight candiTabContainer'));
-      //$sHTML.= $this->_getCandidateRightTabs($asCandidate);
+      $sHTML.= $this->_getCandidateRightTabs($asCandidate);
       $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getFloatHack();
 
@@ -1586,7 +1586,8 @@ class CSl_candidateEx extends CSl_candidate
         $asCharNotes['nb_result'] = '';
       }
 
-      $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
+      //$asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
+      $asNotes  = '';
       if(empty($asNotes['nb_result']))
       {
         $sNoteSelected = '';
