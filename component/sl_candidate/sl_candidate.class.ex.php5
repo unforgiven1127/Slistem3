@@ -1572,7 +1572,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $sHTML = "";
 
-      $sCharSelected =  'selected';
+      /*$sCharSelected =  'selected';
       $sDocSelected = $sContactSelected = $sJdSelected = $sNoteSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
@@ -1602,13 +1602,13 @@ class CSl_candidateEx extends CSl_candidate
         (empty($sCharSelected) && empty($sNoteSelected))? $sDocSelected = 'selected' : '';
       }
 
-      /*$asDocument = $this->_getDocumentTab($pasCandidateData);
+      $asDocument = $this->_getDocumentTab($pasCandidateData);
       if(empty($asDocument['nb_result']))
       {
         $sDocSelected = '';
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
-      }*/
-$asDocument['nb_result'] = 0;
+      }
+
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
@@ -1688,7 +1688,7 @@ $asDocument['nb_result'] = 0;
 
         $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getBlocEnd();
-
+*/
 
       return $sHTML;
     }
