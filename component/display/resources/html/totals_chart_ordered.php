@@ -14,8 +14,12 @@
 	    if(loopFlag == true || loopFlag == 'true')
 		{
 			document.getElementById('getKpiForm').setAttribute("style","display:none;");
-			document.getElementById('body').setAttribute("style","margin-top:-40px; margin-left:10px;");
+			document.getElementById('body').setAttribute("style","margin-top:-40px; margin-left:10px;margin-right:10px;");
 			//document.getElementById('head').setAttribute("style","font-size:150% !important;");
+			var cols = document.getElementsByClassName('revenueSize0');
+			for(i=0; i<cols.length; i++) {
+			    cols[i].setAttribute("style","font-size:200% !important;");
+			}
 			var cols = document.getElementsByClassName('revenueSize');
 			for(i=0; i<cols.length; i++) {
 			    cols[i].setAttribute("style","font-size:180% !important;");
@@ -23,6 +27,14 @@
 			var cols = document.getElementsByClassName('revenueSize2');
 			for(i=0; i<cols.length; i++) {
 			    cols[i].setAttribute("style","font-size:150% !important;");
+			}
+			var cols = document.getElementsByClassName('revenueSize3');
+			for(i=0; i<cols.length; i++) {
+			    cols[i].setAttribute("style","font-size:180% !important;");
+			}
+			var cols = document.getElementsByClassName('totals_table');
+			for(i=0; i<cols.length; i++) {
+			    cols[i].setAttribute("style","width:100% !important;");
 			}
 			//$('#totals_table_id').css('margin-top','-48px;');
 			//alert('GIZLEME SONRASI ALERT');
@@ -69,10 +81,10 @@
 	 ?>
 <table id="totals_table_id" class="totals_table">
 	<tr>
-		<th class='revenueSize' colspan="15"><?php echo ucfirst($key); ?> totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
+		<th class='revenueSize0' colspan="15"><?php echo ucfirst($key); ?> totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>
 	<tr id="head">
-		<th class="name_column revenueSize">Name</th>
+		<th class="name_column revenueSize0">Name</th>
 		<th class="revenueSize">Set</th>
 		<th class="revenueSize">Met</th>
 		<th class="revenueSize">Resumes sent</th>
@@ -742,22 +754,22 @@
 	<tr class="totals_table_footer">
 	<!--<td colspan="15">&nbsp;</td></tr>-->
 	<!--<tr bgcolor="#58FAAC"> -->
-		<td class='revenueSize2' colspan="10" class="text_right">
+		<td class='revenueSize3' colspan="10" class="text_right">
 			Total :
 		</td>
-		<td class='revenueSize2'>
+		<td class='revenueSize3'>
 			<?php echo $total_ncm; ?>
 		</td>
-		<td class='revenueSize2'>
+		<td class='revenueSize3'>
 			<?php echo $total_ncip; ?>
 		</td>
-		<td class='revenueSize2'>
+		<td class='revenueSize3'>
 			<?php echo $total_npip; ?>
 		</td>
-		<td class='revenueSize2'>
+		<td class='revenueSize3'>
 			<?php echo $total_o; ?>
 		</td>
-		<td class='revenueSize2'>
+		<td class='revenueSize3'>
 			<?php echo $total_p; ?>
 		</td>
 	</tr>

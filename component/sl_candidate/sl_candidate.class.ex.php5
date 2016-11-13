@@ -6673,10 +6673,12 @@ class CSl_candidateEx extends CSl_candidate
       $oDB = CDependency::getComponentByName('database');
       $somthing = true;
 
-      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises');//,'and','&' cikarttim
+      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises','the');//,'and','&' cikarttim
 
       $explodedCompanyName = explode(' ',$company_name);
       $nameCount = count($explodedCompanyName);
+
+      $untouchedCompanyNameCount = strlen($company_name);
 
       if($nameCount == 1)
       {
@@ -6717,7 +6719,7 @@ class CSl_candidateEx extends CSl_candidate
           /*$sQuery = "SELECT levenshtein('".$company_name."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
                  FROM sl_company slc
                  WHERE ";*/
-          $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$implodedName."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE ( ";
+          $sQuery = "SELECT IF(LEFT(slc.name , '".$untouchedCompanyNameCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE ( ";
           $addWhere = '';
           foreach ($explodedCompanyName as $key => $value)
           {
@@ -6743,8 +6745,8 @@ class CSl_candidateEx extends CSl_candidate
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
-        //$sQuery .= " LIMIT 90";
-        ChromePhp::log($sQuery);
+        $sQuery .= " LIMIT 500";
+        //ChromePhp::log($sQuery);
 
         $db_result = $oDB->executeQuery($sQuery);
 

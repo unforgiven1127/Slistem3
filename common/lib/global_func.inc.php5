@@ -1675,30 +1675,126 @@ var_dump($query);*/
     return $new_in_play_info;
   }
 
-  function get_objectives_new_candidate_met($user_id, $start_date, $end_date)
+  function get_active_consultants()
   {
     $oDB = CDependency::getComponentByName('database');
-    $user_ids = array($user_id);
 
-    $user_info = getUserInformaiton($user_id);
-    $group = strtolower($user_info['position']);
+    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant'";
+//ChromePhp::log($sQuery);
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+//ChromePhp::log($result);
+    return $result;
+  }
+
+  function get_ccm1_count($user_id, $start_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT created_by as user_id, COUNT(*) as count FROM sl_position_link WHERE created_by = '".$user_id."' AND status = '51' AND active = '0' AND date_completed > '".$start_date."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+    $result = $result[0];
+    return $result;
+  }
+
+  function get_ccm2_count($user_id, $start_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT created_by as user_id, COUNT(*) as count FROM sl_position_link WHERE created_by = '".$user_id."' AND status = '52' AND active = '0' AND date_completed > '".$start_date."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+    $result = $result[0];
+    return $result;
+  }
+
+  function get_mccm_count($user_id, $start_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+//ccm2 ve ustunu aliyoruz
+    $sQuery = "SELECT created_by as user_id, COUNT(*) as count FROM sl_position_link WHERE created_by = '".$user_id."' AND status > '52' AND status < '70' AND active = '0' AND date_completed > '".$start_date."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+    $result = $result[0];
+    return $result;
+  }
+
+  function get_resume_sent_count($user_id, $start_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT created_by as user_id, COUNT(*) as count FROM sl_position_link WHERE created_by = '".$user_id."' AND status = '2' AND date_created > '".$start_date."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+    $result = $result[0];
+    return $result;
+  }
+
+  function get_candidate_in_play($user_id, $start_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    /*$sQuery = "SELECT created_by as user_id, COUNT(*) as count FROM sl_position_link WHERE created_by = '".$user_id."' AND in_play = '1' AND date_completed >= '".$start_date."'";*/
+
+    $sQuery = "SELECT min(sl2.sl_position_linkpk) as first_ccm1 ,sl1.*
+              FROM sl_position_link sl1
+              INNER JOIN sl_position_link sl2 on sl2.candidatefk = sl1.candidatefk AND sl2.status = '51'
+              WHERE sl1.created_by = '".$user_id."' AND sl1.status = '51' AND sl1.date_created >= '".$start_date."'
+              group by sl1.sl_position_linkpk";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    $count = 0;
+
+    foreach ($result as $key => $value)
+    {
+      if($value['first_ccm1'] == $value['sl_position_linkpk'])
+      {
+        $count++;
+      }
+    }
+
+    return $count;
+  }
+
+  function get_new_candidate_met($user_ids, $start_date, $end_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    //$user_ids = array($user_id);
+
+    //$user_info = getUserInformaiton($user_id);
+    //$group = strtolower($user_info['position']);
 
     //$asData = array();
 
+    $users = implode(',', $user_ids);
+//ChromePhp::log($users);
     $query = 'SELECT m.*, min(m2.sl_meetingpk) as min_date, slc._sys_status as candidate_status
         FROM sl_meeting m
         INNER JOIN sl_meeting m2 on m2.candidatefk = m.candidatefk and m2.meeting_done = 1
         INNER JOIN sl_candidate slc on slc.sl_candidatepk = m.candidatefk AND slc._sys_status = 0
-        WHERE m.created_by IN ('.implode(',', $user_ids).')
+        WHERE m.created_by IN ('.$users.')
         AND m.date_met >= "'.$start_date.'"
         AND m.date_met < "'.$end_date.'"
         group by m.sl_meetingpk
         order by m.candidatefk';
-
+//ChromePhp::log($query);
 
     $oDbResult = array();
 
-    $oDbResult = $oDB->executeQuery($query);
+    /*$oDbResult = $oDB->executeQuery($query);
     $read = $oDbResult->readFirst();
 
     while($read)
@@ -1719,6 +1815,59 @@ var_dump($query);*/
       $read = $oDbResult->readNext();
     }
 
+    return $asData;*/
+  }
+
+  function get_objectives_new_candidate_met($user_id, $start_date, $end_date)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $user_ids = array($user_id);
+
+    $user_info = getUserInformaiton($user_id);
+    $group = strtolower($user_info['position']);
+
+    //$asData = array();
+
+    $query = 'SELECT m.*, min(m2.sl_meetingpk) as min_date, slc._sys_status as candidate_status
+        FROM sl_meeting m
+        INNER JOIN sl_meeting m2 on m2.candidatefk = m.candidatefk and m2.meeting_done = 1
+        INNER JOIN sl_candidate slc on slc.sl_candidatepk = m.candidatefk AND slc._sys_status = 0
+        WHERE (m.created_by IN ('.implode(',', $user_ids).') OR m.attendeefk IN ('.implode(',', $user_ids).'))
+        AND m.date_met >= "'.$start_date.'"
+        AND m.date_met < "'.$end_date.'"
+        group by m.sl_meetingpk
+        order by m.candidatefk';
+
+
+    $oDbResult = array();
+
+    $oDbResult = $oDB->executeQuery($query);
+    $read = $oDbResult->readFirst();
+
+    while($read)
+    {
+      $temp = $oDbResult->getData();
+      $user_info = getUserInformaiton($temp['created_by']);
+
+      $array_user = $temp['created_by'];
+      if($user_info['position'] != 'Consultant' && $temp['created_by'] != $temp['attendeefk'])
+      {
+        $array_user = $temp['attendeefk'];
+      }
+
+      if(!isset($asData[$array_user]))
+      {
+        $asData[$array_user] = array();
+      }
+
+      if($temp['min_date'] == $temp['sl_meetingpk'] && $temp['meeting_done'] == 1)
+      {
+        array_push($asData[$array_user], $temp);
+        //$asData[$temp['created_by']] = $temp;
+      }
+      $read = $oDbResult->readNext();
+    }
+
     $count = 0;
     if(isset($asData[$user_id]))
     {
@@ -1729,7 +1878,7 @@ var_dump($query);*/
 
     //$count = count($asData[$user_id]);
 
-    return $count;
+    return (int)$count;
   }
 
   function get_not_happened_meetings($user_id, $start_date, $end_date)
@@ -4932,11 +5081,15 @@ function sort_multi_array_by_value($field, $order = 'natural')
 function get_revenue_chart_loop()
 {
   $loop = array();
-  $loop[0] = '2016-consultant_revenue_chart';
-  $loop[1] = '2016-researcher_revenue_chart';
-  $loop[2] = '2017-consultant_revenue_chart';
-  $loop[3] = '2017-researcher_revenue_chart';
-  $loop[4] = '2016-totals_chart_ordered';
+  $loop[0] = '2016-consultant_revenue_chart';//OK
+  $loop[1] = '2016-researcher_revenue_chart';//OK
+  $loop[2] = '2017-consultant_revenue_chart';//OK
+  $loop[3] = '2017-researcher_revenue_chart';//OK
+  $loop[4] = '2016-totals_chart_ordered';//OK
+  $loop[5] = '2016-candidates_met_bar_chart';//OK
+  $loop[6] = '2016-candidate_in_play_bar_chart';//OK
+  $loop[7] = '2016-resume_bar_chart';//OK
+
 
   return $loop;
 }

@@ -14,9 +14,9 @@ echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
 // location of your temp directory
 $tmpDir = __DIR__."/test/";
 // username for MySQL
-$user = "slistem";
+$user = "pma_admin";
 // password for MySQL
-$password = "smwXN2RTDm6Zz3hR";
+$password = "KVW4PVVAWHASuRDz";
 // database name to backup
 $dbName = "slistem";
 // hostname or IP where database resides

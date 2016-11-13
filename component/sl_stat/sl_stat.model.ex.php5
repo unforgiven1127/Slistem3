@@ -413,7 +413,7 @@ order by m.candidatefk
         FROM sl_meeting m
         INNER JOIN sl_meeting m2 on m2.candidatefk = m.candidatefk and m2.meeting_done = 1
         INNER JOIN sl_candidate slc on slc.sl_candidatepk = m.candidatefk AND slc._sys_status = 0
-        WHERE m.created_by IN ('.implode(',', $user_ids).')
+        WHERE (m.created_by IN ('.implode(',', $user_ids).') OR m.attendeefk IN ('.implode(',', $user_ids).'))
         AND m.date_met >= "'.$start_date.'"
         AND m.date_met < "'.$end_date.'"
         group by m.sl_meetingpk
@@ -427,15 +427,34 @@ order by m.candidatefk
     while($read)
     {
       $temp = $oDbResult->getData();
+      $user_info = getUserInformaiton($temp['created_by']);
 
-      if(!isset($asData[$temp['created_by']]))
+      $array_user = $temp['created_by'];
+      $array_user2 = $temp['created_by'];
+      if($user_info['position'] != 'Consultant')
       {
-        $asData[$temp['created_by']] = array();
+        $array_user = $temp['attendeefk'];
+      }
+
+      if(!isset($asData[$array_user]))
+      {
+        $asData[$array_user] = array();
+      }
+      if($array_user != $array_user2)
+      {
+        if(!isset($asData[$array_user2]))
+        {
+          $asData[$array_user2] = array();
+        }
       }
 
       if($temp['min_date'] == $temp['sl_meetingpk'] && $temp['meeting_done'] == 1)
       {
-        array_push($asData[$temp['created_by']], $temp);
+        array_push($asData[$array_user], $temp);
+        if($array_user != $array_user2)
+        {
+          array_push($asData[$array_user2], $temp);
+        }
 
         //$asData[$temp['created_by']] = $temp;
       }

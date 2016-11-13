@@ -7,7 +7,7 @@ if(!$oPGCx)
 }
 
 
-/*$oMyCx = @mysql_connect('localhost', 'bccrm', 'bcmedia');*/ $oMyCx = @mysql_connect('localhost', 'slistem', 'smwXN2RTDm6Zz3hR');
+/*$oMyCx = @mysql_connect('localhost', 'bccrm', 'bcmedia');*/ $oMyCx = @mysql_connect('localhost', 'pma_admin', 'KVW4PVVAWHASuRDz');
 if(!$oMyCx)
 {
   echo mysql_error();

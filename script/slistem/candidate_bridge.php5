@@ -8,7 +8,7 @@ if(!$oPGCx)
 
 
 $oMyCx = mysqli_init();
-if(!$oMyCx->real_connect('localhost', 'slistem', 'smwXN2RTDm6Zz3hR'))
+if(!$oMyCx->real_connect('localhost', 'pma_admin', 'KVW4PVVAWHASuRDz'))
 {
   echo $oMyCx->error();
   exit('can not connect to mysql');

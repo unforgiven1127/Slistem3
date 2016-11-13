@@ -13,8 +13,8 @@ else
 {
   echo 'Chrome vs';
 }*/
-/*$sDate = date('Y-m-d H:i:s');
-$to = "rkiyamu@slate.co.jp";
+$sDate = date('Y-m-d H:i:s');
+$to = "munir@slate-ghc.com";
 $subject = "Test email";
 
 $message = "
@@ -36,14 +36,14 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
 $headers .= 'From: <slistem@slate.co.jp>' . "\r\n";
-$headers .= 'Cc: munir_anameric@hotmail.com' . "\r\n";*/
-print_r(PDO::getAvailableDrivers());
-//mail($to,$subject,$message,$headers);
+$headers .= 'Cc: munir_anameric@hotmail.com' . "\r\n";
+//print_r(PDO::getAvailableDrivers());
+mail($to,$subject,$message,$headers);
 
 	/*define('DB_NAME_SLISTEM','slistem');
     define('DB_SERVER_SLISTEM', '127.0.0.1');
-    define('DB_USER_SLISTEM', 'slistem');
-    define('DB_PASSWORD_SLISTEM', 'smwXN2RTDm6Zz3hR');
+    define('DB_USER_SLISTEM', 'pma_admin');
+    define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
 	mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
     mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
