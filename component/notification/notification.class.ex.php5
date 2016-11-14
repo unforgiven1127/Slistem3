@@ -422,14 +422,14 @@ class CNotificationEx extends CNotification
       assert('false; // failed to create the notification.');
       return 0;
     }
-
+ChromePhp::log('HERE');
 
     $sNotifType = $asAdd['type'];
 
     //Add a reference to the source component
     $asAdd = array_merge($this->casInitId[$psId], array('notificationfk' => $nNotificationPk, 'linked_to' => 'source'));
 
-    ChromePhp::log($asAdd);
+    //ChromePhp::log($asAdd);
 
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
