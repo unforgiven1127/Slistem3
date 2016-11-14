@@ -217,7 +217,7 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-    ChromePhp::log($psTable);
+
     if(!assert('is_array($pasValues)'))
       return 0;
 
@@ -283,7 +283,7 @@ class CModel
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-
+    ChromePhp::log($sQuery);
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
