@@ -2118,7 +2118,10 @@ ChromePhp::log($sRedirectUrl);
     }
 ChromePhp::log($pbIsAjax);
     if($pbIsAjax)
+    {
+      ChromePhp::log('ajax donuyor');
       return array('url' => $sUrl);
+    }
 
     if($bRedirect)
     {
