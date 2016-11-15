@@ -219,7 +219,7 @@ ChromePhp::log($psTablename);
   public function add($pasValues, $psTable)
   {
 ChromePhp::log($psTable);
-if($psTable == 'notification_action' || $psTable == 'notification' )
+if( $psTable == 'notification' )
 {
   return true;
 }
