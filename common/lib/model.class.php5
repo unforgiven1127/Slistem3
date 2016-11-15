@@ -219,10 +219,10 @@ ChromePhp::log($psTablename);
   public function add($pasValues, $psTable)
   {
 ChromePhp::log($psTable);
-if( $psTable == 'notification' )
+/*if( $psTable == 'notification' )
 {
   return true;
-}
+}*/
     if(!assert('is_array($pasValues)'))
     {
       ChromePhp::log('IN 1');
