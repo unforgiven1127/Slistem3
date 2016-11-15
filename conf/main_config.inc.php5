@@ -114,7 +114,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('DB_SERVER', '127.0.0.1');
     //define('DB_SERVER', '172.31.29.60');
     //define('DB_USER', 'slistem');
-    define('DB_USER', 'pma_admin');
+    define('DB_USER', 'pma_admin');//test
     define('DB_PASSWORD', 'KVW4PVVAWHASuRDz');
 
     define('CONST_WEBSITE', 'slistem');
