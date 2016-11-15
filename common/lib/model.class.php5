@@ -245,7 +245,14 @@ class CModel
 
         if(empty($aValues) || $aValues === null)
         {
-          $aValuesTab[0][$nCount] = 'NULL';
+          if($sAttribute == 'date_last_action')
+          {
+            $aValuesTab[0][$nCount] = '0000-00-00 00:00:00';
+          }
+          else
+          {
+            $aValuesTab[0][$nCount] = 'NULL';
+          }
         }
         else
         {
