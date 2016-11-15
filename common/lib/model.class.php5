@@ -237,9 +237,10 @@ ChromePhp::log($psTablename);
     }
     else
     {
+      ChromePhp::log('IN 3');
+      ChromePhp::log($psTable);
       if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
       {
-        ChromePhp::log('IN 3');
         return 0;
       }
     }
