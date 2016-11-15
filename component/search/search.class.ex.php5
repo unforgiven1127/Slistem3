@@ -300,7 +300,7 @@ class CSearchEx extends CSearch
         $sExtraClass = ' searchFormFullWidth ';
         $oForm = $oHTML->initForm('searchForm');
         if($pbInAjax)
-          $oForm->setFormParams('searchForm', true, array('submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton','noSubmitButton' => true, 'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
+          $oForm->setFormParams('searchForm', true, array('submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
 
 
         if($psType == 'complex')
@@ -385,7 +385,7 @@ class CSearchEx extends CSearch
 
         $sHTML = '';
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, 'all');
-        $oForm->setFormParams('searchForm', true, array('action' => $sURL, 'submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'noSubmitButton' => true,'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
+        $oForm->setFormParams('searchForm', true, array('action' => $sURL, 'submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
 
         $oForm->addField('input', 'keywords', array('type' => 'text' ,'id' => 'keywords', 'onfinishinput' => 'checkInput($(\'#keywords\').val());', 'inputtimeout' => 1000));
         $oForm->setFieldControl('keywords', array('jsFieldNotEmpty' => '', 'jsFieldMinSize' => '1','jsFieldMaxSize' => 255));
