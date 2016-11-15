@@ -235,14 +235,7 @@ ChromePhp::log('add');
     $nCount=0;
     //dump('----');
     //dump($this->_tableMap[$psTable]);
-    if(isset($pasValues) && is_array($pasValues))
-    {
-      foreach($pasValues as $sAttribute => $aValues)
-      {
 
-
-      }
-    }
 
 return true;
     //dump($aValuesTab);
