@@ -217,7 +217,7 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-
+ChromePhp::log('add');
     if(!assert('is_array($pasValues)'))
       return 0;
 
@@ -243,19 +243,12 @@ class CModel
       {
         $aAttributesTab[] = $sAttribute;
 
-        if(empty($aValues) || $aValues === null)
+        /*if($aValues === null)
         {
-          if($sAttribute == 'date_last_action')
-          {
-            $aValuesTab[0][$nCount] = '0000-00-00 00:00:00';
-          }
-          else
-          {
-            $aValuesTab[0][$nCount] = 'NULL';
-          }
+          $aValuesTab[0][$nCount] = 'NULL';
         }
         else
-        {
+        {*/
           if(!is_array($aValues))
           {
             $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
@@ -269,12 +262,12 @@ class CModel
               $nCountb++;
             }
           }
-        }
+        //}
 
         $nCount++;
       }
     }
-return true;
+
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
@@ -290,7 +283,7 @@ return true;
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-
+ChromePhp::log($sQuery);
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
