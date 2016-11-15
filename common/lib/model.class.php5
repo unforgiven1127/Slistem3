@@ -242,12 +242,12 @@ class CModel
       {
         $aAttributesTab[] = $sAttribute;
 
-        /*if($aValues === null)
+        if($aValues === null)
         {
           $aValuesTab[0][$nCount] = 'NULL';
         }
         else
-        {*/
+        {
 
           if(!is_array($aValues))
           {
@@ -262,12 +262,12 @@ class CModel
               $nCountb++;
             }
           }
-        //}
+        }
 
         $nCount++;
       }
     }
-return true;
+
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
