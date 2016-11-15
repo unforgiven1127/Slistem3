@@ -385,7 +385,7 @@ class CSearchEx extends CSearch
 
         $sHTML = '';
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, 'all');
-        $oForm->setFormParams('searchForm', true, array('action' => $sURL, 'submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'noSubmitButton' => 'noSubmitButton','inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
+        $oForm->setFormParams('searchForm', true, array('action' => $sURL, 'submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'noSubmitButton' => '1','inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
 
         $oForm->addField('input', 'keywords', array('type' => 'text' ,'id' => 'keywords', 'onfinishinput' => 'checkInput($(\'#keywords\').val());', 'inputtimeout' => 1000));
         $oForm->setFieldControl('keywords', array('jsFieldNotEmpty' => '', 'jsFieldMinSize' => '1','jsFieldMaxSize' => 255));
