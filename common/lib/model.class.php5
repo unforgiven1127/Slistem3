@@ -249,24 +249,16 @@ class CModel
         }
         else
         {*/
-          if($sAttribute == 'date_last_action' && empty($aValues))
-          {
-            $aValues = "0000-00-00 00:00:00";
-ChromePhp::log($pasValues);
-ChromePhp::log($sAttribute);
-ChromePhp::log($aValues);
-ChromePhp::log("-----------");
-          }
           if(!is_array($aValues))
           {
-            $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
+            //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
           }
           else
           {
             $nCountb = 0;
             foreach($aValues as $sValue)
             {
-              $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+             // $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
               $nCountb++;
             }
           }
@@ -275,7 +267,7 @@ ChromePhp::log("-----------");
         $nCount++;
       }
     }
-
+return true;
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
