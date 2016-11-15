@@ -240,36 +240,10 @@ ChromePhp::log('add');
       foreach($pasValues as $sAttribute => $aValues)
       {
 
-        if(isset($this->_tableMap[$psTable][$sAttribute]))
-        {
-          $aAttributesTab[] = $sAttribute;
 
-          /*if($aValues === null)
-          {
-            $aValuesTab[0][$nCount] = 'NULL';
-          }
-          else
-          {*/
-            if(!is_array($aValues))
-            {
-              //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
-            }
-            else
-            {
-              $nCountb = 0;
-              foreach($aValues as $sValue)
-              {
-                //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
-                $nCountb++;
-              }
-            }
-          //}
-
-          $nCount++;
-        }
       }
     }
-    
+
 return true;
     //dump($aValuesTab);
 
