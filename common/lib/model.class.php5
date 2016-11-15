@@ -238,6 +238,11 @@ class CModel
 
     foreach($pasValues as $sAttribute => $aValues)
     {
+ChromePhp::log($pasValues);
+ChromePhp::log($sAttribute);
+ChromePhp::log($aValues);
+ChromePhp::log("-----------");
+
       if(isset($this->_tableMap[$psTable][$sAttribute]))
       {
         $aAttributesTab[] = $sAttribute;
@@ -251,14 +256,14 @@ class CModel
 
           if(!is_array($aValues))
           {
-            //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
+            $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
           }
           else
           {
             $nCountb = 0;
             foreach($aValues as $sValue)
             {
-              //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+              $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
               $nCountb++;
             }
           }
@@ -294,7 +299,7 @@ class CModel
     if(is_object($oDBResult))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
-      ChromePhp::log($pasValues['pk']);
+
       return (int)$oDBResult->getFieldValue('pk');
     }
 
