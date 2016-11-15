@@ -267,7 +267,7 @@ ChromePhp::log('add');
         $nCount++;
       }
     }
-
+return true;
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
