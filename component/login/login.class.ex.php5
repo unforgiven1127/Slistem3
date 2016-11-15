@@ -2122,6 +2122,7 @@ ChromePhp::log($pbIsAjax);
 
     if($bRedirect)
     {
+ChromePhp::log('HERE');
       $this->_redirectUser($sUrl);
     }
     else
