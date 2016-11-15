@@ -308,6 +308,10 @@ ChromePhp::log($psTable);
 ChromePhp::log($sQuery);
 ChromePhp::log("-------------------");
     //echo $sQuery;
+if( $psTable == 'notification' )
+{
+  return true;
+}
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
       return 0;
