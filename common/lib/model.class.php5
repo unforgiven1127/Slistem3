@@ -219,13 +219,22 @@ class CModel
   {
 
     if(!assert('is_array($pasValues)'))
+    {
+      ChromePhp::log('IN 1');
       return 0;
+    }
 
     if(!assert('is_string($psTable) && !empty($psTable)'))
+    {
+      ChromePhp::log('IN 2');
       return 0;
+    }
 
-    //if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
-    //  return 0;
+    if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+    {
+      ChromePhp::log('IN 3');
+      return 0;
+    }
 
     $sQuery = 'INSERT INTO `'.$psTable.'` ';
 
