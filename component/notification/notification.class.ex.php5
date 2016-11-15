@@ -1936,7 +1936,7 @@ class CNotificationEx extends CNotification
 
     if($bReminder)
     {
-      ChromePhp::log($asReminder);
+
       if(empty($asItem))
       {
 
@@ -1950,28 +1950,19 @@ class CNotificationEx extends CNotification
     else
     {
       $sTitle = 'DBA request from '. $oLogin->getUserName(0, false);
-      ChromePhp::log('DBA request from');
+
       if(empty($asItem))
       {
-        ChromePhp::log('if');
         $nPk = $this->addMessage($sId, $asReminder['recipient'], $asReminder['message'], $sTitle, $asReminder['naggy'], $asReminder['naggy_frequency']);
       }
       else
       {
-        ChromePhp::log('else');
-        ChromePhp::log($sId);
-        ChromePhp::log($asReminder['recipient']);
-        ChromePhp::log($asItem);
-        ChromePhp::log($asReminder['message']);
-        ChromePhp::log($sTitle);
-        ChromePhp::log($asReminder['naggy']);
-        ChromePhp::log($asReminder['naggy_frequency']);
-
         $nPk = $this->addItemMessage($sId, $asReminder['recipient'], $asItem, $asReminder['message'], $sTitle, $asReminder['naggy'], $asReminder['naggy_frequency']);
+        ChromePhp::log($nPk);
       }
-ChromePhp::log('test');
+
       // write DBA to actions MCA
-      /*$user_id = $oLogin->getUserPk();
+      $user_id = $oLogin->getUserPk();
       $message = $asReminder['message'];
       $recipents = $asReminder['recipient']; // array
 
@@ -1995,7 +1986,7 @@ ChromePhp::log('test');
       $csAction = "ppav";
       $csType= "candi";
 
-      $addLog = insertLog($user_id, $target_candidate_id, $note);*/
+      $addLog = insertLog($user_id, $target_candidate_id, $note);
 
       //$sViewURL = $oPage->getAjaxUrl($csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, $user_id);
       //$sLink = 'javascript: view_candi(\''.$sViewURL.'\'); ';

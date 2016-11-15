@@ -283,7 +283,7 @@ class CModel
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-ChromePhp::log($sQuery);
+
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
