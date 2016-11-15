@@ -1986,7 +1986,7 @@ class CNotificationEx extends CNotification
       $csAction = "ppav";
       $csType= "candi";
 
-      $addLog = insertLog($user_id, $target_candidate_id, $note);
+      //$addLog = insertLog($user_id, $target_candidate_id, $note);
 
       //$sViewURL = $oPage->getAjaxUrl($csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, $user_id);
       //$sLink = 'javascript: view_candi(\''.$sViewURL.'\'); ';

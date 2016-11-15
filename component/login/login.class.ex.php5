@@ -2090,9 +2090,8 @@ ChromePhp::log($clientFlag);
     @setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), time()+3600*3, '/');
     //redirections
 
-
     $sRedirectUrl = getValue('redirect');
-ChromePhp::log($sRedirectUrl);
+
     if(!empty($sRedirectUrl))
     {
       //To connect to multiplateforms
@@ -2117,16 +2116,15 @@ ChromePhp::log($sRedirectUrl);
       $sUrl = $oPage->getUrlHome();
       ChromePhp::log($sUrl);
     }
-ChromePhp::log($pbIsAjax);
+
     if($pbIsAjax)
     {
-      ChromePhp::log('ajax donuyor');
       return array('url' => $sUrl);
     }
 
     if($bRedirect)
     {
-ChromePhp::log('HERE');
+
       $this->_redirectUser($sUrl);
     }
     else
