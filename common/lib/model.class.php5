@@ -231,7 +231,7 @@ ChromePhp::log($psTablename);
       return 0;
     }
 
-    if($psTablename == 'notification_action' || $psTablename == 'notification' || $psTablename == 'notification_link' || $psTablename == 'notification_recipient')
+    if($psTable == 'notification_action' || $psTable == 'notification' || $psTable == 'notification_link' || $psTable == 'notification_recipient')
     {
 
     }
