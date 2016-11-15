@@ -251,15 +251,7 @@ ChromePhp::log('add');
         {*/
           if(!is_array($aValues))
           {
-            //ChromePhp::log($aValues);
-            if(!empty($aValues))
-            {
-              $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
-            }
-            else
-            {
-              $aValuesTab[0][$nCount] = $aValues;
-            }
+            //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
           }
           else
           {
