@@ -225,9 +225,9 @@ class CModel
       return 0;
 
     //if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
-      //return 0;
+    //  return 0;
 
-    $sQuery= 'INSERT INTO `'.$psTable.'` ';
+    $sQuery = 'INSERT INTO `'.$psTable.'` ';
 
     $sAttributesSql = $sValuesSql = '';
     $aAttributesTab = $aValuesTab = array();
@@ -283,7 +283,7 @@ class CModel
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-
+ChromePhp::log($sQuery);
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
