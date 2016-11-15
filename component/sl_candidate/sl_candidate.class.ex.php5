@@ -3037,6 +3037,9 @@ class CSl_candidateEx extends CSl_candidate
       $sQuery = $poQB->getSql();
       //dump($sQuery);
 
+
+$searchTitle = explode(':',$poQB->getTitle());
+ChromePhp::log($searchTitle);
       if ($nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
