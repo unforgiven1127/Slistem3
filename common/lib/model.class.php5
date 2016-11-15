@@ -238,10 +238,6 @@ class CModel
 
     foreach($pasValues as $sAttribute => $aValues)
     {
-ChromePhp::log($pasValues);
-ChromePhp::log($sAttribute);
-ChromePhp::log($aValues);
-ChromePhp::log("-----------");
 
       if(isset($this->_tableMap[$psTable][$sAttribute]))
       {
@@ -256,6 +252,10 @@ ChromePhp::log("-----------");
           if($sAttribute == 'date_last_action' && empty($aValues))
           {
             $aValues = "0000-00-00 00:00:00";
+ChromePhp::log($pasValues);
+ChromePhp::log($sAttribute);
+ChromePhp::log($aValues);
+ChromePhp::log("-----------");
           }
           if(!is_array($aValues))
           {
