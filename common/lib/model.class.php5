@@ -217,7 +217,7 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-return true;
+
     if(!assert('is_array($pasValues)'))
       return 0;
 
@@ -267,7 +267,7 @@ return true;
         $nCount++;
       }
     }
-
+return true;
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
