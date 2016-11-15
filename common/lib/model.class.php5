@@ -224,9 +224,9 @@ class CModel
     if(!assert('is_string($psTable) && !empty($psTable)'))
       return 0;
 
-    if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
-      return 0;
-return true;
+    //if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+      //return 0;
+
     $sQuery= 'INSERT INTO `'.$psTable.'` ';
 
     $sAttributesSql = $sValuesSql = '';
