@@ -2090,6 +2090,7 @@ ChromePhp::log($clientFlag);
     @setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), time()+3600*3, '/');
     //redirections
 
+
     $sRedirectUrl = getValue('redirect');
 ChromePhp::log($sRedirectUrl);
     if(!empty($sRedirectUrl))
