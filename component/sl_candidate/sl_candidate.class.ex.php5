@@ -854,7 +854,7 @@ class CSl_candidateEx extends CSl_candidate
   */
   public function getItemDescription($pvItemPk, $psAction = '', $psItemType = 'candi')
   {
-    ChromePhp::log('getItemDescription 3');
+    //ChromePhp::log('getItemDescription 3');
     if(!assert('is_arrayOfInt($pvItemPk) || is_key($pvItemPk)'))
       return array();
 
