@@ -859,7 +859,6 @@ class CEventEx extends CEvent
 
     $asItemData = $asItemData[$asEvent['item_pk']];
 
-
     if(!isset($asEvent['loginfk']) || empty($asEvent['loginfk']))
       $asEvent['loginfk'] = $oLogin->getUserPk();
 
@@ -903,9 +902,8 @@ class CEventEx extends CEvent
       $sQuery = 'INSERT INTO `event` (`type`, `title`, `content`, `date_create`, `date_display`, `created_by`, `custom_type`, `_fts`) ';
       $sQuery.= ' VALUES ('.$oDB->dbEscapeString($asEvent['type']).', '.$oDB->dbEscapeString($asEvent['title']).', '.$oDB->dbEscapeString($asEvent['content']).'';
       $sQuery.= ', NOW(), '.$oDB->dbEscapeString($asEvent['date']).', '.(int)$asEvent['loginfk'].', '.$asEvent['custom_type'].', '.$oDB->dbEscapeString($sFts).') ';
-ChromePhp::log($sQuery);
+
       $oDbResult = $oDB->ExecuteQuery($sQuery);
-ChromePhp::log($oDbResult);
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
 

@@ -9563,8 +9563,10 @@ die();*/
         if($nWord == 1)
         {
           //must be the lastname
-          $poQB->addSelect('scan.*, levenshtein("'.$this->_getModel()->dbEscapeString($asWords[0]).'", LOWER(scan.lastname)) AS lastname_lev ');
+          //$poQB->addSelect('scan.*, levenshtein("'.$this->_getModel()->dbEscapeString($asWords[0]).'", LOWER(scan.lastname)) AS lastname_lev ');
+          $poQB->addSelect('scan.* ');
           $poQB->addWhere('scan.lastname LIKE '.$this->_getModel()->dbEscapeString($asWords[0].'%'));
+          //$poQB->addOrder('lastname_lev ASC, scan.firstname ASC');
           $poQB->addOrder('lastname_lev ASC, scan.firstname ASC');
         }
         else
@@ -10790,22 +10792,22 @@ die();*/
           $asWords[0] = trim($asWords[0]);
           $asWords[1] = trim($asWords[1]);
 
-          $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0].$asWords[1]).'", LOWER(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.')))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio ');
+          //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0].$asWords[1]).'", LOWER(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.')))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio ');
 
           if($bReverse)
           {
-            $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.')))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
+            //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.')))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
 
             $this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$asWords[0].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[1].'%")
               OR (scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[0].'%" '.$sOperator.' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%") )');
 
-            $this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
+            //$this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
           }
           else
           {
             $this->coQb->addWhere(' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[0].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[1].'%" ');
 
-            $this->coQb->addOrder(' ratio DESC ');
+            //$this->coQb->addOrder(' ratio DESC ');
           }
         }
         else
@@ -10819,39 +10821,39 @@ die();*/
           {
             $asWords[0] = trim($asWords[0]);
 
-            $this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.lastname))) AS lastname_lev ');
-            $this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.firstname))) AS firstname_lev ');
+            //$this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.lastname))) AS lastname_lev ');
+            //$this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.firstname))) AS firstname_lev ');
 
-            $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sFirstField.'))*100/LENGTH(scan.'.$sFirstField.')) AS ratio ');
+            //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sFirstField.'))*100/LENGTH(scan.'.$sFirstField.')) AS ratio ');
 
-            $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sSecondField.'))*100/LENGTH(scan.'.$sSecondField.')) AS ratio_rev ');
+            //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sSecondField.'))*100/LENGTH(scan.'.$sSecondField.')) AS ratio_rev ');
 
 
             $this->coQb->addWhere('( scan.lastname LIKE "'.$sWildcard.$asWords[0].'%" OR  scan.firstname LIKE "'.$sWildcard.$asWords[0].'%" ) ');
 
-            $this->coQb->addOrder(' firstname_lev DESC ');
+            //$this->coQb->addOrder(' firstname_lev DESC ');
           }
           elseif($nWord == 2)
           {
             $asWords[0] = trim($asWords[0]);
             $asWords[1] = trim($asWords[1]);
 
-            $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0].$asWords[1]).'", LOWER(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.'))))*100/LENGTH(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.')))) AS ratio ');
+            //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0].$asWords[1]).'", LOWER(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.'))))*100/LENGTH(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.')))) AS ratio ');
 
             if($bReverse)
             {
-              $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.'))))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
+              //$this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.'))))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
 
               $this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[0].'%")
               OR (TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sFirstField.') LIKE "'.$sWildcard.$asWords[0].'%") )');
 
-              $this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
+              //$this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
             }
             else
             {
               $this->coQb->addWhere(' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[0].'%" ');
 
-              $this->coQb->addOrder(' ratio DESC ');
+              //$this->coQb->addOrder(' ratio DESC ');
             }
           }
           else
