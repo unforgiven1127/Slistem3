@@ -40,6 +40,10 @@ class CModel
 
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
+    if($psTablename == 'notification_action')
+    {
+      return true;
+    }
 ChromePhp::log($psTablename);
     if(!assert('!empty($psTablename)'))
       return false;
