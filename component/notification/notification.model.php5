@@ -22,7 +22,7 @@ class CNotificationModel extends CModel
     $this->_tableMap['notification']['title'] = array ('controls' => array());
     $this->_tableMap['notification']['content'] = array ('controls' => array());
     $this->_tableMap['notification']['message'] = array ('controls' => array());
-    $this->_tableMap['notification']['title'] = array ('controls' => array());
+    //$this->_tableMap['notification']['title'] = array ('controls' => array());
     $this->_tableMap['notification']['message_format'] = array ('controls' => array('!empty(%)'));
     $this->_tableMap['notification']['type'] = array ('controls' => array('!empty(%)'));
     $this->_tableMap['notification']['delivered'] = array ('controls' => array('is_integer(%)'));
