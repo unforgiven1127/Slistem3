@@ -302,6 +302,7 @@ ChromePhp::log($psTable);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
 ChromePhp::log($sQuery);
+ChromePhp::log("-------------------");
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
