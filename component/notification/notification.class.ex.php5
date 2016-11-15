@@ -1953,10 +1953,12 @@ class CNotificationEx extends CNotification
       ChromePhp::log('DBA request from');
       if(empty($asItem))
       {
+        ChromePhp::log('if');
         $nPk = $this->addMessage($sId, $asReminder['recipient'], $asReminder['message'], $sTitle, $asReminder['naggy'], $asReminder['naggy_frequency']);
       }
       else
       {
+        ChromePhp::log('else');
         $nPk = $this->addItemMessage($sId, $asReminder['recipient'], $asItem, $asReminder['message'], $sTitle, $asReminder['naggy'], $asReminder['naggy_frequency']);
       }
 ChromePhp::log('test');
