@@ -218,20 +218,18 @@ ChromePhp::log($psTablename);
 
   public function add($pasValues, $psTable)
   {
-ChromePhp::log($psTable);
+
 /*if( $psTable == 'notification' )
 {
   return true;
 }*/
     if(!assert('is_array($pasValues)'))
     {
-      ChromePhp::log('IN 1');
       return 0;
     }
 
     if(!assert('is_string($psTable) && !empty($psTable)'))
     {
-      ChromePhp::log('IN 2');
       return 0;
     }
 
@@ -241,8 +239,6 @@ ChromePhp::log($psTable);
     }
     else
     {
-      ChromePhp::log('IN 3');
-      ChromePhp::log($psTable);
       if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
       {
         return 0;
@@ -310,8 +306,9 @@ ChromePhp::log($psTable);
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if( $psTable == 'notification' )
     {
-      $result = $oDBResult->getAll();
-      ChromePhp::log($result);
+      $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
+      //$result = $oDBResult->getAll();
+      //ChromePhp::log($result);
       return true;
     }
     if(!$oDBResult)
