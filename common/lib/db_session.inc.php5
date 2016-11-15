@@ -18,9 +18,10 @@ class CDbSessionHandler
     }
     else
     {
-      ChromePhp::log(DB_SERVER);
-      ChromePhp::log(DB_USER);
-      ChromePhp::log(DB_PASSWORD);
+      $DB_SERVER = DB_SERVER;
+      $DB_USER = DB_USER;
+      $DB_PASSWORD = DB_PASSWORD;
+
       if($this->coSessDb = mysqli_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
       //if($this->coSessDb = mysqli_connect('172.31.29.60', 'slistem', 'smwXN2RTDm6Zz3hR'))
       {
