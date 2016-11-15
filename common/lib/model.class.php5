@@ -294,6 +294,7 @@ class CModel
     if(is_object($oDBResult))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
+      ChromePhp::log($pasValues['pk']);
       return (int)$oDBResult->getFieldValue('pk');
     }
 

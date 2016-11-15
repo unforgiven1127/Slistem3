@@ -1958,7 +1958,6 @@ class CNotificationEx extends CNotification
       else
       {
         $nPk = $this->addItemMessage($sId, $asReminder['recipient'], $asItem, $asReminder['message'], $sTitle, $asReminder['naggy'], $asReminder['naggy_frequency']);
-        ChromePhp::log($nPk);
       }
 
       // write DBA to actions MCA
