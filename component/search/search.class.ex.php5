@@ -300,7 +300,7 @@ class CSearchEx extends CSearch
         $sExtraClass = ' searchFormFullWidth ';
         $oForm = $oHTML->initForm('searchForm');
         if($pbInAjax)
-          $oForm->setFormParams('searchForm', true, array('submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton', 'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
+          $oForm->setFormParams('searchForm', true, array('submitLabel'=>'Search', 'noCancelButton' => 'noCancelButton','noSubmitButton' => 'noSubmitButton', 'inajax' => 'inajax', 'ajaxTarget' => 'search-results-container'));
 
 
         if($psType == 'complex')
