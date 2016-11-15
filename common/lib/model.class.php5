@@ -217,13 +217,13 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-ChromePhp::log('add');
+
     if(!assert('is_array($pasValues)'))
       return 0;
 
     if(!assert('is_string($psTable) && !empty($psTable)'))
       return 0;
-
+return true;
     if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
       return 0;
 
@@ -236,8 +236,38 @@ ChromePhp::log('add');
     //dump('----');
     //dump($this->_tableMap[$psTable]);
 
+    foreach($pasValues as $sAttribute => $aValues)
+    {
+      if(isset($this->_tableMap[$psTable][$sAttribute]))
+      {
+        $aAttributesTab[] = $sAttribute;
 
-return true;
+        /*if($aValues === null)
+        {
+          $aValuesTab[0][$nCount] = 'NULL';
+        }
+        else
+        {*/
+
+          if(!is_array($aValues))
+          {
+            $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
+          }
+          else
+          {
+            $nCountb = 0;
+            foreach($aValues as $sValue)
+            {
+              $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+              $nCountb++;
+            }
+          }
+        //}
+
+        $nCount++;
+      }
+    }
+
     //dump($aValuesTab);
 
     if(empty($aValuesTab))
@@ -253,7 +283,7 @@ return true;
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-ChromePhp::log($sQuery);
+
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
@@ -264,7 +294,6 @@ ChromePhp::log($sQuery);
     if(is_object($oDBResult))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
-
       return (int)$oDBResult->getFieldValue('pk');
     }
 
