@@ -16,5 +16,5 @@
 
     while($meetingData = mysql_fetch_assoc($slistemQuery))
     {
-        echo "firstname: ".$meetingData['firstname'];
+        echo "firstname: ".$meetingData['firstname']."<br>";
     }
