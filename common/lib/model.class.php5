@@ -218,7 +218,7 @@ ChromePhp::log($psTablename);
 
   public function add($pasValues, $psTable)
   {
-
+ChromePhp::log($psTable);
     if(!assert('is_array($pasValues)'))
     {
       ChromePhp::log('IN 1');
