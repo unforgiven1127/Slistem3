@@ -305,14 +305,24 @@ ChromePhp::log($psTable);
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-ChromePhp::log($sQuery);
+
 ChromePhp::log("-------------------");
     //echo $sQuery;
 if( $psTable == 'notification' )
 {
-  return true;
+$oDB = CDependency::getComponentByName('database');
+
+ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
+
+    $oDBResult = $oDB->executeQuery($sQuery);
+  //return true;
 }
-    $oDBResult = $this->oDB->ExecuteQuery($sQuery);
+else
+{
+  $oDBResult = $this->oDB->ExecuteQuery($sQuery);
+}
+
     if(!$oDBResult)
       return 0;
 
