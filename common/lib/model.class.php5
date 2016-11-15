@@ -40,7 +40,7 @@ class CModel
 
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
-ChromePhp::log('IN 4');
+ChromePhp::log($psTablename);
     if(!assert('!empty($psTablename)'))
       return false;
 
