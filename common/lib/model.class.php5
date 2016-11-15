@@ -40,7 +40,7 @@ class CModel
 
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
-
+ChromePhp::log('IN 4');
     if(!assert('!empty($psTablename)'))
       return false;
 
@@ -292,7 +292,7 @@ class CModel
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
