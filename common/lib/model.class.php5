@@ -217,7 +217,7 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-
+return true;
     if(!assert('is_array($pasValues)'))
       return 0;
 
@@ -289,14 +289,14 @@ class CModel
     if(!$oDBResult)
       return 0;
 
-    //$this->_logChanges($pasValues, $psTable, 'add '.$psTable);
+    $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
 
-    /*if(is_object($oDBResult))
+    if(is_object($oDBResult))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
       ChromePhp::log($pasValues['pk']);
       return (int)$oDBResult->getFieldValue('pk');
-    }*/
+    }
 
     return true;
   }
