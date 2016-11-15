@@ -40,10 +40,7 @@ class CModel
 
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
-    if($psTablename == 'notification_action')
-    {
-      return true;
-    }
+
 ChromePhp::log($psTablename);
     if(!assert('!empty($psTablename)'))
       return false;
@@ -234,10 +231,17 @@ ChromePhp::log($psTablename);
       return 0;
     }
 
-    if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+    if($psTablename == 'notification_action' || $psTablename == 'notification' || $psTablename == 'notification_link' || $psTablename == 'notification_recipient')
     {
-      ChromePhp::log('IN 3');
-      return 0;
+
+    }
+    else
+    {
+      if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+      {
+        ChromePhp::log('IN 3');
+        return 0;
+      }
     }
 
     $sQuery = 'INSERT INTO `'.$psTable.'` ';
@@ -296,7 +300,7 @@ ChromePhp::log($psTablename);
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-//ChromePhp::log($sQuery);
+ChromePhp::log($sQuery);
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)
