@@ -258,7 +258,7 @@ ChromePhp::log('add');
             $nCountb = 0;
             foreach($aValues as $sValue)
             {
-              $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+              //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
               $nCountb++;
             }
           }
