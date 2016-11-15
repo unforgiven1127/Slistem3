@@ -242,27 +242,27 @@ class CModel
       {
         $aAttributesTab[] = $sAttribute;
 
-        if($aValues === null)
+        /*if($aValues === null)
         {
           $aValuesTab[0][$nCount] = 'NULL';
         }
         else
-        {
+        {*/
 
           if(!is_array($aValues))
           {
-            $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
+            //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
           }
           else
           {
             $nCountb = 0;
             foreach($aValues as $sValue)
             {
-              $aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+              //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
               $nCountb++;
             }
           }
-        }
+        //}
 
         $nCount++;
       }
