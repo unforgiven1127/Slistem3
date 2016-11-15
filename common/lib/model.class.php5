@@ -41,6 +41,7 @@ class CModel
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
 
+ChromePhp::log($psTablename);
     if(!assert('!empty($psTablename)'))
       return false;
 
@@ -217,17 +218,38 @@ class CModel
 
   public function add($pasValues, $psTable)
   {
-
+ChromePhp::log($psTable);
+if( $psTable == 'notification' )
+{
+  return true;
+}
     if(!assert('is_array($pasValues)'))
+    {
+      ChromePhp::log('IN 1');
       return 0;
+    }
 
     if(!assert('is_string($psTable) && !empty($psTable)'))
+    {
+      ChromePhp::log('IN 2');
       return 0;
+    }
 
-    if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
-      return 0;
+    if($psTable == 'notification_action' || $psTable == 'notification' || $psTable == 'notification_link' || $psTable == 'notification_recipient')
+    {
 
-    $sQuery= 'INSERT INTO `'.$psTable.'` ';
+    }
+    else
+    {
+      ChromePhp::log('IN 3');
+      ChromePhp::log($psTable);
+      if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+      {
+        return 0;
+      }
+    }
+
+    $sQuery = 'INSERT INTO `'.$psTable.'` ';
 
     $sAttributesSql = $sValuesSql = '';
     $aAttributesTab = $aValuesTab = array();
@@ -283,7 +305,8 @@ class CModel
     $sValuesSql = implode(',',$aValuesRowTab);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
-
+ChromePhp::log($sQuery);
+ChromePhp::log("-------------------");
     //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
     if(!$oDBResult)

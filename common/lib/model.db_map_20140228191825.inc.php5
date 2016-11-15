@@ -373,6 +373,8 @@ $this->_tableMap['notification']['message'] = array();
 $this->_tableMap['notification']['message_format'] = array();
 $this->_tableMap['notification']['type'] = array();
 $this->_tableMap['notification']['delivered'] = array('controls'=>array('is_integer(%)'),'type'=>'int');
+$this->_tableMap['notification']['mailTo'] = array();
+$this->_tableMap['notification']['flag'] = array();
 $this->_tableMap['notification_action']['notification_actionpk'] = array('controls'=>array('is_null(%) || is_key(%)'),'type'=>'int','index' => 'pk');
 $this->_tableMap['notification_action']['notificationfk'] = array('controls'=>array('is_integer(%)'),'type'=>'int');
 $this->_tableMap['notification_action']['type'] = array();
