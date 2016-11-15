@@ -253,7 +253,10 @@ ChromePhp::log("-----------");
         }
         else
         {*/
-
+          if($sAttribute == 'date_last_action' && empty($aValues))
+          {
+            $aValues = "0000-00-00 00:00:00";
+          }
           if(!is_array($aValues))
           {
             $aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
