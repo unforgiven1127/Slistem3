@@ -235,38 +235,41 @@ ChromePhp::log('add');
     $nCount=0;
     //dump('----');
     //dump($this->_tableMap[$psTable]);
-
-    foreach($pasValues as $sAttribute => $aValues)
+    if(isset($pasValues))
     {
-
-      if(isset($this->_tableMap[$psTable][$sAttribute]))
+      foreach($pasValues as $sAttribute => $aValues)
       {
-        $aAttributesTab[] = $sAttribute;
 
-        /*if($aValues === null)
+        if(isset($this->_tableMap[$psTable][$sAttribute]))
         {
-          $aValuesTab[0][$nCount] = 'NULL';
-        }
-        else
-        {*/
-          if(!is_array($aValues))
+          $aAttributesTab[] = $sAttribute;
+
+          /*if($aValues === null)
           {
-            //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
+            $aValuesTab[0][$nCount] = 'NULL';
           }
           else
-          {
-            $nCountb = 0;
-            foreach($aValues as $sValue)
+          {*/
+            if(!is_array($aValues))
             {
-              //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
-              $nCountb++;
+              //$aValuesTab[0][$nCount] = $this->oDB->dbEscapeString($aValues);
             }
-          }
-        //}
+            else
+            {
+              $nCountb = 0;
+              foreach($aValues as $sValue)
+              {
+                //$aValuesTab[$nCountb][$nCount] = $this->oDB->dbEscapeString($sValue);
+                $nCountb++;
+              }
+            }
+          //}
 
-        $nCount++;
+          $nCount++;
+        }
       }
     }
+    
 return true;
     //dump($aValuesTab);
 
