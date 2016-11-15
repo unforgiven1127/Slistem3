@@ -905,6 +905,7 @@ class CEventEx extends CEvent
       $sQuery.= ', NOW(), '.$oDB->dbEscapeString($asEvent['date']).', '.(int)$asEvent['loginfk'].', '.$asEvent['custom_type'].', '.$oDB->dbEscapeString($sFts).') ';
 ChromePhp::log($sQuery);
       $oDbResult = $oDB->ExecuteQuery($sQuery);
+ChromePhp::log($oDbResult);
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
 
