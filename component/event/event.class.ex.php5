@@ -894,11 +894,11 @@ class CEventEx extends CEvent
       if(isCJK($sFts))
       {
         $oSharedSpace = CDependency::getComponentByName('sharedspace');
-        if($oSharedSpace)
-        $sFts = $oSharedSpace->tokenizeCjk($sFts, true);
+        //if($oSharedSpace)
+        //$sFts = $oSharedSpace->tokenizeCjk($sFts, true);
       }
 
-
+      $sFts = "";
       $sQuery = 'INSERT INTO `event` (`type`, `title`, `content`, `date_create`, `date_display`, `created_by`, `custom_type`, `_fts`) ';
       $sQuery.= ' VALUES ('.$oDB->dbEscapeString($asEvent['type']).', '.$oDB->dbEscapeString($asEvent['title']).', '.$oDB->dbEscapeString($asEvent['content']).'';
       $sQuery.= ', NOW(), '.$oDB->dbEscapeString($asEvent['date']).', '.(int)$asEvent['loginfk'].', '.$asEvent['custom_type'].', '.$oDB->dbEscapeString($sFts).') ';
