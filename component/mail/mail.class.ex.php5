@@ -500,6 +500,7 @@ ChromePhp::log($bSent);
     //if we need to log the mail history somewhere
     if(CONST_MAIL_IMAP_LOG_SENT)
     {
+      ChromePhp::log('girmemesi lazim');
       $nTimeout = imap_timeout(IMAP_OPENTIMEOUT, 3);
       $oMailBox = imap_open(CONST_MAIL_IMAP_LOG_PARAM_INBOX, CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 
