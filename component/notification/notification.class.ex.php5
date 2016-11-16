@@ -416,9 +416,7 @@ class CNotificationEx extends CNotification
 
 
     $nNotificationPk = $this->_getModel()->add($asAdd, 'notification');
-//ChromePhp::log($nNotificationPk);
-    $nNotificationPk = (int)$nNotificationPk;
-//ChromePhp::log($nNotificationPk);
+
     if(!$nNotificationPk)
     {
       assert('false; // failed to create the notification.');
@@ -441,7 +439,7 @@ class CNotificationEx extends CNotification
 
 
     //Add entry in table notification_recipient
-    //$nNotificationPk = (int)$nNotificationPk;
+    $nNotificationPk = (int)$nNotificationPk;
     foreach($asRecipient as $asRecipeintData)
     {
       $asAdd = array('notificationfk' => $nNotificationPk, 'loginfk' => (int)$asRecipeintData['loginpk'], 'email' => $asRecipeintData['email']);
@@ -464,13 +462,10 @@ class CNotificationEx extends CNotification
       assert('false; // failed to create the notification_action.');
       return 0;
     }
-//ChromePhp::log($psDate);
-//ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
+
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
-    {
       $this->_executeCronAction($nNotificationPk, true);
-    }
 
     return $nNotificationPk;
   }
@@ -511,7 +506,6 @@ class CNotificationEx extends CNotification
     while($bRead)
     {
       $asData = $oDbResult->getData();
-      ChromePhp::log($asData);
       $nActionPk = (int)$asData['notification_actionpk'];
       $bExec = null;
 
@@ -563,9 +557,9 @@ class CNotificationEx extends CNotification
 
   private function _executeAction($pasAction, $poMail, $pasUsers)
   {
-ChromePhp::log($pasUsers);
-ChromePhp::log($poMail);
-ChromePhp::log($pasAction);
+//ChromePhp::log($pasUsers);
+//ChromePhp::log($poMail);
+//ChromePhp::log($pasAction);
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
@@ -1942,7 +1936,6 @@ ChromePhp::log($pasAction);
 
     if($bReminder)
     {
-
       if(empty($asItem))
       {
 

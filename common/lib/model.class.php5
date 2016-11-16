@@ -41,7 +41,6 @@ class CModel
   protected function _testFields($avFields, $psTablename, $pbAllFieldRequired = true, $pbAllowExtra = true, $psAction = 'add')
   {
 
-ChromePhp::log($psTablename);
     if(!assert('!empty($psTablename)'))
       return false;
 
@@ -219,33 +218,16 @@ ChromePhp::log($psTablename);
   public function add($pasValues, $psTable)
   {
 
-/*if( $psTable == 'notification' )
-{
-  return true;
-}*/
     if(!assert('is_array($pasValues)'))
-    {
       return 0;
-    }
 
     if(!assert('is_string($psTable) && !empty($psTable)'))
-    {
       return 0;
-    }
 
-    if($psTable == 'notification_action' || $psTable == 'notification' || $psTable == 'notification_link' || $psTable == 'notification_recipient')
-    {
+    if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
+      return 0;
 
-    }
-    else
-    {
-      if(!$this->_testFields($pasValues, $psTable, false, true, 'add'))
-      {
-        return 0;
-      }
-    }
-
-    $sQuery = 'INSERT INTO `'.$psTable.'` ';
+    $sQuery= 'INSERT INTO `'.$psTable.'` ';
 
     $sAttributesSql = $sValuesSql = '';
     $aAttributesTab = $aValuesTab = array();
@@ -302,34 +284,17 @@ ChromePhp::log($psTablename);
     $sAttributesSql = '('.implode(',',$aAttributesTab).')';
     $sQuery.= $sAttributesSql." VALUES ".$sValuesSql;
 
-
+    //echo $sQuery;
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
-    /*if( $psTable == 'notification' )
-    {
-      $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
-      //$result = $oDBResult->getAll();
-      //ChromePhp::log($result);
-      return true;
-    }*/
     if(!$oDBResult)
       return 0;
 
-    /*if( $psTable == 'notification' )
-    {
-      ChromePhp::log($oDBResult);
-    }*/
-
     $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
-    $control = $oDBResult->getFieldValue('pk');
 
-    /*if( $psTable == 'notification' )
+    if(is_object($oDBResult))
     {
-      ChromePhp::log($control);
-    }*/
-    if(is_object($oDBResult) && isset($control))
-    {
-      //$pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
-      return $control;
+      $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
+      return (int)$oDBResult->getFieldValue('pk');
     }
 
     return true;
