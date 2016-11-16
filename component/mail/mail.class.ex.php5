@@ -350,6 +350,7 @@ class CMailEx extends CMail
   */
   public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array())
   {
+    ChromePhp::log('send');
     if(!assert('!empty($psSubject) && !empty($psContent)'))
      return 0;
 
