@@ -1090,10 +1090,12 @@ class CEventEx extends CEvent
 
     ChromePhp::log($sUrl);
 
-    if(empty($pnPk))
+    return array('notice' => 'Activity deleted successfully.','reload' =>1);
+
+    /*if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
 
-    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl);
+    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl);*/
   }
 
   /**
