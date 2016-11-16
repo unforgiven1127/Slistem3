@@ -970,6 +970,7 @@ class CEventEx extends CEvent
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
       {
+        ChromePhp::log('notify???');
         $asRecipients = explode(',', $asEvent['notify']);
         $asEventType = getEventTypeList();
 
@@ -1063,7 +1064,7 @@ class CEventEx extends CEvent
                   .', '.$oDB->dbEscapeString($asLinkData[2]).', '.$oDB->dbEscapeString($asLinkData[3]).') ';
         }
       }
-
+ChromePhp::log('HEREEEEEE');
       $sQuery = 'DELETE FROM event_link WHERE eventfk = '.$pnPk;
       $oDbResult = $oDB->ExecuteQuery($sQuery);
       if(!$oDbResult)
