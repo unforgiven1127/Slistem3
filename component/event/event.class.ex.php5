@@ -891,9 +891,10 @@ class CEventEx extends CEvent
     {
       $contentFts = $oDB->dbEscapeString($asEvent['content']);
       $titleFts = $oDB->dbEscapeString($asEvent['title']);
-      $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
-      ChromePhp::log($sFts);
-      $sFts = $contentFts;
+      //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+      $sFts = $asEvent['title'].' '.$asEvent['content'];
+      //ChromePhp::log($sFts);
+      //$sFts = $contentFts;
 
       /*if(isCJK($sFts))
       {
@@ -901,7 +902,7 @@ class CEventEx extends CEvent
         if($oSharedSpace)
         $sFts = $oSharedSpace->tokenizeCjk($sFts, true);
       }*/
-      $sFts = $contentFts;
+      //$sFts = $contentFts;
 
       $sQuery = 'INSERT INTO `event` (`type`, `title`, `content`, `date_create`, `date_display`, `created_by`, `custom_type`, `_fts`) ';
       $sQuery.= ' VALUES ('.$oDB->dbEscapeString($asEvent['type']).', '.$oDB->dbEscapeString($asEvent['title']).', '.$oDB->dbEscapeString($asEvent['content']).'';
