@@ -889,7 +889,7 @@ class CEventEx extends CEvent
 
     if(empty($pnPk))
     {
-  /*    $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+      $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
 
       if(isCJK($sFts))
       {
@@ -909,7 +909,7 @@ class CEventEx extends CEvent
 
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
-
+/*
       //link the event to the uid/action/type/pk from the url
       $asLink = array();
       $asLink[] = ' ('.$oDB->dbEscapeString($nEventfk).', '.$oDB->dbEscapeString($asEvent['item_uid']).', '.$oDB->dbEscapeString($asEvent['item_action']).', '.$oDB->dbEscapeString($asEvent['item_type']).', '.$oDB->dbEscapeString($asEvent['item_pk']).') ';
