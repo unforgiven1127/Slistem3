@@ -363,8 +363,8 @@ class CMailEx extends CMail
        $manualCC = $exploded[1];
     }
 
-    //ChromePhp::log($psSubject);
-    //ChromePhp::log($manualCC);
+    ChromePhp::log($psSubject);
+    ChromePhp::log($manualCC);
 
     $sEncoding = mb_check_encoding($psSubject);
     if($sEncoding != 'UTF8')
@@ -436,13 +436,13 @@ class CMailEx extends CMail
         $this->coPhpMailer->AddAttachment($sFilePath);
       }
     }
-
+ChromePhp::log('send2');
     if(!$this->_send($manualCC))
     {
       $this->casError[] = __LINE__.' - Error sending email [ imap:'.(int)CONST_MAIL_IMAP_SEND.' / log:'.CONST_MAIL_IMAP_LOG_SENT.'] ';
       return 0;
     }
-
+ChromePhp::log('send3');
 
     //TODO: log mail in DB
     return 1;
