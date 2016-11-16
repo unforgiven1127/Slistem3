@@ -800,7 +800,7 @@ class CEventEx extends CEvent
    */
 
   protected function _getEventSave($pnPk = 0, $pasEventData = array())
-  {
+  {ChromePhp::log('_getEventSave');
     if(!assert('is_integer($pnPk)'))
       return array('error' => __LINE__.' - Wrong parameter');
 
@@ -906,7 +906,7 @@ class CEventEx extends CEvent
       $oDbResult = $oDB->ExecuteQuery($sQuery);
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
-
+ChromePhp::log('here here here');
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
 
