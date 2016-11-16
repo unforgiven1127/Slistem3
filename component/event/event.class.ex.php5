@@ -894,13 +894,13 @@ class CEventEx extends CEvent
       //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
       $sFts = $contentFts;
 
-      if(isCJK($sFts))
+      /*if(isCJK($sFts))
       {
         $oSharedSpace = CDependency::getComponentByName('sharedspace');
         if($oSharedSpace)
         $sFts = $oSharedSpace->tokenizeCjk($sFts, true);
-      }
-
+      }*/
+      $sFts = $contentFts;
 
       $sQuery = 'INSERT INTO `event` (`type`, `title`, `content`, `date_create`, `date_display`, `created_by`, `custom_type`, `_fts`) ';
       $sQuery.= ' VALUES ('.$oDB->dbEscapeString($asEvent['type']).', '.$oDB->dbEscapeString($asEvent['title']).', '.$oDB->dbEscapeString($asEvent['content']).'';
