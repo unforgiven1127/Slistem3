@@ -1089,7 +1089,7 @@ class CEventEx extends CEvent
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
 
 ChromePhp::log('before');
-header( "Location: $url" );
+echo "<script>window.location = 'https://beta2.slate.co.jp/'</script>";
 ChromePhp::log('after');
     /*if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
