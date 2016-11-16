@@ -442,7 +442,7 @@ class CNotificationEx extends CNotification
 
     //Add entry in table notification_recipient
     //$nNotificationPk = (int)$nNotificationPk;
-    /*foreach($asRecipient as $asRecipeintData)
+    foreach($asRecipient as $asRecipeintData)
     {
       $asAdd = array('notificationfk' => $nNotificationPk, 'loginfk' => (int)$asRecipeintData['loginpk'], 'email' => $asRecipeintData['email']);
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
@@ -451,7 +451,7 @@ class CNotificationEx extends CNotification
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
-    }*/
+    }
 
 
     //Add entry in table notification_action
