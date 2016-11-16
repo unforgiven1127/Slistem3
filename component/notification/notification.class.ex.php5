@@ -416,7 +416,7 @@ class CNotificationEx extends CNotification
 
 
     $nNotificationPk = $this->_getModel()->add($asAdd, 'notification');
-
+ChromePhp::log($nNotificationPk);
     if(!$nNotificationPk)
     {
       assert('false; // failed to create the notification.');
