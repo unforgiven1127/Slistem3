@@ -432,17 +432,17 @@ class CNotificationEx extends CNotification
 
     //ChromePhp::log($asAdd);
 
-    $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
+    /*$oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
       assert('false; // could save the source reference of the reminder.');
       return 0;
-    }
+    }*/
 
 
     //Add entry in table notification_recipient
     //$nNotificationPk = (int)$nNotificationPk;
-    foreach($asRecipient as $asRecipeintData)
+    /*foreach($asRecipient as $asRecipeintData)
     {
       $asAdd = array('notificationfk' => $nNotificationPk, 'loginfk' => (int)$asRecipeintData['loginpk'], 'email' => $asRecipeintData['email']);
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
@@ -451,11 +451,11 @@ class CNotificationEx extends CNotification
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
-    }
+    }*/
 
 
     //Add entry in table notification_action
-    $asAdd = array('notificationfk' => $nNotificationPk, 'type' => $sNotifType, 'naggy' => $pnNaggy,
+    /*$asAdd = array('notificationfk' => $nNotificationPk, 'type' => $sNotifType, 'naggy' => $pnNaggy,
         'naggy_frequency' => $psNagFreq, 'number_sent' => 0, 'date_last_action' => null, 'status' => 1);
 
     $nPk = $this->_getModel()->add($asAdd, 'notification_action');
@@ -463,13 +463,13 @@ class CNotificationEx extends CNotification
     {
       assert('false; // failed to create the notification_action.');
       return 0;
-    }
+    }*/
 
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
-    if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
+    /*if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
-      $this->_executeCronAction((int)$nNotificationPk, true);
-    }
+      $this->_executeCronAction($nNotificationPk, true);
+    }*/
 
     return $nNotificationPk;
   }
