@@ -49,7 +49,7 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     //---------------------------------------
     //Specific environment variables
-    define('CONST_PHPMAILER_SMTP_DEBUG', false);
+    define('CONST_PHPMAILER_SMTP_DEBUG', true);//false
     define('CONST_PHPMAILER_EMAIL', 'no-reply@slate.co.jp');
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slate Consulting');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
