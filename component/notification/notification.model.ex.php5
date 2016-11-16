@@ -39,7 +39,7 @@ class CNotificationModelEx extends CNotificationModel
 
     if(!empty($pnPk))
     {
-      $sQuery.= ' AND noti.notificationpk = '.$pnPk;
+      $sQuery.= " AND noti.notificationpk = '".$pnPk."'";
     }
 
     if(!empty($psDate))

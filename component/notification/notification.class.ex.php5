@@ -511,6 +511,7 @@ class CNotificationEx extends CNotification
     while($bRead)
     {
       $asData = $oDbResult->getData();
+      ChromePhp::log($asData);
       $nActionPk = (int)$asData['notification_actionpk'];
       $bExec = null;
 
