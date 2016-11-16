@@ -148,7 +148,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     //to send emails using IMAP instead of smtp
     define('CONST_MAIL_IMAP_SEND', false);
     //Log a copy of all emails sent by the platform a in the sent folder
-    define('CONST_MAIL_IMAP_LOG_SENT', true);
+    define('CONST_MAIL_IMAP_LOG_SENT', false);
     //--------------------------------------
     //required if of of the above are true
     define('CONST_MAIL_IMAP_PORT', 993);  //imap

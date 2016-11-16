@@ -469,6 +469,7 @@ ChromePhp::log('send3');
     //2 ways of sending emails
     if(CONST_MAIL_IMAP_SEND)
     {
+      ChromePhp::log('CONST_MAIL_IMAP_SEND');
       //manage only 1 to
       $sHeader = $this->coPhpMailer->CreateHeader();
 
@@ -484,6 +485,7 @@ ChromePhp::log('send3');
     }
     else
     {
+      ChromePhp::log('else');
       //Default case, use PHPmailer
       $bSent = (bool)$this->coPhpMailer->Send();
       $sError = 'smtp_error: '.$this->coPhpMailer->ErrorInfo;
