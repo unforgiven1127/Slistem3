@@ -55,7 +55,7 @@ class CEventEx extends CEvent
               break;
 
           case CONST_ACTION_SAVEADD:
-            return $this->_getEventSave($this->cnPk);
+            return json_encode($this->_getEventSave($this->cnPk));
               break;
 
           case CONST_ACTION_DELETE:
@@ -1089,7 +1089,7 @@ class CEventEx extends CEvent
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
 
     ChromePhp::log($sUrl);
-$sUrl = 'https://beta2.slate.co.jp/';
+
     if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
 
