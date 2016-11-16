@@ -892,7 +892,7 @@ class CEventEx extends CEvent
       $contentFts = $oDB->dbEscapeString($asEvent['content']);
       $titleFts = $oDB->dbEscapeString($asEvent['title']);
       //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
-      $sFts = strip_tags($contentFts);
+      $sFts = $contentFts;
 
       if(isCJK($sFts))
       {
