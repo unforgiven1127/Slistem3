@@ -950,14 +950,14 @@ ChromePhp::log('here here here');
             return array('error' => __LINE__.' - Sorry, could not save the activity.');
         }
       }
-
+ChromePhp::log('here here here 2 2 2 2 2');
       /*$sTitleEvent = $asEvent['title'].' '.substr(strip_tags($asEvent['content']), 0, 100);
       $sTitleEvent = trim($sTitleEvent);*/
       $sTitleEvent = $asItemData['label'];
 
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
       $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
-
+ChromePhp::log('here here here 3 3 3 3 3 3 3');
       if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
@@ -966,7 +966,7 @@ ChromePhp::log('here here here');
           $oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
         }
       }
-
+ChromePhp::log('here here here 4 4 4 4 4 4 4 ');
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
       {
