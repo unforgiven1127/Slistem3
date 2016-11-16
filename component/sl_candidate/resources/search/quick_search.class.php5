@@ -169,7 +169,7 @@ class CQuickSearch
 
             $this->coQb->addWhere('( scan.lastname LIKE "'.$sWildcard.$asWords[0].'%" OR  scan.firstname LIKE "'.$sWildcard.$asWords[0].'%" ) ');
 
-            $this->coQb->addOrder(' firstname_lev DESC ');
+            //$this->coQb->addOrder(' firstname_lev DESC ');
           }
           elseif($nWord == 2)
           {
