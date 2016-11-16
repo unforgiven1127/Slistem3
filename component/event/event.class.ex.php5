@@ -1086,7 +1086,7 @@ class CEventEx extends CEvent
         assert('false; // Adding event: reminder could not be saved. ');
     }
 
-    $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
+    //$sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
 
     //sleep(5);
 
