@@ -6772,7 +6772,7 @@ ChromePhp::log($sQuery);
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
-        $sQuery .= " LIMIT 5";
+        $sQuery .= " LIMIT 50";
 
         $db_result = $oDB->executeQuery($sQuery);
 
