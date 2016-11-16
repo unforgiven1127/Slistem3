@@ -1088,7 +1088,7 @@ class CEventEx extends CEvent
 
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
 
-return true;
+    ChromePhp::log($sUrl);
 
     if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
