@@ -440,6 +440,10 @@ ChromePhp::log('send2');
     if(!$this->_send($manualCC))
     {
       $this->casError[] = __LINE__.' - Error sending email [ imap:'.(int)CONST_MAIL_IMAP_SEND.' / log:'.CONST_MAIL_IMAP_LOG_SENT.'] ';
+      $error = $this->casError;
+      foreach ($casError as $key => $value) {
+        ChromePhp::log($value);
+      }
       return 0;
     }
 ChromePhp::log('send3');
