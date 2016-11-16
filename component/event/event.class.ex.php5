@@ -1029,6 +1029,7 @@ ChromePhp::log('here here here 4 4 4 4 4 4 4 ');
     }
     else
     {
+      ChromePhp::log('here here here else else else ');
       $sQuery = 'UPDATE `event` SET `type` = '.$oDB->dbEscapeString($asEvent['type']).', `title` = '.$oDB->dbEscapeString($asEvent['title']).',';
       $sQuery.= '`content` = '.$oDB->dbEscapeString($asEvent['content']).', `date_display` = '.$oDB->dbEscapeString($asEvent['date']).', ';
       $sQuery.= '`date_update` = NOW(), `updated_by` = '.$oLogin->getUserPk().' WHERE eventpk = '.$pnPk;
@@ -1075,7 +1076,7 @@ ChromePhp::log('HEREEEEEE');
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity.');
     }
-
+ChromePhp::log('here here here FINISHED ');
     if(!$oDbResult)
       return array('error' => __LINE__.' - Oops. couldn\'t save the activity.');
 
@@ -1085,7 +1086,7 @@ ChromePhp::log('HEREEEEEE');
       if(!$bSaved)
         assert('false; // Adding event: reminder could not be saved. ');
     }
-
+ChromePhp::log('here here here FINISHED 2');
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
 
     if(empty($pnPk))
