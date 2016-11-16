@@ -350,7 +350,6 @@ class CMailEx extends CMail
   */
   public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array())
   {
-    ChromePhp::log('send');
     if(!assert('!empty($psSubject) && !empty($psContent)'))
      return 0;
 
@@ -363,8 +362,8 @@ class CMailEx extends CMail
        $manualCC = $exploded[1];
     }
 
-    ChromePhp::log($psSubject);
-    ChromePhp::log($manualCC);
+    //ChromePhp::log($psSubject);
+    //ChromePhp::log($manualCC);
 
     $sEncoding = mb_check_encoding($psSubject);
     if($sEncoding != 'UTF8')
@@ -436,15 +435,13 @@ class CMailEx extends CMail
         $this->coPhpMailer->AddAttachment($sFilePath);
       }
     }
-ChromePhp::log('send2');
+
     if(!$this->_send($manualCC))
     {
-      ChromePhp::log('ERROR');
       $this->casError[] = __LINE__.' - Error sending email [ imap:'.(int)CONST_MAIL_IMAP_SEND.' / log:'.CONST_MAIL_IMAP_LOG_SENT.'] ';
-
       return 0;
     }
-ChromePhp::log('send3');
+
 
     //TODO: log mail in DB
     return 1;
@@ -469,7 +466,6 @@ ChromePhp::log('send3');
     //2 ways of sending emails
     if(CONST_MAIL_IMAP_SEND)
     {
-      ChromePhp::log('CONST_MAIL_IMAP_SEND');
       //manage only 1 to
       $sHeader = $this->coPhpMailer->CreateHeader();
 
@@ -485,12 +481,11 @@ ChromePhp::log('send3');
     }
     else
     {
-      ChromePhp::log('else');
       //Default case, use PHPmailer
       $bSent = (bool)$this->coPhpMailer->Send();
       $sError = 'smtp_error: '.$this->coPhpMailer->ErrorInfo;
     }
-ChromePhp::log($bSent);
+
     if(!$bSent)
     {
       $this->casError[] = __LINE__.' - Error sending email ['.$sError.']';
@@ -500,7 +495,6 @@ ChromePhp::log($bSent);
     //if we need to log the mail history somewhere
     if(CONST_MAIL_IMAP_LOG_SENT)
     {
-      ChromePhp::log('girmemesi lazim');
       $nTimeout = imap_timeout(IMAP_OPENTIMEOUT, 3);
       $oMailBox = imap_open(CONST_MAIL_IMAP_LOG_PARAM_INBOX, CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 
