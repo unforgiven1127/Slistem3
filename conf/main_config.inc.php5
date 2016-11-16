@@ -110,7 +110,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
 
-    define('DB_NAME', 'slistem');
+    define('DB_NAME', 'slistemOld');
     define('DB_SERVER', '127.0.0.1');
     //define('DB_SERVER', '172.31.29.60');
     //define('DB_USER', 'slistem');
