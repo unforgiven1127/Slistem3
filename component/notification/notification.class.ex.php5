@@ -455,7 +455,7 @@ class CNotificationEx extends CNotification
 
 
     //Add entry in table notification_action
-    /*$asAdd = array('notificationfk' => $nNotificationPk, 'type' => $sNotifType, 'naggy' => $pnNaggy,
+    $asAdd = array('notificationfk' => $nNotificationPk, 'type' => $sNotifType, 'naggy' => $pnNaggy,
         'naggy_frequency' => $psNagFreq, 'number_sent' => 0, 'date_last_action' => null, 'status' => 1);
 
     $nPk = $this->_getModel()->add($asAdd, 'notification_action');
@@ -463,7 +463,7 @@ class CNotificationEx extends CNotification
     {
       assert('false; // failed to create the notification_action.');
       return 0;
-    }*/
+    }
 
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     /*if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
