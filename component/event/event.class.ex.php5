@@ -904,11 +904,18 @@ class CEventEx extends CEvent
       $sQuery.= ', NOW(), '.$oDB->dbEscapeString($asEvent['date']).', '.(int)$asEvent['loginfk'].', '.$asEvent['custom_type'].', '.$oDB->dbEscapeString($sFts).') ';
 
       $oDbResult = $oDB->ExecuteQuery($sQuery);
-      if(!$oDbResult)
-        return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
 
+      if(!$oDbResult)
+      {
+        ChromePhp::log('HATA?');
+        return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
+      }
+
+      $data = $oDbResult->getAll();
+      ChromePhp::log($data);
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
+      ChromePhp::log($nEventfk);
 /*
       //link the event to the uid/action/type/pk from the url
       $asLink = array();
