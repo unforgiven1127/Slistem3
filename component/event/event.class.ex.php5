@@ -1086,7 +1086,7 @@ class CEventEx extends CEvent
         assert('false; // Adding event: reminder could not be saved. ');
     }
 
-    $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
+    $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
 
     ChromePhp::log($sUrl);
 
