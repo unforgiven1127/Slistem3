@@ -439,7 +439,7 @@ ChromePhp::log($nNotificationPk);
 
 
     //Add entry in table notification_recipient
-    $nNotificationPk = (int)$nNotificationPk;
+    //$nNotificationPk = (int)$nNotificationPk;
     foreach($asRecipient as $asRecipeintData)
     {
       $asAdd = array('notificationfk' => $nNotificationPk, 'loginfk' => (int)$asRecipeintData['loginpk'], 'email' => $asRecipeintData['email']);
