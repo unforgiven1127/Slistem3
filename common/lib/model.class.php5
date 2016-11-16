@@ -314,12 +314,16 @@ ChromePhp::log($psTablename);
     if(!$oDBResult)
       return 0;
 
+    if( $psTable == 'notification' )
+    {
+      ChromePhp::log($oDBResult);
+    }
+
     $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
     $control = $oDBResult->getFieldValue('pk');
 
     if( $psTable == 'notification' )
     {
-      ChromePhp::log($oDBResult);
       ChromePhp::log($control);
     }
     if(is_object($oDBResult) && isset($control))
