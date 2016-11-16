@@ -958,14 +958,14 @@ class CEventEx extends CEvent
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
       $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
 
-      if($asEvent['item_type'] == 'ct')
+      /*if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
         foreach($asManager as $nManagerFk)
         {
           $oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
         }
-      }
+      }*/
 
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
@@ -1088,7 +1088,6 @@ class CEventEx extends CEvent
 
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
 
-ChromePhp::log($sUrl);
 
     if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
