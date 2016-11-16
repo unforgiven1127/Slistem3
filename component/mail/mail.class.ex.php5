@@ -490,7 +490,7 @@ ChromePhp::log('send3');
       $bSent = (bool)$this->coPhpMailer->Send();
       $sError = 'smtp_error: '.$this->coPhpMailer->ErrorInfo;
     }
-
+ChromePhp::log($bSent);
     if(!$bSent)
     {
       $this->casError[] = __LINE__.' - Error sending email ['.$sError.']';
