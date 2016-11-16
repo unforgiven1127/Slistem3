@@ -889,34 +889,30 @@ class CEventEx extends CEvent
 
     if(empty($pnPk))
     {
-      $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+      $contentFts = $oDB->dbEscapeString($asEvent['content']);
+      $titleFts = $oDB->dbEscapeString($asEvent['title']);
+      //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+      $sFts = strip_tags($titleFts.' '.$contentFts);
 
       if(isCJK($sFts))
       {
         $oSharedSpace = CDependency::getComponentByName('sharedspace');
-        //if($oSharedSpace)
-        //$sFts = $oSharedSpace->tokenizeCjk($sFts, true);
+        if($oSharedSpace)
+        $sFts = $oSharedSpace->tokenizeCjk($sFts, true);
       }
 
-      $sFts = "";
+
       $sQuery = 'INSERT INTO `event` (`type`, `title`, `content`, `date_create`, `date_display`, `created_by`, `custom_type`, `_fts`) ';
       $sQuery.= ' VALUES ('.$oDB->dbEscapeString($asEvent['type']).', '.$oDB->dbEscapeString($asEvent['title']).', '.$oDB->dbEscapeString($asEvent['content']).'';
       $sQuery.= ', NOW(), '.$oDB->dbEscapeString($asEvent['date']).', '.(int)$asEvent['loginfk'].', '.$asEvent['custom_type'].', '.$oDB->dbEscapeString($sFts).') ';
 
       $oDbResult = $oDB->ExecuteQuery($sQuery);
-
       if(!$oDbResult)
-      {
-        ChromePhp::log('HATA?');
         return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
-      }
 
-      $data = $oDbResult->getAll();
-      ChromePhp::log($data);
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
-      ChromePhp::log($nEventfk);
-/*
+
       //link the event to the uid/action/type/pk from the url
       $asLink = array();
       $asLink[] = ' ('.$oDB->dbEscapeString($nEventfk).', '.$oDB->dbEscapeString($asEvent['item_uid']).', '.$oDB->dbEscapeString($asEvent['item_action']).', '.$oDB->dbEscapeString($asEvent['item_type']).', '.$oDB->dbEscapeString($asEvent['item_pk']).') ';
@@ -957,22 +953,22 @@ class CEventEx extends CEvent
             return array('error' => __LINE__.' - Sorry, could not save the activity.');
         }
       }
-*/
+
       /*$sTitleEvent = $asEvent['title'].' '.substr(strip_tags($asEvent['content']), 0, 100);
       $sTitleEvent = trim($sTitleEvent);*/
- /*     $sTitleEvent = $asItemData['label'];
+      $sTitleEvent = $asItemData['label'];
 
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
       $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
-*/
-      /*if($asEvent['item_type'] == 'ct')
+
+      if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
         foreach($asManager as $nManagerFk)
         {
           $oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
         }
-      }*/
+      }
 
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
@@ -1083,7 +1079,7 @@ class CEventEx extends CEvent
         return array('error' => __LINE__.' - Sorry, could not save the activity.');
     }
 
-    /*if(!$oDbResult)
+    if(!$oDbResult)
       return array('error' => __LINE__.' - Oops. couldn\'t save the activity.');
 
     if(!empty($asEvent['reminder_date']))
@@ -1097,8 +1093,8 @@ class CEventEx extends CEvent
 
 
     if(empty($pnPk))
-      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);*/
-$sUrl = "https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=190917#candi_tab_eventId";
+      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
+
     return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl);
   }
 
