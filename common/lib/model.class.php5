@@ -321,7 +321,7 @@ ChromePhp::log($psTablename);
     if(is_object($oDBResult) && isset($control))
     {
       //$pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
-      return (int)$control;
+      return $control;
     }
 
     return true;
