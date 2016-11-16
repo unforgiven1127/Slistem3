@@ -800,7 +800,7 @@ class CEventEx extends CEvent
    */
 
   protected function _getEventSave($pnPk = 0, $pasEventData = array())
-  {ChromePhp::log('_getEventSave');
+  {
     if(!assert('is_integer($pnPk)'))
       return array('error' => __LINE__.' - Wrong parameter');
 
@@ -906,7 +906,7 @@ class CEventEx extends CEvent
       $oDbResult = $oDB->ExecuteQuery($sQuery);
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity. ['.var_export($oDbResult, true).']');
-ChromePhp::log('here here here');
+
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
 
@@ -950,14 +950,14 @@ ChromePhp::log('here here here');
             return array('error' => __LINE__.' - Sorry, could not save the activity.');
         }
       }
-ChromePhp::log('here here here 2 2 2 2 2');
+
       /*$sTitleEvent = $asEvent['title'].' '.substr(strip_tags($asEvent['content']), 0, 100);
       $sTitleEvent = trim($sTitleEvent);*/
       $sTitleEvent = $asItemData['label'];
 
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
       $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
-ChromePhp::log('here here here 3 3 3 3 3 3 3');
+
       if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
@@ -966,7 +966,7 @@ ChromePhp::log('here here here 3 3 3 3 3 3 3');
           $oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
         }
       }
-ChromePhp::log('here here here 4 4 4 4 4 4 4 ');
+
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
       {
@@ -1029,7 +1029,6 @@ ChromePhp::log('here here here 4 4 4 4 4 4 4 ');
     }
     else
     {
-      ChromePhp::log('here here here else else else ');
       $sQuery = 'UPDATE `event` SET `type` = '.$oDB->dbEscapeString($asEvent['type']).', `title` = '.$oDB->dbEscapeString($asEvent['title']).',';
       $sQuery.= '`content` = '.$oDB->dbEscapeString($asEvent['content']).', `date_display` = '.$oDB->dbEscapeString($asEvent['date']).', ';
       $sQuery.= '`date_update` = NOW(), `updated_by` = '.$oLogin->getUserPk().' WHERE eventpk = '.$pnPk;
@@ -1065,7 +1064,7 @@ ChromePhp::log('here here here 4 4 4 4 4 4 4 ');
                   .', '.$oDB->dbEscapeString($asLinkData[2]).', '.$oDB->dbEscapeString($asLinkData[3]).') ';
         }
       }
-ChromePhp::log('HEREEEEEE');
+
       $sQuery = 'DELETE FROM event_link WHERE eventfk = '.$pnPk;
       $oDbResult = $oDB->ExecuteQuery($sQuery);
       if(!$oDbResult)
@@ -1076,7 +1075,7 @@ ChromePhp::log('HEREEEEEE');
       if(!$oDbResult)
         return array('error' => __LINE__.' - Sorry, could not save the activity.');
     }
-ChromePhp::log('here here here FINISHED ');
+
     if(!$oDbResult)
       return array('error' => __LINE__.' - Oops. couldn\'t save the activity.');
 
@@ -1086,8 +1085,10 @@ ChromePhp::log('here here here FINISHED ');
       if(!$bSaved)
         assert('false; // Adding event: reminder could not be saved. ');
     }
-ChromePhp::log('here here here FINISHED 2');
+
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
+
+return true;
 
     if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
