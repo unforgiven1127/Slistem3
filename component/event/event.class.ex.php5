@@ -889,7 +889,7 @@ class CEventEx extends CEvent
 
     if(empty($pnPk))
     {
-      $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+  /*    $sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
 
       if(isCJK($sFts))
       {
@@ -950,14 +950,14 @@ class CEventEx extends CEvent
             return array('error' => __LINE__.' - Sorry, could not save the activity.');
         }
       }
-
+*/
       /*$sTitleEvent = $asEvent['title'].' '.substr(strip_tags($asEvent['content']), 0, 100);
       $sTitleEvent = trim($sTitleEvent);*/
-      $sTitleEvent = $asItemData['label'];
+ /*     $sTitleEvent = $asItemData['label'];
 
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
       $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
-
+*/
       /*if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
@@ -1076,7 +1076,7 @@ class CEventEx extends CEvent
         return array('error' => __LINE__.' - Sorry, could not save the activity.');
     }
 
-    if(!$oDbResult)
+    /*if(!$oDbResult)
       return array('error' => __LINE__.' - Oops. couldn\'t save the activity.');
 
     if(!empty($asEvent['reminder_date']))
@@ -1090,8 +1090,8 @@ class CEventEx extends CEvent
 
 
     if(empty($pnPk))
-      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
-
+      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);*/
+$sUrl = "https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=190917#candi_tab_eventId";
     return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl);
   }
 
