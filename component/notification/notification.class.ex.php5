@@ -432,12 +432,12 @@ class CNotificationEx extends CNotification
 
     //ChromePhp::log($asAdd);
 
-    /*$oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
+    $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
       assert('false; // could save the source reference of the reminder.');
       return 0;
-    }*/
+    }
 
 
     //Add entry in table notification_recipient
