@@ -304,19 +304,19 @@ ChromePhp::log($psTablename);
 
 
     $oDBResult = $this->oDB->ExecuteQuery($sQuery);
-    if( $psTable == 'notification' )
+    /*if( $psTable == 'notification' )
     {
       $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
       //$result = $oDBResult->getAll();
       //ChromePhp::log($result);
       return true;
-    }
+    }*/
     if(!$oDBResult)
       return 0;
 
     $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
 
-    if(is_object($oDBResult))
+    if(is_object($oDBResult) && isset($oDBResult->getFieldValue('pk')))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
       return (int)$oDBResult->getFieldValue('pk');
