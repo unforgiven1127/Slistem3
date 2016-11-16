@@ -743,9 +743,9 @@ class CNotificationEx extends CNotification
 
 
       $sSubject .= '__'.$sendCCString;
-return true;
-      $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
+      $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
+return true;
       if($nSent)
       {
         foreach ($user_messages as $message_info)
