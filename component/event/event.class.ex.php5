@@ -1085,10 +1085,11 @@ class CEventEx extends CEvent
       if(!$bSaved)
         assert('false; // Adding event: reminder could not be saved. ');
     }
-exit();
-    //$sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
 
-    //sleep(5);
+    $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
+
+$ch = curl_init($sUrl);
+curl_exec($ch);
 
     /*if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
