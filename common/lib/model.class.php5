@@ -315,8 +315,9 @@ ChromePhp::log($psTablename);
       return 0;
 
     $this->_logChanges($pasValues, $psTable, 'add '.$psTable);
-
+    ChromePhp::log($oDBResult);
     $control = $oDBResult->getFieldValue('pk');
+    ChromePhp::log($control);
     if(is_object($oDBResult) && isset($control))
     {
       $pasValues['pk'] = (int)$oDBResult->getFieldValue('pk');
