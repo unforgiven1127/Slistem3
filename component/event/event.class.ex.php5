@@ -55,7 +55,7 @@ class CEventEx extends CEvent
               break;
 
           case CONST_ACTION_SAVEADD:
-            return json_encode($this->_getEventSave($this->cnPk));
+            return $this->_getEventSave($this->cnPk);
               break;
 
           case CONST_ACTION_DELETE:
