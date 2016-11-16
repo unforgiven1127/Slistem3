@@ -464,8 +464,8 @@ class CNotificationEx extends CNotification
       assert('false; // failed to create the notification_action.');
       return 0;
     }
-ChromePhp::log($psDate);
-ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
+//ChromePhp::log($psDate);
+//ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
