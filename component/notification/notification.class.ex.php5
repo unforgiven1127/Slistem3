@@ -417,6 +417,8 @@ class CNotificationEx extends CNotification
 
     $nNotificationPk = $this->_getModel()->add($asAdd, 'notification');
 ChromePhp::log($nNotificationPk);
+    $nNotificationPk = (int)$nNotificationPk;
+ChromePhp::log($nNotificationPk);
     if(!$nNotificationPk)
     {
       assert('false; // failed to create the notification.');
@@ -439,7 +441,7 @@ ChromePhp::log($nNotificationPk);
 
 
     //Add entry in table notification_recipient
-    //$nNotificationPk = (int)$nNotificationPk;
+    $nNotificationPk = (int)$nNotificationPk;
     foreach($asRecipient as $asRecipeintData)
     {
       $asAdd = array('notificationfk' => $nNotificationPk, 'loginfk' => (int)$asRecipeintData['loginpk'], 'email' => $asRecipeintData['email']);
@@ -465,7 +467,9 @@ ChromePhp::log($nNotificationPk);
 
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
+    {
       $this->_executeCronAction($nNotificationPk, true);
+    }
 
     return $nNotificationPk;
   }
