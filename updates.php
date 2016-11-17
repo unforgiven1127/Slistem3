@@ -17,8 +17,7 @@ define('CONST_PAGE_DEVICE_TYPE_PC', 'page_pc');
 
 define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
-require_once 'component/dependency.inc.php5';
-require_once 'component/mail/mail.class.ex.php5';
+require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
 
 $sAction = "ppasa";
 $sType = "not";
