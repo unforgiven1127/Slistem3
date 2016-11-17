@@ -12,6 +12,8 @@ define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
 define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
 define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
+define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
+
 $sAction = "ppasa";
 $sType = "not";
 $nPK = "0";
