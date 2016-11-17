@@ -30,7 +30,7 @@ $mail->SMTPAuth = true;                               // Enable SMTP authenticat
 $mail->Username = 'slistem@slate.co.jp';                    // SMTP username
 $mail->Password = 'Slate!7000ics';                           // SMTP password
 //$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
+$mail->Port = 25;                                    // TCP port to connect to
 
 $mail->From = 'slistem@slate.co.jp';
 $mail->FromName = 'Slistem';
