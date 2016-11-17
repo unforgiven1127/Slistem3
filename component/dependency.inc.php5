@@ -257,6 +257,10 @@ class CDependency
 
       case 'mail':
         require_once('component/mail/mail.class.ex.php5');
+        ChromePhp::log($sAction);
+        ChromePhp::log($sType);
+        ChromePhp::log($nPK);
+        ChromePhp::log($sMode);
         self::$asInstancies['mail'] = new CMailEx($sAction, $sType, $nPK, $sMode);
         break;
 
