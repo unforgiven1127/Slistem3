@@ -13,6 +13,7 @@ define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
 define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 define('CONST_CRM_MAIL_SENDER', 'slistem@slate.co.jp');
 define('CONST_WEBSITE', 'slistem');
+define('CONST_PAGE_DEVICE_TYPE_PC', 'page_pc');
 
 define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
