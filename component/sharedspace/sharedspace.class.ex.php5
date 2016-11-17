@@ -1717,7 +1717,7 @@ ChromePhp::log('_saveDocument');
       $asDocument[CONST_CP_TYPE] = getValue(CONST_CP_TYPE);
       $asDocument[CONST_CP_PK] = (int)getValue(CONST_CP_PK);
     }
-ChromePhp::log($asDocument);
+
     if(empty($asDocument['title']) && !$asDocument['fast_upload'])
       return array( 'error' => __LINE__.' - Document title is required.');
 
@@ -1761,13 +1761,10 @@ ChromePhp::log($asDocument);
     }
 
     // Uploading the file
-    ChromePhp::log('Uploading');
     if(isset($_FILES['document']['name']) && !empty($_FILES['document']['name']))
     {
-      ChromePhp::log('inside');
       if(!empty($_FILES['document']['error']))
       {
-        ChromePhp::log('error?');
         if($_FILES['document']['error'] == UPLOAD_ERR_INI_SIZE || $_FILES['document']['error'] == UPLOAD_ERR_FORM_SIZE)
           return array('error' => 'The file is too big. Max size is '.round((CONST_SS_MAX_DOCUMENT_SIZE/(1024*1024))).' MBytes.');
 
@@ -1776,7 +1773,7 @@ ChromePhp::log($asDocument);
 
         return array('error' => $_FILES['document']['error'].' - An error occured. Please contact the administrator.');
       }
-ChromePhp::log($_FILES['document']['tmp_name']);
+
       if(empty($_FILES['document']['tmp_name']))
         return array('error' => 'The file hasn\'t been uploaded.');
 
@@ -1791,16 +1788,16 @@ ChromePhp::log($_FILES['document']['tmp_name']);
 
       $sFileName = preg_replace("/[^a-z0-9\.]/", "", strtolower($_FILES['document']['name']));
       $sTmpFileName = $_FILES['document']['tmp_name'];
-ChromePhp::log($sTmpFileName);
+
       $oFinfo = finfo_open(FILEINFO_MIME_TYPE);
       $sMimeType = finfo_file($oFinfo, $sTmpFileName);
       $asFile = pathinfo($_FILES['document']['name']);
-ChromePhp::log($asFile);
+
       if($sMimeType == 'application/zip' && isset($this->casMsZipExtension[$asFile['extension']]))
       {
         $sMimeType = $this->casMsZipExtension[$asFile['extension']];
       }
-ChromePhp::log($sMimeType);
+
       //dump($sMimeType);
       //dump($asFile['extension']);
       $oMngList = CDependency::getComponentByName('manageablelist');
@@ -1838,14 +1835,12 @@ ChromePhp::log($sMimeType);
       }
       else
       {
-        ChromePhp::log('move_uploaded_file');
         if(!move_uploaded_file($sTmpFileName, $sNewPath.$sNewName))
         {
-          ChromePhp::log('HATA UPLOAD EDEMEDI');
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
         }
       }
-ChromePhp::log('UPLOAD ETMIS OLMASI GEREKIYOR????');
+
       $nFileSize = filesize($sNewPath.$sNewName);
       $sUnit = 'B';
 
@@ -2001,10 +1996,14 @@ ChromePhp::log('UPLOAD ETMIS OLMASI GEREKIYOR????');
       }
     }
     else
+    {
+      ChromePhp::log('else');
       $this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
+    }
 
     if(is_key($nFolderFk))
     {
+      ChromePhp::log('nFolderFk');
       $oPage = CDependency::getCpPage();
       $sAxUrl = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_VIEW, CONST_FOLDER_TYPE_FOLDER, $nFolderFk);
       $aOutput['action'].='if ($(\'#doc-folders\').html().length!=0) { AjaxRequest(\''.$sAxUrl.'\', \'body\', \'\', \'doc-folders\', \'\', \'\', \'\'); } goPopup.removeByType(\'layer\');';
@@ -2025,7 +2024,7 @@ ChromePhp::log('UPLOAD ETMIS OLMASI GEREKIYOR????');
     {
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
     }
-
+ChromePhp::log('end');
     //return array( 'error' => __LINE__.' - Document uploaded successfully.');
     return $aOutput;
   }
