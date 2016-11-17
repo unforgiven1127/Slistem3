@@ -12,7 +12,7 @@ define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
 define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
-require_once "smtp.php";
+require_once "component/mail/phpmailer_5.1/class.smtp.php";
 
 $from = "slistem@slate.co.jp";
 $to = "munir@slate-ghc.com";
