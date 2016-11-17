@@ -28,7 +28,7 @@ $mail->Host = 'imap.slate.co.jp';                      // Specify main and backu
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'slistem@slate.co.jp';                    // SMTP username
 $mail->Password = 'Slate!7000ics';                           // SMTP password
-//$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
 
 $mail->From = 'slistem@slate.co.jp';
