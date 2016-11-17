@@ -1992,18 +1992,16 @@ ChromePhp::log('_saveDocument');
       if($bRead)
       {
         $asLink = $oDbResult->getData();
-        $this->_getModel()->_logChanges($asLink, 'document', 'document updated.', '', $asLink);
+        //$this->_getModel()->_logChanges($asLink, 'document', 'document updated.', '', $asLink);
       }
     }
     else
     {
-      ChromePhp::log('else');
-      $this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
+      //$this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
     }
 
     if(is_key($nFolderFk))
     {
-      ChromePhp::log('nFolderFk');
       $oPage = CDependency::getCpPage();
       $sAxUrl = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_VIEW, CONST_FOLDER_TYPE_FOLDER, $nFolderFk);
       $aOutput['action'].='if ($(\'#doc-folders\').html().length!=0) { AjaxRequest(\''.$sAxUrl.'\', \'body\', \'\', \'doc-folders\', \'\', \'\', \'\'); } goPopup.removeByType(\'layer\');';
@@ -2024,7 +2022,7 @@ ChromePhp::log('_saveDocument');
     {
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
     }
-ChromePhp::log($aOutput);
+
     //return array( 'error' => __LINE__.' - Document uploaded successfully.');
     return $aOutput;
   }
