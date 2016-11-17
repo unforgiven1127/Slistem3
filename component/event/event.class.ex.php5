@@ -892,6 +892,7 @@ class CEventEx extends CEvent
       $contentFts = $oDB->dbEscapeString($asEvent['content']);
       $titleFts = $oDB->dbEscapeString($asEvent['title']);
       //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
+//text i linkedinden vs kopyaliolar burada patlio...
       $sFts = $asEvent['title'].' '.$asEvent['content'];
       //ChromePhp::log($sFts);
       //$sFts = $contentFts;
