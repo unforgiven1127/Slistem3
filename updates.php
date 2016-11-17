@@ -38,12 +38,13 @@ $headers .= 'Cc: munir_anameric@hotmail.com' . "\r\n";
 mail($to,$subject,$message,$headers);*/
 
 // the message
-$msg = "First line of text\nSecond line of text";
+$ini_sendmail_path = ini_get('sendmail_path');
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+echo $ini_sendmail_path.'<br><br>';
 
-// send email
+$msg = "TEST";
+
+
 mail("munir_anameric@hotmail.com","My subject",$msg);
 
 echo 'mail send...';
