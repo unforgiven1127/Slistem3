@@ -12,7 +12,7 @@ echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
 //run the MySQL dump and zip;
 
 // location of your temp directory
-$tmpDir = __DIR__."/test/";
+$tmpDir = "/web/backup/";
 // username for MySQL
 echo $tmpDir;
 exit();
