@@ -19,23 +19,36 @@ define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
 require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
 
-$sAction = "ppasa";
-$sType = "not";
-$nPK = "0";
-$sMode = "ajx";
+require_once('../class.phpmailer.php');
 
-$oMail = new PHPMailer();
+$mail             = new PHPMailer(); // defaults to using php "mail()"
 
-$sSubject = "TEST";
-$sContent = "Test Content";
+$body             = file_get_contents('contents.html');
+$body             = eregi_replace("[\]",'',$body);
 
-$sEmail = 'Dear Munir';
-$sEmail.= $sContent;
+//$mail->AddReplyTo("name@yourdomain.com","First Last");
 
-$oMail->createNewEmail();
-$oMail->setFrom(CONST_PHPMAILER_DEFAULT_FROM, CONST_CRM_MAIL_SENDER);
-$oMail->addRecipient("munir_anameric@hotmail.com");
+$mail->SetFrom('slistem@slate.co.jp', 'Slistem');
 
-$oMail->send($sSubject, $sEmail);
+//$mail->AddReplyTo("name@yourdomain.com","First Last");
+
+$address = "munir_anameric@hotmail.com";
+$mail->AddAddress($address, "Munir Anameric");
+
+$mail->Subject    = "PHPMailer Test Subject via mail(), basic";
+
+$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+
+$mail->MsgHTML($body);
+
+//$mail->AddAttachment("images/phpmailer.gif");      // attachment
+//$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
+
+if(!$mail->Send()) {
+  echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+  echo "Message sent!";
+}
+
 
 ?>
