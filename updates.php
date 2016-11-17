@@ -29,5 +29,5 @@ $smtpoptions = array(
   "usedns" => false
 );
 
-SendEmail($from, $to, $subject, $smtpoptions);
+mail($from, $to, $subject, $smtpoptions);
 ?>
