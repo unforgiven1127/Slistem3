@@ -1,5 +1,6 @@
 <?php
 
+require_once 'component/dependency.inc.php5';
 require_once 'component/mail/mail.class.ex.php5';
 
 define('CONST_PHPMAILER_SMTP_DEBUG', false);
