@@ -14,6 +14,8 @@ echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
 // location of your temp directory
 $tmpDir = __DIR__."/test/";
 // username for MySQL
+ChromePhp::log($tmpDir);
+exit();
 $user = "pma_admin";
 // password for MySQL
 $password = "KVW4PVVAWHASuRDz";
