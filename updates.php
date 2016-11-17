@@ -17,12 +17,13 @@ define('CONST_PAGE_DEVICE_TYPE_PC', 'page_pc');
 
 define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
-require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
+//require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
 
+require_once('component/mail/phpmailer.php');
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
-$body = "Hi";
+$body             = "TEST";
 //$body             = file_get_contents('contents.html');
 //$body             = eregi_replace("[\]",'',$body);
 
