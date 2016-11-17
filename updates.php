@@ -44,6 +44,6 @@ $msg = "First line of text\nSecond line of text";
 $msg = wordwrap($msg,70);
 
 // send email
-mail("slistem@slate.co.jp","My subject",$msg);
+mail("munir@slate-ghc.com","My subject",$msg);
 
 echo 'mail send...';
