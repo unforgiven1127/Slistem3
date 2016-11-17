@@ -21,7 +21,7 @@ define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
 require_once 'component/mail/phpmailer_5.1/class.phpmailer.php';
 
-$mail             = new PHPMailer(); // defaults to using php "mail()"
+$mail             = new PHPMailer(true); // defaults to using php "mail()"
 
 $mail->SetLanguage( 'en', 'phpmailer/language/' );
 $mail->CharSet="iso-8859-1";
@@ -30,7 +30,7 @@ $mail->SMTPAuth = true;                               // Enable SMTP authenticat
 $mail->Username = 'slistem@slate.co.jp';                    // SMTP username
 $mail->Password = 'Slate!7000ics';                           // SMTP password
 //$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 25;                                    // TCP port to connect to
+$mail->Port = 465;                                    // TCP port to connect to
 
 $mail->From = 'slistem@slate.co.jp';
 $mail->FromName = 'Slistem';
