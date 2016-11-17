@@ -1,37 +1,16 @@
 <?php
-$to = "munir_anameric@hotmail.com";
-$subject = "HTML email";
 
-$message = "
-<html>
-<head>
-<title>HTML email</title>
-</head>
-<body>
-<p>This email contains HTML Tags!</p>
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>
-<tr>
-<td>John</td>
-<td>Doe</td>
-</tr>
-</table>
-</body>
-</html>
-";
+$oMail = CDependency::getComponentByName('mail');
 
-// Always set content-type when sending HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$sSubject = "Test Mail";
 
-// More headers
-$headers .= 'From: <webmaster@example.com>' . "\r\n";
-$headers .= 'Cc: munir@slate-ghc.com' . "\r\n";
+$sEmail = 'Dear MUNIR'.', <br /><br />';
+$sEmail.= $sContent;
 
-mail($to,$subject,$message,$headers);
+$oMail->createNewEmail();
+$oMail->setFrom(CONST_PHPMAILER_DEFAULT_FROM, CONST_CRM_MAIL_SENDER);
+$oMail->addRecipient("munir_anameric@hotmail.com");
 
-echo "SEND";
+$oMail->send($sSubject, $sEmail);
+
 ?>
