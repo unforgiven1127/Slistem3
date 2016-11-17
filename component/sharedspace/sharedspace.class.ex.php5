@@ -1840,7 +1840,10 @@ ChromePhp::log($sMimeType);
       {
         ChromePhp::log('move_uploaded_file');
         if(!move_uploaded_file($sTmpFileName, $sNewPath.$sNewName))
+        {
+          ChromePhp::log('HATA UPLOAD EDEMEDI');
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
+        }
       }
 
       $nFileSize = filesize($sNewPath.$sNewName);
