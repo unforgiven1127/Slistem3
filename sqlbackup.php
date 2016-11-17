@@ -23,11 +23,12 @@ $dbName = "slistem";
 // hostname or IP where database resides
 $dbHost = "127.0.0.1";
 // the zip file will have this prefix
-$prefix = "sql_db";
+$prefix = "db_backup_";
 
 // Create the database backup file
-$sqlFile = $tmpDir.$prefix.date('Y_m_d_h:i:s').".sql";
-$backupFilename = $prefix.".tgz";
+$sqlFile = $tmpDir.$prefix.date('Y_m_d').".sql";
+//$backupFilename = $prefix.".tgz";
+$backupFilename = $sqlFile.".tgz";
 $backupFile = $tmpDir.$backupFilename;
 
 $createBackup = "mysqldump -h ".$dbHost." -u ".$user." --password='".$password."' ".$dbName." --> ".$sqlFile;
