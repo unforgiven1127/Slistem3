@@ -1878,20 +1878,15 @@ ChromePhp::log('_saveDocument');
           'live' => 1
           );
 
-      $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
+      if($aDataFile != 'application/pdf')
+      {
+        $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 
-      if(empty($aParsedDocument['text']))
-      {
-        $aParsedDocument['text'] = "-";
-      }
-      if($aParsedDocument['fulltext'] == "  .")//"  ."
-      {
-        $aParsedDocument['fulltext'] = "-";
+        $aDataFile['original'] = $aParsedDocument['text'];
+        $aDataFile['compressed'] = $aParsedDocument['fulltext'];
+        $aDataFile['language'] = $aParsedDocument['language'];
       }
 
-      $aDataFile['original'] = $aParsedDocument['text'];
-      $aDataFile['compressed'] = $aParsedDocument['fulltext'];
-      $aDataFile['language'] = $aParsedDocument['language'];
 
       $nDocFilePk = $this->_getModel()->add($aDataFile, 'document_file');
 
