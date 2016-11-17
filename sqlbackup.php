@@ -14,8 +14,7 @@ echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
 // location of your temp directory
 $tmpDir = "/web/backup/";
 // username for MySQL
-echo $tmpDir;
-exit();
+
 $user = "pma_admin";
 // password for MySQL
 $password = "KVW4PVVAWHASuRDz";
