@@ -1845,7 +1845,7 @@ ChromePhp::log($sMimeType);
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
         }
       }
-
+ChromePhp::log('UPLOAD ETMIS OLMASI GEREKIYOR????');
       $nFileSize = filesize($sNewPath.$sNewName);
       $sUnit = 'B';
 
