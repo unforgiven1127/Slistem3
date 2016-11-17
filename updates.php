@@ -24,7 +24,7 @@ $sType = "not";
 $nPK = "0";
 $sMode = "ajx";
 
-$oMail = new CMailEx($sAction, $sType, $nPK, $sMode);
+$oMail = new PHPMailer();
 
 $sSubject = "TEST";
 $sContent = "Test Content";
