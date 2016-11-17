@@ -1,22 +1,39 @@
 <?php
 
-    require_once('component/jobboard/jobboard.class.php5');
-    require_once('component/taaggregator/resources/lib/encoding_converter.class.php5');
+$sDate = date('Y-m-d H:i:s');
+$to = "munir@slate-ghc.com";
+//$to = "munir@slate-ghc.com, rkiyamu@slate.co.jp";
+$subject = "Test email";
 
-    define('DB_NAME_SLISTEM','slistem');
-    define('DB_SERVER_SLISTEM', '127.0.0.1');
-    define('DB_USER_SLISTEM', 'pma_admin');
-    define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
+$message = "
+<html>
+<head>Date&Time:
+".$sDate."
+<title>Test email</title>
+</head>
+<body>
+<p>This email contains HTML Tags!</p>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Testova</td>
+</tr>
+</table>
+</body>
+</html>
+";
 
-    echo "TEST";
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
-    mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
+// More headers
+$headers .= 'From: <slistem@slate.co.jp>' . "\r\n";
+$headers .= 'Cc: munir_anameric@hotmail.com' . "\r\n";
 
-    $slistemQuery = " SELECT * FROM login ";
-    $slistemQuery = mysql_query($slistemQuery);
-
-    while($meetingData = mysql_fetch_assoc($slistemQuery))
-    {
-        echo "firstname: ".$meetingData['firstname']."<br>";
-    }
+mail($to,$subject,$message,$headers);
+echo 'mail send...';
