@@ -1,7 +1,6 @@
 <?php
 
-require_once 'component/dependency.inc.php5';
-require_once 'component/mail/mail.class.ex.php5';
+
 
 define('CONST_PHPMAILER_SMTP_DEBUG', false);
 define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
@@ -16,6 +15,9 @@ define('CONST_CRM_MAIL_SENDER', 'slistem@slate.co.jp');
 define('CONST_WEBSITE', 'slistem');
 
 define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
+
+require_once 'component/dependency.inc.php5';
+require_once 'component/mail/mail.class.ex.php5';
 
 $sAction = "ppasa";
 $sType = "not";
