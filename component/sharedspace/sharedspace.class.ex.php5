@@ -1879,7 +1879,16 @@ ChromePhp::log('_saveDocument');
           );
 
       $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
-      ChromePhp::log($aParsedDocument);
+
+      if(empty($aParsedDocument['text']))
+      {
+        $aParsedDocument['text'] = "-";
+      }
+      if($aParsedDocument['fulltext'] == "  .")//"  ."
+      {
+        $aParsedDocument['fulltext'] = "-";
+      }
+
       $aDataFile['original'] = $aParsedDocument['text'];
       $aDataFile['compressed'] = $aParsedDocument['fulltext'];
       $aDataFile['language'] = $aParsedDocument['language'];
