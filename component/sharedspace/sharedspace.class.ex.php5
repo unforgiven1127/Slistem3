@@ -2024,7 +2024,7 @@ ChromePhp::log('_saveDocument');
     {
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
     }
-ChromePhp::log('end');
+ChromePhp::log($aOutput);
     //return array( 'error' => __LINE__.' - Document uploaded successfully.');
     return $aOutput;
   }
