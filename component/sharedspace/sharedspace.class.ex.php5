@@ -1879,6 +1879,7 @@ ChromePhp::log('_saveDocument');
           );
 
       $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
+      ChromePhp::log($aParsedDocument);
       $aDataFile['original'] = $aParsedDocument['text'];
       $aDataFile['compressed'] = $aParsedDocument['fulltext'];
       $aDataFile['language'] = $aParsedDocument['language'];
@@ -1968,6 +1969,7 @@ ChromePhp::log('_saveDocument');
     // Notify users
     if(($aData['private'] == 2) && (!empty($asNotify)))
     {
+      ChromePhp::log('notify ? 11111');
       if(isset($asNotify[$nUserPk]))
         unlink($asNotify[$nUserPk]);
       $this->_notifyUsers($nDocPk, $asNotify);
@@ -1975,6 +1977,7 @@ ChromePhp::log('_saveDocument');
 
     if($asDocument['notify'] && $aData['private']==0)
     {
+      ChromePhp::log('notify ? 22222');
       $asNotify = $oLogin->getUserList(0, true, false);
       if(isset($asNotify[$nUserPk]))
         unset($asNotify[$nUserPk]);
@@ -1992,12 +1995,12 @@ ChromePhp::log('_saveDocument');
       if($bRead)
       {
         $asLink = $oDbResult->getData();
-        //$this->_getModel()->_logChanges($asLink, 'document', 'document updated.', '', $asLink);
+        $this->_getModel()->_logChanges($asLink, 'document', 'document updated.', '', $asLink);
       }
     }
     else
     {
-      //$this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
+      $this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
     }
 
     if(is_key($nFolderFk))
