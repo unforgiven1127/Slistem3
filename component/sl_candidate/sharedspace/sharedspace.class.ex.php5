@@ -1671,7 +1671,6 @@ class CSharedspaceEx extends CSharedspace
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
-    ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1701,7 +1700,7 @@ class CSharedspaceEx extends CSharedspace
       $asDocument[CONST_CP_TYPE] = getValue(CONST_CP_TYPE);
       $asDocument[CONST_CP_PK] = (int)getValue(CONST_CP_PK);
     }
-ChromePhp::log($asDocument);
+
     if(empty($asDocument['title']) && !$asDocument['fast_upload'])
       return array( 'error' => __LINE__.' - Document title is required.');
 
@@ -1710,7 +1709,6 @@ ChromePhp::log($asDocument);
     $dToday = date('Y-m-d H:i:s');
 
     // Editing document main table
-ChromePhp::log('Editing document main table');
     $aData = array('title' => $asDocument['title'], 'doc_type' => $asDocument['doc_type'], 'private' => $asDocument['private'], 'description' => $asDocument['description'], 'date_update' => $dToday);
     if($asDocument['is_html'] == 1)
       $aData['description_html'] = $asDocument['description_html'];
@@ -1727,7 +1725,7 @@ ChromePhp::log('Editing document main table');
       $aData['date_creation'] = $dToday;
       $nDocPk = $this->_getModel()->add($aData, 'document');
       $bUpdated = false;
-ChromePhp::log('add document');
+
       if(!is_key($nDocPk))
         return array( 'error' => 'Document could not be created in database. Please contact your administrator.');
     }
@@ -1744,7 +1742,7 @@ ChromePhp::log('add document');
       $oDocument = $this->_getModel()->getByFk($pnPk, 'document_link', 'document');
       $asDocument['has_cp_link'] = $oDocument->readFirst();
     }
-ChromePhp::log('Uploading the file');
+
     // Uploading the file
     if(isset($_FILES['document']['name']) && !empty($_FILES['document']['name']))
     {

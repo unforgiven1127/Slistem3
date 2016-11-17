@@ -1676,7 +1676,7 @@ class CSharedspaceEx extends CSharedspace
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
-
+ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1717,7 +1717,7 @@ class CSharedspaceEx extends CSharedspace
       $asDocument[CONST_CP_TYPE] = getValue(CONST_CP_TYPE);
       $asDocument[CONST_CP_PK] = (int)getValue(CONST_CP_PK);
     }
-
+ChromePhp::log($asDocument);
     if(empty($asDocument['title']) && !$asDocument['fast_upload'])
       return array( 'error' => __LINE__.' - Document title is required.');
 
@@ -1761,8 +1761,10 @@ class CSharedspaceEx extends CSharedspace
     }
 
     // Uploading the file
+    ChromePhp::log('Uploading');
     if(isset($_FILES['document']['name']) && !empty($_FILES['document']['name']))
     {
+      ChromePhp::log('inside');
       if(!empty($_FILES['document']['error']))
       {
         if($_FILES['document']['error'] == UPLOAD_ERR_INI_SIZE || $_FILES['document']['error'] == UPLOAD_ERR_FORM_SIZE)
