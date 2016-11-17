@@ -43,23 +43,23 @@ exec($createZip);
 
 //now run the DBox app info and set the client; we are naming the app folder SQL_Backup but CHANGE THAT TO YOUR ACTUAL APP FOLDER NAME;
 
-$appInfo = dbx\AppInfo::loadFromJsonFile(__DIR__."/config.json");
-$dbxClient = new dbx\Client($accessToken, "SQL_Backup");
+//$appInfo = dbx\AppInfo::loadFromJsonFile(__DIR__."/config.json");
+//$dbxClient = new dbx\Client($accessToken, "SQL_Backup");
 
 
 //now the main handling of the zipped file upload;
 
 //this message will send in a system e-mail from your cron job (assuming you set up cron to email you);
-echo("Uploading $backupFilename to Dropbox").date('Y-m-d h:i:s')."<br><br>";
+//echo("Uploading $backupFilename to Dropbox").date('Y-m-d h:i:s')."<br><br>";
 
 //this is the actual Dropbox upload method;
-$f = fopen($backupFile, "rb");
-$result = $dbxClient->uploadFile('/SQL_Backup/'.$backupFilename, dbx\WriteMode::force(), $f);
-fclose($f);
+//$f = fopen($backupFile, "rb");
+//$result = $dbxClient->uploadFile('/SQL_Backup/'.$backupFilename, dbx\WriteMode::force(), $f);
+//fclose($f);
 
 // Delete the temporary files
 unlink($sqlFile);
-unlink($backupFile);
+//unlink($backupFile);
 
 $dNow = date('Y-m-d');
 
