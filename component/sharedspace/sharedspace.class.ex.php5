@@ -1767,6 +1767,7 @@ ChromePhp::log($asDocument);
       ChromePhp::log('inside');
       if(!empty($_FILES['document']['error']))
       {
+        ChromePhp::log('error?');
         if($_FILES['document']['error'] == UPLOAD_ERR_INI_SIZE || $_FILES['document']['error'] == UPLOAD_ERR_FORM_SIZE)
           return array('error' => 'The file is too big. Max size is '.round((CONST_SS_MAX_DOCUMENT_SIZE/(1024*1024))).' MBytes.');
 
@@ -1775,7 +1776,7 @@ ChromePhp::log($asDocument);
 
         return array('error' => $_FILES['document']['error'].' - An error occured. Please contact the administrator.');
       }
-
+ChromePhp::log($_FILES['document']['tmp_name']);
       if(empty($_FILES['document']['tmp_name']))
         return array('error' => 'The file hasn\'t been uploaded.');
 
@@ -1790,16 +1791,16 @@ ChromePhp::log($asDocument);
 
       $sFileName = preg_replace("/[^a-z0-9\.]/", "", strtolower($_FILES['document']['name']));
       $sTmpFileName = $_FILES['document']['tmp_name'];
-
+ChromePhp::log($sTmpFileName);
       $oFinfo = finfo_open(FILEINFO_MIME_TYPE);
       $sMimeType = finfo_file($oFinfo, $sTmpFileName);
       $asFile = pathinfo($_FILES['document']['name']);
-
+ChromePhp::log($asFile);
       if($sMimeType == 'application/zip' && isset($this->casMsZipExtension[$asFile['extension']]))
       {
         $sMimeType = $this->casMsZipExtension[$asFile['extension']];
       }
-
+ChromePhp::log($sMimeType);
       //dump($sMimeType);
       //dump($asFile['extension']);
       $oMngList = CDependency::getComponentByName('manageablelist');
@@ -1837,6 +1838,7 @@ ChromePhp::log($asDocument);
       }
       else
       {
+        ChromePhp::log('move_uploaded_file');
         if(!move_uploaded_file($sTmpFileName, $sNewPath.$sNewName))
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
       }
