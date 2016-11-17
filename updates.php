@@ -23,6 +23,7 @@ require_once 'component/mail/phpmailer_5.1/class.phpmailer.php';
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
+$mail->SetLanguage( 'en', 'phpmailer/language/' );
 $mail->CharSet="iso-8859-1";
 $mail->Host = 'imap.slate.co.jp';                      // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
