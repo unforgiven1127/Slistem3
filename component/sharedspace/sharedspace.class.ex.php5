@@ -1878,7 +1878,7 @@ ChromePhp::log('_saveDocument');
           'live' => 1
           );
 
-      if($aDataFile != 'application/pdf')
+      if($aDataFile['mime_type'] != 'application/pdf')
       {
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 
