@@ -1701,7 +1701,7 @@ class CSharedspaceEx extends CSharedspace
       $asDocument[CONST_CP_TYPE] = getValue(CONST_CP_TYPE);
       $asDocument[CONST_CP_PK] = (int)getValue(CONST_CP_PK);
     }
-
+ChromePhp::log($asDocument);
     if(empty($asDocument['title']) && !$asDocument['fast_upload'])
       return array( 'error' => __LINE__.' - Document title is required.');
 
@@ -1710,6 +1710,7 @@ class CSharedspaceEx extends CSharedspace
     $dToday = date('Y-m-d H:i:s');
 
     // Editing document main table
+ChromePhp::log('Editing document main table');
     $aData = array('title' => $asDocument['title'], 'doc_type' => $asDocument['doc_type'], 'private' => $asDocument['private'], 'description' => $asDocument['description'], 'date_update' => $dToday);
     if($asDocument['is_html'] == 1)
       $aData['description_html'] = $asDocument['description_html'];
@@ -1726,7 +1727,7 @@ class CSharedspaceEx extends CSharedspace
       $aData['date_creation'] = $dToday;
       $nDocPk = $this->_getModel()->add($aData, 'document');
       $bUpdated = false;
-
+ChromePhp::log('add document');
       if(!is_key($nDocPk))
         return array( 'error' => 'Document could not be created in database. Please contact your administrator.');
     }
@@ -1743,7 +1744,7 @@ class CSharedspaceEx extends CSharedspace
       $oDocument = $this->_getModel()->getByFk($pnPk, 'document_link', 'document');
       $asDocument['has_cp_link'] = $oDocument->readFirst();
     }
-
+ChromePhp::log('Uploading the file');
     // Uploading the file
     if(isset($_FILES['document']['name']) && !empty($_FILES['document']['name']))
     {
