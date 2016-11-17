@@ -62,7 +62,8 @@ unlink($backupFile);
 
 $dNow = date('Y-m-d');
 
-$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com';
+//$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com';
+$to      = 'munir@slate-ghc.com';
 $subject = 'Backup completed';
 $message = "Slistem Backup '".$dNow."' completed";
 $headers = 'From: slistem@slate.co.jp' . "\r\n" .
