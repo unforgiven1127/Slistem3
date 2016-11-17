@@ -782,6 +782,7 @@ class SMTP
      */
     public function mail($from)
     {
+        ChromePhp::log('Mail 2');
         $useVerp = ($this->do_verp ? ' XVERP' : '');
         return $this->sendCommand(
             'MAIL FROM',

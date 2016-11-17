@@ -532,7 +532,7 @@ class SMTP {
    */
   public function Mail($from) {
     $this->error = null; // so no confusion is caused
-
+ChromePhp::log('Mail');
     if(!$this->connected()) {
       $this->error = array(
               "error" => "Called Mail() without being connected");
