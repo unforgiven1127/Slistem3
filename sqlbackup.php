@@ -59,7 +59,7 @@ exec($createZip);
 //fclose($f);
 
 // Delete the temporary files
-unlink($sqlFile);
+//unlink($sqlFile);
 //unlink($backupFile);
 
 $dNow = date('Y-m-d');
