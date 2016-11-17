@@ -23,6 +23,21 @@ require_once 'component/mail/phpmailer_5.1/class.phpmailer.php';
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
+$mail->CharSet="iso-8859-1";
+$mail->Host = 'imap.slate.co.jp';                      // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'slistem@slate.co.jp';                    // SMTP username
+$mail->Password = 'Slate!7000ics';                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                    // TCP port to connect to
+
+$mail->From = 'slistem@slate.co.jp';
+$mail->FromName = 'Slistem';
+//$mail->addAddress('ricksherman@netins.net');     // Add a recipient
+//$mail->addReplyTo('info@example.com');
+//$mail->addCC('cc@example.com');
+//$mail->addBCC('bcc@example.com');
+
 $body             = "TEST";
 //$body             = file_get_contents('contents.html');
 //$body             = eregi_replace("[\]",'',$body);
