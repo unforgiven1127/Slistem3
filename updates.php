@@ -19,7 +19,7 @@ define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
 //require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
 
-require_once 'component/mail/phpmailer.php';
+require_once 'component/mail/phpmailer_5.1/class.phpmailer.php';
 
 $mail             = new PHPMailer(); // defaults to using php "mail()"
 
