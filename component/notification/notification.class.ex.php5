@@ -372,7 +372,6 @@ class CNotificationEx extends CNotification
     {
       if($psDate < date('Y-m-d H:i:s', strtotime('-1 hour')))//!CONST_DEV_SERVER &&
       {
-        ChromePhp::log('here');
         return 0;
       }
     }
