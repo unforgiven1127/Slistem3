@@ -900,7 +900,6 @@ function _live_dump($pvTrace, $psTitle = null)
   function getEventTypeList($pbOnlyValues = false, $psType = '', $is_admin = false)
   {
 
-    //ChromePhp::log($pbOnlyValues);
     if(CONST_WEBSITE == 'slistem')
     {
 
@@ -1683,11 +1682,11 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant'";
-//ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-//ChromePhp::log($result);
+
     return $result;
   }
 
@@ -1783,7 +1782,7 @@ var_dump($query);*/
     //$asData = array();
 
     $users = implode(',', $user_ids);
-//ChromePhp::log($users);
+
     $query = 'SELECT m.*, min(m2.sl_meetingpk) as min_date, slc._sys_status as candidate_status
         FROM sl_meeting m
         INNER JOIN sl_meeting m2 on m2.candidatefk = m.candidatefk and m2.meeting_done = 1
@@ -1793,7 +1792,6 @@ var_dump($query);*/
         AND m.date_met < "'.$end_date.'"
         group by m.sl_meetingpk
         order by m.candidatefk';
-//ChromePhp::log($query);
 
     $oDbResult = array();
 
@@ -3215,7 +3213,7 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
 
     $sQuery = "UPDATE sl_notes set candidate_id = '".$target_candidate_id."', last_activity = '".$sDate."', old_candidate_id = '".$candidate_id."' WHERE candidate_id = '".$candidate_id."'";
-    ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
   }
 
@@ -3225,7 +3223,7 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
 
     $sQuery = "UPDATE ".$table_name." SET ".$company_id_name." = '".$company_id."' WHERE ".$id_name." = '".$id."' ";
-    //ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
   }
 
@@ -3235,7 +3233,7 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
 
     $sQuery = "UPDATE sl_company SET merged_company_id = '".$new_company_id."' WHERE sl_companypk = '".$old_company_id."' ";
-    //ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
   }
 
@@ -3441,7 +3439,6 @@ var_dump($query);*/
     }
     $sQuery = trim($sQuery, "OR");
     $sQuery .= " LIMIT 100";
-    //ChromePhp::log($sQuery);
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -3567,9 +3564,6 @@ var_dump($query);*/
     {
       return false;
     }
-
-    //ChromePhp::log($result);
-    //ChromePhp::log($count);
 
     //return $result;
   }
@@ -4063,12 +4057,11 @@ var_dump($query);*/
       }
 
       $old_companies = getCandidateOldCompanies($candidate_id);
-      //ChromePhp::log($old_companies);
+
       if(isset($old_companies[1]))
       {
         $previousCompany = $old_companies[1];// 0 suanki company oluyor.
         $previous_company_id = $previousCompany['company_id'];
-        //ChromePhp::log($previousCompany); // hem old company yenilenecek hem candidate...
 
         updateOldCompany($candidate_id,$previous_company_id);
 
@@ -4121,10 +4114,6 @@ var_dump($query);*/
     $m12 = date('Y-m-d H:i:s', strtotime('-12 months'));;
     $m18 = date('Y-m-d H:i:s', strtotime('-18 months'));
 
-    //ChromePhp::log($m6);
-    //ChromePhp::log($m12);
-    //ChromePhp::log($m18);
-
     $sQuery = "SELECT slpl.date_created as pl_date, slp.companyfk as company_id
                FROM sl_position_link slpl
                INNER JOIN sl_position slp on slp.sl_positionpk = slpl.positionfk
@@ -4175,7 +4164,6 @@ var_dump($query);*/
       }
     }
 
-    //ChromePhp::log($in);
 
   }
 
@@ -4223,7 +4211,6 @@ var_dump($query);*/
                FROM security_alert lsh
                WHERE lsh.type = '".$type."' AND user_id = '".$user_id."' AND action_date >= '".$today."' AND company_id = '".$company_id."' ";
 
-//ChromePhp::log($sQuery);
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -4254,7 +4241,6 @@ var_dump($query);*/
 
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
-      //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
       $dNow = date('Y-m-d H:i:s'); // Japan time
       $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                  VALUES('".$user_id."','search_in_five','".$dNow."')";
@@ -4316,7 +4302,7 @@ var_dump($query);*/
 
       if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
-        //ChromePhp::log('Action: View 5 contact details but not any note entry.');
+
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','contact_view','".$dNow."')";
@@ -4376,7 +4362,6 @@ var_dump($query);*/
     $dNow = date('Y-m-d'); // sadece yil-ay-gun
 
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
-    //ChromePhp::log($holidays[0]['count']);
 
     if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
     {
@@ -4395,7 +4380,7 @@ var_dump($query);*/
 
       if($result[0]['count'] > 50) // 50 den buyuk ise mail
       {
-        //ChromePhp::log('Action: View more than 50 candidates on holiday.');
+
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','holiday_fifty_view','".$dNow."')";
@@ -4591,8 +4576,6 @@ var_dump($query);*/
 
   function editNote($note_id,$array)
   {
-    ChromePhp::log($note_id);
-    ChromePhp::log($array);
 
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
@@ -4633,7 +4616,7 @@ var_dump($query);*/
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-//ChromePhp::log($result);
+
     if(isset($result[0]))
     {
       $preStatus = $result[0]['status'];
@@ -4646,7 +4629,7 @@ var_dump($query);*/
     }
 
     $statusTitle = getStatusTitle($preStatus);
-//ChromePhp::log($statusTitle);
+
     $returnArray = array($statusTitle,$preDate);
     return $returnArray;
 

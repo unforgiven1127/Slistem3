@@ -1132,7 +1132,6 @@ class CLoginEx extends CLogin
     $asUpdate['position'] = getValue('position');
 // eski value ile karsilastir researcher to consultant ise tarihi update et
 
-ChromePhp::log($clientFlag);
     if($clientFlag)
     {
       $oLogin = CDependency::getCpLogin();
@@ -2032,7 +2031,6 @@ ChromePhp::log($clientFlag);
 
     if(!empty($pnCookiePk) && is_integer($pnCookiePk))
     {
-      ChromePhp::log('IF');
        $sQuery = 'SELECT * FROM `login` WHERE loginpk = '.$pnCookiePk.' AND status = 1 ';
     }
     else
@@ -2114,7 +2112,7 @@ ChromePhp::log($clientFlag);
       //no redirection => homepage
       $oPage = CDependency::getCpPage();
       $sUrl = $oPage->getUrlHome();
-      ChromePhp::log($sUrl);
+
     }
 
     if($pbIsAjax)
@@ -2311,7 +2309,7 @@ ChromePhp::log($clientFlag);
 
   private function _redirectUser($psUrl = '')
   {
-    ChromePhp::log($psUrl);
+
     $oPage = CDependency::getCpPage();
     if(empty($psUrl))
     {

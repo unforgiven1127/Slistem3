@@ -1248,7 +1248,6 @@ class CFolderEx extends CFolder
                   ORDER BY str_equal DESC, str_start DESC, fold.label, folderpk';
     }
 
-//ChromePhp::log($sQuery);
     //dump($sQuery);
     $oDbResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oDbResult->readFirst();

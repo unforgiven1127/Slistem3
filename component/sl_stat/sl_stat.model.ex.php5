@@ -591,10 +591,7 @@ order by m.candidatefk
         if ((int)$meeting['meeting_done'] > 0
           && ($met_candidates_array[$meeting['candidatefk']]['times_met'] <= 1 ))
         {
-          if($meeting['created_by'] == '457' && $meeting['candidatefk'] == '319306')
-          {
-            ChromePhp::log('INSIDE...');
-          }
+
           $data[$meeting[$group_switch]]['met'] += 1;
           $data[$meeting[$group_switch]]['met_meeting_info'][] = array('candidate' => $meeting['candidatefk'],
             'date' => $meeting['date_met']);

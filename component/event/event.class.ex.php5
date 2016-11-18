@@ -894,7 +894,7 @@ class CEventEx extends CEvent
       //$sFts = strip_tags($asEvent['title'].' '.$asEvent['content']);
 //text i linkedinden vs kopyaliolar burada patlio...
       $sFts = $asEvent['title'].' '.$asEvent['content'];
-      //ChromePhp::log($sFts);
+
       //$sFts = $contentFts;
 
       /*if(isCJK($sFts))
@@ -976,7 +976,7 @@ class CEventEx extends CEvent
       //Section to send notification about the activity
       if(!empty($asEvent['notify']))
       {
-        ChromePhp::log('notify???');
+
         $asRecipients = explode(',', $asEvent['notify']);
         $asEventType = getEventTypeList();
 
@@ -1630,7 +1630,7 @@ class CEventEx extends CEvent
    */
   private function _fetchMailEvents()
   {
-//ChromePhp::log('_fetchMailEvents');
+
     if(isDevelopment())
     {
       dump('!!! never fetch email from local version, real db will miss data !!!');

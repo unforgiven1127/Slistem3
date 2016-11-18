@@ -1676,7 +1676,7 @@ class CSharedspaceEx extends CSharedspace
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
-ChromePhp::log('_saveDocument');
+//ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1973,7 +1973,6 @@ ChromePhp::log('_saveDocument');
     // Notify users
     if(($aData['private'] == 2) && (!empty($asNotify)))
     {
-      ChromePhp::log('notify ? 11111');
       if(isset($asNotify[$nUserPk]))
         unlink($asNotify[$nUserPk]);
       $this->_notifyUsers($nDocPk, $asNotify);
@@ -1981,7 +1980,6 @@ ChromePhp::log('_saveDocument');
 
     if($asDocument['notify'] && $aData['private']==0)
     {
-      ChromePhp::log('notify ? 22222');
       $asNotify = $oLogin->getUserList(0, true, false);
       if(isset($asNotify[$nUserPk]))
         unset($asNotify[$nUserPk]);

@@ -362,9 +362,6 @@ class CMailEx extends CMail
        $manualCC = $exploded[1];
     }
 
-    //ChromePhp::log($psSubject);
-    //ChromePhp::log($manualCC);
-
     $sEncoding = mb_check_encoding($psSubject);
     if($sEncoding != 'UTF8')
       $this->coPhpMailer->Subject = mb_convert_encoding($psSubject, 'utf8');

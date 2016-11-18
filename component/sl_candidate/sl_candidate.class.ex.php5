@@ -3039,7 +3039,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 $searchTitle = explode(':',$poQB->getTitle());
-ChromePhp::log($searchTitle);
+//ChromePhp::log($searchTitle);
       if ($nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
@@ -3051,7 +3051,7 @@ ChromePhp::log($searchTitle);
           $oPager->setOffset(1);
         }
       }
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
       //Some joins are too heavy to make (notes, contacts...)
       //So we put the main query in a subquery, and join with the filtered / size-limited result
       if($bHeavyJoin)
@@ -6819,7 +6819,7 @@ ChromePhp::log($sQuery);
     private function _getCompanyForm($pnPk = 0)
     {
       $testUrl = $this->_oPage->getAjaxUrl($this->csUid, COMPANY_DUPLI_CONTROL, CONST_CANDIDATE_TYPE_CANDI);
-      ChromePhp::log($testUrl);
+      //ChromePhp::log($testUrl);
 
 
       if(!assert('is_integer($pnPk)'))
@@ -7371,7 +7371,7 @@ ChromePhp::log($mailFlag);
         }
         else
         {
-          ChromePhp::log('HERE');
+//          ChromePhp::log('HERE');
           $oQb->addOrder("scom.$sSortField $sSortOrder");
         }
       }
