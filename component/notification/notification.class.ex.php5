@@ -345,6 +345,7 @@ class CNotificationEx extends CNotification
    */
   public function addReminder($psId, $pvRecipientfk, $psMessage, $psTitle = '', $psDate = null, $pnNaggy = 0, $psNagFreq = null, $pbIsHtml = false)
   {
+    ChromePhp::log('addReminder');
     if(!isset($this->casInitId[$psId]) || empty($this->casInitId[$psId]))
     {
       assert('false; // no reminder ID... ');
