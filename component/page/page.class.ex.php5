@@ -414,7 +414,7 @@ class CPageEx extends CPage
 
         $sCpUid = getValue('custom_uid');
         $bSilent = (bool)getValue('cronSilent', 0);
-ChromePhp::log($bSilent);
+ChromePhp::log($sCpUid);
         if(!$bSilent)
           echo 'Cron started at '.date('Y-m-d H:i:s').' '. microtime(true).'<br /><br />';
 
