@@ -468,12 +468,11 @@ class CNotificationEx extends CNotification
       assert('false; // failed to create the notification_action.');
       return 0;
     }
-ChromePhp::log($psDate);
-ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
+
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
-      ChromePhp::log('30min');
+
       $this->_executeCronAction($nNotificationPk, true);
     }
 
@@ -492,20 +491,13 @@ ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
      * - delivered = -2 if cancelled by user
      *
     */
-
+ChromePhp::log('_executeCronAction');
     //We'd rather be 15 minutes early than 15minute late, right ? NO
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
 
-    if($pbManual)
-    {
-      $sDate = date('Y-m-d H:i:s', strtotime('+3 months'));
-      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
-    }
-    else
-    {
-      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
-    }
+
+    $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
 
     $bRead = $oDbResult->readFirst();
     if(!$bRead)
