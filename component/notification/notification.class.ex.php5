@@ -127,6 +127,7 @@ class CNotificationEx extends CNotification
 
   public function getCronJob()
   {
+    ChromePhp::log('getCronJob');
     $this->_executeCronAction();
     return '';
   }
