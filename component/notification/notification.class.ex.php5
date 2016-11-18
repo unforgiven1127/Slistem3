@@ -370,7 +370,7 @@ class CNotificationEx extends CNotification
     }
     else
     {
-      if(!CONST_DEV_SERVER && $psDate < date('Y-m-d H:i:s', strtotime('-1 hour')))
+      if($psDate < date('Y-m-d H:i:s', strtotime('-1 hour')))//!CONST_DEV_SERVER &&
         return 0;
     }
 
