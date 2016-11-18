@@ -4331,6 +4331,22 @@ var_dump($query);*/
 
   }
 
+  function mailSender()
+  {
+    $subject = "Possible duplication!";
+    $message = "Possible duplication for company id #".$pnPk;
+
+    $oMail = CDependency::getComponentByName('mail');
+
+    $oMail->createNewEmail();
+    $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+    $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+    $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+
+    $oMail->send($subject, $message);
+  }
+
   function sendHtmlMail($to,$subject, $message)
   {
     //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';

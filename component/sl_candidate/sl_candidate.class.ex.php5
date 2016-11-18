@@ -1083,6 +1083,7 @@ class CSl_candidateEx extends CSl_candidate
         $creator_id = $company_information['created_by'];
         $owners = getCompanyOwner($company_id);
         $toEmail = '';
+        $toEmailArray = array();
 
         //$owners[]['owner'] = $creator_id;
         if(!isset($owners[0]['owner']))
@@ -1115,6 +1116,7 @@ class CSl_candidateEx extends CSl_candidate
             $creator_information = getUserInformaiton($owner_id);// owner a aticaz
             if($creator_information['status'] == 1)
             {
+              $toEmailArray[] = $creator_information['email'];
               $toEmail .= $creator_information['email'].";";
             }
             else
@@ -1126,6 +1128,7 @@ class CSl_candidateEx extends CSl_candidate
               else
               {
                 $toEmail .= 'rkiyamu@slate.co.jp;';
+                $toEmailArray[] = 'rkiyamu@slate.co.jp';
               }
 
             }
@@ -1143,7 +1146,21 @@ class CSl_candidateEx extends CSl_candidate
           $message = $user_name." (#".$user_id.") has accessed the contact information of ".$candidate_name." (#".$candidate_id."), who works at ".$company_name." (#".$company_id.") Date: ".$sDate;
 
 
-          sendHtmlMail($toEmail,$subject, $message);
+          $oMail = CDependency::getComponentByName('mail');
+
+          $oMail->createNewEmail();
+          $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+          //$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+          foreach ($toEmailArray as $key => $value)
+          {
+            $oMail->addRecipient($value);
+          }
+          $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+
+          $oMail->send($subject, $message);
+
+          //sendHtmlMail($toEmail,$subject, $message);
 
         }
       }
