@@ -645,7 +645,7 @@ class CNotificationEx extends CNotification
         {
           //reminder
           // $sSubject = CONST_APP_NAME.' reminder';
-
+ChromePhp::log('remainder');
           if($message_info['creatorfk'] == $message_info['loginfk'])
           {
             $sMessage.= 'You\'ve set a reminder for ';
