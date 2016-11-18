@@ -422,6 +422,7 @@ class CNotificationEx extends CNotification
 
     if(!$nNotificationPk)
     {
+      ChromePhp::log('fail?');
       assert('false; // failed to create the notification.');
       return 0;
     }
@@ -436,6 +437,7 @@ class CNotificationEx extends CNotification
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
+      ChromePhp::log('fail 2?');
       assert('false; // could save the source reference of the reminder.');
       return 0;
     }
@@ -449,6 +451,7 @@ class CNotificationEx extends CNotification
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
       if(!$nPk)
       {
+        ChromePhp::log('fail 3?');
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
@@ -465,7 +468,7 @@ class CNotificationEx extends CNotification
       assert('false; // failed to create the notification_action.');
       return 0;
     }
-
+ChromePhp::log('before 30');
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
