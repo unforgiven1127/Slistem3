@@ -371,7 +371,10 @@ class CNotificationEx extends CNotification
     else
     {
       if($psDate < date('Y-m-d H:i:s', strtotime('-1 hour')))//!CONST_DEV_SERVER &&
+      {
+        ChromePhp::log('here');
         return 0;
+      }
     }
 
     //check the reminder recipient
