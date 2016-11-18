@@ -494,7 +494,7 @@ ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
     */
 ChromePhp::log('_executeCronAction');
     //We'd rather be 15 minutes early than 15minute late, right ? NO
-    $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
+    $sDate = date('Y-m-d H:i:s', strtotime('+15 minutes'));
     $sNow = date('Y-m-d H:i:s');
 
 
