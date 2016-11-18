@@ -506,7 +506,7 @@ ChromePhp::log('_executeCronAction');
         return false;
     }
 
-
+ChromePhp::log('HERE if');
     $oMail = CDependency::getComponentByName('mail');
     $asUsers = $this->coLogin->getUserList(0, true, true);
 
