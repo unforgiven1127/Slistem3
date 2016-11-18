@@ -7174,7 +7174,7 @@ ChromePhp::log($mailFlag);
             $oMail->createNewEmail();
             $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
-            $oMail->addRecipient('rkiyamu@slate.co.jp', 'stef');
+            $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
 
             $oMail->send($subject, $message);
 
