@@ -7165,10 +7165,20 @@ ChromePhp::log($mailFlag);
           }
           if(isset($mailFlag) && $mailFlag == 'yes')
           {
-            $to = "rkiyamu@slate.co.jp";
+            //$to = "rkiyamu@slate.co.jp";
             $subject = "Possible duplication!";
             $message = "Possible duplication for company id #".$pnPk;
-            sendHtmlMail($to,$subject, $message);
+
+            $oMail = CDependency::getComponentByName('mail');
+
+            $oMail->createNewEmail();
+            $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+            $oMail->addRecipient('rkiyamu@slate.co.jp', 'stef');
+
+            $oMail->send($subject, $message);
+
+            //sendHtmlMail($to,$subject, $message);
           }
         }
         else
