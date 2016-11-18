@@ -492,27 +492,30 @@ ChromePhp::log(date('Y-m-d H:i:s', strtotime('+ 30 minutes')));
      * - delivered = -2 if cancelled by user
      *
     */
-ChromePhp::log('_executeCronAction');
+
     //We'd rather be 15 minutes early than 15minute late, right ? NO
-    $sDate = date('Y-m-d H:i:s', strtotime('+15 minutes'));
+    $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
 
+    if($pbManual)
+    {
+      $sDate = date('Y-m-d H:i:s', strtotime('+3 months'));
+      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+    }
+    else
+    {
+      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+    }
 
-    $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
-    $test = $oDbResult->getAll();
-    ChromePhp::log($test);
     $bRead = $oDbResult->readFirst();
     if(!$bRead)
     {
-      ChromePhp::log('HERE if 1');
       if($pbManual)
       {
-        ChromePhp::log('HERE if 2');
         return false;
       }
     }
 
-ChromePhp::log('HERE if 3');
     $oMail = CDependency::getComponentByName('mail');
     $asUsers = $this->coLogin->getUserList(0, true, true);
 
