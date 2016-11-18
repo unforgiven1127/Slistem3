@@ -419,7 +419,7 @@ class CPageEx extends CPage
           echo 'Cron started at '.date('Y-m-d H:i:s').' '. microtime(true).'<br /><br />';
 
         $asComponentUid = CDependency::getComponentUidByInterface('has_cron');
-//ChromePhp::log($asComponentUid);
+ChromePhp::log($asComponentUid);
 //ChromePhp::log($bSilent);
         foreach($asComponentUid as $sUid)
         {

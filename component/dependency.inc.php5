@@ -911,7 +911,7 @@ class CDependency
     $asComponents = array();
     foreach(self::$asComponentUid as $sKey => $asComponentParam)
     {
-      if($sKey == "333-333" || (isset($asComponentParam['interfaces'][$psInterface]) && !in_array($sKey, self::$asBlacklist)))
+      if(isset($asComponentParam['interfaces'][$psInterface]) && !in_array($sKey, self::$asBlacklist))
       {
         $asComponents[$sKey] = $sKey;
       }
