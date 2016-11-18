@@ -499,14 +499,20 @@ ChromePhp::log('_executeCronAction');
 
 
     $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+    $test = $oDbResult->getAll();
+    ChromePhp::log($test);
     $bRead = $oDbResult->readFirst();
     if(!$bRead)
     {
+      ChromePhp::log('HERE if 1');
       if($pbManual)
+      {
+        ChromePhp::log('HERE if 2');
         return false;
+      }
     }
 
-ChromePhp::log('HERE if');
+ChromePhp::log('HERE if 3');
     $oMail = CDependency::getComponentByName('mail');
     $asUsers = $this->coLogin->getUserList(0, true, true);
 
