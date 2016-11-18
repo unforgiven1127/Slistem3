@@ -1,6 +1,6 @@
 <?php
 
-ini_set('max_execution_time', 10000);
+/*ini_set('max_execution_time', 10000);
 require_once './common/lib/dropbox-sdk/lib/Dropbox/autoload.php';
 use \Dropbox as dbx;
 
@@ -12,7 +12,7 @@ $accessToken = 'ONKIZcLnUBAAAAAAAAAAB8z48X7hn2KiBDLh8HM7xfszzyuIdOovFX0Y5yKONq6K
 /* @var string $dropboxPath */
 /* @var string $localPath */
 
-$dropboxPath = "/SQL_Backup/sql_db.tgz";
+/*$dropboxPath = "/SQL_Backup/sql_db.tgz";
 $localPath = "/web/backup/SQL_Backup_".date("Y-m-d-His").".tgz";
 
 //mkdir($localPath, 0777);
@@ -40,4 +40,6 @@ if ($metadata === null) {
 echo "Backup downloaded successfully ".date('Y-m-d h:i:s')." <br><br> Metadata: ";
 print_r($metadata);
 echo "<br><br>";
-echo "File contents written to \"$localPath\"\n";
+echo "File contents written to \"$localPath\"\n";*/
+
+echo "Dont have dropbox anymore... ";
