@@ -423,6 +423,8 @@ class CPageEx extends CPage
 //ChromePhp::log($bSilent);
         foreach($asComponentUid as $sUid)
         {
+          ChromePhp::log($sUid);
+          ChromePhp::log($sCpUid);
           if(empty($sCpUid) || $sCpUid == $sUid)
           {
             if(!$bSilent)
