@@ -6,6 +6,7 @@
 require_once './common/lib/dropbox-sdk/lib/Dropbox/autoload.php';
 use \Dropbox as dbx;
 
+echo "test";
 //your access token from the Dropbox App Panel
 $accessToken = 'ONKIZcLnUBAAAAAAAAAAB8z48X7hn2KiBDLh8HM7xfszzyuIdOovFX0Y5yKONq6K';
 echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
