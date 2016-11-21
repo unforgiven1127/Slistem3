@@ -427,14 +427,14 @@ class CPageEx extends CPage
         {
           //ChromePhp::log($sUid);
           //ChromePhp::log($sCpUid);
-          //if(empty($sCpUid) || $sCpUid == $sUid)
-          //{
+          if(empty($sCpUid) || $sCpUid == $sUid)
+          {
             if(!$bSilent)
               echo '<br /><hr /><h1>'.$sUid.'</h1><br />';
 
             $oComponenent = CDependency::getComponentByUid($sUid);
             $oComponenent->getCronJob($bSilent);
-          //}
+          }
         }
 
         if(!$bSilent)
