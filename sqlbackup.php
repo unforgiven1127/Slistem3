@@ -39,10 +39,10 @@ $createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." --password='".$passw
 //$createZip = "sudo tar cvzf $backupFile $sqlFile";
 //echo $createZip;
 //echo '<br><br>';
-//echo '<br><br>';
+echo '<br><br>';
 exec($createBackup);
 //exec($createZip);
-
+echo $createBackup;
 //now run the DBox app info and set the client; we are naming the app folder SQL_Backup but CHANGE THAT TO YOUR ACTUAL APP FOLDER NAME;
 
 //$appInfo = dbx\AppInfo::loadFromJsonFile(__DIR__."/config.json");
