@@ -1,6 +1,11 @@
 
-<?php phpinfo();
+<?php
 
+
+//phpinfo();
+
+
+var_dump(mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test'));
 
 if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
