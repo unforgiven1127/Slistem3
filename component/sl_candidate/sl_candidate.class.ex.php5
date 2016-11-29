@@ -9712,7 +9712,7 @@ die();*/
         $poQB->addSelect('scom.*, IF(LEFT(scom.name , '.$stringCount.') LIKE '.$this->_getModel()->dbEscapeString($sSearchString).', 1, 0) as exact_name2 ');
 
         foreach($asWords as $nKey => $sWord)
-          $asWords[$nKey] = '(scom.name LIKE '.$this->_getModel()->dbEscapeString($sWord.'%').' )';
+          $asWords[$nKey] = '(scom.name LIKE '.$this->_getModel()->dbEscapeString('%'.$sWord.'%').' )';
 
         $implode =implode(' OR ',$asWords);
         $implode = " ( ".$implode." ) ";
