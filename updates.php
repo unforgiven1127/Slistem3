@@ -1,7 +1,9 @@
 
 <?php
 
-require_once './index.php5';
+require_once './conf/main_config.inc.php5';
+require_once './common/lib/global_func.inc.php5';
+require_once './component/dependency.inc.php5';
 //phpinfo();
 
 $subject = "test";
