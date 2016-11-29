@@ -1,7 +1,7 @@
 
 <?php
 
-
+require_once './index.php5';
 //phpinfo();
 
 $subject = "test";
