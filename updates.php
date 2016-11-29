@@ -4,12 +4,22 @@
 
 //phpinfo();
 
+$subject = "test";
+$message = "test msg";
 
-var_dump(mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test'));
+$oMail = CDependency::getComponentByName('mail');
 
-if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
+$oMail->createNewEmail();
+$oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+$oMail->addRecipient('munir_anameric@hotmail.com', 'Munir Anameric');
+$oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+
+$oMail->send($subject, $message);
+
+/*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
     echo 'Mail was sent';
 } else {
     echo 'Couldn\'t send the mail';
-}
+}*/
