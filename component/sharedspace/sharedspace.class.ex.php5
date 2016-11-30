@@ -1607,8 +1607,6 @@ class CSharedspaceEx extends CSharedspace
    */
   public function saveLocalDocument($psFileName, $psFilePath, $psTitle, $psDocType  = '', $pasCpLink = array())
   {
-    ChromePhp::log('saveLocalDocument');
-    ChromePhp::log($psDocType);
     if(!assert('!empty($psFileName) && !empty($psFilePath) && !empty($psTitle)'))
       return 'Missing parameters';
 
@@ -1618,15 +1616,19 @@ class CSharedspaceEx extends CSharedspace
     if(!file_exists($psFilePath))
       return  'File doesn\'t exist';
 
+ChromePhp::log('HERE 1');
+
     $_FILES = array();
     $_FILES['document']['tmp_name'] = $psFilePath;
     $_FILES['document']['name'] = $psFileName;
 
+ChromePhp::log('HERE 2');
+
     $_POST = array('fastupload' => 0, 'title' => $psTitle, 'private' => 0, 'doc_type' => $psDocType);
     $_POST = array_merge($_POST, $pasCpLink);
 
-    //dump($_POST);
-    //dump($_FILES);
+    dump($_POST);
+    dump($_FILES);
 
     $asReturn = $this->_saveDocument(0, true);
 
