@@ -78,14 +78,14 @@ foreach ($result as $key => $value)
 				{
 					foreach ($meetingArray[$candidate_id] as $key => $value)
 					{
-						$meetingArray[$candidate_id][$key]['met'] = 0;
+						$meetingArray[$key]['met'] = 0;
 						if($key == $assigned_user)
 						{
-							$meetingArray[$candidate_id][$key]['remet'] = $meetingArray[$candidate_id][$key]['remet']+1;
+							$meetingArray[$key]['remet'] = $meetingArray[$candidate_id][$key]['remet']+1;
 						}
 						else
 						{
-							$meetingArray[$candidate_id][$key]['remet'] = 1;
+							$meetingArray[$key]['remet'] = 1;
 						}
 					}
 					$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
