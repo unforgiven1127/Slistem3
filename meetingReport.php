@@ -108,6 +108,7 @@ foreach ($result as $key => $value)
 
 foreach ($meetingArray as $key => $value)
 {
+	echo $key.' - ';
 	var_dump($value);
 	echo '<br><br>';
 }
