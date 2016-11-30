@@ -68,6 +68,8 @@ foreach ($result as $key => $value)
 	if(isset($meetingArray[$candidate_id]))
 	{
 		$newArray = $meetingArray[$candidate_id];
+		var_dump($newArray);
+		echo '<br><br>';
 
 	}
 	else
