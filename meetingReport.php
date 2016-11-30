@@ -76,8 +76,8 @@ foreach ($result as $key => $value)
 				$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
 				$remet_count = $meetingArray[$candidate_id][$assigned_user]['remet'];
 				$remet_count++;
-				var_dump($remet_count);
-				echo '<br><br>';
+				//var_dump($remet_count);
+				//echo '<br><br>';
 				$meetingArray[$candidate_id][$assigned_user]['remet'] = $remet_count;
 			}
 			else
