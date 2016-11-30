@@ -31,6 +31,8 @@ require_once './component/dependency.inc.php5';
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 //phpinfo();
 
+imap_timeout(IMAP_OPENTIMEOUT, 10);
+
 $subject = "test";
 $message = "test msg";
 
