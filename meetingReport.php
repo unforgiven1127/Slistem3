@@ -73,7 +73,7 @@ foreach ($result as $key => $value)
 		{
 			if(isset($meetingArray[$candidate_id][$assigned_user]))
 			{
-				$meetingArray[$candidate_id][$assigned_user]['met'] = $meetingArray[$candidate_id][$assigned_user]['met']-1;
+				$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
 				$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id][$assigned_user]['remet']+1;
 			}
 			else
@@ -84,7 +84,7 @@ foreach ($result as $key => $value)
 		}
 		else//ilk gorusme
 		{
-			$meetingArray[$candidate_id][$assigned_user]['met'] = $meetingArray[$candidate_id][$assigned_user]['met']+1;
+			$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
 		}
 		//var_dump($newArray);
 		//echo '<br><br>';
