@@ -1608,6 +1608,7 @@ class CSharedspaceEx extends CSharedspace
   public function saveLocalDocument($psFileName, $psFilePath, $psTitle, $psDocType  = '', $pasCpLink = array())
   {
     ChromePhp::log('saveLocalDocument');
+    ChromePhp::log($psDocType);
     if(!assert('!empty($psFileName) && !empty($psFilePath) && !empty($psTitle)'))
       return 'Missing parameters';
 
