@@ -71,8 +71,16 @@ foreach ($result as $key => $value)
 		$date = $newArray['complete_date'];
 		if($complete_date < $date)//daha once birisi gorusmus.
 		{
-			$meetingArray[$candidate_id][$assigned_user]['met'] = $meetingArray[$candidate_id]['met']-1;
-			$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id]['remet']+1;
+			if(isset($meetingArray[$candidate_id][$assigned_user]))
+			{
+				$meetingArray[$candidate_id][$assigned_user]['met'] = $meetingArray[$candidate_id]['met']-1;
+				$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id]['remet']+1;
+			}
+			else
+			{
+				$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
+				$meetingArray[$candidate_id][$assigned_user]['remet'] = 1;
+			}
 		}
 		else//ilk gorusme
 		{
