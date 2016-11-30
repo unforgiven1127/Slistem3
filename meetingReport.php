@@ -68,7 +68,6 @@ foreach ($result as $key => $value)
 	if(isset($meetingArray[$candidate_id]))
 	{
 		$newArray = $meetingArray[$candidate_id];
-		$
 
 	}
 	else
