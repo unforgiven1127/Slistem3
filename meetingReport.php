@@ -49,10 +49,11 @@ $oMail->send($subject, $message);*/
 $meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
-$sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk
-	FROM sl_meeting slm
-	INNER JOIN login l ON l.loginpk = slm.attendeefk
-	WHERE slm.date_met >= '2013-01-01 00:00:00' AND slm.meeting_done = '1'";
+$sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk, slm.created_by,slm.date_met, slm.attendeefk, cp.grade
+			FROM sl_meeting slm
+			INNER JOIN login l ON l.loginpk = slm.attendeefk
+			INNER JOIN sl_candidate_profile cp on cp.candidatefk = slm.candidatefk
+			WHERE slm.date_met >= '2013-01-01 00:00:00' AND slm.meeting_done = '1'";
 
 $db_result = $oDB->executeQuery($sQuery);
 
@@ -60,7 +61,21 @@ $result = $db_result->getAll();
 
 foreach ($result as $key => $value)
 {
-	
+	$candidate_id = $value['candidatefk'];
+	$assigned_user = $value['attendeefk'];
+	$complete_date = $value['date_met'];
+
+	if(isset($meetingArray[$candidate_id]))
+	{
+		$newArray = $meetingArray[$candidate_id];
+		var_dump($newArray);
+		echo '<br><br>';
+
+	}
+	else
+	{
+		$meetingArray[$candidate_id][$assigned_user][$complete_date]['1']['0'];
+	}
 }
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
