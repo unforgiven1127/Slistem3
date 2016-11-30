@@ -68,17 +68,32 @@ foreach ($result as $key => $value)
 	if(isset($meetingArray[$candidate_id]))
 	{
 		$newArray = $meetingArray[$candidate_id];
-		var_dump($newArray);
-		echo '<br><br>';
-
+		$date = $newArray['complete_date'];
+		if($complete_date < $date)//daha once birisi gorusmus.
+		{
+			$meetingArray[$candidate_id]['met'] = $meetingArray[$candidate_id]['met']-1;
+			$meetingArray[$candidate_id]['remet'] = $meetingArray[$candidate_id]['remet']+1;
+		}
+		else//ilk gorusme
+		{
+			$meetingArray[$candidate_id]['met'] = $meetingArray[$candidate_id]['met']+1;
+		}
+		//var_dump($newArray);
+		//echo '<br><br>';
 	}
 	else
 	{
 		$meetingArray[$candidate_id]['assigned_user'] = $assigned_user;
 		$meetingArray[$candidate_id]['complete_date'] = $complete_date;
-		$meetingArray[$candidate_id]['met'] = 1;
-		$meetingArray[$candidate_id]['remet'] = 0;
+		$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
+		$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
 	}
+}
+
+foreach ($meetingArray as $key => $value)
+{
+	var_dump($value);
+	echo '<br><br>';
 }
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
