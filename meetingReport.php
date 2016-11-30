@@ -71,17 +71,29 @@ foreach ($result as $key => $value)
 		{
 			$newArray = $meetingArray[$candidate_id];
 			$date = $newArray['complete_date'];
-			if($complete_date < $date)//daha once birisi gorusmus.
+			if($complete_date < $date)//daha once bu user gorusmus
 			{
 				$meetingArray[$candidate_id]['complete_date'] = $complete_date;
 				if(isset($meetingArray[$candidate_id][$assigned_user]))
 				{
-					$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
-					$remet_count = $meetingArray[$candidate_id][$assigned_user]['remet'];
-					$remet_count++;
+					foreach ($meetingArray[$candidate_id] as $key => $value)
+					{
+						$meetingArray[$candidate_id][$key]['met'] = 0;
+						if($key == $assigned_user)
+						{
+							$meetingArray[$candidate_id][$key]['remet'] = $meetingArray[$candidate_id][$key]['remet']+1;
+						}
+						else
+						{
+							$meetingArray[$candidate_id][$key]['remet'] = 1;
+						}
+					}
+					$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
+					//$remet_count = $meetingArray[$candidate_id][$assigned_user]['remet'];
+					//$remet_count++;
 					//var_dump($remet_count);
 					//echo '<br><br>';
-					$meetingArray[$candidate_id][$assigned_user]['remet'] = $remet_count;
+					//$meetingArray[$candidate_id][$assigned_user]['remet'] = $remet_count;
 				}
 				else
 				{
