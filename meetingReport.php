@@ -67,10 +67,10 @@ foreach ($result as $key => $value)
 
 	if($assigned_user > 0)
 	{
-		if(isset($meetingArray[$candidate_id]))
+		if(isset($meetingArray[$candidate_id]['complete_date']))
 		{
-			$newArray = $meetingArray[$candidate_id];
-			$date = $newArray['complete_date'];
+			$date = $meetingArray[$candidate_id]['complete_date'];
+			//$date = $newArray['complete_date'];
 			if($complete_date < $date)//daha once bu user gorusmus
 			{
 				$meetingArray[$candidate_id]['complete_date'] = $complete_date;
