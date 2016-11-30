@@ -49,11 +49,13 @@ $oMail->send($subject, $message);*/
 $meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
-$sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk, slm.created_by,slm.date_met, slm.attendeefk, cp.grade
+$sQuery = "SELECT min(m2.sl_meetingpk) as min_date, l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk, slm.created_by,slm.date_met, slm.attendeefk, cp.grade
 			FROM sl_meeting slm
 			INNER JOIN login l ON l.loginpk = slm.attendeefk
+			INNER JOIN sl_meeting m2 on m2.candidatefk = slm.candidatefk and m2.meeting_done = 1
 			INNER JOIN sl_candidate_profile cp on cp.candidatefk = slm.candidatefk
-			WHERE slm.meeting_done = '1'"; //slm.date_met >= '2013-01-01 00:00:00' AND
+			WHERE slm.meeting_done = '1'
+			group by slm.sl_meetingpk"; //slm.date_met >= '2013-01-01 00:00:00' AND
 
 $db_result = $oDB->executeQuery($sQuery);
 
