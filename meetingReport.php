@@ -53,7 +53,7 @@ $sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date
 			FROM sl_meeting slm
 			INNER JOIN login l ON l.loginpk = slm.attendeefk
 			INNER JOIN sl_candidate_profile cp on cp.candidatefk = slm.candidatefk
-			WHERE slm.date_met >= '2013-01-01 00:00:00' AND slm.meeting_done = '1'";
+			WHERE slm.meeting_done = '1'"; //slm.date_met >= '2013-01-01 00:00:00' AND
 
 $db_result = $oDB->executeQuery($sQuery);
 
