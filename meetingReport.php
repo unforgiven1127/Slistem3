@@ -73,9 +73,9 @@ foreach ($result as $key => $value)
 
 	}
 	else
-	{	
-		$meetingArray[$candidate_id][] = $assigned_user;
-		$meetingArray[$candidate_id][$assigned_user][] = $complete_date;
+	{
+		$meetingArray[$candidate_id]['assigned_user'] = $assigned_user;
+		$meetingArray[$candidate_id][$assigned_user]['complete_date'] = $complete_date;
 		$meetingArray[$candidate_id][$assigned_user][$complete_date]['met'] = 1;
 		$meetingArray[$candidate_id][$assigned_user][$complete_date]['remet'] = 0;
 	}
