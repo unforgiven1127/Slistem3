@@ -89,6 +89,10 @@ foreach ($result as $key => $value)
 		else//ilk gorusme
 		{
 			$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
+			if(!isset($meetingArray[$candidate_id][$assigned_user]['remet']))
+			{
+				$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
+			}
 		}
 		//var_dump($newArray);
 		//echo '<br><br>';
