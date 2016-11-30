@@ -718,14 +718,14 @@ class CPageEx extends CPage
 
     $sURL = $this->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_PAGE_TYPE_SETTING);
     $sURL = str_replace('&','&amp;',$sURL);
-    $this->addCustomJs(
+    /*$this->addCustomJs(
     '
         function updatePhpWindowSize()
         {
           //console.log("update page size => "+$(window).height()+" / "+$(window).width());
           $.get("'.$sURL.'&height="+$(window).height()+"&width="+$(window).width());
         }
-    ');
+    ');*/
 
     //1. If we receive the size in ajax, we save it in session
     if($psUid == $this->csUid && $psAction == CONST_ACTION_ADD && $psType == CONST_PAGE_TYPE_SETTING)

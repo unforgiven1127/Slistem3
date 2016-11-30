@@ -933,14 +933,14 @@ class CDisplayEx extends CDisplay
     //1 = PHP_SESSION_NONE
     //2 = PHP_SESSION_ACTIVE
     $selfUrl = CONST_CRM_DOMAIN;
-    /*$sHTML.= "<script type='text/javascript'>
+    $sHTML.= "<script type='text/javascript'>
 
                   var sessionStatus = ".$sessionStatus.";
                   if(sessionStatus != 2)
                   {
                     window.location.href = '".$selfUrl."';
                   }
-              </script>";*/
+              </script>";
 
     $asJsFile[] = CONST_PATH_JS_JQUERY;
     $asJsFile[] = CONST_PATH_JS_JQUERYUI;
