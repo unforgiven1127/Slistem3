@@ -68,16 +68,15 @@ foreach ($result as $key => $value)
 	if(isset($meetingArray[$candidate_id]))
 	{
 		$newArray = $meetingArray[$candidate_id];
-		var_dump($newArray);
-		echo '<br><br>';
+		$
 
 	}
 	else
 	{
 		$meetingArray[$candidate_id]['assigned_user'] = $assigned_user;
-		$meetingArray[$candidate_id][$assigned_user]['complete_date'] = $complete_date;
-		$meetingArray[$candidate_id][$assigned_user][$complete_date]['met'] = 1;
-		$meetingArray[$candidate_id][$assigned_user][$complete_date]['remet'] = 0;
+		$meetingArray[$candidate_id]['complete_date'] = $complete_date;
+		$meetingArray[$candidate_id]['met'] = 1;
+		$meetingArray[$candidate_id]['remet'] = 0;
 	}
 }
 
