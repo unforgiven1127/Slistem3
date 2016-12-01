@@ -73,14 +73,20 @@ foreach ($result as $key => $value)
 	{
 		$meetingArray[$candidate_id] = array();
 	}
+	if(!isset($meetingArray[$candidate_id][$assigned_user]))
+	{
+		$meetingArray[$candidate_id][$assigned_user] = array();
+		$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
+		$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
+	}
 
 	if($first_meeting_id == $meeting_id)//ilk meeting
 	{
-
+		$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
 	}
 	else//remeet
 	{
-
+		$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id][$assigned_user]['remet'] + 1;
 	}
 }
 
