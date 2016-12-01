@@ -81,7 +81,7 @@ foreach ($result as $key => $value)
 	$first_meeting_id = $value['min_date'];
 	$meeting_id = $value['sl_meetingpk'];
 
-	$complete_year = date('Y',$complete_date);
+	$complete_year = substr($complete_date, 0, 4);;
 	echo $complete_year;
 	if($complete_year == $year)
 	{
