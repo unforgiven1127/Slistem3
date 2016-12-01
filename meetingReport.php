@@ -140,7 +140,8 @@ $objPHPExcel->getActiveSheet()->setTitle('Simple');
 // Save Excel 2007 file
 echo date('H:i:s') . " Write to Excel2007 format\n";
 $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
-$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
+$objWriter->save('php://output');
+//$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
 
 // Echo done
 echo date('H:i:s') . " Done writing file.\r\n";
