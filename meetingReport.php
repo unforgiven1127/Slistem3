@@ -108,43 +108,35 @@ foreach ($result as $key => $value)
 }*/
 
 /** Error reporting */
-error_reporting(E_ALL);
-
-
-
-// Create new PHPExcel object
-echo date('H:i:s') . " Create new PHPExcel object\n";
 $objPHPExcel = new PHPExcel();
-
 // Set properties
-echo date('H:i:s') . " Set properties\n";
-$objPHPExcel->getProperties()->setCreator("Maarten Balliauw");
-$objPHPExcel->getProperties()->setLastModifiedBy("Maarten Balliauw");
-$objPHPExcel->getProperties()->setTitle("Office 2007 XLSX Test Document");
-$objPHPExcel->getProperties()->setSubject("Office 2007 XLSX Test Document");
-$objPHPExcel->getProperties()->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.");
-
-
+$objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
+							 ->setLastModifiedBy("Maarten Balliauw")
+							 ->setTitle("Office 2007 XLSX Test Document")
+							 ->setSubject("Office 2007 XLSX Test Document")
+							 ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
+							 ->setKeywords("office 2007 openxml php")
+							 ->setCategory("Test result file");
 // Add some data
-echo date('H:i:s') . " Add some data\n";
-$objPHPExcel->setActiveSheetIndex(0);
-$objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Hello');
-$objPHPExcel->getActiveSheet()->SetCellValue('B2', 'world!');
-$objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Hello');
-$objPHPExcel->getActiveSheet()->SetCellValue('D2', 'world!');
-
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'Hello')
+            ->setCellValue('B2', 'world!')
+            ->setCellValue('C1', 'Hello')
+            ->setCellValue('D2', 'world!');
+// Miscellaneous glyphs, UTF-8
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A4', 'Miscellaneous glyphs')
+            ->setCellValue('A5', 'éàèùâêîôûëïüÿäöüç');
 // Rename sheet
-echo date('H:i:s') . " Rename sheet\n";
 $objPHPExcel->getActiveSheet()->setTitle('Simple');
-
-// Save Excel 2007 file
-echo date('H:i:s') . " Write to Excel2007 format\n";
-$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+// Set active sheet index to the first sheet, so Excel opens this as the first sheet
+$objPHPExcel->setActiveSheetIndex(0);
+// Redirect output to a client’s web browser (Excel5)
+header('Content-Type: application/vnd.ms-excel');
+header('Content-Disposition: attachment;filename="01simple.xls"');
+header('Cache-Control: max-age=0');
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
 $objWriter->save('php://output');
-//$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
-
-// Echo done
-echo date('H:i:s') . " Done writing file.\r\n";
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
