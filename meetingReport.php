@@ -81,7 +81,8 @@ foreach ($result as $key => $value)
 	$first_meeting_id = $value['min_date'];
 	$meeting_id = $value['sl_meetingpk'];
 
-	$complete_year = $complete_date->format("Y");
+	$complete_year = date('Y',$complete_date);
+	echo $complete_year;
 	if($complete_year == $year)
 	{
 		if(!isset($meetingArray[$candidate_id]))
