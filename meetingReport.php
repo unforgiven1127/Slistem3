@@ -58,6 +58,8 @@ $oMail->send($subject, $message);*/
 
 $meetingArray = array();
 
+$year = '2016';
+
 $oDB = CDependency::getComponentByName('database');
 $sQuery = "SELECT min(m2.sl_meetingpk) as min_date, l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk, slm.created_by,slm.date_met, slm.attendeefk, cp.grade
 			FROM sl_meeting slm
@@ -79,24 +81,28 @@ foreach ($result as $key => $value)
 	$first_meeting_id = $value['min_date'];
 	$meeting_id = $value['sl_meetingpk'];
 
-	if(!isset($meetingArray[$candidate_id]))
+	$complete_year = $complete_date->format("Y");
+	if($complete_year == $year)
 	{
-		$meetingArray[$candidate_id] = array();
-	}
-	if(!isset($meetingArray[$candidate_id][$assigned_user]))
-	{
-		$meetingArray[$candidate_id][$assigned_user] = array();
-		$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
-		$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
-	}
+		if(!isset($meetingArray[$candidate_id]))
+		{
+			$meetingArray[$candidate_id] = array();
+		}
+		if(!isset($meetingArray[$candidate_id][$assigned_user]))
+		{
+			$meetingArray[$candidate_id][$assigned_user] = array();
+			$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
+		}
 
-	if($first_meeting_id == $meeting_id)//ilk meeting
-	{
-		$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
-	}
-	else//remeet
-	{
-		$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id][$assigned_user]['remet'] + 1;
+		if($first_meeting_id == $meeting_id)//ilk meeting
+		{
+			$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
+		}
+		else//remet
+		{
+			$meetingArray[$candidate_id][$assigned_user]['remet'] = $meetingArray[$candidate_id][$assigned_user]['remet'] + 1;
+		}
 	}
 }
 
