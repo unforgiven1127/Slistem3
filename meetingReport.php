@@ -58,7 +58,7 @@ $oMail->send($subject, $message);*/
 
 $meetingArray = array();
 
-$year = '2015';
+$year = '2014';
 
 $oDB = CDependency::getComponentByName('database');
 $sQuery = "SELECT min(m2.sl_meetingpk) as min_date, l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk, slm.created_by,slm.date_met, slm.attendeefk, cp.grade
