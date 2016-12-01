@@ -1680,7 +1680,7 @@ ChromePhp::log($asReturn);
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
-//ChromePhp::log('_saveDocument');
+ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1881,7 +1881,7 @@ ChromePhp::log($asReturn);
           'date_creation' => $dToday,
           'live' => 1
           );
-
+ChromePhp::log($aDataFile['mime_type']);
       if($aDataFile['mime_type'] != 'application/pdf')
       {
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
