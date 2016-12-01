@@ -144,9 +144,21 @@ foreach ($meetingArray as $key => $value)
 			$counts[$key2] = array();
 			$counts[$key2]['met'] = 0;
 			$counts[$key2]['remet'] = 0;
+
+			$counts[$key2]['noGrade'] = 0;
+			$counts[$key2]['metGrade'] = 0;
+			$counts[$key2]['lowNotable'] = 0;
+			$counts[$key2]['highNotable'] = 0;
+			$counts[$key2]['topShelf'] = 0;
 		}
 		$counts[$key2]['met'] = $counts[$key2]['met'] + $valueInside['met'];
 		$counts[$key2]['remet'] = $counts[$key2]['remet'] + $valueInside['remet'];
+
+		$counts[$key2]['noGrade'] = $counts[$key2]['noGrade'] + $valueInside['noGrade'];
+		$counts[$key2]['metGrade'] = $counts[$key2]['metGrade'] + $valueInside['metGrade'];
+		$counts[$key2]['lowNotable'] = $counts[$key2]['lowNotable'] + $valueInside['lowNotable'];
+		$counts[$key2]['highNotable'] = $counts[$key2]['highNotable'] + $valueInside['highNotable'];
+		$counts[$key2]['topShelf'] = $counts[$key2]['topShelf'] + $valueInside['topShelf'];
 	}
 	//echo $key.' - ';
 	//var_dump($value);
