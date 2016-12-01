@@ -100,12 +100,20 @@ foreach ($result as $key => $value)
 	}
 }
 
-/*foreach ($meetingArray as $key => $value)
+$counts = array();
+
+foreach ($meetingArray as $key => $value)
 {
+	if(!isset($counts[$key]))
+	{
+		$counts[$key] = array();
+		$counts[$key]['met'] = 0;
+		$counts[$key]['remet'] = 0;
+	}
 	echo $key.' - ';
 	var_dump($value);
 	echo '<br><br>';
-}*/
+}
 
 /** Error reporting */
 error_reporting(E_ALL);
