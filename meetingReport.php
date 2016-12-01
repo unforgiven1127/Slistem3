@@ -228,7 +228,7 @@ foreach ($counts as $key => $value)
 	$remet = $value['remet'];
 	$total = $met + $remet;
 
-	$topShelf = $value['highNotable'];
+	$topShelf = $value['topShelf'];
 	$highNotable = $value['highNotable'];
 	$lowNotable = $value['lowNotable'];
 	$metGrade = $value['metGrade'];
