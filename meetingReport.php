@@ -104,13 +104,24 @@ $counts = array();
 
 foreach ($meetingArray as $key => $value)
 {
-	if(!isset($counts[$key]))
+	foreach ($value as $key2 => $valueInside)
 	{
-		$counts[$key] = array();
-		$counts[$key]['met'] = 0;
-		$counts[$key]['remet'] = 0;
+		if(!isset($counts[$key2]))
+		{
+			$counts[$key2] = array();
+			$counts[$key2]['met'] = 0;
+			$counts[$key2]['remet'] = 0;
+		}
+		$counts[$key2]['met'] = $counts[$key2]['met'] + $valueInside['met'];
+		$counts[$key2]['remet'] = $counts[$key2]['remet'] + $valueInside['remet'];
 	}
-	echo $key.' - ';
+	//echo $key.' - ';
+	//var_dump($value);
+	//echo '<br><br>';
+}
+
+foreach ($counts as $key => $value)
+{
 	var_dump($value);
 	echo '<br><br>';
 }
