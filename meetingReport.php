@@ -80,6 +80,7 @@ foreach ($result as $key => $value)
 	$complete_date = $value['date_met'];
 	$first_meeting_id = $value['min_date'];
 	$meeting_id = $value['sl_meetingpk'];
+	$grade = $value['grade'];
 
 	$complete_year = substr($complete_date, 0, 4);;
 	//echo $complete_year;
@@ -94,11 +95,36 @@ foreach ($result as $key => $value)
 			$meetingArray[$candidate_id][$assigned_user] = array();
 			$meetingArray[$candidate_id][$assigned_user]['met'] = 0;
 			$meetingArray[$candidate_id][$assigned_user]['remet'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['noGrade'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['metGrade'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['lowNotable'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['highNotable'] = 0;
+			$meetingArray[$candidate_id][$assigned_user]['topShelf'] = 0;
 		}
 
 		if($first_meeting_id == $meeting_id)//ilk meeting
 		{
 			$meetingArray[$candidate_id][$assigned_user]['met'] = 1;
+			if($grade == 0)
+			{
+				$meetingArray[$candidate_id][$assigned_user]['noGrade']++;
+			}
+			else if($grade == 1)
+			{
+				$meetingArray[$candidate_id][$assigned_user]['metGrade']++;
+			}
+			else if($grade == 2)
+			{
+				$meetingArray[$candidate_id][$assigned_user]['lowNotable']++;
+			}
+			else if($grade == 3)
+			{
+				$meetingArray[$candidate_id][$assigned_user]['highNotable']++;
+			}
+			else if($grade == 4)
+			{
+				$meetingArray[$candidate_id][$assigned_user]['topShelf']++;
+			}
 		}
 		else//remet
 		{
@@ -167,9 +193,16 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('G2', 'Total candidates and grade');
 
 $objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A3', 'User')
             ->setCellValue('C3', 'New met')
             ->setCellValue('D3', 'Re-meet')
             ->setCellValue('E3', 'Total');
+
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('G3', 'Top shelf')
+            ->setCellValue('H3', 'High notable')
+            ->setCellValue('I3', 'Low notable')
+            ->setCellValue('J3', 'Met');
 
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('C2:E2');
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('G2:J2');
@@ -182,11 +215,21 @@ foreach ($counts as $key => $value)
 	$met = $value['met'];
 	$remet = $value['remet'];
 	$total = $met + $remet;
+
+	$topShelf = $value['highNotable'];
+	$highNotable = $value['highNotable'];
+	$lowNotable = $value['lowNotable'];
+	$metGrade = $value['metGrade'];
+
 	$objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A'.$i, $name)
             ->setCellValue('C'.$i, $met)
             ->setCellValue('D'.$i, $remet)
-            ->setCellValue('E'.$i, $total);
+            ->setCellValue('E'.$i, $total)
+            ->setCellValue('G'.$i, $topShelf)
+            ->setCellValue('H'.$i, $highNotable)
+            ->setCellValue('I'.$i, $lowNotable)
+            ->setCellValue('J'.$i, $metGrade);
     $i++;
 }
 
@@ -205,7 +248,7 @@ $sheet->getStyle("A2:G2")->applyFromArray($style);
             ->setCellValue('A5', 'asdasasd');*/
 
 // Rename worksheet
-$objPHPExcel->getActiveSheet()->setTitle('Simple');
+$objPHPExcel->getActiveSheet()->setTitle('Report');
 
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
