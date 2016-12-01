@@ -122,6 +122,7 @@ foreach ($meetingArray as $key => $value)
 
 foreach ($counts as $key => $value)
 {
+	echo $key.' - ';
 	var_dump($value);
 	echo '<br><br>';
 }
