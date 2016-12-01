@@ -148,7 +148,8 @@ $style = array(
         )
     );
 
-$objPHPExcel->getStyle("A2:G2")->applyFromArray($style);
+$sheet = $objPHPExcel->getActiveSheet();
+$sheet->getStyle("A2:G2")->applyFromArray($style);
 
 // Miscellaneous glyphs, UTF-8
 /*$objPHPExcel->setActiveSheetIndex(0)
