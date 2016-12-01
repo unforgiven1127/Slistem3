@@ -166,17 +166,24 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('C2', 'Meetings')
             ->setCellValue('G2', 'Total candidates and grade');
 
+$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('C3', 'New met')
+            ->setCellValue('D3', 'Re-meet')
+            ->setCellValue('E3', 'Total');
+
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('C2:E2');
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('G2:J2');
 
-$i = 3;
+$i = 4;
 foreach ($counts as $key => $value)
 {
+	$user_information = getUserInformaiton($key);
+	$name = $user_information['firstname'].' '.$user_information['lastname'];
 	$met = $value['met'];
 	$remet = $value['remet'];
 	$total = $met + $remet;
 	$objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A'.$i, 'NAME')
+            ->setCellValue('A'.$i, $name)
             ->setCellValue('C'.$i, $met)
             ->setCellValue('D'.$i, $remet)
             ->setCellValue('E'.$i, $total);
