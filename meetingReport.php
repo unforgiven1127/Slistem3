@@ -82,7 +82,7 @@ foreach ($result as $key => $value)
 	$meeting_id = $value['sl_meetingpk'];
 
 	$complete_year = substr($complete_date, 0, 4);;
-	echo $complete_year;
+	//echo $complete_year;
 	if($complete_year == $year)
 	{
 		if(!isset($meetingArray[$candidate_id]))
