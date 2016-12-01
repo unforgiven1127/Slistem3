@@ -127,12 +127,12 @@ foreach ($meetingArray as $key => $value)
 	//echo '<br><br>';
 }
 
-foreach ($counts as $key => $value)
+/*foreach ($counts as $key => $value)
 {
 	echo $key.' - ';
 	var_dump($value);
 	echo '<br><br>';
-}
+}*/
 
 /** Error reporting */
 error_reporting(E_ALL);
@@ -168,6 +168,20 @@ $objPHPExcel->setActiveSheetIndex(0)
 
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('C2:E2');
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('G2:J2');
+
+$i = 3;
+foreach ($counts as $key => $value)
+{
+	$met = $value['met'];
+	$remet = $value['remet'];
+	$total = $met + $remet;
+	$objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A'.$i, 'NAME')
+            ->setCellValue('C'.$i, $met)
+            ->setCellValue('D'.$i, $remet)
+            ->setCellValue('E'.$i, $total);
+    $i++;
+}
 
 $style = array(
         'alignment' => array(
