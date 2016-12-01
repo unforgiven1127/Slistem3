@@ -124,26 +124,28 @@ if (PHP_SAPI == 'cli')
 $objPHPExcel = new PHPExcel();
 
 // Set document properties
-$objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
-							 ->setLastModifiedBy("Maarten Balliauw")
-							 ->setTitle("Office 2007 XLSX Test Document")
-							 ->setSubject("Office 2007 XLSX Test Document")
-							 ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
-							 ->setKeywords("office 2007 openxml php")
-							 ->setCategory("Test result file");
+$objPHPExcel->getProperties()->setCreator("Slistem")
+							 ->setLastModifiedBy("Slistem")
+							 ->setTitle("Report")
+							 ->setSubject("Report")
+							 ->setDescription("Report")
+							 ->setKeywords("Report")
+							 ->setCategory("Report");
 
 
 // Add some data
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Hello')
-            ->setCellValue('B2', 'world!')
-            ->setCellValue('C1', 'Hello')
-            ->setCellValue('D2', 'world!');
+            ->setCellValue('A2', '2016')
+            ->setCellValue('C2', 'Meetings')
+            ->setCellValue('G2', 'Total candidates and grade');
+
+$objPHPExcel->setActiveSheetIndex(0)->mergeCells('C2:E2');
+$objPHPExcel->setActiveSheetIndex(0)->mergeCells('G2:J2');
 
 // Miscellaneous glyphs, UTF-8
-$objPHPExcel->setActiveSheetIndex(0)
+/*$objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A4', 'Miscellaneous glyphs')
-            ->setCellValue('A5', 'asdasasd');
+            ->setCellValue('A5', 'asdasasd');*/
 
 // Rename worksheet
 $objPHPExcel->getActiveSheet()->setTitle('Simple');
