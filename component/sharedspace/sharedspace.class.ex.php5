@@ -1882,7 +1882,7 @@ ChromePhp::log('_saveDocument');
           'live' => 1
           );
 ChromePhp::log($aDataFile['mime_type']);
-      if($aDataFile['mime_type'] != 'application/pdf')
+      if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
       {
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 
