@@ -1627,11 +1627,11 @@ ChromePhp::log('HERE 2');
     $_POST = array('fastupload' => 0, 'title' => $psTitle, 'private' => 0, 'doc_type' => $psDocType);
     $_POST = array_merge($_POST, $pasCpLink);
 
-    dump($_POST);
-    dump($_FILES);
-
+    //dump($_POST);
+    //dump($_FILES);
+ChromePhp::log('HERE 3');
     $asReturn = $this->_saveDocument(0, true);
-
+ChromePhp::log($asReturn);
     if(isset($asReturn['error']))
       return $asReturn['error'];
 
