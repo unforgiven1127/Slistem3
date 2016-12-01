@@ -1616,22 +1616,19 @@ class CSharedspaceEx extends CSharedspace
     if(!file_exists($psFilePath))
       return  'File doesn\'t exist';
 
-ChromePhp::log('HERE 1');
-
     $_FILES = array();
     $_FILES['document']['tmp_name'] = $psFilePath;
     $_FILES['document']['name'] = $psFileName;
 
-ChromePhp::log('HERE 2');
 
     $_POST = array('fastupload' => 0, 'title' => $psTitle, 'private' => 0, 'doc_type' => $psDocType);
     $_POST = array_merge($_POST, $pasCpLink);
 
     //dump($_POST);
     //dump($_FILES);
-ChromePhp::log('HERE 3');
+
     $asReturn = $this->_saveDocument(0, true);
-ChromePhp::log($asReturn);
+
     if(isset($asReturn['error']))
       return $asReturn['error'];
 
@@ -1680,7 +1677,6 @@ ChromePhp::log($asReturn);
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
-ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1881,7 +1877,7 @@ ChromePhp::log('_saveDocument');
           'date_creation' => $dToday,
           'live' => 1
           );
-ChromePhp::log($aDataFile['mime_type']);
+
       if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
       {
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
