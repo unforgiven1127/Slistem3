@@ -142,6 +142,14 @@ $objPHPExcel->setActiveSheetIndex(0)
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('C2:E2');
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('G2:J2');
 
+$style = array(
+        'alignment' => array(
+            'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+        )
+    );
+
+$objPHPExcel->getStyle("A2:G2")->applyFromArray($style);
+
 // Miscellaneous glyphs, UTF-8
 /*$objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A4', 'Miscellaneous glyphs')
