@@ -630,7 +630,7 @@ ChromePhp::log('_executeAction');
       //start creating the mail content
 
       $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
-ChromePhp::log($message_info['type']);
+//ChromePhp::log($message_info['type']);
       foreach ($user_messages as $message_info)
       {
 
@@ -658,7 +658,7 @@ ChromePhp::log($message_info['type']);
         {
           //reminder
           // $sSubject = CONST_APP_NAME.' reminder';
-ChromePhp::log('remainder');
+//ChromePhp::log('remainder');
           if($message_info['creatorfk'] == $message_info['loginfk'])
           {
             $sMessage.= 'You\'ve set a reminder for ';
