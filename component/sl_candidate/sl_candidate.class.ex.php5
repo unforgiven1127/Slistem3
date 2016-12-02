@@ -10829,8 +10829,8 @@ die();*/
           {
             $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.')))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
 
-            /*$this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$asWords[0].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[1].'%")
-              OR (scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[0].'%" '.$sOperator.' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%") )');*/
+            $this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$asWords[0].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[1].'%")
+              OR (scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[0].'%" '.$sOperator.' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%") )');
 
             $this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
           }
@@ -10838,7 +10838,7 @@ die();*/
           {
             $this->coQb->addWhere(' scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[0].'%" '.$sOperator.' scan.'.$sSecondField.' LIKE "'.$sWildcard.$asWords[1].'%" ');
 
-            //$this->coQb->addOrder(' ratio DESC ');
+            $this->coQb->addOrder(' ratio DESC ');
           }
         }
         else
@@ -10875,8 +10875,8 @@ die();*/
             {
               $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[1].$asWords[0]).'", LOWER(CONCAT(TRIM(scan.'.$sFirstField.'), TRIM(scan.'.$sSecondField.'))))*100/LENGTH(CONCAT(scan.'.$sFirstField.', scan.'.$sSecondField.'))) AS ratio_rev ');
 
-              /*$this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[0].'%")
-              OR (TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sFirstField.') LIKE "'.$sWildcard.$asWords[0].'%") )');*/
+              $this->coQb->addWhere('( (scan.'.$sFirstField.' LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[0].'%")
+              OR (TRIM(scan.'.$sSecondField.') LIKE "'.$sWildcard.$asWords[1].'%" '.$sOperator.' TRIM(scan.'.$sFirstField.') LIKE "'.$sWildcard.$asWords[0].'%") )');
 
               $this->coQb->addOrder(' IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC ');
             }
