@@ -414,19 +414,15 @@ class CPageEx extends CPage
 
         $sCpUid = getValue('custom_uid');
         $bSilent = (bool)getValue('cronSilent', 0);
-//ChromePhp::log($sCpUid);
+
         if(!$bSilent)
           echo 'Cron started at '.date('Y-m-d H:i:s').' '. microtime(true).'<br /><br />';
 
         $asComponentUid = CDependency::getComponentUidByInterface('has_cron');
 //ChromePhp::log($asComponentUid);
 //ChromePhp::log($bSilent);
-        $oComponenent = CDependency::getComponentByUid('333-333'); // php versiyonu guncellenene kadar
-        $oComponenent->getCronJob($bSilent);
         foreach($asComponentUid as $sUid)
         {
-          //ChromePhp::log($sUid);
-          //ChromePhp::log($sCpUid);
           if(empty($sCpUid) || $sCpUid == $sUid)
           {
             if(!$bSilent)

@@ -1620,7 +1620,6 @@ class CSharedspaceEx extends CSharedspace
     $_FILES['document']['tmp_name'] = $psFilePath;
     $_FILES['document']['name'] = $psFileName;
 
-
     $_POST = array('fastupload' => 0, 'title' => $psTitle, 'private' => 0, 'doc_type' => $psDocType);
     $_POST = array_merge($_POST, $pasCpLink);
 
@@ -1677,6 +1676,7 @@ class CSharedspaceEx extends CSharedspace
   */
   private function _saveDocument($pnPk = 0, $pbExternalFile = false, $pasDocData = array())
   {
+//ChromePhp::log('_saveDocument');
     if(!assert('is_integer($pnPk)'))
       return array( 'error' => __LINE__.' - Can\'t save the document: bad parameters.');
 
@@ -1878,7 +1878,7 @@ class CSharedspaceEx extends CSharedspace
           'live' => 1
           );
 
-      if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
+      if($aDataFile['mime_type'] != 'application/pdf')
       {
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 

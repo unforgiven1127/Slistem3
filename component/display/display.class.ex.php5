@@ -991,7 +991,7 @@ class CDisplayEx extends CDisplay
 
         $sHTML.= '<script type="text/javascript" src="/common/js/page_resize.js"></script>';
         $sHTML.= '<script type="text/javascript"> var sWideCssFile = "'.$asSetting['wide_css_file'].'";
-          var asPageParam = new Array('.$asSetting["wide_size"].');
+          var asPageParam = new Array('.$asSetting['wide_size'].');
           sizeManagement(asPageParam, '.(int)CONST_PAGE_USE_WINDOW_SIZE.'); </script>';
       }
     }
