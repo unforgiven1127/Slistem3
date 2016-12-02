@@ -638,7 +638,7 @@ ChromePhp::log($message_info['type']);
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
         // build the message
-        if($message_info['type'] == 'email')
+        if(isset($message_info['type']) && $message_info['type'] == 'email')
         {
           // $sSubject = CONST_APP_NAME;
 

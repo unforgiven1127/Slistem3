@@ -4954,7 +4954,7 @@ $searchTitle = explode(':',$poQB->getTitle());
                   '</a> you are following.<br />Meeting planned for the '.$oLogin->getUserLink($asTmp['attendeefk']).' on the '.$asTmp['date_meeting'].' <br /><br />
                     Please access Slistem for more details.';
 
-          /*foreach($asFollower as $asUserData)
+          foreach($asFollower as $asUserData)
           {
             $sEmail = 'Dear '.$asUserData['name'].', <br /><br />';
             $sEmail.= $sContent;
@@ -4964,7 +4964,7 @@ $searchTitle = explode(':',$poQB->getTitle());
             $oMail->addRecipient($asUserData['email'], $asUserData['name']);
 
             $oMail->send($sSubject, $sEmail);
-          }*/
+          }
         }
       }
       else
