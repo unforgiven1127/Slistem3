@@ -6,6 +6,7 @@
 require_once './common/lib/dropbox-sdk/lib/Dropbox/autoload.php';
 use \Dropbox as dbx;
 
+
 //your access token from the Dropbox App Panel
 $accessToken = 'ONKIZcLnUBAAAAAAAAAAB8z48X7hn2KiBDLh8HM7xfszzyuIdOovFX0Y5yKONq6K';
 echo 'Backup started '.date('Y-m-d h:i:s')."<br><br>";
@@ -31,17 +32,17 @@ $sqlFile = $tmpDir.$prefix.date('Y_m_d').".sql";
 $backupFilename = $sqlFile.".tgz";
 $backupFile = $tmpDir.$backupFilename;
 
-$createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." --password='".$password."' ".$dbName." --> ".$sqlFile;
+$createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." --password='".$password."' ".$dbName." > ".$sqlFile;
 
 //echo '<br><br>';
 //$createZip = "zip --password slateuppermainland $backupFile $sqlFile";
 $createZip = "sudo tar cvzf $backupFile $sqlFile";
-//echo $createZip;
+echo $createZip;
 //echo '<br><br>';
-//echo '<br><br>';
+echo '<br><br>';
 exec($createBackup);
 exec($createZip);
-
+//echo $createBackup;
 //now run the DBox app info and set the client; we are naming the app folder SQL_Backup but CHANGE THAT TO YOUR ACTUAL APP FOLDER NAME;
 
 //$appInfo = dbx\AppInfo::loadFromJsonFile(__DIR__."/config.json");

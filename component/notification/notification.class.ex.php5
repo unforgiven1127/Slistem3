@@ -127,6 +127,7 @@ class CNotificationEx extends CNotification
 
   public function getCronJob()
   {
+    ChromePhp::log('getCronJob');
     $this->_executeCronAction();
     return '';
   }
@@ -422,6 +423,7 @@ class CNotificationEx extends CNotification
 
     if(!$nNotificationPk)
     {
+      ChromePhp::log('fail?');
       assert('false; // failed to create the notification.');
       return 0;
     }
@@ -436,6 +438,7 @@ class CNotificationEx extends CNotification
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
+      ChromePhp::log('fail 2?');
       assert('false; // could save the source reference of the reminder.');
       return 0;
     }
@@ -449,6 +452,7 @@ class CNotificationEx extends CNotification
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
       if(!$nPk)
       {
+        ChromePhp::log('fail 3?');
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
@@ -468,7 +472,10 @@ class CNotificationEx extends CNotification
 
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
+    {
+
       $this->_executeCronAction($nNotificationPk, true);
+    }
 
     return $nNotificationPk;
   }
@@ -485,20 +492,22 @@ class CNotificationEx extends CNotification
      * - delivered = -2 if cancelled by user
      *
     */
-
+ChromePhp::log('_executeCronAction');
     //We'd rather be 15 minutes early than 15minute late, right ? NO
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
 
 
     $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+
     $bRead = $oDbResult->readFirst();
     if(!$bRead)
     {
       if($pbManual)
+      {
         return false;
+      }
     }
-
 
     $oMail = CDependency::getComponentByName('mail');
     $asUsers = $this->coLogin->getUserList(0, true, true);
