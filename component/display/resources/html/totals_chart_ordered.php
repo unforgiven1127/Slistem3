@@ -550,6 +550,8 @@
 			<div class="stat_candi_info <?php echo $value['user_id']; ?>">
 			<?php
 			$line = 1;
+			if(isset($allCanidatesArray[$arrayPosition][$value['user_id']]))
+			{
 			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data):
 			 	if ($line % 2 === 0)
 			 	{
@@ -583,6 +585,7 @@
 				?>
 				</div>
 			<?php endforeach ?>
+			<?php } ?>
 			</div>
 		</td>
 		<td>
