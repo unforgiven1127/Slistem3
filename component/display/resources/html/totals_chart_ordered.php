@@ -236,7 +236,7 @@
 			$line = 1;
 			if(isset($allCanidatesArray[$arrayPosition][$value['user_id']]))
 			{
-				foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data){
+			 foreach($allCanidatesArray[$arrayPosition][$value['user_id']] as $candidate_id => $data):
 			 	if ($line % 2 === 0)
 			 	{
 			 		if($even == '')
@@ -267,8 +267,8 @@
 					}
 				?>
 				</div>
+			<?php endforeach ?>
 			<?php } ?>
-			}
 			</div>
 		</td>
 		<td>
