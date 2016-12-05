@@ -34,8 +34,8 @@ $createBackup = "mysqldump -h ".$dbHost." -u ".$user." --password='".$password."
 //echo '<br><br>';
 //$createZip = "zip --password slateuppermainland $backupFile $sqlFile";
 $createZip = "tar cvzf $backupFile $sqlFile";
-//echo $createZip;
-//echo '<br><br>';
+echo $createBackup;
+echo '<br><br>';
 //echo '<br><br>';
 exec($createBackup);
 exec($createZip);
@@ -62,12 +62,12 @@ exec($createZip);
 
 //$dNow = date('Y-m-d');
 
-$to      = 'ray@slate-ghc.com;mmoir@slate-ghc.com;munir@slate-ghc.com';
-$subject = 'Backup completed';
-$message = "Slistem Backup '".$dNow."' completed";
-$headers = 'From: slistem@slate.co.jp' . "\r\n" .
-    'Reply-To: munir@slate-ghc.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+//$to      = 'ray@slate-ghc.com;mmoir@slate-ghc.com;munir@slate-ghc.com';
+//$subject = 'Backup completed';
+//$message = "Slistem Backup '".$dNow."' completed";
+//$headers = 'From: slistem@slate.co.jp' . "\r\n" .
+//    'Reply-To: munir@slate-ghc.com' . "\r\n" .
+//    'X-Mailer: PHP/' . phpversion();
 
 //mail($to, $subject, $message, $headers);
 
