@@ -656,8 +656,8 @@ ChromePhp::log('_executeAction');
         }
         else
         {
-          //reminder
-          // $sSubject = CONST_APP_NAME.' reminder';
+//reminder
+//$sSubject = CONST_APP_NAME.' reminder';
 //ChromePhp::log('remainder');
           if($message_info['creatorfk'] == $message_info['loginfk'])
           {
