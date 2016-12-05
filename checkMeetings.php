@@ -19,32 +19,33 @@
 
     $count = 0;
 
-    /*while($meetingData = mysql_fetch_assoc($slistemQuery))
+    while($meetingData = mysql_fetch_assoc($slistemQuery))
     {
         array_push($allMeetings,$meetingData);
-    }*/
+    }
 
     foreach ($allMeetings as $key => $meeting)
     {
-        //$create_date = $meeting['date_meeting']; //gorusmenin yapilacagi tarihi aldik o nedenle update e bakmamiza gerek yok
-        //$month = date("m",strtotime($create_date));
+        $create_date = $meeting['date_meeting']; //gorusmenin yapilacagi tarihi aldik o nedenle update e bakmamiza gerek yok
+        $month = date("m",strtotime($create_date));
         //$year = date("Y",strtotime($create_date));
+        $year = '2017';
 
-        //$effectiveDate = date('Y-m-d', strtotime("+1 month", strtotime($create_date)));
+        $effectiveDate = date('Y-m-d', strtotime("+1 month", strtotime($create_date)));
 
-        //$new_month = date("m",strtotime($effectiveDate));
-        //$control_date = $year.'-'.$new_month.'-'.'06 00:00:00';
+        $new_month = date("m",strtotime($effectiveDate));
+        $control_date = $year.'-'.$new_month.'-'.'06 00:00:00';
 
-        //$today = date("Y-m-d H:i:s");
+        $today = date("Y-m-d H:i:s");
 
-        /*if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($control_date ) )
+        if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($control_date ) )
         {
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
             $meeting_id = $meeting['sl_meetingpk'];
             $slistemQueryUpdate = "UPDATE sl_meeting SET meeting_done = '-1', date_updated = '".$today."' WHERE sl_meetingpk = '".$meeting_id."' ";
             $slistemQueryUpdate = mysql_query($slistemQueryUpdate);
             $count++;
-        }*/
+        }
     }
 
     echo "<br><br>Number of updated meetings: ".$count;
