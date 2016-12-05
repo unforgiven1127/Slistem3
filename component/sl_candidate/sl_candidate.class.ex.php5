@@ -6738,7 +6738,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         foreach ($explodedCompanyName as $key => $value)
         {
-          if (in_array($value, $escapeWords))
+          if (in_array($value, $escapeWords) || strlen($value)<4)
           {
             unset($explodedCompanyName[$key]);
           }
