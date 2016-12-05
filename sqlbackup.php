@@ -35,6 +35,10 @@ $backupFile = $tmpDir.$backupFilename;
 $createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." -p ".$password." ".$dbName." > ".$sqlFile;
 echo $createBackup;
 echo '<br><br>';
+
+echo "mysql -u pma_admin -h 127.0.0.1 -p KVW4PVVAWHASuRDz";
+echo '<br><br>';
+
 //$createZip = "zip --password slateuppermainland $backupFile $sqlFile";
 $createZip = "sudo tar cvzf ".$backupFile." $sqlFile";
 echo $createZip;
