@@ -32,7 +32,7 @@ $sqlFile = $tmpDir.$prefix.date('Y_m_d').".sql";
 $backupFilename = $sqlFile.".tgz";
 $backupFile = $tmpDir.$backupFilename;
 
-$createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." --password='".$password."' ".$dbName." > ".$sqlFile;
+$createBackup = "sudo mysqldump -h ".$dbHost." -u ".$user." --password=".$password." ".$dbName." > ".$sqlFile;
 echo $createBackup;
 echo '<br><br>';
 //$createZip = "zip --password slateuppermainland $backupFile $sqlFile";
