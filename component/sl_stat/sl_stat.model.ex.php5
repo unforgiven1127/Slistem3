@@ -524,7 +524,8 @@ order by m.candidatefk
 
       $create_date = $meeting['date_created'];
       $month = date("m",strtotime($create_date));
-      $year = date("Y",strtotime($create_date));
+      //$year = date("Y",strtotime($create_date));
+      $year = '2017';
 
       $effectiveDate = date('Y-m-d', strtotime("+1 month", strtotime($create_date)));
 
