@@ -33,7 +33,14 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
-$subject = "TEST SUBJECT";
+$str = file_get_contents('login_system_history.json');
+
+$json = json_decode($str, true);
+
+var_dump($json);
+
+
+/*$subject = "TEST SUBJECT";
 $message = "TEST MESSAGE";
 
 $oMail = CDependency::getComponentByName('mail');
@@ -60,7 +67,6 @@ $result = $db_result->getAll();
 
 foreach ($result as $key => $value)
 {
-	
 }*/
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
