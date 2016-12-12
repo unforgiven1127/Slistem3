@@ -8036,34 +8036,44 @@ die();*/
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
+
+$bonusManual = getValue('bonus');
 //ChromePhp::log($salaryManual);
 //ChromePhp::log($salaryUnit);
+
 
         if($salaryUnit == 'M')
         {
           $newSalary = $salaryManual * 1000000;
+          $newBonus = $bonusManual * 1000000;
         }
         else if($salaryUnit == 'K')
         {
           $newSalary = $salaryManual * 1000000;
+          $newBonus = $bonusManual * 1000000;
         }
 
         if($newSalary > 100000000 || $newSalary < 10000)
         {
           $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
         }
+        if($newBonus > 100000000 || $newBonus < 10000)
+        {
+          $asError[] = 'Bonus value is not a valid number. ['.$newBonus.']';
+        }
 
         /*if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
           $asError[] = 'Salary value is not a valid number. ['.$asSalary['yen'].' '.$asSalary['currency'].']';*/
 
-        if(!empty($asBonus['value']) && ($asBonus['yen'] > 100000000 || $asBonus['yen'] < 10000))
-         $asError[] = 'Bonus value is not a valid number. ['.$asBonus['yen'].' '.$asBonus['currency'].']';
+        /*if(!empty($asBonus['value']) && ($asBonus['yen'] > 100000000 || $asBonus['yen'] < 10000))
+         $asError[] = 'Bonus value is not a valid number. ['.$asBonus['yen'].' '.$asBonus['currency'].']';*/
 
         //$asData['salary'] = $asSalary['value'];
         $asData['salary'] = $newSalary;
         $asData['currency'] = $asSalary['currency'];
         $asData['currency_rate'] = $asSalary['rate'];
-        $asData['bonus'] = $asBonus['value'];
+        //$asData['bonus'] = $asBonus['value'];
+        $asData['bonus'] = $newBonus;
         $asData['salary_search'] = (int)($asSalary['yen'] + $asBonus['yen']);
 
         $asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
