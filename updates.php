@@ -33,7 +33,7 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
-echo 'json okuma';
+echo 'json okuma <br><br>';
 
 $str = file_get_contents('login_system_history.json');
 
