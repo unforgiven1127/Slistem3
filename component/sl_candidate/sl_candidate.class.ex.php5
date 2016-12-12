@@ -8031,6 +8031,12 @@ die();*/
         $asBonus = $oCurrency->getCurrencyFromPost('bonus');
         $this->_getSalaryInYen($asBonus);
 
+ChromePhp::log($asSalary);
+ChromePhp::log($asSalary['value']);
+
+$testSalary = getValue('salary');
+ChromePhp::log($testSalary);
+
         if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
           $asError[] = 'Salary value is not a valid number. ['.$asSalary['yen'].' '.$asSalary['currency'].']';
 
