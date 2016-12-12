@@ -4211,6 +4211,7 @@ var_dump($query);*/
                FROM security_alert lsh
                WHERE lsh.type = '".$type."' AND user_id = '".$user_id."' AND action_date >= '".$today."' AND company_id = '".$company_id."' ";
 
+//ChromePhp::log($sQuery);
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -4241,6 +4242,7 @@ var_dump($query);*/
 
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
+      //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
       $dNow = date('Y-m-d H:i:s'); // Japan time
       $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                  VALUES('".$user_id."','search_in_five','".$dNow."')";
@@ -4302,7 +4304,7 @@ var_dump($query);*/
 
       if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
-
+        //ChromePhp::log('Action: View 5 contact details but not any note entry.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','contact_view','".$dNow."')";
@@ -4329,22 +4331,6 @@ var_dump($query);*/
       }
     }
 
-  }
-
-  function mailSender()
-  {
-    $subject = "Possible duplication!";
-    $message = "Possible duplication for company id #".$pnPk;
-
-    $oMail = CDependency::getComponentByName('mail');
-
-    $oMail->createNewEmail();
-    $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
-
-    $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-    $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
-
-    $oMail->send($subject, $message);
   }
 
   function sendHtmlMail($to,$subject, $message)
@@ -4378,6 +4364,7 @@ var_dump($query);*/
     $dNow = date('Y-m-d'); // sadece yil-ay-gun
 
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
+    //ChromePhp::log($holidays[0]['count']);
 
     if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
     {
@@ -4396,7 +4383,7 @@ var_dump($query);*/
 
       if($result[0]['count'] > 50) // 50 den buyuk ise mail
       {
-
+        //ChromePhp::log('Action: View more than 50 candidates on holiday.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','holiday_fifty_view','".$dNow."')";
@@ -4592,6 +4579,8 @@ var_dump($query);*/
 
   function editNote($note_id,$array)
   {
+    ChromePhp::log($note_id);
+    ChromePhp::log($array);
 
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
@@ -4632,7 +4621,7 @@ var_dump($query);*/
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-
+//ChromePhp::log($result);
     if(isset($result[0]))
     {
       $preStatus = $result[0]['status'];
@@ -4645,7 +4634,7 @@ var_dump($query);*/
     }
 
     $statusTitle = getStatusTitle($preStatus);
-
+//ChromePhp::log($statusTitle);
     $returnArray = array($statusTitle,$preDate);
     return $returnArray;
 

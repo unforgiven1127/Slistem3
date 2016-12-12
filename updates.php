@@ -33,20 +33,20 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
-/*$subject = "test";
-$message = "test msg";
+$subject = "TEST SUBJECT";
+$message = "TEST MESSAGE";
 
 $oMail = CDependency::getComponentByName('mail');
 
 $oMail->createNewEmail();
 $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
-$oMail->addRecipient('munir_anameric@hotmail.com', 'Munir Anameric');
-$oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+$oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
+$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
 
-$oMail->send($subject, $message);*/
+$oMail->send($subject, $message);
 
-$meetingArray = array();
+/*$meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
 $sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk
@@ -61,7 +61,7 @@ $result = $db_result->getAll();
 foreach ($result as $key => $value)
 {
 	
-}
+}*/
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
