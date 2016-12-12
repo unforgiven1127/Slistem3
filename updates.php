@@ -42,7 +42,7 @@ $str = file_get_contents('login_system_history.json');
 
 $json = json_decode($str, true);
 
-var_dump($json);
+echo '<pre>' . print_r($json, true) . '</pre>';
 
 
 /*$subject = "TEST SUBJECT";
