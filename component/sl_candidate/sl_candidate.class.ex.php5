@@ -8031,21 +8031,31 @@ die();*/
         $asBonus = $oCurrency->getCurrencyFromPost('bonus');
         $this->_getSalaryInYen($asBonus);
 
-ChromePhp::log($asSalary);
-ChromePhp::log($asSalary['value']);
+//ChromePhp::log($asSalary);
+//ChromePhp::log($asSalary['value']);
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
-ChromePhp::log($salaryManual);
-ChromePhp::log($salaryUnit);
+//ChromePhp::log($salaryManual);
+//ChromePhp::log($salaryUnit);
 
-        if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
+        if($salaryUnit == 'M')
+        {
+          $newSalary = $salaryManual * 1000000;
+        }
+        else if($salaryUnit == 'K')
+        {
+          $newSalary = $salaryManual * 1000;
+        }
+
+        /*if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
           $asError[] = 'Salary value is not a valid number. ['.$asSalary['yen'].' '.$asSalary['currency'].']';
 
         if(!empty($asBonus['value']) && ($asBonus['yen'] > 100000000 || $asBonus['yen'] < 10000))
          $asError[] = 'Bonus value is not a valid number. ['.$asBonus['yen'].' '.$asBonus['currency'].']';
-
-        $asData['salary'] = $asSalary['value'];
+*/
+        //$asData['salary'] = $asSalary['value'];
+        $asData['salary'] = $newSalary;
         $asData['currency'] = $asSalary['currency'];
         $asData['currency_rate'] = $asSalary['rate'];
         $asData['bonus'] = $asBonus['value'];
