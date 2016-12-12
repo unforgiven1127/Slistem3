@@ -35,11 +35,11 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 echo 'json okuma';
 
-/*$str = file_get_contents('login_system_history.json');
+$str = file_get_contents('login_system_history.json');
 
 $json = json_decode($str, true);
 
-var_dump($json);*/
+var_dump($json);
 
 
 /*$subject = "TEST SUBJECT";
