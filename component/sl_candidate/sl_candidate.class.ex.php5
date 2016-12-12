@@ -8048,12 +8048,17 @@ $salaryUnit = getValue('salary_unit');
           $newSalary = $salaryManual * 1000000;
         }
 
+        if($newSalary > 100000000 || $newSalary < 10000)
+        {
+          $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
+        }
+
         /*if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
-          $asError[] = 'Salary value is not a valid number. ['.$asSalary['yen'].' '.$asSalary['currency'].']';
+          $asError[] = 'Salary value is not a valid number. ['.$asSalary['yen'].' '.$asSalary['currency'].']';*/
 
         if(!empty($asBonus['value']) && ($asBonus['yen'] > 100000000 || $asBonus['yen'] < 10000))
          $asError[] = 'Bonus value is not a valid number. ['.$asBonus['yen'].' '.$asBonus['currency'].']';
-*/
+
         //$asData['salary'] = $asSalary['value'];
         $asData['salary'] = $newSalary;
         $asData['currency'] = $asSalary['currency'];
