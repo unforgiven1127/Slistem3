@@ -8068,11 +8068,11 @@ $bonusManual = getValue('bonus');
         /*if(!empty($asBonus['value']) && ($asBonus['yen'] > 100000000 || $asBonus['yen'] < 10000))
          $asError[] = 'Bonus value is not a valid number. ['.$asBonus['yen'].' '.$asBonus['currency'].']';*/
 
-        //$asData['salary'] = $asSalary['value'];
+        //$asData['salary'] = $asSalary['value'];//this is not working for some computers/browsers
         $asData['salary'] = $newSalary;
         $asData['currency'] = $asSalary['currency'];
         $asData['currency_rate'] = $asSalary['rate'];
-        //$asData['bonus'] = $asBonus['value'];
+        //$asData['bonus'] = $asBonus['value'];//this is not working for some computers/browsers
         $asData['bonus'] = $newBonus;
         $asData['salary_search'] = (int)($asSalary['yen'] + $asBonus['yen']);
 
