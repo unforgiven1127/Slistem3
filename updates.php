@@ -35,6 +35,9 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 echo 'json okuma <br><br>';
 
+echo file_exists("login_system_history.json");
+echo '<br><br>';
+
 $str = file_get_contents('login_system_history.json');
 
 $json = json_decode($str, true);
