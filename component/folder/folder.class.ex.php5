@@ -453,7 +453,7 @@ class CFolderEx extends CFolder
       $oForm->addField('misc', '', array('type' => 'br'));
 
       $sURL = CONST_CRM_DOMAIN . '/index.php5?uid=555-002&ppa=ppad&ppt=fol&ppk='.$this->cnPk.'&pg=ajx';
-
+ChromePhp::log($sURL);
       $oForm->addField('misc', '', array('type' => 'text', 'text' => '<span style="font-size: 15px;">Click <a href="javascript:;" '
           . 'onclick="if(window.confirm(\'Are you sure you want to delete this folder ?\'))'
           . '{ AjaxRequest(\''.$sURL.'\', \'body\', \'\', \'\', \'\', \'\', \'$(\\\'#userFolderRow_'.$this->cnPk.'\\\').remove(); goPopup.removeLastByType(\\\'layer\\\');\');'
