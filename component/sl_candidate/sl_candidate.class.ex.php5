@@ -8045,7 +8045,7 @@ $salaryUnit = getValue('salary_unit');
         }
         else if($salaryUnit == 'K')
         {
-          $newSalary = $salaryManual * 1000;
+          $newSalary = $salaryManual * 1000000;
         }
 
         /*if(!empty($asSalary['value']) && ($asSalary['yen'] > 100000000 || $asSalary['yen'] < 10000))
