@@ -1140,11 +1140,10 @@ class CFolderEx extends CFolder
 
   protected function _removeFolder($pnPk)
   {
+    ChromePhp::log('_removeFolder');
+    ChromePhp::log($pnPk);
     if(!assert('is_key($pnPk)'))
       return array('error' => 'Wrong Pk given');
-
-    ChromePhp::log($pnPk);
-    ChromePhp::log($pnPk);
 
     $this->_getModel()->deleteItemFromParentFk($pnPk);
     $this->_getModel()->deleteByFk($pnPk, 'folder_rights', 'folder');
