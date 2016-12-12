@@ -8048,16 +8048,16 @@ $bonusManual = getValue('bonus');
           $newBonus = $bonusManual * 1000000;
         }
         else if($salaryUnit == 'K')
-        {
+        {// M ile K arasinda herhangi bir fark yok neden seciyoruz??
           $newSalary = $salaryManual * 1000000;
           $newBonus = $bonusManual * 1000000;
         }
 
-        if($newSalary > 100000000 || $newSalary < 10000)
+        if(!empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
         {
           $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
         }
-        if($newBonus > 100000000 || $newBonus < 10000)
+        if(!empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
         {
           $asError[] = 'Bonus value is not a valid number. ['.$newBonus.']';
         }
