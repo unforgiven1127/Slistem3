@@ -1454,6 +1454,19 @@ function _live_dump($pvTrace, $psTitle = null)
 
   }
 
+  function getCandidateMeetingCount($candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT COUNT(l.*) as meetingCount FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getCandidateActiveMeetings($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');

@@ -8120,6 +8120,19 @@ $bonusManual = getValue('bonus');
         $asData['statusfk'] = (int)getValue('status');
         //extra test & actions here
 
+        if($asData['statusfk'] == 5 || $asData['statusfk'] == 6)
+        {// meeting needed
+          $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
+          $candidateMeetingCount = $candidateMeetingCount[0];
+
+          ChromePhp::log($candidateMeetingCount);
+
+          if($candidateMeetingCoun['meetingCount'] == 0)
+          {
+            $asError[] = 'Candidate should have an scheduled meeting';
+          }
+        }
+
         if($asData['statusfk'] >= 4)
         {
           //Assessed candidate needs a character note
