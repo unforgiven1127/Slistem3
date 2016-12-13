@@ -8052,6 +8052,11 @@ $bonusManual = getValue('bonus');
           $newSalary = $salaryManual * 1000000;
           $newBonus = $bonusManual * 1000000;
         }
+        else
+        {
+          $newSalary = $salaryManual * 1000000;
+          $newBonus = $bonusManual * 1000000;
+        }
 
         if(!empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
         {
