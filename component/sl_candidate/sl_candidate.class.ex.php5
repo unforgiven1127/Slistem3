@@ -8130,7 +8130,7 @@ $bonusManual = getValue('bonus');
 
           ChromePhp::log($candidateMeetingCount);
 
-          if($candidateMeetingCoun['meetingCount'] == 0)
+          if($candidateMeetingCount['meetingCount'] == 0)
           {
             $asError[] = 'Candidate should have an scheduled meeting';
           }

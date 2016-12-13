@@ -1459,7 +1459,7 @@ function _live_dump($pvTrace, $psTitle = null)
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT COUNT(*) as meetingCount FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
