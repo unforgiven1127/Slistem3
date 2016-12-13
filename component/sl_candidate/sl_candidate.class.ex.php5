@@ -8123,6 +8123,9 @@ $bonusManual = getValue('bonus');
         if($asData['statusfk'] == 5 || $asData['statusfk'] == 6)
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
+
+          ChromePhp::log($candidateMeetingCount);
+
           $candidateMeetingCount = $candidateMeetingCount[0];
 
           ChromePhp::log($candidateMeetingCount);
