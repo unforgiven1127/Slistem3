@@ -4933,6 +4933,16 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $nMeetingPk = $this->_getModel()->add($asTmp, 'sl_meeting');
 
+        $oLogin = CDependency::getCpLogin();
+        $user_id = $oLogin->getUserPk();
+        $target_candidate_id = $asTmp['candidatefk'];
+
+        $user_info = getUserInformaiton($user_id);
+
+        $note = "Meeting created by ".$user_info['firstname']. ' '.$user_info['lastname'];
+
+        $addLog = insertLog($user_id, $target_candidate_id, $note);
+
         //Finally: notify people the candidate status has changed (remove the current user obviosuly)
         $asFollower = $this->_getmodel()->getCandidateRm($asTmp['candidatefk'] , true, false);
 
