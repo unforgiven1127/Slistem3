@@ -8124,15 +8124,15 @@ $bonusManual = getValue('bonus');
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
 
-          ChromePhp::log($candidateMeetingCount);
+          //ChromePhp::log($candidateMeetingCount);
 
           $candidateMeetingCount = $candidateMeetingCount[0];
 
-          ChromePhp::log($candidateMeetingCount);
+          //ChromePhp::log($candidateMeetingCount);
 
           if($candidateMeetingCount['meetingCount'] == 0)
           {
-            $asError[] = 'Candidate should have an scheduled meeting';
+            $asError[] = 'Candidate should have a scheduled meeting';
           }
         }
 
