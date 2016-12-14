@@ -2228,6 +2228,7 @@ class CSettingsEx extends CSettings
 
   private function save_htaccess()
   {
+    ChromePhp::log('save_htaccess');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
