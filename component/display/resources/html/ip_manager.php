@@ -1,6 +1,7 @@
 <div style="padding: 10px;">
-	<form name="ip_control_form" id="ip_control_form" enctype="multipart/form-data" submitajax="1" action="<?php echo $form_url; ?>"
-		method="POST" onbeforesubmit="" onsubmit="">
+	<form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
+	action="<?php echo $form_url; ?>" class="candiAddForm" ajaxTarget="candi_duplicate"
+	method="POST" id="addcandidateId" onBeforeSubmit="" onsubmit="">
 		<!-- <div class="general_form_row">
 			<div class="general_form_label">
 				Restore file
