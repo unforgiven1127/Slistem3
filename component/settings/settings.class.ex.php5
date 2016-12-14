@@ -2200,6 +2200,7 @@ class CSettingsEx extends CSettings
 
   private function get_ip_manager()
   {
+    ChromePhp::log('get_ip_manager');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $html = '';
