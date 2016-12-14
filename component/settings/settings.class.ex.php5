@@ -2213,9 +2213,9 @@ class CSettingsEx extends CSettings
 
     ChromePhp::log($form_url);
 
-    //$form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
+    $form_url = $page_obj->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
 
-    //ChromePhp::log($form_url);
+    ChromePhp::log($form_url);
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
