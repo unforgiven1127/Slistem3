@@ -41,21 +41,6 @@ class CSettingsEx extends CSettings
     $this->_processUrl();
     switch($this->csType)
     {
-      case CONST_TYPE_SETTING_IP:
-
-          switch($this->csAction)
-          {
-            case CONST_ACTION_EDIT:
-              ChromePhp::log('test CONST_ACTION_EDIT');
-              return json_encode($this->get_ip_manager());
-              break;
-
-            case CONST_ACTION_ADD:
-              ChromePhp::log('TEST CONST_ACTION_ADD');
-              return json_encode($this->save_htaccess());
-              break;
-          }
-          break;
        case CONST_TYPE_SETTINGS:
         switch($this->csAction)
         {
@@ -246,12 +231,10 @@ class CSettingsEx extends CSettings
           switch($this->csAction)
           {
             case CONST_ACTION_EDIT:
-              ChromePhp::log('test CONST_ACTION_EDIT');
               return json_encode($this->get_ip_manager());
               break;
 
             case CONST_ACTION_ADD:
-              ChromePhp::log('TEST CONST_ACTION_ADD');
               return json_encode($this->save_htaccess());
               break;
           }
@@ -1192,7 +1175,7 @@ class CSettingsEx extends CSettings
     $sUserGrpUrl   = $oPage->getAjaxUrl('login', CONST_ACTION_MANAGE, CONST_LOGIN_TYPE_GROUP);
     $sUserRightUrl = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_USRIGHT);
     $sMenuUrl      = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_MENU);
-    $ip_config_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
+    $ip_config_url = $oPage->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
     $sFooterUrl    = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_FOOTER);
     $sBlackListUrl = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_BLACKLIST);
     $sCronJobUrl   = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_CRON);
@@ -2217,7 +2200,6 @@ class CSettingsEx extends CSettings
 
   private function get_ip_manager()
   {
-    ChromePhp::log('get_ip_manager');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $html = '';
@@ -2226,13 +2208,8 @@ class CSettingsEx extends CSettings
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
-    /*$form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
-          0, array('action' => 'save'));*/
-
-    $oPage = CDependency::getCpPage();
-    //$form_url = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
-    $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
-    ChromePhp::log($form_url);
+    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
+          0, array('action' => 'save'));
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
@@ -2241,9 +2218,8 @@ class CSettingsEx extends CSettings
     return array('data' => $html);
   }
 
-  public function save_htaccess()
+  private function save_htaccess()
   {
-    ChromePhp::log('save_htaccess');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
