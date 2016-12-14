@@ -41,6 +41,21 @@ class CSettingsEx extends CSettings
     $this->_processUrl();
     switch($this->csType)
     {
+      case CONST_TYPE_SETTING_IP:
+
+          switch($this->csAction)
+          {
+            case CONST_ACTION_EDIT:
+              ChromePhp::log('test CONST_ACTION_EDIT');
+              return json_encode($this->get_ip_manager());
+              break;
+
+            case CONST_ACTION_ADD:
+              ChromePhp::log('TEST CONST_ACTION_ADD');
+              return json_encode($this->save_htaccess());
+              break;
+          }
+          break;
        case CONST_TYPE_SETTINGS:
         switch($this->csAction)
         {
