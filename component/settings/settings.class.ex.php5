@@ -2211,11 +2211,13 @@ class CSettingsEx extends CSettings
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 
-    ChromePhp::log($form_url);
+    /*ChromePhp::log($form_url);
 
     $form_url = $page_obj->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
 
-    ChromePhp::log($form_url);
+    ChromePhp::log($form_url);*/
+
+    $form_url = "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&pg=ajx";
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
