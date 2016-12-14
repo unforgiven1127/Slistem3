@@ -2222,7 +2222,7 @@ class CSettingsEx extends CSettings
     return array('data' => $html);
   }
 
-  private function save_htaccess()
+  public function save_htaccess()
   {
     ChromePhp::log('save_htaccess');
     $display_obj = CDependency::getCpHtml();
