@@ -1,5 +1,7 @@
 <div style="padding: 10px;">
-	<form name="loginFormData" enctype="multipart/form-data" submitajax="1" action=<?php echo "'".$form_url."'"; ?> method="POST" id="loginFormDataId" onbeforesubmit onsubmit>
+	<form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
+	action="<?php echo $form_url; ?>" class="candiAddForm" ajaxTarget="candi_duplicate"
+	method="POST" id="addcandidateId" onBeforeSubmit="" onsubmit="">
 		<!-- <div class="general_form_row">
 			<div class="general_form_label">
 				Restore file

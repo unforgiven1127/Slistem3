@@ -2217,9 +2217,9 @@ class CSettingsEx extends CSettings
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD_NEW, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 
-    $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
+    $form_url = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
 
-ChromePhp::log($sURL);
+//ChromePhp::log($form_url);
 
     /*ChromePhp::log($form_url);
 
