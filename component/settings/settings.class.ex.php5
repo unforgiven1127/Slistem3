@@ -2209,8 +2209,10 @@ class CSettingsEx extends CSettings
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
-    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
-          0, array('action' => 'save'));
+    /*$form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
+          0, array('action' => 'save'));*/
+
+    $form_url = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
