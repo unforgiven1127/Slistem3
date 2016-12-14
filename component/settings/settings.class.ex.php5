@@ -1177,7 +1177,7 @@ class CSettingsEx extends CSettings
     $sUserGrpUrl   = $oPage->getAjaxUrl('login', CONST_ACTION_MANAGE, CONST_LOGIN_TYPE_GROUP);
     $sUserRightUrl = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_USRIGHT);
     $sMenuUrl      = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_MENU);
-    $ip_config_url = $oPage->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
+    $ip_config_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
     $sFooterUrl    = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_FOOTER);
     $sBlackListUrl = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_BLACKLIST);
     $sCronJobUrl   = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_CRON);
