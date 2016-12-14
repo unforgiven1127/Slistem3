@@ -1694,7 +1694,7 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant'";
+    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant' AND l.kpi_flag = 'a' ";
 
     $db_result = $oDB->executeQuery($sQuery);
 
