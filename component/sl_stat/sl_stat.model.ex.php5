@@ -992,7 +992,7 @@ order by m.candidatefk
                 FROM login l
                 LEFT JOIN sl_position_link s ON s.created_by = l.loginpk  AND active = 0 AND date_completed BETWEEN '".$ccm1_start_date."' AND '".$ccm1_end_date."'
                 LEFT JOIN sl_nationality sln ON l.nationalityfk = sln.sl_nationalitypk
-                WHERE (l.position = 'Researcher' OR l.loginpk = '457' OR l.loginpk = '481' OR l.loginpk = '466') AND l.loginpk != '382'"; // saruul un hem consultant hem researcher da gorunebilmesi icin...
+                WHERE (l.position = 'Researcher' OR l.loginpk = '457' OR l.loginpk = '481' OR l.loginpk = '466' OR l.loginpk = '444' OR l.loginpk = '443') AND l.loginpk != '382'"; // saruul un hem consultant hem researcher da gorunebilmesi icin...
 
       $db_result = $this->oDB->executeQuery($query);
       $read = $db_result->readFirst();
