@@ -24,4 +24,5 @@
 			<input value="Save" type="submit">
 		</div>
 	</form>
+	<ul><li link="https://beta2.slate.co.jp/index.php5?uid=665-544&amp;ppa=ppae&amp;ppt=ipconf&amp;ppk=0&amp;pg=ajx" rel="ip_manager" onclick=" tabClick(this); ">IP control</li></ul>
 </div>
