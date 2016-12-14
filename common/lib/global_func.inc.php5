@@ -4266,18 +4266,34 @@ var_dump($query);*/
       $username = $user_information['firstname']." ".$user_information['lastname'];
 
       //$to      = 'munir@slate-ghc.com';
-      $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
-      $subject = 'Slistem Activity Flag';
+      //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+      //$subject = 'Slistem Activity Flag';
+      //$message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+      //$message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
+      /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
+          'Reply-To: munir@slate-ghc.com' . "\r\n" .
+          'X-Mailer: PHP/' . phpversion();*/
+
+      $subject = "Slistem Activity Flag";
       $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
       $message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
-      $headers = 'From: slistem@slate.co.jp' . "\r\n" .
-          'Reply-To: munir@slate-ghc.com' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();
+
+      $oMail = CDependency::getComponentByName('mail');
+
+      $oMail->createNewEmail();
+      $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+      $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
+      $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+      $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+      $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+
 
       $flag = securityMailControl($user_id,'search_in_five');
       if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
       {
-        mail($to, $subject, $message, $headers);
+        $oMail->send($subject, $message);
+        //mail($to, $subject, $message, $headers);
       }
     }
 
@@ -4328,18 +4344,29 @@ var_dump($query);*/
         $username = $user_information['firstname']." ".$user_information['lastname'];
 
         //$to      = 'munir@slate-ghc.com';
-        $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+        //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
         $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View 5 contact details but not any note entry.";
-        $headers = 'From: slistem@slate.co.jp' . "\r\n" .
+        /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+            'X-Mailer: PHP/' . phpversion();*/
+
+        $oMail = CDependency::getComponentByName('mail');
+
+        $oMail->createNewEmail();
+        $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+        $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
+        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+        $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
         $flag = securityMailControl($user_id,'contact_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
-          mail($to, $subject, $message, $headers);
+          //mail($to, $subject, $message, $headers);
+          $oMail->send($subject, $message);
         }
       }
     }
@@ -4407,18 +4434,29 @@ var_dump($query);*/
         $username = $user_information['firstname']." ".$user_information['lastname'];
 
         //$to      = 'munir@slate-ghc.com';
-        $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+        //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
         $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View more than 50 candidates on holiday.";
-        $headers = 'From: slistem@slate.co.jp' . "\r\n" .
+        /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+            'X-Mailer: PHP/' . phpversion();*/
+
+        $oMail = CDependency::getComponentByName('mail');
+
+        $oMail->createNewEmail();
+        $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+        $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
+        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+        $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
         $flag = securityMailControl($user_id,'holiday_fifty_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
-          mail($to, $subject, $message, $headers);
+          //mail($to, $subject, $message, $headers);
+          $oMail->send($subject, $message);
         }
 
       }
