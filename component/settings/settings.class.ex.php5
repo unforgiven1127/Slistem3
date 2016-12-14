@@ -2200,6 +2200,7 @@ class CSettingsEx extends CSettings
 
   private function get_ip_manager()
   {
+    ChromePhp::log('get_ip_manager');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $html = '';
@@ -2208,7 +2209,7 @@ class CSettingsEx extends CSettings
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
-    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
+    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
