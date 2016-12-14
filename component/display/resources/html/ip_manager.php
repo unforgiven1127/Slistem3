@@ -1,5 +1,5 @@
 <div style="padding: 10px;">
-	<form action="https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&pg=ajx" method="post">
+	<form action="https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppae&ppt=ipconf&ppk=0&pg=ajx" method="post">
 		<!-- <div class="general_form_row">
 			<div class="general_form_label">
 				Restore file
