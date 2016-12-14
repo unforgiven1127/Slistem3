@@ -1,5 +1,6 @@
 <div style="padding: 10px;">
-	<form action="https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppae&ppt=ipconf&ppk=0&pg=ajx" method="post">
+	<form name="ip_control_form" id="ip_control_form" enctype="multipart/form-data" submitajax="1" action="<?php echo $form_url; ?>"
+		method="POST" onbeforesubmit="" onsubmit="">
 		<!-- <div class="general_form_row">
 			<div class="general_form_label">
 				Restore file
