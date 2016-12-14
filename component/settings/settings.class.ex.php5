@@ -243,6 +243,10 @@ class CSettingsEx extends CSettings
             case CONST_ACTION_ADD_NEW:
               return json_encode($this->save_htaccess());
               break;
+
+            case CONST_ACTION_SAVEADD:
+              return json_encode($oPage->getAjaxExtraContent($this->save_htaccess()));
+              break;
           }
           break;
 
@@ -2217,7 +2221,7 @@ class CSettingsEx extends CSettings
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD_NEW, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 
-    $form_url = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
+    $form_url = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SAVEADD, CONST_TYPE_SETTING_IP);
 
 //ChromePhp::log($form_url);
 
