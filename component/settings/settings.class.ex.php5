@@ -237,6 +237,10 @@ class CSettingsEx extends CSettings
             case CONST_ACTION_ADD:
               return json_encode($this->save_htaccess());
               break;
+
+            case CONST_ACTION_ADD_NEW:
+              return json_encode($this->save_htaccess());
+              break;
           }
           break;
 
@@ -2208,7 +2212,7 @@ class CSettingsEx extends CSettings
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
-    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
+    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD_NEW, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 
     /*ChromePhp::log($form_url);
@@ -2217,7 +2221,7 @@ class CSettingsEx extends CSettings
 
     ChromePhp::log($form_url);*/
 
-    $form_url = "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&pg=ajx";
+    //$form_url = "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&pg=ajx";
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 

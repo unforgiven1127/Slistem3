@@ -355,6 +355,7 @@ define('CONST_ACTION_EMAIL','ppaem');
 define('CONST_ACTION_VIEW_DETAILED', 'ppavd');
 define('CONST_ACTION_FASTEDIT', 'ppafe');
 define('CONST_ACTION_EDIT', 'ppae');
+define('CONST_ACTION_ADD_NEW', 'ppaea');
 define('CONST_ACTION_SEND_CLIENT', 'ppasct');
 define('CONST_ACTION_SUGGEST', 'ppasg');
 define('CONST_ACTION_ADD', 'ppaa');
