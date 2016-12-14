@@ -2215,7 +2215,8 @@ class CSettingsEx extends CSettings
           0, array('action' => 'save'));*/
 
     $oPage = CDependency::getCpPage();
-    $form_url = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
+    //$form_url = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP);
+    $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
     ChromePhp::log($form_url);
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
