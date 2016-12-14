@@ -6,10 +6,12 @@ class CSettingsEx extends CSettings
 {
   private $casSettings = array();
   private $_cbSuperAdmin = null;
+  private $_oPage = null;
 
   public function __construct()
   {
     $bRefresh = (bool)getValue('refresh_settings', 0);
+    $this->_oPage = CDependency::getCpPage();
 
     if(!$bRefresh && isset($_SESSION['settings']) && !empty($_SESSION['settings']))
       $this->casSettings = $_SESSION['settings'];
