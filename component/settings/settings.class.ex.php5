@@ -6,12 +6,10 @@ class CSettingsEx extends CSettings
 {
   private $casSettings = array();
   private $_cbSuperAdmin = null;
-  private $_oPage = null;
 
   public function __construct()
   {
     $bRefresh = (bool)getValue('refresh_settings', 0);
-    $this->_oPage = CDependency::getCpPage();
 
     if(!$bRefresh && isset($_SESSION['settings']) && !empty($_SESSION['settings']))
       $this->casSettings = $_SESSION['settings'];
@@ -238,14 +236,6 @@ class CSettingsEx extends CSettings
 
             case CONST_ACTION_ADD:
               return json_encode($this->save_htaccess());
-              break;
-
-            case CONST_ACTION_ADD_NEW:
-              return json_encode($this->save_htaccess());
-              break;
-
-            case CONST_ACTION_SAVEADD:
-              return json_encode($oPage->getAjaxExtraContent($this->save_htaccess()));
               break;
           }
           break;
@@ -2218,20 +2208,8 @@ class CSettingsEx extends CSettings
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
-    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD_NEW, CONST_TYPE_SETTING_IP,
+    $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-
-    $form_url = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SAVEADD, CONST_TYPE_SETTING_IP);
-
-//ChromePhp::log($form_url);
-
-    /*ChromePhp::log($form_url);
-
-    $form_url = $page_obj->getAjaxUrl('settings',CONST_ACTION_EDIT, CONST_TYPE_SETTING_IP);
-
-    ChromePhp::log($form_url);*/
-
-    //$form_url = "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&pg=ajx";
 
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
@@ -2242,7 +2220,6 @@ class CSettingsEx extends CSettings
 
   private function save_htaccess()
   {
-    ChromePhp::log('save_htaccess');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';

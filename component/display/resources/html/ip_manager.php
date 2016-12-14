@@ -1,7 +1,6 @@
 <div style="padding: 10px;">
-	<form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
-	action="<?php echo $form_url; ?>" class="candiAddForm" ajaxTarget="candi_duplicate"
-	method="POST" id="addcandidateId" onBeforeSubmit="" onsubmit="">
+	<form name="ip_control_form" id="ip_control_form" enctype="multipart/form-data" submitajax="0" action="<?php echo $form_url; ?>"
+		method="POST" onbeforesubmit="" onsubmit="">
 		<!-- <div class="general_form_row">
 			<div class="general_form_label">
 				Restore file
@@ -26,5 +25,4 @@
 			<input value="Save" type="submit">
 		</div>
 	</form>
-	<ul><li link="https://beta2.slate.co.jp/index.php5?uid=665-544&amp;ppa=ppaa&amp;ppt=ipconf&amp;ppk=0&amp;pg=ajx" rel="ip_manager" onclick=" tabClick(this); ">IP control</li></ul>
 </div>
