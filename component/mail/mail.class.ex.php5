@@ -466,7 +466,8 @@ class CMailEx extends CMail
     {
       //manage only 1 to
       $sHeader = $this->coPhpMailer->CreateHeader();
-
+$sEmail = $this->coPhpMailer->to;
+add_remainder_log(6666,$sEmail,'mailClass');
       $nTimeout = imap_timeout(IMAP_READTIMEOUT, 5);
       $bSent = imap_mail($this->_stringifyEmail($this->coPhpMailer->to),
               $this->coPhpMailer->Subject,
