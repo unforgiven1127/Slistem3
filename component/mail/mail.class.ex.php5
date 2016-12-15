@@ -25,6 +25,7 @@
 
 require_once 'component/mail/mail.class.php5';
 require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
+require_once './common/lib/global_func.inc.php5';
 
 class CMailEx extends CMail
 {
@@ -350,6 +351,8 @@ class CMailEx extends CMail
   */
   public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array())
   {
+    add_remainder_log(9999,$psSubject,'mailClass');
+
     if(!assert('!empty($psSubject) && !empty($psContent)'))
      return 0;
 
@@ -433,8 +436,7 @@ class CMailEx extends CMail
       }
     }
 
-    //if(!$this->_send($manualCC))
-    if(!$this->_send())
+    if(!$this->_send($manualCC))
     {
       $this->casError[] = __LINE__.' - Error sending email [ imap:'.(int)CONST_MAIL_IMAP_SEND.' / log:'.CONST_MAIL_IMAP_LOG_SENT.'] ';
       return 0;
@@ -466,8 +468,7 @@ class CMailEx extends CMail
     {
       //manage only 1 to
       $sHeader = $this->coPhpMailer->CreateHeader();
-$sEmail = $this->coPhpMailer->to;
-add_remainder_log(6666,$sEmail,'mailClass');
+
       $nTimeout = imap_timeout(IMAP_READTIMEOUT, 5);
       $bSent = imap_mail($this->_stringifyEmail($this->coPhpMailer->to),
               $this->coPhpMailer->Subject,
@@ -511,8 +512,7 @@ add_remainder_log(6666,$sEmail,'mailClass');
       {
         $ekle = "";
       }*/
-$sEmail = $this->coPhpMailer->to;
-add_remainder_log(6666,$sEmail,'mailClass');
+
       $nTimeout = imap_timeout(IMAP_WRITETIMEOUT, 3);
       imap_append($oMailBox, CONST_MAIL_IMAP_LOG_PARAM_SENT,
      "From: slistem@slate.co.jp\r\n" . "To: ".$this->_stringifyEmail($this->coPhpMailer->to)."\r\n" .
