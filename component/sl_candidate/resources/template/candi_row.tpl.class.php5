@@ -110,6 +110,16 @@ class CCandi_row extends CTemplate
 
 
     $candidateLastStatus = getLastStatus($candidate_id);
+    $statusGroup = array();
+    foreach ($candidateLastStatus as $key => $value)
+    {
+      if(!isset($statusGroup[$value['positionfk']]))
+      {
+        $statusGroup[$value['positionfk']] = array();
+      }
+      $statusGroup[$value['positionfk']][] = $value['status'];
+    }
+    ChromePhp::log($statusGroup);
     if(isset($candidateLastStatus[0]))
     {
       $lastStatus = $candidateLastStatus[0]['status'];
@@ -122,7 +132,7 @@ class CCandi_row extends CTemplate
     {
       $lastStatus = 0;
     }
-    ChromePhp::log($lastStatus);
+    //ChromePhp::log($lastStatus);
     //if(!empty($pasData['_pos_status']))
     if($lastStatus > 0)
     {
