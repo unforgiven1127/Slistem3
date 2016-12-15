@@ -45,8 +45,8 @@ $json = json_decode($str, true);
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
 $sDate = date('Y-m-d H:i:s');
-$subject = "TEST SUBJECT";
-$message = "TEST MESSAGE Date&Time: ".$sDate;
+$subject = "DUPLICATE TEST SUBJECT";
+$message = "DUPLICATE Date&Time: ".$sDate;
 
 $oMail = CDependency::getComponentByName('mail');
 
