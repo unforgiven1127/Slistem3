@@ -3059,6 +3059,17 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
   }
 
+  function add_remainder_log($notification_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $sDate = date('Y-m-d H:i:s');
+
+    $sQuery = "INSERT INTO `remainder_log` (`notification_id`,`first_activity`)
+               VALUES('".$notification_id."','".$sDate."')";
+
+    $db_result = $oDB->executeQuery($sQuery);
+  }
+
   function suggestCandidate($array)
   {
     $oDB = CDependency::getComponentByName('database');

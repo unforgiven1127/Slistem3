@@ -763,6 +763,8 @@ class CNotificationEx extends CNotification
         $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
       }
 
+      add_remainder_log($message_info['notificationpk']);
+
       if($nSent)
       {
         foreach ($user_messages as $message_info)
