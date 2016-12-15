@@ -757,13 +757,8 @@ ChromePhp::log('_executeCronAction');
 
 
       $sSubject .= '__'.$sendCCString;
-      $send_count = 0;
-      if($send_count == 0)
-      {
-        $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
-        $send_count++;
-      }
+      $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
       if($nSent)
       {
