@@ -125,17 +125,6 @@ class CSettingsEx extends CSettings
             break;
         }
         break;
-
-        case CONST_TYPE_SETTING_IP:
-
-          switch($this->csAction)
-          {
-
-            case CONST_ACTION_ADD:
-              return json_encode($this->save_htaccess());
-              break;
-          }
-          break;
     }
   }
 
@@ -243,6 +232,10 @@ class CSettingsEx extends CSettings
           {
             case CONST_ACTION_EDIT:
               return json_encode($this->get_ip_manager());
+              break;
+
+            case CONST_ACTION_ADD:
+              return json_encode($this->save_htaccess());
               break;
           }
           break;
@@ -2227,7 +2220,6 @@ class CSettingsEx extends CSettings
 
   private function save_htaccess()
   {
-    ChromePhp::log('save_htaccess');
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
