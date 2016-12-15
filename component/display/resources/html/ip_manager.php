@@ -33,7 +33,7 @@ function onclickSubmit()
   alert('test');
   $.ajax(
   {
-    url: <?php echo $form_url; ?>,
+    url: "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx",
     dataType: "html",
     success: function(sData)
     {
