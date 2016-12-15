@@ -165,17 +165,20 @@ class CCandi_row extends CTemplate
         $sValue = ' expire';
         $nValue = 3;
       }
-      else
-      {
-        $asOption['title'] = '';
-      }
-      /*elseif($lastStatus == 200)
+      elseif($lastStatus == 200)
       {
         $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
         $sValue = ' inactive';
         $asOption['title'] = 'Candidate inactive: expired, stalled, fallen';
         $nValue = 2;
-      }*/
+      }
+      else
+      {
+        $asOption['class'].= ' ';
+        $sValue = ' ';
+        $asOption['title'] = '';
+        $nValue = 0;
+      }
 
 
       if($alreadyPlaced && $CandidatePlacedFlag)
