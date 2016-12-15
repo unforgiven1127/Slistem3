@@ -128,7 +128,7 @@ class CCandi_row extends CTemplate
         $groupFlag = false;
       }
     }
-    ChromePhp::log($statusGroup);
+    //ChromePhp::log($statusGroup);
     if($groupFlag)
     {
       if(isset($candidateLastStatus[0]))
