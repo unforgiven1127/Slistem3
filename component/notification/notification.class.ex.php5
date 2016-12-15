@@ -423,7 +423,7 @@ class CNotificationEx extends CNotification
 
     if(!$nNotificationPk)
     {
-      ChromePhp::log('fail?');
+      //ChromePhp::log('fail?');
       assert('false; // failed to create the notification.');
       return 0;
     }
@@ -438,7 +438,7 @@ class CNotificationEx extends CNotification
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
-      ChromePhp::log('fail 2?');
+      //ChromePhp::log('fail 2?');
       assert('false; // could save the source reference of the reminder.');
       return 0;
     }
@@ -452,7 +452,7 @@ class CNotificationEx extends CNotification
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
       if(!$nPk)
       {
-        ChromePhp::log('fail 3?');
+        //ChromePhp::log('fail 3?');
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
@@ -492,7 +492,7 @@ class CNotificationEx extends CNotification
      * - delivered = -2 if cancelled by user
      *
     */
-ChromePhp::log('_executeCronAction');
+//ChromePhp::log('_executeCronAction');
     //We'd rather be 15 minutes early than 15minute late, right ? NO
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
