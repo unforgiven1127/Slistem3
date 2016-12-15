@@ -31,7 +31,6 @@
 function onclickSubmit()
 {
   var content = $('#htaccess_contents').val();
-  alert('test');
   $.ajax(
   {
     url: "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx",
@@ -42,6 +41,10 @@ function onclickSubmit()
     success: function(sData)
     {
       alert('IPs are changed successfully');
+    },
+    error:function(sData)
+    {
+      alert('ERROR please get in contact with administrator.');
     }
   });
 }
