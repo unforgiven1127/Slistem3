@@ -559,7 +559,7 @@ class CNotificationEx extends CNotification
         if(!$pbManual)
           echo '<hr />';
 
-        $message_array[$asData['loginfk']][] = $asData;
+        $message_array[$asData['loginfk']][$asData['notificationpk']] = $asData;
       }
       $bRead = $oDbResult->readNext();
     }
