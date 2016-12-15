@@ -55,7 +55,7 @@ $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
 $oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
 //$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
-$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+//$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
 $oMail->send($subject, $message);
 
 /*$meetingArray = array();
