@@ -2204,7 +2204,7 @@ class CSettingsEx extends CSettings
     $page_obj = CDependency::getCpPage();
     $html = '';
     $data = array();
-
+$oPage = CDependency::getCpPage();
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
