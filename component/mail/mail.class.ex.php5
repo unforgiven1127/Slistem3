@@ -447,7 +447,7 @@ class CMailEx extends CMail
 
   private function _send($manualCC = '')
   {
-    if(CONST_DEV_SERVER == 1)
+    /*if(CONST_DEV_SERVER == 1)
     {
       //dump($this->coPhpMailer);
       //replace all recipeints by DEV_EMAIL
@@ -456,7 +456,7 @@ class CMailEx extends CMail
       $this->coPhpMailer->bcc = array();
       $this->coPhpMailer->all_recipients = array();
       //$this->coPhpMailer->ReplyTo = array(array(CONST_DEV_EMAIL));
-    }
+    }*/
 
     //==========================================================================
     //==========================================================================

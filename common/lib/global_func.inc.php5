@@ -3059,13 +3059,13 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
   }
 
-  function add_remainder_log($notification_id,$mail)
+  function add_remainder_log($notification_id,$mail,$location = 'createFunction')
   {
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
-    $sQuery = "INSERT INTO `remainder_log` (`notification_id`,`first_activity`,`mailTo`)
-               VALUES('".$notification_id."','".$sDate."','".$mail."')";
+    $sQuery = "INSERT INTO `remainder_log` (`notification_id`,`first_activity`,`mailTo`,`location`)
+               VALUES('".$notification_id."','".$sDate."','".$mail."','".$location."')";
 
     $db_result = $oDB->executeQuery($sQuery);
   }
