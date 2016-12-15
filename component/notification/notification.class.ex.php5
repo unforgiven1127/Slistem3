@@ -572,7 +572,7 @@ ChromePhp::log('_executeCronAction');
 //ChromePhp::log($pasUsers);
 //ChromePhp::log($poMail);
 //ChromePhp::log($pasAction);
-ChromePhp::log('_executeAction');
+//ChromePhp::log('_executeAction');
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
@@ -631,9 +631,10 @@ ChromePhp::log('_executeAction');
 
       $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
 //ChromePhp::log($message_info['type']);
+
       foreach ($user_messages as $message_info)
       {
-
+        if($send_count == 0)
         $nNaggy = (int)$message_info['naggy'];
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
@@ -756,8 +757,13 @@ ChromePhp::log('_executeAction');
 
 
       $sSubject .= '__'.$sendCCString;
+      $send_count = 0;
+      if($send_count == 0)
+      {
+        $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
-      $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
+        $send_count++;
+      }
 
       if($nSent)
       {
