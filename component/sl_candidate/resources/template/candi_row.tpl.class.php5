@@ -165,7 +165,7 @@ class CCandi_row extends CTemplate
         $sValue = ' expire';
         $nValue = 3;
       }
-      else
+      elseif($lastStatus == 200)
       {
         $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
         $sValue = ' inactive';
