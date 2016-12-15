@@ -2223,10 +2223,10 @@ ChromePhp::log($form_url);
 
   private function save_htaccess()
   {
-    ChromePhp::log('save_htaccess');
     $content = $_POST['content'];
     $action = $_POST['action'];
     ChromePhp::log($content);
+    ChromePhp::log($action);
 
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
@@ -2272,8 +2272,8 @@ ChromePhp::log($form_url);
       case 'load':
         break;
     }
-
-    return $display_obj->getRedirection($redirect_url);
+    return true;
+    //return $display_obj->getRedirection($redirect_url);
   }
 
 }
