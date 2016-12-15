@@ -30,15 +30,15 @@
 <script>
 function onclickSubmit()
 {
-	alert('test');
-  /*$.ajax(
+  alert('test');
+  $.ajax(
   {
-    url: psUrl,
+    url: <?php echo $form_url; ?>,
     dataType: "html",
     success: function(sData)
     {
       alert('test');
     }
-  });*/
+  });
 }
 </script>
