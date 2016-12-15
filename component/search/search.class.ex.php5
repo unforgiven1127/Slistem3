@@ -1546,6 +1546,11 @@ class CSearchEx extends CSearch
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ';
                     //ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
                   }
+                  elseif($sFieldName == 'candidate_met')
+                  {
+                    ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
+                    ChromePhp::log('candidate_met');
+                  }
                   else
                   {
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
