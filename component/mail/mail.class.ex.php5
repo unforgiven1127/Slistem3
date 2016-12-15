@@ -433,7 +433,8 @@ class CMailEx extends CMail
       }
     }
 
-    if(!$this->_send($manualCC))
+    //if(!$this->_send($manualCC))
+    if(!$this->_send())
     {
       $this->casError[] = __LINE__.' - Error sending email [ imap:'.(int)CONST_MAIL_IMAP_SEND.' / log:'.CONST_MAIL_IMAP_LOG_SENT.'] ';
       return 0;
@@ -447,7 +448,7 @@ class CMailEx extends CMail
 
   private function _send($manualCC = '')
   {
-    /*if(CONST_DEV_SERVER == 1)
+    if(CONST_DEV_SERVER == 1)
     {
       //dump($this->coPhpMailer);
       //replace all recipeints by DEV_EMAIL
@@ -456,7 +457,7 @@ class CMailEx extends CMail
       $this->coPhpMailer->bcc = array();
       $this->coPhpMailer->all_recipients = array();
       //$this->coPhpMailer->ReplyTo = array(array(CONST_DEV_EMAIL));
-    }*/
+    }
 
     //==========================================================================
     //==========================================================================
@@ -509,7 +510,8 @@ class CMailEx extends CMail
       {
         $ekle = "";
       }*/
-
+$sEmail = $this->coPhpMailer->to;
+add_remainder_log(6666,$sEmail,'mailClass');
       $nTimeout = imap_timeout(IMAP_WRITETIMEOUT, 3);
       imap_append($oMailBox, CONST_MAIL_IMAP_LOG_PARAM_SENT,
      "From: slistem@slate.co.jp\r\n" . "To: ".$this->_stringifyEmail($this->coPhpMailer->to)."\r\n" .
