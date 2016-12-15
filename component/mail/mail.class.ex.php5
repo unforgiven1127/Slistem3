@@ -25,7 +25,6 @@
 
 require_once 'component/mail/mail.class.php5';
 require_once 'component/mail/phpmailer/PHPMailerAutoload.php';
-require_once './common/lib/global_func.inc.php5';
 
 class CMailEx extends CMail
 {
@@ -351,8 +350,6 @@ class CMailEx extends CMail
   */
   public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array())
   {
-    add_remainder_log(9999,$psSubject,'mailClass');
-
     if(!assert('!empty($psSubject) && !empty($psContent)'))
      return 0;
 
