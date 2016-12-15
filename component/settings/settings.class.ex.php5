@@ -2224,8 +2224,11 @@ ChromePhp::log($form_url);
   private function save_htaccess()
   {
     ChromePhp::log('save_htaccess');
+    $content = $_POST['content'];
+    ChromePhp::log($content);
+
     return true;
-    /*$display_obj = CDependency::getCpHtml();
+    $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
     $error = false;
@@ -2269,7 +2272,7 @@ ChromePhp::log($form_url);
         break;
     }
 
-    return $display_obj->getRedirection($redirect_url);*/
+    return $display_obj->getRedirection($redirect_url);
   }
 
 }
