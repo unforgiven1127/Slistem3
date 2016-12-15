@@ -1553,6 +1553,7 @@ class CSearchEx extends CSearch
                   }
                   else
                   {
+                    ChromePhp::log('else');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
