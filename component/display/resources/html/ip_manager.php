@@ -22,7 +22,23 @@
 			</div>
 		</div>
 		<div class="general_form_row add_margin_top_10" style="text-align: center;">
-			<input value="Save" type="submit">
+			<input value="Save" type="button" onclick="onclickSubmit();">
 		</div>
 	</form>
 </div>
+
+<script>
+function onclickSubmit()
+{
+	alert('test');
+  /*$.ajax(
+  {
+    url: psUrl,
+    dataType: "html",
+    success: function(sData)
+    {
+      alert('test');
+    }
+  });*/
+}
+</script>
