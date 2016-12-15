@@ -33,7 +33,7 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
-echo 'json okuma <br><br>';
+/*echo 'json okuma <br><br>';
 
 echo file_exists("login_system_history.json");
 echo '<br><br>';
@@ -42,10 +42,10 @@ $str = file_get_contents('login_system_history.json');
 
 $json = json_decode($str, true);
 
-echo '<pre>' . print_r($json, true) . '</pre>';
+echo '<pre>' . print_r($json, true) . '</pre>';*/
 
 
-/*$subject = "TEST SUBJECT";
+$subject = "TEST SUBJECT";
 $message = "TEST MESSAGE";
 
 $oMail = CDependency::getComponentByName('mail');
@@ -54,7 +54,7 @@ $oMail->createNewEmail();
 $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
 $oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
-$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
+//$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
 
 $oMail->send($subject, $message);
 
