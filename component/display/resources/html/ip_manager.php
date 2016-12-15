@@ -37,7 +37,8 @@ function onclickSubmit()
     url: "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx",
     dataType: "json",
     type: "POST",
-  	data: {content : content},
+  	data: {content : content,
+  		   action : "save"},
     success: function(sData)
     {
       alert('IPs are changed successfully');

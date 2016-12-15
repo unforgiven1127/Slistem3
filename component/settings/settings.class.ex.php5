@@ -2225,9 +2225,9 @@ ChromePhp::log($form_url);
   {
     ChromePhp::log('save_htaccess');
     $content = $_POST['content'];
+    $action = $_POST['action'];
     ChromePhp::log($content);
 
-    return true;
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
@@ -2236,8 +2236,9 @@ ChromePhp::log($form_url);
 
     $redirect_url = $page_obj->getUrl('settings', CONST_ACTION_ADD, CONST_TYPE_SETTINGS);
 
-    $action = getValue('action', '');
-    $htaccess_contents = getValue('htaccess_contents', '');
+    //$action = getValue('action', '');
+    //$htaccess_contents = getValue('htaccess_contents', '');
+    $htaccess_contents = $content;
     // $htaccess_version = getValue('htaccess_version', '');
 
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
