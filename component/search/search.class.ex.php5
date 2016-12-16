@@ -1533,8 +1533,8 @@ ChromePhp::log('buildComplexSearchQuery');
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
-                //ChromePhp::log($vValue);
-                //ChromePhp::log($sFieldName);
+                ChromePhp::log($vValue);
+                ChromePhp::log($sFieldName);
                 if(!empty($vValue))
                 {
                   //ChromePhp::log('TEST');
