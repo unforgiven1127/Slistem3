@@ -1560,20 +1560,18 @@ ChromePhp::log('buildComplexSearchQuery');
             }
             else
             {
-              ChromePhp::log('ELSE ELSE ELSE');
               //dump(' is NOT an array');
-
-              if(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
+              if($sFieldName == 'candidate_met')
+              {
+                ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
+                ChromePhp::log('candidate_met');
+              }
+              elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
                 //dump(' field => '.$sCondition);
-              }
-              elseif($sFieldName == 'candidate_met')
-              {
-                ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
-                ChromePhp::log('candidate_met');
               }
               elseif(isset($asFieldData['sql']['where']) && !empty($asFieldData['sql']['where']))
               {
