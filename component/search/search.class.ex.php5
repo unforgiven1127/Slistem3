@@ -1445,6 +1445,7 @@ ChromePhp::log('buildComplexSearchQuery');
           $sCondition = '';
           if(!empty($asFieldData['sql']['unmanageable']))
           {
+            ChromePhp::log('IF');
             //replace template operator   !!! some type don't have any !!!
             $sOperator = $this->_getSqlOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
             $sCondition = str_replace('<YYY>', $sOperator, $asFieldData['sql']['unmanageable']);
