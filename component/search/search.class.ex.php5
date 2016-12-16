@@ -1563,7 +1563,7 @@ ChromePhp::log('buildComplexSearchQuery');
               //dump(' is NOT an array');
               if($sFieldName == 'candidate_met')
               {
-                ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
+                ChromePhp::log($this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue));
                 ChromePhp::log('candidate_met');
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
