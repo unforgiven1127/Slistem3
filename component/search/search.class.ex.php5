@@ -1531,7 +1531,6 @@ ChromePhp::log('buildComplexSearchQuery');
             if(is_array($vFieldValue) && $asFieldData['data']['type'] != 'intList')
             {
               //dump(' is an array');
-ChromePhp::log('IFIFIF');
               $asFieldData['data']['field'] = $asFieldData['sql']['field'];
 
               $asArrayCondition = array();
@@ -1561,6 +1560,7 @@ ChromePhp::log('IFIFIF');
             }
             else
             {
+              ChromePhp::log('ELSE ELSE ELSE');
               //dump(' is NOT an array');
 
               if(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
