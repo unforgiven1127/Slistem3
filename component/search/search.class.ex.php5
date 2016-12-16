@@ -1523,6 +1523,7 @@ ChromePhp::log('buildComplexSearchQuery');
           }
           else
           {
+            ChromePhp::log('else');
             // - - - - - - - - - - - - - - - - - - - - - - - -
             //Standard case: use default feature to build sql
 
@@ -1536,8 +1537,6 @@ ChromePhp::log('buildComplexSearchQuery');
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
-                ChromePhp::log($vValue);
-                ChromePhp::log($sFieldName);
                 if(!empty($vValue))
                 {
                   //ChromePhp::log('TEST');
@@ -1548,11 +1547,6 @@ ChromePhp::log('buildComplexSearchQuery');
 
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ';
                     //ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
-                  }
-                  elseif($sFieldName == 'candidate_met')
-                  {
-                    ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
-                    ChromePhp::log('candidate_met');
                   }
                   else
                   {
@@ -1575,6 +1569,11 @@ ChromePhp::log('buildComplexSearchQuery');
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
                 //dump(' field => '.$sCondition);
+              }
+              elseif($sFieldName == 'candidate_met')
+              {
+                ChromePhp::log($this->_getSqlFromOperator($asFieldData['data']));
+                ChromePhp::log('candidate_met');
               }
               elseif(isset($asFieldData['sql']['where']) && !empty($asFieldData['sql']['where']))
               {
