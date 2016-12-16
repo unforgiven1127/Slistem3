@@ -1253,7 +1253,6 @@ ChromePhp::log('buildComplexSearchQuery');
       $asCondition = array();
       foreach($_POST['field_selector'][$nGroup] as $nRowNumber => $sFieldName)
       {
-        ChromePhp::log($sFieldName);
         insertAILog("complex_search",$sFieldName,$user_id);
         $vFieldValue = @$_POST[$sFieldName][$nGroup][$nRowNumber];
         $allSalesFlag = false;
@@ -1393,6 +1392,9 @@ ChromePhp::log('buildComplexSearchQuery');
         }
         else
         {
+
+        ChromePhp::log($sFieldName);
+        ChromePhp::log($vFieldValue);
           //fetch row data
           $sFieldOperator = @$_POST['field_operator'][$nGroup][$nRowNumber];
 
