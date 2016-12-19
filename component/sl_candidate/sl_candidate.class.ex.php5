@@ -6343,8 +6343,9 @@ $searchTitle = explode(':',$poQB->getTitle());
     // start CANDIDATE section
     private function _getCompanyActionList($company_id = 0)
     {
+      ChromePhp::log($company_id);
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
-      $sHTML = 'company id: '.$company_id;
+      $sHTML = 'company id: ';
       return $sHTML;
     }
 
