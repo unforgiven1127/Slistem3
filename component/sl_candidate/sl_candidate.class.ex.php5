@@ -9884,6 +9884,9 @@ $bonusManual = getValue('bonus');
 
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
+        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_EDIT, CONST_CANDIDATE_TYPE_CANDI, $pasCandidateData['sl_candidatepk']);
+        $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';
+
         $sCompany = '<div class="cp_ns_row">
             <div class="cp_quality qlt_'.$asCpData['level_letter'].'">'.$asCpData['level_letter'].'</div>
             <div class="cp_id">#'.$asCpData['sl_companypk'].'</div>
@@ -9891,7 +9894,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_consultant">'.$owner_names.'</div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
             <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
-            <div class="cp_activity"><a style="cursor: pointer;">Activity list</a></div>
+            <div class="cp_activity"><a onclick=" '.$sJavascript.'" style="cursor: pointer;">Activity list</a></div>
           </div>';
 // employeeCount yerine $asCpData['num_employee'] vardi
 
