@@ -582,11 +582,6 @@ class CSl_candidateEx extends CSl_candidate
             return $this->_getCandidateAddForm($this->cnPk);
             break;
 
-          case CONST_ACTION_COMPANY_ACTION:
-            return $this->_getCompanyActionList();
-            break;
-
-
           case CONST_ACTION_VIEW:
             /*//load an empty tab with a js to load the candidate
             $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, $this->cnPk);
@@ -636,6 +631,11 @@ class CSl_candidateEx extends CSl_candidate
 
             case CONST_ACTION_VIEW:
               return $this->_getCompanyView($this->cnPk);
+              break;
+
+
+            case CONST_ACTION_COMPANY_ACTION:
+              return $this->_getCompanyActionList($this->cnPk);
               break;
           }
           break;
@@ -6345,7 +6345,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_getCompanyActionList');
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
-      $sHTML = 'company id: ';
+      $sHTML = '';
       return $sHTML;
     }
 
@@ -9897,7 +9897,9 @@ $bonusManual = getValue('bonus');
 
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
-        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_CANDI);
+        $activityURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
+
+        //$activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION,CONST_CANDIDATE_TYPE_CANDI);
         $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';
 
         //$actionInfo = getCompanyActionList($sCpData['sl_companypk']);
