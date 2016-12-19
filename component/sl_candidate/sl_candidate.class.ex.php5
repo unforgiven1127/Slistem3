@@ -583,7 +583,7 @@ class CSl_candidateEx extends CSl_candidate
             break;
 
           case CONST_ACTION_COMPANY_ACTION:
-            return $this->_getCompanyActionList($this->cnPk);
+            return $this->_getCompanyActionList();
             break;
 
 
@@ -6343,7 +6343,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     // start CANDIDATE section
     private function _getCompanyActionList($company_id = 0)
     {
-      ChromePhp::log($company_id);
+      ChromePhp::log('_getCompanyActionList');
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
       $sHTML = 'company id: ';
       return $sHTML;
