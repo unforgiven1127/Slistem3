@@ -582,6 +582,10 @@ class CSl_candidateEx extends CSl_candidate
             return $this->_getCandidateAddForm($this->cnPk);
             break;
 
+          case CONST_ACTION_COMPANY_ACTION:
+            return $this->_getCompanyActionList($this->cnPk);
+            break;
+
 
           case CONST_ACTION_VIEW:
             /*//load an empty tab with a js to load the candidate
@@ -6337,6 +6341,14 @@ $searchTitle = explode(':',$poQB->getTitle());
     // ====================================================================================
     // ====================================================================================
     // start CANDIDATE section
+    private function _getCompanyActionList($company_id = 0)
+    {
+      //$sHTML = $this->_oDisplay->render('candidate_add', $data);
+      $sHTML = 'company id: '.$company_id;
+      return $sHTML;
+    }
+
+
     private function _getCandidateAddForm($pnCandidatePk = 0)
     {
       if(!assert('is_integer($pnCandidatePk)'))
@@ -9884,8 +9896,10 @@ $bonusManual = getValue('bonus');
 
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
-        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_EDIT, CONST_CANDIDATE_TYPE_CANDI,0);
+        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_CANDI,$sCpData['sl_companypk']);
         $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';
+
+        //$actionInfo = getCompanyActionList($sCpData['sl_companypk']);
 
         $sCompany = '<div class="cp_ns_row">
             <div class="cp_quality qlt_'.$asCpData['level_letter'].'">'.$asCpData['level_letter'].'</div>
