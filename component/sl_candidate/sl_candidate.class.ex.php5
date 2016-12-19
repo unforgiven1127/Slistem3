@@ -9896,7 +9896,7 @@ $bonusManual = getValue('bonus');
 
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
-        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_CANDI,$sCpData['sl_companypk']);
+        $activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_CANDI,$asCpData['sl_companypk']);
         $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';
 
         //$actionInfo = getCompanyActionList($sCpData['sl_companypk']);
