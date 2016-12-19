@@ -1563,8 +1563,9 @@ ChromePhp::log('buildComplexSearchQuery');
               //dump(' is NOT an array');
               if($sFieldName == 'candidate_met')
               {//candidate met secilirse where kismini yazalim
-                $asFieldData['data']['field'] = $asFieldData['sql']['field'];
-                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
+                //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
+                //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
+                $sCondition = "smee.";
                 ChromePhp::log($sCondition);
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
@@ -1582,7 +1583,7 @@ ChromePhp::log('buildComplexSearchQuery');
               }
             }
           }
-
+ChromePhp::log($sCondition);
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;
