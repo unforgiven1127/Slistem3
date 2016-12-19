@@ -1870,7 +1870,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       'sql' => array
       (
         'field' => 'smee.meeting_done',
-        'join' => array(array('type' => 'inner', 'table' => 'sl_meeting', 'alias' => 'smee',
+        'join' => array(array('type' => 'left', 'table' => 'sl_meeting', 'alias' => 'smee',
              'clause' => 'smee.candidatefk = scan.sl_candidatepk', 'select' => '', 'where' => ''))
         ,
         'fts' => false,
