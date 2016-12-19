@@ -9891,7 +9891,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_consultant">'.$owner_names.'</div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
             <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
-            <div class="cp_activity"><a>Activity list</a></div>
+            <div class="cp_activity"><a style="cursor: pointer;">Activity list</a></div>
           </div>';
 // employeeCount yerine $asCpData['num_employee'] vardi
 
