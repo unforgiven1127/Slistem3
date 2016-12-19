@@ -9890,7 +9890,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_name"><a href="javascript:;" onclick="popup_candi(this, \''.$sURL.'\');">'.$asCpData['name'].'</div>
             <div class="cp_consultant">'.$owner_names.'</div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
-            <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
+            <div class="cp_update">'.$employeeCount.'&nbsp;</div>
             <div class="cp_employee"><a>Activity list</a>&nbsp;</div>
           </div>';
 // employeeCount yerine $asCpData['num_employee'] vardi
@@ -9929,7 +9929,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_name">Company name</div>
             <div class="cp_consultant">Owner(s)</div>
             <div class="cp_update">Last update</div>
-            <div class="cp_employee">Nb employee</div>
+            <div class="cp_update">Nb employee</div>
             <div class="cp_activity">Activity list</div>
           </div>';
           $sBlock.= implode('', $asCompany);
