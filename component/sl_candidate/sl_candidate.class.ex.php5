@@ -9929,6 +9929,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_consultant">Owner(s)</div>
             <div class="cp_update">Last update</div>
             <div class="cp_employee">Nb employee</div>
+            <div class="cp_activity">Activity list</div>
           </div>';
           $sBlock.= implode('', $asCompany);
           $sBlock.= $oHTML->getFloatHack();
