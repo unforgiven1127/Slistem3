@@ -1561,7 +1561,7 @@ ChromePhp::log('buildComplexSearchQuery');
             else
             {
               //dump(' is NOT an array');
-              if($sFieldName == 'candidate_met')
+              if($sFieldName == 'candidate_met' && $vFieldValue == "0")
               {//candidate met secilirse where kismini yazalim
                 //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
