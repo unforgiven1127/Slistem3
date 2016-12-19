@@ -1563,9 +1563,9 @@ ChromePhp::log('buildComplexSearchQuery');
               //dump(' is NOT an array');
               if($sFieldName == 'candidate_met')
               {//candidate met secilirse where kismini yazalim
-                //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
-                //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
-                $sCondition = "scan.sl_candidatepk NOT IN (select slm.candidatefk from sl_meeting slm where slm.meeting_done = '1')";
+                $asFieldData['data']['field'] = $asFieldData['sql']['field'];
+                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
+                //$sCondition = "scan.sl_candidatepk NOT IN (select slm.candidatefk from sl_meeting slm where slm.meeting_done = '1')";
                 //ChromePhp::log($sCondition);
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
