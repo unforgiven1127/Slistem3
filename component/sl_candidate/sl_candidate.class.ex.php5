@@ -6344,6 +6344,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyActionList($company_id = 0)
     {
       $actionInfo = getCompanyActionList($company_id);
+      $companyPositionList = getCompanyPositionList($company_id);
 
       if(isset($actionInfo) && !empty($actionInfo))
       {
@@ -6432,7 +6433,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         $data['offer'] = count($companyList[$company_id]['offer']);
         $data['placed'] = count($companyList[$company_id]['placed']);
         $data['fallenOff'] = count($companyList[$company_id]['fallenOff']);
-        $data['positionCount'] = count($companyList[$company_id]['position']);
+        $data['positionCount'] = count($companyPositionList);
       }
       else
       {

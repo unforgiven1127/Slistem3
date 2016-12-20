@@ -3370,10 +3370,21 @@ var_dump($query);*/
 
   }
 
-  function getCompanyActionList($company_id)
+  function getCompanyPositionList($company_id)
   {
     $oDB = CDependency::getComponentByName('database');
 
+    $sQuery = "SELECT * FROM sl_position WHERE companyfk = '".$company_id."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
+  function getCompanyActionList($company_id)
+  {
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "select slc.sl_companypk as company_id, slc.name as campany_name, slpd.title as position_name,
