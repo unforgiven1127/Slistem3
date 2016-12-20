@@ -2,6 +2,9 @@
 .topM5{
     padding-top: 7px;
 }
+.bottomLine{
+    border-bottom:1pt solid black;
+}
 </style>
 
 <table style="width:100%;" valign="top">
@@ -13,7 +16,7 @@
     <tr>
         <td>
             <table style="width:50%;" valign="top">
-                <tr>
+                <tr class='bottomLine'>
                     <td class='topM5'>Total Candidates :</td>
                     <td class='topM5'><?php echo $totalCandidates; ?></td>
                 </tr>
