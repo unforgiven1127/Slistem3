@@ -1,3 +1,9 @@
+<style>
+.topM5{
+    margin-top: 5px;
+}
+</style>
+
 <table style="width:100%;" valign="top">
     <tr>
         <td><b> Statistics About the Company #<?php echo $compantId.' - '.$campany_name; ?></b></td>
@@ -8,44 +14,44 @@
         <td>
             <table style="width:50%;" valign="top">
                 <tr>
-                    <td>Total Candidates :</td>
-                    <td><?php echo $totalCandidates; ?></td>
+                    <td class='topM5'>Total Candidates :</td>
+                    <td class='topM5'><?php echo $totalCandidates; ?></td>
                 </tr>
                 <tr>
-                    <td>Active Candidates :</td>
-                    <td><?php echo $activeCandidates; ?></td>
+                    <td class='topM5'>Active Candidates :</td>
+                    <td class='topM5'><?php echo $activeCandidates; ?></td>
                 </tr>
                 <tr>
-                    <td>Total Position Count :</td>
-                    <td><?php echo $positionCount; ?></td>
+                    <td class='topM5'>Total Position Count :</td>
+                    <td class='topM5'><?php echo $positionCount; ?></td>
                 </tr>
                 <tr>
-                    <td>Pitch :</td>
-                    <td><?php echo $pitch; ?></td>
+                    <td class='topM5'>Pitch :</td>
+                    <td class='topM5'><?php echo $pitch; ?></td>
                 </tr>
                 <tr>
-                    <td>Resume Send :</td>
-                    <td><?php echo $resume_send; ?></td>
+                    <td class='topM5'>Resume Send :</td>
+                    <td class='topM5'><?php echo $resume_send; ?></td>
                 </tr>
                 <tr>
-                    <td>CCM1 :</td>
-                    <td><?php echo $ccm1; ?></td>
+                    <td class='topM5'>CCM1 :</td>
+                    <td class='topM5'><?php echo $ccm1; ?></td>
                 </tr>
                 <tr>
-                    <td>CCM2 :</td>
-                    <td><?php echo $ccm2; ?></td>
+                    <td class='topM5'>CCM2 :</td>
+                    <td class='topM5'><?php echo $ccm2; ?></td>
                 </tr>
                 <tr>
-                    <td>MCCM :</td>
-                    <td><?php echo $mccm; ?></td>
+                    <td class='topM5'>MCCM :</td>
+                    <td class='topM5'><?php echo $mccm; ?></td>
                 </tr>
                 <tr>
-                    <td>Offer :</td>
-                    <td><?php echo $offer; ?></td>
+                    <td class='topM5'>Offer :</td>
+                    <td class='topM5'><?php echo $offer; ?></td>
                 </tr>
                 <tr>
-                    <td>Placed :</td>
-                    <td><?php echo $placed; ?></td>
+                    <td class='topM5'>Placed :</td>
+                    <td class='topM5'><?php echo $placed; ?></td>
                 </tr>
             </table>
         </td>
