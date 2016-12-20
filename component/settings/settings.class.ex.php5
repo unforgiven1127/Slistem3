@@ -2224,11 +2224,11 @@ $oPage = CDependency::getCpPage();
 
   private function save_htaccess()
   {
-    ChromePhp::log('save_htaccess');
+    //ChromePhp::log('save_htaccess');
     $content = $_POST['content'];
     $action = $_POST['action'];
-    ChromePhp::log($content);
-    ChromePhp::log($action);
+    //ChromePhp::log($content);
+    //ChromePhp::log($action);
 
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
