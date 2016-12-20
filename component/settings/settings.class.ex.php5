@@ -2214,7 +2214,7 @@ $oPage = CDependency::getCpPage();
     $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
 //ChromePhp::log($form_url);
-    $form_url = CONST_CRM_DOMAIN."/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx";
+    $form_url = "'".CONST_CRM_DOMAIN."/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx'";
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
     $html = $display_obj->render('ip_manager', $data);
