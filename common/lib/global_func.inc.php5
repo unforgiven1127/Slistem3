@@ -3383,7 +3383,7 @@ var_dump($query);*/
               inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
               inner join sl_company slc on slc.sl_companypk = slp.companyfk
               WHERE slc.sl_companypk = '".$company_id."'";
-
+ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
