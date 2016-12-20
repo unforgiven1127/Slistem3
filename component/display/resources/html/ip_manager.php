@@ -31,7 +31,7 @@
 function onclickSubmit()
 {
   var content = $('#htaccess_contents').val();
-  var urlPhp = <?php echo $form_url; ?>
+  var urlPhp = <?php echo $form_url; ?>;
   $.ajax(
   {
     url: urlPhp,
