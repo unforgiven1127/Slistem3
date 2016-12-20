@@ -6346,7 +6346,38 @@ $searchTitle = explode(':',$poQB->getTitle());
       ChromePhp::log('_getCompanyActionList');
 
       $actionInfo = getCompanyActionList($company_id);
-      ChromePhp::log($actionInfo);
+
+      $companyList = array();
+      foreach ($actionInfo as $key => $value)
+      {
+        $active = $value['active'];
+        $campany_name = $value['campany_name'];
+        $candidate_id = $value['candidate_id'];
+        $company_id = $value['company_id'];
+        $position_id = $value['position_id'];
+        $position_name = $value['position_name'];
+        $status = $value['status'];
+
+        if(!isset($companyList[$company_id]))
+        {
+          $companyList[$company_id] = array();
+          $companyList[$company_id]['totalCandidates'] = array();
+          $companyList[$company_id]['activeCandidates'] = array();
+        }
+        $companyList[$company_id]['totalCandidates'][$candidate_id] = 1;//total candidate count
+        if($active == 1 && $status < 101)
+        {//active candidate count
+          $companyList[$company_id]['activeCandidates'][$candidate_id] = 1;
+        }
+
+      }
+
+      $totalCandidates = count($companyList[$company_id]['totalCandidates']);
+      $activeCandidates = count($activeCandidates[$company_id]['activeCandidates']);
+
+      ChromePhp::log($totalCandidates);
+      ChromePhp::log($activeCandidates);
+
       $sHTML = 'COMPANY ID: '.$company_id;
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
       return $sHTML;
