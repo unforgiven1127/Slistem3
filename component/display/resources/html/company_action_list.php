@@ -59,6 +59,10 @@ tr.bottomLine td{
                     <td class='topM5 bold'>Placed :</td>
                     <td class='topM5'><?php echo $placed; ?></td>
                 </tr>
+                <tr class='bottomLine'>
+                    <td class='topM5 bold'>Fallen off :</td>
+                    <td class='topM5'><?php echo $fallenOff; ?></td>
+                </tr>
             </table>
         </td>
         <td>
