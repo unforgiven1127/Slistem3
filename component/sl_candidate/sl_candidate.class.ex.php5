@@ -6373,10 +6373,10 @@ $searchTitle = explode(':',$poQB->getTitle());
       }
 
       $totalCandidates = count($companyList[$company_id]['totalCandidates']);
-      $activeCandidates = count($activeCandidates[$company_id]['activeCandidates']);
+      //$activeCandidates = count($activeCandidates[$company_id]['activeCandidates']);
 
       ChromePhp::log($totalCandidates);
-      ChromePhp::log($activeCandidates);
+      ChromePhp::log($companyList[$company_id]['activeCandidates']);
 
       $sHTML = 'COMPANY ID: '.$company_id;
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
