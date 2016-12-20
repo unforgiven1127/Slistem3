@@ -3382,7 +3382,7 @@ var_dump($query);*/
                 left join sl_position_link slpl on slpl.positionfk = slp.sl_positionpk
                 left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
                 left join sl_company slc on slc.sl_companypk = slp.companyfk
-                WHERE slc.sl_companypk = '".$company_id."'";
+                WHERE slp.companyfk = '".$company_id."'";
 ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
