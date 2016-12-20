@@ -6420,6 +6420,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         }
 
+ChromePhp::log($companyList[$company_id]['totalCandidates']);
+
         $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
         $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
         $data['compantId'] = $company_id;
