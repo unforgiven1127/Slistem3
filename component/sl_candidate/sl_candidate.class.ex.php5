@@ -6422,15 +6422,69 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['compantId'] = $company_id;
       $data['campany_name'] = $campany_name;
 
-      $data['pitch'] = count($companyList[$company_id]['pitch']);
-      $data['resume_send'] = count($companyList[$company_id]['resume_send']);
+      $data['pitch'] = 0;
+      $data['resume_send'] = 0;
+      $data['ccm1'] = 0;
+      $data['ccm2'] = 0;
+      $data['mccm'] = 0;
+      $data['offer'] = 0;
+      $data['placed'] = 0;
+      $data['fallenOff'] = 0;
+      $data['positionCount'] = 0;
+
+      if(isset($companyList[$company_id]['pitch']))
+      {
+        $data['pitch'] = count($companyList[$company_id]['pitch']);
+      }
+
+      if(isset($companyList[$company_id]['resume_send']))
+      {
+        $data['resume_send'] = count($companyList[$company_id]['resume_send']);
+      }
+
+      if(isset($companyList[$company_id]['ccm1']))
+      {
+        $data['ccm1'] = count($companyList[$company_id]['ccm1']);
+      }
+
+      if(isset($companyList[$company_id]['ccm2']))
+      {
+        $data['ccm2'] = count($companyList[$company_id]['ccm2']);
+      }
+
+      if(isset($companyList[$company_id]['mccm']))
+      {
+        $data['mccm'] = count($companyList[$company_id]['mccm']);
+      }
+
+      if(isset($companyList[$company_id]['offer']))
+      {
+        $data['offer'] = count($companyList[$company_id]['offer']);
+      }
+
+      if(isset($companyList[$company_id]['placed']))
+      {
+        $data['placed'] = count($companyList[$company_id]['placed']);
+      }
+
+      if(isset($companyList[$company_id]['fallenOff']))
+      {
+        $data['fallenOff'] = count($companyList[$company_id]['fallenOff']);
+      }
+
+      if(isset($companyList[$company_id]['positionCount']))
+      {
+        $data['positionCount'] = count($companyList[$company_id]['positionCount']);
+      }
+
+      /*$data['resume_send'] = count($companyList[$company_id]['resume_send']);
       $data['ccm1'] = count($companyList[$company_id]['ccm1']);
       $data['ccm2'] = count($companyList[$company_id]['ccm2']);
       $data['mccm'] = count($companyList[$company_id]['mccm']);
       $data['offer'] = count($companyList[$company_id]['offer']);
       $data['placed'] = count($companyList[$company_id]['placed']);
       $data['fallenOff'] = count($companyList[$company_id]['fallenOff']);
-      $data['positionCount'] = count($companyList[$company_id]['position']);
+      $data['positionCount'] = count($companyList[$company_id]['position']);*/
 
       //$sHTML = 'COMPANY ID: '.$company_id;
       $sHTML = $this->_oDisplay->render('company_action_list', $data);
