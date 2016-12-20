@@ -6363,6 +6363,13 @@ $searchTitle = explode(':',$poQB->getTitle());
           $companyList[$company_id] = array();
           $companyList[$company_id]['totalCandidates'] = array();
           $companyList[$company_id]['activeCandidates'] = array();
+          $companyList[$company_id]['pitch'] = array();
+          $companyList[$company_id]['resume_send'] = array();
+          $companyList[$company_id]['ccm1'] = array();
+          $companyList[$company_id]['ccm2'] = array();
+          $companyList[$company_id]['mccm'] = array();
+          $companyList[$company_id]['offer'] = array();
+          $companyList[$company_id]['placed'] = array();
         }
         $companyList[$company_id]['totalCandidates'][$candidate_id] = 1;//total candidate count
         if($active == 1 && $status < 101)
@@ -6370,12 +6377,55 @@ $searchTitle = explode(':',$poQB->getTitle());
           $companyList[$company_id]['activeCandidates'][$candidate_id] = 1;
         }
 
+        if($status == 1)
+        {
+          $companyList[$company_id]['pitch'][$candidate_id] = 1;
+        }
+        elseif($status == 2)
+        {
+          $companyList[$company_id]['resume_send'][$candidate_id] = 1;
+        }
+        elseif($status == 2)
+        {
+          $companyList[$company_id]['resume_send'][$candidate_id] = 1;
+        }
+        elseif($status == 51)
+        {
+          $companyList[$company_id]['ccm1'][$candidate_id] = 1;
+        }
+        elseif($status == 52)
+        {
+          $companyList[$company_id]['ccm2'][$candidate_id] = 1;
+        }
+        elseif($status > 52 && $status < 71)
+        {
+          $companyList[$company_id]['mccm'][$candidate_id] = 1;
+        }
+        elseif($status == 100)
+        {
+          $companyList[$company_id]['offer'][$candidate_id] = 1;
+        }
+        elseif($status == 101)
+        {
+          $companyList[$company_id]['placed'][$candidate_id] = 1;
+        }
+
+
       }
 
       $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
       $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
       $data['compantId'] = $candidate_id;
       $data['campany_name'] = $campany_name;
+
+      $data['pitch'] = count($companyList[$company_id]['pitch']);
+      $data['resume_send'] = count($companyList[$company_id]['resume_send']);
+      $data['ccm1'] = count($companyList[$company_id]['ccm1']);
+      $data['ccm2'] = count($companyList[$company_id]['ccm2']);
+      $data['mccm'] = count($companyList[$company_id]['mccm']);
+      $data['offer'] = count($companyList[$company_id]['offer']);
+      $data['placed'] = count($companyList[$company_id]['placed']);
+
       //$sHTML = 'COMPANY ID: '.$company_id;
       $sHTML = $this->_oDisplay->render('company_action_list', $data);
       return $sHTML;
