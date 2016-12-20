@@ -6344,12 +6344,18 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyActionList($company_id = 0)
     {
       $actionInfo = getCompanyActionList($company_id);
-ChromePhp::log('_getCompanyActionList');
+ChromePhp::log($actionInfo);
+      if(isset($actionInfo[0]['campany_name']))
+      {
+        $campany_name = $actionInfo[0]['campany_name'];
+        ChromePhp::log($campany_name);
+      }
       $companyList = array();
       foreach ($actionInfo as $key => $value)
       {
+        ChromePhp::log($value);
         $active = $value['active'];
-        $campany_name = $value['campany_name'];
+
         $candidate_id = $value['candidate_id'];
         $company_id = $value['company_id'];
         $position_id = $value['position_id'];
@@ -6438,47 +6444,47 @@ ChromePhp::log('_getCompanyActionList');
       $data['positionCount'] = 0;
 
       if(isset($companyList[$company_id]['pitch']))
-      {ChromePhp::log('pitch');
+      {
         $data['pitch'] = count($companyList[$company_id]['pitch']);
       }
 
       if(isset($companyList[$company_id]['resume_send']))
-      {ChromePhp::log('resume_send');
+      {
         $data['resume_send'] = count($companyList[$company_id]['resume_send']);
       }
 
       if(isset($companyList[$company_id]['ccm1']))
-      {ChromePhp::log('ccm1');
+      {
         $data['ccm1'] = count($companyList[$company_id]['ccm1']);
       }
 
       if(isset($companyList[$company_id]['ccm2']))
-      {ChromePhp::log('ccm2');
+      {
         $data['ccm2'] = count($companyList[$company_id]['ccm2']);
       }
 
       if(isset($companyList[$company_id]['mccm']))
-      {ChromePhp::log('mccm');
+      {
         $data['mccm'] = count($companyList[$company_id]['mccm']);
       }
 
       if(isset($companyList[$company_id]['offer']))
-      {ChromePhp::log('offer');
+      {;
         $data['offer'] = count($companyList[$company_id]['offer']);
       }
 
       if(isset($companyList[$company_id]['placed']))
-      {ChromePhp::log('placed');
+      {
         $data['placed'] = count($companyList[$company_id]['placed']);
       }
 
       if(isset($companyList[$company_id]['fallenOff']))
-      {ChromePhp::log('fallenOff');
+      {
         $data['fallenOff'] = count($companyList[$company_id]['fallenOff']);
       }
 
       if(isset($companyList[$company_id]['positionCount']))
-      {ChromePhp::log('positionCount');
+      {
         $data['positionCount'] = count($companyList[$company_id]['positionCount']);
       }
 ChromePhp::log($data);
