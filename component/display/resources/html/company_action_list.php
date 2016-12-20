@@ -15,7 +15,7 @@ tr.bottomLine td{
 <table style="width:100%;" valign="top">
     <tr>
         <td>
-            <table style="width:50%;" valign="top">
+            <table style="width:50%; border-collapse: collapse;" valign="top">
                 <tr class='bottomLine'>
                     <td class='topM5'>Total Candidates :</td>
                     <td class='topM5'><?php echo $totalCandidates; ?></td>
