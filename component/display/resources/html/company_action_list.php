@@ -1,6 +1,6 @@
 <table style="width:100%;" valign="top">
     <tr>
-        <td>Statistics About the Company #<?php echo $compantId.' - '.$campany_name; ?></td>
+        <th> Statistics About the Company #<?php echo $compantId.' - '.$campany_name; ?></th>
     </tr>
 </table>
 <table style="width:100%;" valign="top">
