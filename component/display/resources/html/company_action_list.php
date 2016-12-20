@@ -2,7 +2,7 @@
 .topM5{
     padding-top: 7px;
 }
-.bottomLine{
+tr.bottomLine td{
     border-bottom:1pt solid black;
 }
 </style>
