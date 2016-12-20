@@ -16,6 +16,10 @@
                     <td><?php echo $activeCandidates; ?></td>
                 </tr>
                 <tr>
+                    <td>Total Position Count :</td>
+                    <td><?php echo $positionCount; ?></td>
+                </tr>
+                <tr>
                     <td>Pitch :</td>
                     <td><?php echo $pitch; ?></td>
                 </tr>

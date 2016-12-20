@@ -6370,8 +6370,10 @@ $searchTitle = explode(':',$poQB->getTitle());
           $companyList[$company_id]['mccm'] = array();
           $companyList[$company_id]['offer'] = array();
           $companyList[$company_id]['placed'] = array();
+          $companyList[$company_id]['position'] = array();
         }
         $companyList[$company_id]['totalCandidates'][$candidate_id] = 1;//total candidate count
+        $companyList[$company_id]['position'][$position_id] = 1;
         if($active == 1 && $status < 101)
         {//active candidate count
           $companyList[$company_id]['activeCandidates'][$candidate_id] = 1;
@@ -6415,7 +6417,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
       $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
-      $data['compantId'] = $candidate_id;
+      $data['compantId'] = $company_id;
       $data['campany_name'] = $campany_name;
 
       $data['pitch'] = count($companyList[$company_id]['pitch']);
@@ -6425,6 +6427,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['mccm'] = count($companyList[$company_id]['mccm']);
       $data['offer'] = count($companyList[$company_id]['offer']);
       $data['placed'] = count($companyList[$company_id]['placed']);
+      $data['positionCount'] = count($companyList[$company_id]['position']);
 
       //$sHTML = 'COMPANY ID: '.$company_id;
       $sHTML = $this->_oDisplay->render('company_action_list', $data);
