@@ -3377,12 +3377,12 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "select slc.sl_companypk as company_id, slc.name as campany_name, slpd.title as position_name,
-              slpl.positionfk as position_id, slpl.candidatefk as candidate_id, slpl.status as status, slpl.active as active
-              from sl_position_link slpl
-              left join sl_position slp on slp.sl_positionpk = slpl.positionfk
-              left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
-              left join sl_company slc on slc.sl_companypk = slp.companyfk
-              WHERE slc.sl_companypk = '".$company_id."'";
+                slpl.positionfk as position_id, slpl.candidatefk as candidate_id, slpl.status as status, slpl.active as active
+                from sl_position slp
+                left join sl_position_link slpl on slpl.positionfk = slp.sl_positionpk
+                left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
+                left join sl_company slc on slc.sl_companypk = slp.companyfk
+                WHERE slc.sl_companypk = '".$company_id."'";
 ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
