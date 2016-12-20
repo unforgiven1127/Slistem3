@@ -302,7 +302,7 @@ class CSl_candidateEx extends CSl_candidate
             break;
 
           case CONST_ACTION_COMPANY_ACTION:
-              return json_encode($this->_getCompanyActionList($this->cnPk));
+          return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCompanyActionList($this->cnPk)))));
               break;
 
           case CONST_ACTION_LIST:
