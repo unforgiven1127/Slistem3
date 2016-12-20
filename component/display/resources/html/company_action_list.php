@@ -1,14 +1,26 @@
 
 <table style="width:100%;" valign="top">
     <tr>
-        <th>Total Candidates</th>
-        <th>Active Candidates</th>
-        <th>asd</th>
-    </tr>
-    <tr>
-        <td><?php echo $totalCandidates; ?></td>
-        <td><?php echo $activeCandidates; ?></td>
-        <td>asd</td>
+        <td>
+            <table style="width:50%;" valign="top">
+                <tr>
+                    <td>Total Candidates :</td>
+                    <td><?php echo $totalCandidates; ?></td>
+                </tr>
+                <tr>
+                    <td>Active Candidates :</td>
+                    <td><?php echo $activeCandidates; ?></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table style="width:50%;" valign="top">
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </td>
     </tr>
 </table>
 
