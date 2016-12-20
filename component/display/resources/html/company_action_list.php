@@ -1,4 +1,8 @@
-
+<table style="width:100%;" valign="top">
+    <tr>
+        <td>Statistics About the Company #<?php echo $compantId.' - '.$campany_name; ?></td>
+    </tr>
+</table>
 <table style="width:100%;" valign="top">
     <tr>
         <td>

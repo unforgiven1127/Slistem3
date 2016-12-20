@@ -6374,7 +6374,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
       $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
-
+      $data['compantId'] = $candidate_id;
+      $data['campany_name'] = $campany_name;
       //$sHTML = 'COMPANY ID: '.$company_id;
       $sHTML = $this->_oDisplay->render('company_action_list', $data);
       return $sHTML;
