@@ -31,9 +31,10 @@
 function onclickSubmit()
 {
   var content = $('#htaccess_contents').val();
+  var urlPhp = <?php echo $form_url; ?>
   $.ajax(
   {
-    url: "https://beta2.slate.co.jp/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx",
+    url: urlPhp,
     dataType: "json",
     type: "POST",
   	data: {content : content,
