@@ -2242,7 +2242,7 @@ ChromePhp::log($form_url);
     // $htaccess_version = getValue('htaccess_version', '');
 
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
-
+ChromePhp::log($action);
     switch ($action)
     {
       case 'save':
@@ -2259,8 +2259,8 @@ ChromePhp::log($form_url);
           $existing_hash_id = $entry->getFieldValue('id');
 
         $file_write = file_put_contents($file, $htaccess_contents);
-
-        if ($file_write)
+ChromePhp::log($file_write);
+        if($file_write)
         {
           $values = array('create_date' => date('Y-m-d H:i:s'), 'content' => $htaccess_contents_encoded,
             'md5_hash' => $md5_hash, 'existing_hash_id' => $existing_hash_id);
