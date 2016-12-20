@@ -301,6 +301,10 @@ class CSl_candidateEx extends CSl_candidate
             return json_encode($this->_saveCompany($this->cnPk));
             break;
 
+          case CONST_ACTION_COMPANY_ACTION:
+              return $this->_getCompanyActionList($this->cnPk);
+              break;
+
           case CONST_ACTION_LIST:
             //list and search
             /*$asHTML = $this->_getCompanyList();
@@ -633,10 +637,6 @@ class CSl_candidateEx extends CSl_candidate
               return $this->_getCompanyView($this->cnPk);
               break;
 
-
-            case CONST_ACTION_COMPANY_ACTION:
-              return $this->_getCompanyActionList($this->cnPk);
-              break;
           }
           break;
 
