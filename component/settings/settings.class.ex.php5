@@ -2210,10 +2210,10 @@ $oPage = CDependency::getCpPage();
     $file_contents = file_get_contents($file);
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-ChromePhp::log($form_url);
+//ChromePhp::log($form_url);
     $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-ChromePhp::log($form_url);
+//ChromePhp::log($form_url);
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
     $html = $display_obj->render('ip_manager', $data);
@@ -2223,10 +2223,11 @@ ChromePhp::log($form_url);
 
   private function save_htaccess()
   {
+    ChromePhp::log('save_htaccess');
     $content = $_POST['content'];
     $action = $_POST['action'];
-    //ChromePhp::log($content);
-    //ChromePhp::log($action);
+    ChromePhp::log($content);
+    ChromePhp::log($action);
 
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
