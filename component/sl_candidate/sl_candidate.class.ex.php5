@@ -6416,7 +6416,7 @@ ChromePhp::log('_getCompanyActionList');
         }
 
       }
-ChromePhp::log($companyList[$company_id]);
+
       $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
       $data['activeCandidates'] = 0;
       if(isset($companyList[$company_id]['activeCandidates']))
@@ -6436,7 +6436,7 @@ ChromePhp::log($companyList[$company_id]);
       $data['placed'] = 0;
       $data['fallenOff'] = 0;
       $data['positionCount'] = 0;
-ChromePhp::log($data);
+
       if(isset($companyList[$company_id]['pitch']))
       {ChromePhp::log('pitch');
         $data['pitch'] = count($companyList[$company_id]['pitch']);
@@ -6481,7 +6481,7 @@ ChromePhp::log($data);
       {ChromePhp::log('positionCount');
         $data['positionCount'] = count($companyList[$company_id]['positionCount']);
       }
-
+ChromePhp::log($data);
       /*$data['resume_send'] = count($companyList[$company_id]['resume_send']);
       $data['ccm1'] = count($companyList[$company_id]['ccm1']);
       $data['ccm2'] = count($companyList[$company_id]['ccm2']);
