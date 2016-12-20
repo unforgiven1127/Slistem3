@@ -6418,7 +6418,12 @@ $searchTitle = explode(':',$poQB->getTitle());
       }
 
       $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
-      $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
+      $data['activeCandidates'] = 0;
+      if(isset($companyList[$company_id]['activeCandidates']))
+      {
+        $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
+      }
+
       $data['compantId'] = $company_id;
       $data['campany_name'] = $campany_name;
 
