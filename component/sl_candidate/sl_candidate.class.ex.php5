@@ -6436,6 +6436,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       }
       else
       {
+        $company_info = getCompanyInformation($company_id);
+        ChromePhp::log($company_info);
         $data['totalCandidates'] = 0;
         $data['activeCandidates'] = 0;
         $data['compantId'] = $company_id;
