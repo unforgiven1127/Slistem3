@@ -6345,7 +6345,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_getCompanyActionList');
       //$sHTML = $this->_oDisplay->render('candidate_add', $data);
-      $sHTML = '';
+      $sHTML = 'TEST';
       return $sHTML;
     }
 
