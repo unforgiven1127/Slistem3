@@ -6944,8 +6944,8 @@ ChromePhp::log($result);
           foreach ($result as $key => $value)
           {
 ChromePhp::log($value['name']);
-            $company_list.= "test".',<br>';
-            //$company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
+            //$company_list.= "test".',<br>';
+            $company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
           }
           $company_list = trim($company_list, ",<br>");
