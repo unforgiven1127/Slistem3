@@ -6846,6 +6846,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
 
     public function controlCompanyDuplicate()
     {
+      ChromePhp::log('controlCompanyDuplicate');
       //url
       //https://beta.slate.co.jp/index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx
       $company_name = $_POST['cname'];
