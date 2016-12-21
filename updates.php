@@ -80,7 +80,7 @@ foreach ($result as $key => $value)
 	$date_expire = '2025-12-20 20:00:00';
 	$active = '1';
 
-	$sQuery = "INSERT INTO sl_position_link VALUES('".$positionfk."','".$candidatefk."','".$date_created."','".$created_by."','".$status."','".$in_play."','".$comment."','".$date_expire."','".$active."')";
+	$sQuery = "INSERT INTO sl_position_link (`positionfk`,`candidatefk`, `date_created`, `created_by`, `status`, `in_play`, `comment`, `date_expire`, `active`) VALUES('".$positionfk."','".$candidatefk."','".$date_created."','".$created_by."','".$status."','".$in_play."','".$comment."','".$date_expire."','".$active."')";
 }
 
 echo $sQuery;
