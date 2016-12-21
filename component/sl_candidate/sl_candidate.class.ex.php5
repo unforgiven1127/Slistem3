@@ -8189,8 +8189,8 @@ $bonusManual = getValue('bonus');
         }
         else if($salaryUnit == 'K')
         {// M ile K arasinda herhangi bir fark yok neden seciyoruz??
-          $newSalary = $salaryManual * 1000000;
-          $newBonus = $bonusManual * 1000000;
+          $newSalary = $salaryManual * 1000;
+          $newBonus = $bonusManual * 1000;
         }
         else
         {
