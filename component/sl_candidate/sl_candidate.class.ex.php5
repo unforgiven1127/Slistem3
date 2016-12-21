@@ -4057,8 +4057,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $asInsert['content'] = $fixed_html;
 
-      $this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
-      $nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
+      //$this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
+      //$nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
 
       if(!$nPk)
       {
