@@ -61,17 +61,19 @@ $oMail->send($subject, $message);*/
 $meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
-$sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk";
+$sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk, candidatefk";
 
 $db_result = $oDB->executeQuery($sQuery);
 
 $result = $db_result->getAll();
 
-ChromePhp::log(count($result));
 
-/*foreach ($result as $key => $value)
+foreach ($result as $key => $value)
 {
-}*/
+	$positionfk = $value['positionfk'];
+	$candidatefk = $value['positionfk'];
+	$sQuery = "INSERT INTO sl_position_link";
+}
 
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
