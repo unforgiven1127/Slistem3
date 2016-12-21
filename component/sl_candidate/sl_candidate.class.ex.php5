@@ -6852,11 +6852,11 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       $company_name = $_POST['cname'];
       $company_name = TRIM($company_name);
       $company_name = strtolower($company_name);
-ChromePhp::log($company_name);
+
       $oDB = CDependency::getComponentByName('database');
       $somthing = true;
 
-      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises','the','world');//,'and','&' cikarttim
+      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises','the');//,'and','&' cikarttim
 
       $explodedCompanyName = explode(' ',$company_name);
       $nameCount = count($explodedCompanyName);
@@ -6925,17 +6925,15 @@ ChromePhp::log($company_name);
       {
         $somthing = false;
       }
-      
-      ChromePhp::log($somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
         $db_result = $oDB->executeQuery($sQuery);
-ChromePhp::log($sQuery);
+
         $result = $db_result->getAll();
-ChromePhp::log($result);
+
         $company_list = "";
         $adet = count($result);
 
@@ -6963,7 +6961,7 @@ ChromePhp::log($result);
       //$company_list = "test (#123456), Test (#123456)";
 
       $jsonData = json_encode($company_list);
-ChromePhp::log($jsonData);
+
       return $jsonData;
       //ChromePhp::log($result);
       //return 'RESULT';
