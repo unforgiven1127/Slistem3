@@ -79,11 +79,13 @@ foreach ($result as $key => $value)
 	$comment = 'auto expire for old candidates';
 	$date_expire = '2025-12-20 20:00:00';
 	$active = '1';
-
+echo $candidatefk."<br><br>";
 	$sQuery = "INSERT INTO sl_position_link (`positionfk`,`candidatefk`, `date_created`, `created_by`, `status`, `in_play`, `comment`, `date_expire`, `active`) VALUES('".$positionfk."','".$candidatefk."','".$date_created."','".$created_by."','".$status."','".$in_play."','".$comment."','".$date_expire."','".$active."')";
+
+	$db_result = $oDB->executeQuery($sQuery);
 }
 
-echo $sQuery;
+//echo $sQuery;
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
     echo 'Mail was sent';
