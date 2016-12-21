@@ -6871,7 +6871,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
                  FROM sl_company slc
                  WHERE levenshtein('".$company_name."', TRIM(LOWER(slc.name))) < 2
                  OR slc.name = '".$company_name."'";*/
-        $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name = '".$company_name."' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
+        $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name LIKE '%".$company_name."%' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
 
       }
       else if($nameCount > 1)
