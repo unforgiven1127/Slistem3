@@ -8175,6 +8175,7 @@ die();*/
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
+$salaryCurrency = getValue('salary_currency');
 
 $bonusManual = getValue('bonus');
 //ChromePhp::log($salaryManual);
@@ -8197,11 +8198,11 @@ $bonusManual = getValue('bonus');
           $newBonus = $bonusManual * 1000000;
         }
 
-        if(!empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
+        if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
         {
           $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
         }
-        if(!empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+        if($salaryCurrency == 'jpy' !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
         {
           $asError[] = 'Bonus value is not a valid number. ['.$newBonus.']';
         }
