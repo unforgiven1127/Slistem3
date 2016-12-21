@@ -6933,9 +6933,9 @@ ChromePhp::log($somthing);
         $sQuery .= " LIMIT 100";
 ChromePhp::log($sQuery);
         $db_result = $oDB->executeQuery($sQuery);
-ChromePhp::log($db_result);
-        $result = $db_result->getAll();
 
+        $result = $db_result->getAll();
+ChromePhp::log($result);
         $company_list = "";
         $adet = count($result);
 
