@@ -6941,7 +6941,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         {
           foreach ($result as $key => $value)
           {
-            ChromePhp::log($value['name']);
+            ChromePhp::log($value['sl_companypk']);
             $company_list.= "test".',<br>';
             //$company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
