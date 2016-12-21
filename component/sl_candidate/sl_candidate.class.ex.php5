@@ -7282,7 +7282,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $mailFlag = $_GET['mailFlg'];
       }
-ChromePhp::log($mailFlag);
+//ChromePhp::log($mailFlag);
       if($mailFlag == 'yes' || $mailFlag == 'normal')
       {
 
