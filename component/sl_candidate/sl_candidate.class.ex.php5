@@ -6872,7 +6872,6 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
                  OR slc.name = '".$company_name."'";*/
         $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name LIKE '%".$company_name."%' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
 
-        ChromePhp::log($sQuery);
       }
       else if($nameCount > 1)
       {
@@ -6930,7 +6929,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
-
+        ChromePhp::log($sQuery);
         $db_result = $oDB->executeQuery($sQuery);
 
         $result = $db_result->getAll();
