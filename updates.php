@@ -44,7 +44,7 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
-$sDate = date('Y-m-d H:i:s');
+/*$sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
 $message = "DUPLICATE Date&Time: ".$sDate;
 
@@ -56,21 +56,20 @@ $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 $oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
 //$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
 //$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-$oMail->send($subject, $message);
+$oMail->send($subject, $message);*/
 
-/*$meetingArray = array();
+$meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
-$sQuery = "SELECT l.loginpk, l.firstname, l.lastname, slm.sl_meetingpk, slm.date_created, slm.date_meeting, slm.candidatefk
-	FROM sl_meeting slm
-	INNER JOIN login l ON l.loginpk = slm.attendeefk
-	WHERE slm.date_met >= '2013-01-01 00:00:00' AND slm.meeting_done = '1'";
+$sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk";
 
 $db_result = $oDB->executeQuery($sQuery);
 
 $result = $db_result->getAll();
 
-foreach ($result as $key => $value)
+ChromePhp::log(count($result));
+
+/*foreach ($result as $key => $value)
 {
 }*/
 
