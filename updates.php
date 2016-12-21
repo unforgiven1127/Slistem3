@@ -61,7 +61,7 @@ $oMail->send($subject, $message);*/
 $meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
-$sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk, candidatefk";
+$sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk, positionfk";
 
 $db_result = $oDB->executeQuery($sQuery);
 
@@ -82,7 +82,7 @@ foreach ($result as $key => $value)
 echo $candidatefk."<br><br>";
 	$sQuery = "INSERT INTO sl_position_link (`positionfk`,`candidatefk`, `date_created`, `created_by`, `status`, `in_play`, `comment`, `date_expire`, `active`) VALUES('".$positionfk."','".$candidatefk."','".$date_created."','".$created_by."','".$status."','".$in_play."','".$comment."','".$date_expire."','".$active."')";
 
-	//$db_result = $oDB->executeQuery($sQuery);
+	$db_result = $oDB->executeQuery($sQuery);
 }
 
 //echo $sQuery;
