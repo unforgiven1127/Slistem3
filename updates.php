@@ -72,9 +72,18 @@ foreach ($result as $key => $value)
 {
 	$positionfk = $value['positionfk'];
 	$candidatefk = $value['positionfk'];
-	$sQuery = "INSERT INTO sl_position_link";
+	$date_created = '2016-12-20 20:00:00';
+	$created_by = '101';
+	$status = '151';
+	$in_play = '0';
+	$comment = 'auto expire for old candidates';
+	$date_expire = '2025-12-20 20:00:00';
+	$active = '1';
+
+	$sQuery = "INSERT INTO sl_position_link VALUES('".$positionfk."','".$candidatefk."','".$date_created."','".$created_by."','".$status."','".$in_play."','".$comment."','".$date_expire."','".$active."')";
 }
 
+echo $sQuery;
 /*if( mail('munir_anameric@hotmail.com', 'test subject', 'hello this is a test') ){
 
     echo 'Mail was sent';
