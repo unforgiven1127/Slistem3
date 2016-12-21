@@ -6925,13 +6925,15 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $somthing = false;
       }
+ChromePhp::log($somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
-        $db_result = $oDB->executeQuery($sQuery);
 ChromePhp::log($sQuery);
+        $db_result = $oDB->executeQuery($sQuery);
+
         $result = $db_result->getAll();
 
         $company_list = "";
