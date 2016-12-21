@@ -6856,7 +6856,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       $oDB = CDependency::getComponentByName('database');
       $somthing = true;
 
-      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises','the','world');//,'and','&' cikarttim
+      $escapeWords = array('k.k.','kk','kk.','k.k','inc','inc.','co','co.','co.,','co.,ltd','ltd','ltd.','contracting','consulting','entertainment','japan','tokyo','services','limited','consultants','services','corporation','technologies','systems','company','international','construction','group','engineering','(japan)','ex','(ex','( ex','corp','corp.','(group)','(x)','(ex)','branch','(K.K)','(old)','( old )','(tokyo)','nippon','nihon','kabushiki kaisha','kabushiki gaisha','enterprise','enterprises','the');//,'and','&' cikarttim
 
       $explodedCompanyName = explode(' ',$company_name);
       $nameCount = count($explodedCompanyName);
@@ -6941,7 +6941,8 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         {
           foreach ($result as $key => $value)
           {
-            $company_list.= "&#x25cf; ".$value['name']." (#".$value['sl_companypk'].")".",<br>";
+            $company_list.= "test";
+            //$company_list.= "&#x25cf; ".$value['name']." (#".$value['sl_companypk'].")".",<br>";
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
           }
           $company_list = trim($company_list, ",<br>");
