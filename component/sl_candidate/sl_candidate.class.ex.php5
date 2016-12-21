@@ -6931,12 +6931,12 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
         $db_result = $oDB->executeQuery($sQuery);
-
+ChromePhp::log($sQuery);
         $result = $db_result->getAll();
 
         $company_list = "";
         $adet = count($result);
-ChromePhp::log($result);
+
         if($adet > 0)
         {
           foreach ($result as $key => $value)
