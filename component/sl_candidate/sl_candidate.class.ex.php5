@@ -6924,7 +6924,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $somthing = false;
       }
-      ChromePhp::log($sQuery);
+      
       ChromePhp::log($somthing);
       if($somthing)
       {
@@ -6932,9 +6932,9 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
         $db_result = $oDB->executeQuery($sQuery);
-
+ChromePhp::log($sQuery);
         $result = $db_result->getAll();
-
+ChromePhp::log($result);
         $company_list = "";
         $adet = count($result);
 
@@ -6962,7 +6962,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       //$company_list = "test (#123456), Test (#123456)";
 
       $jsonData = json_encode($company_list);
-      //ChromePhp::log($jsonData);
+ChromePhp::log($jsonData);
       return $jsonData;
       //ChromePhp::log($result);
       //return 'RESULT';
