@@ -6851,7 +6851,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       $company_name = $_POST['cname'];
       $company_name = TRIM($company_name);
       $company_name = strtolower($company_name);
-      //ChromePhp::log($company_name);
+ChromePhp::log($company_name);
       $oDB = CDependency::getComponentByName('database');
       $somthing = true;
 
