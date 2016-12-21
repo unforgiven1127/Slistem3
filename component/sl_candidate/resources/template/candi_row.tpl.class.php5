@@ -182,6 +182,7 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
+        ChromePhp::log('EXPIRED');
         $asOption['class'].= ' tplCandi_status tplCandi_status_151';
         $asOption['title'] = 'Last action has expired';
         $sValue = ' expire';
