@@ -6936,7 +6936,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
 
         $company_list = "";
         $adet = count($result);
-
+ChromePhp::log($result);
         if($adet > 0)
         {
           foreach ($result as $key => $value)
