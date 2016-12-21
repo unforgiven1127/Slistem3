@@ -71,7 +71,7 @@ $result = $db_result->getAll();
 foreach ($result as $key => $value)
 {
 	$positionfk = $value['positionfk'];
-	$candidatefk = $value['positionfk'];
+	$candidatefk = $value['candidatefk'];
 	$date_created = '2016-12-20 20:00:00';
 	$created_by = '101';
 	$status = '151';
