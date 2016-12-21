@@ -8202,7 +8202,7 @@ $bonusManual = getValue('bonus');
         {
           $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
         }
-        if($salaryCurrency == 'jpy' !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+        if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
         {
           $asError[] = 'Bonus value is not a valid number. ['.$newBonus.']';
         }
