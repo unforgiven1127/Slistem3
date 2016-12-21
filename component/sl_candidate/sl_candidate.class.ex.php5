@@ -6846,7 +6846,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
 
     public function controlCompanyDuplicate()
     {
-      ChromePhp::log('controlCompanyDuplicate');
+      //ChromePhp::log('controlCompanyDuplicate');
       //url
       //https://beta.slate.co.jp/index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx
       $company_name = $_POST['cname'];
@@ -6925,17 +6925,17 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $somthing = false;
       }
-ChromePhp::log($somthing);
+//ChromePhp::log($somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 100";
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
         $db_result = $oDB->executeQuery($sQuery);
 
         $result = $db_result->getAll();
-ChromePhp::log($result);
+//ChromePhp::log($result);
         $company_list = "";
         $adet = count($result);
 
@@ -6943,7 +6943,7 @@ ChromePhp::log($result);
         {
           foreach ($result as $key => $value)
           {
-ChromePhp::log($value['name']);
+//ChromePhp::log($value['name']);
             //$company_list.= "test".',<br>';
             $company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
