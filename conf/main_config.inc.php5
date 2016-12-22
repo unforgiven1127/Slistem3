@@ -211,7 +211,7 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
     //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
-    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp ');
+    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
 
     //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
     define('CONST_PHPMAILER_EMAIL', 'dba_request@mailmigrate.today');
@@ -221,7 +221,7 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
     //define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
-    define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp ');
+    define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp');
     define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
