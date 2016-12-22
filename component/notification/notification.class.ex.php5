@@ -765,6 +765,7 @@ ChromePhp::log($nSent);
 
       if($nSent)
       {
+        ChromePhp::log('IF');
         foreach ($user_messages as $message_info)
         {
           $sNagDate = $this->_getNextNagDate($message_info);
@@ -803,6 +804,7 @@ ChromePhp::log($nSent);
       }
       else
       {
+        ChromePhp::log('ELSE');
         foreach ($user_messages as $message_info)
         {
           if((int)$message_info['delivered'] == 0)
