@@ -760,7 +760,7 @@ class CNotificationEx extends CNotification
       $sSubject .= '__'.$sendCCString;//  Sl[i]stem daily reminders __ burada ekleniyor
 
       $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
-
+ChromePhp::log($nSent);
       //add_remainder_log($message_info['notificationpk'],$sEmail);
 
       if($nSent)
