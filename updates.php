@@ -44,7 +44,7 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
-/*$sDate = date('Y-m-d H:i:s');
+$sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
 $message = "DUPLICATE Date&Time: ".$sDate;
 
@@ -56,9 +56,9 @@ $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 $oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
 //$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
 //$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-$oMail->send($subject, $message);*/
+$oMail->send($subject, $message);
 
-$meetingArray = array();
+/*$meetingArray = array();
 
 $oDB = CDependency::getComponentByName('database');
 $sQuery = "SELECT * FROM sl_position_link WHERE date_created <= '2014-01-01 00:00:00' AND active = 1 group by candidatefk, positionfk";
