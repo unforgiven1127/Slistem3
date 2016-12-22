@@ -214,7 +214,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp ');
 
     //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
-    define('CONST_PHPMAILER_EMAIL', 'slistem@mailmigrate.today');
+    define('CONST_PHPMAILER_EMAIL', 'dba_request@mailmigrate.today');
 
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slistem');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
