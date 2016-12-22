@@ -211,7 +211,7 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
     //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
-    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
+    define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
 
     //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
     define('CONST_PHPMAILER_EMAIL', 'slistem@mailmigrate.today');
