@@ -608,7 +608,7 @@ class CSl_menuEx extends CSl_menu
       }
     }
 
-    $sJs = ' window.open(\'mailto:&cc=slistem@slate.co.jp?body='.  urlencode($sDescription).'\', \'zm_mail\'); ';
+    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'\',&cc=slistem@slate.co.jp, \'zm_mail\'); ';
     return array('data' => 'ok', 'action' => $sJs);
   }
 
