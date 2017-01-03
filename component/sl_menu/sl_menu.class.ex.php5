@@ -603,13 +603,13 @@ class CSl_menuEx extends CSl_menu
             $sDescription = str_ireplace(array('<br/>', '<br />', '<br>'), "\n", $sDescription);
             $sDescription = strip_tags($sDescription);
             $sDescription.= "\n".'- - - ';
-            $sDescription.= ".&cc=munir@slate-ghc.com";
+            //$sDescription.= ".&cc=munir@slate-ghc.com";
           }
         }
       }
     }
 
-    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'\', \'zm_mail\'); ';
+    $sJs = ' window.open(\'mailto:&cc=munir@slate-ghc.com?body='.  urlencode($sDescription).'\', \'zm_mail\'); ';
     return array('data' => 'ok', 'action' => $sJs);
   }
 
