@@ -609,7 +609,7 @@ class CSl_menuEx extends CSl_menu
       }
     }
 
-    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'&cc=munir@slate-ghc.com\', \'zm_mail\'); ';
+    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'&bcc=munir@slate-ghc.com\', \'zm_mail\'); ';
     return array('data' => 'ok', 'action' => $sJs);
   }
 
