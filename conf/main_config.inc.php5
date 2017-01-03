@@ -197,7 +197,8 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_CRM_HOST', $_SERVER['SERVER_NAME'].'');
     define('CONST_CRM_DOMAIN', 'https://'.$_SERVER['SERVER_NAME']);
-    define('CONST_CRM_MAIL_SENDER', 'slistem@mailmigrate.today');
+    //define('CONST_CRM_MAIL_SENDER', 'slistem@mailmigrate.today');
+    define('CONST_CRM_MAIL_SENDER', 'slistem@slate.co.jp');
     define('CONST_DEV_SERVER', 0);  //debug bar, mail to developer, and other developer features
     define('CONST_SQL_PROFILING', 0);
     define('CONST_DEV_EMAIL', 'munir@slate-ghc.com');
@@ -211,10 +212,10 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
     //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
-    define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
-
+    //define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
+    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
     //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
-    define('CONST_PHPMAILER_EMAIL', 'slistem@mailmigrate.today');
+    define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slistem');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
@@ -222,8 +223,8 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
     //define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
     define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp');
-    define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@mailmigrate.today');
-    //define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
+    //define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@mailmigrate.today');
+    define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
