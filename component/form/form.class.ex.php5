@@ -104,6 +104,7 @@ class CFormEx extends CForm
 
   public function setFormParams($psFormName = '', $pbAjax = false, $pasParams = array())
   {
+    ChromePhp::log($pasParams);
     if(!assert('is_string($psFormName)'))
       return false;
 
