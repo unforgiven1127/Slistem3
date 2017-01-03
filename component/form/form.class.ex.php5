@@ -607,10 +607,10 @@ class CFormEx extends CForm
         $sHtml.= ' <input name="'.$replacedValue.'" type="submit" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" class="hidden"/>';
       else
       {
-        if(1)
+        if(isset($this->casFormParams['id']))
         {
           ChromePhp::log($this->casFormParams);
-          $sHtml.= ' <input name="'.$replacedValue.'" type="submit" id="formSubmitButton" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
+          $sHtml.= ' <input name="'.$replacedValue.'" type="submit" id="'.$this->casFormParams['id'].'" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
         }
         else
         {
