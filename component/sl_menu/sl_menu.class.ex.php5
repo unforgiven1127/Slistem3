@@ -603,7 +603,6 @@ class CSl_menuEx extends CSl_menu
             $sDescription = str_ireplace(array('<br/>', '<br />', '<br>'), "\n", $sDescription);
             $sDescription = strip_tags($sDescription);
             $sDescription.= "\n".'- - - ';
-            //$sDescription.= "&cc=munir@slate-ghc.com";
           }
         }
       }
