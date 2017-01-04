@@ -134,21 +134,27 @@ switch(trim($_SERVER['SERVER_NAME']))
     //Specific environment variables
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
-    define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
+    //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
+    //define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
+    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
+    //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
     define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
+
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slistem');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
 
     define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
-    define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
+    //define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
+    define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp');
+    //define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@mailmigrate.today');
     define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
     //to send emails using IMAP instead of smtp
-    define('CONST_MAIL_IMAP_SEND', false);
+    define('CONST_MAIL_IMAP_SEND', false);//false
     //Log a copy of all emails sent by the platform a in the sent folder
-    define('CONST_MAIL_IMAP_LOG_SENT', true);
+    define('CONST_MAIL_IMAP_LOG_SENT', true);//false
     //--------------------------------------
     //required if of of the above are true
     define('CONST_MAIL_IMAP_PORT', 993);  //imap
