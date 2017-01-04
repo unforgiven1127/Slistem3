@@ -548,7 +548,8 @@ class CFormEx extends CForm
 
       $sJavascript.= "    if(checkForm('".$this->csFormName."')) ";
       $sJavascript.= "    { ";
-      $sJavascript.= "      alert('test');var sURL = $('form[name=".$this->csFormName."]').attr('action'); ";
+      $sJavascript.= "      $('#addNewDocumentButton').attr('disabled', true);
+                            var sURL = $('form[name=".$this->csFormName."]').attr('action'); ";
       $sJavascript.= "      var sFormId = $('form[name=".$this->csFormName."]').attr('id'); ";
       $sJavascript.= "      var sAjaxTarget = '".$this->csAjaxFormTarget."'; ";
       //$sJavascript.= "      setCoverScreen(true, true); ";
