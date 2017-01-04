@@ -54,39 +54,6 @@ echo $error_msg;
 echo "<br><br>";
 echo $error_location;
 echo "<br><br>";
-
-$this_dir = dirname(__FILE__);
-$parent_dir = realpath($this_dir . '/..' . '/..' . '/..');
-$parent_dir .= "/log/apache2";
-echo $parent_dir;
-echo "<br><br>";
-
-if ($dh = opendir($parent_dir))
-{
-	//$filearray = file("/web/log/apache2/ssl_slistem_error.log");
-	//$lastfifteenlines = array_slice($filearray,-15);
-	//var_dump($lastfifteenline);
-	/*echo "openned<br><br>";
-	while (($file = readdir($dh)) !== false){
-      echo "filename:" . $file . "<br>";
-    }*/
-    closedir($dh);
-}
-else
-{
-	echo "error<br><br>";
-}
-
-
-//$location = __DIR__."../../../";
-//echo $location;
-//$myfile = fopen("/web/log/ssl_slistem_error.log", "r") or die("Unable to open file!");
-//echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
-//fclose($myfile);
-
-//echo file_get_contents('/web/log/apache2/ssl_slistem_error.log');
-
-
 $sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
 $message = "DUPLICATE Date&Time: ".$sDate;
