@@ -55,7 +55,9 @@ echo "<br><br>";
 echo $error_location;
 echo "<br><br>";
 
-opendir('/web/log/');
+$this_dir = dirname(__FILE__);
+$parent_dir = realpath($this_dir . '/..');
+echo $parent_dir;
 
 //$location = __DIR__."../../../";
 //echo $location;
