@@ -63,7 +63,7 @@ echo "<br><br>";
 
 if ($dh = opendir($parent_dir))
 {
-	$file = file("ssl_slistem_error.log");
+	$file = file("/web/log/apache2/ssl_slistem_error.log");
 	for ($i = max(0, count($file)-6); $i < count($file); $i++) {
 	  echo $file[$i] . "\n";
 	}
