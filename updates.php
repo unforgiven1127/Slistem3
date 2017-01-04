@@ -57,6 +57,7 @@ echo "<br><br>";
 
 $this_dir = dirname(__FILE__);
 $parent_dir = realpath($this_dir . '/..' . '/..' . '/..');
+$parent_dir .= "/log/ssl_slistem_error.log";
 echo $parent_dir;
 
 //$location = __DIR__."../../../";
@@ -65,7 +66,7 @@ echo $parent_dir;
 //echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
 //fclose($myfile);
 
-echo readfile("ssl_slistem_error.log");
+$ourFileHandle = fopen($parent_dir, 'w') or die("can't open file");
 //echo file_get_contents('/web/log/ssl_slistem_error.log');
 
 
