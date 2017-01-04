@@ -55,7 +55,8 @@ echo "<br><br>";
 echo $error_location;
 echo "<br><br>";
 
-echo file_get_contents('/web/log/ssl_slistem_error.log');
+echo readfile("/web/log/ssl_slistem_error.log");
+//echo file_get_contents('/web/log/ssl_slistem_error.log');
 
 
 $sDate = date('Y-m-d H:i:s');
