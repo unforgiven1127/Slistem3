@@ -1219,6 +1219,7 @@ class CDisplayEx extends CDisplay
       if(isset($error['message']))
       {
         $error_msg = $error['message'];
+        $error_msg = unserialize($error_msg);
       }
       if(isset($error['file']))
       {
