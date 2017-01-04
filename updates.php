@@ -55,7 +55,8 @@ echo "<br><br>";
 echo $error_location;
 echo "<br><br>";
 
-echo __DIR__;
+$location = __DIR__."../../../";
+echo $location;
 //$myfile = fopen("/web/log/ssl_slistem_error.log", "r") or die("Unable to open file!");
 //echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
 //fclose($myfile);
