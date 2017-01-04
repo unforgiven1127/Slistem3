@@ -63,10 +63,14 @@ echo "<br><br>";
 
 if ($dh = opendir($parent_dir))
 {
-	echo "openned<br><br>";
+	$file = file("ssl_slistem_error.log");
+	for ($i = max(0, count($file)-6); $i < count($file); $i++) {
+	  echo $file[$i] . "\n";
+	}
+	/*echo "openned<br><br>";
 	while (($file = readdir($dh)) !== false){
       echo "filename:" . $file . "<br>";
-    }
+    }*/
     closedir($dh);
 }
 else
@@ -81,7 +85,7 @@ else
 //echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
 //fclose($myfile);
 
-echo file_get_contents('/web/log/apache2/ssl_slistem_error.log');
+//echo file_get_contents('/web/log/apache2/ssl_slistem_error.log');
 
 
 $sDate = date('Y-m-d H:i:s');
