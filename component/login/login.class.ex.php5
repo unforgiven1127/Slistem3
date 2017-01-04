@@ -3019,7 +3019,7 @@ class CLoginEx extends CLogin
     while($bRead)
     {
       $asData = $oResult->getData();
-dump($asData['data']);
+//dump($asData['data']);
       $asData['data'] = @unserialize(base64_decode($asData['data']));
       //dump($asData['data']);
       if($asData['data'] === false)
