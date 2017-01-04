@@ -539,7 +539,7 @@ class CFormEx extends CForm
 
     $sJavascript = '';
     $sJavascript.= "  $('form[name=".$this->csFormName."]').submit(function(event) ";
-    $sJavascript.= "  { ";
+    $sJavascript.= "  { $('#addNewDocumentButton').attr('disabled', true);";
 
     if($this->cbFormAjax)
     {
@@ -548,8 +548,7 @@ class CFormEx extends CForm
 
       $sJavascript.= "    if(checkForm('".$this->csFormName."')) ";
       $sJavascript.= "    { ";
-      $sJavascript.= "      $('#addNewDocumentButton').attr('disabled', true);
-                            var sURL = $('form[name=".$this->csFormName."]').attr('action'); ";
+      $sJavascript.= "      var sURL = $('form[name=".$this->csFormName."]').attr('action'); ";
       $sJavascript.= "      var sFormId = $('form[name=".$this->csFormName."]').attr('id'); ";
       $sJavascript.= "      var sAjaxTarget = '".$this->csAjaxFormTarget."'; ";
       //$sJavascript.= "      setCoverScreen(true, true); ";
