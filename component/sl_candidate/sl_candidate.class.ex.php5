@@ -1780,6 +1780,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getContactTab($pasCandidateData)
     {
+ChromePhp::log('_getContactTab');
       if(!assert('is_array($pasCandidateData) && !empty($pasCandidateData)'))
         return array();
 
@@ -1944,6 +1945,7 @@ class CSl_candidateEx extends CSl_candidate
               case 5:
                 $sCopyEmail = '<keep_to_copy_email_in_slistem_note '.$this->csUid.'__'.CONST_ACTION_VIEW.'__'.CONST_CANDIDATE_TYPE_CANDI.'__'.$pasCandidateData['sl_candidatepk'].'@slistem.slate.co.jp>';
                 $sCopyEmail = urlencode($sCopyEmail);
+                ChromePhp::log($sCopyEmail);
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?bcc='.$sCopyEmail.'\', \'zm_mail\');'));
                 break;
             }
