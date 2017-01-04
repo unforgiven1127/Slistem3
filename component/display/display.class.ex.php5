@@ -1232,7 +1232,7 @@ class CDisplayEx extends CDisplay
       $sHTML.= $this->getLink('Close', 'javascript:;', array('onclick' => "setCoverScreen(false); $('#ajaxErrorContainerId').hide();"));
       $sHTML.= $this->getBlocEnd();
 
-      $firts_text = "An unknown error occured while executing your last action.<br><br>".$error_msg." - ".$error_location."<br><br>";
+      $firts_text = "An unknown error occured while executing your last action.<br><br>".$error_msg." - ".$error_location."<br>";
 
       $sHTML.= $this->getTitle('Oops!, an error occured', 'h2', true);
       $sHTML.= $this->getCR();
