@@ -1212,6 +1212,7 @@ class CDisplayEx extends CDisplay
     ini_set('display_errors','1');
     $error_msg = '';
     $error_location = '';
+    $error_line = '';
     $error = error_get_last();
     if(isset($error))
     {
@@ -1223,6 +1224,10 @@ class CDisplayEx extends CDisplay
       {
         $error_location = $error['file'];
       }
+      if(isset($error['line']))
+      {
+        $error_line = $error['line'];
+      }
     }
 
     $sHTML.= $this->getBlocStart('ajaxErrorContainerId', array('class' => 'ajaxErrorBlock'));
@@ -1233,7 +1238,7 @@ class CDisplayEx extends CDisplay
       $sHTML.= $this->getLink('Close', 'javascript:;', array('onclick' => "setCoverScreen(false); $('#ajaxErrorContainerId').hide();"));
       $sHTML.= $this->getBlocEnd();
 
-      $firts_text = "An unknown error occured while executing your last action.<br><br>".$error_msg." - ".$error_location."<br>";
+      $firts_text = "An unknown error occured while executing your last action.<br><br>".$error_msg." - ".$error_location." Line:".$error_line."<br>";
 
       $sHTML.= $this->getTitle('Oops!, an error occured', 'h2', true);
       $sHTML.= $this->getCR();
