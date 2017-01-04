@@ -43,6 +43,8 @@ $str = file_get_contents('login_system_history.json');
 $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
+echo $test;
+print_r(error_get_last());
 
 $sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
@@ -56,7 +58,7 @@ $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 $oMail->addRecipient('munir@slate-ghc.com', 'Munir Anameric');
 //$oMail->addCCRecipient('peter.mears@sentree.jp','Peter Mears');
 //$oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-$oMail->send($subject, $message);
+//$oMail->send($subject, $message);
 
 /*$meetingArray = array();
 

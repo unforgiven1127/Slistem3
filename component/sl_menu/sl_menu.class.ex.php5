@@ -582,17 +582,17 @@ class CSl_menuEx extends CSl_menu
     //We receive a string to describe the item to load in the cp_item_selector
     //check it and check item
     $sCpItem = getValue('cp_item_selector');
-    ChromePhp::log($sCpItem);
+    //ChromePhp::log($sCpItem);
     $sDescription = '';
     $bccCopy = '';
     if(!empty($sCpItem))
     {
       $asItem = explode('|@|', $sCpItem);
-      ChromePhp::log($asItem);
+      //ChromePhp::log($asItem);
       if(count($asItem) == 4)
       {
-        $candidate_id = $asItem[3];
-        $bccCopy = 'keep_to_copy_email_in_slistem_note+555-001__ppav__candi__'.$candidate_id.'@slistem.slate.co.jp';
+        //$candidate_id = $asItem[3];
+        //$bccCopy = 'keep_to_copy_email_in_slistem_note+555-001__ppav__candi__'.$candidate_id.'@slistem.slate.co.jp';
         //check the item existe and fetch the label
         $oComponent = CDependency::getComponentByUid($asItem[0]);
         if(!empty($oComponent))
