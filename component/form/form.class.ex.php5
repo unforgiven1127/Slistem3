@@ -609,9 +609,9 @@ class CFormEx extends CForm
       {
         if(isset($this->casFormParams['id']) && !empty($this->casFormParams['id']))
         {
-          ChromePhp::log($this->casFormParams);
+          //ChromePhp::log($this->casFormParams);
           $id = $this->casFormParams['id'];
-          $sHtml.= ' <input style="width:100px;" name="'.$replacedValue.'" type="submit" id="'.$id.'" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
+          $sHtml.= ' <input style="width:auto;" name="'.$replacedValue.'" type="submit" id="'.$id.'" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
         }
         else
         {
