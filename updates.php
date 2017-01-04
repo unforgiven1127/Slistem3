@@ -55,7 +55,11 @@ echo "<br><br>";
 echo $error_location;
 echo "<br><br>";
 
-echo readfile("/web/log/ssl_slistem_error.log");
+$myfile = fopen("/web/log/ssl_slistem_error.log", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
+fclose($myfile);
+
+//echo readfile("/web/log/ssl_slistem_error.log");
 //echo file_get_contents('/web/log/ssl_slistem_error.log');
 
 
