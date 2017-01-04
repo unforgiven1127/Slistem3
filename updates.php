@@ -44,7 +44,8 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 echo $test;
-print_r(error_get_last());
+$error = error_get_last();
+var_dump($error);
 
 $sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
