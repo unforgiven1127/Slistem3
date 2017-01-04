@@ -43,6 +43,7 @@ $str = file_get_contents('login_system_history.json');
 $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
+ini_set('display_errors','0');
 echo $test;
 $error = error_get_last();
 $error_msg = $error['message'];
