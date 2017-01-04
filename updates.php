@@ -53,6 +53,10 @@ echo "<br><br>";
 echo $error_msg;
 echo "<br><br>";
 echo $error_location;
+echo "<br><br>";
+
+echo file_get_contents('/var/log/httpd/error_log');
+
 
 $sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
