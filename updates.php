@@ -64,6 +64,10 @@ echo "<br><br>";
 if ($dh = opendir($parent_dir))
 {
 	echo "openned<br><br>";
+	while (($file = readdir($dh)) !== false){
+      echo "filename:" . $file . "<br>";
+    }
+    closedir($dh);
 }
 else
 {
@@ -77,7 +81,6 @@ else
 //echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
 //fclose($myfile);
 
-$ourFileHandle = fopen($parent_dir, 'w') or die("can't open file");
 //echo file_get_contents('/web/log/ssl_slistem_error.log');
 
 
