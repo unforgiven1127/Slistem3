@@ -63,9 +63,9 @@ echo "<br><br>";
 
 if ($dh = opendir($parent_dir))
 {
-	$filearray = file("/web/log/apache2/ssl_slistem_error.log");
-	$lastfifteenlines = array_slice($filearray,-15);
-	var_dump($lastfifteenline);
+	//$filearray = file("/web/log/apache2/ssl_slistem_error.log");
+	//$lastfifteenlines = array_slice($filearray,-15);
+	//var_dump($lastfifteenline);
 	/*echo "openned<br><br>";
 	while (($file = readdir($dh)) !== false){
       echo "filename:" . $file . "<br>";
