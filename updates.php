@@ -57,8 +57,19 @@ echo "<br><br>";
 
 $this_dir = dirname(__FILE__);
 $parent_dir = realpath($this_dir . '/..' . '/..' . '/..');
-$parent_dir .= "/log/ssl_slistem_error.log";
+$parent_dir .= "/log/";
 echo $parent_dir;
+echo "<br><br>";
+
+if ($dh = opendir($parent_dir))
+{
+	echo "openned<br><br>";
+}
+else
+{
+	echo "error<br><br>";
+}
+
 
 //$location = __DIR__."../../../";
 //echo $location;
