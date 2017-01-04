@@ -56,7 +56,7 @@ echo $error_location;
 echo "<br><br>";
 
 $this_dir = dirname(__FILE__);
-$parent_dir = realpath($this_dir . '/..');
+$parent_dir = realpath($this_dir . '/..' . '/..' . '/..');
 echo $parent_dir;
 
 //$location = __DIR__."../../../";
