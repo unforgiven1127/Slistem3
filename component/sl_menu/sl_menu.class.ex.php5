@@ -584,12 +584,15 @@ class CSl_menuEx extends CSl_menu
     $sCpItem = getValue('cp_item_selector');
     ChromePhp::log($sCpItem);
     $sDescription = '';
+    $bccCopy = '';
     if(!empty($sCpItem))
     {
       $asItem = explode('|@|', $sCpItem);
       ChromePhp::log($asItem);
       if(count($asItem) == 4)
       {
+        $candidate_id = $asItem[3];
+        $bccCopy = 'keep_to_copy_email_in_slistem_note+555-001__ppav__candi__'.$candidate_id.'@slistem.slate.co.jp';
         //check the item existe and fetch the label
         $oComponent = CDependency::getComponentByUid($asItem[0]);
         if(!empty($oComponent))
@@ -608,7 +611,7 @@ class CSl_menuEx extends CSl_menu
       }
     }
 
-    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'&bcc=slistem@slate.co.jp\', \'zm_mail\'); ';
+    $sJs = ' window.open(\'mailto:?body='.  urlencode($sDescription).'&cc='.$bccCopy.'&bcc=slistem@slate.co.jp\', \'zm_mail\'); ';
     return array('data' => 'ok', 'action' => $sJs);
   }
 
