@@ -48,6 +48,8 @@ echo $test;
 $error = error_get_last();
 $error_msg = $error['message'];
 $error_location = $error['file'];
+var_dump($error);
+echo "<br><br>";
 echo $error_msg;
 echo "<br><br>";
 echo $error_location;
