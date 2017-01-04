@@ -57,7 +57,7 @@ echo "<br><br>";
 
 $this_dir = dirname(__FILE__);
 $parent_dir = realpath($this_dir . '/..' . '/..' . '/..');
-$parent_dir .= "/log/";
+$parent_dir .= "/log/apache2";
 echo $parent_dir;
 echo "<br><br>";
 
@@ -81,7 +81,7 @@ else
 //echo fread($myfile,filesize("/web/log/ssl_slistem_error.log"));
 //fclose($myfile);
 
-//echo file_get_contents('/web/log/ssl_slistem_error.log');
+echo file_get_contents('/web/log/apache2/ssl_slistem_error.log');
 
 
 $sDate = date('Y-m-d H:i:s');
