@@ -539,7 +539,7 @@ class CFormEx extends CForm
 
     $sJavascript = '';
     $sJavascript.= "  $('form[name=".$this->csFormName."]').submit(function(event) ";
-    $sJavascript.= "  { $('#addNewDocumentButton').attr('disabled', true);";
+    $sJavascript.= "  { document.getElementById('addNewDocumentButton').disabled = true;";
 
     if($this->cbFormAjax)
     {
