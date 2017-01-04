@@ -1210,9 +1210,9 @@ class CDisplayEx extends CDisplay
     $sHTML .= $this->getBlocEnd();
 
     ini_set('display_errors','1');
-    $error_msg = '';
-    $error_location = '';
-    $error_line = '';
+    $error_msg = '[';
+    $error_location = '[';
+    $error_line = '[';
     $error = error_get_last();
     if(isset($error))
     {
