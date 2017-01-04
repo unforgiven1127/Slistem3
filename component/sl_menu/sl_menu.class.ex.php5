@@ -577,7 +577,6 @@ class CSl_menuEx extends CSl_menu
    */
   private function _getZimbraMailForm()
   {
-
     //=======================================================================
     //We receive a string to describe the item to load in the cp_item_selector
     //check it and check item
