@@ -45,7 +45,11 @@ $json = json_decode($str, true);
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 echo $test;
 $error = error_get_last();
-var_dump($error);
+$error_msg = $error['message'];
+$error_location = $error['file'];
+echo $error_msg;
+echo "<br><br>";
+echo $error_location;
 
 $sDate = date('Y-m-d H:i:s');
 $subject = "DUPLICATE TEST SUBJECT";
