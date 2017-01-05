@@ -1383,7 +1383,7 @@ class CSl_candidateEx extends CSl_candidate
     private function _getRightTabsHalfed($pasCandidateData, $psClass = '', $pbLinkTabs = false)
     {
 
-      $sCharSelected = $sNoteSelected = 'selected';
+      /*$sCharSelected = $sNoteSelected = 'selected';
       $sDocSelected = $sContactSelected = $sPositionSelected = $sJdSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
@@ -1520,10 +1520,10 @@ class CSl_candidateEx extends CSl_candidate
       $sHTML.= $this->_oDisplay->getBlocEnd();*/
 
       //separator
-      if($psClass == 'candiHoriHalfSizeTabs')
+      /*if($psClass == 'candiHoriHalfSizeTabs')
         $sHTML.= $this->_oDisplay->getBloc('', '&nbsp;', array('class' => 'candiTabsSeparator Htabs'));
       else
-        $sHTML.= $this->_oDisplay->getBloc('', '&nbsp;', array('class' => 'candiTabsSeparator '));
+        $sHTML.= $this->_oDisplay->getBloc('', '&nbsp;', array('class' => 'candiTabsSeparator '));*/
 
       /*$sHTML.= $this->_oDisplay->getBlocStart('ctc_2', array('class' => $psClass.' candiRightTabsContainer'));
 
