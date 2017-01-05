@@ -4281,65 +4281,68 @@ ChromePhp::log($sQuery);
   function securityCheckSearch($user_id)
   {
     // if user do more than 5 search in 5 minutes
-
-    $now = date('Y-m-d H:i:s');
-    $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
-
-    $oDB = CDependency::getComponentByName('database');
-
-    $sQuery = "SELECT COUNT(*) as count
-               FROM login_system_history lsh
-               WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
-               AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
-
-    $db_result = $oDB->executeQuery($sQuery);
-
-    $result = $db_result->getAll();
-    $count = $result[0]['count'];
-
-    if($user_id != '101' AND $count >= 10) // count starts from 0
+    if($user_id != '101')
     {
-      //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
-      $dNow = date('Y-m-d H:i:s'); // Japan time
-      $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
-                 VALUES('".$user_id."','search_in_five','".$dNow."')";
+      $now = date('Y-m-d H:i:s');
+      $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
+
+      $oDB = CDependency::getComponentByName('database');
+
+      $sQuery = "SELECT COUNT(*) as count
+                 FROM login_system_history lsh
+                 WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
+                 AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
 
       $db_result = $oDB->executeQuery($sQuery);
 
-      $user_information = getUserInformaiton($user_id);
-      $username = $user_information['firstname']." ".$user_information['lastname'];
+      $result = $db_result->getAll();
+      $count = $result[0]['count'];
 
-      //$to      = 'munir@slate-ghc.com';
-      //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
-      //$subject = 'Slistem Activity Flag';
-      //$message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
-      //$message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
-      /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
-          'Reply-To: munir@slate-ghc.com' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();*/
-
-      $subject = "Slistem Activity Flag";
-      $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
-      $message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
-
-      $oMail = CDependency::getComponentByName('mail');
-
-      $oMail->createNewEmail();
-      $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
-
-      $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-      $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
-      $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-      $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
-
-
-      $flag = securityMailControl($user_id,'search_in_five');
-      if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
+      if($user_id != '101' AND $count >= 10) // count starts from 0
       {
-        $oMail->send($subject, $message);
-        //mail($to, $subject, $message, $headers);
+        //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
+        $dNow = date('Y-m-d H:i:s'); // Japan time
+        $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
+                   VALUES('".$user_id."','search_in_five','".$dNow."')";
+
+        $db_result = $oDB->executeQuery($sQuery);
+
+        $user_information = getUserInformaiton($user_id);
+        $username = $user_information['firstname']." ".$user_information['lastname'];
+
+        //$to      = 'munir@slate-ghc.com';
+        //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+        //$subject = 'Slistem Activity Flag';
+        //$message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+        //$message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
+        /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
+            'Reply-To: munir@slate-ghc.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();*/
+
+        $subject = "Slistem Activity Flag";
+        $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+        $message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
+
+        $oMail = CDependency::getComponentByName('mail');
+
+        $oMail->createNewEmail();
+        $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+
+        $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
+        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
+        $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+
+
+        $flag = securityMailControl($user_id,'search_in_five');
+        if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
+        {
+          $oMail->send($subject, $message);
+          //mail($to, $subject, $message, $headers);
+        }
       }
     }
+    
 
   }
 

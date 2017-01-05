@@ -2838,7 +2838,7 @@ ChromePhp::log('_displayCandidateList');
 
       $user_id = $oLogin->getUserPk();
       ChromePhp::log($user_id);
-      //securityCheckSearch($user_id);
+      securityCheckSearch($user_id);
 //return $html;
       $asListMsg = array();
       $sTemplate = getValue('tpl');
