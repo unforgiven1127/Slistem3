@@ -2837,6 +2837,7 @@ ChromePhp::log('_displayCandidateList');
       $oLogin = CDependency::getCpLogin();
 
       $user_id = $oLogin->getUserPk();
+      ChromePhp::log($user_id);
       //securityCheckSearch($user_id);
 //return $html;
       $asListMsg = array();
