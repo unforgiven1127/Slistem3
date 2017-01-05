@@ -107,6 +107,7 @@ class CSl_positionModelEx extends CSl_positionModel
     else
       $sQuery.= ' ORDER BY first_flag ASC,spli.positionfk DESC, spli.date_expire DESC ';
 
+    //ChromePhp::log($sQuery);
     //echo $sQuery;
     return $this->oDB->executeQuery($sQuery);
   }

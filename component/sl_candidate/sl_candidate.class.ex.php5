@@ -858,7 +858,7 @@ class CSl_candidateEx extends CSl_candidate
   */
   public function getItemDescription($pvItemPk, $psAction = '', $psItemType = 'candi')
   {
-
+    //ChromePhp::log('getItemDescription 3');
     if(!assert('is_arrayOfInt($pvItemPk) || is_key($pvItemPk)'))
       return array();
 
@@ -985,7 +985,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _displayCandidateList($pbInAjax = false)
     {
-ChromePhp::log('_displayCandidateList');
+
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
@@ -1105,6 +1105,7 @@ ChromePhp::log('_displayCandidateList');
 
         if($ownerFlag)
         {
+          #ChromePhp::log('NO MAIL!!');
           #do nothing
         }
         else
@@ -2164,17 +2165,19 @@ ChromePhp::log('_displayCandidateList');
             continue;
           //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
             //continue;
-
+//ChromePhp::log($asHistoryData['userfk']);
           if(isset($asHistoryData['userfk']) && $asHistoryData['userfk'] > 0)
           {
             $user_info = getUserInformaiton($asHistoryData['userfk']);
           }
 /*if($asHistoryData['userfk'] == '234')
 {
-
+  ChromePhp::log($user_info);
 }*/
           if(is_null($user_info) || empty($user_info))
           {
+            //ChromePhp::log('NULL');
+            //ChromePhp::log($user_info);
             //continue;
           }
           else
@@ -6417,6 +6420,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         }
 
+ChromePhp::log($companyList[$company_id]['totalCandidates']);
 
         $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
         $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
@@ -6436,7 +6440,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       else
       {
         $company_info = getCompanyInformation($company_id);
-
+        //ChromePhp::log($company_info);
         $data['totalCandidates'] = 0;
         $data['activeCandidates'] = 0;
         $data['compantId'] = $company_id;
@@ -6842,6 +6846,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     public function controlCompanyDuplicate()
     {
+      //ChromePhp::log('controlCompanyDuplicate');
       //url
       //https://beta.slate.co.jp/index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx
       $company_name = $_POST['cname'];
@@ -6920,17 +6925,17 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $somthing = false;
       }
-
+//ChromePhp::log($somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 80";
-
+//ChromePhp::log($sQuery);
         $db_result = $oDB->executeQuery($sQuery);
 
         $result = $db_result->getAll();
-
+//ChromePhp::log($result);
         $company_list = "";
         $adet = count($result);
 
@@ -6938,7 +6943,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         {
           foreach ($result as $key => $value)
           {
-
+//ChromePhp::log($value['name']);
             //$company_list.= "test".',<br>';
             $company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
@@ -6954,17 +6959,19 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $company_list = "none";
       }
+      //ChromePhp::log($company_list);
+
 
       //$company_list = "test (#123456), Test (#123456)";
 
       $jsonData = json_encode($company_list);
 
       return $jsonData;
-
+      //ChromePhp::log($result);
       //return 'RESULT';
 
       //$possibleDuplicates = getDuplicateCompanies($company_name);
-
+      //ChromePhp::log($possibleDuplicates);
       //echo 'asdasdasd';
 
     }
@@ -6972,6 +6979,8 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyForm($pnPk = 0)
     {
       $testUrl = $this->_oPage->getAjaxUrl($this->csUid, COMPANY_DUPLI_CONTROL, CONST_CANDIDATE_TYPE_CANDI);
+      //ChromePhp::log($testUrl);
+
 
       if(!assert('is_integer($pnPk)'))
         return '';
@@ -7155,7 +7164,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           {
             foreach ($owners as $key => $value)
             {
-
+              ChromePhp::log($value);
             }
           }*/
 
@@ -7273,7 +7282,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $mailFlag = $_GET['mailFlg'];
       }
-
+//ChromePhp::log($mailFlag);
       if($mailFlag == 'yes' || $mailFlag == 'normal')
       {
 
@@ -7378,7 +7387,7 @@ $searchTitle = explode(':',$poQB->getTitle());
             $company_id = $newCompanyOwner[1];
             insertNewOwner($newOwner,$user_id,$company_id);
           }
-
+          //ChromePhp::log($company_owners);
         }
 
         $asIndustry = explode(',', getValue('industrypk'));
@@ -7533,14 +7542,14 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
         else
         {
-
+//          ChromePhp::log('HERE');
           $oQb->addOrder("scom.$sSortField $sSortOrder");
         }
       }
       else
         $oQb->addOrder('scom.name DESC');
 
-
+      //ChromePhp::log($oQb->getSql());
       $sql = $oQb->getSql();
 
       if(!empty($sSortField))
@@ -7554,7 +7563,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $explodeLimit = explode('LIMIT',$sql);
       $noLimit = $explodeLimit[0];
 
-
+      //ChromePhp::log($noLimit);
       $oDB = CDependency::getComponentByName('database');
 
       $db_result = $oDB->executeQuery($noLimit);
@@ -8165,12 +8174,16 @@ die();*/
         $asBonus = $oCurrency->getCurrencyFromPost('bonus');
         $this->_getSalaryInYen($asBonus);
 
+//ChromePhp::log($asSalary);
+//ChromePhp::log($asSalary['value']);
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
 $salaryCurrency = getValue('salary_currency');
 
 $bonusManual = getValue('bonus');
+//ChromePhp::log($salaryManual);
+//ChromePhp::log($salaryUnit);
 
 
         if($salaryUnit == 'M')
@@ -8216,6 +8229,8 @@ $bonusManual = getValue('bonus');
 
         $testTargetSalary = (int)getValue('target_low');
 
+        //ChromePhp::log($asTargetLow['yen']);
+
         $this->_getSalaryInYen($asTargetLow);
 
         $asTargetHigh = $oCurrency->getCurrencyFromPost('target_high');
@@ -8241,7 +8256,11 @@ $bonusManual = getValue('bonus');
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
 
+          //ChromePhp::log($candidateMeetingCount);
+
           $candidateMeetingCount = $candidateMeetingCount[0];
+
+          //ChromePhp::log($candidateMeetingCount);
 
           if($candidateMeetingCount['meetingCount'] == 0)
           {
@@ -8695,7 +8714,7 @@ $bonusManual = getValue('bonus');
       //varsa 8 alanin doldurulmasi yetecek yoksa 10 ve her alanda 20 karakter olmak zorunda...
 
       //$completedMeetings = getCompletedMeetings($candidate_id);
-
+      //ChromePhp::log($completedMeetings);
       // bu kisimda aday zaten ilk dea ekleniyor o nedenle hepsi doldurulacak ve minimum 25 character olacak.
 
       /*$pnL = strlen($personality_note);
@@ -9883,7 +9902,8 @@ $bonusManual = getValue('bonus');
         $escapedString = $this->_getModel()->dbEscapeString($sSearchString);
         $stringCount = strlen($escapedString);
         $stringCount = $stringCount-2; // iki adet " geliyor o nedenle -2
-
+        //ChromePhp::log($escapedString);
+        //ChromePhp::log($stringCount);
 
         $poQB->addSelect('scom.*, IF(scom.name LIKE '.$this->_getModel()->dbEscapeString($sSearchString).', 1, 0) as exact_name ');
 
@@ -9901,7 +9921,7 @@ $bonusManual = getValue('bonus');
       }
 
       $createdSql = $poQB->getSql();
-
+      //ChromePhp::log($createdSql);
 
       $oDbResult = $this->_getModel()->executeQuery($poQB->getSql());
       $bRead = $oDbResult->readFirst();
@@ -9950,6 +9970,8 @@ $bonusManual = getValue('bonus');
       else // OR is_nc_ok = 0 vardi kaldirdik
         $sQuery = 'SELECT * FROM sl_company WHERE level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
 
+      //ChromePhp::log($sQuery);
+
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -9985,6 +10007,7 @@ $bonusManual = getValue('bonus');
         {
           $owner_names = $oLogin->getUserLink(101,false,false,true);
         }
+        //ChromePhp::log($owner_names);
 
         $asCpData['level_letter'] = $asLetter[$asCpData['level']];
         $sFirstLetter = strtoupper(substr($asCpData['name'], 0, 1));
