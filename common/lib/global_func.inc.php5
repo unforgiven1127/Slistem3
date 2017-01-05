@@ -4298,9 +4298,7 @@ ChromePhp::log($sQuery);
 
 
 $errLvl = error_reporting();
-for ($i = 0; $i < 15;  $i++ ) {
-  ChromePhp::log(FriendlyErrorType($errLvl & pow(2, $i)));
-}
+ChromePhp::log($errLvl);
 
 
     $result = $db_result->getAll();
