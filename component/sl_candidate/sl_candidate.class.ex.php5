@@ -2835,10 +2835,10 @@ ChromePhp::log('_displayCandidateList');
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
       $oLogin = CDependency::getCpLogin();
-return $html;
+
       $user_id = $oLogin->getUserPk();
       securityCheckSearch($user_id);
-
+return $html;
       $asListMsg = array();
       $sTemplate = getValue('tpl');
       $bHeavyJoin = false;
