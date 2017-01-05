@@ -4294,10 +4294,15 @@ ChromePhp::log($sQuery);
                AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
 ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
-$errLvl = error_reporting(); 
-for ($i = 0; $i < 15;  $i++ ) { 
-    print FriendlyErrorType($errLvl & pow(2, $i)) . "<br>\\n"; 
-} 
+
+
+
+$errLvl = error_reporting();
+for ($i = 0; $i < 15;  $i++ ) {
+  ChromePhp::log(FriendlyErrorType($errLvl & pow(2, $i)));
+}
+
+
     $result = $db_result->getAll();
 ChromePhp::log($result);
     $count = $result[0]['count'];
