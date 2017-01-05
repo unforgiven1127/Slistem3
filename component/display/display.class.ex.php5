@@ -1209,7 +1209,7 @@ class CDisplayEx extends CDisplay
         $sHTML .= getCustomWebsiteFooter($asFooter);
     $sHTML .= $this->getBlocEnd();
 
-    ini_set('display_errors','1');
+    //ini_set('display_errors','1');
     $error_msg = '[';
     $error_location = '[';
     $error_line = '[';
