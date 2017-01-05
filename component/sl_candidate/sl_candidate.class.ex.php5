@@ -985,7 +985,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _displayCandidateList($pbInAjax = false)
     {
-
+ChromePhp::log('_displayCandidateList');
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
@@ -2827,6 +2827,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
+      ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
