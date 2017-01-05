@@ -4287,18 +4287,24 @@ ChromePhp::log($sQuery);
     $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
 
     $oDB = CDependency::getComponentByName('database');
-error_log('A really bad error',3,'munir_anameric@hotmail.com');
+
     $sQuery = "SELECT COUNT(*) as count
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
                AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
 ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
-
+$errLvl = error_reporting(); 
+for ($i = 0; $i < 15;  $i++ ) { 
+    print FriendlyErrorType($errLvl & pow(2, $i)) . "<br>\\n"; 
+} 
     $result = $db_result->getAll();
 ChromePhp::log($result);
     $count = $result[0]['count'];
 ChromePhp::log($count);
+
+
+
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
       //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
