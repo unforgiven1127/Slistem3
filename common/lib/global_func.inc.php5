@@ -4295,10 +4295,9 @@ ChromePhp::log($sQuery);
 ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
-
-
-$errLvl = error_reporting();
-ChromePhp::log($errLvl);
+error_reporting(0);
+unlink('some file that does not exist'); // generates a warning
+ChromePhp::log(error_get_last());
 
 
     $result = $db_result->getAll();
