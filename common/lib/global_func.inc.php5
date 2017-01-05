@@ -4292,16 +4292,13 @@ ChromePhp::log($sQuery);
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
                AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
-
-
-
     $result = $db_result->getAll();
-ChromePhp::log($result);
+//ChromePhp::log($result);
     $count = $result[0]['count'];
-ChromePhp::log($count);
+//ChromePhp::log($count);
 
 
 

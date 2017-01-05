@@ -370,7 +370,7 @@ class CPageEx extends CPage
       }
     }
 //ChromePhp::log($this->csMode); //revenue board da pn geliyor
-//ChromePhp::log(CONST_URL_PARAM_PAGE_CRON); // cron isteniyor
+////////////ChromePhp::log(CONST_URL_PARAM_PAGE_CRON); // cron isteniyor
     switch($this->csMode)
     {
 

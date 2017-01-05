@@ -1213,14 +1213,7 @@ class CDisplayEx extends CDisplay
     $error_msg = '[';
     $error_location = '[';
     $error_line = '[';
-    //$error = error_get_last();
-
-    error_reporting(0);
     $error = error_get_last();
-    //unlink('some file that does not exist'); // generates a warning
-    //ChromePhp::log(error_get_last());
-
-
     if(isset($error))
     {
       if(isset($error['message']))
