@@ -3288,7 +3288,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
-ChromePhp::log('HERE');
+
       while($bRead)
       {
         $asCandidate = $oDbResult->getData();
@@ -3625,7 +3625,7 @@ ChromePhp::log('HERE');
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
-
+ChromePhp::log('HERE');
       return $sHTML;
     }
 
