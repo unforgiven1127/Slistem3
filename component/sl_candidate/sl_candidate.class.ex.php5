@@ -2824,8 +2824,6 @@ ChromePhp::log('_displayCandidateList');
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      $sHTML = '';
-      return $sHTML;
       ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
@@ -2849,7 +2847,7 @@ ChromePhp::log('_getCandidateList 2');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
-      /*if($nHistoryPk > 0)
+      if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
@@ -3009,7 +3007,7 @@ ChromePhp::log('_getCandidateList 2');
         }
       }
       else*/
-     /*   $poQB->addOrder('scan.firstname DESC');
+        $poQB->addOrder('scan.firstname DESC');
 
 
       if(empty($sGroupBy))
@@ -3245,7 +3243,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
       }*/
 
-     /* $oDbResult = $oDb->ExecuteQuery($sQuery);
+      $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
       if(!$bRead || !isset($nResult))
@@ -3262,7 +3260,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //save search in history if it's a new search
       if(empty($nHistoryPk) /*&& !$bLogged*/)
-      /*{
+      {
         $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, 0, array('searchId' => $this->csSearchId));
         $sLink = 'javascript: loadAjaxInNewTab(\''.$sURL.'\', \'candi\', \'candidate\');';
         $nHistoryPk = logUserHistory($this->csUid, $this->csAction, $this->csType, $this->cnPk, array('text' => implode(', ', $asListMsg).' (#'.$nResult.' results)', 'link' => $sLink, 'data' => array('qb' => $poQB)), false);
@@ -3272,7 +3270,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
 // BURAYA KADAR
 
-     /* $asData = array();
+      $asData = array();
       $asPk = array();
 
       if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
@@ -3508,7 +3506,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       else
         $sHTML.= 'replay a search, pager offset '.$nPagerOffset.', container/search ID '.$this->csSearchId;*/
 
-      /*if(!$bFilteredList)
+      if(!$bFilteredList)
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer'));
 
 
@@ -3626,7 +3624,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
-*/
+
       return $sHTML;
     }
 
