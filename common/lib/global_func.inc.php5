@@ -11,6 +11,7 @@ function array_search_multi($needle, $haystack)
     if($bResult !== false)
     return $i;
   }
+
   return false;
 }
 
@@ -4291,16 +4292,13 @@ ChromePhp::log($sQuery);
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
                AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
-
+ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-    $count = 0;
-    if(isset($result[0]['count']))
-    {
-      $count = $result[0]['count'];
-    }
-
+ChromePhp::log($result);
+    $count = $result[0]['count'];
+ChromePhp::log($count);
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
       //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');

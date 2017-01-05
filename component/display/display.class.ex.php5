@@ -1209,6 +1209,27 @@ class CDisplayEx extends CDisplay
         $sHTML .= getCustomWebsiteFooter($asFooter);
     $sHTML .= $this->getBlocEnd();
 
+    ini_set('display_errors','1');
+    $error_msg = '[';
+    $error_location = '[';
+    $error_line = '[';
+    $error = error_get_last();
+    if(isset($error))
+    {
+      if(isset($error['message']))
+      {
+        $error_msg = $error['message'];
+        //$error_msg = unserialize($error_msg);
+      }
+      if(isset($error['file']))
+      {
+        $error_location = $error['file'];
+      }
+      if(isset($error['line']))
+      {
+        $error_line = $error['line'];
+      }
+    }
 
     $sHTML.= $this->getBlocStart('ajaxErrorContainerId', array('class' => 'ajaxErrorBlock'));
       $sHTML.= $this->getBlocStart('ajaxErrorInnerId', array('class' => 'notice2'));
@@ -1218,9 +1239,11 @@ class CDisplayEx extends CDisplay
       $sHTML.= $this->getLink('Close', 'javascript:;', array('onclick' => "setCoverScreen(false); $('#ajaxErrorContainerId').hide();"));
       $sHTML.= $this->getBlocEnd();
 
-      $sHTML.= $this->getTitle('Oops, an error occured', 'h2', true);
+      $firts_text = "An unknown error occured while executing your last action.<br><br>".$error_msg." - ".$error_location." Line:".$error_line."<br>";
+
+      $sHTML.= $this->getTitle('Oops!, an error occured', 'h2', true);
       $sHTML.= $this->getCR();
-      $sHTML.= $this->getText("An unknown error occured while executing your last action.");
+      $sHTML.= $this->getText($firts_text);
       $sHTML.= $this->getCR();
       $sHTML.= $this->getText("If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.");
       $sHTML.= $this->getCR();
