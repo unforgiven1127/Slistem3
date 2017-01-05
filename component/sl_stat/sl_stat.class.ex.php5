@@ -4026,7 +4026,7 @@ class CSl_statEx extends CSl_stat
 
     private function getSelectedRevenueChart()
     {
-      //ChromePhp::log('getSelectedRevenueChart');
+      ////ChromePhp::log('getSelectedRevenueChart');
       // '/index.php5?uid=555-006&ppa=asrc&ppt=revenue&ppk=0&watercooler=1'
       //https://beta.slate.co.jp/index.php5?uid=555-006&amp;ppa=asrc&amp;ppt=revenue&amp;watercooler=1&amp;ppk=0
       //$year = $_GET['year'];
@@ -4039,12 +4039,12 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-      //ChromePhp::log('get_revenue_chart');
+      ////ChromePhp::log('get_revenue_chart');
       //echo 'test'; // mca MCA
       //exit;
-      //ChromePhp::log('get_revenue_chart');
+      ////ChromePhp::log('get_revenue_chart');
       $revenueChartLoop = get_revenue_chart_loop();
-      //ChromePhp::log($revenueChartLoop);
+      ////ChromePhp::log($revenueChartLoop);
       $nextloop = 0;
       if(isset($_GET['nextloop']))
       {
@@ -4082,7 +4082,7 @@ class CSl_statEx extends CSl_stat
       }
 
       $isRevenue = true;
-      //ChromePhp::log($nextloop);
+      ////ChromePhp::log($nextloop);
       if($loopChart == 'totals_chart_ordered')
       {
         $isRevenue = false;
@@ -4154,7 +4154,7 @@ class CSl_statEx extends CSl_stat
           $rs_ccm1_mccm[$consultant_id]['resume_sent'] = $resume_sent_temp['count'];
           $rs_ccm1_mccm[$consultant_id]['ccm1'] = get_ccm1_count($consultant_id, $start_date);
           $rs_ccm1_mccm[$consultant_id]['ccm2'] = get_ccm2_count($consultant_id, $start_date);
-          //ChromePhp::log($rs_ccm1_mccm[$consultant_id]['ccm1']);
+          ////ChromePhp::log($rs_ccm1_mccm[$consultant_id]['ccm1']);
           $rs_ccm1_mccm[$consultant_id]['mccm'] = get_mccm_count($consultant_id, $start_date);
           $rs_ccm1_mccm[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$resume_sent_temp['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm1']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm2']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['mccm']['count']."|";
         }
@@ -4208,7 +4208,7 @@ class CSl_statEx extends CSl_stat
           $temp_in_play[$key]['new_posi_count'] = count($value['new_positions']);
         }*/
 
-        //ChromePhp::log($temp_in_play);
+        ////ChromePhp::log($temp_in_play);
 
         foreach ($consultants as $key => $value)
         {
@@ -4895,7 +4895,7 @@ class CSl_statEx extends CSl_stat
   //echo "<br><br>";
   //var_dump($stats_data['consultant']['457']);
         $temp_set_vs_met = $this->_getModel()->getKpiSetVsMet($researcher_ids, $start_date, $end_date);
-//ChromePhp::log($temp_set_vs_met);
+////ChromePhp::log($temp_set_vs_met);
         $temp_resume_sent = $this->_getModel()->get_resume_sent($researcher_ids, $start_date, $end_date);
         $temp_ccm = $this->_getModel()->get_ccm_data($researcher_ids, $start_date, $end_date);
         $temp_in_play = $this->_getModel()->get_new_in_play($researcher_ids, $start_date, $end_date);
@@ -5812,7 +5812,7 @@ class CSl_statEx extends CSl_stat
 
       $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
-//ChromePhp::log($stats_data);
+////ChromePhp::log($stats_data);
 
       $data['nextloop'] = $nextloop;
 
