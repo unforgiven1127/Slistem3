@@ -2824,9 +2824,6 @@ ChromePhp::log('_displayCandidateList');
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      $sHTML = '';
-      return $sHTML;
-      ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -2845,7 +2842,7 @@ ChromePhp::log('_displayCandidateList');
       $bDisplayPositionField = false;
       //$bLogged = false;
       $bFilteredList = (bool)getValue('__filtered');
-ChromePhp::log('_getCandidateList 2');
+//ChromePhp::log('_getCandidateList');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
@@ -3041,6 +3038,7 @@ ChromePhp::log('_getCandidateList 2');
       }
       else
       {
+        //ChromePhp::log($sQuery);
         $oDbResult = $oDb->ExecuteQuery($sQuery);
         $bRead = $oDbResult->readFirst();
         $nResult = (int)$oDbResult->getFieldValue('nCount');
@@ -3059,7 +3057,7 @@ ChromePhp::log('_getCandidateList 2');
 
 
 $searchTitle = explode(':',$poQB->getTitle());
-
+//ChromePhp::log($searchTitle);
       if ($nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
@@ -3071,7 +3069,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $oPager->setOffset(1);
         }
       }
-
+//ChromePhp::log($sQuery);
       //Some joins are too heavy to make (notes, contacts...)
       //So we put the main query in a subquery, and join with the filtered / size-limited result
       if($bHeavyJoin)
@@ -3287,7 +3285,6 @@ $searchTitle = explode(':',$poQB->getTitle());
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
-
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3627,7 +3624,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
-ChromePhp::log('HERE');
+
       return $sHTML;
     }
 
