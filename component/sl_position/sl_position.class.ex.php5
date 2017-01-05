@@ -1848,7 +1848,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
 
       $oLogin = CDependency::getComponentByName('login');
-      //ChromePhp::log($oLogin->getUserLink($pnUserPk));
+
       //3. add a system fallen off step
       foreach($asCandidate as $nCanduidatefk) // burada adaylar status 251 oluyor position filled
       {

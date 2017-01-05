@@ -1459,7 +1459,7 @@ function _live_dump($pvTrace, $psTitle = null)
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT COUNT(*) as meetingCount FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
-//ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
@@ -3233,7 +3233,7 @@ var_dump($query);*/
 
   function mergeCharacterAssassments($candidate_id, $target_candidate_id)
   {
-    ChromePhp::log('mergeCharacterAssassments');
+
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
@@ -3394,7 +3394,7 @@ var_dump($query);*/
                 left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
                 left join sl_company slc on slc.sl_companypk = slp.companyfk
                 WHERE slp.companyfk = '".$company_id."'";
-ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
@@ -4268,7 +4268,7 @@ ChromePhp::log($sQuery);
                FROM security_alert lsh
                WHERE lsh.type = '".$type."' AND user_id = '".$user_id."' AND action_date >= '".$today."' AND company_id = '".$company_id."' ";
 
-//ChromePhp::log($sQuery);
+
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -4299,7 +4299,7 @@ ChromePhp::log($sQuery);
 
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
-      //ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
+
       $dNow = date('Y-m-d H:i:s'); // Japan time
       $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                  VALUES('".$user_id."','search_in_five','".$dNow."')";
@@ -4377,7 +4377,7 @@ ChromePhp::log($sQuery);
 
       if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
-        //ChromePhp::log('Action: View 5 contact details but not any note entry.');
+
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','contact_view','".$dNow."')";
@@ -4448,7 +4448,7 @@ ChromePhp::log($sQuery);
     $dNow = date('Y-m-d'); // sadece yil-ay-gun
 
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
-    //ChromePhp::log($holidays[0]['count']);
+
 
     if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
     {
@@ -4467,7 +4467,7 @@ ChromePhp::log($sQuery);
 
       if($result[0]['count'] > 50) // 50 den buyuk ise mail
       {
-        //ChromePhp::log('Action: View more than 50 candidates on holiday.');
+
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','holiday_fifty_view','".$dNow."')";
@@ -4674,8 +4674,6 @@ ChromePhp::log($sQuery);
 
   function editNote($note_id,$array)
   {
-    ChromePhp::log($note_id);
-    ChromePhp::log($array);
 
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
@@ -4716,7 +4714,7 @@ ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-//ChromePhp::log($result);
+
     if(isset($result[0]))
     {
       $preStatus = $result[0]['status'];
@@ -4729,7 +4727,7 @@ ChromePhp::log($sQuery);
     }
 
     $statusTitle = getStatusTitle($preStatus);
-//ChromePhp::log($statusTitle);
+
     $returnArray = array($statusTitle,$preDate);
     return $returnArray;
 

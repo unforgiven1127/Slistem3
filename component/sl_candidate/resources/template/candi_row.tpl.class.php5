@@ -128,7 +128,7 @@ class CCandi_row extends CTemplate
         $groupFlag = false;
       }
     }
-    //ChromePhp::log($statusGroup);
+
     if($groupFlag)
     {
       if(isset($candidateLastStatus[0]))
@@ -144,7 +144,7 @@ class CCandi_row extends CTemplate
         $lastStatus = 0;
       }
     }
-    ChromePhp::log($lastStatus);
+
     //if(!empty($pasData['_pos_status']))
     if($lastStatus > 0)
     {
@@ -182,7 +182,6 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
-        ChromePhp::log('EXPIRED');
         $asOption['class'].= ' tplCandi_status tplCandi_status_151';
         $asOption['title'] = 'Last action has expired';
         $sValue = ' expire';

@@ -47,7 +47,6 @@ class CNotificationModelEx extends CNotificationModel
       $sQuery.= ' AND noti.date_notification <= "'.$psDate.'" ';
     }
 
-//ChromePhp::log($sQuery);
     return $this->oDB->ExecuteQuery($sQuery);
   }
 

@@ -212,7 +212,7 @@ class CPageEx extends CPage
 
   public function getPage($psUid = '', $psAction = '', $psType = '', $pnPK = 0, $psMode = 'pg')
   {
-    //ChromePhp::log('getPage');
+
     if(!assert('is_string($psUid)'))
       return '';
     if(!assert('is_string($psAction)'))
@@ -369,8 +369,7 @@ class CPageEx extends CPage
         return  $this->_getPageHTML($this->csUid, $sComponentFullHtml, $bIsLogged, $asMeta, $asPageParam);
       }
     }
-//ChromePhp::log($this->csMode); //revenue board da pn geliyor
-//ChromePhp::log(CONST_URL_PARAM_PAGE_CRON); // cron isteniyor
+
     switch($this->csMode)
     {
 
@@ -414,19 +413,17 @@ class CPageEx extends CPage
 
         $sCpUid = getValue('custom_uid');
         $bSilent = (bool)getValue('cronSilent', 0);
-//ChromePhp::log($sCpUid);
+
         if(!$bSilent)
           echo 'Cron started at '.date('Y-m-d H:i:s').' '. microtime(true).'<br /><br />';
 
         $asComponentUid = CDependency::getComponentUidByInterface('has_cron');
-//ChromePhp::log($asComponentUid);
-//ChromePhp::log($bSilent);
+
         //$oComponenent = CDependency::getComponentByUid('333-333'); // php versiyonu guncellenene kadar
         //$oComponenent->getCronJob($bSilent);
         foreach($asComponentUid as $sUid)
         {
-          //ChromePhp::log($sUid);
-          //ChromePhp::log($sCpUid);
+
           if(empty($sCpUid) || $sCpUid == $sUid)
           {
             if(!$bSilent)
