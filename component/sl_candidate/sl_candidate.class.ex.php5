@@ -1551,7 +1551,7 @@ ChromePhp::log('_displayCandidateList');
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-ChromePhp::log('_getRightTabsFull');
+
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1591,7 +1591,7 @@ ChromePhp::log('_getRightTabsFull');
       }
 
       $sHTML = "";
-return $sHTML;
+
       $sCharSelected =  'selected';
       $sDocSelected = $sContactSelected = $sJdSelected = $sNoteSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
@@ -3285,6 +3285,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
+ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
