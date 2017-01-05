@@ -2824,6 +2824,8 @@ ChromePhp::log('_displayCandidateList');
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
+      $html = '';
+return $html;
       ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
