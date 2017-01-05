@@ -1552,7 +1552,7 @@ ChromePhp::log('_displayCandidateList');
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
 
-      /*$pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
+      $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
@@ -1588,11 +1588,11 @@ ChromePhp::log('_displayCandidateList');
       else
       {
         $company_id_flag = 'false';
-      }*/
+      }
 
       $sHTML = "";
 
-      /*$sCharSelected =  'selected';
+      $sCharSelected =  'selected';
       $sDocSelected = $sContactSelected = $sJdSelected = $sNoteSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
@@ -1627,9 +1627,9 @@ ChromePhp::log('_displayCandidateList');
       {
         $sDocSelected = '';
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
-      }*/
+      }
 
-      /*$asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
+      $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
       $asPosition = $this->_getPositionTab($pasCandidateData);
@@ -1708,7 +1708,7 @@ ChromePhp::log('_displayCandidateList');
 
         $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getBlocEnd();
-*/
+
       return $sHTML;
     }
 
@@ -2824,6 +2824,7 @@ ChromePhp::log('_displayCandidateList');
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
+      $sHTML = '';
       ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
@@ -2847,7 +2848,7 @@ ChromePhp::log('_getCandidateList 2');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
-      if($nHistoryPk > 0)
+      /*if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
@@ -3007,7 +3008,7 @@ ChromePhp::log('_getCandidateList 2');
         }
       }
       else*/
-        $poQB->addOrder('scan.firstname DESC');
+     /*   $poQB->addOrder('scan.firstname DESC');
 
 
       if(empty($sGroupBy))
@@ -3243,7 +3244,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
       }*/
 
-      $oDbResult = $oDb->ExecuteQuery($sQuery);
+     /* $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
       if(!$bRead || !isset($nResult))
@@ -3270,7 +3271,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
 // BURAYA KADAR
 
-      $asData = array();
+     /* $asData = array();
       $asPk = array();
 
       if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
@@ -3285,7 +3286,6 @@ $searchTitle = explode(':',$poQB->getTitle());
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
-
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3507,7 +3507,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       else
         $sHTML.= 'replay a search, pager offset '.$nPagerOffset.', container/search ID '.$this->csSearchId;*/
 
-      if(!$bFilteredList)
+      /*if(!$bFilteredList)
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer'));
 
 
@@ -3625,7 +3625,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
-
+*/
       return $sHTML;
     }
 
