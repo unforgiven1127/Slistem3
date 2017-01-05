@@ -421,8 +421,8 @@ class CPageEx extends CPage
         $asComponentUid = CDependency::getComponentUidByInterface('has_cron');
 //ChromePhp::log($asComponentUid);
 //ChromePhp::log($bSilent);
-        $oComponenent = CDependency::getComponentByUid('333-333'); // php versiyonu guncellenene kadar
-        $oComponenent->getCronJob($bSilent);
+        //$oComponenent = CDependency::getComponentByUid('333-333'); // php versiyonu guncellenene kadar
+        //$oComponenent->getCronJob($bSilent);
         foreach($asComponentUid as $sUid)
         {
           //ChromePhp::log($sUid);
