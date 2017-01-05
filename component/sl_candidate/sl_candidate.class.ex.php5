@@ -3285,10 +3285,10 @@ $searchTitle = explode(':',$poQB->getTitle());
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
-ChromePhp::log($sQuery);
+
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
-
+ChromePhp::log('HERE');
       while($bRead)
       {
         $asCandidate = $oDbResult->getData();
