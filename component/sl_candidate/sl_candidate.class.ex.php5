@@ -2837,8 +2837,8 @@ ChromePhp::log('_displayCandidateList');
       $oLogin = CDependency::getCpLogin();
 
       $user_id = $oLogin->getUserPk();
-      securityCheckSearch($user_id);
-return $html;
+      //securityCheckSearch($user_id);
+//return $html;
       $asListMsg = array();
       $sTemplate = getValue('tpl');
       $bHeavyJoin = false;
@@ -2846,7 +2846,6 @@ return $html;
       //$bLogged = false;
       $bFilteredList = (bool)getValue('__filtered');
 ChromePhp::log('_getCandidateList 2');
-$html = '';
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
