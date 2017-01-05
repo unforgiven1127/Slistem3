@@ -1489,7 +1489,7 @@ class CSl_candidateEx extends CSl_candidate
       if(empty($psClass))
         $psClass = 'candiHalfSizeTabs';
 
-      $sHTML = $this->_oDisplay->getBlocStart('', array('class' => $psClass.' candiRightTabsContainer'));
+      /*$sHTML = $this->_oDisplay->getBlocStart('', array('class' => $psClass.' candiRightTabsContainer'));
 
         $sHTML.= $this->_oDisplay->getListStart('', array('class' => 'candiTabsVertical'));
           $sHTML.= '<li id="tabLink0" onclick="toggleCandiTab(this, \'candiTab0\', \'#ctc_1\');" class="tabActionLink tab_action" title="All the actions to be done on a candidate"></li>';
@@ -1499,7 +1499,7 @@ class CSl_candidateEx extends CSl_candidate
           $sHTML.= '<li id="tabLink4" onclick="toggleCandiTab(this, \'candiTab4\', \'#ctc_1\');" class="tab_company" title="Displays the company news feed"></li>';
         $sHTML.= $this->_oDisplay->getListEnd();
 
-        /*if($pbLinkTabs)
+        if($pbLinkTabs)
         {
           $sHTML.= $this->_oDisplay->getListStart('', array('class' => 'candiTabsVertical'));
           $sHTML.= '<li id="tabLink5" onclick="toggleCandiTab(this, \'candiTab5\', \'#ctc_2\');" class="tab_note '.$sNoteSelected.'" title="Displays notes">'.$asNotes['nb_result'].'</li>';
@@ -1515,9 +1515,9 @@ class CSl_candidateEx extends CSl_candidate
           $sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab3', $asDocument['content'], array('class' => 'aTabContent hidden '.$sDocSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab4', $asCompanyFeed['content'], array('class' => 'aTabContent hidden'));
-        $sHTML.= $this->_oDisplay->getBlocEnd();*/
+        $sHTML.= $this->_oDisplay->getBlocEnd();
 
-      $sHTML.= $this->_oDisplay->getBlocEnd();
+      $sHTML.= $this->_oDisplay->getBlocEnd();*/
 
       //separator
       if($psClass == 'candiHoriHalfSizeTabs')
@@ -1525,7 +1525,7 @@ class CSl_candidateEx extends CSl_candidate
       else
         $sHTML.= $this->_oDisplay->getBloc('', '&nbsp;', array('class' => 'candiTabsSeparator '));
 
-      $sHTML.= $this->_oDisplay->getBlocStart('ctc_2', array('class' => $psClass.' candiRightTabsContainer'));
+      /*$sHTML.= $this->_oDisplay->getBlocStart('ctc_2', array('class' => $psClass.' candiRightTabsContainer'));
 
         if(!$pbLinkTabs)
         {
@@ -1544,7 +1544,7 @@ class CSl_candidateEx extends CSl_candidate
           $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
         $sHTML.= $this->_oDisplay->getBlocEnd();
 
-      $sHTML.= $this->_oDisplay->getBlocEnd();
+      $sHTML.= $this->_oDisplay->getBlocEnd();*/
 
 
       return $sHTML;
