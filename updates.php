@@ -43,7 +43,7 @@ $str = file_get_contents('login_system_history.json');
 $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
-ini_set("log_errors", 1);
+ini_set("log_errors", "On");
 ini_set("error_log", "/var/log/apache2/error.log");
 error_log( "Hello, errors!" );
 phpinfo();
