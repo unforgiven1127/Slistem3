@@ -2825,7 +2825,7 @@ ChromePhp::log('_displayCandidateList');
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
       $html = '';
-return $html;
+
       ChromePhp::log('_getCandidateList');
       if($poQB != null)
       {
@@ -2835,7 +2835,7 @@ return $html;
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
       $oLogin = CDependency::getCpLogin();
-
+return $html;
       $user_id = $oLogin->getUserPk();
       securityCheckSearch($user_id);
 
@@ -2847,7 +2847,7 @@ return $html;
       $bFilteredList = (bool)getValue('__filtered');
 ChromePhp::log('_getCandidateList 2');
 $html = '';
-return $html;
+
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
