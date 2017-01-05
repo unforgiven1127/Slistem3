@@ -4287,7 +4287,7 @@ ChromePhp::log($sQuery);
     $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
 
     $oDB = CDependency::getComponentByName('database');
-
+error_log('A really bad error',3,'munir_anameric@hotmail.com');
     $sQuery = "SELECT COUNT(*) as count
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
