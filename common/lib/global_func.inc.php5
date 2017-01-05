@@ -11,6 +11,7 @@ function array_search_multi($needle, $haystack)
     if($bResult !== false)
     return $i;
   }
+
   return false;
 }
 
