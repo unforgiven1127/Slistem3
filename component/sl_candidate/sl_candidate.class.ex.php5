@@ -1552,7 +1552,7 @@ ChromePhp::log('_displayCandidateList');
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
 
-      $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
+      /*$pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
@@ -1588,11 +1588,11 @@ ChromePhp::log('_displayCandidateList');
       else
       {
         $company_id_flag = 'false';
-      }
+      }*/
 
       $sHTML = "";
 
-      $sCharSelected =  'selected';
+      /*$sCharSelected =  'selected';
       $sDocSelected = $sContactSelected = $sJdSelected = $sNoteSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
@@ -1627,7 +1627,7 @@ ChromePhp::log('_displayCandidateList');
       {
         $sDocSelected = '';
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
-      }
+      }*/
 
       /*$asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
