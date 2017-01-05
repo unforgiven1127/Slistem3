@@ -2204,17 +2204,13 @@ class CSettingsEx extends CSettings
     $page_obj = CDependency::getCpPage();
     $html = '';
     $data = array();
-$oPage = CDependency::getCpPage();
+
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
 
     $file_contents = file_get_contents($file);
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-//ChromePhp::log($form_url);
-    $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
-          0, array('action' => 'save'));
-//ChromePhp::log($form_url);
-    $form_url = "'".CONST_CRM_DOMAIN."/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx'";
+
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
     $html = $display_obj->render('ip_manager', $data);
@@ -2224,12 +2220,6 @@ $oPage = CDependency::getCpPage();
 
   private function save_htaccess()
   {
-    //ChromePhp::log('save_htaccess');
-    $content = $_POST['content'];
-    $action = $_POST['action'];
-    //ChromePhp::log($content);
-    //ChromePhp::log($action);
-
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
     $data = '';
@@ -2238,13 +2228,12 @@ $oPage = CDependency::getCpPage();
 
     $redirect_url = $page_obj->getUrl('settings', CONST_ACTION_ADD, CONST_TYPE_SETTINGS);
 
-    //$action = getValue('action', '');
-    //$htaccess_contents = getValue('htaccess_contents', '');
-    $htaccess_contents = $content;
+    $action = getValue('action', '');
+    $htaccess_contents = getValue('htaccess_contents', '');
     // $htaccess_version = getValue('htaccess_version', '');
 
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
-ChromePhp::log($action);
+
     switch ($action)
     {
       case 'save':
@@ -2261,8 +2250,8 @@ ChromePhp::log($action);
           $existing_hash_id = $entry->getFieldValue('id');
 
         $file_write = file_put_contents($file, $htaccess_contents);
-ChromePhp::log($file_write);
-        if($file_write)
+
+        if ($file_write)
         {
           $values = array('create_date' => date('Y-m-d H:i:s'), 'content' => $htaccess_contents_encoded,
             'md5_hash' => $md5_hash, 'existing_hash_id' => $existing_hash_id);
@@ -2274,8 +2263,8 @@ ChromePhp::log($file_write);
       case 'load':
         break;
     }
-    return true;
-    //return $display_obj->getRedirection($redirect_url);
+
+    return $display_obj->getRedirection($redirect_url);
   }
 
 }

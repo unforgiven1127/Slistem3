@@ -346,7 +346,7 @@ class CNotificationEx extends CNotification
    */
   public function addReminder($psId, $pvRecipientfk, $psMessage, $psTitle = '', $psDate = null, $pnNaggy = 0, $psNagFreq = null, $pbIsHtml = false)
   {
-    //ChromePhp::log('addReminder');
+    ChromePhp::log('addReminder');
     if(!isset($this->casInitId[$psId]) || empty($this->casInitId[$psId]))
     {
       assert('false; // no reminder ID... ');
@@ -423,7 +423,7 @@ class CNotificationEx extends CNotification
 
     if(!$nNotificationPk)
     {
-      //ChromePhp::log('fail?');
+      ChromePhp::log('fail?');
       assert('false; // failed to create the notification.');
       return 0;
     }
@@ -438,7 +438,7 @@ class CNotificationEx extends CNotification
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
-      //ChromePhp::log('fail 2?');
+      ChromePhp::log('fail 2?');
       assert('false; // could save the source reference of the reminder.');
       return 0;
     }
@@ -452,7 +452,7 @@ class CNotificationEx extends CNotification
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
       if(!$nPk)
       {
-        //ChromePhp::log('fail 3?');
+        ChromePhp::log('fail 3?');
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
@@ -492,7 +492,7 @@ class CNotificationEx extends CNotification
      * - delivered = -2 if cancelled by user
      *
     */
-//ChromePhp::log('_executeCronAction');
+ChromePhp::log('_executeCronAction');
     //We'd rather be 15 minutes early than 15minute late, right ? NO
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
@@ -572,7 +572,7 @@ class CNotificationEx extends CNotification
 //ChromePhp::log($pasUsers);
 //ChromePhp::log($poMail);
 //ChromePhp::log($pasAction);
-//ChromePhp::log('_executeAction');
+ChromePhp::log('_executeAction');
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
@@ -687,8 +687,6 @@ class CNotificationEx extends CNotification
           $sDate = date('Y-m-d \a\t H:i', strtotime($message_info['date_created']));
           $sMessage.= '<br /><span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
 
-          $newDate = date('Y-m-d H:i:s');
-          $sMessage.= " ".$newDate;
           $sMessage.= '<br /><br />';
           $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
 
@@ -757,15 +755,12 @@ class CNotificationEx extends CNotification
       $poMail->addRecipient($sEmail, $sRecipient);
 
 
-      $sSubject .= '__'.$sendCCString;//  Sl[i]stem daily reminders __ burada ekleniyor
+      $sSubject .= '__'.$sendCCString;
 
       $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
-ChromePhp::log($nSent);
-      add_remainder_log($message_info['notificationpk'],$sEmail);
 
       if($nSent)
       {
-        ChromePhp::log('IF');
         foreach ($user_messages as $message_info)
         {
           $sNagDate = $this->_getNextNagDate($message_info);
@@ -804,7 +799,6 @@ ChromePhp::log($nSent);
       }
       else
       {
-        ChromePhp::log('ELSE');
         foreach ($user_messages as $message_info)
         {
           if((int)$message_info['delivered'] == 0)

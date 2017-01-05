@@ -1199,7 +1199,7 @@ class CSearchEx extends CSearch
   public function buildComplexSearchQuery()
   {
     // sort ta da buraya
-ChromePhp::log('buildComplexSearchQuery');
+
     $bComplex = (bool)getValue('complex_mode', 0);
     $sCpUid = getValue('component_uid');
     $sDataType = getValue('data_type');
@@ -1253,6 +1253,7 @@ ChromePhp::log('buildComplexSearchQuery');
       $asCondition = array();
       foreach($_POST['field_selector'][$nGroup] as $nRowNumber => $sFieldName)
       {
+        //ChromePhp::log($sFieldName);
         insertAILog("complex_search",$sFieldName,$user_id);
         $vFieldValue = @$_POST[$sFieldName][$nGroup][$nRowNumber];
         $allSalesFlag = false;
@@ -1392,9 +1393,6 @@ ChromePhp::log('buildComplexSearchQuery');
         }
         else
         {
-
-        ChromePhp::log($sFieldName);
-        ChromePhp::log($vFieldValue);
           //fetch row data
           $sFieldOperator = @$_POST['field_operator'][$nGroup][$nRowNumber];
 
@@ -1447,7 +1445,6 @@ ChromePhp::log('buildComplexSearchQuery');
           $sCondition = '';
           if(!empty($asFieldData['sql']['unmanageable']))
           {
-            ChromePhp::log('IF');
             //replace template operator   !!! some type don't have any !!!
             $sOperator = $this->_getSqlOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
             $sCondition = str_replace('<YYY>', $sOperator, $asFieldData['sql']['unmanageable']);
@@ -1523,7 +1520,6 @@ ChromePhp::log('buildComplexSearchQuery');
           }
           else
           {
-            ChromePhp::log('else');
             // - - - - - - - - - - - - - - - - - - - - - - - -
             //Standard case: use default feature to build sql
 
@@ -1531,11 +1527,14 @@ ChromePhp::log('buildComplexSearchQuery');
             if(is_array($vFieldValue) && $asFieldData['data']['type'] != 'intList')
             {
               //dump(' is an array');
+
               $asFieldData['data']['field'] = $asFieldData['sql']['field'];
 
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
+                //ChromePhp::log($vValue);
+                //ChromePhp::log($sFieldName);
                 if(!empty($vValue))
                 {
                   //ChromePhp::log('TEST');
@@ -1549,7 +1548,6 @@ ChromePhp::log('buildComplexSearchQuery');
                   }
                   else
                   {
-                    ChromePhp::log('else');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
@@ -1561,14 +1559,8 @@ ChromePhp::log('buildComplexSearchQuery');
             else
             {
               //dump(' is NOT an array');
-              if($sFieldName == 'candidate_met' && $vFieldValue == "0")
-              {//candidate met secilirse where kismini yazalim
-                //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
-                //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
-                $sCondition = "scan.sl_candidatepk NOT IN (select slm.candidatefk from sl_meeting slm where slm.meeting_done = '1')";
-                //ChromePhp::log($sCondition);
-              }
-              elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
+
+              if(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
@@ -1583,7 +1575,7 @@ ChromePhp::log('buildComplexSearchQuery');
               }
             }
           }
-ChromePhp::log($sCondition);
+
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;

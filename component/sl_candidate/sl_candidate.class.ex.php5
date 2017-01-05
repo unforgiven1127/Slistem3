@@ -301,10 +301,6 @@ class CSl_candidateEx extends CSl_candidate
             return json_encode($this->_saveCompany($this->cnPk));
             break;
 
-          case CONST_ACTION_COMPANY_ACTION:
-          return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCompanyActionList($this->cnPk)))));
-              break;
-
           case CONST_ACTION_LIST:
             //list and search
             /*$asHTML = $this->_getCompanyList();
@@ -586,6 +582,7 @@ class CSl_candidateEx extends CSl_candidate
             return $this->_getCandidateAddForm($this->cnPk);
             break;
 
+
           case CONST_ACTION_VIEW:
             /*//load an empty tab with a js to load the candidate
             $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, $this->cnPk);
@@ -636,7 +633,6 @@ class CSl_candidateEx extends CSl_candidate
             case CONST_ACTION_VIEW:
               return $this->_getCompanyView($this->cnPk);
               break;
-
           }
           break;
 
@@ -4057,8 +4053,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $asInsert['content'] = $fixed_html;
 
-      //$this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
-      //$nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
+      $this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
+      $nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
 
       if(!$nPk)
       {
@@ -4936,18 +4932,6 @@ $searchTitle = explode(':',$poQB->getTitle());
       if(empty($pnMeetingPk))
       {
         $nMeetingPk = $this->_getModel()->add($asTmp, 'sl_meeting');
-
-        //add log start--------------------
-        $oLogin = CDependency::getCpLogin();
-        $user_id = $oLogin->getUserPk();
-        $target_candidate_id = $asTmp['candidatefk'];
-
-        $user_info = getUserInformaiton($user_id);
-
-        $note = "Meeting created by ".$user_info['firstname']. ' '.$user_info['lastname'];
-
-        $addLog = insertLog($user_id, $target_candidate_id, $note);
-        //add log end----------------------
 
         //Finally: notify people the candidate status has changed (remove the current user obviosuly)
         $asFollower = $this->_getmodel()->getCandidateRm($asTmp['candidatefk'] , true, false);
@@ -6341,128 +6325,6 @@ $searchTitle = explode(':',$poQB->getTitle());
     // ====================================================================================
     // ====================================================================================
     // start CANDIDATE section
-    private function _getCompanyActionList($company_id = 0)
-    {
-      $actionInfo = getCompanyActionList($company_id);
-      $companyPositionList = getCompanyPositionList($company_id);
-
-      if(isset($actionInfo) && !empty($actionInfo))
-      {
-        $companyList = array();
-        foreach ($actionInfo as $key => $value)
-        {
-          $active = $value['active'];
-          $campany_name = $value['campany_name'];
-          $candidate_id = $value['candidate_id'];
-          $company_id = $value['company_id'];
-          $position_id = $value['position_id'];
-          $position_name = $value['position_name'];
-          $status = $value['status'];
-
-          if(!isset($companyList[$company_id]))
-          {
-            $companyList[$company_id] = array();
-            $companyList[$company_id]['totalCandidates'] = array();
-            $companyList[$company_id]['activeCandidates'] = array();
-            $companyList[$company_id]['pitch'] = array();
-            $companyList[$company_id]['resume_send'] = array();
-            $companyList[$company_id]['ccm1'] = array();
-            $companyList[$company_id]['ccm2'] = array();
-            $companyList[$company_id]['mccm'] = array();
-            $companyList[$company_id]['offer'] = array();
-            $companyList[$company_id]['placed'] = array();
-            $companyList[$company_id]['fallenOff'] = array();
-            $companyList[$company_id]['position'] = array();
-          }
-          $companyList[$company_id]['totalCandidates'][$candidate_id] = 1;//total candidate count
-          $companyList[$company_id]['position'][$position_id] = 1;
-          if($active == 1 && $status < 101)
-          {//active candidate count
-            $companyList[$company_id]['activeCandidates'][$candidate_id] = 1;
-          }
-
-          if($status == 1)
-          {
-            $companyList[$company_id]['pitch'][$candidate_id] = 1;
-          }
-          elseif($status == 2)
-          {
-            $companyList[$company_id]['resume_send'][$candidate_id] = 1;
-          }
-          elseif($status == 2)
-          {
-            $companyList[$company_id]['resume_send'][$candidate_id] = 1;
-          }
-          elseif($status == 51)
-          {
-            $companyList[$company_id]['ccm1'][$candidate_id] = 1;
-          }
-          elseif($status == 52)
-          {
-            $companyList[$company_id]['ccm2'][$candidate_id] = 1;
-          }
-          elseif($status > 52 && $status < 71)
-          {
-            $companyList[$company_id]['mccm'][$candidate_id] = 1;
-          }
-          elseif($status == 100)
-          {
-            $companyList[$company_id]['offer'][$candidate_id] = 1;
-          }
-          elseif($status == 101)
-          {
-            $companyList[$company_id]['placed'][$candidate_id] = 1;
-          }
-          elseif($status == 200)
-          {
-            $companyList[$company_id]['fallenOff'][$candidate_id] = 1;
-          }
-
-        }
-
-ChromePhp::log($companyList[$company_id]['totalCandidates']);
-
-        $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
-        $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
-        $data['compantId'] = $company_id;
-        $data['campany_name'] = $campany_name;
-
-        $data['pitch'] = count($companyList[$company_id]['pitch']);
-        $data['resume_send'] = count($companyList[$company_id]['resume_send']);
-        $data['ccm1'] = count($companyList[$company_id]['ccm1']);
-        $data['ccm2'] = count($companyList[$company_id]['ccm2']);
-        $data['mccm'] = count($companyList[$company_id]['mccm']);
-        $data['offer'] = count($companyList[$company_id]['offer']);
-        $data['placed'] = count($companyList[$company_id]['placed']);
-        $data['fallenOff'] = count($companyList[$company_id]['fallenOff']);
-        $data['positionCount'] = count($companyPositionList);
-      }
-      else
-      {
-        $company_info = getCompanyInformation($company_id);
-        //ChromePhp::log($company_info);
-        $data['totalCandidates'] = 0;
-        $data['activeCandidates'] = 0;
-        $data['compantId'] = $company_id;
-        $data['campany_name'] = $company_info['name'];
-
-        $data['pitch'] = 0;
-        $data['resume_send'] = 0;
-        $data['ccm1'] = 0;
-        $data['ccm2'] = 0;
-        $data['mccm'] = 0;
-        $data['offer'] = 0;
-        $data['placed'] = 0;
-        $data['fallenOff'] = 0;
-        $data['positionCount'] = 0;
-      }
-
-      //$sHTML = 'COMPANY ID: '.$company_id;
-      $sHTML = $this->_oDisplay->render('company_action_list', $data);
-      return $sHTML;
-    }
-
-
     private function _getCandidateAddForm($pnCandidatePk = 0)
     {
       if(!assert('is_integer($pnCandidatePk)'))
@@ -6846,13 +6708,12 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
 
     public function controlCompanyDuplicate()
     {
-      //ChromePhp::log('controlCompanyDuplicate');
       //url
       //https://beta.slate.co.jp/index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx
       $company_name = $_POST['cname'];
       $company_name = TRIM($company_name);
       $company_name = strtolower($company_name);
-
+      //ChromePhp::log($company_name);
       $oDB = CDependency::getComponentByName('database');
       $somthing = true;
 
@@ -6872,7 +6733,6 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
                  WHERE levenshtein('".$company_name."', TRIM(LOWER(slc.name))) < 2
                  OR slc.name = '".$company_name."'";*/
         $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name LIKE '%".$company_name."%' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
-
       }
       else if($nameCount > 1)
       {
@@ -6925,17 +6785,16 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $somthing = false;
       }
-//ChromePhp::log($somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
-        $sQuery .= " LIMIT 80";
-//ChromePhp::log($sQuery);
+        $sQuery .= " LIMIT 100";
+
         $db_result = $oDB->executeQuery($sQuery);
 
         $result = $db_result->getAll();
-//ChromePhp::log($result);
+
         $company_list = "";
         $adet = count($result);
 
@@ -6943,9 +6802,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
         {
           foreach ($result as $key => $value)
           {
-//ChromePhp::log($value['name']);
-            //$company_list.= "test".',<br>';
-            $company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
+            $company_list.= "&#x25cf; ".$value['name']." (#".$value['sl_companypk'].")".",<br>";
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
           }
           $company_list = trim($company_list, ",<br>");
@@ -6965,7 +6822,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       //$company_list = "test (#123456), Test (#123456)";
 
       $jsonData = json_encode($company_list);
-
+      //ChromePhp::log($jsonData);
       return $jsonData;
       //ChromePhp::log($result);
       //return 'RESULT';
@@ -7282,7 +7139,7 @@ ChromePhp::log($companyList[$company_id]['totalCandidates']);
       {
         $mailFlag = $_GET['mailFlg'];
       }
-//ChromePhp::log($mailFlag);
+ChromePhp::log($mailFlag);
       if($mailFlag == 'yes' || $mailFlag == 'normal')
       {
 
@@ -8179,7 +8036,6 @@ die();*/
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
-$salaryCurrency = getValue('salary_currency');
 
 $bonusManual = getValue('bonus');
 //ChromePhp::log($salaryManual);
@@ -8193,8 +8049,8 @@ $bonusManual = getValue('bonus');
         }
         else if($salaryUnit == 'K')
         {// M ile K arasinda herhangi bir fark yok neden seciyoruz??
-          $newSalary = $salaryManual * 1000;
-          $newBonus = $bonusManual * 1000;
+          $newSalary = $salaryManual * 1000000;
+          $newBonus = $bonusManual * 1000000;
         }
         else
         {
@@ -8202,11 +8058,11 @@ $bonusManual = getValue('bonus');
           $newBonus = $bonusManual * 1000000;
         }
 
-        if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
+        if(!empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
         {
           $asError[] = 'Salary value is not a valid number. ['.$newSalary.']';
         }
-        if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+        if(!empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
         {
           $asError[] = 'Bonus value is not a valid number. ['.$newBonus.']';
         }
@@ -8251,22 +8107,6 @@ $bonusManual = getValue('bonus');
         $asData['grade'] = (int)getValue('grade');
         $asData['statusfk'] = (int)getValue('status');
         //extra test & actions here
-
-        if($asData['statusfk'] == 5 || $asData['statusfk'] == 6)
-        {// meeting needed
-          $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
-
-          //ChromePhp::log($candidateMeetingCount);
-
-          $candidateMeetingCount = $candidateMeetingCount[0];
-
-          //ChromePhp::log($candidateMeetingCount);
-
-          if($candidateMeetingCount['meetingCount'] == 0)
-          {
-            $asError[] = 'Candidate should have a scheduled meeting';
-          }
-        }
 
         if($asData['statusfk'] >= 4)
         {
@@ -10016,13 +9856,6 @@ $bonusManual = getValue('bonus');
 
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
-        $activityURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
-
-        //$activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION,CONST_CANDIDATE_TYPE_CANDI);
-        $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';
-
-        //$actionInfo = getCompanyActionList($sCpData['sl_companypk']);
-
         $sCompany = '<div class="cp_ns_row">
             <div class="cp_quality qlt_'.$asCpData['level_letter'].'">'.$asCpData['level_letter'].'</div>
             <div class="cp_id">#'.$asCpData['sl_companypk'].'</div>
@@ -10030,7 +9863,6 @@ $bonusManual = getValue('bonus');
             <div class="cp_consultant">'.$owner_names.'</div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
             <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
-            <div class="cp_activity"><a href="javascript:;" onclick="popup_candi(this, \''.$activityURL.'\');" style="cursor: pointer;">Activity list</a></div>
           </div>';
 // employeeCount yerine $asCpData['num_employee'] vardi
 
@@ -10069,7 +9901,6 @@ $bonusManual = getValue('bonus');
             <div class="cp_consultant">Owner(s)</div>
             <div class="cp_update">Last update</div>
             <div class="cp_employee">Nb employee</div>
-            <div class="cp_activity">Activity list</div>
           </div>';
           $sBlock.= implode('', $asCompany);
           $sBlock.= $oHTML->getFloatHack();

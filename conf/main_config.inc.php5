@@ -134,27 +134,21 @@ switch(trim($_SERVER['SERVER_NAME']))
     //Specific environment variables
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
-    //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
-    //define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
-    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
-    //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
+    define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
     define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
-
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slistem');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
 
     define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
-    //define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
-    define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp');
-    //define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@mailmigrate.today');
+    define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
     define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
     //to send emails using IMAP instead of smtp
-    define('CONST_MAIL_IMAP_SEND', false);//false
+    define('CONST_MAIL_IMAP_SEND', false);
     //Log a copy of all emails sent by the platform a in the sent folder
-    define('CONST_MAIL_IMAP_LOG_SENT', true);//false
+    define('CONST_MAIL_IMAP_LOG_SENT', false);
     //--------------------------------------
     //required if of of the above are true
     define('CONST_MAIL_IMAP_PORT', 993);  //imap
@@ -203,7 +197,6 @@ switch(trim($_SERVER['SERVER_NAME']))
 
     define('CONST_CRM_HOST', $_SERVER['SERVER_NAME'].'');
     define('CONST_CRM_DOMAIN', 'https://'.$_SERVER['SERVER_NAME']);
-    //define('CONST_CRM_MAIL_SENDER', 'slistem@mailmigrate.today');
     define('CONST_CRM_MAIL_SENDER', 'slistem@slate.co.jp');
     define('CONST_DEV_SERVER', 0);  //debug bar, mail to developer, and other developer features
     define('CONST_SQL_PROFILING', 0);
@@ -217,34 +210,28 @@ switch(trim($_SERVER['SERVER_NAME']))
     //Specific environment variables
 
     define('CONST_PHPMAILER_SMTP_DEBUG', false);
-    //define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
-    //define('CONST_PHPMAILER_DOMAIN', 'mailmigrate.today');
-    define('CONST_PHPMAILER_DOMAIN', 'slatemail.slate.co.jp');
-    //define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
+    define('CONST_PHPMAILER_DOMAIN', 'slate.co.jp');
     define('CONST_PHPMAILER_EMAIL', 'slistem@slate.co.jp');
-
     define('CONST_PHPMAILER_DEFAULT_FROM', 'Slistem');
     define('CONST_PHPMAILER_ATTACHMENT_SIZE', 10485760);
 
     define('CONST_PHPMAILER_SMTP_PORT', 465); //smtp
-    //define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
-    define('CONST_PHPMAILER_SMTP_HOST', 'slatemail.slate.co.jp');
-    //define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@mailmigrate.today');
+    define('CONST_PHPMAILER_SMTP_HOST', 'imap.slate.co.jp');
     define('CONST_PHPMAILER_SMTP_LOGIN', 'slistem@slate.co.jp');
 
     define('CONST_PHPMAILER_SMTP_PASSWORD', 'Slate!7000ics');
 
     //to send emails using IMAP instead of smtp
-    define('CONST_MAIL_IMAP_SEND', false);//false
+    define('CONST_MAIL_IMAP_SEND', false);
     //Log a copy of all emails sent by the platform a in the sent folder
-    define('CONST_MAIL_IMAP_LOG_SENT', true);//false
+    define('CONST_MAIL_IMAP_LOG_SENT', false);
     //--------------------------------------
     //required if of of the above are true
     define('CONST_MAIL_IMAP_PORT', 993);  //imap
     define('CONST_MAIL_IMAP_LOG_PARAM_INBOX', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/debug/readonly/imap/ssl/novalidate-cert}inbox');
     define('CONST_MAIL_IMAP_LOG_PARAM_SENT', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}sent');
     define('CONST_MAIL_IMAP_CATCHALL_ADDRESS', 'slistem@aoy3f.slate.local'); //use the domain to look into mail header
-    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'mailmigrate.today,slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
+    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
 
 
     define('CONST_AVAILABLE_LANGUAGE', 'en,jp');
@@ -361,7 +348,6 @@ define('CONST_URL_PARAM_PAGE_CRON', 'cron');
 define('CONST_ACTION_FULL_LIST', 'ppafl');
 define('CONST_ACTION_LIST', 'ppal');
 define('CONST_ACTION_VIEW', 'ppav');
-define('CONST_ACTION_COMPANY_ACTION', 'caca');
 define('CANDI_LOG', 'ppcl');
 define('CONTACT_SEEN_MAIL', 'csam');
 define('COMPANY_DUPLI_CONTROL', 'cdc');
@@ -369,7 +355,6 @@ define('CONST_ACTION_EMAIL','ppaem');
 define('CONST_ACTION_VIEW_DETAILED', 'ppavd');
 define('CONST_ACTION_FASTEDIT', 'ppafe');
 define('CONST_ACTION_EDIT', 'ppae');
-define('CONST_ACTION_ADD_NEW', 'ppaea');
 define('CONST_ACTION_SEND_CLIENT', 'ppasct');
 define('CONST_ACTION_SUGGEST', 'ppasg');
 define('CONST_ACTION_ADD', 'ppaa');

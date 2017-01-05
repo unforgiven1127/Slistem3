@@ -1454,19 +1454,6 @@ function _live_dump($pvTrace, $psTitle = null)
 
   }
 
-  function getCandidateMeetingCount($candidate_id)
-  {
-    $oDB = CDependency::getComponentByName('database');
-
-    $sQuery = "SELECT COUNT(*) as meetingCount FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
-//ChromePhp::log($sQuery);
-    $db_result = $oDB->executeQuery($sQuery);
-
-    $result = $db_result->getAll();
-
-    return $result;
-  }
-
   function getCandidateActiveMeetings($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -1694,7 +1681,7 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant' ";
+    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Consultant'";
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -3059,17 +3046,6 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
   }
 
-  function add_remainder_log($notification_id,$mail,$location = 'createFunction')
-  {
-    $oDB = CDependency::getComponentByName('database');
-    $sDate = date('Y-m-d H:i:s');
-
-    $sQuery = "INSERT INTO `remainder_log` (`notification_id`,`first_activity`,`mailTo`,`location`)
-               VALUES('".$notification_id."','".$sDate."','".$mail."','".$location."')";
-
-    $db_result = $oDB->executeQuery($sQuery);
-  }
-
   function suggestCandidate($array)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -3233,7 +3209,6 @@ var_dump($query);*/
 
   function mergeCharacterAssassments($candidate_id, $target_candidate_id)
   {
-    ChromePhp::log('mergeCharacterAssassments');
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
@@ -3368,38 +3343,6 @@ var_dump($query);*/
 
     $db_result = $oDB->executeQuery($sQuery);
 
-  }
-
-  function getCompanyPositionList($company_id)
-  {
-    $oDB = CDependency::getComponentByName('database');
-
-    $sQuery = "SELECT * FROM sl_position WHERE companyfk = '".$company_id."'";
-
-    $db_result = $oDB->executeQuery($sQuery);
-
-    $result = $db_result->getAll();
-
-    return $result;
-  }
-
-  function getCompanyActionList($company_id)
-  {
-    $oDB = CDependency::getComponentByName('database');
-
-    $sQuery = "select slc.sl_companypk as company_id, slc.name as campany_name, slpd.title as position_name,
-                slpl.positionfk as position_id, slpl.candidatefk as candidate_id, slpl.status as status, slpl.active as active
-                from sl_position slp
-                left join sl_position_link slpl on slpl.positionfk = slp.sl_positionpk
-                left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
-                left join sl_company slc on slc.sl_companypk = slp.companyfk
-                WHERE slp.companyfk = '".$company_id."'";
-ChromePhp::log($sQuery);
-    $db_result = $oDB->executeQuery($sQuery);
-
-    $result = $db_result->getAll();
-
-    return $result;
   }
 
   function getCompanyOwner($company_id)
@@ -4310,34 +4253,18 @@ ChromePhp::log($sQuery);
       $username = $user_information['firstname']." ".$user_information['lastname'];
 
       //$to      = 'munir@slate-ghc.com';
-      //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
-      //$subject = 'Slistem Activity Flag';
-      //$message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
-      //$message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
-      /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
-          'Reply-To: munir@slate-ghc.com' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();*/
-
-      $subject = "Slistem Activity Flag";
+      $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+      $subject = 'Slistem Activity Flag';
       $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
       $message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
-
-      $oMail = CDependency::getComponentByName('mail');
-
-      $oMail->createNewEmail();
-      $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
-
-      $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-      $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
-      $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-      $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
-
+      $headers = 'From: slistem@slate.co.jp' . "\r\n" .
+          'Reply-To: munir@slate-ghc.com' . "\r\n" .
+          'X-Mailer: PHP/' . phpversion();
 
       $flag = securityMailControl($user_id,'search_in_five');
       if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
       {
-        $oMail->send($subject, $message);
-        //mail($to, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers);
       }
     }
 
@@ -4388,29 +4315,18 @@ ChromePhp::log($sQuery);
         $username = $user_information['firstname']." ".$user_information['lastname'];
 
         //$to      = 'munir@slate-ghc.com';
-        //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+        $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
         $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View 5 contact details but not any note entry.";
-        /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
+        $headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();*/
-
-        $oMail = CDependency::getComponentByName('mail');
-
-        $oMail->createNewEmail();
-        $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
-
-        $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
-        $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-        $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+            'X-Mailer: PHP/' . phpversion();
 
         $flag = securityMailControl($user_id,'contact_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
-          //mail($to, $subject, $message, $headers);
-          $oMail->send($subject, $message);
+          mail($to, $subject, $message, $headers);
         }
       }
     }
@@ -4478,29 +4394,18 @@ ChromePhp::log($sQuery);
         $username = $user_information['firstname']." ".$user_information['lastname'];
 
         //$to      = 'munir@slate-ghc.com';
-        //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
+        $to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
         $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View more than 50 candidates on holiday.";
-        /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
+        $headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();*/
-
-        $oMail = CDependency::getComponentByName('mail');
-
-        $oMail->createNewEmail();
-        $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
-
-        $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
-        $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
-        $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+            'X-Mailer: PHP/' . phpversion();
 
         $flag = securityMailControl($user_id,'holiday_fifty_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
-          //mail($to, $subject, $message, $headers);
-          $oMail->send($subject, $message);
+          mail($to, $subject, $message, $headers);
         }
 
       }
