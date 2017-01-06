@@ -151,7 +151,7 @@ class CCandi_row extends CTemplate
       if($lastStatus < 101)//$pasData['_pos_status']
       {
         //$asOption['class'].= ' tplCandi_status_active tplCandi_status';
-        $asOption['class'].= ' tplCandi_status';
+        //$asOption['class'].= ' tplCandi_status';
         $asOption['title'] = 'Candidate active: pitched, CCM, offer ';
         $nValue = 4;
 
