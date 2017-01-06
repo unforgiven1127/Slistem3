@@ -34,7 +34,7 @@ Email: munir_anameric@hotmail.com</span>
                 </p>
             </td>
         </tr>
-        <tr style="height:172.9pt">
+        <tr style="height:150pt">
             <td width="347" colspan="2" style="width:260.55pt; border:solid windowtext 1.0pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt; height:172.9pt">
                 <p class="x_MsoNormalCxSpMiddle" align="center" style="margin-bottom:10.0pt; text-align:center; line-height:115%">
                     <b><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;,serif">TO BE COMPLETED AND SUBMITTED WITH YOUR DOCUMENTS</span></b>
@@ -50,12 +50,9 @@ Email: munir_anameric@hotmail.com</span>
 My Permanent Resident visa and/or confirmation of permanent residence will be mailed to the below Canadian or US address.</span></i></b>
                 </p>
             </td>
-            <td width="370" colspan="2" style="width:277.85pt; border-top:none; border-left:none; border-bottom:solid windowtext 1.0pt; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt; height:172.9pt">
+            <td width="370" colspan="2" style="width:277.85pt; border-top:none; border-left:none; border-bottom:solid windowtext 1.0pt; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt; height:150pt">
                 <p class="x_MsoNormalCxSpMiddle" align="center" style="margin-bottom:10.0pt; text-align:center; line-height:115%">
                     <b><span lang="FR-CA" style="font-family:&quot;Times New Roman&quot;,serif">VEUILLEZ REMPLIR ET SOUMETTRE AVEC VOS DOCUMENTS.</span></b>
-                </p>
-                <p class="x_MsoNormalCxSpMiddle" align="center" style="margin-bottom:10.0pt; text-align:center; line-height:115%">
-                    <b><span lang="FR-CA" style="font-family:&quot;Times New Roman&quot;,serif">&nbsp;</span></b>
                 </p>
                 <p class="x_MsoNormalCxSpMiddle" align="center" style="margin-bottom:10.0pt; text-align:center; line-height:115%">
                     <b><span lang="FR-CA" style="font-family:&quot;Times New Roman&quot;,serif">&nbsp;</span></b>
