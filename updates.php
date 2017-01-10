@@ -89,13 +89,27 @@ else
     $asEmail['janderson@bcmj.biz'] = 1;
 
     $asAliases = explode(',', CONST_EVENT_SYNC_ALIASES);
+
+    echo '<br><br>';
+    var_dump($asAliases);
+
     foreach($asAliases as $nKey => $sPatern)
     {
       $asAliases[$nKey] = explode('=', $sPatern);
     }
 
-    $sMessageIds = implode(',', $asFiltered);
-    $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
+    $asCatchAll = explode('@', CONST_MAIL_IMAP_CATCHALL_ADDRESS);
+    $sCatchAllDomain = $asCatchAll[1];
+
+    if(!CONST_MAIL_IMAP_CATCHALL_ADDRESS)
+    {
+      $sAllowedDomain = $sCatchAllDomain;
+    }
+    else
+      $sAllowedDomain = CONST_MAIL_IMAP_ACCEPTED_DOMAIN;
+
+  	$asAllowedDomain = explode(',', $sAllowedDomain);
+    dump($asAllowedDomain);
 
     foreach($asFiltered as $oEmail)
     {
