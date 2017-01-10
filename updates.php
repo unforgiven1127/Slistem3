@@ -65,6 +65,19 @@ else
 
 	$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
 	var_dump($asFiltered);
+
+	$sMessageIds = implode(',', $asFiltered);
+    $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
+
+    echo '<br><br>';
+    var_dump($asFiltered);
+
+    $asEmail = CDependency::getCpLogin()->getUserEmailList();
+
+    $asEmail = array_flip($asEmail);
+
+    echo '<br><br>';
+    var_dump($asEmail);
 }
 
 /*ini_set("log_errors", "On");
