@@ -78,6 +78,30 @@ else
 
     echo '<br><br>';
     var_dump($asEmail);
+
+    $asEmail['munir@slate-ghc.com'] = 468;
+    // Fake researcher/consultant emails
+    $asEmail['ewright@bcmj.biz'] = 1;
+    $asEmail['rhayashi@bcmj.biz'] = 1;
+    $asEmail['ksimon@bcmj.biz'] = 1;
+    $asEmail['jcartwright@bcmj.biz'] = 1;
+    $asEmail['jbrown@bcmj.biz'] = 1;
+    $asEmail['janderson@bcmj.biz'] = 1;
+
+    $asAliases = explode(',', CONST_EVENT_SYNC_ALIASES);
+    foreach($asAliases as $nKey => $sPatern)
+    {
+      $asAliases[$nKey] = explode('=', $sPatern);
+    }
+
+    foreach($asFiltered as $oEmail)
+    {
+    	$sFrom = $oEmail->from;
+    	$asSubject = imap_mime_header_decode($oEmail->subject);
+
+    	echo '<br><br>';
+    	var_dump($asSubject);
+    }
 }
 
 /*ini_set("log_errors", "On");
