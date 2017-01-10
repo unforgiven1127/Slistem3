@@ -63,7 +63,7 @@ else
 
 	echo '<br><br>';
 
-	$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
+	$asFiltered = imap_search($oMailBox, 'JUNK', SE_FREE, 'utf-8');
 	var_dump($asFiltered);
 
 	$sMessageIds = implode(',', $asFiltered);
