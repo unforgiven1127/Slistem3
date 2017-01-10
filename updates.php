@@ -46,6 +46,17 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
 
 imap_timeout(IMAP_OPENTIMEOUT, 5);
 $oMailBox = imap_open ('{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}inbox', CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
+
+	var_dump(CONST_PHPMAILER_SMTP_HOST);
+	echo '<br><br>';
+	var_dump(CONST_MAIL_IMAP_PORT);
+	echo '<br><br>';
+	var_dump(CONST_PHPMAILER_SMTP_LOGIN);
+	echo '<br><br>';
+	var_dump(CONST_PHPMAILER_SMTP_PASSWORD);
+	echo '<br><br>';
+
+
 if($oMailBox === false)
 {
 	echo 'ERROR';
@@ -63,7 +74,7 @@ else
 
 	echo '<br><br>';
 
-	$asFiltered = imap_search($oMailBox, 'JUNK', SE_FREE, 'utf-8');
+	$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
 	var_dump($asFiltered);
 
 	$sMessageIds = implode(',', $asFiltered);
