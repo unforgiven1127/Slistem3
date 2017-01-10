@@ -146,19 +146,22 @@ else
         else
         {
 			$asToAddress = $asMatches[2];
+			foreach($asToAddress as $sTo)
+	          {
+	            //--------------------------------------------------
+	            //look into the email addresses if there's an item pattern
+	            $asItem = array();
 
-	        echo '<br><br> line 149: ';
-	    	var_dump($asToAddress);
-
-	    	if(preg_match('/[0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10}$/i', $sTo) === 1)
-            {
-              dump('found an item std format ['.$sTo.']');
-              $asItem = explode('__', $sTo);
-            }
-            else
-            {
-            	foreach($asAliases as $asPatern)
-              	{
+	            if(preg_match('/[0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10}$/i', $sTo) === 1)
+	            {
+	              dump('found an item std format ['.$sTo.']');
+	              $asItem = explode('__', $sTo);
+	            }
+	            else
+	            {
+	              //look for a custom/user pattern ct15555   or   #ct15555   or cp65444 ...
+	              foreach($asAliases as $asPatern)
+	              {
 	                $asPatern[0] = addslashes($asPatern[0]);
 	                if(preg_match('/^'.$asPatern[0].'[0-9]{1,9}$/i', $sTo) === 1)
 	                {
@@ -167,8 +170,9 @@ else
 	                  $asItem = explode('__', $sTo);
 	                  break;
 	                }
-              	}
-            }
+	              }
+	            }
+	          }
 
             echo '<br><br> line 173: ';
 	    	var_dump($asItem);
