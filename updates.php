@@ -53,31 +53,31 @@ if($oMailBox === false)
 }
 else
 {
-	echo 'mail box: '.$oMailBox.'<br><br>';
+	/*echo 'mail box: '.$oMailBox.'<br><br>';
 	echo 'OK<br><br>';
 	var_dump($oMailBox);
-	echo '<br><br>';
+	echo '<br><br>';*/
 
 	$oBoxInfo = imap_mailboxmsginfo($oMailBox);
-	var_dump($oBoxInfo);
+	/*var_dump($oBoxInfo);
 
-	echo '<br><br>';
+	echo '<br><br>';*/
 
 	$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
-	var_dump($asFiltered);
+	//var_dump($asFiltered);
 
 	$sMessageIds = implode(',', $asFiltered);
     $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
 
-    echo '<br><br>';
-    var_dump($asFiltered);
+    /*echo '<br><br>';
+    var_dump($asFiltered);*/
 
     $asEmail = CDependency::getCpLogin()->getUserEmailList();
 
     $asEmail = array_flip($asEmail);
 
-    echo '<br><br>';
-    var_dump($asEmail);
+    /*echo '<br><br>';
+    var_dump($asEmail);*/
 
     $asEmail['munir@slate-ghc.com'] = 468;
     // Fake researcher/consultant emails
@@ -90,8 +90,8 @@ else
 
     $asAliases = explode(',', CONST_EVENT_SYNC_ALIASES);
 
-    echo '<br><br> line 93: ';
-    var_dump($asAliases);
+    /*echo '<br><br> line 93: ';
+    var_dump($asAliases);*/
 
     foreach($asAliases as $nKey => $sPatern)
     {
@@ -157,8 +157,21 @@ else
             }
             else
             {
-            	echo 'not found';
+            	foreach($asAliases as $asPatern)
+              	{
+	                $asPatern[0] = addslashes($asPatern[0]);
+	                if(preg_match('/^'.$asPatern[0].'[0-9]{1,9}$/i', $sTo) === 1)
+	                {
+	                  dump('found an item using the pattern  '.$asPatern[0].' in ['.$sTo.']');
+	                  $sTo = preg_replace('/'.$asPatern[0].'([0-9]{1,9})$/i', $asPatern[1].'__$1', $sTo);
+	                  $asItem = explode('__', $sTo);
+	                  break;
+	                }
+              	}
             }
+
+            echo '<br><br> line 173: ';
+	    	var_dump($asItem);
 
         }
 
