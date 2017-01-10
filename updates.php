@@ -97,10 +97,11 @@ else
     foreach($asFiltered as $oEmail)
     {
     	$sFrom = $oEmail->from;
+    	$to = $oEmail->to;
     	$asSubject = imap_mime_header_decode($oEmail->subject);
 
     	echo '<br><br>';
-    	var_dump($asSubject);
+    	var_dump($to);
     }
 }
 
