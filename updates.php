@@ -56,6 +56,9 @@ else
 	echo 'mail box: '.$oMailBox.'<br><br>';
 	echo 'OK<br><br>';
 	var_dump($oMailBox);
+
+	$oBoxInfo = imap_mailboxmsginfo($oMailBox);
+	var_dump($oBoxInfo);
 }
 
 /*ini_set("log_errors", "On");
