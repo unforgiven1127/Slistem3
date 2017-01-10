@@ -53,11 +53,12 @@ if($oMailBox === false)
 }
 else
 {
-	echo 'mail box: '.$oMailBox;
-	echo 'OK';
+	echo 'mail box: '.$oMailBox.'<br><br>';
+	echo 'OK<br><br>';
+	var_dump($oMailBox);
 }
 
-ini_set("log_errors", "On");
+/*ini_set("log_errors", "On");
 ini_set("error_log", "/var/log/apache2/error.log");
 error_log( "Hello, errors!" );
 phpinfo();
