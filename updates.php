@@ -117,8 +117,41 @@ else
     	$to = $oEmail->to;
     	$asSubject = imap_mime_header_decode($oEmail->subject);
 
-    	echo '<br><br>';
-    	var_dump($to);
+    	$sFrom = $oEmail->from;
+      	if(strpos($sFrom, '<') !== false)
+      	{
+        	$asFrom = explode('<', $sFrom);
+        	$sFrom = trim(str_replace('>', '', $asFrom[1]));
+      	}
+
+      	dump('from: '.$sFrom);
+      	$asFrom = explode('@', $sFrom);
+      	$bFoundUser = isset($asEmail[$sFrom]);
+
+    	//echo '<br><br>';
+    	//var_dump($to);
+
+    	$sHeader = imap_fetchheader($oMailBox, $oEmail->msgno);
+        //dump($sHeader);
+
+        //--------------------------------------------
+        //2. We need to look into the header for the specific email address it was bcc to
+        //smaller item being "ct1" -> 3 char
+        $asMatches = array();
+        preg_match_all('/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})@'.$sCatchAllDomain.'/i', $sHeader, $asMatches);
+        if(empty($asMatches[2]))
+        {
+          echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
+        }
+
+        $asToAddress = $asMatches[2];
+
+
+        echo '<br><br>';
+    	var_dump($asMatches);
+
+        echo '<br><br>';
+    	var_dump($asToAddress);
     }
 }
 
