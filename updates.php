@@ -90,7 +90,7 @@ else
 
     $asAliases = explode(',', CONST_EVENT_SYNC_ALIASES);
 
-    echo '<br><br>';
+    echo '<br><br> line 93: ';
     var_dump($asAliases);
 
     foreach($asAliases as $nKey => $sPatern)
@@ -147,10 +147,10 @@ else
         $asToAddress = $asMatches[2];
 
 
-        echo '<br><br>';
+        echo '<br><br> line 150: ';
     	var_dump($asMatches);
 
-        echo '<br><br>';
+        echo '<br><br> line 153: ';
     	var_dump($asToAddress);
     }
 }
