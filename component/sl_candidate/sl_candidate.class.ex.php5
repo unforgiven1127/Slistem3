@@ -1944,7 +1944,7 @@ class CSl_candidateEx extends CSl_candidate
                 //$sCopyEmail = '<keep_to_copy_email_in_slistem_note '.$this->csUid.'__'.CONST_ACTION_VIEW.'__'.CONST_CANDIDATE_TYPE_CANDI.'__'.$pasCandidateData['sl_candidatepk'].'@slistem.slate.co.jp>';
                 $sCopyEmail = '<keep_to_copy_email_in_slistem_note '.$this->csUid.'__'.CONST_ACTION_VIEW.'__'.CONST_CANDIDATE_TYPE_CANDI.'__'.$pasCandidateData['sl_candidatepk'].'__slistem@slate.co.jp>';
                 $sCopyEmail = urlencode($sCopyEmail);
-                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$sCopyEmail.'?bcc='.$sCopyEmail.'\', \'zm_mail\');'));
+                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?cc='.$sCopyEmail.'\', \'zm_mail\');'));
                 break;
             }
 
