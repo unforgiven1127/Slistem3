@@ -143,15 +143,25 @@ else
         {
           echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
         }
+        else
+        {
+			$asToAddress = $asMatches[2];
 
-        $asToAddress = $asMatches[2];
+	        echo '<br><br> line 149: ';
+	    	var_dump($asToAddress);
 
+	    	if(preg_match('/[0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10}$/i', $sTo) === 1)
+            {
+              dump('found an item std format ['.$sTo.']');
+              $asItem = explode('__', $sTo);
+            }
+            else
+            {
+            	echo 'not found';
+            }
 
-        echo '<br><br> line 150: ';
-    	var_dump($asMatches);
+        }
 
-        echo '<br><br> line 153: ';
-    	var_dump($asToAddress);
     }
 }
 
