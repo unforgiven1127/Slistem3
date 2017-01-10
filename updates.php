@@ -44,7 +44,7 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
-var_dump(CONST_PHPMAILER_SMTP_HOST);
+var_dump(CONST_PHPMAILER_SMTP_HOST_OLD);
 	echo '<br><br>';
 	var_dump(CONST_MAIL_IMAP_PORT);
 	echo '<br><br>';
