@@ -44,6 +44,15 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
+var_dump(CONST_PHPMAILER_SMTP_HOST);
+	echo '<br><br>';
+	var_dump(CONST_MAIL_IMAP_PORT);
+	echo '<br><br>';
+	var_dump(CONST_PHPMAILER_SMTP_LOGIN);
+	echo '<br><br>';
+	var_dump(CONST_PHPMAILER_SMTP_PASSWORD);
+	echo '<br><br>';
+
 imap_timeout(IMAP_OPENTIMEOUT, 5);
 $oMailBox = imap_open ('{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}inbox', CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 if($oMailBox === false)
