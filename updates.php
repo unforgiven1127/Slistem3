@@ -133,7 +133,8 @@ else
 
     	$sHeader = imap_fetchheader($oMailBox, $oEmail->msgno);
         //dump($sHeader);
-
+echo '<br><br> line 144: ';
+var_dump($sHeader);
         //--------------------------------------------
         //2. We need to look into the header for the specific email address it was bcc to
         //smaller item being "ct1" -> 3 char
@@ -141,7 +142,7 @@ else
         preg_match_all('/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})@'.$sCatchAllDomain.'/i', $sHeader, $asMatches);
         if(empty($asMatches[2]))
         {
-        	echo '<br><br> line 144: ';
+echo '<br><br> line 144: ';
 var_dump($asMatches);
           //echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
         }
