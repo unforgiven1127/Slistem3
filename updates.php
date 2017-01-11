@@ -101,12 +101,17 @@ else
     $asCatchAll = explode('@', CONST_MAIL_IMAP_CATCHALL_ADDRESS);
     $sCatchAllDomain = $asCatchAll[1];
 
+echo '<br><br> line104 : ';
+    var_dump($sCatchAllDomain);
+
     if(!CONST_MAIL_IMAP_CATCHALL_ADDRESS)
     {
       $sAllowedDomain = $sCatchAllDomain;
     }
     else
       $sAllowedDomain = CONST_MAIL_IMAP_ACCEPTED_DOMAIN;
+
+
 
   	$asAllowedDomain = explode(',', $sAllowedDomain);
     dump($asAllowedDomain);
