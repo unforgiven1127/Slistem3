@@ -174,6 +174,10 @@ else
 	                  var_dump($asItem);
 	                  break;
 	                }
+	                else
+	                {
+	                	dump('NOT item std format ['.$sTo.']');
+	                }
 	              }
 	            }
 	          }
