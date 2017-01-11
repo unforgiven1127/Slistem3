@@ -151,7 +151,8 @@ else
 	            //--------------------------------------------------
 	            //look into the email addresses if there's an item pattern
 	            $asItem = array();
-
+echo '<br><br> line 154: ';
+var_dump($sTo);
 	            if(preg_match('/[0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10}$/i', $sTo) === 1)
 	            {
 	              dump('found an item std format ['.$sTo.']');
@@ -173,10 +174,6 @@ else
 	                  echo '<br><br> line 173: ';
 	                  var_dump($asItem);
 	                  break;
-	                }
-	                else
-	                {
-	                	dump('NOT item std format ['.$sTo.']');
 	                }
 	              }
 	            }
