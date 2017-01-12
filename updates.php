@@ -146,10 +146,10 @@ var_dump($sHeader);
         //smaller item being "ct1" -> 3 char
         $asMatches = array();
         preg_match_all('/(555-001__ppav__candi__)([a-z0-9_ \-]{3,})/i', $sHeader, $asMatches);
+echo '<br><br> line 149: ';
+var_dump($asMatches);
         if(empty($asMatches[2]))
         {
-echo '<br><br> line 144: ';
-var_dump($asMatches);
           //echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
         }
         else
