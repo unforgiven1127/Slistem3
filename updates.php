@@ -145,7 +145,7 @@ var_dump($sHeader);
         //2. We need to look into the header for the specific email address it was bcc to
         //smaller item being "ct1" -> 3 char
         $asMatches = array();
-        preg_match_all('/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})@'.$sCatchAllDomain2.'/i', $sHeader, $asMatches);
+        preg_match_all('/([a-z0-9_ \-]{3,})@'.$sCatchAllDomain2.'/i', $sHeader, $asMatches);
         if(empty($asMatches[2]))
         {
 echo '<br><br> line 144: ';
