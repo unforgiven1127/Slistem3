@@ -1214,7 +1214,7 @@ class CDisplayEx extends CDisplay
     $error_location = '[';
     $error_line = '[';
     $error = error_get_last();
-    ChromePhp::log($error);
+    //ChromePhp::log($error);
     if(isset($error))
     {
       if(isset($error['message']))

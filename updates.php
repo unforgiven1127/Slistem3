@@ -102,7 +102,7 @@ else
     $sCatchAllDomain = $asCatchAll[1];
 
 echo '<br><br> line104 : ';
-    var_dump($sCatchAllDomain);
+var_dump($sCatchAllDomain);
 
 
     if(!CONST_MAIL_IMAP_CATCHALL_ADDRESS)
@@ -166,8 +166,8 @@ var_dump($sTo);
 	            {
 	              dump('found an item std format ['.$sTo.']');
 	              $asItem = explode('__', $sTo);
-	              echo '<br><br> line 159: ';
-	              var_dump($asItem);
+echo '<br><br> line 159: ';
+var_dump($asItem);
 	            }
 	            else
 	            {
@@ -180,8 +180,8 @@ var_dump($sTo);
 	                  dump('found an item using the pattern  '.$asPatern[0].' in ['.$sTo.']');
 	                  $sTo = preg_replace('/'.$asPatern[0].'([0-9]{1,9})$/i', $asPatern[1].'__$1', $sTo);
 	                  $asItem = explode('__', $sTo);
-	                  echo '<br><br> line 173: ';
-	                  var_dump($asItem);
+echo '<br><br> line 173: ';
+var_dump($asItem);
 	                  break;
 	                }
 	              }
