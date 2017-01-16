@@ -36,7 +36,7 @@ $username = 'root';
 $password = "123456";
 
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
-$collection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+$connection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
 
 $collection = $connection->database->collectionName;
 
