@@ -65,14 +65,14 @@ $newLog = array(
     'cp_uid' => '555-001',
     'cp_action' => 'ppav',
     'cp_type' => 'candi',
-    'cp_pk' => '154310',
+    'cp_pk' => '416705',
     'uri' => 'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=154310&pg=ajx',
     'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
     'flag' => 'a',
 
 );
 
-//$logs->insert($newLog);
+$logs->insert($newLog);
 
 $where = array('cp_pk' => '154310');
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
