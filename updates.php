@@ -51,15 +51,39 @@ die('Baglanti Kurulamadi : ' . $e->getMessage());
 
 $logs = new MongoCollection($db, 'logs');
 
+
+
+$sDate = date('Y-m-d H:i:s');
+
+$newLog = array(
+    'date' => $sDate,
+    'userfk' => '101',
+    'action' => 'MONGO DB TEST',
+    'description' => 'test',
+    'table' => 'user_history',
+    'component' => '555-001_ppav_candi_154310',
+    'cp_uid' => '555-001',
+    'cp_action' => 'ppav',
+    'cp_type' => 'candi',
+    'cp_pk' => '154310',
+    'uri' => 'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=154310&pg=ajx',
+    'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
+    'flag' => 'a',
+
+);
+
+$logs->insert($newLog);
+
 $allLogs = $logs->find();
 
-foreach($allLogs as $log) {
+foreach($allLogs as $log)
+{
 
-echo $log['date']."<br><br>";
-echo $log['action']."<br><br>";
-var_dump($log);
-echo "<br><br>";
-printf('Nick : %s | Web : %s <br>', $log['date'], $log['action']);
+    echo $log['date']."<br><br>";
+    echo $log['action']."<br><br>";
+    var_dump($log);
+    echo "<br><br>";
+    printf('Nick : %s | Web : %s <br>', $log['date'], $log['action']);
 
 }
 
