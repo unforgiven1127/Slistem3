@@ -86,8 +86,7 @@ foreach($allLogs as $log)
     echo $log['date']."<br><br>";
     echo $log['action']."<br><br>";
     var_dump($log);
-    echo "<br><br>";
-    printf('Nick : %s | Web : %s <br>', $log['date'], $log['action']);
+    echo "<br><br>------------------------------------------------------";
 
 }
 
