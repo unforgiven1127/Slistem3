@@ -43,7 +43,7 @@ $dbhost = 'localhost';
 $dbname = 'test';
 
 // Connect to test database
-$m = new Mongo("mongodb://$dbhost");
+$m = new MongoClient("mongodb://$dbhost");
 $db = $m->$dbname;
 
 //$mongo = new Mongo('mongodb://127.0.0.1:27017');
