@@ -30,8 +30,9 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-$connection = new Mongo();
+//$connection = new Mongo();
 
+ini_get_all();
 
 //$mongo = new Mongo('mongodb://127.0.0.1:27017');
 //var_dump($mongo);
