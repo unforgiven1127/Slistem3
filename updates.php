@@ -41,7 +41,7 @@ $password = "123456";
 try {
 
 $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-$db = $mongo->selectDB('slistem');
+$slistemMongo = $mongo->selectDB('slistem');
 
 } catch(MongoConnectionException $e) {
 
@@ -49,7 +49,7 @@ die('Baglanti Kurulamadi : ' . $e->getMessage());
 
 }
 
-$logs = new MongoCollection($db, 'logs');
+$logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
 
 
@@ -72,13 +72,13 @@ $newLog = array(
 
 );
 
-//$logs->insert($newLog);
+//$logsSlistemMongo->insert($newLog);
 
 $where = array('cp_pk' => '154310');
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
 
-$allLogs = $logs->find();
-//$allLogs = $logs->find($where)->sort($orderBy);
+$allLogs = $logsSlistemMongo->find();
+//$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
 
 foreach($allLogs as $log)
 {

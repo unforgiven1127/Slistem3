@@ -7,7 +7,8 @@ $username = 'root';
 $password = "123456";
 
 $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-$db = $mongo->selectDB('slistem');
+$slistemMongo = $mongo->selectDB('slistem');
+$logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
 function array_search_multi($needle, $haystack)
 {
@@ -4038,15 +4039,28 @@ ChromePhp::log($sQuery);
   }
 
 
-  function insertMongoLog()
+  function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
-    $mongo = new MongoClient('mongodb://localhost', [
-        'username' => 'slistem',
-        'password' => CONST_PHPMAILER_SMTP_PASSWORD,
-        'db'       => 'slistem'
-    ]);
+    $sDate = date('Y-m-d H:i:s');
 
-    var_dump($mongo);
+    $newLog = array(
+        'date' => $sDate,
+        'userfk' => $loginfk,
+        'action' => $text,
+        'description' => $desctiption,
+        'table' => $table,
+        'component' => '555-001_ppav_candi_'.$cp_pk,
+        'cp_uid' => '555-001',
+        'cp_action' => 'ppav',
+        'cp_type' => $cp_type,
+        'cp_pk' => $cp_pk,
+        'uri' => 'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx',
+        'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
+        'flag' => 'a',
+
+    );
+
+    $logsSlistemMongo->insert($newLog);
   }
 
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")

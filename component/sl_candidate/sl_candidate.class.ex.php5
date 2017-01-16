@@ -1196,7 +1196,8 @@ class CSl_candidateEx extends CSl_candidate
         $text = "Candidate viewed";
       }
 
-      insertLog($user_id, $candidate_id, $text, "user_history");
+      insertMongoLog($user_id, $candidate_id, $text, "user_history");
+      //insertLog($user_id, $candidate_id, $text, "user_history");
 
     }
 
