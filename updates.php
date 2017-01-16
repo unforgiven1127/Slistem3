@@ -83,9 +83,10 @@ $allLogs = $logs->find();
 foreach($allLogs as $log)
 {
     echo "<br><br>";
-    echo $log['date']."<br><br>";
-    echo $log['action']."<br><br>";
-    var_dump($log);
+    echo "candidate_id: ".$log['cp_pk']."<br><br>";
+    echo "date: ".$log['date']."<br><br>";
+    echo "action: ".$log['action']."<br><br>";
+    //var_dump($log);
     echo "<br><br>------------------------------------------------------";
 
 }
