@@ -72,7 +72,7 @@ $newLog = array(
 
 );
 
-$logs->insert($newLog);
+//$logs->insert($newLog);
 
 $where = array('cp_pk' => '154310');
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
