@@ -3,8 +3,6 @@ require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
 
 define('URL_FORMAT','_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS');
 
-$username = 'root';
-$password = "123456";
 
 function array_search_multi($needle, $haystack)
 {
@@ -4039,8 +4037,20 @@ ChromePhp::log($sQuery);
   {
     ChromePhp::log('insertMongoLog');
 
+    $username = 'root';
+    $password = "123456";
+
+    try {
+
     $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
     $slistemMongo = $mongo->selectDB('slistem');
+
+    } catch(MongoConnectionException $e) {
+
+    die('Baglanti Kurulamadi : ' . $e->getMessage());
+
+    }
+
     $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
     $sDate = date('Y-m-d H:i:s');
@@ -4056,7 +4066,7 @@ ChromePhp::log($sDate);
         'cp_action' => 'ppav',
         'cp_type' => $cp_type,
         'cp_pk' => $cp_pk,
-        'uri' => 'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx',
+        'uri' =>'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx',
         'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
         'flag' => 'a',
 
