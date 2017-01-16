@@ -1195,7 +1195,7 @@ class CSl_candidateEx extends CSl_candidate
       {
         $text = "Candidate viewed";
       }
-ChromePhp::log('insertMongoLog call');
+
       insertMongoLog($user_id, $candidate_id, $text, "user_history");
       //insertLog($user_id, $candidate_id, $text, "user_history");
 

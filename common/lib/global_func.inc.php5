@@ -4032,10 +4032,44 @@ ChromePhp::log($sQuery);
 
   }
 
+  function getMongoLog($cp_pk)
+  {
+    $username = 'root';
+    $password = "123456";
+
+    try {
+
+    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+    $slistemMongo = $mongo->selectDB('slistem');
+
+    } catch(MongoConnectionException $e) {
+
+    die('ERROR : ' . $e->getMessage());
+
+    }
+
+    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
+
+    $where = array('cp_pk' => $cp_pk);
+    $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
+
+    //$allLogs = $logsSlistemMongo->find();
+    $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+
+    foreach($allLogs as $log)
+    {
+        echo "<br><br>";
+        echo "candidate_id: ".$log['cp_pk']."<br><br>";
+        echo "date: ".$log['date']."<br><br>";
+        echo "action: ".$log['action']."<br><br>";
+        //var_dump($log);
+        echo "<br><br>------------------------------------------------------";
+
+    }
+  }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
-    ChromePhp::log('insertMongoLog');
 
     $username = 'root';
     $password = "123456";
@@ -4047,14 +4081,14 @@ ChromePhp::log($sQuery);
 
     } catch(MongoConnectionException $e) {
 
-    die('Baglanti Kurulamadi : ' . $e->getMessage());
+    die('ERROR : ' . $e->getMessage());
 
     }
 
     $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
     $sDate = date('Y-m-d H:i:s');
-ChromePhp::log($sDate);
+
     $newLog = array(
         'date' => $sDate,
         'userfk' => $loginfk,
@@ -4071,12 +4105,10 @@ ChromePhp::log($sDate);
         'flag' => 'a',
 
     );
-ChromePhp::log($newLog);
-ChromePhp::log('add');
-    $logsSlistemMongo->insert($newLog);
-ChromePhp::log('added');
 
-return true;
+    $logsSlistemMongo->insert($newLog);
+
+    return true;
   }
 
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
