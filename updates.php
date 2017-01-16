@@ -49,7 +49,9 @@ die('Baglanti Kurulamadi : ' . $e->getMessage());
 
 }
 
+$logs = new MongoCollection($db, 'logs');
 
+var_dump($logs);
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
 /*echo 'json okuma <br><br>';
