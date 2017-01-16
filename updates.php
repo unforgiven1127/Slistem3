@@ -51,11 +51,15 @@ die('Baglanti Kurulamadi : ' . $e->getMessage());
 
 $logs = new MongoCollection($db, 'logs');
 
-$uyeListesi = $logs->find();
+$allLogs = $logs->find();
 
-foreach($uyeListesi as $uye) {
+foreach($allLogs as $log) {
 
-printf('Nick : %s | Web : %s <br>', $uye['date'], $uye['action']);
+echo $log['date']."<br><br>";
+echo $log['action']."<br><br>";
+var_dump($log);
+echo "<br><br>";
+printf('Nick : %s | Web : %s <br>', $log['date'], $log['action']);
 
 }
 
