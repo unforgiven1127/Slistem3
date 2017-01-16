@@ -30,7 +30,7 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-$connection = new MongoClient();
+$connection = new Mongo();
 
 
 //$mongo = new Mongo('mongodb://127.0.0.1:27017');
