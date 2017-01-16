@@ -38,16 +38,7 @@ $password = "123456";
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
 $connection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
 
-$collection = $connection->database->collectionName;
-
-var_dump($collection);
-
-$cursor = $collection->find();
-foreach ( $cursor as $id => $value )
-{
-    echo "$id: ";
-    var_dump( $value );
-}
+$db = $connection->slistem;
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
