@@ -32,8 +32,8 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 echo "test<br><br>";
 
-$username = 'root';
-$password = "123456";
+$username = MONGO_USER;
+$password = MONGO_PASS;;
 
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
 

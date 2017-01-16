@@ -4034,8 +4034,8 @@ ChromePhp::log($sQuery);
 
   function getMongoLog($cp_pk)
   {
-    $username = 'root';
-    $password = "123456";
+    $username = MONGO_USER;
+    $password = MONGO_PASS;
 
     try {
 
@@ -4056,23 +4056,28 @@ ChromePhp::log($sQuery);
     //$allLogs = $logsSlistemMongo->find();
     $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
 
+    $returnArray = array();
+
     foreach($allLogs as $log)
     {
-        echo "<br><br>";
-        echo "candidate_id: ".$log['cp_pk']."<br><br>";
-        echo "date: ".$log['date']."<br><br>";
-        echo "action: ".$log['action']."<br><br>";
+        $returnArray[] = $log;
+        //echo "<br><br>";
+        //echo "candidate_id: ".$log['cp_pk']."<br><br>";
+        //echo "date: ".$log['date']."<br><br>";
+        //echo "action: ".$log['action']."<br><br>";
         //var_dump($log);
-        echo "<br><br>------------------------------------------------------";
+        //echo "<br><br>------------------------------------------------------";
 
     }
+
+    return $returnArray;
   }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
 
-    $username = 'root';
-    $password = "123456";
+    $username = MONGO_USER;
+    $password = MONGO_PASS;
 
     try {
 

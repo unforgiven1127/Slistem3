@@ -188,6 +188,9 @@ switch(trim($_SERVER['SERVER_NAME']))
     case 'beta1.slate.co.jp':
     case 'beta2.slate.co.jp':
 
+    define('MONGO_USER', 'root');
+    define('MONGO_PASS', '123456');
+
     define('DB_NAME', 'slistem');
     //define('DB_SERVER', '127.0.0.1');
     //define('DB_USER', 'slistem');
