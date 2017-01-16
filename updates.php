@@ -36,9 +36,9 @@ $username = 'root';
 $password = "123456";
 
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
-$m = new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+$collection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
 
-/*$collection = $connection->database->collectionName;
+$collection = $connection->database->collectionName;
 
 var_dump($collection);
 
@@ -47,7 +47,7 @@ foreach ( $cursor as $id => $value )
 {
     echo "$id: ";
     var_dump( $value );
-}*/
+}
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
