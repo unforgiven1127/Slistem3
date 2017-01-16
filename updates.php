@@ -30,8 +30,15 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-$mongo = new MongoClient();
-$db = $mongo->selectDB("slistem");
+$connection = new MongoClient();
+$collection = $connection->database->collectionName;
+
+$cursor = $collection->find();
+foreach ( $cursor as $id => $value )
+{
+    echo "$id: ";
+    var_dump( $value );
+}
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
