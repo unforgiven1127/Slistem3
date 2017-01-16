@@ -51,9 +51,14 @@ die('Baglanti Kurulamadi : ' . $e->getMessage());
 
 $logs = new MongoCollection($db, 'logs');
 
-$allLogs = $logs->find();
+$uyeListesi = $logs->find();
 
-var_dump($allLogs);
+foreach($uyeListesi as $uye) {
+
+printf('Nick : %s | Web : %s <br>', $uye['date'], $uye['action']);
+
+}
+
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
 /*echo 'json okuma <br><br>';
