@@ -29,6 +29,15 @@ require_once './common/lib/global_func.inc.php5';
 require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
+
+$mongo = new MongoClient('mongodb://localhost', [
+    'username' => 'slistem',
+    'password' => CONST_PHPMAILER_SMTP_PASSWORD,
+    'db'       => 'slistem'
+]);
+
+var_dump($mongo);
+
 //phpinfo();
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
@@ -44,7 +53,7 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
-imap_timeout(IMAP_OPENTIMEOUT, 5);
+/*imap_timeout(IMAP_OPENTIMEOUT, 5);
 $oMailBox = imap_open ('{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}inbox', CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 if($oMailBox === false)
 {
@@ -63,7 +72,7 @@ else
 
 	echo '<br><br>';*/
 
-	$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
+	/*$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
 	//var_dump($asFiltered);
 
 	$sMessageIds = implode(',', $asFiltered);
@@ -72,14 +81,14 @@ else
     /*echo '<br><br>';
     var_dump($asFiltered);*/
 
-    $asEmail = CDependency::getCpLogin()->getUserEmailList();
+    /*$asEmail = CDependency::getCpLogin()->getUserEmailList();
 
     $asEmail = array_flip($asEmail);
 
     /*echo '<br><br>';
     var_dump($asEmail);*/
 
-    $asEmail['munir@slate-ghc.com'] = 468;
+    /*$asEmail['munir@slate-ghc.com'] = 468;
     // Fake researcher/consultant emails
     $asEmail['ewright@bcmj.biz'] = 1;
     $asEmail['rhayashi@bcmj.biz'] = 1;
@@ -93,7 +102,7 @@ else
     /*echo '<br><br> line 93: ';
     var_dump($asAliases);*/
 
-    foreach($asAliases as $nKey => $sPatern)
+    /*foreach($asAliases as $nKey => $sPatern)
     {
       $asAliases[$nKey] = explode('=', $sPatern);
     }

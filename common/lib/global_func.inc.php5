@@ -4031,6 +4031,18 @@ ChromePhp::log($sQuery);
 
   }
 
+
+  function insertMongoLog()
+  {
+    $mongo = new MongoClient('mongodb://localhost', [
+        'username' => 'slistem',
+        'password' => CONST_PHPMAILER_SMTP_PASSWORD,
+        'db'       => 'slistem'
+    ]);
+
+    var_dump($mongo);
+  }
+
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
     if($loginfk > 0)
