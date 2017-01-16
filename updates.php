@@ -72,9 +72,9 @@ $newLog = array(
 
 );
 
-$logs->insert($newLog);
+//$logs->insert($newLog);
 
-$allLogs = $logs->find();
+$allLogs = $logs->find('cp_pk','154310');
 
 foreach($allLogs as $log)
 {
