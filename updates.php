@@ -74,7 +74,10 @@ $newLog = array(
 
 //$logs->insert($newLog);
 
-$allLogs = $logs->find('cp_pk','154310');
+$where = array('cp_pk' => '154310');
+$orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
+
+$allLogs = $logs->find($where)->sort($orderBy);
 
 foreach($allLogs as $log)
 {
