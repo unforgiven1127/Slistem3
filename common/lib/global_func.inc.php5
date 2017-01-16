@@ -4041,6 +4041,7 @@ ChromePhp::log($sQuery);
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
+    ChromePhp::log('insertMongoLog');
     $sDate = date('Y-m-d H:i:s');
 
     $newLog = array(
@@ -4059,8 +4060,9 @@ ChromePhp::log($sQuery);
         'flag' => 'a',
 
     );
-
+ChromePhp::log('add');
     $logsSlistemMongo->insert($newLog);
+    ChromePhp::log('added');
   }
 
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
