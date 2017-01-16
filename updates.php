@@ -36,9 +36,18 @@ $username = 'root';
 $password = "123456";
 
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
-$connection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
 
-$db = $connection->slistem;
+
+try {
+
+$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+$db = $mongo->selectDB('slistem');
+
+} catch(MongoConnectionException $e) {
+
+die('Baglanti Kurulamadi : ' . $e->getMessage());
+
+}
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
