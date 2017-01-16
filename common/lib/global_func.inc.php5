@@ -4044,7 +4044,7 @@ ChromePhp::log($sQuery);
     $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
     $sDate = date('Y-m-d H:i:s');
-
+ChromePhp::log($sDate);
     $newLog = array(
         'date' => $sDate,
         'userfk' => $loginfk,
@@ -4061,9 +4061,10 @@ ChromePhp::log($sQuery);
         'flag' => 'a',
 
     );
+ChromePhp::log($newLog);
 ChromePhp::log('add');
     $logsSlistemMongo->insert($newLog);
-    ChromePhp::log('added');
+ChromePhp::log('added');
   }
 
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
