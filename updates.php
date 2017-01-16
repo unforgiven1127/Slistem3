@@ -65,7 +65,7 @@ else
 	var_dump($oMailBox);
 	echo '<br><br>';*/
 
-	$oBoxInfo = imap_mailboxmsginfo($oMailBox);
+	/*$oBoxInfo = imap_mailboxmsginfo($oMailBox);
 	/*var_dump($oBoxInfo);
 
 	echo '<br><br>';*/
