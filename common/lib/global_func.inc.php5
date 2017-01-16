@@ -6,10 +6,6 @@ define('URL_FORMAT','_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,
 $username = 'root';
 $password = "123456";
 
-$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-$slistemMongo = $mongo->selectDB('slistem');
-$logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
-
 function array_search_multi($needle, $haystack)
 {
   for($i = 0, $l = count($haystack); $i < $l; ++$i)
@@ -4042,6 +4038,11 @@ ChromePhp::log($sQuery);
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
     ChromePhp::log('insertMongoLog');
+
+    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+    $slistemMongo = $mongo->selectDB('slistem');
+    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
+
     $sDate = date('Y-m-d H:i:s');
 
     $newLog = array(
