@@ -35,7 +35,7 @@ echo "test<br><br>";
 $username = 'munir';
 $password = "123456";
 
-$connection =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+$connection = new MongoClient("mongodb://${username}:${password}@localhost");
 $collection = $connection->database->collectionName;
 
 var_dump($collection);
