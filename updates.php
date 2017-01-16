@@ -31,8 +31,8 @@ require_once './component/dependency.inc.php5';
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 $mongo = new MongoClient('mongodb://localhost', [
-    'username' => 'slistem',
-    'password' => CONST_PHPMAILER_SMTP_PASSWORD,
+    'username' => 'munir',
+    'password' => '123456',
     'db'       => 'slistem'
 ]);
 
