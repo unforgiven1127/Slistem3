@@ -30,11 +30,7 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-$mongo = new MongoClient('mongodb://localhost', [
-    'username' => 'munir',
-    'password' => '123456',
-    'db'       => 'slistem'
-]);
+$mongo = new MongoClient();
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
