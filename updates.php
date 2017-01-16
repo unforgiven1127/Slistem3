@@ -31,7 +31,7 @@ require_once './component/dependency.inc.php5';
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
 $mongo = new MongoClient();
-$db = $m->selectDB("slistem");
+$db = $mongo->selectDB("slistem");
 
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
