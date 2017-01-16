@@ -82,7 +82,7 @@ $allLogs = $logs->find();
 
 foreach($allLogs as $log)
 {
-
+    echo "<br><br>";
     echo $log['date']."<br><br>";
     echo $log['action']."<br><br>";
     var_dump($log);
