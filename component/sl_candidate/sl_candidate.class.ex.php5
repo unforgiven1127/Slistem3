@@ -8003,7 +8003,7 @@ die();*/
         $nAge = (int)getValue('age', 0);
         if(!empty($nAge))
         {
-          $asData['date_birth'] = date('Y', strtotime('-'.$nAge.' years')).'-02-02';
+          $asData['date_birth'] = date('Y', strtotime('-'.$nAge.' years')).'-01-01';
           $asData['is_birth_estimation'] = 1;
         }
         else
