@@ -8253,7 +8253,7 @@ $bonusManual = getValue('bonus');
         $asData['statusfk'] = (int)getValue('status');
         //extra test & actions here
 
-        if($asData['statusfk'] == 5 || $asData['statusfk'] == 6)
+        if(($asData['statusfk'] != $pasCandidate['statusfk']) && ($asData['statusfk'] == 5 || $asData['statusfk'] == 6))
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
 
