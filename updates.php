@@ -43,7 +43,7 @@ try
     //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
     //$slistemMongo = $mongo->selectDB('slistem');
 
-    $mongo = new Mongo('mongodb://localhost', array(
+    $mongo = new MongoClient('mongodb://localhost', array(
         'username' => $username,
         'password' => $password,
         'db'       => 'slistem'
