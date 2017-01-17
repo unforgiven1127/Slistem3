@@ -41,7 +41,7 @@ $password = MONGO_PASS;;
 try
 {
     //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-    $slistemMongo = $mongo->selectDB('slistem');
+    //$slistemMongo = $mongo->selectDB('slistem');
 
     $mongo = new Mongo('mongodb://localhost', array(
         'username' => $username,
