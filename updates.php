@@ -40,9 +40,6 @@ $password = MONGO_PASS;;
 
 try
 {
-    //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-    //$slistemMongo = $mongo->selectDB('slistem');
-
     $mongo = new MongoClient('mongodb://localhost', array(
         'username' => $username,
         'password' => $password,
@@ -78,7 +75,7 @@ $newLog = array(
 
 );
 
-//$logsSlistemMongo->insert($newLog);
+$logsSlistemMongo->insert($newLog);
 
 $where = array('cp_pk' => '154310');
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
