@@ -40,7 +40,14 @@ $password = MONGO_PASS;;
 
 try
 {
-    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+    //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+    $slistemMongo = $mongo->selectDB('slistem');
+
+    $mongo = new Mongo('mongodb://localhost', array(
+        'username' => $username,
+        'password' => $password,
+        'db'       => 'slistem'
+    ));
     $slistemMongo = $mongo->selectDB('slistem');
 }
 catch(MongoConnectionException $e)
