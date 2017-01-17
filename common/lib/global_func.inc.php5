@@ -4037,11 +4037,17 @@ ChromePhp::log($sQuery);
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
-    try {
+    try
+    {
+        //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+        //$slistemMongo = $mongo->selectDB('slistem');
 
-    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-    $slistemMongo = $mongo->selectDB('slistem');
-
+        $mongo = new MongoClient('mongodb://localhost', array(
+            'username' => $username,
+            'password' => $password,
+            'db'       => 'slistem'
+        ));
+        $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
     die('ERROR : ' . $e->getMessage());
@@ -4079,11 +4085,17 @@ ChromePhp::log($sQuery);
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
-    try {
+    try
+    {
+        //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+        //$slistemMongo = $mongo->selectDB('slistem');
 
-    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-    $slistemMongo = $mongo->selectDB('slistem');
-
+        $mongo = new MongoClient('mongodb://localhost', array(
+            'username' => $username,
+            'password' => $password,
+            'db'       => 'slistem'
+        ));
+        $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
     die('ERROR : ' . $e->getMessage());
