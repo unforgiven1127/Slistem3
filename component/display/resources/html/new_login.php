@@ -27,8 +27,6 @@ var url = document.URL;
 var search = "/?";
 var search2 = ",pg=norma";
 
-
-
 if(url.indexOf(search)>-1)
 {
   url = url.substring(0, url.length - 1);

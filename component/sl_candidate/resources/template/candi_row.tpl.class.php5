@@ -128,16 +128,16 @@ class CCandi_row extends CTemplate
         $groupFlag = false;
       }
     }
-    ////ChromePhp::log($statusGroup);
+    //ChromePhp::log($statusGroup);
     if($groupFlag)
     {
       if(isset($candidateLastStatus[0]))
       {
         $lastStatus = $candidateLastStatus[0]['status'];
-        /*if($lastStatus == 200 && isset($candidateLastStatus[1]['status']) && $candidateLastStatus[1]['status'] == 101)
+        if($lastStatus == 200 && isset($candidateLastStatus[1]['status']) && $candidateLastStatus[1]['status'] == 101)
         {
-          $lastStatus = $candidateLastStatus[1]['status'];
-        }*/
+          $lastStatus =$candidateLastStatus[1]['status'];
+        }
       }
       else
       {
@@ -150,8 +150,8 @@ class CCandi_row extends CTemplate
     {
       if($lastStatus < 101)//$pasData['_pos_status']
       {
-        //$asOption['class'].= ' tplCandi_status_active';
-        //$asOption['class'].= ' tplCandi_status';
+        //$asOption['class'].= ' tplCandi_status_active tplCandi_status';
+        $asOption['class'].= ' tplCandi_status';
         $asOption['title'] = 'Candidate active: pitched, CCM, offer ';
         $nValue = 4;
 
@@ -182,7 +182,7 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
-        //ChromePhp::log('EXPIRED');
+        ChromePhp::log('EXPIRED');
         $asOption['class'].= ' tplCandi_status tplCandi_status_151';
         $asOption['title'] = 'Last action has expired';
         $sValue = ' expire';

@@ -62,10 +62,6 @@ class CEventEx extends CEvent
            return json_encode($this->_getEventDelete($this->cnPk));
              break;
 
-          case CONST_ACTION_GET_CRON:
-          return json_encode($this->getCronJob());
-             break;
-
         }
         break;
 

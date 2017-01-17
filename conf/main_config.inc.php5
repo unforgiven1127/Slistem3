@@ -161,7 +161,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('CONST_MAIL_IMAP_LOG_PARAM_INBOX', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/debug/readonly/imap/ssl/novalidate-cert}inbox');
     define('CONST_MAIL_IMAP_LOG_PARAM_SENT', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}sent');
     define('CONST_MAIL_IMAP_CATCHALL_ADDRESS', 'slistem@aoy3f.slate.local'); //use the domain to look into mail header
-    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'slatemail.slate.co.jp,slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
+    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
 
     define('CONST_AVAILABLE_LANGUAGE', 'en,jp');
     define('CONST_DEFAULT_LANGUAGE', 'en');
@@ -187,11 +187,6 @@ switch(trim($_SERVER['SERVER_NAME']))
     case 'beta.slate.co.jp':
     case 'beta1.slate.co.jp':
     case 'beta2.slate.co.jp':
-
-    //define('MONGO_USER', 'root');
-    define('MONGO_USER', 'slistem');
-    //define('MONGO_PASS', '123456');
-    define('MONGO_PASS', 'Slate!7000ics');
 
     define('DB_NAME', 'slistem');
     //define('DB_SERVER', '127.0.0.1');
@@ -249,7 +244,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('CONST_MAIL_IMAP_LOG_PARAM_INBOX', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/debug/readonly/imap/ssl/novalidate-cert}inbox');
     define('CONST_MAIL_IMAP_LOG_PARAM_SENT', '{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}sent');
     define('CONST_MAIL_IMAP_CATCHALL_ADDRESS', 'slistem@aoy3f.slate.local'); //use the domain to look into mail header
-    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'slatemail.slate.co.jp,mailmigrate.today,slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
+    define('CONST_MAIL_IMAP_ACCEPTED_DOMAIN', 'mailmigrate.today,slate.co.jp,bulbouscell.com,bcmj.biz,slate-ghc.com');
 
 
     define('CONST_AVAILABLE_LANGUAGE', 'en,jp');

@@ -3,7 +3,6 @@ require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
 
 define('URL_FORMAT','_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS');
 
-
 function array_search_multi($needle, $haystack)
 {
   for($i = 0, $l = count($haystack); $i < $l; ++$i)
@@ -12,7 +11,6 @@ function array_search_multi($needle, $haystack)
     if($bResult !== false)
     return $i;
   }
-
   return false;
 }
 
@@ -4032,102 +4030,6 @@ ChromePhp::log($sQuery);
 
   }
 
-  function getMongoLog($cp_pk)
-  {
-    $username = MONGO_USER;
-    $password = MONGO_PASS;
-
-    try
-    {
-        //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-        //$slistemMongo = $mongo->selectDB('slistem');
-
-        $mongo = new MongoClient('mongodb://localhost', array(
-            'username' => $username,
-            'password' => $password,
-            'db'       => 'slistem'
-        ));
-        $slistemMongo = $mongo->selectDB('slistem');
-    } catch(MongoConnectionException $e) {
-
-    die('ERROR : ' . $e->getMessage());
-
-    }
-
-    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
-
-    $where = array('cp_pk' => $cp_pk);
-    $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
-
-    //$allLogs = $logsSlistemMongo->find();
-    $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-
-    $returnArray = array();
-
-    foreach($allLogs as $log)
-    {
-        $returnArray[] = $log;
-        //echo "<br><br>";
-        //echo "candidate_id: ".$log['cp_pk']."<br><br>";
-        //echo "date: ".$log['date']."<br><br>";
-        //echo "action: ".$log['action']."<br><br>";
-        //var_dump($log);
-        //echo "<br><br>------------------------------------------------------";
-
-    }
-
-    return $returnArray;
-  }
-
-  function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
-  {
-
-    $username = MONGO_USER;
-    $password = MONGO_PASS;
-
-    try
-    {
-        //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-        //$slistemMongo = $mongo->selectDB('slistem');
-
-        $mongo = new MongoClient('mongodb://localhost', array(
-            'username' => $username,
-            'password' => $password,
-            'db'       => 'slistem'
-        ));
-        $slistemMongo = $mongo->selectDB('slistem');
-    } catch(MongoConnectionException $e) {
-
-    die('ERROR : ' . $e->getMessage());
-
-    }
-
-    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
-
-    $sDate = date('Y-m-d H:i:s');
-
-    $newLog = array(
-        'date' => $sDate,
-        'userfk' => $loginfk,
-        'action' => $text,
-        'description' => $desctiption,
-        'table' => $table,
-        'component' => '555-001_ppav_candi_'.$cp_pk,
-        'cp_uid' => '555-001',
-        'cp_action' => 'ppav',
-        'cp_type' => $cp_type,
-        'cp_pk' => $cp_pk,
-        'uri' =>'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx',
-        'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
-        'flag' => 'a',
-
-    );
-
-    $logsSlistemMongo->insert($newLog);
-
-    return true;
-  }
-
   function insertLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
   {
     if($loginfk > 0)
@@ -4389,15 +4291,11 @@ ChromePhp::log($sQuery);
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
                AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
-//ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-//ChromePhp::log($result);
     $count = $result[0]['count'];
-//ChromePhp::log($count);
-
-
 
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
