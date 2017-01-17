@@ -88,8 +88,8 @@ foreach($allLogs as $log)
     echo "<br><br>";
     echo "candidate_id: ".$log['cp_pk']."<br><br>";
     echo "date: ".$log['date']."<br><br>";
-    echo "date: ".$log['date']."<br><br>";
     echo "table: ".$log['table']."<br><br>";
+    echo "action: ".$log['action']."<br><br>";
     //var_dump($log);
     echo "<br><br>------------------------------------------------------";
 
