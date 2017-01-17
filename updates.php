@@ -38,15 +38,14 @@ $password = MONGO_PASS;;
 //$connection = new MongoClient("mongodb://${username}:${password}@localhost", array("db" => "slistem"));
 
 
-try {
-
-$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
-$slistemMongo = $mongo->selectDB('slistem');
-
-} catch(MongoConnectionException $e) {
-
-die('Baglanti Kurulamadi : ' . $e->getMessage());
-
+try
+{
+    $mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
+    $slistemMongo = $mongo->selectDB('slistem');
+}
+catch(MongoConnectionException $e)
+{
+    die('Error : ' . $e->getMessage());
 }
 
 $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
