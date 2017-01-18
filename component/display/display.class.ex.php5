@@ -1187,7 +1187,8 @@ class CDisplayEx extends CDisplay
     $pre_location = "<br><br><br><br>".debug_backtrace();
     echo "<br><br><br><br>";
 var_dump(debug_backtrace());
-return $pre_location;
+echo "<br><br><br><br>";
+//return $pre_location;
     $asFooter = $oSettings->getSettings('footer');
 
     $sHTML = $this->getFloatHack();
@@ -1226,7 +1227,7 @@ return $pre_location;
       $sHTML.= $this->getCR();
       $sHTML.= $this->getText("An unknown error occured while executing your last action.");
       $sHTML.= $this->getCR();
-      $sHTML.= $this->getText("If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.<br>".$pre_location);
+      $sHTML.= $this->getText("If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.");
       $sHTML.= $this->getCR();
       $sHTML.= 'In the other case, please contact the administrator or report the problem using <a href="javascript:;" onclick=\' $("#dumpFormId").submit();\'>this form</a>.';
       $sHTML.= '<form name="dumpForm" id="dumpFormId" target="_blank" method="post" action="/error_report.php5" class="hidden"
