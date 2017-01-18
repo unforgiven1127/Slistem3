@@ -360,6 +360,7 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
           var res = error.split("{");
           note = res[0]+'<br><br>';
           $('#errorMsg').html(note);
+          $('#errorMsg').css("font-weight","Bold");
           //send the result to the error report form, and display the error message
           $('#dumpId').val('['+ sExtraParams +'] ['+psUrl +'] ['+pbSynch +'] ['+oAjaxSetting +'] ['+jqXhr +']');
           $('#ajaxErrorContainerId').show();
