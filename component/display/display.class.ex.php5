@@ -1210,7 +1210,7 @@ class CDisplayEx extends CDisplay
     $sHTML .= $this->getBlocEnd();
 
 
-    /*$sHTML.= $this->getBlocStart('ajaxErrorContainerId', array('class' => 'ajaxErrorBlock'));
+    $sHTML.= $this->getBlocStart('ajaxErrorContainerId', array('class' => 'ajaxErrorBlock'));
       $sHTML.= $this->getBlocStart('ajaxErrorInnerId', array('class' => 'notice2'));
       $sHTML.= $this->getBlocStart();
 
@@ -1246,7 +1246,7 @@ class CDisplayEx extends CDisplay
 
       $sHTML.= $this->getBlocStart('popupBlockId', array('style' => 'display:none; position:absolute;'));
       $sHTML.= $this->getBlocEnd();
-*/
+
       $sHTML.= '
         <div id="loadingScreenAnimation">
           <img src="'.CONST_WEBSITE_LOADING_PICTURE.'"/>
