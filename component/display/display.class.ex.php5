@@ -1189,7 +1189,7 @@ class CDisplayEx extends CDisplay
 foreach ($pre_location as $key => $value)
 {
   var_dump($value);
-  echo "<br><br>";
+  echo "<br><br><br><br><br><br>";
 }
     $asFooter = $oSettings->getSettings('footer');
 
