@@ -1185,7 +1185,6 @@ class CDisplayEx extends CDisplay
     $oMenu = CDependency::getComponentByInterface('display_menu');
 
     $pre_location = "<br><br>".debug_backtrace();
-    ChromePhp::log(debug_backtrace());
 
     $asFooter = $oSettings->getSettings('footer');
 
