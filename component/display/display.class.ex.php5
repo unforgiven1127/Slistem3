@@ -1206,7 +1206,7 @@ class CDisplayEx extends CDisplay
         $sHTML.= $this->getBlocEnd();
       }
       if(function_exists('getCustomWebsiteFooter'))
-        $sHTML .= getCustomWebsiteFooter($asFooter);
+        //$sHTML .= getCustomWebsiteFooter($asFooter);
     $sHTML .= $this->getBlocEnd();
 
 
