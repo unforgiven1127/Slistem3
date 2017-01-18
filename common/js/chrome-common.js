@@ -358,7 +358,7 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
           alert('test');
           error = oJsonData['responseText'];
           var res = error.split("{");
-          alert(res);
+          alert(res[0]);
           $.each(oJsonData, function (i,v)
           {
             console.log(i,v);
