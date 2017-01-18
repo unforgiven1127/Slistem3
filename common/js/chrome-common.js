@@ -356,7 +356,8 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
         if(!bUnloading && jqXhr.status != 0)
         {
           alert('test');
-          //data = $.parseJSON(oJsonData);
+          error = oJsonData['responseText'];
+          alert(error);
           $.each(oJsonData, function (i,v)
           {
             console.log(i,v);
