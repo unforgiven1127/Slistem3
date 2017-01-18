@@ -1188,8 +1188,8 @@ class CDisplayEx extends CDisplay
 
 foreach ($pre_location as $key => $value)
 {
-  var_dump($value);
-  echo "<br><br><br><br><br><br>";
+  //var_dump($value);
+  //echo "<br><br><br><br><br><br>";
 }
     $asFooter = $oSettings->getSettings('footer');
 
@@ -1206,7 +1206,7 @@ foreach ($pre_location as $key => $value)
       {
         $sHTML.= $sBottomMenu;
       }
-      if(CONST_DISPLAY_VERSION)
+      if(1)
       {
         $sHTML.= $this->getBlocStart('', array('class'=>'versionBloc'));
         $sHTML.= $this->getText(CONST_WEBSITE.' v. '.CONST_VERSION);
