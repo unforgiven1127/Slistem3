@@ -358,7 +358,7 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
           //alert('test');
           error = oJsonData['responseText'];
           var res = error.split("{");
-          note = '<br>'+res[0]+'<br><br>';
+          note = res[0]+'<br><br>';
           $('#errorMsg').html(note);
           //send the result to the error report form, and display the error message
           $('#dumpId').val('['+ sExtraParams +'] ['+psUrl +'] ['+pbSynch +'] ['+oAjaxSetting +'] ['+jqXhr +']');

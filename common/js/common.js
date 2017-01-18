@@ -345,6 +345,10 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
 
         if(!bUnloading && jqXhr.status != 0)
         {
+          error = oJsonData['responseText'];
+          var res = error.split("{");
+          note = res[0]+'<br><br>';
+          $('#errorMsg').html(note);
           //send the result to the error report form, and display the error message
           $('#dumpId').val('['+ sExtraParams +'] ['+psUrl +'] ['+pbSynch +'] ['+oAjaxSetting +'] ['+jqXhr +']');
           $('#ajaxErrorContainerId').show();
