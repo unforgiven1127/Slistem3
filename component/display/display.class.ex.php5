@@ -1184,13 +1184,6 @@ class CDisplayEx extends CDisplay
     $oSettings = CDependency::getComponentByName('settings');
     $oMenu = CDependency::getComponentByInterface('display_menu');
 
-    //$pre_location = debug_backtrace();
-
-/*foreach ($pre_location as $key => $value)
-{
-  //var_dump($value);
-  //echo "<br><br><br><br><br><br>";
-}*/
     $asFooter = $oSettings->getSettings('footer');
 
     $sHTML = $this->getFloatHack();
@@ -1206,7 +1199,7 @@ class CDisplayEx extends CDisplay
       {
         $sHTML.= $sBottomMenu;
       }
-      if(1)
+      if(CONST_DISPLAY_VERSION)
       {
         $sHTML.= $this->getBlocStart('', array('class'=>'versionBloc'));
         $sHTML.= $this->getText(CONST_WEBSITE.' v. '.CONST_VERSION);
@@ -1269,13 +1262,8 @@ class CDisplayEx extends CDisplay
 
     if(isDevelopment())
     {
-      echo "<br><br><br>TEST";
       include __DIR__.'/resources/debugbar.inc.php5';
       $sHTML.= getDebugBar();
-    }
-    else
-    {
-      echo "<br><br><br>ELSE";
     }
 
     $sHTML.= '</body></html>';
