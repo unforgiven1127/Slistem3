@@ -1223,8 +1223,7 @@ class CDisplayEx extends CDisplay
       $sHTML.= $this->getTitle('Oops, an error occured', 'h2', true);
       $sHTML.= $this->getCR();
       $sHTML.= $this->getText("An unknown error occured while executing your last action.");
-      $sHTML.= $this->getCR();
-      $sHTML.= $this->getText("Previous location: ".$pre_location);
+      
       $sHTML.= $this->getCR();
       $sHTML.= $this->getText("If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.");
       $sHTML.= $this->getCR();
