@@ -1185,7 +1185,8 @@ class CDisplayEx extends CDisplay
     $oMenu = CDependency::getComponentByInterface('display_menu');
 
     $pre_location = "<br><br><br><br>".debug_backtrace();
-var_dump($pre_location);
+    echo "<br><br><br><br>";
+var_dump(debug_backtrace());
 return $pre_location;
     $asFooter = $oSettings->getSettings('footer');
 
