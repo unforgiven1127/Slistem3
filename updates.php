@@ -90,7 +90,7 @@ $endDate = $dNow." 23:59:59";
 
 
 //$allLogs = $logsSlistemMongo->find();
-$allLogs = $logsSlistemMongo->find($where);
+$allLogs = $logsSlistemMongo->find();
 
 foreach($allLogs as $log)
 {
