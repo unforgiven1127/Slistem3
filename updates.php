@@ -80,6 +80,7 @@ $newLog = array(
 //$where = array('cp_pk' => '154310');
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
 
+$dNow = date('Y-m-d');
 $startDate = $dNow." 00:00:00";
 $endDate = $dNow." 23:59:59";
 
