@@ -4620,6 +4620,7 @@ ChromePhp::log('securityCheckView start');
       $logCount = 0;
       foreach ($logs as $key => $value)
       {
+        ChromePhp::log($value);
         $logCount ++;
       }
 ChromePhp::log($logCount);
