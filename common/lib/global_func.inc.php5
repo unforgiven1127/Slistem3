@@ -4062,7 +4062,6 @@ $count = 0;
 foreach($allLogs as $log)
 {
     $count ++;
-
 }
 return $count;
     //$where = array('cp_pk' => $cp_pk);
