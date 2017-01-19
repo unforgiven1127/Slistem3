@@ -4054,16 +4054,8 @@ ChromePhp::log($sQuery);
 
     }
 
-    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
+    $logsSlistemMongo = new MongoCollection($slistemMongo, $table);
 
-$allLogs = $logsSlistemMongo->find();
-//$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-$count = 0;
-foreach($allLogs as $log)
-{
-    $count ++;
-}
-return $count;
     //$where = array('cp_pk' => $cp_pk);
     if($orderBy == '')
     {
@@ -4077,26 +4069,20 @@ ChromePhp::log($where);
     else
     {
       $where = array('table' => "user_history_all_view");
-      //$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-      $allLogs = $logsSlistemMongo->find();
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
       ChromePhp::log($allLogs);
     }
 
     $returnArray = array();
-
+    $count = 0;
     foreach($allLogs as $log)
     {
+      $count++;
         //ChromePhp::log($log);
-        $returnArray[] = $log;
-        //echo "<br><br>";
-        //echo "candidate_id: ".$log['cp_pk']."<br><br>";
-        //echo "date: ".$log['date']."<br><br>";
-        //echo "action: ".$log['action']."<br><br>";
-        //var_dump($log);
-        //echo "<br><br>------------------------------------------------------";
+        //$returnArray[] = $log;
     }
 
-    return $returnArray;
+    return $count;
   }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
@@ -4606,14 +4592,18 @@ ChromePhp::log('securityCheckView start');
       WHERE lsh.table = 'user_history_all_view' AND userfk = '".$user_id."'
       AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";
 
-      $where = array( '$and' => array( array('table' => 'user_history_all_view'), array('userfk'=>$user_id) ) );
+      $where = array( '$and' => array(
+        array('table' => 'user_history_all_view'),
+        array('userfk' => $user_id),
+        array('date' => array('$gte' => $startDate)),
+        array('date' => array('$lte' => $endDate))
+        ) );
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
         //'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate)));
 
-ChromePhp::log('getMongoLog start');
-      $mongoReturnArray = getMongoLog($where);
-ChromePhp::log($mongoReturnArray);
+      $logCount = getMongoLog($where);
+ChromePhp::log($logCount);
 
       $db_result = $oDB->executeQuery($sQuery);
 
