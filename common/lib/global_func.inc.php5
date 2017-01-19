@@ -4579,29 +4579,16 @@ ChromePhp::log('securityCheckView start');
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
     //ChromePhp::log($holidays[0]['count']);
 
-    //if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
-    if(1)
+    if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
     {
       $startDate = $dNow." 00:00:00";
       $endDate = $dNow." 23:59:59";
 
       $oDB = CDependency::getComponentByName('database');
 
-      $sQuery = "SELECT count(*) as count FROM  login_system_history lsh
+      /*$sQuery = "SELECT count(*) as count FROM  login_system_history lsh
       WHERE lsh.table = 'user_history_all_view' AND userfk = '".$user_id."'
-      AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";
-
-      //$startDateFormatted = date('Y-m-d H:i:s',$startDate);
-      //$endDateFormatted = date('Y-m-d H:i:s',$endDate);
-
-      //$startDate = date_create($startDate);
-      //$endDate = date_create($endDate);
-      //$startDateFormatted = $startDate->format('Y-m-d H:i:s');
-      //$endDateFormatted = $endDate->format('Y-m-d H:i:s');
-
-      //$test = '2017-01-19 00:00:00';
-      //
-      $startDateFormatted = strtotime($startDate);
+      AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";*/
 
       $table = 'user_history_all_view';
 
@@ -4617,21 +4604,15 @@ ChromePhp::log('securityCheckView start');
         //'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate)));
 
       $logs = getMongoLog($where);
-      $logCount = 0;
-      foreach ($logs as $key => $value)
-      {
-        ChromePhp::log($value);
-        $logCount ++;
-      }
-      $countTest=$logs->count();
-ChromePhp::log($logCount);
-ChromePhp::log($countTest);
+
+      $logCount = $logs->count();
+//ChromePhp::log($logCount);
 
       $db_result = $oDB->executeQuery($sQuery);
 
       $result = $db_result->getAll();
 
-      if($result[0]['count'] > 50) // 50 den buyuk ise mail
+      if($logCount > 50) // 50 den buyuk ise mail
       {
         //ChromePhp::log('Action: View more than 50 candidates on holiday.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
