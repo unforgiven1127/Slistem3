@@ -4603,7 +4603,7 @@ ChromePhp::log('securityCheckView start');
       //
       $startDateFormatted = strtotime($startDate);
 
-      $where = array('unixDate' => array('$gte' => $startDateFormatted));
+      $where = array('date' => array('$gte' => $startDate));
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
         //'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate)));
