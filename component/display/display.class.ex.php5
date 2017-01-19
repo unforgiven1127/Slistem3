@@ -938,7 +938,7 @@ class CDisplayEx extends CDisplay
                   var sessionStatus = ".$sessionStatus.";
                   if(sessionStatus != 2)
                   {
-                    window.location.href = '".$selfUrl."';
+                    window.location.href = ".$selfUrl.";
                   }
               </script>";
 
