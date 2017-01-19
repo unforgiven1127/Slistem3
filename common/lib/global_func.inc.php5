@@ -4032,7 +4032,7 @@ ChromePhp::log($sQuery);
 
   }
 
-  function getMongoLog($cp_pk)
+  function getMongoLog($where = '',$orderBy = '')
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4056,11 +4056,20 @@ ChromePhp::log($sQuery);
 
     $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
-    $where = array('cp_pk' => $cp_pk);
-    $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
+    //$where = array('cp_pk' => $cp_pk);
+    if($orderBy == '')
+    {
+      $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
+    }
 
-    //$allLogs = $logsSlistemMongo->find();
-    $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+    if($where == '')
+    {
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy);
+    }
+    else
+    {
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+    }
 
     $returnArray = array();
 
@@ -4073,17 +4082,37 @@ ChromePhp::log($sQuery);
         //echo "action: ".$log['action']."<br><br>";
         //var_dump($log);
         //echo "<br><br>------------------------------------------------------";
-
     }
 
     return $returnArray;
   }
 
-  function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi")
+  function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
 
     $username = MONGO_USER;
     $password = MONGO_PASS;
+
+    if($component == '')
+    {
+      $component = '555-001_ppav_candi_'.$cp_pk;
+    }
+    if($cp_uid == '')
+    {
+      $cp_uid = '555-001';
+    }
+    if($cp_action == '')
+    {
+      $cp_action = 'ppav';
+    }
+    if($uri == '')
+    {
+      $uri = 'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx';
+    }
+    if($value == '')
+    {
+      $value = "array ('action' => 'log user history','log_detail' => 'null',)";
+    }
 
     try
     {
@@ -4112,13 +4141,13 @@ ChromePhp::log($sQuery);
         'action' => $text,
         'description' => $desctiption,
         'table' => $table,
-        'component' => '555-001_ppav_candi_'.$cp_pk,
-        'cp_uid' => '555-001',
-        'cp_action' => 'ppav',
+        'component' => $component,
+        'cp_uid' => $cp_uid,
+        'cp_action' => $cp_action,
         'cp_type' => $cp_type,
         'cp_pk' => $cp_pk,
-        'uri' =>'https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$cp_pk.'&pg=ajx',
-        'value' => "array ('action' => 'log user history','log_detail' => 'null',)",
+        'uri' =>$uri,
+        'value' => $value,
         'flag' => 'a',
 
     );
