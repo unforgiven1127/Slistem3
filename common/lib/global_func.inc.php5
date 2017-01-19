@@ -4075,7 +4075,7 @@ ChromePhp::log($where);
 
     $returnArray = array();
 
-    /*foreach($allLogs as $log)
+    foreach($allLogs as $log)
     {
         ChromePhp::log($log);
         $returnArray[] = $log;
@@ -4085,7 +4085,7 @@ ChromePhp::log($where);
         //echo "action: ".$log['action']."<br><br>";
         //var_dump($log);
         //echo "<br><br>------------------------------------------------------";
-    }*/
+    }
 
     return $returnArray;
   }
