@@ -4594,17 +4594,19 @@ ChromePhp::log('securityCheckView start');
       //$startDateFormatted = date('Y-m-d H:i:s',$startDate);
       //$endDateFormatted = date('Y-m-d H:i:s',$endDate);
 
-      $startDate = date_create($startDate);
-      $endDate = date_create($endDate);
-      $startDateFormatted = $startDate->format('Y-m-d H:i:s');
-      $endDateFormatted = $endDate->format('Y-m-d H:i:s');
+      //$startDate = date_create($startDate);
+      //$endDate = date_create($endDate);
+      //$startDateFormatted = $startDate->format('Y-m-d H:i:s');
+      //$endDateFormatted = $endDate->format('Y-m-d H:i:s');
 
-      $test = '2017-01-19 00:00:00';
+      //$test = '2017-01-19 00:00:00';
+      //
+      $startDateFormatted = $timestamp = strtotime($startDate);
 
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
         array('userfk' => (int)$user_id),
-        array('date' => array('$gte' => $test))
+        array('unixDate' => array('$gte' => $startDateFormatted))
         ) );
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
