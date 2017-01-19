@@ -4078,7 +4078,7 @@ ChromePhp::log($where);
 
     foreach($allLogs as $log)
     {
-        ChromePhp::log($log);
+        //ChromePhp::log($log);
         $returnArray[] = $log;
         //echo "<br><br>";
         //echo "candidate_id: ".$log['cp_pk']."<br><br>";
