@@ -77,11 +77,11 @@ $newLog = array(
 
 //$logsSlistemMongo->insert($newLog);
 
-//$where = array('cp_pk' => '154310','table' => 'user_history_all_view');
-$where = array('$and' => array(
+$where = array('userfk' => '101');
+/*$where = array('$or' => array(
   array("userfk" => "101"),
   array("table" => "user_history_all_view")
-));
+));*/
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
 
 $dNow = date('Y-m-d');
