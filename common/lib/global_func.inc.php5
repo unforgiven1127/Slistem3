@@ -4061,7 +4061,7 @@ ChromePhp::log($sQuery);
     {
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
-
+ChromePhp::log($where);
     if($where == '')
     {
       $allLogs = $logsSlistemMongo->find()->sort($orderBy);
@@ -4075,6 +4075,7 @@ ChromePhp::log($sQuery);
 
     foreach($allLogs as $log)
     {
+        ChromePhp::log($log);
         $returnArray[] = $log;
         //echo "<br><br>";
         //echo "candidate_id: ".$log['cp_pk']."<br><br>";
