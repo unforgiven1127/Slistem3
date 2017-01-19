@@ -77,7 +77,7 @@ $newLog = array(
 
 //$logsSlistemMongo->insert($newLog);
 
-$where = array('userfk' => '101');
+$where = array('userfk' => 101);
 /*$where = array('$or' => array(
   array("userfk" => "101"),
   array("table" => "user_history_all_view")
@@ -90,7 +90,7 @@ $endDate = $dNow." 23:59:59";
 
 
 //$allLogs = $logsSlistemMongo->find();
-$allLogs = $logsSlistemMongo->find();
+$allLogs = $logsSlistemMongo->find($where);
 
 foreach($allLogs as $log)
 {
