@@ -524,7 +524,7 @@ class CModel
     insertMongoLog($nUserPk,
       $this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]),
       $this->oDB->dbEscapeString($psAction),
-      $this->oDB->dbEscapeString($psTable),
+      $psTable,
       $pasData['log_detail'],
       $this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]),
       $this->oDB->dbEscapeString($psShortId),
