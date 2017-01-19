@@ -4582,7 +4582,8 @@ ChromePhp::log('securityCheckView start');
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
     //ChromePhp::log($holidays[0]['count']);
 
-    if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
+    //if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
+    if(1)
     {
       $startDate = $dNow." 00:00:00";
       $endDate = $dNow." 23:59:59";
