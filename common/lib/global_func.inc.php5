@@ -4589,8 +4589,11 @@ ChromePhp::log('securityCheckView start');
       WHERE lsh.table = 'user_history_all_view' AND userfk = '".$user_id."'
       AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";
 
-      $startDateFormatted = date('Y-m-d H:i:s',$startDate);
-      $endDateFormatted = date('Y-m-d H:i:s',$endDate);
+      //$startDateFormatted = date('Y-m-d H:i:s',$startDate);
+      //$endDateFormatted = date('Y-m-d H:i:s',$endDate);
+
+      $startDateFormatted = $startDate->format('Y-m-d H:i:s');
+      $endDateFormatted = $endDate->format('Y-m-d H:i:s');
 
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
