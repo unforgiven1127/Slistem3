@@ -86,9 +86,7 @@ $endDate = $dNow." 23:59:59";
 
 $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
-        array('userfk' => '101'),
-        array('date' => array('$gte' => $startDate)),
-        array('date' => array('$lte' => $endDate))
+        array('userfk' => '101')
         ) );
 
 //$allLogs = $logsSlistemMongo->find();
