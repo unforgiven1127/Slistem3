@@ -4601,12 +4601,12 @@ ChromePhp::log('securityCheckView start');
 
       //$test = '2017-01-19 00:00:00';
       //
-      $startDateFormatted = $timestamp = strtotime($startDate);
+      $startDateFormatted = (string)strtotime($startDate);
 
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
         array('userfk' => (int)$user_id),
-        array('unixDate' => array('$gte' => '$startDateFormatted'))
+        array('unixDate' => array('$gte' => $startDateFormatted))
         ) );
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
