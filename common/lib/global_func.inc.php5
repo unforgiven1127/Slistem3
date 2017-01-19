@@ -4147,7 +4147,6 @@ ChromePhp::log($where);
         'uri' =>$uri,
         'value' => $value,
         'flag' => 'a',
-
     );
 
     $logsSlistemMongo->insert($newLog);
