@@ -4593,7 +4593,7 @@ ChromePhp::log('securityCheckView start');
 
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
-        array('userfk' => $user_id),
+        array('userfk' => (int)$user_id),
         array('date' => array('$gte' => $startDate)),
         array('date' => array('$lte' => $endDate))
         ) );
