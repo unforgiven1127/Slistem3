@@ -4601,7 +4601,7 @@ ChromePhp::log('securityCheckView start');
 
       //$test = '2017-01-19 00:00:00';
       //
-      $startDateFormatted = (string)strtotime($startDate);
+      $startDateFormatted = strtotime($startDate);
 
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
