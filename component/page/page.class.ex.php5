@@ -723,7 +723,7 @@ class CPageEx extends CPage
         function updatePhpWindowSize()
         {
           //console.log("update page size => "+$(window).height()+" / "+$(window).width());
-          $.get("'.$sURL.'&height="+$(window).height()+"&width="+$(window).width());
+          $.get("'.$sURL.'&amp;height="+$(window).height()+"&amp;width="+$(window).width());
         }
     ');
 
