@@ -4072,15 +4072,15 @@ ChromePhp::log($where);
     }
 
     $returnArray = array();
-    $count = 0;
+    /*$count = 0;
     foreach($allLogs as $log)
     {
       $count++;
         //ChromePhp::log($log);
         //$returnArray[] = $log;
-    }
+    }*/
 
-    return $count;
+    return $allLogs;
   }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
