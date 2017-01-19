@@ -4130,9 +4130,11 @@ ChromePhp::log($where);
     $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
     $sDate = date('Y-m-d H:i:s');
+    $unixDate = $timestamp = strtotime($sDate);
 
     $newLog = array(
         'date' => $sDate,
+        'unixDate' => $unixDate,
         'userfk' => $loginfk,
         'action' => $text,
         'description' => $desctiption,
