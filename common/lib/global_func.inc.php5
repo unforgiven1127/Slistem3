@@ -4054,7 +4054,7 @@ ChromePhp::log($sQuery);
 
     }
 
-    $logsSlistemMongo = new MongoCollection($slistemMongo, $table);
+    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
 
     //$where = array('cp_pk' => $cp_pk);
     if($orderBy == '')
