@@ -89,8 +89,8 @@ $startDate = $dNow." 00:00:00";
 $endDate = $dNow." 23:59:59";
 
 
-$allLogs = $logsSlistemMongo->find();
-//$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+//$allLogs = $logsSlistemMongo->find();
+$allLogs = $logsSlistemMongo->find($where);
 
 foreach($allLogs as $log)
 {
