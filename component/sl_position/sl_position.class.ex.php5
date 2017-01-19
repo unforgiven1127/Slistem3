@@ -3642,7 +3642,8 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       {
         $statusTite = getStatusTitle($asPosition['status']);
         $note = "Status ".$statusTite." (#".$pnLinkPk.") deleted";
-        $addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        //$addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        $addLog = insertMongoLog($user_id, $asPosition['candidatefk'], $note);
       }
 
       return array('data' => 'ok', 'notice' => 'Application / stage deleted', 'action' => ' goPopup.removeByType(\'layer\'); refresh_candi('.(int)$asPosition['candidatefk'].', true);');

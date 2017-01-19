@@ -997,7 +997,8 @@ class CSl_eventEx extends CSl_event
       $note = $userName." edited note #".$this->cnPk;
     }
 
-    insertLog($user_id, $candidate_id, $note);
+    //insertLog($user_id, $candidate_id, $note);
+    insertMongoLog($user_id, $candidate_id, $note);
 
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
     $characterNoteArray = array();

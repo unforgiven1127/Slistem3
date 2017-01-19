@@ -4032,7 +4032,7 @@ ChromePhp::log($sQuery);
 
   }
 
-  function getMongoLog($where = '',$orderBy = '')
+  function getMongoLog($where = '',$orderBy = '',$table = 'logs')
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4054,7 +4054,7 @@ ChromePhp::log($sQuery);
 
     }
 
-    $logsSlistemMongo = new MongoCollection($slistemMongo, 'logs');
+    $logsSlistemMongo = new MongoCollection($slistemMongo, $table);
 
     //$where = array('cp_pk' => $cp_pk);
     if($orderBy == '')
@@ -4591,6 +4591,13 @@ ChromePhp::log($sQuery);
       $sQuery = "SELECT count(*) as count FROM  login_system_history lsh
       WHERE lsh.table = 'user_history_all_view' AND userfk = '".$user_id."'
       AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";
+
+      $where = array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
+        'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate));
+
+ChromePhp::log('getMongoLog start');
+      $mongoReturnArray = getMongoLog($where);
+ChromePhp::log($mongoReturnArray);
 
       $db_result = $oDB->executeQuery($sQuery);
 

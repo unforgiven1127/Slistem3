@@ -509,8 +509,10 @@ class CSl_candidateEx extends CSl_candidate
       $desctiption = '';
       $cp_type = "comp";
 
-      insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
-      insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      //insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      insertMongoLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);
+      //insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      insertMongoLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);
 
       $html = "Company deleted / merged succesfully...";
     }
@@ -1197,8 +1199,8 @@ class CSl_candidateEx extends CSl_candidate
         $text = "Candidate viewed";
       }
 
-      insertLog($user_id, $candidate_id, $text, "user_history");
-
+      //insertLog($user_id, $candidate_id, $text, "user_history");
+      insertMongoLog($user_id, $candidate_id, $text, "user_history");
     }
 
     private function _getCandidateView($pnPk, $pasRedirected = array())
@@ -3220,15 +3222,18 @@ $searchTitle = explode(':',$poQB->getTitle());
         $searchTitle = $searchTitle[0];
         if($searchTitle == "QuickSearch")
         {
-          insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
+          insertMongoLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
         }
         else if($searchTitle == "CpxSearch")
         {
-          insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
+          insertMongoLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
         }
         else // mainpage search links...
         {
-          insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
+          insertMongoLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
         }
       }
 
@@ -4948,7 +4953,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         $note = "Meeting created by ".$user_info['firstname']. ' '.$user_info['lastname'];
 
-        $addLog = insertLog($user_id, $target_candidate_id, $note);
+        //$addLog = insertLog($user_id, $target_candidate_id, $note);
+        $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
         //add log end----------------------
 
         //Finally: notify people the candidate status has changed (remove the current user obviosuly)
@@ -10695,7 +10701,8 @@ $bonusManual = getValue('bonus');
                 $cp_pk = $pasOldData['sl_candidatepk'];
                 $text = '['.$sLabel.'] changed from: '.$old_variable.' -> to: '.$new_variable;
 
-                insertLog($loginfk, $cp_pk, $text, "company_history");
+                //insertLog($loginfk, $cp_pk, $text, "company_history");
+                insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
               }
               if($sLabel == 'company')
