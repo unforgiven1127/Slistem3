@@ -79,7 +79,7 @@ $newLog = array(
 
 //$where = array('cp_pk' => '154310','table' => 'user_history_all_view');
 $where = array('$or' => array(
-  array("cp_pk" => "154310"),
+  array("userfk" => "101"),
   array("table" => "user_history_all_view")
 ));
 $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
