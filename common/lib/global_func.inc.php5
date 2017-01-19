@@ -4602,7 +4602,7 @@ ChromePhp::log('securityCheckView start');
       $where = array( '$and' => array(
         array('table' => 'user_history_all_view'),
         array('userfk' => (int)$user_id),
-        array('date' => array('$gte' => $test))
+        array('date' => array('$gte' => $dNow))
         ) );
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
