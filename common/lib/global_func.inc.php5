@@ -4616,7 +4616,12 @@ ChromePhp::log('securityCheckView start');
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
         //'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate)));
 
-      $logCount = getMongoLog($where);
+      $logs = getMongoLog($where);
+      $logCount = 0;
+      foreach ($logs as $key => $value)
+      {
+        $logCount ++;
+      }
 ChromePhp::log($logCount);
 
       $db_result = $oDB->executeQuery($sQuery);
