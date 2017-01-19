@@ -4573,6 +4573,7 @@ ChromePhp::log($sQuery);
 
   function securityCheckView($user_id)
   {
+ChromePhp::log('securityCheckView start');
     // if saturday and holiday than look for that days count > 50?
     // db holiday table a bugunun tarihini yolla donen olursa holiday flag 1 yap
     $dayname = date('l'); // dayname
