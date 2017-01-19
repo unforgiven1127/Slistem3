@@ -4069,7 +4069,8 @@ ChromePhp::log($where);
     else
     {
       $where = array('table' => "user_history_all_view");
-      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+      //$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+      $allLogs = $logsSlistemMongo->find();
       ChromePhp::log($allLogs);
     }
 
