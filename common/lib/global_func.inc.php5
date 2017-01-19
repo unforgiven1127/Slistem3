@@ -4592,6 +4592,8 @@ ChromePhp::log('securityCheckView start');
       //$startDateFormatted = date('Y-m-d H:i:s',$startDate);
       //$endDateFormatted = date('Y-m-d H:i:s',$endDate);
 
+      $startDate = date_create($startDate);
+      $endDate = date_create($endDate);
       $startDateFormatted = $startDate->format('Y-m-d H:i:s');
       $endDateFormatted = $endDate->format('Y-m-d H:i:s');
 
