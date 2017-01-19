@@ -100,6 +100,8 @@ foreach($allLogs as $log)
     echo "date: ".$log['date']."<br><br>";
     echo "table: ".$log['table']."<br><br>";
     echo "action: ".$log['action']."<br><br>";
+    if(isset($log['unixDate']))
+        echo "unixDate: ".$log['unixDate']."<br><br>";
     //var_dump($log);
     echo "<br><br>------------------------------------------------------";
 
