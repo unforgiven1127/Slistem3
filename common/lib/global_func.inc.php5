@@ -4594,8 +4594,8 @@ ChromePhp::log('securityCheckView start');
       WHERE lsh.table = 'user_history_all_view' AND userfk = '".$user_id."'
       AND lsh.date >= '".$startDate."' AND lsh.date <= '".$endDate."' ";
 
-      $where = '$and'[ array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
-        'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate))];
+      $where = array('$or' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
+        'date' => array('$gte' => $startDate), 'date' => array('$lte' => $endDate)));
 
 ChromePhp::log('getMongoLog start');
       $mongoReturnArray = getMongoLog($where);
