@@ -522,16 +522,16 @@ class CModel
     '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';*/
 
     insertMongoLog($nUserPk,
-      $this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]),
-      $this->oDB->dbEscapeString($psAction),
+      $pasComponent[CONST_CP_PK],
+      $psAction,
       $psTable,
       $pasData['log_detail'],
-      $this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]),
-      $this->oDB->dbEscapeString($psShortId),
-      $this->oDB->dbEscapeString($pasComponent[CONST_CP_UID]),
-      $this->oDB->dbEscapeString($pasComponent[CONST_CP_ACTION]),
-      $this->oDB->dbEscapeString($oPage->getRequestedUrl()),
-      $this->oDB->dbEscapeString(var_export($pasData, true)));
+      $pasComponent[CONST_CP_TYPE],
+      $psShortId,
+      $pasComponent[CONST_CP_UID],
+      $pasComponent[CONST_CP_ACTION],
+      $oPage->getRequestedUrl(),
+      var_export($pasData, true));
 
     //$this->oDB->ExecuteQuery($sQuery);
     return true;
