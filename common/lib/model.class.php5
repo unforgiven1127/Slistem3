@@ -503,10 +503,10 @@ class CModel
     $sQuery.= ' AND `date` > "'.date('Y-m-d H:i:s', strtotime('-2 minutes')).'" ';
 
     $oDbResult = $this->oDB->ExecuteQuery($sQuery);*/
-    if($oDbResult->numRows() > 0)
+    /*if($oDbResult->numRows() > 0)
     {
       //return true;
-    }
+    }*/
 
     if(!isset($pasData['log_detail']))
       $pasData['log_detail'] = 'null';
