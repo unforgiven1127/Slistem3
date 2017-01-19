@@ -4070,14 +4070,14 @@ ChromePhp::log($where);
     {
       $where = array('table' => "user_history_all_view");
       //$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-      $allLogs = $logsSlistemMongo->find()->sort($orderBy);
+      $allLogs = $logsSlistemMongo->find();
     }
 
     $returnArray = array();
 
     foreach($allLogs as $log)
     {
-        ChromePhp::log($log);
+        ChromePhp::log($log['cp_pk']);
         $returnArray[] = $log;
         //echo "<br><br>";
         //echo "candidate_id: ".$log['cp_pk']."<br><br>";
