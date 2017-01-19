@@ -4058,19 +4058,13 @@ ChromePhp::log($sQuery);
 
 $allLogs = $logsSlistemMongo->find();
 //$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-
+$count = 0;
 foreach($allLogs as $log)
 {
-    echo "<br><br>";
-    echo "candidate_id: ".$log['cp_pk']."<br><br>";
-    echo "date: ".$log['date']."<br><br>";
-    echo "table: ".$log['table']."<br><br>";
-    echo "action: ".$log['action']."<br><br>";
-    //var_dump($log);
-    echo "<br><br>------------------------------------------------------";
+    $count ++;
 
 }
-return 'asd';
+return $count;
     //$where = array('cp_pk' => $cp_pk);
     if($orderBy == '')
     {
