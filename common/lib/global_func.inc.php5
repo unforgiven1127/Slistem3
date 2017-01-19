@@ -4623,7 +4623,9 @@ ChromePhp::log('securityCheckView start');
         ChromePhp::log($value);
         $logCount ++;
       }
+      $countTest=$logs->count();
 ChromePhp::log($logCount);
+ChromePhp::log($countTest);
 
       $db_result = $oDB->executeQuery($sQuery);
 
