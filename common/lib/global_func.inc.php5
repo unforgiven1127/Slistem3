@@ -4069,15 +4069,15 @@ ChromePhp::log($where);
     else
     {
       $where = array('table' => "user_history_all_view");
-      //$allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
-      $allLogs = $logsSlistemMongo->find();
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+      ChromePhp::log($allLogs);
     }
 
     $returnArray = array();
 
-    foreach($allLogs as $log)
+    /*foreach($allLogs as $log)
     {
-        ChromePhp::log($log['cp_pk']);
+        ChromePhp::log($log);
         $returnArray[] = $log;
         //echo "<br><br>";
         //echo "candidate_id: ".$log['cp_pk']."<br><br>";
@@ -4085,7 +4085,7 @@ ChromePhp::log($where);
         //echo "action: ".$log['action']."<br><br>";
         //var_dump($log);
         //echo "<br><br>------------------------------------------------------";
-    }
+    }*/
 
     return $returnArray;
   }
