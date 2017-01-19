@@ -4609,7 +4609,7 @@ ChromePhp::log('securityCheckView start');
         array('unixDate' => array('$gte' => $startDateFormatted))
         ) );*/
 
-      $table = "user_history_all_view";
+      $table = 'user_history_all_view';
       $where = array('date' => array('$gte' => $startDate),'table' => $table);
 
       //$where = array('$and' => array('table' => 'user_history_all_view','userfk' => $user_id,'userfk' => $user_id,
