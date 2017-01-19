@@ -86,6 +86,7 @@ $allLogs = $logsSlistemMongo->find();
 foreach($allLogs as $log)
 {
     echo "<br><br>";
+    echo "user: ".$log['userfk']."<br><br>";
     echo "candidate_id: ".$log['cp_pk']."<br><br>";
     echo "date: ".$log['date']."<br><br>";
     echo "table: ".$log['table']."<br><br>";
