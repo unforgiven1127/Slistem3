@@ -93,6 +93,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     //direct server access
     case 'slistem1.slate.co.jp':
     case 'slistem2.slate.co.jp':
+    case 'beta2.slate.co.jp':
 
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
@@ -191,7 +192,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     case 'slistem.bulbouscell.com':
     case 'beta.slate.co.jp':
     case 'beta1.slate.co.jp':
-    case 'beta2.slate.co.jp':
+    //case 'beta2.slate.co.jp':
 
     //define('MONGO_USER', 'root');
     define('MONGO_USER', 'slistem');
