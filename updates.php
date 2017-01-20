@@ -105,7 +105,7 @@ foreach($allLogs as $log)
     if(isset($log['unixDate']))
         echo "unixDate: ".$log['unixDate']."<br><br>";
     //var_dump($log);
-    echo "<br><br>------------------------------------------------------";
+    echo "<br><br>------------------------------------------------------<br><br>";
 
 }
 
