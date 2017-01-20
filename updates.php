@@ -91,9 +91,11 @@ $endDate = $dNow." 23:59:59";
 
 //$allLogs = $logsSlistemMongo->find();
 $allLogs = $logsSlistemMongo->find($where);
-
+$count = 0;
 foreach($allLogs as $log)
 {
+    $count++;
+    echo $count;
     echo "<br><br>";
     echo "user: -".$log['userfk']."-<br><br>";
     echo "candidate_id: ".$log['cp_pk']."<br><br>";

@@ -4473,6 +4473,7 @@ ChromePhp::log($where);
 
   function securityCheckContactView($user_id)
   {
+    
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM  login_system_history lsh WHERE lsh.action = 'Contacts viewed' AND lsh.userfk = '".$user_id."'
