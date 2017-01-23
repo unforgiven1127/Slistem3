@@ -4072,7 +4072,7 @@ ChromePhp::log($sQuery);
     }
 //ChromePhp::log($allLogs);
     //$returnArray = array();
-    $/*count = 0;
+    /*$count = 0;
     foreach($allLogs as $log)
     {
       //$count++;
