@@ -3235,7 +3235,7 @@ var_dump($query);*/
 
   function mergeCharacterAssassments($candidate_id, $target_candidate_id)
   {
-    ChromePhp::log('mergeCharacterAssassments');
+    //ChromePhp::log('mergeCharacterAssassments');
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
@@ -3396,7 +3396,7 @@ var_dump($query);*/
                 left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
                 left join sl_company slc on slc.sl_companypk = slp.companyfk
                 WHERE slp.companyfk = '".$company_id."'";
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
@@ -4435,7 +4435,7 @@ ChromePhp::log($sQuery);
     $result = $db_result->getAll();
 //ChromePhp::log($result);
     $count = $result[0]['count'];*/
-ChromePhp::log($count);
+//ChromePhp::log($count);
 
 
 
@@ -4585,7 +4585,7 @@ ChromePhp::log($count);
             'X-Mailer: PHP/' . phpversion();*/
 
         $message .= '<br><br>Related candidates:';
-        ChromePhp::log($logsContactSeen);
+        //ChromePhp::log($logsContactSeen);
         foreach ($logsContactSeen as $key => $log)
         {
           $candidate_id = $log['cp_pk'];
@@ -4593,7 +4593,7 @@ ChromePhp::log($count);
           $candidate_fullname = $candidate_info['firstname'].' '.$candidate_info['lastname'];
           $message .= '<br>'.$candidate_fullname.' ( #'.$candidate_id.' )';
         }
-        ChromePhp::log($message);
+        //ChromePhp::log($message);
         $oMail = CDependency::getComponentByName('mail');
 
         $oMail->createNewEmail();
@@ -4614,7 +4614,7 @@ ChromePhp::log($count);
     }
     else
     {
-      ChromePhp::log('ELSE');
+      //ChromePhp::log('ELSE');
     }
   }
 
@@ -4894,8 +4894,8 @@ ChromePhp::log($count);
 
   function editNote($note_id,$array)
   {
-    ChromePhp::log($note_id);
-    ChromePhp::log($array);
+    //ChromePhp::log($note_id);
+    //ChromePhp::log($array);
 
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
