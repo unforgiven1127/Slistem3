@@ -4435,7 +4435,7 @@ ChromePhp::log($sQuery);
     $result = $db_result->getAll();
 //ChromePhp::log($result);
     $count = $result[0]['count'];*/
-//ChromePhp::log($count);
+ChromePhp::log($count);
 
 
 
