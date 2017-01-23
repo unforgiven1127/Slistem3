@@ -4087,10 +4087,10 @@ var_dump($query);*/
   {
 ChromePhp::log($table);
 
-    if($table == 'user_history_all_view')
+    /*if($table == 'user_history_all_view')
     {
       return true;
-    }
+    }*/
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
