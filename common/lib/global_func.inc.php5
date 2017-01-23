@@ -4150,7 +4150,7 @@ ChromePhp::log($text);
     );
 ChromePhp::log($newLog);
     $logsSlistemMongo->insert($newLog);
-
+sleep(5);
     return true;
   }
 
