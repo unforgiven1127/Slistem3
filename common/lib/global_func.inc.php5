@@ -4550,6 +4550,7 @@ ChromePhp::log($count);
       $logs = getMongoLog($where);
 
       $logCount = $logs->count();
+      $logs = $logs->toArray();
 //ChromePhp::log($logCount);
 
 
