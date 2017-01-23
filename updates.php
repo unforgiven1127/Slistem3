@@ -97,7 +97,7 @@ $orderBy = '';
 $table = 'logs';
 
 //$allLogs = $logsSlistemMongo->find()->sort($orderBy);
-$allLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
+$allLogs = getMongoLog($where);
 //$allLogs = $logsSlistemMongo->find($where);
 $total = $allLogs->count();
 $count = 0;
