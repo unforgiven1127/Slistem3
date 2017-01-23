@@ -2149,12 +2149,25 @@ class CSl_candidateEx extends CSl_candidate
           'uids' => array('555-001', '999-111'),
           );
 
-      ChromePhp::log($asComponent);
-      ChromePhp::log($sLimit);
+      //ChromePhp::log($asComponent);
+      //ChromePhp::log($sLimit);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
       $where = array('cp_pk' => $pnPk);
-      ChromePhp::log($pnPk);
-      $newLogs = getMongoLog($where);
+      $limit = 25;
+      $skip = 0;
+      $explodedLimit = explode(',',$sLimit);
+      if(isset($explodedLimit[2]))
+      {
+        $skip = $explodedLimit[2];
+      }
+      //ChromePhp::log($pnPk);
+      $orderBy = '';
+      $table = 'logs';
+      $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
+      $newLogs = iterator_to_array($newLogs, false);
+
+      $mergedArray = array_merge($asHistory, $newLogs);
+      $asHistory = $mergedArray;
 
 
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;

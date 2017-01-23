@@ -4032,7 +4032,7 @@ var_dump($query);*/
 
   }
 
-  function getMongoLog($where = '',$orderBy = '',$limit = '100' ,$table = 'logs')
+  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4064,11 +4064,11 @@ var_dump($query);*/
 //ChromePhp::log($where);
     if($where == '')
     {
-      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit);
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->skip($skip);
     }
     else
     {
-      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
     }
 //ChromePhp::log($allLogs);
     //$returnArray = array();
