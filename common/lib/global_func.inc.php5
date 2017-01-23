@@ -4032,7 +4032,7 @@ ChromePhp::log($sQuery);
 
   }
 
-  function getMongoLog($where = '',$orderBy = '',$limit = 100,$table = 'logs')
+  function getMongoLog($where = '',$orderBy = '',$limit = '100' ,$table = 'logs')
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4071,7 +4071,7 @@ ChromePhp::log($sQuery);
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
     }
 
-    $returnArray = array();
+    //$returnArray = array();
     /*$count = 0;
     foreach($allLogs as $log)
     {
@@ -4482,14 +4482,14 @@ ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();*/
-
+ChromePhp::log('securityCheckContactView');
     $where = array( '$and' => array(
         array('action' => 'Contacts viewed'),
         array('userfk' => $user_id)
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
-    $orderBy = -1;
-    $limit = 5;
+    $orderBy = '-1';
+    $limit = '5';
     $logs = getMongoLog($where,$orderBy,$limit);
 ChromePhp::log($logs);
 
