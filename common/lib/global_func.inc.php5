@@ -4080,7 +4080,7 @@ ChromePhp::log($sQuery);
         //$returnArray[] = $log;
     }*/
 
-    return $allLogs->toArray();
+    return $allLogs;
   }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
