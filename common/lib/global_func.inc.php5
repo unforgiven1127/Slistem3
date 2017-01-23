@@ -4507,6 +4507,7 @@ ChromePhp::log($count);
     $logs = getMongoLog($where,$orderBy,$limit);
 //ChromePhp::log($logs);
 
+    $logsContactSeen = iterator_to_array($logs, false);
     $logs = iterator_to_array($logs, false);
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
 
@@ -4584,7 +4585,8 @@ ChromePhp::log($count);
             'X-Mailer: PHP/' . phpversion();*/
 
         $message .= '<br>Related candidates:';
-        foreach ($logs as $key => $log)
+        ChromePhp::log($logsContactSeen);
+        foreach ($logsContactSeen as $key => $log)
         {
           $candidate_id = $log['cp_pk'];
           $candidate_info = getCandidateInformation($candidate_id);
