@@ -4405,7 +4405,7 @@ ChromePhp::log($sQuery);
   function securityCheckSearch($user_id)
   {
     // if user do more than 5 search in 5 minutes
-ChromePhp::log('securityCheckSearch');
+//ChromePhp::log('securityCheckSearch');
     $now = date('Y-m-d H:i:s');
     $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
 
@@ -4582,6 +4582,15 @@ ChromePhp::log($count);
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();*/
 
+        $message .= '<br>Related candidates:';
+        foreach ($logs as $key => $log)
+        {
+          $candidate_id = $log['cp_pk'];
+          $candidate_info = getCandidateInformation($candidate_id);
+          $candidate_fullname = $candidate_info['firstname'].' '.$candidate_info['lastname'];
+          $message .= '<br>'.$candidate_fullname.' ( #'.$candidate_id.' )';
+        }
+        ChromePhp::log($message);
         $oMail = CDependency::getComponentByName('mail');
 
         $oMail->createNewEmail();
