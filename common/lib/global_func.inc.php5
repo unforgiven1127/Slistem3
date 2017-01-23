@@ -4405,7 +4405,7 @@ ChromePhp::log($sQuery);
   function securityCheckSearch($user_id)
   {
     // if user do more than 5 search in 5 minutes
-
+ChromePhp::log('securityCheckSearch');
     $now = date('Y-m-d H:i:s');
     $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
 
