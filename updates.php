@@ -77,7 +77,7 @@ $newLog = array(
 
 //$logsSlistemMongo->insert($newLog);
 
-$where = array('userfk' => 494);
+$where = array('userfk' => 494,'cp_pk' => 154310);
 /*$where = array('$or' => array(
   array("userfk" => "101"),
   array("table" => "user_history_all_view")
