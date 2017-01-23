@@ -4064,11 +4064,11 @@ ChromePhp::log($sQuery);
 //ChromePhp::log($where);
     if($where == '')
     {
-      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit);
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->toArray();
     }
     else
     {
-      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->toArray();
     }
 //ChromePhp::log($allLogs);
     //$returnArray = array();
