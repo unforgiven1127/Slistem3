@@ -88,7 +88,7 @@ $dNow = date('Y-m-d');
 $startDate = $dNow." 00:00:00";
 $endDate = $dNow." 23:59:59";
 
-$pnPk = '154310';
+$pnPk = 154310;
 $where = array('cp_pk' => (int)$pnPk);
 $limit = 25;
 $skip = 0;
