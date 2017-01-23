@@ -4140,7 +4140,7 @@ ChromePhp::log($table);
     $newLog = array(
         'date' => $sDate,
         'unixDate' => $unixDate,
-        'userfk' => $loginfk,
+        'userfk' => (int)$loginfk,
         'action' => $text,
         'description' => $desctiption,
         'table' => $table,
@@ -4148,7 +4148,7 @@ ChromePhp::log($table);
         'cp_uid' => $cp_uid,
         'cp_action' => $cp_action,
         'cp_type' => $cp_type,
-        'cp_pk' => $cp_pk,
+        'cp_pk' => (int)$cp_pk,
         'uri' =>$uri,
         'value' => $value,
         'flag' => 'a',
