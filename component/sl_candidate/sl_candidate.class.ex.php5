@@ -2152,7 +2152,7 @@ ChromePhp::log($text);
       //ChromePhp::log($asComponent);
       //ChromePhp::log($sLimit);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
-      $where = array('cp_pk' => $pnPk);
+      $where = array('cp_pk' => (int)$pnPk);
       $limit = 25;
       $skip = 0;
       $explodedLimit = explode(',',$sLimit);
