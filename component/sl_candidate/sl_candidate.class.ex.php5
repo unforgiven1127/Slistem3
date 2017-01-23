@@ -2154,7 +2154,10 @@ ChromePhp::log($text);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
       //$where = array('cp_pk' => (int)$pnPk);
       $where = array( '$and' => array(
-        array('cp_pk' => (int)$pnPk),
+        array( '$or' => array(
+            array('cp_pk' => (int)$pnPk),
+            array('cp_pk' => $pnPk)
+            )),
         array('table' => array('$ne' => 'user_history_all_view'))
         )
       );
