@@ -88,8 +88,16 @@ $dNow = date('Y-m-d');
 $startDate = $dNow." 00:00:00";
 $endDate = $dNow." 23:59:59";
 
+$pnPk = '154310';
+$where = array('cp_pk' => (int)$pnPk);
+$limit = 25;
+$skip = 0;
 
-$allLogs = $logsSlistemMongo->find()->sort($orderBy);
+$orderBy = '';
+$table = 'logs';
+
+//$allLogs = $logsSlistemMongo->find()->sort($orderBy);
+$allLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
 //$allLogs = $logsSlistemMongo->find($where);
 $total = $allLogs->count();
 $count = 0;
