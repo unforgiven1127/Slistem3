@@ -4032,7 +4032,7 @@ ChromePhp::log($sQuery);
 
   }
 
-  function getMongoLog($where = '',$orderBy = '',$table = 'logs')
+  function getMongoLog($where = '',$orderBy = '',$limit = 100,$table = 'logs')
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4064,11 +4064,11 @@ ChromePhp::log($sQuery);
 //ChromePhp::log($where);
     if($where == '')
     {
-      $allLogs = $logsSlistemMongo->find()->sort($orderBy);
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit);
     }
     else
     {
-      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy);
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
     }
 
     $returnArray = array();
@@ -4488,12 +4488,10 @@ ChromePhp::log($sQuery);
         array('userfk' => $user_id)
         ) );
     $orderBy = array('login_system_historypk' => '-1');
-    $logs = getMongoLog($where)->sort($orderBy)->limit(5);
+    $limit = 5;
+    $logs = getMongoLog($where,$orderBy,$limit);
 ChromePhp::log($logs);
-foreach ($logs as $key => $value)
-{
-  ChromePhp::log($value);
-}
+
     $logs = iterator_to_array($logs);
 ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
