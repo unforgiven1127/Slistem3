@@ -93,6 +93,8 @@ $endDate = $dNow." 23:59:59";
 $allLogs = $logsSlistemMongo->find($where);
 $total = $allLogs->count();
 $count = 0;
+echo 'Total: '.$total;
+    echo "<br><br>";
 foreach($allLogs as $log)
 {
     $count++;
