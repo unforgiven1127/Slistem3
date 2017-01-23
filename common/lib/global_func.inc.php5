@@ -4577,7 +4577,10 @@ ChromePhp::log($logCount);
         }
       }
     }
-
+    else
+    {
+      ChromePhp::log('ELSE');
+    }
   }
 
   function sendHtmlMail($to,$subject, $message)
