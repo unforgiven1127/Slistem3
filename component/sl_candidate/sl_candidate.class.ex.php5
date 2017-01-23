@@ -2168,16 +2168,16 @@ ChromePhp::log($text);
       {
         $skip = $explodedLimit[2];
       }
-      //ChromePhp::log($pnPk);
+ChromePhp::log($skip);
       $orderBy = '';
       $table = 'logs';
       $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
       $newLogs = iterator_to_array($newLogs, false);
 
-foreach ($newLogs as $key => $value)
+/*foreach ($newLogs as $key => $value)
 {
   ChromePhp::log($value);
-}
+}*/
 
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
