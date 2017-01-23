@@ -4070,15 +4070,15 @@ ChromePhp::log($sQuery);
     {
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
     }
-ChromePhp::log($allLogs);
+//ChromePhp::log($allLogs);
     //$returnArray = array();
-    $count = 0;
+    $/*count = 0;
     foreach($allLogs as $log)
     {
       //$count++;
         ChromePhp::log($log);
         //$returnArray[] = $log;
-    }
+    }*/
 
     return $allLogs;
   }
@@ -4491,10 +4491,10 @@ ChromePhp::log('securityCheckContactView');
     $orderBy = '';
     $limit = '5';
     $logs = getMongoLog($where,$orderBy,$limit);
-ChromePhp::log($logs);
+//ChromePhp::log($logs);
 
     $logs = iterator_to_array($logs);
-ChromePhp::log($logs);
+ChromePhp::log($logs[4]);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
