@@ -2152,6 +2152,9 @@ class CSl_candidateEx extends CSl_candidate
       ChromePhp::log($asComponent);
       ChromePhp::log($sLimit);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
+      $where = array('cp_pk' => $pnPk);
+      ChromePhp::log($pnPk);
+      $newLogs = getMongoLog($where);
 
 
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
