@@ -4490,7 +4490,7 @@ ChromePhp::log($sQuery);
     $orderBy = array('login_system_historypk' => '-1');
     $logs = getMongoLog($where)->sort($orderBy)->limit(5);
 
-    $logs = $logs.toArra();
+    $logs = iterator_to_array($logs);
 ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
