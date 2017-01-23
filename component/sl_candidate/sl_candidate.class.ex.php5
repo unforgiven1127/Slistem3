@@ -2148,6 +2148,9 @@ class CSl_candidateEx extends CSl_candidate
           'table' => array('sl_candidate', 'document', 'sl_document', 'sl_meeting', 'position', 'user_history'),
           'uids' => array('555-001', '999-111'),
           );
+
+      ChromePhp::log($asComponent);
+      ChromePhp::log($sLimit);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
 
 
