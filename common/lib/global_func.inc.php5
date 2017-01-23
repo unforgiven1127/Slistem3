@@ -4584,7 +4584,7 @@ ChromePhp::log($count);
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();*/
 
-        $message .= '<br>Related candidates:';
+        $message .= '<br><br>Related candidates:';
         ChromePhp::log($logsContactSeen);
         foreach ($logsContactSeen as $key => $log)
         {
