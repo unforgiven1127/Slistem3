@@ -4493,7 +4493,7 @@ ChromePhp::log('securityCheckContactView');
     $logs = getMongoLog($where,$orderBy,$limit);
 //ChromePhp::log($logs);
 
-    $logs = iterator_to_array($logs, true);
+    $logs = iterator_to_array($logs, false);
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
 
     //$value = $blah[0];
