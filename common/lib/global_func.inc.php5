@@ -4089,7 +4089,7 @@ var_dump($query);*/
     {
       return true;
     }
-ChromePhp::log($text);
+ChromePhp::log($table);
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
