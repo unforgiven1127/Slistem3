@@ -4061,7 +4061,7 @@ ChromePhp::log($sQuery);
     {
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
-ChromePhp::log($where);
+//ChromePhp::log($where);
     if($where == '')
     {
       $allLogs = $logsSlistemMongo->find()->sort($orderBy);
@@ -4489,15 +4489,17 @@ ChromePhp::log($where);
         ) );
     $orderBy = array('login_system_historypk' => '-1');
     $logs = getMongoLog($where)->sort($orderBy)->limit(5);
-
+ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
+ChromePhp::log($logs[4]);
       //$first = $result[4]; // 5 kayittan ilk olani sectik
       //$controlDate = $first['date'];
       $first = $logs[4];
+ChromePhp::log($first);
       $controlDate = $first['date'];
-
+ChromePhp::log($controlDate);
       /*$sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
                  WHERE (lsh.action LIKE '%created a new character note%'
                  OR lsh.action LIKE '%created a new email note%'
