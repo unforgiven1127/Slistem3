@@ -4085,7 +4085,7 @@ var_dump($query);*/
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
-
+ChromePhp::log($text);
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
@@ -4616,6 +4616,7 @@ var_dump($query);*/
     {
       //ChromePhp::log('ELSE');
     }
+    return true;
   }
 
   function sendHtmlMail($to,$subject, $message)
