@@ -4487,7 +4487,8 @@ ChromePhp::log($sQuery);
         array('action' => 'Contacts viewed'),
         array('userfk' => $user_id)
         ) );
-    $orderBy = array('login_system_historypk' => '-1');
+    //$orderBy = array('login_system_historypk' => '-1');
+    $orderBy = -1;
     $limit = 5;
     $logs = getMongoLog($where,$orderBy,$limit);
 ChromePhp::log($logs);
