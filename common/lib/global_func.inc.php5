@@ -4411,16 +4411,30 @@ ChromePhp::log($sQuery);
 
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT COUNT(*) as count
+    /*$sQuery = "SELECT COUNT(*) as count
                FROM login_system_history lsh
                WHERE (lsh.table = 'quick_search' OR lsh.table = 'complex_search' OR lsh.table = 'other_search')
-               AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";
+               AND lsh.userfk = '".$user_id."' AND date >= '".$fiveMinBefore."' ";*/
+
+    $where = array( '$and' => array(
+        array('userfk' => $user_id),
+        array('date' => array('$gte' => $fiveMinBefore)),
+          array( '$or' => array(
+            array('table' => 'quick_search'),
+            array('table' => 'complex_search'),
+            array('table' => 'other_search')
+            ))
+        ) );
+
+      $logs = getMongoLog($where);
+
+      $count = $logs->count();
 //ChromePhp::log($sQuery);
-    $db_result = $oDB->executeQuery($sQuery);
+    /*$db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
 //ChromePhp::log($result);
-    $count = $result[0]['count'];
+    $count = $result[0]['count'];*/
 //ChromePhp::log($count);
 
 
