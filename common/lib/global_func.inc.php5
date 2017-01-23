@@ -4548,6 +4548,7 @@ ChromePhp::log($logCount);
       //if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       if($logCount == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
+        ChromePhp::log('SEND MAIL');
         //ChromePhp::log('Action: View 5 contact details but not any note entry.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
