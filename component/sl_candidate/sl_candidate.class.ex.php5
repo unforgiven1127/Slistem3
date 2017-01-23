@@ -2168,7 +2168,7 @@ ChromePhp::log($text);
 
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
-
+      uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
 
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
       $sHTML = $this->_oDisplay->getSpanStart($sId);
