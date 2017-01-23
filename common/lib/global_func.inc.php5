@@ -4070,7 +4070,7 @@ ChromePhp::log($sQuery);
     {
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
     }
-
+ChromePhp::log($allLogs);
     //$returnArray = array();
     $count = 0;
     foreach($allLogs as $log)
@@ -4488,7 +4488,7 @@ ChromePhp::log('securityCheckContactView');
         array('userfk' => $user_id)
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
-    $orderBy = '-1';
+    $orderBy = '';
     $limit = '5';
     $logs = getMongoLog($where,$orderBy,$limit);
 ChromePhp::log($logs);
