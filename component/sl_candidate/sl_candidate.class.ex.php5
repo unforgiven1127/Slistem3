@@ -2166,6 +2166,11 @@ ChromePhp::log($text);
       $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
       $newLogs = iterator_to_array($newLogs, false);
 
+foreach ($newLogs as $key => $value)
+{
+  ChromePhp::log($value);
+}
+
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
       uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
