@@ -4581,6 +4581,7 @@ ChromePhp::log($logCount);
         $flag = securityMailControl($user_id,'contact_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
+          ChromePhp::log('SEND MAIL asdasdasasd');
           //mail($to, $subject, $message, $headers);
           $oMail->send($subject, $message);
         }
