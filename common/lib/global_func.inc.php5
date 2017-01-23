@@ -4148,7 +4148,7 @@ ChromePhp::log($text);
         'value' => $value,
         'flag' => 'a',
     );
-
+ChromePhp::log($newLog);
     $logsSlistemMongo->insert($newLog);
 
     return true;
