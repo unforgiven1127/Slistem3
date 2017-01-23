@@ -4482,7 +4482,7 @@ ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();*/
-ChromePhp::log('securityCheckContactView');
+//ChromePhp::log('securityCheckContactView');
     $where = array( '$and' => array(
         array('action' => 'Contacts viewed'),
         array('userfk' => $user_id)
@@ -4497,18 +4497,18 @@ ChromePhp::log('securityCheckContactView');
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
 
     //$value = $blah[0];
-ChromePhp::log($logs);
+//ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
-ChromePhp::log('HERE');
-ChromePhp::log($logs[4]);
+//ChromePhp::log('HERE');
+//ChromePhp::log($logs[4]);
       //$first = $result[4]; // 5 kayittan ilk olani sectik
       //$controlDate = $first['date'];
       $first = $logs[4];
-ChromePhp::log($first);
+//ChromePhp::log($first);
       $controlDate = $first['date'];
-ChromePhp::log($controlDate);
+//ChromePhp::log($controlDate);
       /*$sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
                  WHERE (lsh.action LIKE '%created a new character note%'
                  OR lsh.action LIKE '%created a new email note%'
@@ -4536,7 +4536,7 @@ ChromePhp::log($controlDate);
       $logs = getMongoLog($where);
 
       $logCount = $logs->count();
-ChromePhp::log($logCount);
+//ChromePhp::log($logCount);
 
 
       /*$db_result = $oDB->executeQuery($sQuery);
@@ -4548,7 +4548,7 @@ ChromePhp::log($logCount);
       //if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       if($logCount == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
-        ChromePhp::log('SEND MAIL');
+        //ChromePhp::log('SEND MAIL');
         //ChromePhp::log('Action: View 5 contact details but not any note entry.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
@@ -4581,7 +4581,6 @@ ChromePhp::log($logCount);
         $flag = securityMailControl($user_id,'contact_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
         {
-          ChromePhp::log('SEND MAIL asdasdasasd');
           //mail($to, $subject, $message, $headers);
           $oMail->send($subject, $message);
         }
