@@ -4494,7 +4494,7 @@ ChromePhp::log('securityCheckContactView');
 //ChromePhp::log($logs);
 
     $logs = iterator_to_array($logs);
-ChromePhp::log($logs[4]);
+ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
