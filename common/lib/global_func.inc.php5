@@ -4473,19 +4473,29 @@ ChromePhp::log($where);
 
   function securityCheckContactView($user_id)
   {
-    
+
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM  login_system_history lsh WHERE lsh.action = 'Contacts viewed' AND lsh.userfk = '".$user_id."'
+    /*$sQuery = "SELECT * FROM  login_system_history lsh WHERE lsh.action = 'Contacts viewed' AND lsh.userfk = '".$user_id."'
                ORDER BY lsh.login_system_historypk DESC LIMIT 5"; // desc yapmazsak son kayitlara ulasamiyoruz
 
     $db_result = $oDB->executeQuery($sQuery);
 
-    $result = $db_result->getAll();
+    $result = $db_result->getAll();*/
 
-    if($user_id != '101' AND isset($result[4]))
+    $where = array( '$and' => array(
+        array('action' => 'Contacts viewed'),
+        array('userfk' => $user_id)
+        ) );
+    $orderBy = array('login_system_historypk' => '-1');
+    $logs = getMongoLog($where)->sort($orderBy)->limit(5);
+
+    //if($user_id != '101' AND isset($result[4]))
+    if($user_id != '101' AND isset($logs[4]))
     {
-      $first = $result[4]; // 5 kayittan ilk olani sectik
+      //$first = $result[4]; // 5 kayittan ilk olani sectik
+      //$controlDate = $first['date'];
+      $first = $logs[4];
       $controlDate = $first['date'];
 
       $sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
@@ -4524,7 +4534,8 @@ ChromePhp::log($logCount);
 
       $count = $result[0]['count'];
 
-      if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
+      //if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
+      if($logCount == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
         //ChromePhp::log('Action: View 5 contact details but not any note entry.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
