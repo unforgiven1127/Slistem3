@@ -4085,7 +4085,7 @@ var_dump($query);*/
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
-ChromePhp::log($table);
+//ChromePhp::log($table);
 
     /*if($table == 'user_history_all_view')
     {
@@ -4153,7 +4153,7 @@ ChromePhp::log($table);
         'value' => $value,
         'flag' => 'a',
     );
-ChromePhp::log($newLog);
+//ChromePhp::log($newLog);
     $logsSlistemMongo->insert($newLog);
 
     return true;
