@@ -4064,11 +4064,11 @@ ChromePhp::log($sQuery);
 //ChromePhp::log($where);
     if($where == '')
     {
-      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->toArray();
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit);
     }
     else
     {
-      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->toArray();
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit);
     }
 //ChromePhp::log($allLogs);
     //$returnArray = array();
@@ -4080,7 +4080,7 @@ ChromePhp::log($sQuery);
         //$returnArray[] = $log;
     }*/
 
-    return $allLogs;
+    return $allLogs->toArray();
   }
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
@@ -4493,7 +4493,7 @@ ChromePhp::log('securityCheckContactView');
     $logs = getMongoLog($where,$orderBy,$limit);
 //ChromePhp::log($logs);
 
-    //$logs = $logs->toArray();
+    $logs = $logs->toArray();
     //$value = $blah[0];
 ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
