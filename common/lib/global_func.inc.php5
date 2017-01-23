@@ -4085,10 +4085,6 @@ var_dump($query);*/
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
-    if($table == 'user_history_all_view')
-    {
-      return true;
-    }
 ChromePhp::log($table);
     $username = MONGO_USER;
     $password = MONGO_PASS;
