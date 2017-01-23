@@ -4498,7 +4498,7 @@ ChromePhp::log($where);
       $first = $logs[4];
       $controlDate = $first['date'];
 
-      $sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
+      /*$sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
                  WHERE (lsh.action LIKE '%created a new character note%'
                  OR lsh.action LIKE '%created a new email note%'
                  OR lsh.action LIKE '%created a new meeting note%'
@@ -4506,7 +4506,7 @@ ChromePhp::log($where);
                  OR lsh.action LIKE '%created a new update note%'
                  OR lsh.action LIKE '%created a new company history note%'
                  OR lsh.action LIKE '%created a new note%')
-                 AND lsh.userfk = '".$user_id."' AND lsh.date > '".$controlDate."'";
+                 AND lsh.userfk = '".$user_id."' AND lsh.date > '".$controlDate."'";*/
 
       $where = array( '$and' => array(
         array('userfk' => $user_id),
@@ -4528,11 +4528,11 @@ ChromePhp::log($where);
 ChromePhp::log($logCount);
 
 
-      $db_result = $oDB->executeQuery($sQuery);
+      /*$db_result = $oDB->executeQuery($sQuery);
 
       $result = $db_result->getAll();
 
-      $count = $result[0]['count'];
+      $count = $result[0]['count'];*/
 
       //if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       if($logCount == 0) // 0 ise herhangi bir not girmemis demek oluyor.
