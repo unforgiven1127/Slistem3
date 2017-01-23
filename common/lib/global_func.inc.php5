@@ -4493,7 +4493,7 @@ ChromePhp::log('securityCheckContactView');
     $logs = getMongoLog($where,$orderBy,$limit);
 //ChromePhp::log($logs);
 
-    $logs = iterator_to_array($logs, true);
+    $logs = iterator_to_array($logs, false);
 ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
