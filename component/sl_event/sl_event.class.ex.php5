@@ -945,7 +945,7 @@ class CSl_eventEx extends CSl_event
     $EditTheNotes = getValue('EditTheNotes');
     $editFlag = false;
 
-    //ChromePhp::log($EditTheNotes);
+    ////ChromePhp::log($EditTheNotes);
     $editArray = array();
     if(isset($EditTheNotes) && !empty($EditTheNotes) && $EditTheNotes != false)
     {
@@ -956,7 +956,7 @@ class CSl_eventEx extends CSl_event
         $explodedNote = explode(';',$value);
         $editArray[$explodedNote[0]] = $explodedNote[1];//type,id
       }
-      //ChromePhp::log($EditTheNotes);
+      ////ChromePhp::log($EditTheNotes);
     }
 
     $note_title = purify_html(getValue('title'));

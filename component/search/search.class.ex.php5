@@ -1199,7 +1199,7 @@ class CSearchEx extends CSearch
   public function buildComplexSearchQuery()
   {
     // sort ta da buraya
-ChromePhp::log('buildComplexSearchQuery');
+//ChromePhp::log('buildComplexSearchQuery');
     $bComplex = (bool)getValue('complex_mode', 0);
     $sCpUid = getValue('component_uid');
     $sDataType = getValue('data_type');
@@ -1393,8 +1393,8 @@ ChromePhp::log('buildComplexSearchQuery');
         else
         {
 
-        ChromePhp::log($sFieldName);
-        ChromePhp::log($vFieldValue);
+        //ChromePhp::log($sFieldName);
+        //ChromePhp::log($vFieldValue);
           //fetch row data
           $sFieldOperator = @$_POST['field_operator'][$nGroup][$nRowNumber];
 
@@ -1413,10 +1413,10 @@ ChromePhp::log('buildComplexSearchQuery');
           {
             $psNote = "sl_candidate_old_companies;".$vFieldValue[0];
             $oQB->setNote($psNote);
-            //ChromePhp::log($vFieldValue);
+            ////ChromePhp::log($vFieldValue);
             //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
           }
-//ChromePhp::log($asFieldData);
+////ChromePhp::log($asFieldData);
 
           if(!empty($asFieldData['sql']['join']))
           {
@@ -1447,7 +1447,7 @@ ChromePhp::log('buildComplexSearchQuery');
           $sCondition = '';
           if(!empty($asFieldData['sql']['unmanageable']))
           {
-            ChromePhp::log('IF');
+            //ChromePhp::log('IF');
             //replace template operator   !!! some type don't have any !!!
             $sOperator = $this->_getSqlOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
             $sCondition = str_replace('<YYY>', $sOperator, $asFieldData['sql']['unmanageable']);
@@ -1523,7 +1523,7 @@ ChromePhp::log('buildComplexSearchQuery');
           }
           else
           {
-            ChromePhp::log('else');
+            //ChromePhp::log('else');
             // - - - - - - - - - - - - - - - - - - - - - - - -
             //Standard case: use default feature to build sql
 
@@ -1538,18 +1538,18 @@ ChromePhp::log('buildComplexSearchQuery');
               {
                 if(!empty($vValue))
                 {
-                  //ChromePhp::log('TEST');
+                  ////ChromePhp::log('TEST');
                   if($sFieldName == 'company_prev')
                   {
                     $company_information = getCompanyInformation($vValue);
                     $company_name = $company_information['name'];
 
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ';
-                    //ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
+                    ////ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
                   }
                   else
                   {
-                    ChromePhp::log('else');
+                    //ChromePhp::log('else');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
@@ -1566,7 +1566,7 @@ ChromePhp::log('buildComplexSearchQuery');
                 //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
                 $sCondition = "scan.sl_candidatepk NOT IN (select slm.candidatefk from sl_meeting slm where slm.meeting_done = '1')";
-                //ChromePhp::log($sCondition);
+                ////ChromePhp::log($sCondition);
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
@@ -1583,7 +1583,7 @@ ChromePhp::log('buildComplexSearchQuery');
               }
             }
           }
-ChromePhp::log($sCondition);
+//ChromePhp::log($sCondition);
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;
@@ -1656,7 +1656,7 @@ ChromePhp::log($sCondition);
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
 //$asSql = $oQB->getSqlArray();
-//ChromePhp::log($asSql);
+////ChromePhp::log($asSql);
 
     return $oQB;
   }

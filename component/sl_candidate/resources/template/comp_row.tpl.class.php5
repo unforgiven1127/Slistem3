@@ -29,7 +29,7 @@ class CComp_row extends CTemplate
     $oPage = CDependency::getCpPage();
     $oDisplay = CDependency::getCpHtml();
     //$oLogin = CDependency::getCpLogin();
-    //ChromePhp::log($pasData);
+    ////ChromePhp::log($pasData);
     if(isset($pasData['merged_company_id']))
     {
       $merged_company_id = $pasData['merged_company_id'];

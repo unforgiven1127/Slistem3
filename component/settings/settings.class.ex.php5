@@ -2210,10 +2210,10 @@ $oPage = CDependency::getCpPage();
     $file_contents = file_get_contents($file);
     $form_url = $page_obj->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-//ChromePhp::log($form_url);
+////ChromePhp::log($form_url);
     $form_url = $oPage->getAjaxUrl('settings',CONST_ACTION_ADD, CONST_TYPE_SETTING_IP,
           0, array('action' => 'save'));
-//ChromePhp::log($form_url);
+////ChromePhp::log($form_url);
     $form_url = "'".CONST_CRM_DOMAIN."/index.php5?uid=665-544&ppa=ppaa&ppt=ipconf&ppk=0&action=save&pg=ajx'";
     $data = array('file_contents' => $file_contents, 'form_url' => $form_url);
 
@@ -2224,11 +2224,11 @@ $oPage = CDependency::getCpPage();
 
   private function save_htaccess()
   {
-    //ChromePhp::log('save_htaccess');
+    ////ChromePhp::log('save_htaccess');
     $content = $_POST['content'];
     $action = $_POST['action'];
-    //ChromePhp::log($content);
-    //ChromePhp::log($action);
+    ////ChromePhp::log($content);
+    ////ChromePhp::log($action);
 
     $display_obj = CDependency::getCpHtml();
     $page_obj = CDependency::getCpPage();
@@ -2244,7 +2244,7 @@ $oPage = CDependency::getCpPage();
     // $htaccess_version = getValue('htaccess_version', '');
 
     $file = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
-ChromePhp::log($action);
+//ChromePhp::log($action);
     switch ($action)
     {
       case 'save':
@@ -2261,7 +2261,7 @@ ChromePhp::log($action);
           $existing_hash_id = $entry->getFieldValue('id');
 
         $file_write = file_put_contents($file, $htaccess_contents);
-ChromePhp::log($file_write);
+//ChromePhp::log($file_write);
         if($file_write)
         {
           $values = array('create_date' => date('Y-m-d H:i:s'), 'content' => $htaccess_contents_encoded,
