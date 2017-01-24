@@ -2186,7 +2186,7 @@ class CSl_candidateEx extends CSl_candidate
 {
   ChromePhp::log($value);
 }*/
-
+$flag = 0;
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
       $sHTML = $this->_oDisplay->getSpanStart($sId);
       $nCount = 0;
@@ -2202,9 +2202,15 @@ class CSl_candidateEx extends CSl_candidate
         {
           if (in_array($asHistoryData['action'], $skip_activity))
           {
+            $flag = 1;
             ChromePhp::log('INSIDE');
             ChromePhp::log($asHistoryData);
             continue;
+          }
+          if($flag == 1)
+          {
+            ChromePhp::log('CIKMIS OLMASI LAZIM');
+            $flag = 0;
           }
           //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
             //continue;
