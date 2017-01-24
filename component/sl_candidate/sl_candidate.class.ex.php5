@@ -2209,6 +2209,7 @@ $flag = 0;
           }
           if($flag == 1)
           {
+            continue;
             ChromePhp::log('CIKMIS OLMASI LAZIM');
             $flag = 0;
           }
