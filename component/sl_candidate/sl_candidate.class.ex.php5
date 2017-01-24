@@ -2164,13 +2164,13 @@ ChromePhp::log($text);
       $limit = 25;
       $skip = 0;
       $explodedLimit = explode(',',$sLimit);
-ChromePhp::log($sLimit);
-ChromePhp::log($explodedLimit);
+//ChromePhp::log($sLimit);
+//ChromePhp::log($explodedLimit);
       if(isset($explodedLimit[1]))
       {
         $skip = $explodedLimit[1];
       }
-ChromePhp::log($skip);
+//ChromePhp::log($skip);
       $orderBy = '';
       $table = 'logs';
       $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
