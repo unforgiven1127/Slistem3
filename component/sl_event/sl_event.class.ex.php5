@@ -305,7 +305,7 @@ class CSl_eventEx extends CSl_event
             array('cp_pk' => $candidate_id)
             )),
         array('table' => 'company_history')
-        )
+        );
 
       $newLogs = getMongoLog($where);
       $newLogs = iterator_to_array($newLogs, false);
