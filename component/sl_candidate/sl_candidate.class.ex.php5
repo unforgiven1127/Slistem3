@@ -2164,9 +2164,11 @@ ChromePhp::log($text);
       $limit = 25;
       $skip = 0;
       $explodedLimit = explode(',',$sLimit);
-      if(isset($explodedLimit[2]))
+ChromePhp::log($sLimit);
+ChromePhp::log($explodedLimit);
+      if(isset($explodedLimit[1]))
       {
-        $skip = $explodedLimit[2];
+        $skip = $explodedLimit[1];
       }
 ChromePhp::log($skip);
       $orderBy = '';
