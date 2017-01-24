@@ -6528,7 +6528,7 @@ function showHide( elements, show ) {
 
 	// Set the display of most of the elements in a second loop
 	// to avoid the constant reflow
-	/*for ( index = 0; index < length; index++ ) {
+	for ( index = 0; index < length; index++ ) {
 		elem = elements[ index ];
 		if ( !elem.style ) {
 			continue;
@@ -6536,7 +6536,7 @@ function showHide( elements, show ) {
 		if ( !show || elem.style.display === "none" || elem.style.display === "" ) {
 			elem.style.display = show ? values[ index ] || "" : "none";
 		}
-	}*/
+	}
 
 	return elements;
 }
