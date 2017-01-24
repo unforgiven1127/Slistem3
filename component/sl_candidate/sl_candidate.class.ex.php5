@@ -2209,9 +2209,9 @@ $flag = 0;
           }
           if($flag == 1)
           {
+            $flag = 0;
             continue;
             ChromePhp::log('CIKMIS OLMASI LAZIM');
-            $flag = 0;
           }
           //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
             //continue;
