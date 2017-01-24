@@ -2171,19 +2171,21 @@ class CSl_candidateEx extends CSl_candidate
         $skip = $explodedLimit[1];
       }
 ////ChromePhp::log($skip);
+
       $orderBy = '';
       $table = 'logs';
       $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
       $newLogs = iterator_to_array($newLogs, false);
 
-/*foreach ($newLogs as $key => $value)
-{
-  //ChromePhp::log($value);
-}*/
 
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
       uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
+
+foreach ($asHistory as $key => $value)
+{
+  ChromePhp::log($value);
+}
 
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
       $sHTML = $this->_oDisplay->getSpanStart($sId);
