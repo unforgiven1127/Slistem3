@@ -2182,10 +2182,10 @@ class CSl_candidateEx extends CSl_candidate
       $asHistory = $mergedArray;
       uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
 
-foreach ($asHistory as $key => $value)
+/*foreach ($asHistory as $key => $value)
 {
   ChromePhp::log($value);
-}
+}*/
 
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
       $sHTML = $this->_oDisplay->getSpanStart($sId);
@@ -2201,7 +2201,10 @@ foreach ($asHistory as $key => $value)
         foreach($asHistory as $asHistoryData)
         {
           if (in_array($asHistoryData['action'], $skip_activity))
+          {
+            ChromePhp::log($asHistoryData);
             continue;
+          }
           //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
             //continue;
 ////ChromePhp::log($asHistoryData['userfk']);
