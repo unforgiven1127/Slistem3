@@ -30,7 +30,7 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-echo "test<br><br>";
+echo "MONGO LOG CONTROL<br><br>";
 
 $username = MONGO_USER;
 $password = MONGO_PASS;;
