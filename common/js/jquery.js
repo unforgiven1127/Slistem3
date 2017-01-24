@@ -6495,7 +6495,7 @@ function showHide( elements, show ) {
 		values = [],
 		index = 0,
 		length = elements.length;
-
+log.console(length);
 	for ( ; index < length; index++ ) {
 		elem = elements[ index ];
 		if ( !elem.style ) {
