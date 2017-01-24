@@ -299,6 +299,43 @@ class CSl_eventEx extends CSl_event
       $candidate_id = $pnItemPk;
       $companyHistory = getCompanyHistory($candidate_id);
 
+      $where = array( '$and' => array(
+        array( '$or' => array(
+            array('cp_pk' => (int)$candidate_id),
+            array('cp_pk' => $candidate_id)
+            )),
+        array('table' => 'company_history')
+        )
+
+      $newLogs = getMongoLog($where);
+      $newLogs = iterator_to_array($newLogs, false);
+
+      foreach ($newLogs as $key => $value)
+      {
+        $addNotes = array();
+
+        $addNotes['_fts'] = $value['action'];
+        $addNotes['companyName'] = "";
+        $addNotes['content'] = $value['action'];
+        $addNotes['cp_action'] = "ppav";
+        $addNotes['cp_params'] = "";
+        $addNotes['cp_pk'] = (string)$candidate_id;
+        $addNotes['cp_type'] = "candi";
+        $addNotes['cp_uid'] = "555-001";
+        $addNotes['created_by'] = $value['userfk'];
+        $addNotes['custom_type'] = "";
+        $addNotes['date_create'] = $value['date'];
+        $addNotes['date_display'] = $value['date'];
+        $addNotes['date_update'] = "";
+        $addNotes['event_linkpk'] = "";
+        $addNotes['eventfk'] = "";
+        $addNotes['eventpk'] = "";
+        $addNotes['title'] = "";
+        $addNotes['type'] = "cp_history";
+        $addNotes['updated_by'] = '';
+
+        array_push($asNotes,$addNotes);
+      }
       if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
       {
         foreach ($companyHistory as $key => $value)
@@ -331,7 +368,7 @@ class CSl_eventEx extends CSl_event
       }
 
     }
-
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
