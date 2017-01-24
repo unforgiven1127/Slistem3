@@ -2202,6 +2202,7 @@ class CSl_candidateEx extends CSl_candidate
         {
           if (in_array($asHistoryData['action'], $skip_activity))
           {
+            ChromePhp::log('INSIDE');
             ChromePhp::log($asHistoryData);
             continue;
           }
