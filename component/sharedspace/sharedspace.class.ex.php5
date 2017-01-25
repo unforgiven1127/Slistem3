@@ -1329,7 +1329,7 @@ class CSharedspaceEx extends CSharedspace
     }
 
     $oPage->addJsFile(CONST_PATH_JS.'jquery.fileupload.js');
-    $oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
+    //$oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
     $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton','id'=>'addNewDocumentButton'));
   //  $oForm->setFormDisplayParams(array('noSubmitButton' => true));
 
