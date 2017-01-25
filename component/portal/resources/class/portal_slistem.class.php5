@@ -544,6 +544,7 @@ Reminder linked to item', '2013-10-05 08:00:00');
     $sPosition = get_new_positions_in_play($pnUserPk);
     $sPipeline = @file_get_contents(CONST_PATH_ROOT.CONST_PATH_UPLOAD_DIR.'/sl_stat/charts/'.$pnUserPk.'_pipeline.html');
 
+ChromePhp::log(CONST_PATH_UPLOAD_DIR);
 
     /*if(!empty($objectives) && $asSettings['home_taregt_tbl'] > 0)
       $sTable.= '
