@@ -2255,7 +2255,10 @@ class CSl_candidateEx extends CSl_candidate
               $sHTML.= ' <div class="note_content">'.$asHistoryData['action'];
 
               if(!empty($asHistoryData['description']) || $asHistoryData['description'] != 'null')
+              {
+                ChromePhp::log($asHistoryData['description']);
                  $sHTML.= '<br />'.$asHistoryData['description'];
+              }
 
               $sHTML.= '</div>';
             $sHTML.= '</div>';
