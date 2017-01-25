@@ -2024,7 +2024,7 @@ class CLoginEx extends CLogin
 
   private function _getIdentification($pbIsAjax = false, $pnCookiePk = 0, $bRedirect = true)
   {
-
+$time_start = microtime(true);
     $oDB = CDependency::getComponentByName('database');
     $oSetting = CDependency::getComponentByName('settings');
 
@@ -2053,7 +2053,9 @@ class CLoginEx extends CLogin
 
     $oDbResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oDbResult->readFirst();
-
+$time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
     if(!$bRead)
       return array('error' => __LINE__.' -'.$this->casText['LOGIN_PASSWORD_INCORRECT']);
 
@@ -2082,7 +2084,9 @@ class CLoginEx extends CLogin
     $sHash = sha1($_SESSION['userData']['pk'].'|@|'.uniqid('cook_', true).'|@|'.rand(1000000, 1000000000));
     $sQuery = 'UPDATE login SET date_last_log = "'.date('Y-m-d H:i:s').'", log_hash = "'.$sHash.'" WHERE loginpk = '.$_SESSION['userData']['pk'];
     $oDB->ExecuteQuery($sQuery);
-
+$time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
     //Create a 3 hour cookie (will be refresh as long as user browse pages)
     //@setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), mktime(date('H')+3, 0, 0, (int)date('m'), (int)date('d'), (int)date('Y')), '/');
     @setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), time()+3600*3, '/');
@@ -2092,6 +2096,9 @@ class CLoginEx extends CLogin
 
     if(!empty($sRedirectUrl))
     {
+      $time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
       //To connect to multiplateforms
       //manage requested redirection after login
       $asUrl = parse_url($sRedirectUrl);
@@ -2104,11 +2111,17 @@ class CLoginEx extends CLogin
     }
     elseif(!empty($_SESSION['urlRedirect']))
     {
+      $time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
       //manage automatic redirection after login
        $sUrl = $_SESSION['urlRedirect'];
     }
     else
     {
+      $time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
       //no redirection => homepage
       $oPage = CDependency::getCpPage();
       $sUrl = $oPage->getUrlHome();
@@ -2122,7 +2135,9 @@ class CLoginEx extends CLogin
 
     if($bRedirect)
     {
-
+$time_end = microtime(true);
+$exec_time = $time_end - $time_start;
+ChromePhp::log($exec_time);
       $this->_redirectUser($sUrl);
     }
     else
