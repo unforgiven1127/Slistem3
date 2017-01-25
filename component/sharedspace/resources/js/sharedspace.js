@@ -24,6 +24,7 @@ $(document).ready(function()
     });
 
    $('.fast-upload-form').fileupload({
+        alert('test upload');
         loadingDiv.fadeIn();
         /*url: '/empty.php5',*/
         dataType: 'json',
