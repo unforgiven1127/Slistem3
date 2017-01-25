@@ -2155,8 +2155,6 @@ class CSl_candidateEx extends CSl_candidate
       //$where = array('cp_pk' => (int)$pnPk);
       $where = array( '$and' => array(
         array( '$or' => array(
-            array('cp_pk' => (int)$pnPk),
-            array('cp_pk' => $pnPk),
             array('table' => 'sl_candidate'),
             array('table' => 'document'),
             array('table' => 'sl_document'),
@@ -2164,7 +2162,9 @@ class CSl_candidateEx extends CSl_candidate
             array('table' => 'position'),
             array('table' => 'user_history'),
             )),
-        array('table' => array('$ne' => 'user_history_all_view'))
+        array('table' => array('$ne' => 'user_history_all_view')),
+        array('cp_pk' => (int)$pnPk),
+        array('cp_pk' => $pnPk)
         )
       );
       $limit = 25;
