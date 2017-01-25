@@ -545,12 +545,12 @@ Reminder linked to item', '2013-10-05 08:00:00');
     $sPipeline = @file_get_contents(CONST_PATH_ROOT.CONST_PATH_UPLOAD_DIR.'/sl_stat/charts/'.$pnUserPk.'_pipeline.html');
 
 
-    if(!empty($objectives) && $asSettings['home_taregt_tbl'] > 0)
+    /*if(!empty($objectives) && $asSettings['home_taregt_tbl'] > 0)
       $sTable.= '
       <div class="graph_bloc">
         <div class="home_item_title">Objectives</div>
         '.$objectives.'
-      </div>';
+      </div>';*/
 
     if(!empty($sPipeline))
       $sHTML.= '
@@ -559,28 +559,28 @@ Reminder linked to item', '2013-10-05 08:00:00');
         '.$sPipeline.'
       </div>';
 
-    if(!empty($sMet))
+    /*if(!empty($sMet))
       $sHTML.= '
       <div class="graph_bloc">
         <div class="home_item_title">Meetings</div>
         '.$sMet.'
-      </div>';
+      </div>';*/
 
 
-    if(!empty($sPlay))
+    /*if(!empty($sPlay))
       $sHTML.= '
       <div class="graph_bloc">
         <div class="home_item_title">New candidates in play</div>
         '.$sPlay.'
-      </div>';
+      </div>';*/
 
-    if(!empty($sPosition))
+    /*if(!empty($sPosition))
       $sHTML.= '
       <div class="graph_bloc">
         <div class="home_item_title">New positions in play</div>
         '.$sPosition.'
       </div>
-      ';
+      ';*/
 
     //Display target table before or after the charts
     if($asSettings['home_taregt_tbl'] == 2)
