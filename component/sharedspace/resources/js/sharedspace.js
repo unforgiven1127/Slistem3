@@ -29,7 +29,7 @@ $(document).ready(function()
         dropZone: $(this),
         sequentialUploads : true,
         add: function (e, data) {
-            alert('test upload');
+
             var loadingDiv = $(this).parent().children('.loading-files');
             loadingDiv.fadeIn();
 

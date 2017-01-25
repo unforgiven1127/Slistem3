@@ -21,6 +21,7 @@ $(function()
         // either via the browse button, or via drag/drop:
         add: function (e, data)
         {
+          alert('test upload');
             var tpl = $('<li class="working"><input type="text" value="0" data-width="48" data-height="48"'+
                 ' data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span></span></li>');
 
