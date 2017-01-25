@@ -1008,22 +1008,26 @@ class CSl_eventEx extends CSl_event
 
     if(empty($delete_flag))
     {
-      $note = $userName." created a new";
-      if($event_type == "character" || $event_type == "email" || $event_type == "meeting" || $event_type == "phone" ||$event_type == "update")
+      if(isset($content) && !empty($content))
       {
-        $note .= " ".$event_type." note: </b><br>";
-      }
-      else if($event_type == "cp_history")
-      {
-        $note .= " company history note: </b><br>";
-      }
-      else
-      {
-        $note .= " note. <br>";
+        $note = $userName." created a new";
+        if($event_type == "character" || $event_type == "email" || $event_type == "meeting" || $event_type == "phone" ||$event_type == "update")
+        {
+          $note .= " ".$event_type." note: </b><br>";
+        }
+        else if($event_type == "cp_history")
+        {
+          $note .= " company history note: </b><br>";
+        }
+        else
+        {
+          $note .= " note. <br>";
+        }
+
+        //$note .= "<b>".$note_title."</b><br>";
+        //$note .= $content;
       }
 
-      //$note .= "<b>".$note_title."</b><br>";
-      //$note .= $content;
     }
     else
     {
@@ -1036,7 +1040,10 @@ class CSl_eventEx extends CSl_event
     }
 
     //insertLog($user_id, $candidate_id, $note);
-    insertMongoLog($user_id, $candidate_id, $note);
+    if(isset($note) && !empty($note))
+    {
+      insertMongoLog($user_id, $candidate_id, $note);
+    }
 
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
     $characterNoteArray = array();
