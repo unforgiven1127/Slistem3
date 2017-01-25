@@ -1328,9 +1328,9 @@ class CSharedspaceEx extends CSharedspace
       $nFolderFk = (int)$asFolder['folderpk'];
     }
 
-    $oPage->addJsFile(CONST_PATH_JS.'jquery.fileupload.js');
-    //$oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
-    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton','id'=>'addNewDocumentButton'));
+    //$oPage->addJsFile(CONST_PATH_JS.'jquery.fileupload.js');
+    $oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
+    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document!', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton','id'=>'addNewDocumentButton'));
   //  $oForm->setFormDisplayParams(array('noSubmitButton' => true));
 
     $psZoneToRefresh = getValue('psZoneToRefresh');
