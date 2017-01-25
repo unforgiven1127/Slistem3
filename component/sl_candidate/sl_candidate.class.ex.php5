@@ -2256,7 +2256,7 @@ class CSl_candidateEx extends CSl_candidate
 
               if(!empty($asHistoryData['description']) && $asHistoryData['description'] != 'null')
               {
-                ChromePhp::log($asHistoryData['description']);
+                 //ChromePhp::log($asHistoryData['description']);
                  $sHTML.= '<br />'.$asHistoryData['description'];
               }
 
