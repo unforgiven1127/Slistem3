@@ -993,7 +993,7 @@ class CSharedspaceEx extends CSharedspace
      $sURL = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_SAVEADD, $this->getDefaultType());
 
      $oForm = $oHTML->initForm('fastUpload');
-     $oForm->setFormParams('fastUpload', false, array('action' => $sURL, 'submitLabel'=>'Save Document', 'class' => 'fast-upload-form', 'noCancelButton' => 'noCancelButton'));
+     $oForm->setFormParams('fastUpload', false, array('action' => $sURL, 'submitLabel'=>'Save Document.', 'class' => 'fast-upload-form', 'noCancelButton' => 'noCancelButton'));
      $oForm->setFormDisplayParams(array('noSubmitButton' => true));
      $oForm->addField('input', 'fastupload', array('type' => 'hidden', 'value' => '1'));
 
@@ -1330,7 +1330,7 @@ class CSharedspaceEx extends CSharedspace
 
     $oPage->addJsFile(CONST_PATH_JS.'jquery.fileupload.js');
     $oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
-    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document.', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton'));
+    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton'));
   //  $oForm->setFormDisplayParams(array('noSubmitButton' => true));
 
     $psZoneToRefresh = getValue('psZoneToRefresh');
