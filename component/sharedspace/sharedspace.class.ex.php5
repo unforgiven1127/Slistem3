@@ -1445,7 +1445,6 @@ class CSharedspaceEx extends CSharedspace
         dataToUpload.files = fileToUpload;
         var jqXHR = $('.single-upload-form').fileupload('send', dataToUpload)
           .success(function (result) {
-              removeLoading();
               if (result.error)
                 goPopup.setErrorMessage(result.error, true);
 
