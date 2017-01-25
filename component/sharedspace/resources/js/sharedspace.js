@@ -24,6 +24,7 @@ $(document).ready(function()
     });
 
    $('.fast-upload-form').fileupload({
+        loadingDiv.fadeIn();
         /*url: '/empty.php5',*/
         dataType: 'json',
         dropZone: $(this),
@@ -31,7 +32,7 @@ $(document).ready(function()
         add: function (e, data) {
 
             var loadingDiv = $(this).parent().children('.loading-files');
-            loadingDiv.fadeIn();
+            //loadingDiv.fadeIn();
 
             var ul = loadingDiv.children('ul');
             var tpl = $('<li class="working"><input type="text" value="0" data-width="16" data-height="16" data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span></span></li>');
