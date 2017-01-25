@@ -1414,7 +1414,6 @@ class CSharedspaceEx extends CSharedspace
     $sJsFileUpload = "
       <script>
       var dataToUpload = new Array();
-      alert('TEST 1');
       $('.single-upload-form').fileupload({
           dataType: 'json',
           sequentialUploads : true,
@@ -1440,7 +1439,7 @@ class CSharedspaceEx extends CSharedspace
       });
 
       $('.single-upload-form .submitBtnClass').click(function(){
-        alert('TEST 2');
+        $('#loadingScreen').fadeIn();
         var dataToUpload = new Array();
         dataToUpload.formData = $('.single-upload-form').serializeArray();
         dataToUpload.files = fileToUpload;
