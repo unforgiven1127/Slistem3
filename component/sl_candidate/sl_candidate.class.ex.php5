@@ -2162,11 +2162,11 @@ class CSl_candidateEx extends CSl_candidate
             array('table' => 'position'),
             array('table' => 'user_history'),
             )),
-        array('table' => array('$ne' => 'user_history_all_view')),
         array( '$or' => array(array('cp_pk' => (int)$pnPk),
         array('cp_pk' => $pnPk))),
         )
       );
+      //array('table' => array('$ne' => 'user_history_all_view')),
       $limit = 25;
       $skip = 0;
       $explodedLimit = explode(',',$sLimit);
