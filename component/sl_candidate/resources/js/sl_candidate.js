@@ -120,6 +120,8 @@ function view_comp(psUrl)
 function view_candi(psUrl, psTab)
 {
   //alert('view candidate');
+  $('#slLoadingScreen').remove();
+  $('body').removeClass('noScroll');// if there is a pre loading page
   splitPage();
   if(psTab)
     AjaxRequest(psUrl, 'transparent light_animation', '', 'topCandidateSection', '', '', "initTopPageSection(); $('"+psTab+"').click(); ");
