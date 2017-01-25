@@ -2254,7 +2254,7 @@ class CSl_candidateEx extends CSl_candidate
 
               $sHTML.= ' <div class="note_content">'.$asHistoryData['action'];
 
-              if(!empty($asHistoryData['description']) || ($asHistoryData['description'] != 'null')
+              if(!empty($asHistoryData['description']) || $asHistoryData['description'] != 'null')
                  $sHTML.= '<br />'.$asHistoryData['description'];
 
               $sHTML.= '</div>';
