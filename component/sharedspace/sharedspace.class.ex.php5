@@ -1458,7 +1458,6 @@ class CSharedspaceEx extends CSharedspace
                 eval(result.action);
 
           });
-        removeLoading();
         return false;
       });
       </script>
