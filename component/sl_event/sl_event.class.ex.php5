@@ -1019,7 +1019,7 @@ class CSl_eventEx extends CSl_event
       }
       else
       {
-        $note .= " note: <br>";
+        $note .= " note. <br>";
       }
 
       //$note .= "<b>".$note_title."</b><br>";
