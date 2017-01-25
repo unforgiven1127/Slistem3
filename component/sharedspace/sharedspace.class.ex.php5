@@ -1439,8 +1439,9 @@ class CSharedspaceEx extends CSharedspace
       });
 
       $('.single-upload-form .submitBtnClass').click(function(){
-        $('.ani').show();
-        alert('TEST TEST');
+        $('body').addClass('noScroll').append('<div id='slLoadingScreen' class='loading' style='width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100)
++'px; position: absolute; top: 0; left: 0; '>
+<div class='bg'></div><div class='ani'></div></div>');
         var dataToUpload = new Array();
         dataToUpload.formData = $('.single-upload-form').serializeArray();
         dataToUpload.files = fileToUpload;
