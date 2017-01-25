@@ -2277,8 +2277,11 @@ class CLoginEx extends CLogin
   {
 
     $oDb = CDependency::getComponentByName('database');
-    $sQuery = 'UPDATE login SET log_hash = \'\' WHERE loginpk = '.$this->casUserData['pk'];
-    $oDb->executeQuery($sQuery);
+    if(isset($this->casUserData['pk']))
+    {
+      $sQuery = 'UPDATE login SET log_hash = \'\' WHERE loginpk = '.$this->casUserData['pk'];
+      $oDb->executeQuery($sQuery);
+    }
 
     session_unset();     // unset $_SESSION variable for the run-time
     session_destroy();   // destroy session data in storage
