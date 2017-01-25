@@ -42,7 +42,7 @@
 }
 #slLoadingScreen.light_animation .ani
 {
-  background: transparent url('/common/pictures/slistem/loading.gif') no-repeat center;
+  background: transparent url('/common/pictures/slistem/loading_home_small.gif') no-repeat center;
 }
 #slLoadingScreen.invisible .bg,
 #slLoadingScreen.invisible .ani
