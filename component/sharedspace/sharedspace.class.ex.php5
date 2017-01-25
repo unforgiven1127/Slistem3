@@ -1440,6 +1440,7 @@ class CSharedspaceEx extends CSharedspace
 
       $('.single-upload-form .submitBtnClass').click(function(){
         $('.ani').show();
+        alert('TEST TEST');
         var dataToUpload = new Array();
         dataToUpload.formData = $('.single-upload-form').serializeArray();
         dataToUpload.files = fileToUpload;
