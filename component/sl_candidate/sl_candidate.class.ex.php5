@@ -2188,10 +2188,10 @@ class CSl_candidateEx extends CSl_candidate
       $asHistory = $mergedArray;
       uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
 
-foreach ($asHistory as $key => $value)
+/*foreach ($asHistory as $key => $value)
 {
   ChromePhp::log($value);
-}
+}*/
       $flagContinue = 0;
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
       $sHTML = $this->_oDisplay->getSpanStart($sId);
