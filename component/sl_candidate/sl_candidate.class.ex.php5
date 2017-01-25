@@ -2163,8 +2163,8 @@ class CSl_candidateEx extends CSl_candidate
             array('table' => 'user_history'),
             )),
         array('table' => array('$ne' => 'user_history_all_view')),
-        array('cp_pk' => (int)$pnPk),
-        array('cp_pk' => $pnPk)
+        array( '$or' => array(array('cp_pk' => (int)$pnPk),
+        array('cp_pk' => $pnPk))),
         )
       );
       $limit = 25;
