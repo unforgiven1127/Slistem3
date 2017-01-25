@@ -1414,8 +1414,8 @@ class CSharedspaceEx extends CSharedspace
     $sJsFileUpload = "
       <script>
       var dataToUpload = new Array();
+      alert('TEST 1');
       $('.single-upload-form').fileupload({
-        alert('TEST 1 ');
           dataType: 'json',
           sequentialUploads : true,
           add: function (e, data)
