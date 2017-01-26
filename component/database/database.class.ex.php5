@@ -68,6 +68,7 @@ class CDatabaseEx extends CDatabase
   function ExecuteQuery($psQuery)
   {
     $time_pre = microtime(true);
+    $startT = strtotime();
     //the function should always return an dbResult object
     $oDbResult = new CDbResult();
     $fTimeEnd = $fTimeStart = 0;
@@ -168,7 +169,8 @@ class CDatabaseEx extends CDatabase
     }
 
     $time_post = microtime(true);
-    $exec_time = $time_post - $time_pre;
+    $endT = strtotime();
+    $exec_time = $endT - $startT;
 
     $myfile = fopen("sqlTrack.txt", "a");
     $txt = $psQuery."\n".$exec_time."\n\n\n";
