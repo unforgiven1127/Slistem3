@@ -169,9 +169,9 @@ class CDatabaseEx extends CDatabase
 
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
-    $exec_time = number_format($exec_time,3);
+    //$exec_time = number_format($exec_time,3);
 
-    if($exec_time >= 1.000)
+    if($exec_time >= 1)
     {
       $myfile = fopen("sqlTrack.txt", "a");
       $txt = $psQuery."\n".$exec_time."\n\n\n";
