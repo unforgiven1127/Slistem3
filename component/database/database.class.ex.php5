@@ -178,6 +178,10 @@ class CDatabaseEx extends CDatabase
     if($ret === false) {
         ChromePhp::log('ERROr');
     }
+    else
+    {
+       ChromePhp::log($ret);
+    }
     //fwrite($myfile, $txt);
     //fclose($myfile);
 
