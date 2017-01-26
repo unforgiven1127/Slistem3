@@ -172,7 +172,12 @@ class CDatabaseEx extends CDatabase
 
     $myfile = fopen("sqlTrack.txt", "a");
     $txt = $psQuery."\n".$exec_time."\n\n";
-    file_put_contents("sqlTrack.txt", $txt);
+    //file_put_contents("sqlTrack.txt", $txt);
+
+    $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
+    if($ret === false) {
+        ChromePhp::log('ERROr');
+    }
     //fwrite($myfile, $txt);
     //fclose($myfile);
 
