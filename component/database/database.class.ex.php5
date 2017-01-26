@@ -171,7 +171,7 @@ class CDatabaseEx extends CDatabase
     $exec_time = $time_post - $time_pre;
 
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n".$exec_time."\n\n";
+    $txt = $psQuery."\n".$exec_time."\n\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
 
     $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
