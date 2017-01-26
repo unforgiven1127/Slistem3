@@ -67,6 +67,7 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
+    ChromePhp::log('ExecuteQuery');
     //the function should always return an dbResult object
     $oDbResult = new CDbResult();
     $fTimeEnd = $fTimeStart = 0;
