@@ -67,7 +67,7 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
-    ChromePhp::log('ExecuteQuery');
+    $time_pre = microtime(true);
     //the function should always return an dbResult object
     $oDbResult = new CDbResult();
     $fTimeEnd = $fTimeStart = 0;
@@ -166,6 +166,15 @@ class CDatabaseEx extends CDatabase
         return  false;
       }
     }
+
+    $time_post = microtime(true);
+    $exec_time = $time_post - $time_pre;
+
+    $myfile = fopen("sqlTrack.txt", "w");
+    $txt = $psQuery."\n".$exec_time."\n\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+
 
     return $oDbResult;
   }
