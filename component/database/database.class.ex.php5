@@ -170,10 +170,11 @@ class CDatabaseEx extends CDatabase
     $time_post = microtime(true);
     $exec_time = $time_post - $time_pre;
 
-    $myfile = fopen("sqlTrack.txt", "w");
+    $myfile = fopen("sqlTrack.txt", "a");
     $txt = $psQuery."\n".$exec_time."\n\n";
-    fwrite($myfile, $txt);
-    fclose($myfile);
+    file_put_contents($myfile, $txt)
+    //fwrite($myfile, $txt);
+    //fclose($myfile);
 
 
     return $oDbResult;
