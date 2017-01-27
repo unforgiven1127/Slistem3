@@ -3938,13 +3938,28 @@ var_dump($query);*/
 
   function getSearchLogs($user_id)
   {
-    $oDB = CDependency::getComponentByName('database');
+    /*$oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM login_system_history lhs WHERE (lhs.table = 'quick_search' OR lhs.table = 'complex_search') AND lhs.userfk = '".$user_id."' ORDER BY lhs.login_system_historypk DESC LIMIT 17";
 
     $db_result = $oDB->executeQuery($sQuery);
 
-    $result = $db_result->getAll();
+    $result = $db_result->getAll();*/
+
+    $where = array( '$and' => array(
+        array('userfk' => $user_id),
+          array( '$or' => array(
+            array('table' => new 'quick_search'),
+            array('table' => new 'complex_search')
+            ))
+        ) );
+    //$orderBy = array('login_system_historypk' => '-1');
+    $orderBy = '';
+    $limit = '17';
+    $logs = getMongoLog($where,$orderBy,$limit);
+////ChromePhp::log($logs);
+
+    $result = iterator_to_array($logs, false);
 
     return $result;
   }
