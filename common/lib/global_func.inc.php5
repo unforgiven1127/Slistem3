@@ -3925,6 +3925,7 @@ var_dump($query);*/
 
   function getLoggedQuery($searchID)
   {
+    ChromePhp::log($searchID);
     /*$oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM login_system_history lhs WHERE lhs.login_system_historypk = '".$searchID."'";
