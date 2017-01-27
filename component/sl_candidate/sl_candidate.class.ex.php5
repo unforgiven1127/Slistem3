@@ -3344,7 +3344,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $asPk = array();
 ChromePhp::log($exploded);
       //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
-      if(isset($exploded[0]) && !isset($exploded[1]) && $exploded[0] == "QuickSearch"
+      if(isset($exploded[0]) && !isset($exploded[1]) && $exploded[0] == "QuickSearch")
       {
         $searchID = $exploded[1];
 
