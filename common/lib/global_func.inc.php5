@@ -3925,13 +3925,22 @@ var_dump($query);*/
 
   function getLoggedQuery($searchID)
   {
-    $oDB = CDependency::getComponentByName('database');
+    /*$oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM login_system_history lhs WHERE lhs.login_system_historypk = '".$searchID."'";
 
     $db_result = $oDB->executeQuery($sQuery);
 
-    $result = $db_result->getAll();
+    $result = $db_result->getAll();*/
+
+    $where = array('_id' => $searchID);
+    //$orderBy = array('login_system_historypk' => '-1');
+    //$orderBy = '';
+    //$limit = '17';
+    $logs = getMongoLog($where);
+////ChromePhp::log($logs);
+
+    $result = iterator_to_array($logs, false);
 
     return $result;
   }
