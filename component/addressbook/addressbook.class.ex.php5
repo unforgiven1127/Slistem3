@@ -314,7 +314,6 @@ class CAddressbookEx extends CAddressbook
           case CONST_ACTION_FULL_LIST:
           case CONST_ACTION_LIST:
             $sSearchId = getValue('searchId');
-            ChromePhp::log('SEARCH ID');
             $sURL = $this->coPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_AB_TYPE_COMPANY, 0, array('searchId' => $sSearchId, 'sortfield' => 'id'));
             $asActions['ppaasort'][] = array('picture' => $sPictureMenuPath.'list_sort_desc_32.png','title'=>'Sort by date', 'url' => 'javascript:;', 'option' => array('onclick'=> ' AjaxRequest(\''.$sURL.'\', \'body\', \'\', \'contactListContainer\'); '));
             $asActions['ppas'][] = array('picture' => CONST_PICTURE_MENU_SEARCH, 'title' => 'Search companies', 'url' => 'javascript:;', 'option' => array('onclick' => '$(\'.searchContainer\').fadeToggle();') );

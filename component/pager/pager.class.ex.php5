@@ -40,7 +40,7 @@ class CPagerEx extends CPager
     // Get search history page limit
     $search_history = getValue('searchHistory');
     $search_id = getValue('searchId');
-
+ChromePhp::log('SEARCH ID');
     if(!empty($search_history) && !empty($search_id)) {
       $class_id = getValue('uid');
       $type = getValue('ppt');
