@@ -3088,15 +3088,12 @@ class CSl_candidateEx extends CSl_candidate
 
       //dump($poQB);
       $sQuery = $poQB->getCountSql();
-ChromePhp::log($exploded);
-      //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
-      if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
+
+      if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       {
-        ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 
         $savedQuery = getLoggedQuery($searchID);
-ChromePhp::log($savedQuery);
         $sQuery = $savedQuery[0]['action'];
 
         $oDbResult = $oDb->ExecuteQuery($sQuery);
@@ -3343,13 +3340,11 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $asData = array();
       $asPk = array();
-ChromePhp::log($exploded);
-      //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
-      if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
+
+      if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       {
         $searchID = $exploded[1];
 
-        ChromePhp::log('HERE 2');
         $savedQuery = getLoggedQuery($searchID);
         $sQuery = $savedQuery[0]['action'];
 
