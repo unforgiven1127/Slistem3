@@ -3344,7 +3344,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       {
         $searchID = $exploded[1];
-
+ChromePhp::log('SEARCH ID');
+ChromePhp::log($searchID);
         $savedQuery = getLoggedQuery($searchID);
         $sQuery = $savedQuery[0]['action'];
 
