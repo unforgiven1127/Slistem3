@@ -177,7 +177,7 @@ class CDatabaseEx extends CDatabase
     $fark = $sDateEnd - $sDateStart;
 
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n".$exec_time." - start: ".$sDateStart." - end: ".$sDateEnd."\n\n----------------------------------------------------------------------------------";
+    $txt = $psQuery."\n".$exec_time." - start: ".$sDateStart." - end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
 
     $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
