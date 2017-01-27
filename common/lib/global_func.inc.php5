@@ -3949,8 +3949,8 @@ var_dump($query);*/
     $where = array( '$and' => array(
         array('userfk' => $user_id),
           array( '$or' => array(
-            array('table' => new 'quick_search'),
-            array('table' => new 'complex_search')
+            array('table' => 'quick_search'),
+            array('table' => 'complex_search')
             ))
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
