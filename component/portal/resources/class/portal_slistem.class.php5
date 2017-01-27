@@ -364,7 +364,6 @@ Reminder linked to item', '2013-10-05 08:00:00');
     if($psTitle == "Searches")
     {
       $searchLogs = getSearchLogs($user_id);
-      $searchLogsCount = $searchLogsCount->count();
       ChromePhp::log($searchLogsCount);
       foreach ($searchLogs as $key => $value)
       {
