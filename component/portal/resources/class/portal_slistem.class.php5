@@ -210,6 +210,7 @@ class CPortalSlistemEx extends CPortalEx
             $asActivity = array('class' => 'home_item_container slider_mode');
             $sHTML.= $this->_displayActivity($asActivity, 'Searches');
 
+            $asActivity = array();
             //$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-002', null, null, null, 15);
             $sHTML.= $this->_displayActivity($asActivity, 'Folder');
 
