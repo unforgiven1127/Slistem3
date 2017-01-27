@@ -3092,7 +3092,7 @@ class CSl_candidateEx extends CSl_candidate
       //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
-        ChromePhp::log('HERE 1');
+//ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 //ChromePhp::log($searchID);
         $savedQuery = getLoggedQuery(new MongoId($searchID));

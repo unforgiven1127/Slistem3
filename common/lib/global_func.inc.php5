@@ -3905,6 +3905,19 @@ var_dump($query);*/
 
     $result = $db_result->getAll();
 
+    $where = array( '$and' => array(
+        array('table' => $company_history),
+        array('cp_pk' => (int)$candidate_id),
+        array('flag' => 'a')
+        ) );
+
+    $newLogs = getMongoLog($where);
+    $newLogs = iterator_to_array($newLogs, false);
+
+    $mergedArray = array_merge($result, $newLogs);
+    $result = $mergedArray;
+    uasort($result, sort_multi_array_by_value('date', 'reverse'));
+
     return $result;
   }
 
