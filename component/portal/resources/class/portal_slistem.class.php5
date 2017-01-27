@@ -211,7 +211,7 @@ class CPortalSlistemEx extends CPortalEx
             $sHTML.= $this->_displayActivity($asActivity, 'Searches');
 
             $asActivity = array();
-            //$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-002', null, null, null, 15);
+            $asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-002', null, null, null, 15);
             $sHTML.= $this->_displayActivity($asActivity, 'Folder');
 
           $sHTML.= $oDisplay->getBlocEnd();
