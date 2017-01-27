@@ -57,7 +57,7 @@ class CQuickSearch
     $bWide = (bool)getValue('qs_wide', 0);
     $sNameFormat = getValue('qs_name_format');
     $sSearchId = getValue('searchId');
-
+ChromePhp::log('SEARCH ID');
     if($bWide)
       $sWildcard = '%';
     else
