@@ -3095,7 +3095,7 @@ ChromePhp::log($exploded);
         ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 ChromePhp::log($searchID);
-        $savedQuery = getLoggedQuery($searchID);
+        $savedQuery = getLoggedQuery((int)$searchID);
 ChromePhp::log($savedQuery);
         $sQuery = $savedQuery[0]['action'];
 
@@ -3351,7 +3351,7 @@ ChromePhp::log($exploded);
 
         ChromePhp::log('HERE 2');
         ChromePhp::log($searchID);
-        $savedQuery = getLoggedQuery($searchID);
+        $savedQuery = getLoggedQuery((int)$searchID);
         $sQuery = $savedQuery[0]['action'];
 
         $oDbResult = $oDb->ExecuteQuery($sQuery);
