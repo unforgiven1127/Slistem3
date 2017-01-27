@@ -1027,6 +1027,7 @@ function _live_dump($pvTrace, $psTitle = null)
   //SearchHistory functions
   function manageSearchHistory($psGuid='', $psType='', $pbForceNew = false)
   {
+    ChromePhp::log('manageSearchHistory');
     //starts with maintenance: keep session array size under 50 for every component/type
     if(isset($_SESSION['searchHistory'][$psGuid][$psType]) && count($_SESSION['searchHistory'][$psGuid][$psType]) > 50)
     {
@@ -3925,8 +3926,6 @@ var_dump($query);*/
 
   function getLoggedQuery($searchID)
   {
-    ChromePhp::log('getLoggedQuery');
-    ChromePhp::log($searchID);
     /*$oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM login_system_history lhs WHERE lhs.login_system_historypk = '".$searchID."'";
