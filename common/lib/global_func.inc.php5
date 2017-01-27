@@ -3906,7 +3906,7 @@ var_dump($query);*/
     $result = $db_result->getAll();
 
     $where = array( '$and' => array(
-        array('table' => $company_history),
+        array('table' => 'company_history'),
         array('cp_pk' => (int)$candidate_id),
         array('flag' => 'a')
         ) );
