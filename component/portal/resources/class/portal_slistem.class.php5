@@ -202,8 +202,8 @@ class CPortalSlistemEx extends CPortalEx
 
           $sHTML.= $oDisplay->getBlocStart('', array('class' => 'slider_mode_inner', 'current-position' => 0));
 
-            $asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001', CONST_ACTION_VIEW, null, null, 15);
-            //$asActivity = array();
+            //$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001', CONST_ACTION_VIEW, null, null, 15);
+            $asActivity = array('test'=>'test');
             $sHTML.= $this->_displayActivity($asActivity, 'Candidates');
 
             //$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001',
