@@ -270,6 +270,7 @@ class CAddressbookEx extends CAddressbook
               $asActions['ppaa'][] = array('picture' => $sPictureMenuPath.'ct_add_32.png','title'=>'Add Connection', 'url' => $this->coPage->getUrl($this->_getUid(), CONST_ACTION_ADD, CONST_AB_TYPE_CONTACT));
 
               $sSearchId = getValue('searchId');
+              ChromePhp::log('SEARCH ID');
               $sURL = $this->coPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_AB_TYPE_CONTACT, 0, array('searchId' => $sSearchId, 'sortfield' => 'id'));
               $asActions['ppaasort'][] = array('picture' => $sPictureMenuPath.'list_sort_desc_32.png','title'=>'Sort by date', 'url' => 'javascript:;', 'option' => array('onclick'=> ' AjaxRequest(\''.$sURL.'\', \'body\', \'\', \'contactListContainer\'); '));
               $asActions['ppas'][] = array('picture' => CONST_PICTURE_MENU_SEARCH, 'title' => 'Search connections', 'url' => 'javascript:;', 'option' => array('onclick' => '$(\'.searchContainer\').fadeToggle();') );
