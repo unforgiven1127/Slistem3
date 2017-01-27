@@ -3925,6 +3925,7 @@ var_dump($query);*/
 
   function getLoggedQuery($searchID)
   {
+    ChromePhp::log('getLoggedQuery');
     ChromePhp::log($searchID);
     /*$oDB = CDependency::getComponentByName('database');
 
