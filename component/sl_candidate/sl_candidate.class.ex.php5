@@ -3091,6 +3091,7 @@ class CSl_candidateEx extends CSl_candidate
 
       if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       {
+        ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 
         $savedQuery = getLoggedQuery($searchID);
@@ -3345,6 +3346,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $searchID = $exploded[1];
 
+        ChromePhp::log('HERE 2');
         $savedQuery = getLoggedQuery($searchID);
         $sQuery = $savedQuery[0]['action'];
 
