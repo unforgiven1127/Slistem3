@@ -3979,7 +3979,7 @@ var_dump($query);*/
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
     $orderBy = '';
-    $limit = '17';
+    $limit = '10';
     $logs = getMongoLog($where,$orderBy,$limit);
 ////ChromePhp::log($logs);
 
