@@ -172,6 +172,7 @@ class CDatabaseEx extends CDatabase
     $time_post = microtime(true);
     $endT = strtotime("now");
     $exec_time = $endT - $startT;
+
     $sDateEnd = date('Y-m-d H:i:s');
 
     $fark = $sDateEnd - $sDateStart;
