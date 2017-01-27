@@ -4580,7 +4580,7 @@ var_dump($query);*/
 
       $where = array( '$and' => array(
         array('userfk' => $user_id),
-        array('date' => $controlDate),
+        array('date' => array('$gte' => $controlDate)),
           array( '$or' => array(
             array('action' => new MongoRegex("/created a new character note/")),
             array('action' => new MongoRegex("/created a new email note/")),

@@ -69,6 +69,7 @@ class CDatabaseEx extends CDatabase
   {
     $time_pre = microtime(true);
     $startT = strtotime("now");
+    $sDateStart = date('Y-m-d H:i:s');
     //the function should always return an dbResult object
     $oDbResult = new CDbResult();
     $fTimeEnd = $fTimeStart = 0;
@@ -171,9 +172,12 @@ class CDatabaseEx extends CDatabase
     $time_post = microtime(true);
     $endT = strtotime("now");
     $exec_time = $endT - $startT;
+    $sDateEnd = date('Y-m-d H:i:s');
+
+    $fark = $sDateEnd - $sDateStart;
 
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n".$exec_time."\n\n\n";
+    $txt = $psQuery."\n".$exec_time." - start: ".$sDateStart." - end: ".$sDateEnd."\n\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
 
     $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
