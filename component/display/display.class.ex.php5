@@ -1958,13 +1958,13 @@ class CDisplayEx extends CDisplay
 
   public function render($filename, $data = array(),$fullPath = '')
   {
-    ChromePhp::log($fullPath);
+    //ChromePhp::log($fullPath);
     $file = __DIR__.'/resources/html/'.$filename.'.php';
 
     if($fullPath != '')
     {
       $file = $fullPath;
-      ChromePhp::log($file);
+      //ChromePhp::log($file);
     }
 
     try

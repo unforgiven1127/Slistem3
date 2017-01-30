@@ -4051,6 +4051,10 @@ class CSl_statEx extends CSl_stat
       {
         $nextloop = $_GET['nextloop'];
       }
+      if($nextloop == 0)
+      {
+        $nextloop = 2;
+      }
 
       $loopInformation = $revenueChartLoop[$nextloop];
       $loopInformation = explode('-',$loopInformation);
@@ -4359,9 +4363,7 @@ class CSl_statEx extends CSl_stat
         $data = array();
         //$myfile = fopen($localPath, "a");
         $ret = file_get_contents($localPath);
-        $html = $this->_oDisplay->render($localPath, $data,$localPath);
-        //$html = $ret;
-        //$html = $ret;
+        $html = $this->_oDisplay->render($localPath, $data, $localPath);
       }
 
       return $html;
