@@ -5544,8 +5544,8 @@ function sort_multi_array_by_value($field, $order = 'natural')
 function get_revenue_chart_loop()
 {
   $loop = array();
-  $loop[0] = '2016-consultant_revenue_chart';//OK
-  $loop[1] = '2016-researcher_revenue_chart';//OK
+  //$loop[0] = '2016-consultant_revenue_chart';//OK
+  //$loop[1] = '2016-researcher_revenue_chart';//OK
   $loop[2] = '2017-consultant_revenue_chart';//OK
   $loop[3] = '2017-researcher_revenue_chart';//OK
   $loop[4] = '2016-totals_chart_ordered';//OK

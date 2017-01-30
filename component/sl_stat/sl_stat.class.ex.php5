@@ -4045,7 +4045,8 @@ class CSl_statEx extends CSl_stat
       ////ChromePhp::log('get_revenue_chart');
       $revenueChartLoop = get_revenue_chart_loop();
       ////ChromePhp::log($revenueChartLoop);
-      $nextloop = 0;
+      //$nextloop = 0;
+      $nextloop = 2;
       if(isset($_GET['nextloop']))
       {
         $nextloop = $_GET['nextloop'];
