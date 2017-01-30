@@ -4366,7 +4366,7 @@ class CSl_statEx extends CSl_stat
         $html = $this->_oDisplay->render($localPath, $data, $localPath);
         //$html = $ret;
       }
-
+ChromePhp::log($html);
       return $html;
     }
 
