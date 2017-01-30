@@ -4057,7 +4057,7 @@ class CSl_statEx extends CSl_stat
       $loopYear = $loopInformation[0];
       $loopChart = $loopInformation[1];
 
-      $fileName = '/reports/'.$loopChart.'.txt';
+      $fileName = '/reports/'.$loopChart.'.php';
       $localPath = __DIR__.$fileName;
       $fileFlag = file_exists($localPath);
 
@@ -4342,7 +4342,7 @@ class CSl_statEx extends CSl_stat
           $html = $this->_oDisplay->render($loopChart, $data);
         }
 
-        $fileName = '/reports/'.$loopChart.'.txt';
+        $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
 
@@ -4352,7 +4352,7 @@ class CSl_statEx extends CSl_stat
 
       else
       {
-        $fileName = '/reports/'.$loopChart.'.txt';
+        $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
 
