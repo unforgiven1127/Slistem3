@@ -4060,7 +4060,9 @@ class CSl_statEx extends CSl_stat
       $fileName = '/reports/'.$loopChart.'.txt';
       $localPath = __DIR__.$fileName;
       $fileFlag = file_exists($localPath);
-      ChromePhp::log($fileFlag);
+      
+      $sDate = date('H:i:s');
+      ChromePhp::log($sDate);
 
       $nextloop++;
       if($nextloop > 6)// burasi duzelecek
