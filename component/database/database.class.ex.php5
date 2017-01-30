@@ -180,7 +180,7 @@ class CDatabaseEx extends CDatabase
     $myfile = fopen("sqlTrack.txt", "a");
     $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
-    if($exec_time >= 1)
+    if($exec_time >= 5)
     {
       $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
     }
