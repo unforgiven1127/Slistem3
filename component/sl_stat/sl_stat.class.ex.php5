@@ -4062,10 +4062,11 @@ class CSl_statEx extends CSl_stat
       $fileFlag = file_exists($localPath);
 
       $sDate = date('H:i:s');
-      //ChromePhp::log($sDate);
+      ChromePhp::log($fileFlag);
 
       if(!$fileFlag || ($sDate >= '16:00:00' && $sDate <= '16:15:00'))
       {
+        ChromePhp::log('IN');
         $nextloop++;
         if($nextloop > 6)// burasi duzelecek
         {
