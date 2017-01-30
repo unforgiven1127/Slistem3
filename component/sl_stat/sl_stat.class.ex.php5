@@ -4066,8 +4066,10 @@ class CSl_statEx extends CSl_stat
 
       if($fileFlag)
       {
-        $ret = file_get_contents($localPath);
-        return $ret;
+        //$ret = file_get_contents($localPath);
+        $data = array('test' => 'test');
+        $html = $this->_oDisplay->render($localPath, $data, $localPath);
+        return $html;
       }
 
       $nextloop++;
