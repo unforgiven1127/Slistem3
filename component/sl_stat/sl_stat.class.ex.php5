@@ -4331,6 +4331,7 @@ class CSl_statEx extends CSl_stat
       {
         $html = $this->_oDisplay->render($loopChart, $data);
       }
+      ChromePhp::log('TEST');
 
       $fileName = '/reports/'.$loopChart.'txt';
       $myfile = fopen($fileName, "a");
