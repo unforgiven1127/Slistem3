@@ -4070,7 +4070,7 @@ class CSl_statEx extends CSl_stat
         $nextloop++;
         if($nextloop > 6)// burasi duzelecek
         {
-          $nextloop = 0;
+          $nextloop = 2;//2016 lari kaldirdigimiz icin
         }
 
         $this->cbWatercooler = (bool)getValue('watercooler');
