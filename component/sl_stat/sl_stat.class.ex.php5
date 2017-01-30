@@ -4039,7 +4039,7 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-      ChromePhp::log('get_revenue_chart');
+      //ChromePhp::log('get_revenue_chart');
       //echo 'test'; // mca MCA
       //exit;
       ////ChromePhp::log('get_revenue_chart');
@@ -4062,7 +4062,7 @@ class CSl_statEx extends CSl_stat
       $fileFlag = file_exists($localPath);
 
       $sDate = date('H:i:s');
-      ChromePhp::log($fileFlag);
+      ChromePhp::log($loopChart);
 
       if(!$fileFlag || ($sDate >= '16:00:00' && $sDate <= '16:15:00'))
       {
@@ -4352,6 +4352,7 @@ class CSl_statEx extends CSl_stat
 
       else
       {
+        ChromePhp::log('ELSE');
         $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
