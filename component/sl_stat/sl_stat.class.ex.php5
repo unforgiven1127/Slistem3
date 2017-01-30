@@ -4342,7 +4342,7 @@ class CSl_statEx extends CSl_stat
           $html = $this->_oDisplay->render($loopChart, $data);
         }
 
-        $fileName = '/reports/'.$loopChart;
+        $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
 
