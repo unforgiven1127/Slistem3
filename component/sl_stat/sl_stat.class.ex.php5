@@ -4336,7 +4336,7 @@ class CSl_statEx extends CSl_stat
 
       
 
-      $fileName = '/reports/'.$loopChart.'txt';
+      $fileName = '/reports/'.$loopChart.'.txt';
 
       $localPath = __DIR__.$fileName;
       ChromePhp::log($localPath);
