@@ -4329,6 +4329,7 @@ class CSl_statEx extends CSl_stat
       //$html = $this->_oDisplay->render('revenue_chart', $data);
       if($isRevenue)
       {
+        ChromePhp::log('isRevenue');
         $html = $this->_oDisplay->render($loopChart, $data);
       }
       ChromePhp::log('TEST');
