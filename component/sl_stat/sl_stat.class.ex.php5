@@ -4359,7 +4359,7 @@ class CSl_statEx extends CSl_stat
 
         //$myfile = fopen($localPath, "a");
         $ret = file_get_contents($localPath);
-        $html = $this->_oDisplay->render($ret);
+        $html = $this->_oDisplay->render($localPath);
         //$html = $ret;
       }
 
