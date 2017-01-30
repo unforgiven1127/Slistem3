@@ -4353,13 +4353,13 @@ class CSl_statEx extends CSl_stat
       else
       {
         ChromePhp::log('ELSE');
-        $fileName = '/reports/'.$loopChart;
+        $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
 
         //$myfile = fopen($localPath, "a");
         $ret = file_get_contents($localPath);
-        $html = $this->_oDisplay->render($localPath);
+        $html = $ret;
         //$html = $ret;
       }
 
