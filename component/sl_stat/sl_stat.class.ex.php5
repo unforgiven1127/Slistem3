@@ -4335,6 +4335,7 @@ class CSl_statEx extends CSl_stat
       $fileName = '/reports/'.$loopChart.'txt';
       $myfile = fopen($fileName, "a");
       $ret = file_put_contents($fileName, $txt);
+      ChromePhp::log($ret);
 
       return $html;
     }
