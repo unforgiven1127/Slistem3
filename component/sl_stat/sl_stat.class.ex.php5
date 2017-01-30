@@ -4332,9 +4332,9 @@ class CSl_statEx extends CSl_stat
         $html = $this->_oDisplay->render($loopChart, $data);
       }
 
-      /*$fileName = '/reports/'.$loopChart.'txt';
+      $fileName = '/reports/'.$loopChart.'txt';
       $myfile = fopen($fileName, "a");
-      $ret = file_put_contents($fileName, $txt);*/
+      $ret = file_put_contents($fileName, $txt);
 
       return $html;
     }
