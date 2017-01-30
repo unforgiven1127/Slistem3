@@ -4057,6 +4057,11 @@ class CSl_statEx extends CSl_stat
       $loopYear = $loopInformation[0];
       $loopChart = $loopInformation[1];
 
+      $fileName = '/reports/'.$loopChart.'.txt';
+      $localPath = __DIR__.$fileName;
+      $fileFlag = file_exists($localPath);
+      ChromePhp::log($fileFlag);
+
       $nextloop++;
       if($nextloop > 6)// burasi duzelecek
       {
@@ -4329,20 +4334,15 @@ class CSl_statEx extends CSl_stat
       //$html = $this->_oDisplay->render('revenue_chart', $data);
       if($isRevenue)
       {
-        ChromePhp::log('isRevenue');
         $html = $this->_oDisplay->render($loopChart, $data);
       }
-      ChromePhp::log('TEST');
-
-      
 
       $fileName = '/reports/'.$loopChart.'.txt';
 
       $localPath = __DIR__.$fileName;
-      ChromePhp::log($localPath);
+
       $myfile = fopen($localPath, "a");
       $ret = file_put_contents($localPath, $html);
-      ChromePhp::log($ret);
 
       return $html;
     }
