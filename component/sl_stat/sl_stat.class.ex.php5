@@ -4356,9 +4356,9 @@ class CSl_statEx extends CSl_stat
         $fileName = '/reports/'.$loopChart.'.php';
 
         $localPath = __DIR__.$fileName;
-
+        $data = array();
         //$myfile = fopen($localPath, "a");
-        $ret = file_get_contents($localPath);
+        $ret = file_get_contents($localPath,$data,$localPath);
         $html = $ret;
         //$html = $ret;
       }
