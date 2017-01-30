@@ -4039,7 +4039,7 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-      ////ChromePhp::log('get_revenue_chart');
+      ChromePhp::log('get_revenue_chart');
       //echo 'test'; // mca MCA
       //exit;
       ////ChromePhp::log('get_revenue_chart');
