@@ -1956,9 +1956,15 @@ class CDisplayEx extends CDisplay
     return null;
   }
 
-  public function render($filename, $data = array())
+  public function render($filename, $data = array(),$fullPath = '')
   {
     $file = __DIR__.'/resources/html/'.$filename.'.php';
+
+    if($fullPath != '')
+    {
+      $file = $fullPath;
+      ChromePhp::log($file);
+    }
 
     try
     {
