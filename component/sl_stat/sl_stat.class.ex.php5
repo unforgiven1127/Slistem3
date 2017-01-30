@@ -4060,6 +4060,16 @@ class CSl_statEx extends CSl_stat
       $loopYear = $loopInformation[0];
       $loopChart = $loopInformation[1];
 
+      $fileName = '/reports/'.$loopChart.'.php';
+      $localPath = __DIR__.$fileName;
+      $fileFlag = file_exists($localPath);
+
+      if($fileFlag)
+      {
+        $ret = file_get_contents($localPath);
+        return $ret;
+      }
+
       $nextloop++;
       if($nextloop > 6)// burasi duzelecek
       {
