@@ -4350,7 +4350,16 @@ class CSl_statEx extends CSl_stat
         $ret = file_put_contents($localPath, $html);
       }
 
-      
+      else
+      {
+        $fileName = '/reports/'.$loopChart.'.txt';
+
+        $localPath = __DIR__.$fileName;
+
+        //$myfile = fopen($localPath, "a");
+        $ret = file_get_contents($localPath);
+        $html = $ret;
+      }
 
       return $html;
     }
