@@ -4073,7 +4073,7 @@ var_dump($query);*/
 
   function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
-    $startT = strtotime("now");
+    //$startT = strtotime("now");
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
@@ -4120,11 +4120,11 @@ var_dump($query);*/
         //$returnArray[] = $log;
     }*/
 
-    $endT = strtotime("now");
-    $exec_time = $endT - $startT;
+    //$endT = strtotime("now");
+    //$exec_time = $endT - $startT;
 
-    ChromePhp::log('EXECUTION TIME');
-    ChromePhp::log($exec_time);
+    //ChromePhp::log('EXECUTION TIME');
+    //ChromePhp::log($exec_time);
 
     return $allLogs;
   }
