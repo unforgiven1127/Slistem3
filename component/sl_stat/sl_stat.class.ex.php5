@@ -4526,6 +4526,7 @@ class CSl_statEx extends CSl_stat
       $fileName = '/reports/totals_chart_ordered_KPI.php';
       $localPath = __DIR__.$fileName;
       $fileFlag = file_exists($localPath);
+      $generatedKPIsCount = 0;
       if($fileFlag)
       {
         $generatedKPIsCount = 1;
