@@ -2182,13 +2182,13 @@ class CSl_candidateEx extends CSl_candidate
 
       $orderBy = '';
       $table = 'logs';
-/*      $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
+      $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
       $newLogs = iterator_to_array($newLogs, false);
 
 
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
-      uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));*/
+      uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
 
 /*foreach ($asHistory as $key => $value)
 {
