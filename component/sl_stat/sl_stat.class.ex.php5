@@ -4347,6 +4347,13 @@ class CSl_statEx extends CSl_stat
       else
       {
         $data = array('test' => 'test');
+        if($loopChart == 'totals_chart_ordered')
+        {
+          $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
+          $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
+
+          $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
+        }
         $html = $this->_oDisplay->render($localPath, $data, $localPath);
       }
 
