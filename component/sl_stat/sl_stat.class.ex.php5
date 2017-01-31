@@ -4083,6 +4083,7 @@ class CSl_statEx extends CSl_stat
         //add class to hide everything except charts
         $this->_oPage->addCssFile($this->getResourcePath().'/css/watercooler.css');
       }
+      $this->_oPage->addCssFile($this->getResourcePath().'/css/revenue.css');
 
       if(!$fileFlag)
       {
@@ -4296,7 +4297,6 @@ class CSl_statEx extends CSl_stat
           $revenue_data = $this->_getModel()->get_revenue_data($year);
         }
 
-        $this->_oPage->addCssFile($this->getResourcePath().'/css/revenue.css');
 
         $data = array('revenue_data' => $revenue_data, 'location' => $location, 'year' => $year, 'row_number_rank' => 1, 'total_paid' => 0,
           'total_signed' => 0, 'total_placed' => 0, 'decimals' => 0, 'display_object' => $this->_oDisplay, 'url' => $url,'swap_time' => $swap_time,'nextloop' => $nextloop
