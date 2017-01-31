@@ -4523,7 +4523,7 @@ class CSl_statEx extends CSl_stat
       $data = array();
       $submit_totals = getValue('submit_totals');
 
-      $fileName = '/reports/totals_chart_ordered.php';
+      $fileName = '/reports/totals_chart_ordered_KPI.php';
       $localPath = __DIR__.$fileName;
       $fileFlag = file_exists($localPath);
       if($fileFlag)
@@ -5863,6 +5863,9 @@ class CSl_statEx extends CSl_stat
       header_remove('Set-Cookie');
 
       $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+
+      $myfile = fopen($localPath, "a");
+      $ret = file_put_contents($localPath, $html);
 
       return $html;
     }
