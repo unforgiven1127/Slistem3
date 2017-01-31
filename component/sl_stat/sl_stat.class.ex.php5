@@ -4085,7 +4085,9 @@ class CSl_statEx extends CSl_stat
       }
       $this->_oPage->addCssFile($this->getResourcePath().'/css/revenue.css');
 
-      if(!$fileFlag)
+      $sDate = date('H:i:s');
+
+      if(!$fileFlag || ($sDate >= '16:00:00' && $sDate <= '16:15:00'))
       {
         if (!is_numeric($year))
         {
@@ -4345,7 +4347,7 @@ class CSl_statEx extends CSl_stat
         $ret = file_put_contents($localPath, $html);
       }
       else
-      {
+      {//pull chart from created file
         //ChromePhp::log($loopChart);
         $data = array('test' => 'test');
         if($loopChart == 'totals_chart_ordered')
