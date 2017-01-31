@@ -181,7 +181,7 @@ class CDatabaseEx extends CDatabase
     $user_id = $oLogin->getUserPk();
 
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd." - user: ".$user_id." \n----------------------------------------------------------------------------------\n\n";
+    $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd." - USER: ".$user_id." \n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
     if($exec_time >= 3) //if sql takes longer than 5sec.
     {
