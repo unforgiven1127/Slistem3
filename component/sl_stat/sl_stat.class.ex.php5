@@ -4346,6 +4346,7 @@ class CSl_statEx extends CSl_stat
       }
       else
       {
+        ChromePhp::log($loopChart);
         $data = array('test' => 'test');
         if($loopChart == 'totals_chart_ordered')
         {
