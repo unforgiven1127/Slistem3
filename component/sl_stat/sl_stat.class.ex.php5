@@ -4523,6 +4523,14 @@ class CSl_statEx extends CSl_stat
       $data = array();
       $submit_totals = getValue('submit_totals');
 
+      $fileName = '/reports/totals_chart_ordered.php';
+      $localPath = __DIR__.$fileName;
+      $fileFlag = file_exists($localPath);
+      if($fileFlag)
+      {
+        $generatedKPIsCount = 1;
+      }
+
       if($nextloop != '666')
       {
         $generatedKPIsCount = 0;
@@ -5827,16 +5835,21 @@ class CSl_statEx extends CSl_stat
       }
       else
       {
-        $json_from_db = $generatedKPIs[0]['json_data'];
-        $stats_data = json_decode($json_from_db, true);
+        //$json_from_db = $generatedKPIs[0]['json_data'];
+        //$stats_data = json_decode($json_from_db, true);
 
-        $candidate_from_db = $generatedKPIs[1]['json_data'];
-        $allCanidatesArray = json_decode($candidate_from_db, true);
+        //$candidate_from_db = $generatedKPIs[1]['json_data'];
+        //$allCanidatesArray = json_decode($candidate_from_db, true);
 
         $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
 
         $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
+
+        $data['nextloop'] = $nextloop;
+        $html = $this->_oDisplay->render($localPath, $data, $localPath);
+        return $html;
+
       }
 
       $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
