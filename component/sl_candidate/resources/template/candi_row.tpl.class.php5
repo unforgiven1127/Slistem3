@@ -110,41 +110,19 @@ class CCandi_row extends CTemplate
 
 
     $candidateLastStatus = getLastStatus($candidate_id);
-    $statusGroup = array();
-    $groupFlag = true;
-    foreach ($candidateLastStatus as $key => $value)
+    if(isset($candidateLastStatus[0]))
     {
-      if(!isset($statusGroup[$value['positionfk']]))
+      $lastStatus = $candidateLastStatus[0]['status'];
+      if($lastStatus == 200 && isset($candidateLastStatus[1]['status']) && $candidateLastStatus[1]['status'] == 101)
       {
-        $statusGroup[$value['positionfk']] = array();
-      }
-      $statusGroup[$value['positionfk']][] = $value['status'];
-    }
-    foreach ($statusGroup as $key => $value)
-    {
-      if($value[0] != 200)
-      {
-        $lastStatus = $value[0];
-        $groupFlag = false;
+        $lastStatus =$candidateLastStatus[1]['status'];
       }
     }
-    ////ChromePhp::log($statusGroup);
-    if($groupFlag)
+    else
     {
-      if(isset($candidateLastStatus[0]))
-      {
-        $lastStatus = $candidateLastStatus[0]['status'];
-        if($lastStatus == 200 && isset($candidateLastStatus[1]['status']) && $candidateLastStatus[1]['status'] == 101)
-        {
-          $lastStatus =$candidateLastStatus[1]['status'];
-        }
-      }
-      else
-      {
-        $lastStatus = 0;
-      }
+      $lastStatus = 0;
     }
-    ////ChromePhp::log($lastStatus);
+    //ChromePhp::log($lastStatus);
     //if(!empty($pasData['_pos_status']))
     if($lastStatus > 0)
     {
@@ -182,25 +160,17 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
-        ////ChromePhp::log('EXPIRED');
         $asOption['class'].= ' tplCandi_status tplCandi_status_151';
         $asOption['title'] = 'Last action has expired';
         $sValue = ' expire';
         $nValue = 3;
       }
-      elseif($lastStatus == 200)
+      else
       {
         $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
         $sValue = ' inactive';
         $asOption['title'] = 'Candidate inactive: expired, stalled, fallen';
         $nValue = 2;
-      }
-      else
-      {
-        $asOption['class'].= ' ';
-        $sValue = ' ';
-        $asOption['title'] = '';
-        $nValue = 0;
       }
 
 

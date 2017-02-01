@@ -3204,8 +3204,8 @@ class CSl_candidateEx extends CSl_candidate
 
       $asInsert['content'] = $sNews;
 
-      //$this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
-      //$nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
+      $this->_getModel()->deleteByFk($asInsert['companyfk'], 'sl_company_rss', 'companyfk');
+      $nPk = $this->_getModel()->add($asInsert, 'sl_company_rss');
 
       if(!$nPk)
       {

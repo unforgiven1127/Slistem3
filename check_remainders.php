@@ -1,6 +1,6 @@
 <?php
 
-/*define('DB_NAME_SLISTEM','slistem');
+define('DB_NAME_SLISTEM','slistem');
 define('DB_SERVER_SLISTEM', '127.0.0.1');
 define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
@@ -43,7 +43,7 @@ while($data = mysql_fetch_assoc($slistemQuery))
     $updateQuery = "update notification set flag = 'p' where notificationpk = '".$notificatinpk."' ";
     $updateQuery = mysql_query($updateQuery);
     //$updateData = mysql_fetch_assoc($updateQuery);
-}*/
+}
 
 
 ?>

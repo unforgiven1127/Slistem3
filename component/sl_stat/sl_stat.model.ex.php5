@@ -573,10 +573,10 @@ order by m.candidatefk
         {echo '<br><br>';
         echo '<br><br>';
         echo '<br><br>';
-          ////ChromePhp::log($met_candidates_array[$meeting['candidatefk']]['times_met']);
-          ////ChromePhp::log($temp_validation_date);
-          ////ChromePhp::log($temp_validation_date);
-          ////ChromePhp::log($flip_user_ids[$meeting[$group_switch]]);
+          //ChromePhp::log($met_candidates_array[$meeting['candidatefk']]['times_met']);
+          //ChromePhp::log($temp_validation_date);
+          //ChromePhp::log($temp_validation_date);
+          //ChromePhp::log($flip_user_ids[$meeting[$group_switch]]);
           var_dump($meeting);echo '<br>';
           var_dump($met_candidates_array[$meeting['candidatefk']]['times_met']);echo '<br>';
           var_dump($temp_validation_date);echo '<br>';
@@ -1844,7 +1844,7 @@ order by m.candidatefk
 //echo '<br><br>';
 
     $oDbResult = array();
-////ChromePhp::log($query);
+//ChromePhp::log($query);
     $oDbResult = $this->oDB->executeQuery($query);
     $read = $oDbResult->readFirst();
 

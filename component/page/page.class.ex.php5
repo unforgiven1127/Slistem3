@@ -212,12 +212,7 @@ class CPageEx extends CPage
 
   public function getPage($psUid = '', $psAction = '', $psType = '', $pnPK = 0, $psMode = 'pg')
   {
-    ////ChromePhp::log($psUid);
-    ////ChromePhp::log($psAction);
-    ////ChromePhp::log($psType);
-    ////ChromePhp::log($pnPK);
-    ////ChromePhp::log($psMode);
-
+    //ChromePhp::log('getPage');
     if(!assert('is_string($psUid)'))
       return '';
     if(!assert('is_string($psAction)'))
@@ -271,7 +266,15 @@ class CPageEx extends CPage
     $bIsLogged = $oLogin->isLogged();
     $this->cbIsLogged = $bIsLogged;
 
-    $logout = check_session_expiry();
+    $user_id = $oLogin->getUserPk();
+    if($user_id == 2)
+    {//watercooler does not expire
+      $logout = false;
+    }
+    else
+    {
+      $logout = check_session_expiry();
+    }
 
     if ($logout)
     {
@@ -366,7 +369,8 @@ class CPageEx extends CPage
         return  $this->_getPageHTML($this->csUid, $sComponentFullHtml, $bIsLogged, $asMeta, $asPageParam);
       }
     }
-
+//ChromePhp::log($this->csMode); //revenue board da pn geliyor
+//ChromePhp::log(CONST_URL_PARAM_PAGE_CRON); // cron isteniyor
     switch($this->csMode)
     {
 
@@ -408,17 +412,21 @@ class CPageEx extends CPage
         $oLogin->setCronUser();
         $this->coRight->initializeRights(true);
 
-
         $sCpUid = getValue('custom_uid');
         $bSilent = (bool)getValue('cronSilent', 0);
-
+//ChromePhp::log($sCpUid);
         if(!$bSilent)
           echo 'Cron started at '.date('Y-m-d H:i:s').' '. microtime(true).'<br /><br />';
 
         $asComponentUid = CDependency::getComponentUidByInterface('has_cron');
-
+//ChromePhp::log($asComponentUid);
+//ChromePhp::log($bSilent);
+        $oComponenent = CDependency::getComponentByUid('333-333'); // php versiyonu guncellenene kadar
+        $oComponenent->getCronJob($bSilent);
         foreach($asComponentUid as $sUid)
         {
+          //ChromePhp::log($sUid);
+          //ChromePhp::log($sCpUid);
           if(empty($sCpUid) || $sCpUid == $sUid)
           {
             if(!$bSilent)
@@ -709,14 +717,15 @@ class CPageEx extends CPage
       return false;
 
     $sURL = $this->getAjaxUrl($this->csUid, CONST_ACTION_ADD, CONST_PAGE_TYPE_SETTING);
+    $sURL = str_replace('&','&amp;',$sURL);
     $this->addCustomJs(
-    "
+    '
         function updatePhpWindowSize()
         {
-          //console.log('update page size => '+$(window).height()+' / '+$(window).width());
-          $.get('".$sURL."&height='+$(window).height()+'&width='+$(window).width());
+          //console.log("update page size => "+$(window).height()+" / "+$(window).width());
+          $.get("'.$sURL.'&height="+$(window).height()+"&width="+$(window).width());
         }
-    ");
+    ');
 
     //1. If we receive the size in ajax, we save it in session
     if($psUid == $this->csUid && $psAction == CONST_ACTION_ADD && $psType == CONST_PAGE_TYPE_SETTING)

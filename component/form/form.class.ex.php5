@@ -104,7 +104,6 @@ class CFormEx extends CForm
 
   public function setFormParams($psFormName = '', $pbAjax = false, $pasParams = array())
   {
-    ////ChromePhp::log($pasParams);
     if(!assert('is_string($psFormName)'))
       return false;
 
@@ -606,17 +605,7 @@ class CFormEx extends CForm
       if($this->cbSubmitHidden)
         $sHtml.= ' <input name="'.$replacedValue.'" type="submit" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" class="hidden"/>';
       else
-      {
-        /*if(isset($this->casFormParams['id']))
-        {
-          ////ChromePhp::log($this->casFormParams);
-          $sHtml.= ' <input name="'.$replacedValue.'" type="submit" id="'.$this->casFormParams['id'].'" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
-        }
-        else
-        {*/
-          $sHtml.= ' <input name="'.$replacedValue.'" type="submit" id="formSubmitButton" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
-        //}
-      }
+        $sHtml.= ' <input name="'.$replacedValue.'" type="submit" id="formSubmitButton" value="'.$sSubmitLabel.'" onclick="'.$sOnClick.'" />';
 
       if($this->cbFormCancelButton)
         $sHtml.= ' <input type="button" value="Cancel" onclick="window.history.go(-1)" />';

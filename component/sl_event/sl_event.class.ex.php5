@@ -796,7 +796,7 @@ class CSl_eventEx extends CSl_event
         var oConf = goPopup.getConfig();
         oConf.width = 950; oConf.height = 550;
         goPopup.setLayerFromAjax(oConf, \''.$sURL.'\');">here</a> ]</li>
-        <li>What does the candidate do -what is his profession?   </li>
+        <li>What does the candidate do -what is his profession? 	</li>
         <li>What is his scope of experience in this profession? Is he specific or broad?</li>
         <li>Is the candidate intelligent and able to solve problems or not?</li>
         <li>Can the candidate manage problems or not?</li>

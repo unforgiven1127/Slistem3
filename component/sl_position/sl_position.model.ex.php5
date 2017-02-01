@@ -103,11 +103,11 @@ class CSl_positionModelEx extends CSl_positionModel
     $sQuery.= 'WHERE (app_comp.sl_companypk = '.$pnCompanyPk.' '.$sWhere.') OR (spos.companyfk = '.$pnCompanyPk.' AND spli.status <= 100 AND spli.active = 1 ) ';
 
     if($pbActiveOnly)
-      $sQuery.= ' ORDER BY first_flag ASC,spli.sl_position_linkpk DESC ';
+      $sQuery.= ' ORDER BY first_flag DESC,spli.sl_position_linkpk DESC ';
     else
-      $sQuery.= ' ORDER BY first_flag ASC,spli.positionfk DESC, spli.date_expire DESC ';
+      $sQuery.= ' ORDER BY first_flag DESC,spli.positionfk DESC, spli.date_expire DESC ';
 
-    ////ChromePhp::log($sQuery);
+    //ChromePhp::log($sQuery);
     //echo $sQuery;
     return $this->oDB->executeQuery($sQuery);
   }
