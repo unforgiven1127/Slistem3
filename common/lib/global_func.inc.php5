@@ -3895,6 +3895,20 @@ var_dump($query);*/
     return $result;
   }
 
+  function getCompanyHistoryJustMongo()
+  {
+    $where = array( '$and' => array(
+        array('table' => 'company_history'),
+        array('cp_pk' => (int)$candidate_id),
+        array('flag' => 'a')
+        ) );
+    $newLogs = getMongoLog($where);
+
+    $newLogs = iterator_to_array($newLogs, false);
+
+    return $newLogs;
+  }
+
   function getCompanyHistory($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -4073,7 +4087,7 @@ var_dump($query);*/
 
   function getCompanyHistoryFormatted($candidate_id)
   {
-    $companyHistory = getCompanyHistory($candidate_id);
+    $companyHistory = getCompanyHistoryJustMongo($candidate_id);
 
     $html = '';
 
@@ -4087,7 +4101,7 @@ var_dump($query);*/
                   <div class='note_header'>
                   &nbsp;→&nbsp;&nbsp;
                   <span>
-                    <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
+                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
                   </span>
                   <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
                   </div>
