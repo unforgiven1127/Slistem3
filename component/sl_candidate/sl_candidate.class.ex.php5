@@ -1643,7 +1643,7 @@ ChromePhp::log($exec_time);
 
       //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
       $allActivities = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']);
-      $asActivity['content'] = $allActivities['content'];
+      $asActivity['content'] = $allActivities['html'];
       $asPosition = $this->_getPositionTab($pasCandidateData);
 
       $sActionTab = $this->_getActionTab($pasCandidateData);
