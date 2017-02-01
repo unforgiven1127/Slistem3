@@ -1205,6 +1205,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateView($pnPk, $pasRedirected = array())
     {
+$startT = strtotime("now");
       //$searchID = $_GET['searchId'];
       if(isset($_GET['searchId']))
       {
@@ -1341,6 +1342,10 @@ class CSl_candidateEx extends CSl_candidate
       $sLink = 'javascript: view_candi(\''.$sViewURL.'\'); ';
       $sName = $asCandidate['lastname'].' '.$asCandidate['firstname'];
       logUserHistory($this->csUid, $this->csAction, $this->csType, $this->cnPk, array('text' => 'view - '.$sName.' (#'.$pnPk.')', 'link' => $sLink));
+
+$endT = strtotime("now");
+$exec_time = $endT - $startT;
+ChromePhp::log($exec_time);
 
       return $sHTML;
     }
@@ -2182,13 +2187,13 @@ class CSl_candidateEx extends CSl_candidate
 
       $orderBy = '';
       $table = 'logs';
-      /*$newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
+      $newLogs = getMongoLog($where,$orderBy,$limit,$table,$skip);
       $newLogs = iterator_to_array($newLogs, false);
 
 
       $mergedArray = array_merge($asHistory, $newLogs);
       $asHistory = $mergedArray;
-      uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));*/
+      uasort($asHistory, sort_multi_array_by_value('date', 'reverse'));
 
 /*foreach ($asHistory as $key => $value)
 {
