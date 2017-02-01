@@ -4081,7 +4081,7 @@ var_dump($query);*/
     {
       $user_information = getUserInformaiton($value['userfk']);
 
-      $fullUserName = $user_information['firstname'].' '.$user_information['firstname'];
+      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
 
       $format = "<div class='entry'>
                   <div class='note_header'>
@@ -4091,7 +4091,7 @@ var_dump($query);*/
                   <span class='note_type'>Cp history</span>
                   &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
                   <span> by 
-                    <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: 8105 - email: admin@slate.co.jp ]' active='1' loginfk='101' onclick=' stp(this); '>Administrator </a>
+                    <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: 8105 - email: admin@slate.co.jp ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
                   </span>
                   <span style='margin-right:10px;' class='note_chronology'>2017-01-27 13:21</span>
                   </div>
