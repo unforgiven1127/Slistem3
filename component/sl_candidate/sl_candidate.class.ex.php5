@@ -1638,10 +1638,10 @@ ChromePhp::log($exec_time);
       }
 
 $sHTML = '';
-return $sHTML;
+
 
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
-
+return $sHTML;
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
       $asPosition = $this->_getPositionTab($pasCandidateData);
       $sActionTab = $this->_getActionTab($pasCandidateData);
