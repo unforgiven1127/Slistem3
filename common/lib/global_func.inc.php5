@@ -4081,7 +4081,7 @@ var_dump($query);*/
     {
       $user_information = getUserInformaiton($value['userfk']);
 
-       = $user_information['firstname'].' '.$user_information['firstname'];
+      $fullUserName = $user_information['firstname'].' '.$user_information['firstname'];
 
       $format = "<div class='entry'>
                   <div class='note_header'>
