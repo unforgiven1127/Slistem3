@@ -4095,7 +4095,7 @@ var_dump($query);*/
                   </span>
                   <span style='margin-right:10px;' class='note_chronology'>2017-01-27 13:21</span>
                   </div>
-                  <div class='note_content'>[company] changed from: test company number one (#103552) -&gt; to: Test &amp; Company (#54632)</div>
+                  <div class='note_content'>".$value['content']."</div>
               </div>";
 
       $html .= $format;
