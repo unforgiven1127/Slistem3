@@ -1559,7 +1559,7 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-
+ChromePhp::log('_getRightTabsFull');
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1641,7 +1641,7 @@ ChromePhp::log($exec_time);
 
       //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
       $asPosition = $this->_getPositionTab($pasCandidateData);
-      $sActionTab = $this->_getActionTab($pasCandidateData);
+      //$sActionTab = $this->_getActionTab($pasCandidateData);
 
       $asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
 
@@ -1703,7 +1703,7 @@ ChromePhp::log($exec_time);
 
 
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTabsContent'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
+          //$sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab1', $asCharacter['content'], array('class' => 'aTabContent hidden '.$sCharSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
