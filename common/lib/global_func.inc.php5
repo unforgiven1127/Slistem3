@@ -4095,7 +4095,7 @@ var_dump($query);*/
                   </span>
                   <span style='margin-right:10px;' class='note_chronology'>2017-01-27 13:21</span>
                   </div>
-                  <div class='note_content'>".$value['content']."</div>
+                  <div class='note_content'>".$value['action']."</div>
               </div>";
 
       $html .= $format;
