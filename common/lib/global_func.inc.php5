@@ -4090,9 +4090,10 @@ var_dump($query);*/
     $companyHistory = getCompanyHistoryJustMongo($candidate_id);
 
     $html = '';
-
+    $count = 0;
     foreach ($companyHistory as $key => $value)
     {
+      $count++;
       $user_information = getUserInformaiton($value['userfk']);
 
       $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
@@ -4111,7 +4112,11 @@ var_dump($query);*/
       $html .= $format;
     }
 
-    return $html;
+    $returnArray = array();
+    $returnArray['html'] = $html;
+    $returnArray['count'] = $count;
+
+    return $returnArray;
   }
 
   function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
