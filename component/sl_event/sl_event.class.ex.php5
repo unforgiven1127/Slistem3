@@ -294,7 +294,7 @@ class CSl_eventEx extends CSl_event
       }
     }
 
-    if($psNoteType == 'cp_history')
+    /*if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
       //$companyHistory = getCompanyHistory($candidate_id);
@@ -309,7 +309,7 @@ class CSl_eventEx extends CSl_event
         )
       );*/
 
-      $where = array( '$and' => array(
+      /*$where = array( '$and' => array(
         array('cp_pk' => (int)$candidate_id),
         array('table' => 'company_history')
         )
@@ -375,7 +375,7 @@ class CSl_eventEx extends CSl_event
         }
       }*/
 
-    }
+   // }
     //uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
