@@ -4175,7 +4175,7 @@ var_dump($query);*/
     return $returnArray;
   }
 
-  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
+  function getMongoLog($where = '',$orderBy = '',$limit = '100' ,$table = 'logs',$skip = 0)
   {
     //$startT = strtotime("now");
     $username = MONGO_USER;
