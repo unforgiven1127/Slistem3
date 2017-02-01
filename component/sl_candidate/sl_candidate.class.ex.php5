@@ -1651,8 +1651,8 @@ ChromePhp::log($exec_time);
       //$asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
 //return $sHTML;
 $asCpHistory['nb_result'] = 0;
-//$asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
-      $asCpHistory['content'] = getCompanyHistoryFormatted($pasCandidateData['sl_candidatepk']);
+$asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
+      //$asCpHistory['content'] = getCompanyHistoryFormatted($pasCandidateData['sl_candidatepk']);
 
       $nTotalData = $asCharacter['nb_result'] + $asNotes['nb_result'] + $asContact['nb_result'] +
               $asDocument['nb_result'] +$asPosition['nb_result'] + $asCpHistory['nb_result'];
