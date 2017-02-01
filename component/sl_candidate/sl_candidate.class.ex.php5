@@ -1559,7 +1559,8 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-
+$html = '';
+return $html;
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
