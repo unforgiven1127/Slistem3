@@ -4086,14 +4086,10 @@ var_dump($query);*/
       $format = "<div class='entry'>
                   <div class='note_header'>
                   &nbsp;→&nbsp;&nbsp;
-                  <span class='note_date'>4 days ago</span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span class='note_type'>Cp history</span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
                   <span> by 
                     <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: 8105 - email: admin@slate.co.jp ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
                   </span>
-                  <span style='margin-right:10px;' class='note_chronology'>2017-01-27 13:21</span>
+                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
                   </div>
                   <div class='note_content'>".$value['action']."</div>
               </div>";
