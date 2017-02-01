@@ -3895,7 +3895,7 @@ var_dump($query);*/
     return $result;
   }
 
-  function getCompanyHistoryJustMongo()
+  function getCompanyHistoryJustMongo($candidate_id)
   {
     $where = array( '$and' => array(
         array('table' => 'company_history'),
