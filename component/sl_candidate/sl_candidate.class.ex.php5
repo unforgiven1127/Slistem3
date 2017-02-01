@@ -1559,7 +1559,7 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-ChromePhp::log('_getRightTabsFull');
+
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1637,11 +1637,14 @@ ChromePhp::log('_getRightTabsFull');
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
       }
 
+$sHTML = '';
+return $sHTML;
+
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
-      //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
+      $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
       $asPosition = $this->_getPositionTab($pasCandidateData);
-      //$sActionTab = $this->_getActionTab($pasCandidateData);
+      $sActionTab = $this->_getActionTab($pasCandidateData);
 
       $asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
 
@@ -1703,14 +1706,14 @@ ChromePhp::log('_getRightTabsFull');
 
 
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTabsContent'));
-          //$sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
+          $sHTML.= $this->_oDisplay->getBloc('candiTab0', $sActionTab, array('class' => 'aTabContent hidden '.$sActionTabSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab1', $asCharacter['content'], array('class' => 'aTabContent hidden '.$sCharSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab2', $asContact['content'], array('class' => 'aTabContent hidden '.$sContactSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab3', $asDocument['content'], array('class' => 'aTabContent hidden '.$sDocSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab4', $asCompanyFeed['content'], array('class' => 'aTabContent hidden'));
 
-          //$sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
+          $sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
           $sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
           $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
 
