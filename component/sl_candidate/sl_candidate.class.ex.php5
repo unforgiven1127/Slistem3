@@ -1389,7 +1389,7 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsHalfed($pasCandidateData, $psClass = '', $pbLinkTabs = false)
     {
-ChromePhp::log('_getRightTabsHalfed');
+
       $sCharSelected = $sNoteSelected = 'selected';
       $sDocSelected = $sContactSelected = $sPositionSelected = $sJdSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
@@ -1559,7 +1559,7 @@ ChromePhp::log('_getRightTabsHalfed');
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-
+ChromePhp::log('_getRightTabsFull');
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
