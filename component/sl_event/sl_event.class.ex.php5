@@ -239,8 +239,7 @@ class CSl_eventEx extends CSl_event
       $sHTML.= '<a href="javascript:;" onclick="'.$sJavascript.'">'.$sLabel.'</a>';
       $sHTML.= '</div>';
     }
-$sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
-return $sHTML;
+
     if($psNoteType == 'character')
     {// girilen 6 not birlestiriliyor ve id lerini ; ile birlestiriyoruz
       $candidate_id = $pnItemPk;
@@ -298,7 +297,8 @@ return $sHTML;
     if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
-      $companyHistory = getCompanyHistory($candidate_id);
+      //$companyHistory = getCompanyHistory($candidate_id);
+      $companyHistory = array();
 
       $where = array( '$and' => array(
         array( '$or' => array(
