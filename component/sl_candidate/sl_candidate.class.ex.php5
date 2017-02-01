@@ -1649,7 +1649,7 @@ ChromePhp::log($exec_time);
       $sActionTab = $this->_getActionTab($pasCandidateData);
 
       //$asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
-//return $sHTML;
+return $sHTML;
 
 /*$asCpHistory['nb_result'] = 0;
 $asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';*/
