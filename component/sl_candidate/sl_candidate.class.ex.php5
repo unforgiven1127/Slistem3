@@ -1559,7 +1559,7 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-ChromePhp::log('_getRightTabsFull');
+
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1615,7 +1615,9 @@ ChromePhp::log('_getRightTabsFull');
         $asCharNotes['nb_result'] = '';
       }
 
-      $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
+      //$asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
+
+      $asNotes = array('nb_result' => '');
       if(empty($asNotes['nb_result']))
       {
         $sNoteSelected = '';
