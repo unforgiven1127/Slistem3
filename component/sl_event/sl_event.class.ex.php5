@@ -297,7 +297,7 @@ class CSl_eventEx extends CSl_event
     if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
-      //$companyHistory = getCompanyHistory($candidate_id);
+      $companyHistory = getCompanyHistory($candidate_id);
       $companyHistory = array();
 
       $where = array( '$and' => array(
@@ -370,7 +370,7 @@ class CSl_eventEx extends CSl_event
       }
 
     }
-    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+    //uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
