@@ -4086,8 +4086,8 @@ var_dump($query);*/
       $format = "<div class='entry'>
                   <div class='note_header'>
                   &nbsp;→&nbsp;&nbsp;
-                  <span> by 
-                    <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: 8105 - email: admin@slate.co.jp ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
+                  <span>
+                    <a href='javascript:;' class='user_link ' title='Active user [".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
                   </span>
                   <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
                   </div>
