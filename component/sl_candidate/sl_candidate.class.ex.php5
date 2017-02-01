@@ -1641,7 +1641,7 @@ ChromePhp::log($exec_time);
 
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
-      //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
+      $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
 
       $asPosition = $this->_getPositionTab($pasCandidateData);
 
@@ -1653,7 +1653,7 @@ ChromePhp::log($exec_time);
 $asCpHistory['nb_result'] = 0;
 $asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
 
-$asActivity['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
+//$asActivity['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
       /*$returnArray = getCompanyHistoryFormatted($pasCandidateData['sl_candidatepk']);
       $asCpHistory['content'] = $returnArray['html'];
       $asCpHistory['nb_result'] = $returnArray['count'];*/
@@ -2144,6 +2144,9 @@ $asActivity['content'] = '<div class="entry"><div class="note_content"><em>No en
     {
       if(!assert('is_key($pnPk)'))
         return array();
+
+      $html = getActivityListFormatted($pnPk);
+      return $html;
 
       $nActivityToDisplay = 25;
       $skip_activity = array('upd sl_candidate_profile', 'upd sl_candidate', 'upd sl_position_link', 'upd sl_candidate_rm',

@@ -3895,6 +3895,31 @@ var_dump($query);*/
     return $result;
   }
 
+  function getActivityListJustMongo($candidate_id)
+  {
+    $where = array( '$and' => array(
+        array( '$or' => array(
+            array('table' => 'sl_candidate'),
+            array('table' => 'document'),
+            array('table' => 'sl_document'),
+            array('table' => 'sl_meeting'),
+            array('table' => 'position'),
+            array('table' => 'user_history'),
+            )),
+            array( '$or' => array(
+              array('cp_pk' => (int)$pnPk),
+              array('cp_pk' => $pnPk))
+            )
+        )
+      );
+
+    $newLogs = getMongoLog($where);
+
+    $newLogs = iterator_to_array($newLogs, false);
+
+    return $newLogs;
+  }
+
   function getCompanyHistoryJustMongo($candidate_id)
   {
     $where = array( '$and' => array(
@@ -4083,6 +4108,40 @@ var_dump($query);*/
       return false;
     }
 
+  }
+
+  function getActivityListFormatted($candidate_id)
+  {
+    $activityList = getActivityListJustMongo($candidate_id);
+
+    $html = '';
+    $count = 0;
+    foreach ($activityList as $key => $value)
+    {
+      $count++;
+      $user_information = getUserInformaiton($value['userfk']);
+
+      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
+
+      $format = "<div class='entry'>
+                  <div class='note_header'>
+                  &nbsp;→&nbsp;&nbsp;
+                  <span>
+                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
+                  </span>
+                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
+                  </div>
+                  <div class='note_content'>".$value['action']."</div>
+              </div>";
+
+      $html .= $format;
+    }
+
+    $returnArray = array();
+    $returnArray['html'] = $html;
+    $returnArray['count'] = $count;
+
+    return $returnArray;
   }
 
   function getCompanyHistoryFormatted($candidate_id)
