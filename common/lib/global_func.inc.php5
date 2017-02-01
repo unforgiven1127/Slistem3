@@ -4081,7 +4081,7 @@ var_dump($query);*/
     {
       $format = "<div class='entry'>
                   <div class='note_header'>
-                  →&nbsp;&nbsp;
+                  &nbsp;→&nbsp;&nbsp;
                   <span class='note_date'>4 days ago</span>
                   &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
                   <span class='note_type'>Cp history</span>
