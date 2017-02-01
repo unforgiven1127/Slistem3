@@ -1329,7 +1329,7 @@ $startT = strtotime("now");
       $sHTML.= $this->_oDisplay->getBlocEnd();
 
       $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTopSectRight candiTabContainer'));
-      //$sHTML.= $this->_getCandidateRightTabs($asCandidate);
+      $sHTML.= $this->_getCandidateRightTabs($asCandidate);
       $sHTML.= $this->_oDisplay->getBlocEnd();
       $sHTML.= $this->_oDisplay->getFloatHack();
 
@@ -1389,7 +1389,7 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsHalfed($pasCandidateData, $psClass = '', $pbLinkTabs = false)
     {
-
+ChromePhp::log('_getRightTabsHalfed');
       $sCharSelected = $sNoteSelected = 'selected';
       $sDocSelected = $sContactSelected = $sPositionSelected = $sJdSelected = '';
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
