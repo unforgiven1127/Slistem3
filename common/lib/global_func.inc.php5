@@ -3906,10 +3906,7 @@ var_dump($query);*/
             array('table' => 'position'),
             array('table' => 'user_history'),
             )),
-            array( '$or' => array(
-              array('cp_pk' => (int)$pnPk),
-              array('cp_pk' => $pnPk))
-            )
+            array('cp_pk' => (int)$candidate_id)
         )
       );
 
