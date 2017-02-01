@@ -1637,7 +1637,7 @@ ChromePhp::log($exec_time);
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
       }
 
-$sHTML = '';
+//$sHTML = '';
 
 
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
@@ -1649,7 +1649,7 @@ $sHTML = '';
       $sActionTab = $this->_getActionTab($pasCandidateData);
 
       $asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
-return $sHTML;
+//return $sHTML;
       $nTotalData = $asCharacter['nb_result'] + $asNotes['nb_result'] + $asContact['nb_result'] +
               $asDocument['nb_result'] +$asPosition['nb_result'] + $asCpHistory['nb_result'];
 

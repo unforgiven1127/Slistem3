@@ -118,7 +118,7 @@ class CSl_eventEx extends CSl_event
 
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
-    foreach ($asNotes as $key => $note)
+    /*foreach ($asNotes as $key => $note)
     {
 
       $splitted1 = explode("Content-Type: multipart/related;",$asNotes[$key]['content']);
@@ -204,7 +204,7 @@ class CSl_eventEx extends CSl_event
 
         $asNotes[$key]['content'] = TRIM($asNotes[$key]['content']);*/
 
-    }
+    //}
 
     //$asNotes = $return['all']; // bos array donunce burada patliyor...
     //$query = $return['query'];
