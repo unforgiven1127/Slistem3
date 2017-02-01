@@ -412,7 +412,7 @@ $.TokenList = function (input, url_or_data, settings) {
     }
 
     this.add = function(item) {
-        alert(item);
+        //alert(item);
         add_token(item);
     }
 

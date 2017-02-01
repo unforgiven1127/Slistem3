@@ -203,14 +203,16 @@ class CPortalSlistemEx extends CPortalEx
           $sHTML.= $oDisplay->getBlocStart('', array('class' => 'slider_mode_inner', 'current-position' => 0));
 
             $asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001', CONST_ACTION_VIEW, null, null, 15);
+            //$asActivity = array();
             $sHTML.= $this->_displayActivity($asActivity, 'Candidates');
 
-            $asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001',
-              array(CONST_ACTION_LIST, CONST_ACTION_SEARCH), null, null, 15, 'searches');
+            /*$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-001',array(CONST_ACTION_LIST, CONST_ACTION_SEARCH), null, null, 15, 'searches');*/
+            $asActivity = array('class' => 'home_item_container slider_mode');//just a dummy array
             $sHTML.= $this->_displayActivity($asActivity, 'Searches');
 
-            $asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-002', null, null, null, 15);
-            $sHTML.= $this->_displayActivity($asActivity, 'Folder');
+            //$asActivity = array();
+            //$asActivity = $oLogin->getUserActivity($oLogin->getUserPk(), '555-002', null, null, null, 15);
+            //$sHTML.= $this->_displayActivity($asActivity, 'Folder');
 
           $sHTML.= $oDisplay->getBlocEnd();
 
@@ -364,6 +366,7 @@ Reminder linked to item', '2013-10-05 08:00:00');
     if($psTitle == "Searches")
     {
       $searchLogs = getSearchLogs($user_id);
+      //ChromePhp::log($searchLogs);
       foreach ($searchLogs as $key => $value)
       {
         $add = array();
@@ -379,12 +382,12 @@ Reminder linked to item', '2013-10-05 08:00:00');
         $add['cp_pk'] = $value['cp_pk'];
         $add['log_link'] = $value['uri'];
         $add['log_date'] = $value['date'];
-        $add['login_system_historypk'] = $value['login_system_historypk'];
+        $add['login_system_historypk'] = $value['_id'];
 
         $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
 
         $url = "var asContainer = goTabs.create('candi', '', '', 'Candidate QS');
-          AjaxRequest('".$mainPageUrl."/index.php5?uid=555-001&ppa=ppasea&ppt=candi&ppk=0&pg=ajx&searchId=".$value['login_system_historypk']."', 'body', 'quickSearchForm',  asContainer['id'], '', '', 'initHeaderManager(); ');
+          AjaxRequest('".$mainPageUrl."/index.php5?uid=555-001&ppa=ppasea&ppt=candi&ppk=0&pg=ajx&searchId=".$value['_id']."', 'body', 'quickSearchForm',  asContainer['id'], '', '', 'initHeaderManager(); ');
           goTabs.select(asContainer['number']);";
         //$sURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, -1, array('searchId' => $value['login_system_historypk']));
 

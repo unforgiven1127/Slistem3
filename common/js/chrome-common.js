@@ -355,6 +355,12 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
 
         if(!bUnloading && jqXhr.status != 0)
         {
+          //alert('test');
+          error = oJsonData['responseText'];
+          var res = error.split("{");
+          note = res[0]+'<br><br>';
+          $('#errorMsg').html(note);
+          $('#errorMsg').css("font-weight","Bold");
           //send the result to the error report form, and display the error message
           $('#dumpId').val('['+ sExtraParams +'] ['+psUrl +'] ['+pbSynch +'] ['+oAjaxSetting +'] ['+jqXhr +']');
           $('#ajaxErrorContainerId').show();

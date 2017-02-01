@@ -928,20 +928,6 @@ class CDisplayEx extends CDisplay
     <script type="text/javascript" src="/common/lib/verticalSlider/js/jquery.totemticker.js"></script>
     <script type="text/javascript" src="'.CONST_PATH_JS_COMMON.$sTime.'"></script>';
 
-    $sessionStatus = session_status();
-    //0 = PHP_SESSION_DISABLED
-    //1 = PHP_SESSION_NONE
-    //2 = PHP_SESSION_ACTIVE
-    $selfUrl = CONST_CRM_DOMAIN;
-    $sHTML.= "<script type='text/javascript'>
-
-                  var sessionStatus = ".$sessionStatus.";
-                  if(sessionStatus != 2)
-                  {
-                    window.location.href = '".$selfUrl."';
-                  }
-              </script>";
-
     $asJsFile[] = CONST_PATH_JS_JQUERY;
     $asJsFile[] = CONST_PATH_JS_JQUERYUI;
     $asJsFile[] = '/component/form/resources/js/tiny_mce/jquery.tinymce.js';
@@ -991,7 +977,7 @@ class CDisplayEx extends CDisplay
 
         $sHTML.= '<script type="text/javascript" src="/common/js/page_resize.js"></script>';
         $sHTML.= '<script type="text/javascript"> var sWideCssFile = "'.$asSetting['wide_css_file'].'";
-          var asPageParam = new Array('.$asSetting["wide_size"].');
+          var asPageParam = new Array('.$asSetting['wide_size'].');
           sizeManagement(asPageParam, '.(int)CONST_PAGE_USE_WINDOW_SIZE.'); </script>';
       }
     }
@@ -1220,6 +1206,7 @@ class CDisplayEx extends CDisplay
 
       $sHTML.= $this->getTitle('Oops, an error occured', 'h2', true);
       $sHTML.= $this->getCR();
+      $sHTML.= "<div id='errorMsg'></div>";
       $sHTML.= $this->getText("An unknown error occured while executing your last action.");
       $sHTML.= $this->getCR();
       $sHTML.= $this->getText("If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.");
@@ -1262,8 +1249,8 @@ class CDisplayEx extends CDisplay
 
     if(isDevelopment())
     {
-      /*include __DIR__.'/resources/debugbar.inc.php5';
-      $sHTML.= getDebugBar();*/
+      include __DIR__.'/resources/debugbar.inc.php5';
+      $sHTML.= getDebugBar();
     }
 
     $sHTML.= '</body></html>';
@@ -1969,9 +1956,18 @@ class CDisplayEx extends CDisplay
     return null;
   }
 
-  public function render($filename, $data = array())
+  public function render($filename, $data = array(),$fullPath = '')
   {
-    $file = __DIR__.'/resources/html/'.$filename.'.php';
+    //ChromePhp::log($fullPath);
+    if($fullPath != '')
+    {
+      $file = $fullPath;
+      //ChromePhp::log($file);
+    }
+    else
+    {
+      $file = __DIR__.'/resources/html/'.$filename.'.php';
+    }
 
     try
     {

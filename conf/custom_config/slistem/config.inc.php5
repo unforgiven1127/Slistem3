@@ -179,7 +179,7 @@
     }
 
     //save the user activity (2-3 months history)
-    return $oLogin->logUserAction($oLogin->getUserPk(), $psItemUid, $psItemAction, $psItemType, $pnItemPk, $pasLogData);
+    return $oLogin->logUserAction($oLogin->getUserPk(), $psItemUid, $psItemAction, $psItemType, $pnItemPk, $pasLogData);//writes login activity table
   }
 
   function getContactTypes()

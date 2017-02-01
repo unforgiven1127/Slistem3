@@ -67,6 +67,9 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
+    $time_pre = microtime(true);
+    $startT = strtotime("now");
+    $sDateStart = date('Y-m-d H:i:s');
     //the function should always return an dbResult object
     $oDbResult = new CDbResult();
     $fTimeEnd = $fTimeStart = 0;
@@ -165,6 +168,29 @@ class CDatabaseEx extends CDatabase
         return  false;
       }
     }
+
+    $time_post = microtime(true);
+    $endT = strtotime("now");
+    $exec_time = $endT - $startT;
+
+    $sDateEnd = date('Y-m-d H:i:s');
+
+    $fark = $sDateEnd - $sDateStart;
+
+    $oLogin = CDependency::getCpLogin();
+    $user_id = $oLogin->getUserPk();
+
+    $myfile = fopen("sqlTrack.txt", "a");
+    $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd." - USER: ".$user_id." \n----------------------------------------------------------------------------------\n\n";
+    //file_put_contents("sqlTrack.txt", $txt);
+    if($exec_time >= 3) //if sql takes longer than 5sec.
+    {
+      $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
+    }
+
+    //fwrite($myfile, $txt);
+    //fclose($myfile);
+
 
     return $oDbResult;
   }

@@ -495,18 +495,18 @@ class CModel
 
     // DAL level logs, we log everything
     // Check if there's a recent and identical entry
-    $sQuery = 'SELECT login_system_historypk FROM login_system_history WHERE ';
+    /*$sQuery = 'SELECT login_system_historypk FROM login_system_history WHERE ';
     $sQuery.= '`userfk` =  "'.$nUserPk.'" AND `action` = '.$this->oDB->dbEscapeString($psAction);
     $sQuery.= ' AND `component` = '.$this->oDB->dbEscapeString($psShortId).' AND `cp_uid` = '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_UID]).' ';
     $sQuery.= ' AND `cp_action` = '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_ACTION]).' AND `cp_type` = '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]).' ';
     $sQuery.= ' AND `cp_pk` = '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]).' AND `uri` = '.$this->oDB->dbEscapeString($oPage->getRequestedUrl()).' ';
     $sQuery.= ' AND `date` > "'.date('Y-m-d H:i:s', strtotime('-2 minutes')).'" ';
 
-    $oDbResult = $this->oDB->ExecuteQuery($sQuery);
-    if($oDbResult->numRows() > 0)
+    $oDbResult = $this->oDB->ExecuteQuery($sQuery);*/
+    /*if($oDbResult->numRows() > 0)
     {
       //return true;
-    }
+    }*/
 
     if(!isset($pasData['log_detail']))
       $pasData['log_detail'] = 'null';
@@ -514,14 +514,26 @@ class CModel
       $pasData['log_detail'] = $this->oDB->dbEscapeString($pasData['log_detail']);
 
 
-    $sQuery = 'INSERT INTO `login_system_history` (`date` ,`userfk` ,`action` , `table`, `component`, `cp_uid`, `cp_action`, `cp_type`, `cp_pk`, `uri` ,`value`, `description`)
+    /*$sQuery = 'INSERT INTO `login_system_history` (`date` ,`userfk` ,`action` , `table`, `component`, `cp_uid`, `cp_action`, `cp_type`, `cp_pk`, `uri` ,`value`, `description`)
     VALUES ("'.date('Y-m-d H:i:s').'", "'.$nUserPk.'", '.$this->oDB->dbEscapeString($psAction).', '.$this->oDB->dbEscapeString($psTable).',
     '.$this->oDB->dbEscapeString($psShortId).', '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_UID]).',
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_ACTION]).', '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]).',
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]).', '.$this->oDB->dbEscapeString($oPage->getRequestedUrl()).',
-    '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';
+    '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';*/
 
-    $this->oDB->ExecuteQuery($sQuery);
+    insertMongoLog($nUserPk,
+      $pasComponent[CONST_CP_PK],
+      $psAction,
+      $psTable,
+      $pasData['log_detail'],
+      $pasComponent[CONST_CP_TYPE],
+      $psShortId,
+      $pasComponent[CONST_CP_UID],
+      $pasComponent[CONST_CP_ACTION],
+      $oPage->getRequestedUrl(),
+      var_export($pasData, true));
+
+    //$this->oDB->ExecuteQuery($sQuery);
     return true;
   }
 

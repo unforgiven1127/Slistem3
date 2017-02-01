@@ -2277,8 +2277,11 @@ class CLoginEx extends CLogin
   {
 
     $oDb = CDependency::getComponentByName('database');
-    $sQuery = 'UPDATE login SET log_hash = \'\' WHERE loginpk = '.$this->casUserData['pk'];
-    $oDb->executeQuery($sQuery);
+    if(isset($this->casUserData['pk']))
+    {
+      $sQuery = 'UPDATE login SET log_hash = \'\' WHERE loginpk = '.$this->casUserData['pk'];
+      $oDb->executeQuery($sQuery);
+    }
 
     session_unset();     // unset $_SESSION variable for the run-time
     session_destroy();   // destroy session data in storage
@@ -2300,8 +2303,8 @@ class CLoginEx extends CLogin
 
     if($pbRedirect)
     {
-      return array('url' => $sUrl); //'message' => 'login ok',
-      //return $this->_redirectUser($sUrl); // deneme amacli kaldirdik
+      //return array('url' => $sUrl); //'message' => 'login ok',
+      return $this->_redirectUser($sUrl); // deneme amacli kaldirdik
     }
     else
       return true;

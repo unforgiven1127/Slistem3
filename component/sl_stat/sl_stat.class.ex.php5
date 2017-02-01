@@ -4026,7 +4026,7 @@ class CSl_statEx extends CSl_stat
 
     private function getSelectedRevenueChart()
     {
-      //ChromePhp::log('getSelectedRevenueChart');
+      ////ChromePhp::log('getSelectedRevenueChart');
       // '/index.php5?uid=555-006&ppa=asrc&ppt=revenue&ppk=0&watercooler=1'
       //https://beta.slate.co.jp/index.php5?uid=555-006&amp;ppa=asrc&amp;ppt=revenue&amp;watercooler=1&amp;ppk=0
       //$year = $_GET['year'];
@@ -4039,16 +4039,20 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-      //ChromePhp::log('get_revenue_chart');
+      ////ChromePhp::log('get_revenue_chart');
       //echo 'test'; // mca MCA
       //exit;
-      //ChromePhp::log('get_revenue_chart');
+      ////ChromePhp::log('get_revenue_chart');
       $revenueChartLoop = get_revenue_chart_loop();
-      //ChromePhp::log($revenueChartLoop);
+      ////ChromePhp::log($revenueChartLoop);
       $nextloop = 0;
       if(isset($_GET['nextloop']))
       {
         $nextloop = $_GET['nextloop'];
+      }
+      if($nextloop == 0)
+      {
+        $nextloop = 2;
       }
 
       $loopInformation = $revenueChartLoop[$nextloop];
@@ -4056,8 +4060,12 @@ class CSl_statEx extends CSl_stat
       $loopYear = $loopInformation[0];
       $loopChart = $loopInformation[1];
 
+      $fileName = '/reports/'.$loopChart.'.php';
+      $localPath = __DIR__.$fileName;
+      $fileFlag = file_exists($localPath);
+
       $nextloop++;
-      if($nextloop > 6)// burasi duzelecek
+      if($nextloop > 6)// fix this code
       {
         $nextloop = 0;
       }
@@ -4075,260 +4083,281 @@ class CSl_statEx extends CSl_stat
         //add class to hide everything except charts
         $this->_oPage->addCssFile($this->getResourcePath().'/css/watercooler.css');
       }
-
-      if (!is_numeric($year))
-      {
-        $year = date('Y');
-      }
-
-      $isRevenue = true;
-      //ChromePhp::log($nextloop);
-      if($loopChart == 'totals_chart_ordered')
-      {
-        $isRevenue = false;
-        $html = $this->get_general_total_chart($nextloop);
-      }
-      elseif($loopChart == 'candidates_met_bar_chart')
-      {
-        //0000-00-00 00:00:00
-        $user_ids = array();
-        $new_candidate_met = array();
-        $thisYear = date('Y');
-        $thisMonth = date('m');
-        $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
-        $start_date_title = date('F').' 01, '.$thisYear;
-        $end_date = date('Y-m-d H:i:s');
-
-        $title = "New Candidates Met ".$start_date_title." to Present";
-
-        $consultants = get_active_consultants();
-        $new_candidate_met_json = '';
-        $new_candidate_count = '';
-        foreach ($consultants as $key => $value)
-        {
-          $consultant_id = $value['loginpk'];
-          $new_candidate_met[$consultant_id]['count'] = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
-          $new_candidate_met[$consultant_id]['consultant_name'] = substr($value['firstname'],0,1).".".$value['lastname'];
-          $new_candidate_met[$consultant_id]['formatted'] = $new_candidate_met[$consultant_id]['consultant_name']." |".$new_candidate_met[$consultant_id]['count']."|";
-          //$new_candidate_met_json.= $new_candidate_met[$consultant_id]['formatted'].";";
-          //$new_candidate_count .=$new_candidate_met[$consultant_id]['count'].";";
-        }
-
-        uasort($new_candidate_met, sort_multi_array_by_value('count', 'reverse'));
-
-        foreach ($new_candidate_met as $key => $value)
-        {
-          $new_candidate_met_json.= $value['formatted'].";";
-          $new_candidate_count .=$value['count'].";";
-        }
-
-        $new_candidate_met_json = " ;".$new_candidate_met_json;
-        $new_candidate_count = "0;".$new_candidate_count;
-
-        $new_candidate_met_json = rtrim($new_candidate_met_json,';');
-        $new_candidate_count = rtrim($new_candidate_count,';');
-
-      }
-      elseif($loopChart == 'resume_bar_chart')
-      {
-
-        $rs_ccm1_mccm_formatted = "";
-        $rs_ccm1_mccm_rsc = "";
-        $rs_ccm1_mccm_ccm1 = "";
-        $rs_ccm1_mccm_mccm = "";
-
-        $consultants = get_active_consultants();
-        $rs_ccm1_mccm = array();
-
-        $thisYear = date('Y');
-        $thisMonth = date('m');
-        $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
-        $start_date_title = date('F').' 01, '.$thisYear;
-
-        $title = "Resume sent / CCM1 / MCCM ".$start_date_title." to Present";
-
-        foreach ($consultants as $key => $value)
-        {
-          $consultant_id = $value['loginpk'];
-          $resume_sent_temp = get_resume_sent_count($consultant_id, $start_date);
-          $rs_ccm1_mccm[$consultant_id]['resume_sent'] = $resume_sent_temp['count'];
-          $rs_ccm1_mccm[$consultant_id]['ccm1'] = get_ccm1_count($consultant_id, $start_date);
-          $rs_ccm1_mccm[$consultant_id]['ccm2'] = get_ccm2_count($consultant_id, $start_date);
-          //ChromePhp::log($rs_ccm1_mccm[$consultant_id]['ccm1']);
-          $rs_ccm1_mccm[$consultant_id]['mccm'] = get_mccm_count($consultant_id, $start_date);
-          $rs_ccm1_mccm[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$resume_sent_temp['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm1']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm2']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['mccm']['count']."|";
-        }
-        uasort($rs_ccm1_mccm, sort_multi_array_by_value('resume_sent', 'reverse'));
-        foreach ($rs_ccm1_mccm as $key => $value)
-        {
-          $rs_ccm1_mccm_formatted.= $value['formatted'].";";
-          $rs_ccm1_mccm_rsc.=$value['resume_sent'].";";
-          $rs_ccm1_mccm_ccm1.=$value['ccm1']['count'].";";
-          $rs_ccm1_mccm_ccm2.=$value['ccm2']['count'].";";
-          $rs_ccm1_mccm_mccm.=$value['mccm']['count'].";";
-        }
-
-        $rs_ccm1_mccm_formatted = rtrim($rs_ccm1_mccm_formatted,';');
-        $rs_ccm1_mccm_rsc = rtrim($rs_ccm1_mccm_rsc,';');
-        $rs_ccm1_mccm_ccm1 = rtrim($rs_ccm1_mccm_ccm1,';');
-        $rs_ccm1_mccm_ccm2 = rtrim($rs_ccm1_mccm_ccm2,';');
-        $rs_ccm1_mccm_mccm = rtrim($rs_ccm1_mccm_mccm,';');
-
-      }
-      elseif($loopChart == 'candidate_in_play_bar_chart')
-      {
-        $inplay_formatted = "";
-        $inplay_count = "";
-        $inplay_rsc = "";
-
-        $inplay_new_candi_met = '';
-        $inplay_new_candi_ip = '';
-        $inplay_new_position_ip = '';
-
-        $consultants = get_active_consultants();
-        $inplay = array();
-
-        $thisYear = date('Y');
-        $thisMonth = date('m');
-        $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
-        $start_date_title = date('F').' 01, '.$thisYear;
-
-        $title = "New candidates met / New candidates in play / New positions in play ".$start_date_title." to Present";
-
-        $end_date = date('Y-m-t').' 23:59:59';
-        $temp_in_play = $this->_getModel()->get_new_in_play($consultants, $start_date, $end_date, 'consultant');
-
-        //$new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
-
-        //$new_in_plays = array();
-        /*foreach ($temp_in_play as $key => $value)
-        {
-          //key = user_id
-          $temp_in_play[$key]['new_candi_count'] = count($value['new_candidates']);
-          $temp_in_play[$key]['new_posi_count'] = count($value['new_positions']);
-        }*/
-
-        //ChromePhp::log($temp_in_play);
-
-        foreach ($consultants as $key => $value)
-        {
-          $consultant_id = $value['loginpk'];
-          $resume_sent_temp = get_resume_sent_count($consultant_id, $start_date);
-          $inplay[$consultant_id]['resume_sent'] = $resume_sent_temp['count'];
-
-          $candidate_inplay_temp = get_candidate_in_play($consultant_id, $start_date);
-          $inplay[$consultant_id]['candidate_inplay'] = $candidate_inplay_temp;
-
-          if(isset($temp_in_play[$consultant_id]['new_candidates']))
-          {
-            $new_candi_count_temp = count($temp_in_play[$consultant_id]['new_candidates']);
-            $inplay[$consultant_id]['new_candi_count'] = $new_candi_count_temp;
-          }
-          else
-          {
-            $inplay[$consultant_id]['new_candi_count'] = 0;
-          }
-
-          if(isset($temp_in_play[$consultant_id]['new_positions']))
-          {
-            $new_position_count_temp = count($temp_in_play[$consultant_id]['new_positions']);
-            $inplay[$consultant_id]['new_posi_count'] = $new_position_count_temp;
-          }
-          else
-          {
-            $inplay[$consultant_id]['new_posi_count'] = 0;
-          }
-
-          $new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
-          $inplay[$consultant_id]['new_candi_met'] = $new_candi_met;
-
-          $inplay[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$new_candi_met."|"." |".$inplay[$consultant_id]['new_candi_count']."|"." |".$inplay[$consultant_id]['new_posi_count']."|";
-
-        }
-        uasort($inplay, sort_multi_array_by_value('new_candi_met', 'reverse'));
-        $max_rabbit_1 = 0;
-        $max_rabbit_2 = 0;
-        foreach ($inplay as $key => $value)
-        {
-          if($value['candidate_inplay'] > $max_rabbit_1)
-          {
-            $max_rabbit_1 = $value['candidate_inplay'];
-          }
-          if($value['candidate_inplay'] + $value['resume_sent'] > $max_rabbit_2)
-          {
-            $max_rabbit_2 = $value['candidate_inplay'] + $value['resume_sent'];
-          }
-          $inplay_formatted.= $value['formatted'].";";
-
-          $inplay_count.= $value['candidate_inplay'].";";
-
-          //$inplay_count.= $cp.";";
-          $inplay_rsc.= $value['resume_sent'].";";
-
-          $inplay_new_candi_met .= $value['new_candi_met'].";";
-          $inplay_new_candi_ip .= $value['new_candi_count'].";";
-          $inplay_new_position_ip .= $value['new_posi_count'].";";
-        }
-        //$inplay_formatted = " ;".$inplay_formatted;
-        //$inplay_count = "0;".$inplay_count;
-        //$inplay_rsc = "0;".$inplay_rsc;
-
-        $inplay_formatted = rtrim($inplay_formatted,';');
-        $inplay_count = rtrim($inplay_count,';');
-        $inplay_rsc = rtrim($inplay_rsc,';');
-
-        $inplay_new_candi_met = rtrim($inplay_new_candi_met,';');
-        $inplay_new_candi_ip = rtrim($inplay_new_candi_ip,';');
-        $inplay_new_position_ip = rtrim($inplay_new_position_ip,';');
-      }
-      else
-      {
-        $revenue_data = $this->_getModel()->get_revenue_data($year);
-      }
-
       $this->_oPage->addCssFile($this->getResourcePath().'/css/revenue.css');
 
-      $data = array('revenue_data' => $revenue_data, 'location' => $location, 'year' => $year, 'row_number_rank' => 1, 'total_paid' => 0,
-        'total_signed' => 0, 'total_placed' => 0, 'decimals' => 0, 'display_object' => $this->_oDisplay, 'url' => $url,'swap_time' => $swap_time,'nextloop' => $nextloop
-        );
+      $sDate = date('H:i:s');
 
-      if(isset($new_candidate_met) && !empty($new_candidate_met))
+      if(!$fileFlag || ($sDate >= '16:00:00' && $sDate <= '16:15:00'))
       {
-        $data['new_candidate_met'] = $new_candidate_met;
-        $data['new_candidate_met_json'] = $new_candidate_met_json;
-        $data['new_candidate_count'] = $new_candidate_count;
-        $data['title'] = $title;
-        $targets = get_target_to_date();
-        $data['met_target'] = $targets['met_target'];
+        if (!is_numeric($year))
+        {
+          $year = date('Y');
+        }
+
+        $isRevenue = true;
+        ////ChromePhp::log($nextloop);
+        if($loopChart == 'totals_chart_ordered')
+        {
+          $isRevenue = false;
+          $html = $this->get_general_total_chart($nextloop);
+        }
+        elseif($loopChart == 'candidates_met_bar_chart')
+        {
+          //0000-00-00 00:00:00
+          $user_ids = array();
+          $new_candidate_met = array();
+          $thisYear = date('Y');
+          $thisMonth = date('m');
+          $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
+          $start_date_title = date('F').' 01, '.$thisYear;
+          $end_date = date('Y-m-d H:i:s');
+
+          $title = "New Candidates Met ".$start_date_title." to Present";
+
+          $consultants = get_active_consultants();
+          $new_candidate_met_json = '';
+          $new_candidate_count = '';
+          foreach ($consultants as $key => $value)
+          {
+            $consultant_id = $value['loginpk'];
+            $new_candidate_met[$consultant_id]['count'] = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
+            $new_candidate_met[$consultant_id]['consultant_name'] = substr($value['firstname'],0,1).".".$value['lastname'];
+            $new_candidate_met[$consultant_id]['formatted'] = $new_candidate_met[$consultant_id]['consultant_name']." |".$new_candidate_met[$consultant_id]['count']."|";
+            //$new_candidate_met_json.= $new_candidate_met[$consultant_id]['formatted'].";";
+            //$new_candidate_count .=$new_candidate_met[$consultant_id]['count'].";";
+          }
+
+          uasort($new_candidate_met, sort_multi_array_by_value('count', 'reverse'));
+
+          foreach ($new_candidate_met as $key => $value)
+          {
+            $new_candidate_met_json.= $value['formatted'].";";
+            $new_candidate_count .=$value['count'].";";
+          }
+
+          $new_candidate_met_json = " ;".$new_candidate_met_json;
+          $new_candidate_count = "0;".$new_candidate_count;
+
+          $new_candidate_met_json = rtrim($new_candidate_met_json,';');
+          $new_candidate_count = rtrim($new_candidate_count,';');
+
+        }
+        elseif($loopChart == 'resume_bar_chart')
+        {
+
+          $rs_ccm1_mccm_formatted = "";
+          $rs_ccm1_mccm_rsc = "";
+          $rs_ccm1_mccm_ccm1 = "";
+          $rs_ccm1_mccm_mccm = "";
+
+          $consultants = get_active_consultants();
+          $rs_ccm1_mccm = array();
+
+          $thisYear = date('Y');
+          $thisMonth = date('m');
+          $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
+          $start_date_title = date('F').' 01, '.$thisYear;
+
+          $title = "Resume sent / CCM1 / MCCM ".$start_date_title." to Present";
+
+          foreach ($consultants as $key => $value)
+          {
+            $consultant_id = $value['loginpk'];
+            $resume_sent_temp = get_resume_sent_count($consultant_id, $start_date);
+            $rs_ccm1_mccm[$consultant_id]['resume_sent'] = $resume_sent_temp['count'];
+            $rs_ccm1_mccm[$consultant_id]['ccm1'] = get_ccm1_count($consultant_id, $start_date);
+            $rs_ccm1_mccm[$consultant_id]['ccm2'] = get_ccm2_count($consultant_id, $start_date);
+            ////ChromePhp::log($rs_ccm1_mccm[$consultant_id]['ccm1']);
+            $rs_ccm1_mccm[$consultant_id]['mccm'] = get_mccm_count($consultant_id, $start_date);
+            $rs_ccm1_mccm[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$resume_sent_temp['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm1']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['ccm2']['count']."|"." |".$rs_ccm1_mccm[$consultant_id]['mccm']['count']."|";
+          }
+          uasort($rs_ccm1_mccm, sort_multi_array_by_value('resume_sent', 'reverse'));
+          foreach ($rs_ccm1_mccm as $key => $value)
+          {
+            $rs_ccm1_mccm_formatted.= $value['formatted'].";";
+            $rs_ccm1_mccm_rsc.=$value['resume_sent'].";";
+            $rs_ccm1_mccm_ccm1.=$value['ccm1']['count'].";";
+            $rs_ccm1_mccm_ccm2.=$value['ccm2']['count'].";";
+            $rs_ccm1_mccm_mccm.=$value['mccm']['count'].";";
+          }
+
+          $rs_ccm1_mccm_formatted = rtrim($rs_ccm1_mccm_formatted,';');
+          $rs_ccm1_mccm_rsc = rtrim($rs_ccm1_mccm_rsc,';');
+          $rs_ccm1_mccm_ccm1 = rtrim($rs_ccm1_mccm_ccm1,';');
+          $rs_ccm1_mccm_ccm2 = rtrim($rs_ccm1_mccm_ccm2,';');
+          $rs_ccm1_mccm_mccm = rtrim($rs_ccm1_mccm_mccm,';');
+
+        }
+        elseif($loopChart == 'candidate_in_play_bar_chart')
+        {
+          $inplay_formatted = "";
+          $inplay_count = "";
+          $inplay_rsc = "";
+
+          $inplay_new_candi_met = '';
+          $inplay_new_candi_ip = '';
+          $inplay_new_position_ip = '';
+
+          $consultants = get_active_consultants();
+          $inplay = array();
+
+          $thisYear = date('Y');
+          $thisMonth = date('m');
+          $start_date = $thisYear.'-'.$thisMonth.'-01 00:00:00';
+          $start_date_title = date('F').' 01, '.$thisYear;
+
+          $title = "New candidates met / New candidates in play / New positions in play ".$start_date_title." to Present";
+
+          $end_date = date('Y-m-t').' 23:59:59';
+          $temp_in_play = $this->_getModel()->get_new_in_play($consultants, $start_date, $end_date, 'consultant');
+
+          //$new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
+
+          //$new_in_plays = array();
+          /*foreach ($temp_in_play as $key => $value)
+          {
+            //key = user_id
+            $temp_in_play[$key]['new_candi_count'] = count($value['new_candidates']);
+            $temp_in_play[$key]['new_posi_count'] = count($value['new_positions']);
+          }*/
+
+          ////ChromePhp::log($temp_in_play);
+
+          foreach ($consultants as $key => $value)
+          {
+            $consultant_id = $value['loginpk'];
+            $resume_sent_temp = get_resume_sent_count($consultant_id, $start_date);
+            $inplay[$consultant_id]['resume_sent'] = $resume_sent_temp['count'];
+
+            $candidate_inplay_temp = get_candidate_in_play($consultant_id, $start_date);
+            $inplay[$consultant_id]['candidate_inplay'] = $candidate_inplay_temp;
+
+            if(isset($temp_in_play[$consultant_id]['new_candidates']))
+            {
+              $new_candi_count_temp = count($temp_in_play[$consultant_id]['new_candidates']);
+              $inplay[$consultant_id]['new_candi_count'] = $new_candi_count_temp;
+            }
+            else
+            {
+              $inplay[$consultant_id]['new_candi_count'] = 0;
+            }
+
+            if(isset($temp_in_play[$consultant_id]['new_positions']))
+            {
+              $new_position_count_temp = count($temp_in_play[$consultant_id]['new_positions']);
+              $inplay[$consultant_id]['new_posi_count'] = $new_position_count_temp;
+            }
+            else
+            {
+              $inplay[$consultant_id]['new_posi_count'] = 0;
+            }
+
+            $new_candi_met = get_objectives_new_candidate_met($consultant_id, $start_date, $end_date);
+            $inplay[$consultant_id]['new_candi_met'] = $new_candi_met;
+
+            $inplay[$consultant_id]['formatted'] = substr($value['firstname'],0,1).".".$value['lastname']." |".$new_candi_met."|"." |".$inplay[$consultant_id]['new_candi_count']."|"." |".$inplay[$consultant_id]['new_posi_count']."|";
+
+          }
+          uasort($inplay, sort_multi_array_by_value('new_candi_met', 'reverse'));
+          $max_rabbit_1 = 0;
+          $max_rabbit_2 = 0;
+          foreach ($inplay as $key => $value)
+          {
+            if($value['candidate_inplay'] > $max_rabbit_1)
+            {
+              $max_rabbit_1 = $value['candidate_inplay'];
+            }
+            if($value['candidate_inplay'] + $value['resume_sent'] > $max_rabbit_2)
+            {
+              $max_rabbit_2 = $value['candidate_inplay'] + $value['resume_sent'];
+            }
+            $inplay_formatted.= $value['formatted'].";";
+
+            $inplay_count.= $value['candidate_inplay'].";";
+
+            //$inplay_count.= $cp.";";
+            $inplay_rsc.= $value['resume_sent'].";";
+
+            $inplay_new_candi_met .= $value['new_candi_met'].";";
+            $inplay_new_candi_ip .= $value['new_candi_count'].";";
+            $inplay_new_position_ip .= $value['new_posi_count'].";";
+          }
+          //$inplay_formatted = " ;".$inplay_formatted;
+          //$inplay_count = "0;".$inplay_count;
+          //$inplay_rsc = "0;".$inplay_rsc;
+
+          $inplay_formatted = rtrim($inplay_formatted,';');
+          $inplay_count = rtrim($inplay_count,';');
+          $inplay_rsc = rtrim($inplay_rsc,';');
+
+          $inplay_new_candi_met = rtrim($inplay_new_candi_met,';');
+          $inplay_new_candi_ip = rtrim($inplay_new_candi_ip,';');
+          $inplay_new_position_ip = rtrim($inplay_new_position_ip,';');
+        }
+        else
+        {
+          $revenue_data = $this->_getModel()->get_revenue_data($year);
+        }
+
+
+        $data = array('revenue_data' => $revenue_data, 'location' => $location, 'year' => $year, 'row_number_rank' => 1, 'total_paid' => 0,
+          'total_signed' => 0, 'total_placed' => 0, 'decimals' => 0, 'display_object' => $this->_oDisplay, 'url' => $url,'swap_time' => $swap_time,'nextloop' => $nextloop
+          );
+
+        if(isset($new_candidate_met) && !empty($new_candidate_met))
+        {
+          $data['new_candidate_met'] = $new_candidate_met;
+          $data['new_candidate_met_json'] = $new_candidate_met_json;
+          $data['new_candidate_count'] = $new_candidate_count;
+          $data['title'] = $title;
+          $targets = get_target_to_date();
+          $data['met_target'] = $targets['met_target'];
+        }
+        if(isset($rs_ccm1_mccm) && !empty($rs_ccm1_mccm))
+        {
+          $data['rs_ccm1_mccm_formatted'] = $rs_ccm1_mccm_formatted;
+          $data['rs_ccm1_mccm_rsc'] = $rs_ccm1_mccm_rsc;
+          $data['rs_ccm1_mccm_ccm1'] = $rs_ccm1_mccm_ccm1;
+          $data['rs_ccm1_mccm_ccm2'] = $rs_ccm1_mccm_ccm2;
+          $data['rs_ccm1_mccm_mccm'] = $rs_ccm1_mccm_mccm;
+          $data['title'] = $title;
+        }
+        if(isset($inplay) && !empty($inplay))
+        {
+          $data['inplay_formatted'] = $inplay_formatted;
+          $data['inplay_count'] = $inplay_count;
+          $data['inplay_rsc'] = $inplay_rsc;
+          $data['title'] = $title;
+          $data['max_rabbit_1'] = $max_rabbit_1;
+          $data['max_rabbit_2'] = $max_rabbit_2;
+
+          $data['new_candi_met'] = $inplay_new_candi_met;
+          $data['new_candi_count'] = $inplay_new_candi_ip;
+          $data['new_posi_count'] = $inplay_new_position_ip;
+
+        }
+
+        //$html = $this->_oDisplay->render('revenue_chart', $data);
+        if($isRevenue)
+        {
+          $html = $this->_oDisplay->render($loopChart, $data);
+        }
+
+        $myfile = fopen($localPath, "a");
+        $ret = file_put_contents($localPath, $html);
       }
-      if(isset($rs_ccm1_mccm) && !empty($rs_ccm1_mccm))
-      {
-        $data['rs_ccm1_mccm_formatted'] = $rs_ccm1_mccm_formatted;
-        $data['rs_ccm1_mccm_rsc'] = $rs_ccm1_mccm_rsc;
-        $data['rs_ccm1_mccm_ccm1'] = $rs_ccm1_mccm_ccm1;
-        $data['rs_ccm1_mccm_ccm2'] = $rs_ccm1_mccm_ccm2;
-        $data['rs_ccm1_mccm_mccm'] = $rs_ccm1_mccm_mccm;
-        $data['title'] = $title;
-      }
-      if(isset($inplay) && !empty($inplay))
-      {
-        $data['inplay_formatted'] = $inplay_formatted;
-        $data['inplay_count'] = $inplay_count;
-        $data['inplay_rsc'] = $inplay_rsc;
-        $data['title'] = $title;
-        $data['max_rabbit_1'] = $max_rabbit_1;
-        $data['max_rabbit_2'] = $max_rabbit_2;
+      else
+      {//pull chart from created file
+        //ChromePhp::log($loopChart);
+        $data = array('test' => 'test');
+        if($loopChart == 'totals_chart_ordered')
+        {
+          $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
+          $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
 
-        $data['new_candi_met'] = $inplay_new_candi_met;
-        $data['new_candi_count'] = $inplay_new_candi_ip;
-        $data['new_posi_count'] = $inplay_new_position_ip;
-
-      }
-
-      //$html = $this->_oDisplay->render('revenue_chart', $data);
-      if($isRevenue)
-      {
-        $html = $this->_oDisplay->render($loopChart, $data);
+          $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
+        }
+        $html = $this->_oDisplay->render($localPath, $data, $localPath);
       }
 
       return $html;
@@ -4493,6 +4522,15 @@ class CSl_statEx extends CSl_stat
       $generatedKPIsCount = count($generatedKPIs);
       $data = array();
       $submit_totals = getValue('submit_totals');
+
+      $fileName = '/reports/totals_chart_ordered_KPI.php';
+      $localPath = __DIR__.$fileName;
+      $fileFlag = file_exists($localPath);
+      $generatedKPIsCount = 0;
+      if($fileFlag)
+      {
+        $generatedKPIsCount = 1;
+      }
 
       if($nextloop != '666')
       {
@@ -4895,7 +4933,7 @@ class CSl_statEx extends CSl_stat
   //echo "<br><br>";
   //var_dump($stats_data['consultant']['457']);
         $temp_set_vs_met = $this->_getModel()->getKpiSetVsMet($researcher_ids, $start_date, $end_date);
-ChromePhp::log($temp_set_vs_met);
+////ChromePhp::log($temp_set_vs_met);
         $temp_resume_sent = $this->_getModel()->get_resume_sent($researcher_ids, $start_date, $end_date);
         $temp_ccm = $this->_getModel()->get_ccm_data($researcher_ids, $start_date, $end_date);
         $temp_in_play = $this->_getModel()->get_new_in_play($researcher_ids, $start_date, $end_date);
@@ -5798,21 +5836,26 @@ ChromePhp::log($temp_set_vs_met);
       }
       else
       {
-        $json_from_db = $generatedKPIs[0]['json_data'];
-        $stats_data = json_decode($json_from_db, true);
+        //$json_from_db = $generatedKPIs[0]['json_data'];
+        //$stats_data = json_decode($json_from_db, true);
 
-        $candidate_from_db = $generatedKPIs[1]['json_data'];
-        $allCanidatesArray = json_decode($candidate_from_db, true);
+        //$candidate_from_db = $generatedKPIs[1]['json_data'];
+        //$allCanidatesArray = json_decode($candidate_from_db, true);
 
         $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
 
         $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
+
+        $data['nextloop'] = $nextloop;
+        $html = $this->_oDisplay->render($localPath, $data, $localPath);
+        return $html;
+
       }
 
       $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
-//ChromePhp::log($stats_data);
+////ChromePhp::log($stats_data);
 
       $data['nextloop'] = $nextloop;
 
@@ -5821,6 +5864,9 @@ ChromePhp::log($temp_set_vs_met);
       header_remove('Set-Cookie');
 
       $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+
+      $myfile = fopen($localPath, "a");
+      $ret = file_put_contents($localPath, $html);
 
       return $html;
     }

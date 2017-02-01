@@ -299,6 +299,44 @@ class CSl_eventEx extends CSl_event
       $candidate_id = $pnItemPk;
       $companyHistory = getCompanyHistory($candidate_id);
 
+      $where = array( '$and' => array(
+        array( '$or' => array(
+            array('cp_pk' => (int)$candidate_id),
+            array('cp_pk' => $candidate_id)
+            )),
+        array('table' => 'company_history')
+        )
+      );
+
+      $newLogs = getMongoLog($where);
+      $newLogs = iterator_to_array($newLogs, false);
+
+      foreach ($newLogs as $key => $value)
+      {
+        $addNotes = array();
+
+        $addNotes['_fts'] = $value['action'];
+        $addNotes['companyName'] = "";
+        $addNotes['content'] = $value['action'];
+        $addNotes['cp_action'] = "ppav";
+        $addNotes['cp_params'] = "";
+        $addNotes['cp_pk'] = (string)$candidate_id;
+        $addNotes['cp_type'] = "candi";
+        $addNotes['cp_uid'] = "555-001";
+        $addNotes['created_by'] = $value['userfk'];
+        $addNotes['custom_type'] = "";
+        $addNotes['date_create'] = $value['date'];
+        $addNotes['date_display'] = $value['date'];
+        $addNotes['date_update'] = "";
+        $addNotes['event_linkpk'] = "";
+        $addNotes['eventfk'] = "";
+        $addNotes['eventpk'] = "";
+        $addNotes['title'] = "";
+        $addNotes['type'] = "cp_history";
+        $addNotes['updated_by'] = '';
+
+        array_push($asNotes,$addNotes);
+      }
       if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
       {
         foreach ($companyHistory as $key => $value)
@@ -331,7 +369,7 @@ class CSl_eventEx extends CSl_event
       }
 
     }
-
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
@@ -945,7 +983,7 @@ class CSl_eventEx extends CSl_event
     $EditTheNotes = getValue('EditTheNotes');
     $editFlag = false;
 
-    //ChromePhp::log($EditTheNotes);
+    ////ChromePhp::log($EditTheNotes);
     $editArray = array();
     if(isset($EditTheNotes) && !empty($EditTheNotes) && $EditTheNotes != false)
     {
@@ -956,7 +994,7 @@ class CSl_eventEx extends CSl_event
         $explodedNote = explode(';',$value);
         $editArray[$explodedNote[0]] = $explodedNote[1];//type,id
       }
-      //ChromePhp::log($EditTheNotes);
+      ////ChromePhp::log($EditTheNotes);
     }
 
     $note_title = purify_html(getValue('title'));
@@ -970,22 +1008,26 @@ class CSl_eventEx extends CSl_event
 
     if(empty($delete_flag))
     {
-      $note = $userName." created a new";
-      if($event_type == "character" || $event_type == "email" || $event_type == "meeting" || $event_type == "phone" ||$event_type == "update")
+      if(isset($content) && !empty($content))
       {
-        $note .= " ".$event_type." note: </b><br>";
-      }
-      else if($event_type == "cp_history")
-      {
-        $note .= " company history note: </b><br>";
-      }
-      else
-      {
-        $note .= " note: <br>";
+        $note = $userName." created a new";
+        if($event_type == "character" || $event_type == "email" || $event_type == "meeting" || $event_type == "phone" ||$event_type == "update")
+        {
+          $note .= " ".$event_type." note: </b><br>";
+        }
+        else if($event_type == "cp_history")
+        {
+          $note .= " company history note: </b><br>";
+        }
+        else
+        {
+          $note .= " note. <br>";
+        }
+
+        //$note .= "<b>".$note_title."</b><br>";
+        //$note .= $content;
       }
 
-      //$note .= "<b>".$note_title."</b><br>";
-      //$note .= $content;
     }
     else
     {
@@ -997,7 +1039,11 @@ class CSl_eventEx extends CSl_event
       $note = $userName." edited note #".$this->cnPk;
     }
 
-    insertLog($user_id, $candidate_id, $note);
+    //insertLog($user_id, $candidate_id, $note);
+    if(isset($note) && !empty($note))
+    {
+      insertMongoLog($user_id, $candidate_id, $note);
+    }
 
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
     $characterNoteArray = array();

@@ -1848,7 +1848,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
 
       $oLogin = CDependency::getComponentByName('login');
-      //ChromePhp::log($oLogin->getUserLink($pnUserPk));
+      ////ChromePhp::log($oLogin->getUserLink($pnUserPk));
       //3. add a system fallen off step
       foreach($asCandidate as $nCanduidatefk) // burada adaylar status 251 oluyor position filled
       {
@@ -3642,7 +3642,8 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       {
         $statusTite = getStatusTitle($asPosition['status']);
         $note = "Status ".$statusTite." (#".$pnLinkPk.") deleted";
-        $addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        //$addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        $addLog = insertMongoLog($user_id, $asPosition['candidatefk'], $note);
       }
 
       return array('data' => 'ok', 'notice' => 'Application / stage deleted', 'action' => ' goPopup.removeByType(\'layer\'); refresh_candi('.(int)$asPosition['candidatefk'].', true);');

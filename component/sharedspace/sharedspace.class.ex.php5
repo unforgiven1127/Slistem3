@@ -1330,7 +1330,7 @@ class CSharedspaceEx extends CSharedspace
 
     $oPage->addJsFile(CONST_PATH_JS.'jquery.fileupload.js');
     $oPage->addJsFile(self::getResourcePath().'js/sharedspace.js');
-    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton'));
+    $oForm->setFormParams('documentForm', true, array('action' => $sURL, 'submitLabel'=>'Save Document!', 'inajax' => 'inajax', 'class' => 'single-upload-form' , 'noCancelButton' => 'noCancelButton','id'=>'addNewDocumentButton'));
   //  $oForm->setFormDisplayParams(array('noSubmitButton' => true));
 
     $psZoneToRefresh = getValue('psZoneToRefresh');
@@ -1439,12 +1439,12 @@ class CSharedspaceEx extends CSharedspace
       });
 
       $('.single-upload-form .submitBtnClass').click(function(){
+        loadingNew();
         var dataToUpload = new Array();
         dataToUpload.formData = $('.single-upload-form').serializeArray();
         dataToUpload.files = fileToUpload;
         var jqXHR = $('.single-upload-form').fileupload('send', dataToUpload)
           .success(function (result) {
-
               if (result.error)
                 goPopup.setErrorMessage(result.error, true);
 
