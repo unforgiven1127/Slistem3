@@ -298,7 +298,7 @@ class CSl_eventEx extends CSl_event
     {
       $candidate_id = $pnItemPk;
       $companyHistory = getCompanyHistory($candidate_id);
-      $companyHistory = array();
+      //$companyHistory = array();
 
       $where = array( '$and' => array(
         array( '$or' => array(
