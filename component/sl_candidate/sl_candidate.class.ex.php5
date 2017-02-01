@@ -1645,9 +1645,9 @@ $sHTML = '';
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
 
       $asPosition = $this->_getPositionTab($pasCandidateData);
-return $sHTML;
-      $sActionTab = $this->_getActionTab($pasCandidateData);
 
+      $sActionTab = $this->_getActionTab($pasCandidateData);
+return $sHTML;
       $asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
 
       $nTotalData = $asCharacter['nb_result'] + $asNotes['nb_result'] + $asContact['nb_result'] +
