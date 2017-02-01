@@ -1559,8 +1559,6 @@ ChromePhp::log($exec_time);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
-$html = '';
-return $html;
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1643,7 +1641,7 @@ return $html;
 
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
-      $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
+      //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
 
       $asPosition = $this->_getPositionTab($pasCandidateData);
 
@@ -1654,6 +1652,8 @@ return $html;
 
 $asCpHistory['nb_result'] = 0;
 $asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
+
+$asActivity['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
       /*$returnArray = getCompanyHistoryFormatted($pasCandidateData['sl_candidatepk']);
       $asCpHistory['content'] = $returnArray['html'];
       $asCpHistory['nb_result'] = $returnArray['count'];*/
