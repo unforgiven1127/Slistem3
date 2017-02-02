@@ -286,7 +286,7 @@ ChromePhp::log($logout);
         $url = 'beta2.slate.co.jp';
         ChromePhp::log($url);
         header($url);
-        die();
+
         //$oLogin->_getLogout(false, true);
       }
     }
