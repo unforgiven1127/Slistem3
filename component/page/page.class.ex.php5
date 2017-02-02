@@ -272,22 +272,17 @@ class CPageEx extends CPage
     $this->cbIsLogged = $bIsLogged;
 
     $logout = check_session_expiry();
-ChromePhp::log($logout);
+//ChromePhp::log($logout);
     if ($logout)
     {
       if ($psMode == 'ajx')
       {
-        ChromePhp::log('ajx');
+        //ChromePhp::log('ajx');
         $oLogin->_getLogout(true, true);
       }
       else
       {
-        ChromePhp::log('else');
-        $url = 'beta2.slate.co.jp';
-        ChromePhp::log($url);
-        header($url);
-
-        //$oLogin->_getLogout(false, true);
+        $oLogin->_getLogout(false, true);
       }
     }
     //*****************************************************************
