@@ -3906,12 +3906,25 @@ var_dump($query);*/
             array('table' => 'position'),
             array('table' => 'user_history'),
             )),
+            array('cp_pk' => (int)$candidate_id)
+        )
+      );
+
+    /*$where = array( '$and' => array(
+        array( '$or' => array(
+            array('table' => 'sl_candidate'),
+            array('table' => 'document'),
+            array('table' => 'sl_document'),
+            array('table' => 'sl_meeting'),
+            array('table' => 'position'),
+            array('table' => 'user_history'),
+            )),
             array( '$or' => array(
               array('cp_pk' => (int)$candidate_id),
               array('cp_pk' => $candidate_id))
             )
         )
-      );
+      );*/
 
     $newLogs = getMongoLog($where);
 
