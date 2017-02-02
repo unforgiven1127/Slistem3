@@ -2303,13 +2303,8 @@ class CLoginEx extends CLogin
 
     if($pbRedirect)
     {
-      ChromePhp::log('else');
-      $url = 'beta2.slate.co.jp';
-      ChromePhp::log($url);
-      header("Location:/?");
-return false;
       //return array('url' => $sUrl); //'message' => 'login ok',
-      //return $this->_redirectUser($sUrl); // deneme amacli kaldirdik
+      return $this->_redirectUser($sUrl); // deneme amacli kaldirdik
     }
     else
       return true;
