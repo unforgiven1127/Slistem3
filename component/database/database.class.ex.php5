@@ -188,7 +188,7 @@ class CDatabaseEx extends CDatabase
       $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
     }
 $print = 'Query return in '.$exec_time.' seconds';
-ChromePhp::log($candidate_info);
+ChromePhp::log($print);
     //fwrite($myfile, $txt);
     //fclose($myfile);
 
