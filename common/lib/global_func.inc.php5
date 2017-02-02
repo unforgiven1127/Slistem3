@@ -4144,7 +4144,7 @@ $exec_time = $endT - $startT;
 
 $time = $exec_time.' sec getActivityListFormatted';
 
-ChromePhp::log($candidate_info);
+ChromePhp::log($time);
 
     return $returnArray;
   }
@@ -4185,7 +4185,7 @@ $exec_time = $endT - $startT;
 
 $time = $exec_time.' sec getCompanyHistoryFormatted';
 
-ChromePhp::log($candidate_info);
+ChromePhp::log($time);
     return $returnArray;
   }
 
