@@ -5682,7 +5682,7 @@ function get_revenue_chart_loop()
 
 function check_session_expiry()
 {
-  $expiry_time = 60 * 60 * 5; // 3 hour
+  $expiry_time = 60 * 60 * 5; // 5 hour
   //$expiry_time = 60; // 1 min?
   $logout = false;
   if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $expiry_time))
