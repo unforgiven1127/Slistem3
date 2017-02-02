@@ -1346,7 +1346,7 @@ $startT = strtotime("now");
 $endT = strtotime("now");
 $exec_time = $endT - $startT;
 $print = $exec_time.' sec candidate display';
-ChromePhp::log($exec_time);
+ChromePhp::log($print);
 
       return $sHTML;
     }
