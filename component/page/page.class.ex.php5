@@ -272,16 +272,20 @@ class CPageEx extends CPage
     $this->cbIsLogged = $bIsLogged;
 
     $logout = check_session_expiry();
-
+ChromePhp::log($logout);
     if ($logout)
     {
       if ($psMode == 'ajx')
+      {
+        ChromePhp::log('ajx');
         $oLogin->_getLogout(true, true);
+      }
       else
       {
-        $mainPage = $_SERVER['SERVER_NAME'];
-        header("Location: ".$mainPage);
-        die();
+        ChromePhp::log('else');
+        $url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header($url);
+        exit();
         //$oLogin->_getLogout(false, true);
       }
     }
