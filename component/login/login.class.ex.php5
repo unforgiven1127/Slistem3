@@ -2307,7 +2307,7 @@ class CLoginEx extends CLogin
       $url = 'beta2.slate.co.jp';
       ChromePhp::log($url);
       header("Location:/?");
-exit();
+
       //return array('url' => $sUrl); //'message' => 'login ok',
       //return $this->_redirectUser($sUrl); // deneme amacli kaldirdik
     }
