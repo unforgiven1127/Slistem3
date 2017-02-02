@@ -278,7 +278,12 @@ class CPageEx extends CPage
       if ($psMode == 'ajx')
         $oLogin->_getLogout(true, true);
       else
-        $oLogin->_getLogout(false, true);
+      {
+        $mainPage = $_SERVER['SERVER_NAME'];
+        header("Location: ".$mainPage);
+        die();
+        //$oLogin->_getLogout(false, true);
+      }
     }
     //*****************************************************************
     //*****************************************************************
