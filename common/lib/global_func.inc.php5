@@ -3921,8 +3921,7 @@ var_dump($query);*/
   {
     $where = array( '$and' => array(
         array('table' => 'company_history'),
-        array('cp_pk' => (int)$candidate_id),
-        array('flag' => 'a')
+        array('cp_pk' => (int)$candidate_id)
         ) );
     $newLogs = getMongoLog($where);
 
