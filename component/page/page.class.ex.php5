@@ -285,7 +285,7 @@ ChromePhp::log($logout);
         ChromePhp::log('else');
         $url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header($url);
-        exit();
+        die();
         //$oLogin->_getLogout(false, true);
       }
     }
