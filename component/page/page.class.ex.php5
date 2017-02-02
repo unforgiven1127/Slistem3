@@ -283,7 +283,7 @@ ChromePhp::log($logout);
       else
       {
         ChromePhp::log('else');
-        $url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        $url = 'beta2.slate.co.jp';
         ChromePhp::log($url);
         header($url);
         die();
