@@ -4109,6 +4109,7 @@ var_dump($query);*/
 
   function getActivityListFormatted($candidate_id)
   {
+$startT = strtotime("now");
     $activityList = getActivityListJustMongo($candidate_id);
 
     $html = '';
@@ -4138,11 +4139,19 @@ var_dump($query);*/
     $returnArray['html'] = $html;
     $returnArray['count'] = $count;
 
+$endT = strtotime("now");
+$exec_time = $endT - $startT;
+
+$time = $exec_time.' sec getActivityListFormatted';
+
+ChromePhp::log($candidate_info);
+
     return $returnArray;
   }
 
   function getCompanyHistoryFormatted($candidate_id)
   {
+$startT = strtotime("now");
     $companyHistory = getCompanyHistoryJustMongo($candidate_id);
 
     $html = '';
@@ -4171,7 +4180,12 @@ var_dump($query);*/
     $returnArray = array();
     $returnArray['html'] = $html;
     $returnArray['count'] = $count;
+$endT = strtotime("now");
+$exec_time = $endT - $startT;
 
+$time = $exec_time.' sec getCompanyHistoryFormatted';
+
+ChromePhp::log($candidate_info);
     return $returnArray;
   }
 
