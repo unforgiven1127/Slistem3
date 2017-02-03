@@ -1642,9 +1642,9 @@ ChromePhp::log($print);
 
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
-      //$asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
-      $allActivities = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']);
-      $asActivity['content'] = $allActivities['html'];
+      $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
+      //$allActivities = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //MONGO
+      //$asActivity['content'] = $allActivities['html']; //MONGO
       $asPosition = $this->_getPositionTab($pasCandidateData);
 
       $sActionTab = $this->_getActionTab($pasCandidateData);
