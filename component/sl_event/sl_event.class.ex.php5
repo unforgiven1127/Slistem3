@@ -294,13 +294,13 @@ class CSl_eventEx extends CSl_event
       }
     }
 
-    /*if($psNoteType == 'cp_history')
+    if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
       //$companyHistory = getCompanyHistory($candidate_id);
       $companyHistory = array();
 
-      /*$where = array( '$and' => array(
+     /* $where = array( '$and' => array(
         array( '$or' => array(
             array('cp_pk' => (int)$candidate_id),
             array('cp_pk' => $candidate_id)
@@ -309,7 +309,7 @@ class CSl_eventEx extends CSl_event
         )
       );*/
 
-      /*$where = array( '$and' => array(
+      $where = array( '$and' => array(
         array('cp_pk' => (int)$candidate_id),
         array('table' => 'company_history')
         )
@@ -344,7 +344,7 @@ class CSl_eventEx extends CSl_event
 
         array_push($asNotes,$addNotes);
       }
-      /*if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
+      if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
       {
         foreach ($companyHistory as $key => $value)
         {
@@ -373,7 +373,7 @@ class CSl_eventEx extends CSl_event
           array_push($asNotes,$addNotes);
 
         }
-      }*/
+      }
 
    // }
     //uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
