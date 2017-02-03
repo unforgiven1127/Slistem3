@@ -300,7 +300,7 @@ class CSl_eventEx extends CSl_event
       //$companyHistory = getCompanyHistory($candidate_id);
       $companyHistory = array();
 
-     /* $where = array( '$and' => array(
+      /*$where = array( '$and' => array(
         array( '$or' => array(
             array('cp_pk' => (int)$candidate_id),
             array('cp_pk' => $candidate_id)
@@ -375,8 +375,8 @@ class CSl_eventEx extends CSl_event
         }
       }
 
-   // }
-    //uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+   }
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
