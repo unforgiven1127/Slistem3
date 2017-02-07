@@ -1205,7 +1205,6 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateView($pnPk, $pasRedirected = array())
     {
-$startT = strtotime("now");
       //$searchID = $_GET['searchId'];
       if(isset($_GET['searchId']))
       {
@@ -1342,11 +1341,6 @@ $startT = strtotime("now");
       $sLink = 'javascript: view_candi(\''.$sViewURL.'\'); ';
       $sName = $asCandidate['lastname'].' '.$asCandidate['firstname'];
       logUserHistory($this->csUid, $this->csAction, $this->csType, $this->cnPk, array('text' => 'view - '.$sName.' (#'.$pnPk.')', 'link' => $sLink));
-
-$endT = strtotime("now");
-$exec_time = $endT - $startT;
-$print = $exec_time.' sec candidate display';
-ChromePhp::log($print);
 
       return $sHTML;
     }
@@ -1560,6 +1554,7 @@ ChromePhp::log($print);
 
     private function _getRightTabsFull($pasCandidateData, $psClass = '')
     {
+
       $pasCandidateData['sl_candidatepk'] = (int)$pasCandidateData['sl_candidatepk'];
 
       $oLogin = CDependency::getCpLogin();
@@ -1637,28 +1632,13 @@ ChromePhp::log($print);
         (empty($sCharSelected) && empty($sNoteSelected) && empty($sContactSelected))? $sJdSelected = 'selected' : '';
       }
 
-//$sHTML = '';
-
-
       $asCompanyFeed = $this->_getCompanyFeedTab($pasCandidateData);
 
       $asActivity = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //HATA BURADA
-      //$allActivities = $this->_getRecentActivity($pasCandidateData['sl_candidatepk']); //MONGO
-      //$asActivity['content'] = $allActivities['html']; //MONGO
       $asPosition = $this->_getPositionTab($pasCandidateData);
-
       $sActionTab = $this->_getActionTab($pasCandidateData);
 
       $asCpHistory = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, 'cp_history', array(), false);
-//return $sHTML;
-
-//$asCpHistory['nb_result'] = 0;
-//$asCpHistory['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
-
-//$asActivity['content'] = '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
-      /*$returnArray = getCompanyHistoryFormatted($pasCandidateData['sl_candidatepk']);
-      $asCpHistory['content'] = $returnArray['html'];
-      $asCpHistory['nb_result'] = $returnArray['count'];*/
 
       $nTotalData = $asCharacter['nb_result'] + $asNotes['nb_result'] + $asContact['nb_result'] +
               $asDocument['nb_result'] +$asPosition['nb_result'] + $asCpHistory['nb_result'];
@@ -2146,9 +2126,6 @@ ChromePhp::log($print);
     {
       if(!assert('is_key($pnPk)'))
         return array();
-
-      //$html = getActivityListFormatted($pnPk);
-      //return $html;
 
       $nActivityToDisplay = 25;
       $skip_activity = array('upd sl_candidate_profile', 'upd sl_candidate', 'upd sl_position_link', 'upd sl_candidate_rm',

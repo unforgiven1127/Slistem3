@@ -33,20 +33,20 @@
 <script type="text/javascript">
 $(function () {
 
-    var title = "New candidates met / New candidates in play / New positions in play January 01, 2017 to Present";
+    var title = "New candidates met / New candidates in play / New positions in play February 01, 2017 to Present";
 
-    var max_rabbit_1 = "15";
-    var max_rabbit_2 = "27";
+    var max_rabbit_1 = "7";
+    var max_rabbit_2 = "19";
 //-----------------------------------------------------------------------------------------//
-    var users = "L.Fry |47| |4| |4|;R.Pedersen |26| |2| |0|;J.Kovaliovas |16| |2| |2|;P.Thai |13| |3| |2|;V.Maslyuk |12| |0| |0|;Y.Takagi |11| |0| |1|;O.Rondos |10| |4| |3|;C.Chen |8| |1| |1|;K.Kapur |4| |5| |4|;B.Mo |0| |0| |0|;M.Moir |0| |0| |0|;P.Miles Harry |0| |0| |0|";
+    var users = "L.Fry |15| |1| |1|;R.Pedersen |8| |4| |0|;J.Kovaliovas |6| |0| |0|;V.Maslyuk |3| |1| |1|;Y.Takagi |3| |0| |0|;C.Chen |2| |1| |1|;O.Rondos |1| |0| |0|;P.Thai |1| |1| |1|;K.Kapur |1| |1| |0|;B.Mo |0| |0| |0|;M.Moir |0| |0| |1|;P.Miles Harry |0| |1| |1|";
     users = users.split(';');
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_count = "1;15;3;0;1;1;3;1;7;0;0;0";
+/*    var inplay_count = "2;7;0;0;0;0;0;2;1;0;1;0";
     inplay_count = inplay_count.split(';');
 
     for(var i=0; i<inplay_count.length; i++) { inplay_count[i] = parseInt(inplay_count[i], 10); }*/
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_rsc = "3;12;7;4;6;2;15;6;11;0;0;2";
+/*    var inplay_rsc = "4;12;1;0;0;2;3;2;1;0;0;1";
     inplay_rsc = inplay_rsc.split(';');
 
     for(var i=0; i<inplay_rsc.length; i++) { inplay_rsc[i] = parseInt(inplay_rsc[i], 10); }*/
@@ -56,21 +56,21 @@ $(function () {
 //
 //
 //-----------------------------------------------------------------------------------------//
-    var new_candi_met = "47;26;16;13;12;11;10;8;4;0;0;0";
+    var new_candi_met = "15;8;6;3;3;2;1;1;1;0;0;0";
     new_candi_met = new_candi_met.split(';');
 
     for(var i=0; i<new_candi_met.length; i++) { new_candi_met[i] = parseInt(new_candi_met[i], 10); }
 //-----------------------------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------------------------//
-    var new_candi_count = "4;2;2;3;0;0;4;1;5;0;0;0";
+    var new_candi_count = "1;4;0;1;0;1;0;1;1;0;0;1";
     new_candi_count = new_candi_count.split(';');
 
     for(var i=0; i<new_candi_count.length; i++) { new_candi_count[i] = parseInt(new_candi_count[i], 10); }
 //-----------------------------------------------------------------------------------------//
 //
 //-----------------------------------------------------------------------------------------//
-    var new_posi_count = "4;0;2;2;0;1;3;1;4;0;0;0";
+    var new_posi_count = "1;0;0;1;0;1;0;1;0;0;1;1";
     new_posi_count = new_posi_count.split(';');
 
     for(var i=0; i<new_posi_count.length; i++) { new_posi_count[i] = parseInt(new_posi_count[i], 10); }

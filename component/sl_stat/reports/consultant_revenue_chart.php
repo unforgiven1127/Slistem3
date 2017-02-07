@@ -44,7 +44,7 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">3</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/CA_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">L. Fry</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;10,336,369</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;10,425,119</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
 							<!--<td class="text_center">Team IT</td>-->
@@ -54,9 +54,9 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/US_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">O. Rondos</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;7,250,000</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;9,099,300</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">3</td>
 							<!--<td class="text_center">Team IT</td>-->
 						</tr>
 
@@ -64,7 +64,7 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">5</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/NZ_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">M. Moir</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;5,908,632</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;7,101,432</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
 							<!--<td class="text_center">Team healthcare</td>-->
@@ -74,9 +74,9 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">6</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/UK_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">P. Thai</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;2,798,556</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;5,797,356</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">3</td>
 							<!--<td class="text_center">Team IT</td>-->
 						</tr>
 
@@ -94,18 +94,28 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">8</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/CA_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">P. Miles Harry</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;1,932,048</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;2,269,548</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
 							<!--<td class="text_center">Team CNS</td>-->
 						</tr>
 
+																	<tr class="hover_row">
+							<td style="height: 10%; font-size: 300%;" class="text_center">9</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/CN_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">C. Chen</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;1,686,250</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
+							<!--<td class="text_center">Team IT</td>-->
+						</tr>
+
 						
 					<tr class="revenue_table_footer">
 						<td style="height: 40px; font-size: 300%;" class="text_center" colspan="3">Total</td>
-						<td style="height: 40px; font-size: 300%;" class="text_right">&yen;61,162,513</td>
+						<td style="height: 40px; font-size: 300%;" class="text_right">&yen;69,315,913</td>
 						<td style="height: 40px; font-size: 300%;" class="text_right">&yen;0</td>
-						<td style="height: 40px; font-size: 300%;" class="text_center">16</td>
+						<td style="height: 40px; font-size: 300%;" class="text_center">19</td>
 					</tr>
 				</table>
 			</td>

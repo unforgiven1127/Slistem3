@@ -272,18 +272,13 @@ class CPageEx extends CPage
     $this->cbIsLogged = $bIsLogged;
 
     $logout = check_session_expiry();
-//ChromePhp::log($logout);
+
     if ($logout)
     {
       if ($psMode == 'ajx')
-      {
-        //ChromePhp::log('ajx');
         $oLogin->_getLogout(true, true);
-      }
       else
-      {
         $oLogin->_getLogout(false, true);
-      }
     }
     //*****************************************************************
     //*****************************************************************
@@ -694,7 +689,7 @@ class CPageEx extends CPage
   public function redirect($psURL)
   {
     //@header('location: '.$psURL.'pg=normal');
-    @header('location: '.$psURL);
+	  @header('location: '.$psURL);
     $sHTML = '<script type="text/javascript">document.location.href = "'.$psURL.'";</script>';
     $sHTML.= 'You\'re gonna be redirected in a few seconds. You can click on <a href="'.$psURL.'">this link </a> to access the page right now.';
 

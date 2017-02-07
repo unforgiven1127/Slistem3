@@ -4087,7 +4087,7 @@ class CSl_statEx extends CSl_stat
 
       $sDate = date('H:i:s');
 
-      if(!$fileFlag || ($sDate >= '17:00:00' && $sDate <= '17:15:00'))
+      if(!$fileFlag || ($sDate >= '16:00:00' && $sDate <= '16:15:00'))
       {
         if (!is_numeric($year))
         {
@@ -4522,15 +4522,6 @@ class CSl_statEx extends CSl_stat
       $generatedKPIsCount = count($generatedKPIs);
       $data = array();
       $submit_totals = getValue('submit_totals');
-
-      $fileName = '/reports/totals_chart_ordered_KPI.php';
-      $localPath = __DIR__.$fileName;
-      $fileFlag = file_exists($localPath);
-      $generatedKPIsCount = 0;
-      if($fileFlag)
-      {
-        $generatedKPIsCount = 1;
-      }
 
       if($nextloop != '666')
       {
@@ -5836,21 +5827,16 @@ class CSl_statEx extends CSl_stat
       }
       else
       {
-        //$json_from_db = $generatedKPIs[0]['json_data'];
-        //$stats_data = json_decode($json_from_db, true);
+        $json_from_db = $generatedKPIs[0]['json_data'];
+        $stats_data = json_decode($json_from_db, true);
 
-        //$candidate_from_db = $generatedKPIs[1]['json_data'];
-        //$allCanidatesArray = json_decode($candidate_from_db, true);
+        $candidate_from_db = $generatedKPIs[1]['json_data'];
+        $allCanidatesArray = json_decode($candidate_from_db, true);
 
         $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
 
         $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
-
-        $data['nextloop'] = $nextloop;
-        $html = $this->_oDisplay->render($localPath, $data, $localPath);
-        return $html;
-
       }
 
       $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
@@ -5864,9 +5850,6 @@ class CSl_statEx extends CSl_stat
       header_remove('Set-Cookie');
 
       $html = $this->_oDisplay->render('totals_chart_ordered', $data);
-
-      $myfile = fopen($localPath, "a");
-      $ret = file_put_contents($localPath, $html);
 
       return $html;
     }

@@ -177,18 +177,14 @@ class CDatabaseEx extends CDatabase
 
     $fark = $sDateEnd - $sDateStart;
 
-    $oLogin = CDependency::getCpLogin();
-    $user_id = $oLogin->getUserPk();
-
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd." - USER: ".$user_id." \n----------------------------------------------------------------------------------\n\n";
+    $txt = $psQuery."\n".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
     if($exec_time >= 3) //if sql takes longer than 5sec.
     {
       $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
     }
-//$print = 'Query return in '.$exec_time.' seconds';
-//ChromePhp::log($print);
+
     //fwrite($myfile, $txt);
     //fclose($myfile);
 

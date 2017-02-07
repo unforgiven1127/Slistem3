@@ -118,7 +118,7 @@ class CSl_eventEx extends CSl_event
 
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
-    /*foreach ($asNotes as $key => $note)
+    foreach ($asNotes as $key => $note)
     {
 
       $splitted1 = explode("Content-Type: multipart/related;",$asNotes[$key]['content']);
@@ -204,7 +204,7 @@ class CSl_eventEx extends CSl_event
 
         $asNotes[$key]['content'] = TRIM($asNotes[$key]['content']);*/
 
-    //}
+    }
 
     //$asNotes = $return['all']; // bos array donunce burada patliyor...
     //$query = $return['query'];
@@ -297,20 +297,13 @@ class CSl_eventEx extends CSl_event
     if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
-      //$companyHistory = getCompanyHistory($candidate_id);
-      $companyHistory = array();
+      $companyHistory = getCompanyHistory($candidate_id);
 
-      /*$where = array( '$and' => array(
+      $where = array( '$and' => array(
         array( '$or' => array(
             array('cp_pk' => (int)$candidate_id),
             array('cp_pk' => $candidate_id)
             )),
-        array('table' => 'company_history')
-        )
-      );*/
-
-      $where = array( '$and' => array(
-        array('cp_pk' => (int)$candidate_id),
         array('table' => 'company_history')
         )
       );
@@ -375,7 +368,7 @@ class CSl_eventEx extends CSl_event
         }
       }
 
-   }
+    }
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {

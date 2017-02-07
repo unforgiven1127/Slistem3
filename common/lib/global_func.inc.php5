@@ -3895,57 +3895,6 @@ var_dump($query);*/
     return $result;
   }
 
-  function getActivityListJustMongo($candidate_id)
-  {
-    $where = array( '$and' => array(
-        array( '$or' => array(
-            array('table' => 'sl_candidate'),
-            array('table' => 'document'),
-            array('table' => 'sl_document'),
-            array('table' => 'sl_meeting'),
-            array('table' => 'position'),
-            array('table' => 'user_history'),
-            )),
-            array('cp_pk' => (int)$candidate_id)
-        )
-      );
-
-    /*$where = array( '$and' => array(
-        array( '$or' => array(
-            array('table' => 'sl_candidate'),
-            array('table' => 'document'),
-            array('table' => 'sl_document'),
-            array('table' => 'sl_meeting'),
-            array('table' => 'position'),
-            array('table' => 'user_history'),
-            )),
-            array( '$or' => array(
-              array('cp_pk' => (int)$candidate_id),
-              array('cp_pk' => $candidate_id))
-            )
-        )
-      );*/
-
-    $newLogs = getMongoLog($where);
-
-    $newLogs = iterator_to_array($newLogs, false);
-
-    return $newLogs;
-  }
-
-  function getCompanyHistoryJustMongo($candidate_id)
-  {
-    $where = array( '$and' => array(
-        array('table' => 'company_history'),
-        array('cp_pk' => (int)$candidate_id)
-        ) );
-    $newLogs = getMongoLog($where);
-
-    $newLogs = iterator_to_array($newLogs, false);
-
-    return $newLogs;
-  }
-
   function getCompanyHistory($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -4122,91 +4071,8 @@ var_dump($query);*/
 
   }
 
-  function getActivityListFormatted($candidate_id)
+  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
-$startT = strtotime("now");
-    $activityList = getActivityListJustMongo($candidate_id);
-
-    $html = '';
-    $count = 0;
-    foreach ($activityList as $key => $value)
-    {
-      $count++;
-      $user_information = getUserInformaiton($value['userfk']);
-
-      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
-
-      $format = "<div class='entry'>
-                  <div class='note_header'>
-                  &nbsp;→&nbsp;&nbsp;
-                  <span>
-                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
-                  </span>
-                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
-                  </div>
-                  <div class='note_content'>".$value['action']."</div>
-              </div>";
-
-      $html .= $format;
-    }
-
-    $returnArray = array();
-    $returnArray['html'] = $html;
-    $returnArray['count'] = $count;
-
-$endT = strtotime("now");
-$exec_time = $endT - $startT;
-
-$time = $exec_time.' sec getActivityListFormatted';
-
-ChromePhp::log($time);
-
-    return $returnArray;
-  }
-
-  function getCompanyHistoryFormatted($candidate_id)
-  {
-$startT = strtotime("now");
-    $companyHistory = getCompanyHistoryJustMongo($candidate_id);
-
-    $html = '';
-    $count = 0;
-    foreach ($companyHistory as $key => $value)
-    {
-      $count++;
-      $user_information = getUserInformaiton($value['userfk']);
-
-      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
-
-      $format = "<div class='entry'>
-                  <div class='note_header'>
-                  &nbsp;→&nbsp;&nbsp;
-                  <span>
-                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
-                  </span>
-                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
-                  </div>
-                  <div class='note_content'>".$value['action']."</div>
-              </div>";
-
-      $html .= $format;
-    }
-
-    $returnArray = array();
-    $returnArray['html'] = $html;
-    $returnArray['count'] = $count;
-$endT = strtotime("now");
-$exec_time = $endT - $startT;
-
-$time = $exec_time.' sec getCompanyHistoryFormatted';
-
-ChromePhp::log($time);
-    return $returnArray;
-  }
-
-  function getMongoLog($where = '',$orderBy = '',$limit = '100' ,$table = 'logs',$skip = 0)
-  {
-    //$startT = strtotime("now");
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
@@ -4252,12 +4118,6 @@ ChromePhp::log($time);
         //ChromePhp::log($log);
         //$returnArray[] = $log;
     }*/
-
-    //$endT = strtotime("now");
-    //$exec_time = $endT - $startT;
-
-    //ChromePhp::log('EXECUTION TIME');
-    //ChromePhp::log($exec_time);
 
     return $allLogs;
   }
@@ -5698,7 +5558,7 @@ function get_revenue_chart_loop()
 
 function check_session_expiry()
 {
-  $expiry_time = 60 * 60 * 8000; // 8000 hour
+  $expiry_time = 60 * 60 * 80000; // 3 hour
   //$expiry_time = 60; // 1 min?
   $logout = false;
   if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $expiry_time))
