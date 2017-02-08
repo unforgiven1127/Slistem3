@@ -1541,7 +1541,7 @@ class CSearchEx extends CSearch
                   ////ChromePhp::log('TEST');
                   if($sFieldName == 'company_prev')
                   {
-                    //$company_id = $vValue;
+                    $company_id = $vValue;
                     $test = "[ #1325";
                     $search_key = "#".$company_id;
                     $company_information = getCompanyInformation($vValue);
