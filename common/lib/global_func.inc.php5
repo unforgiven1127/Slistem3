@@ -3681,6 +3681,8 @@ var_dump($query);*/
 
     $read = $db_result->readFirst();
 
+    $row = array();
+
     while ($read)
     {
       $row = $db_result->getData();
