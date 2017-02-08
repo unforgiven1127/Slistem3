@@ -38,15 +38,15 @@ $(function () {
     var max_rabbit_1 = "7";
     var max_rabbit_2 = "19";
 //-----------------------------------------------------------------------------------------//
-    var users = "L.Fry |15| |1| |1|;R.Pedersen |8| |4| |0|;J.Kovaliovas |6| |0| |0|;V.Maslyuk |3| |1| |1|;Y.Takagi |3| |0| |0|;C.Chen |2| |1| |1|;O.Rondos |1| |0| |0|;P.Thai |1| |1| |1|;K.Kapur |1| |1| |0|;B.Mo |0| |0| |0|;M.Moir |0| |0| |1|;P.Miles Harry |0| |1| |1|";
+    var users = "L.Fry |25| |1| |1|;R.Pedersen |8| |4| |0|;J.Kovaliovas |7| |0| |0|;V.Maslyuk |4| |1| |1|;Y.Takagi |3| |0| |0|;C.Chen |2| |1| |2|;K.Kapur |1| |1| |0|;O.Rondos |1| |0| |0|;P.Thai |1| |1| |1|;S.D.V. |0| |0| |0|;B.Mo |0| |0| |0|;M.Moir |0| |0| |1|;P.Miles Harry |0| |1| |1|";
     users = users.split(';');
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_count = "2;7;0;0;0;0;0;2;1;0;1;0";
+/*    var inplay_count = "2;7;0;0;0;0;1;0;3;0;0;1;0";
     inplay_count = inplay_count.split(';');
 
     for(var i=0; i<inplay_count.length; i++) { inplay_count[i] = parseInt(inplay_count[i], 10); }*/
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_rsc = "4;12;1;0;0;2;3;2;1;0;0;1";
+/*    var inplay_rsc = "4;12;1;0;0;2;1;3;3;0;0;0;1";
     inplay_rsc = inplay_rsc.split(';');
 
     for(var i=0; i<inplay_rsc.length; i++) { inplay_rsc[i] = parseInt(inplay_rsc[i], 10); }*/
@@ -56,21 +56,21 @@ $(function () {
 //
 //
 //-----------------------------------------------------------------------------------------//
-    var new_candi_met = "15;8;6;3;3;2;1;1;1;0;0;0";
+    var new_candi_met = "25;8;7;4;3;2;1;1;1;0;0;0;0";
     new_candi_met = new_candi_met.split(';');
 
     for(var i=0; i<new_candi_met.length; i++) { new_candi_met[i] = parseInt(new_candi_met[i], 10); }
 //-----------------------------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------------------------//
-    var new_candi_count = "1;4;0;1;0;1;0;1;1;0;0;1";
+    var new_candi_count = "1;4;0;1;0;1;1;0;1;0;0;0;1";
     new_candi_count = new_candi_count.split(';');
 
     for(var i=0; i<new_candi_count.length; i++) { new_candi_count[i] = parseInt(new_candi_count[i], 10); }
 //-----------------------------------------------------------------------------------------//
 //
 //-----------------------------------------------------------------------------------------//
-    var new_posi_count = "1;0;0;1;0;1;0;1;0;0;1;1";
+    var new_posi_count = "1;0;0;1;0;2;0;0;1;0;0;1;1";
     new_posi_count = new_posi_count.split(';');
 
     for(var i=0; i<new_posi_count.length; i++) { new_posi_count[i] = parseInt(new_posi_count[i], 10); }

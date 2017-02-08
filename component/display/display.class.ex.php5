@@ -809,7 +809,7 @@ class CDisplayEx extends CDisplay
   public function getRedirection($psUrl, $psTimer = 0, $psMessage = '')
   {
     //make sure we never redirect to a ajax page
-    //$psUrl.= '&pg=normal';
+    $psUrl.= '&pg=normal';
 
     if(empty($psTimer))
     {

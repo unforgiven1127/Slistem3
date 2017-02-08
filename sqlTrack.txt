@@ -2559,3 +2559,433 @@ SELECT scan.*,
 14sec - start: 2017-02-07 11:17:50 / end: 2017-02-07 11:18:04
 ----------------------------------------------------------------------------------
 
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:17:16") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:19:55") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%filenet%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  25 ,25
+15sec - start: 2017-02-07 11:19:55 / end: 2017-02-07 11:20:10
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mobileconvert%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+12sec - start: 2017-02-07 11:30:25 / end: 2017-02-07 11:30:37
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mobile convert%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+12sec - start: 2017-02-07 11:30:44 / end: 2017-02-07 11:30:56
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%qtp %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+11sec - start: 2017-02-07 11:31:09 / end: 2017-02-07 11:31:20
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:31:09") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%qtp %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+14sec - start: 2017-02-07 11:31:20 / end: 2017-02-07 11:31:34
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%kofax%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+12sec - start: 2017-02-07 11:33:41 / end: 2017-02-07 11:33:53
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:33:41") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%kofax%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+14sec - start: 2017-02-07 11:33:53 / end: 2017-02-07 11:34:07
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:33:41") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%kofax%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+14sec - start: 2017-02-07 11:34:07 / end: 2017-02-07 11:34:21
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% ESB %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+14sec - start: 2017-02-07 11:35:27 / end: 2017-02-07 11:35:41
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:35:27") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% ESB %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+16sec - start: 2017-02-07 11:35:41 / end: 2017-02-07 11:35:57
+----------------------------------------------------------------------------------
+
+SELECT  levenshtein("inomata", TRIM(LOWER(scan.lastname))) AS lastname_lev ,  levenshtein("inomata", TRIM(LOWER(scan.firstname))) AS firstname_lev ,  100-(levenshtein("inomata", LOWER(scan.lastname))*100/LENGTH(scan.lastname)) AS ratio ,  100-(levenshtein("inomata", LOWER(scan.firstname))*100/LENGTH(scan.firstname)) AS ratio_rev ,  IF(scom.name LIKE "dole", 3, IF(scom.name LIKE "dole%", 2, 1)) as match_order , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:44:01") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( scan.lastname LIKE "%inomata%" OR  scan.firstname LIKE "%inomata%" )   AND  scom.name LIKE "%dole%"   AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  0 ,25
+3sec - start: 2017-02-07 11:44:02 / end: 2017-02-07 11:44:05
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+14sec - start: 2017-02-07 11:59:10 / end: 2017-02-07 11:59:24
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:10") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+17sec - start: 2017-02-07 11:59:24 / end: 2017-02-07 11:59:41
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:10") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:59") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  0 ,25
+17sec - start: 2017-02-07 11:59:59 / end: 2017-02-07 12:00:16
+----------------------------------------------------------------------------------
+
+SELECT elin.*, even.*, slc.name as companyName
+    FROM `event_link` as elin LEFT JOIN sl_candidate_profile as cp ON (cp.candidatefk = elin.cp_pk) LEFT JOIN sl_company as slc ON (slc.sl_companypk = cp.companyfk) INNER JOIN event as even ON (even.eventpk = elin.eventfk AND even.type = "character" AND even.flag = "a") WHERE elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = 419491 ORDER BY even.date_create DESC 
+12sec - start: 2017-02-07 12:00:04 / end: 2017-02-07 12:00:16
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:10") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:59") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  0 ,25
+17sec - start: 2017-02-07 12:00:16 / end: 2017-02-07 12:00:33
+----------------------------------------------------------------------------------
+
+SELECT elin.*, even.*, slc.name as companyName
+    FROM `event_link` as elin LEFT JOIN sl_candidate_profile as cp ON (cp.candidatefk = elin.cp_pk) LEFT JOIN sl_company as slc ON (slc.sl_companypk = cp.companyfk) INNER JOIN event as even ON (even.eventpk = elin.eventfk AND even.type = "cp_history" AND even.flag = "a") WHERE elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = 419491 ORDER BY even.date_create DESC 
+16sec - start: 2017-02-07 12:00:17 / end: 2017-02-07 12:00:33
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+14sec - start: 2017-02-07 12:04:58 / end: 2017-02-07 12:05:12
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 11:59:10") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 12:04:58") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% MDM %"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  25 ,25
+16sec - start: 2017-02-07 12:05:12 / end: 2017-02-07 12:05:28
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+13sec - start: 2017-02-07 13:34:50 / end: 2017-02-07 13:35:03
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 13:34:50") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+14sec - start: 2017-02-07 13:35:03 / end: 2017-02-07 13:35:17
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+12sec - start: 2017-02-07 13:35:44 / end: 2017-02-07 13:35:56
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 13:34:50") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 13:35:44") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  0 ,25
+15sec - start: 2017-02-07 13:35:56 / end: 2017-02-07 13:36:11
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0)
+13sec - start: 2017-02-07 13:46:00 / end: 2017-02-07 13:46:13
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 13:34:50") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 13:46:00") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%insurance%"  and even.content  LIKE  "% PMO %"  and even.content  LIKE  "%application%"  and scan.locationfk  IN  (1) )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  25 ,25
+15sec - start: 2017-02-07 13:46:13 / end: 2017-02-07 13:46:28
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+13sec - start: 2017-02-07 14:22:37 / end: 2017-02-07 14:22:50
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:22:37") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+16sec - start: 2017-02-07 14:22:50 / end: 2017-02-07 14:23:06
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:22:37") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:23:13") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  0 ,25
+20sec - start: 2017-02-07 14:23:13 / end: 2017-02-07 14:23:33
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+13sec - start: 2017-02-07 14:25:47 / end: 2017-02-07 14:26:00
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:22:37") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:25:47") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  25 ,25
+17sec - start: 2017-02-07 14:26:00 / end: 2017-02-07 14:26:17
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+13sec - start: 2017-02-07 14:28:37 / end: 2017-02-07 14:28:50
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:22:37") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 14:28:37") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "%mechatronics%" )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY full_salary asc  LIMIT  50 ,25
+16sec - start: 2017-02-07 14:28:50 / end: 2017-02-07 14:29:06
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( scpr.grade  >= "0"  and even.content  LIKE  "%江上暁美%" )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126
+13sec - start: 2017-02-07 15:20:06 / end: 2017-02-07 15:20:19
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% ECU %"  and even.content  LIKE  "% ADAS %" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+15sec - start: 2017-02-07 15:31:35 / end: 2017-02-07 15:31:50
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 15:31:35") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( even.content  LIKE  "% ECU %"  and even.content  LIKE  "% ADAS %" )  AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+19sec - start: 2017-02-07 15:31:50 / end: 2017-02-07 15:32:09
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-07 15:41:03" 
+3sec - start: 2017-02-07 15:40:03 / end: 2017-02-07 15:40:06
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  LEFT JOIN sl_contact as scon ON ((scon.item_type = "candi" AND itemfk = scan.sl_candidatepk AND scon.type IN (1,2,4,6)))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  WHERE 1   and ( scpr.grade  >= "0"  and (  (sind.sl_industrypk  IN  (503) OR sind.parentfk  IN  (503))  )  and scon.value  LIKE  "%090%"  and scan.statusfk  = "1" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+3sec - start: 2017-02-07 16:43:25 / end: 2017-02-07 16:43:28
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1   and ( scpr.grade  >= "0" )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126
+5sec - start: 2017-02-07 16:57:23 / end: 2017-02-07 16:57:28
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk) ) AND ( elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ))  INNER JOIN event as even ON (( even.eventpk = elin.eventfk AND even.type NOT IN ('cp_hidden', 'cp_history') ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  WHERE 1   and ( scpr.grade  >= "0"  and even.content  LIKE  "%Escrypt%" )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126
+17sec - start: 2017-02-07 16:57:30 / end: 2017-02-07 16:57:47
+----------------------------------------------------------------------------------
+
+SELECT scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-07 16:57:23") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1   and ( scpr.grade  >= "0" )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126 GROUP BY scan.sl_candidatepk  ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC  LIMIT  0 ,25
+30sec - start: 2017-02-07 16:57:28 / end: 2017-02-07 16:57:58
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-07 17:01:03" 
+3sec - start: 2017-02-07 17:00:03 / end: 2017-02-07 17:00:06
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-08 01:08:44" 
+3sec - start: 2017-02-08 01:07:44 / end: 2017-02-08 01:07:47
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-08 01:08:44" 
+3sec - start: 2017-02-08 01:07:44 / end: 2017-02-08 01:07:47
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-08 01:08:44" 
+3sec - start: 2017-02-08 01:07:44 / end: 2017-02-08 01:07:47
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-08 01:08:44" 
+3sec - start: 2017-02-08 01:07:44 / end: 2017-02-08 01:07:47
+----------------------------------------------------------------------------------
+
+SELECT * FROM notification as noti INNER JOIN notification_action as nact ON (nact.notificationfk = noti.notificationpk) LEFT JOIN notification_recipient as nrec ON (nrec.notificationfk = noti.notificationpk) LEFT JOIN notification_link as nlin ON (nlin.notificationfk = noti.notificationpk AND linked_to = 'item') WHERE noti.type IN ("reminder", "email")  AND noti.delivered < 1  AND noti.date_notification <= "2017-02-08 04:35:03" 
+3sec - start: 2017-02-08 04:34:03 / end: 2017-02-08 04:34:06
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( scan.lastname LIKE "%%" OR  scan.firstname LIKE "%%" )   AND (_sys_status = 0 OR _sys_redirect > 0)
+5sec - start: 2017-02-08 08:57:48 / end: 2017-02-08 08:57:53
+----------------------------------------------------------------------------------
+
+SELECT  levenshtein("", TRIM(LOWER(scan.lastname))) AS lastname_lev ,  levenshtein("", TRIM(LOWER(scan.firstname))) AS firstname_lev ,  100-(levenshtein("", LOWER(scan.lastname))*100/LENGTH(scan.lastname)) AS ratio ,  100-(levenshtein("", LOWER(scan.firstname))*100/LENGTH(scan.firstname)) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 08:57:48") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( scan.lastname LIKE "%%" OR  scan.firstname LIKE "%%" )   AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  0 ,50
+178sec - start: 2017-02-08 08:57:53 / end: 2017-02-08 09:00:51
+----------------------------------------------------------------------------------
+
+SELECT  levenshtein("", TRIM(LOWER(scan.lastname))) AS lastname_lev ,  levenshtein("", TRIM(LOWER(scan.firstname))) AS firstname_lev ,  100-(levenshtein("", LOWER(scan.lastname))*100/LENGTH(scan.lastname)) AS ratio ,  100-(levenshtein("", LOWER(scan.firstname))*100/LENGTH(scan.firstname)) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 08:57:48") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( scan.lastname LIKE "%%" OR  scan.firstname LIKE "%%" )   AND (_sys_status = 0 OR _sys_redirect > 0) GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  0 ,50
+178sec - start: 2017-02-08 09:00:51 / end: 2017-02-08 09:03:49
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%nicholas%"  AND  TRIM(scan.firstname) LIKE "%choy%")
+              OR (TRIM(scan.firstname) LIKE "%nicholas%"  AND  TRIM(scan.lastname) LIKE "%choy%") )  AND (_sys_status = 0 OR _sys_redirect > 0)
+166sec - start: 2017-02-08 09:01:04 / end: 2017-02-08 09:03:50
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%nicholas%"  AND  TRIM(scan.firstname) LIKE "%choy%")
+              OR (TRIM(scan.firstname) LIKE "%nicholas%"  AND  TRIM(scan.lastname) LIKE "%choy%") )  AND (_sys_status = 0 OR _sys_redirect > 0)
+81sec - start: 2017-02-08 09:02:29 / end: 2017-02-08 09:03:50
+----------------------------------------------------------------------------------
+
+SELECT  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname)))) AS ratio ,  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(scan.lastname, scan.firstname))) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:28:33") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%%"  AND  TRIM(scan.firstname) LIKE "%naoki%")
+              OR (TRIM(scan.firstname) LIKE "%%"  AND  TRIM(scan.lastname) LIKE "%naoki%") )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126 GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  0 ,10
+8sec - start: 2017-02-08 10:28:33 / end: 2017-02-08 10:28:41
+----------------------------------------------------------------------------------
+
+SELECT  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname)))) AS ratio ,  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(scan.lastname, scan.firstname))) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:28:33") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin  FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%%"  AND  TRIM(scan.firstname) LIKE "%naoki%")
+              OR (TRIM(scan.firstname) LIKE "%%"  AND  TRIM(scan.lastname) LIKE "%naoki%") )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126 GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  0 ,10
+8sec - start: 2017-02-08 10:28:41 / end: 2017-02-08 10:28:49
+----------------------------------------------------------------------------------
+
+SELECT  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname)))) AS ratio ,  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(scan.lastname, scan.firstname))) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:28:33") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:29:10") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%%"  AND  TRIM(scan.firstname) LIKE "%naoki%")
+              OR (TRIM(scan.firstname) LIKE "%%"  AND  TRIM(scan.lastname) LIKE "%naoki%") )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126 GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  10 ,10
+9sec - start: 2017-02-08 10:29:10 / end: 2017-02-08 10:29:19
+----------------------------------------------------------------------------------
+
+SELECT  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname)))) AS ratio ,  100-(levenshtein("naoki", LOWER(CONCAT(TRIM(scan.lastname), TRIM(scan.firstname))))*100/LENGTH(CONCAT(scan.lastname, scan.firstname))) AS ratio_rev , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:28:33") AS age,
+          scan.sl_candidatepk as PK, count(elin.eventfk) as nb_note, MAX(elin.event_linkpk) as lastNote, IF(_sys_redirect > 0, _sys_redirect, scan.sl_candidatepk) as PK, 0 as _is_admin , scan.*,
+          scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
+          (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
+          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "2017-02-08 10:29:10") AS age,
+          scan.sl_candidatepk as PK FROM `sl_candidate` as scan LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1  AND ( (scan.lastname LIKE "%%"  AND  TRIM(scan.firstname) LIKE "%naoki%")
+              OR (TRIM(scan.firstname) LIKE "%%"  AND  TRIM(scan.lastname) LIKE "%naoki%") )  AND (_sys_status = 0 OR _sys_redirect > 0) AND COALESCE(sind.sl_industrypk, 0) <> 126 GROUP BY scan.sl_candidatepk  ORDER BY  IF(MAX(ratio) >= MAX(ratio_rev), ratio, ratio_rev) DESC , lastname desc, firstname desc, PK desc  LIMIT  10 ,10
+8sec - start: 2017-02-08 10:29:19 / end: 2017-02-08 10:29:27
+----------------------------------------------------------------------------------
+
+SELECT count(DISTINCT scan.sl_candidatepk) as nCount FROM `sl_candidate` as scan INNER JOIN document_link as dlin ON ((dlin.cp_pk = scan.sl_candidatepk AND dlin.cp_uid = "555-001" AND dlin.cp_type = "candi" AND dlin.cp_action = "ppav" ))  LEFT JOIN sl_candidate_profile as scpr ON ((scpr.candidatefk = scan.sl_candidatepk))  INNER JOIN sl_occupation as socc ON ((socc.sl_occupationpk = scpr.occupationfk))  INNER JOIN document_file as dfil ON (( dfil.documentfk = dlin.documentfk ))  LEFT JOIN sl_company as scom ON ((scom.sl_companypk = scpr.companyfk))  LEFT JOIN sl_industry as sind ON ((sind.sl_industrypk = scpr.industryfk))  LEFT JOIN event_link as elin ON (((elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)))  WHERE 1   and ( scpr.grade  >= "0"  and (  (sind.sl_industrypk  IN  (505) OR sind.parentfk  IN  (505))  )  and (  (socc.sl_occupationpk  IN  (152) OR socc.parentfk  IN  (152))  )  and dfil.original  LIKE  "%brake%" )  AND (_sys_status = 0 OR _sys_redirect > 0)
+3sec - start: 2017-02-08 10:56:33 / end: 2017-02-08 10:56:36
+----------------------------------------------------------------------------------
+
+SELECT scom.*, scrs.date_created as dateRss
+          FROM sl_company as scom
+          LEFT JOIN sl_company_rss as scrs ON (scrs.companyfk = scom.sl_companypk)
+          WHERE  LENGTH(scom.name) > 1
+          ORDER BY scrs.date_created, sl_companypk DESC
+          LIMIT 1, 11
+4sec - start: 2017-02-08 11:00:01 / end: 2017-02-08 11:00:05
+----------------------------------------------------------------------------------
+
+SELECT scom.*, scrs.date_created as dateRss
+          FROM sl_company as scom
+          LEFT JOIN sl_company_rss as scrs ON (scrs.companyfk = scom.sl_companypk)
+          WHERE  LENGTH(scom.name) > 1
+          ORDER BY scrs.date_created, sl_companypk DESC
+          LIMIT 1, 11
+4sec - start: 2017-02-08 11:00:01 / end: 2017-02-08 11:00:05
+----------------------------------------------------------------------------------
+

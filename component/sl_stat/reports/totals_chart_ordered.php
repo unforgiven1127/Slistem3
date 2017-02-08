@@ -207,6 +207,8 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
 		</td>
 		<td>
@@ -226,6 +228,8 @@
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
 		</td>
@@ -247,6 +251,8 @@
 										</div>
 							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -264,6 +270,31 @@
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="481">
+			2			</div>
+			<div class="stat_candi_info 481">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kai Obokata (29)<br>Sales Excellence Analyst<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i><p>Axial Solutions - in F2F at Slate conference room, told her they will offer her. Her remain 2 weeks patient as Global Sales Director speaks to HQ.</p>
+<p>4 weeks later they said they were interested in a cheaper candidate.</p>
+<p>Obviously this hurt her and wasted her time.  As she perfectly matched the role and was within their stated budget.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=416337&pg=ajx')">416337</a>
+										</div>
+							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -282,6 +313,11 @@
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kai Obokata (29)<br>Sales Excellence Analyst<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i><p>Axial Solutions - in F2F at Slate conference room, told her they will offer her. Her remain 2 weeks patient as Global Sales Director speaks to HQ.</p>
+<p>4 weeks later they said they were interested in a cheaper candidate.</p>
+<p>Obviously this hurt her and wasted her time.  As she perfectly matched the role and was within their stated budget.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=416337&pg=ajx')">416337</a>
+										</div>
+							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -301,6 +337,8 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -319,6 +357,8 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -337,23 +377,7 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="481">
-			0			</div>
-			<div class="stat_candi_info 481">
 							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -375,6 +399,8 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -393,11 +419,13 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="481">
-			1			</div>
+			2			</div>
 			<div class="stat_candi_info 481">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -410,6 +438,9 @@
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
+										<a data-toggle="tooltip" title="Candidate ID: 416337" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9517&pg=ajx')">9517</a>
+										</div>
+							<div class="hover_row ">
 										<a data-toggle="tooltip" title="Candidate ID: 414124" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9055&pg=ajx')">9055</a>
 										</div>
 									</div>
@@ -430,6 +461,8 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -447,6 +480,8 @@
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -470,12 +505,6 @@
 <p>Is looking for Project Manager in Automotive or Device area.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=413096&pg=ajx')">413096</a>
 										</div>
 							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masahiro Nakao (52)<br>Supplier Performance Engineer<br>Visteon Japan Ltd.<br><br><i><p>Open to new opps. Same requirements as before: QA, AQE, or Supplier Quality is ok, needs to be Yokohama or near, expected salary above 9M. Still at Visteon, and still working as a QE. </p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=301095&pg=ajx')">301095</a>
-										</div>
-							<div class="hover_row  colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
-										</div>
-							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dinesh Vudathu (40)<br>Senior Project manger<br>Accel Japan<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420571&pg=ajx')">420571</a>
 										</div>
 							<div class="hover_row  colored_row">
@@ -483,6 +512,12 @@
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masahiro Nakao (52)<br>Supplier Performance Engineer<br>Visteon Japan Ltd.<br><br><i><p>Open to new opps. Same requirements as before: QA, AQE, or Supplier Quality is ok, needs to be Yokohama or near, expected salary above 9M. Still at Visteon, and still working as a QE. </p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=301095&pg=ajx')">301095</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -498,12 +533,8 @@
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="443">
-			7			</div>
+			9			</div>
 			<div class="stat_candi_info 443">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row">
@@ -516,6 +547,12 @@
 										</div>
 							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masahiro Nakao (52)<br>Supplier Performance Engineer<br>Visteon Japan Ltd.<br><br><i><p>Open to new opps. Same requirements as before: QA, AQE, or Supplier Quality is ok, needs to be Yokohama or near, expected salary above 9M. Still at Visteon, and still working as a QE. </p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=301095&pg=ajx')">301095</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Te-Sheng Hsu (27)<br>Technical Support Engineer<br>Elliott Co., / Ebara Group<br><br><i><p>Young, green engineer from Taiwan. Joined Elliot (Compressors &amp; Steam Turbine) through campus recruit. Studied Japanese in University, graduated in Taiwan, wanted to make use of his Japanes so came to Japan for work. Done a lot of new grad trainee the past 1yr and now finally working as tech engineer. Responsible for tech support for East Asia - Korea, China, Singapore.&nbsp; Japanese good for internal communication but do not cover any domestic customers. Still young so not set on settli</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417079&pg=ajx')">417079</a>
@@ -747,12 +784,8 @@
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="443">
-			6			</div>
+			7			</div>
 			<div class="stat_candi_info 443">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -765,6 +798,11 @@
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -1177,55 +1215,87 @@
 		<td class="name_column revenueSize">L. Fry</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="388">
-			16			</div>
+			26			</div>
 			<div class="stat_candi_info 388">
 							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Nischal Pradhan (27)<br>Service Delivery Manager / Senior Engineer<br>Eire Systems<br><br><i><p>JLPT N2</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420595&pg=ajx')">420595</a>
-										</div>
-							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuki Yamashita (42)<br>Assistant Manager<br>Kanden System Solutions Co., Inc.<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420515&pg=ajx')">420515</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taisuke Kurita (46)<br>Managing Director<br>EP Consulting<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420521&pg=ajx')">420521</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="KATSUTOSHI SUGANO (50)<br>General Manager, Altek Japan Corporation<br>Altek<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420524&pg=ajx')">420524</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masataka Aoyagi (45)<br>Executive Corporate Officer of Agent Service Division<br>Sony Real Estate<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=25241&pg=ajx')">25241</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoki Notoya (40)<br>Translator<br>Venga<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420528&pg=ajx')">420528</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akira Maruyama (47)<br>Finance & Corporate Services Department  (Assistant Manager)<br>Russell Investment<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420475&pg=ajx')">420475</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Shin Nakahara (50)<br>Deputy Director - Risk Management Dept. / Tokio Marine Holdings, Inc<br>Tokio Marine  & Nichido Holdings<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420522&pg=ajx')">420522</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="YUXIN XUE (26)<br>Research Assistant<br>Tokyo University Graduate School<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420496&pg=ajx')">420496</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masanobu Kimura (52)<br>Japan Country Manager of Education, Software professional Services<br>Hewlett Packard<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420458&pg=ajx')">420458</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Toshiki Suzuki (39)<br>ASPAC IT Problem Manager<br>Beckman Coulter<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=337057&pg=ajx')">337057</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kathy Akaike (38)<br>Manage SOX Compliance<br>US Auto Parts Network<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420523&pg=ajx')">420523</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Chuzen Kin (28)<br>Global Promotions & PR Specialist<br>Works Applications<br><br><i><p>Linked In.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=409905&pg=ajx')">409905</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Risa Kobayashi (42)<br>General Manager, IT System Division<br>Transcosmos<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420566&pg=ajx')">420566</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taichi Tokutake (34)<br>Interpreting<br>Cilect<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420526&pg=ajx')">420526</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Sarimanu Suzuki (24)<br>Desktop Support Engineer<br>Bank of America Merrill Lynch<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420576&pg=ajx')">420576</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="ATSUSHI IKEDA (43)<br>Executive Director, Control Officer Director, Asia Pacific Controls Office<br>JP Morgan Chase & Co.<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420587&pg=ajx')">420587</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tomas Kalab (31)<br> Administration staff<br>Intership - Housing Company<br><br><i><p>I think Pierres impression of this guy was off.  He had 2 good references and I liked him when I spoke to him.  Recommending hi to talk with Larry for CCM2. </p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=410406&pg=ajx')">410406</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taiga Giri (36)<br>System Administrator<br>Arcserve<br><br><i>Nepalese by birth came to Japan in 2002. Now has Japanese citizenship, and is married to a Japanese lady and has one child. Struggling to get by on 4.5M and knows he needs to consider new roles. Wife is currently off to raise the child and so they are living week by week.<br />
+<br />
+Background is in software dev but moved out of it and into general desktop support. Really bad move career wise and he is paying for it now. Has exp. with a wide variety of technologies including VMWare, BusinessOb</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=344837&pg=ajx')">344837</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kyoe Oishi (52)<br>CTO<br>Smileworks<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420582&pg=ajx')">420582</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Taniguchi (52)<br>Product Management<br>Amkor Technology<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420543&pg=ajx')">420543</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akitsugu MATSUSHIMA (45)<br>Senior Account Manager<br>Huawei Japan<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420584&pg=ajx')">420584</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuka Murazumi (41)<br>Sales Operation Leader in Project and Contract Specialists<br>En World Japan K.K.<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420620&pg=ajx')">420620</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Christian Raphalen (48)<br>Business Analyst<br>Hewlett Packard<br><br><i>Linked In</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=401329&pg=ajx')">401329</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kimiko MINEGISHI (48)<br>Public Relation Division, Secretary / Translator to CEO<br>Universal Entertainment<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420559&pg=ajx')">420559</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Seiichi Kato (47)<br>Sales Support Consultant, Sales Strategy & Planning Team<br>Dell Japan Inc.<br><br><i><p>Bizreach.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420547&pg=ajx')">420547</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Liang Zhao (34)<br>Senior SAP SRM Consultant<br>Sap<br><br><i><p>Bizreach</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420505&pg=ajx')">420505</a>
 										</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -1239,54 +1309,87 @@
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="388">
-			15			</div>
+			26			</div>
 			<div class="stat_candi_info 388">
 							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuki Yamashita (42)<br>Assistant Manager<br>Kanden System Solutions Co., Inc.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420515&pg=ajx')">420515</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taisuke Kurita (46)<br>Managing Director<br>EP Consulting<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420521&pg=ajx')">420521</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="KATSUTOSHI SUGANO (50)<br>General Manager, Altek Japan Corporation<br>Altek<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420524&pg=ajx')">420524</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masataka Aoyagi (45)<br>Executive Corporate Officer of Agent Service Division<br>Sony Real Estate<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=25241&pg=ajx')">25241</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoki Notoya (40)<br>Translator<br>Venga<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420528&pg=ajx')">420528</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akira Maruyama (47)<br>Finance & Corporate Services Department  (Assistant Manager)<br>Russell Investment<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420475&pg=ajx')">420475</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Shin Nakahara (50)<br>Deputy Director - Risk Management Dept. / Tokio Marine Holdings, Inc<br>Tokio Marine  & Nichido Holdings<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420522&pg=ajx')">420522</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="YUXIN XUE (26)<br>Research Assistant<br>Tokyo University Graduate School<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420496&pg=ajx')">420496</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masanobu Kimura (52)<br>Japan Country Manager of Education, Software professional Services<br>Hewlett Packard<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420458&pg=ajx')">420458</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Toshiki Suzuki (39)<br>ASPAC IT Problem Manager<br>Beckman Coulter<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=337057&pg=ajx')">337057</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kathy Akaike (38)<br>Manage SOX Compliance<br>US Auto Parts Network<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420523&pg=ajx')">420523</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Chuzen Kin (28)<br>Global Promotions & PR Specialist<br>Works Applications<br><br><i><p>Linked In.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=409905&pg=ajx')">409905</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Risa Kobayashi (42)<br>General Manager, IT System Division<br>Transcosmos<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420566&pg=ajx')">420566</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taichi Tokutake (34)<br>Interpreting<br>Cilect<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420526&pg=ajx')">420526</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Sarimanu Suzuki (24)<br>Desktop Support Engineer<br>Bank of America Merrill Lynch<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420576&pg=ajx')">420576</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="ATSUSHI IKEDA (43)<br>Executive Director, Control Officer Director, Asia Pacific Controls Office<br>JP Morgan Chase & Co.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420587&pg=ajx')">420587</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tomas Kalab (31)<br> Administration staff<br>Intership - Housing Company<br><br><i><p>I think Pierres impression of this guy was off.  He had 2 good references and I liked him when I spoke to him.  Recommending hi to talk with Larry for CCM2. </p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=410406&pg=ajx')">410406</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taiga Giri (36)<br>System Administrator<br>Arcserve<br><br><i>Nepalese by birth came to Japan in 2002. Now has Japanese citizenship, and is married to a Japanese lady and has one child. Struggling to get by on 4.5M and knows he needs to consider new roles. Wife is currently off to raise the child and so they are living week by week.<br />
+<br />
+Background is in software dev but moved out of it and into general desktop support. Really bad move career wise and he is paying for it now. Has exp. with a wide variety of technologies including VMWare, BusinessOb</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=344837&pg=ajx')">344837</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kyoe Oishi (52)<br>CTO<br>Smileworks<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420582&pg=ajx')">420582</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Taniguchi (52)<br>Product Management<br>Amkor Technology<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420543&pg=ajx')">420543</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akitsugu MATSUSHIMA (45)<br>Senior Account Manager<br>Huawei Japan<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420584&pg=ajx')">420584</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuka Murazumi (41)<br>Sales Operation Leader in Project and Contract Specialists<br>En World Japan K.K.<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420620&pg=ajx')">420620</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Christian Raphalen (48)<br>Business Analyst<br>Hewlett Packard<br><br><i>Linked In</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=401329&pg=ajx')">401329</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kimiko MINEGISHI (48)<br>Public Relation Division, Secretary / Translator to CEO<br>Universal Entertainment<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420559&pg=ajx')">420559</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Seiichi Kato (47)<br>Sales Support Consultant, Sales Strategy & Planning Team<br>Dell Japan Inc.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420547&pg=ajx')">420547</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Liang Zhao (34)<br>Senior SAP SRM Consultant<br>Sap<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420505&pg=ajx')">420505</a>
 										</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -1302,6 +1405,26 @@
 			<div class="stat_holder revenueSize2" id="388">
 			4			</div>
 			<div class="stat_candi_info 388">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row">
@@ -1365,6 +1488,26 @@
 			<div class="stat_holder revenueSize2" id="388">
 			4			</div>
 			<div class="stat_candi_info 388">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row">
@@ -1465,6 +1608,26 @@
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Saiko Kataoka (36)<br>E-Broking Market Administrator<br>Tullett Prebon Singapore Ltd.<br><br><i><p>Francis assessed him by phone.</p>
 <p>Has started his career in high tech semicon/electronics industry as an IC design engineer, experienced in project manager, program manager and presales.</p>
 <p>He is now at KPIT in charge of Denso as a BDM for an engineering services </p>
@@ -1522,32 +1685,6 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="388">
-			0			</div>
-			<div class="stat_candi_info 388">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -1614,6 +1751,26 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -1660,58 +1817,177 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="388">
-			15			</div>
+			0			</div>
 			<div class="stat_candi_info 388">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="388">
+			26			</div>
+			<div class="stat_candi_info 388">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuki Yamashita (42)<br>Assistant Manager<br>Kanden System Solutions Co., Inc.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420515&pg=ajx')">420515</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taisuke Kurita (46)<br>Managing Director<br>EP Consulting<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420521&pg=ajx')">420521</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="KATSUTOSHI SUGANO (50)<br>General Manager, Altek Japan Corporation<br>Altek<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420524&pg=ajx')">420524</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masataka Aoyagi (45)<br>Executive Corporate Officer of Agent Service Division<br>Sony Real Estate<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=25241&pg=ajx')">25241</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoki Notoya (40)<br>Translator<br>Venga<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420528&pg=ajx')">420528</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akira Maruyama (47)<br>Finance & Corporate Services Department  (Assistant Manager)<br>Russell Investment<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420475&pg=ajx')">420475</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Shin Nakahara (50)<br>Deputy Director - Risk Management Dept. / Tokio Marine Holdings, Inc<br>Tokio Marine  & Nichido Holdings<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420522&pg=ajx')">420522</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="YUXIN XUE (26)<br>Research Assistant<br>Tokyo University Graduate School<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420496&pg=ajx')">420496</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masanobu Kimura (52)<br>Japan Country Manager of Education, Software professional Services<br>Hewlett Packard<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420458&pg=ajx')">420458</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Toshiki Suzuki (39)<br>ASPAC IT Problem Manager<br>Beckman Coulter<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=337057&pg=ajx')">337057</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kathy Akaike (38)<br>Manage SOX Compliance<br>US Auto Parts Network<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420523&pg=ajx')">420523</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Chuzen Kin (28)<br>Global Promotions & PR Specialist<br>Works Applications<br><br><i><p>Linked In.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=409905&pg=ajx')">409905</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Risa Kobayashi (42)<br>General Manager, IT System Division<br>Transcosmos<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420566&pg=ajx')">420566</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taichi Tokutake (34)<br>Interpreting<br>Cilect<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420526&pg=ajx')">420526</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Sarimanu Suzuki (24)<br>Desktop Support Engineer<br>Bank of America Merrill Lynch<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420576&pg=ajx')">420576</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="ATSUSHI IKEDA (43)<br>Executive Director, Control Officer Director, Asia Pacific Controls Office<br>JP Morgan Chase & Co.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420587&pg=ajx')">420587</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tomas Kalab (31)<br> Administration staff<br>Intership - Housing Company<br><br><i><p>I think Pierres impression of this guy was off.  He had 2 good references and I liked him when I spoke to him.  Recommending hi to talk with Larry for CCM2. </p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=410406&pg=ajx')">410406</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Taiga Giri (36)<br>System Administrator<br>Arcserve<br><br><i>Nepalese by birth came to Japan in 2002. Now has Japanese citizenship, and is married to a Japanese lady and has one child. Struggling to get by on 4.5M and knows he needs to consider new roles. Wife is currently off to raise the child and so they are living week by week.<br />
+<br />
+Background is in software dev but moved out of it and into general desktop support. Really bad move career wise and he is paying for it now. Has exp. with a wide variety of technologies including VMWare, BusinessOb</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=344837&pg=ajx')">344837</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kyoe Oishi (52)<br>CTO<br>Smileworks<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420582&pg=ajx')">420582</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Taniguchi (52)<br>Product Management<br>Amkor Technology<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420543&pg=ajx')">420543</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akitsugu MATSUSHIMA (45)<br>Senior Account Manager<br>Huawei Japan<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420584&pg=ajx')">420584</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yuka Murazumi (41)<br>Sales Operation Leader in Project and Contract Specialists<br>En World Japan K.K.<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420620&pg=ajx')">420620</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Christian Raphalen (48)<br>Business Analyst<br>Hewlett Packard<br><br><i>Linked In</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=401329&pg=ajx')">401329</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kimiko MINEGISHI (48)<br>Public Relation Division, Secretary / Translator to CEO<br>Universal Entertainment<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420559&pg=ajx')">420559</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Seiichi Kato (47)<br>Sales Support Consultant, Sales Strategy & Planning Team<br>Dell Japan Inc.<br><br><i><p>Bizreach.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420547&pg=ajx')">420547</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Liang Zhao (34)<br>Senior SAP SRM Consultant<br>Sap<br><br><i><p>Bizreach</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420505&pg=ajx')">420505</a>
 										</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -1727,6 +2003,26 @@
 			<div class="stat_holder revenueSize2" id="388">
 			1			</div>
 			<div class="stat_candi_info 388">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -1781,6 +2077,26 @@
 			<div class="stat_holder revenueSize2" id="388">
 			1			</div>
 			<div class="stat_candi_info 388">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -1868,12 +2184,52 @@
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="388">
 			0			</div>
 			<div class="stat_candi_info 388">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -2593,6 +2949,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
 		</td>
 		<td>
@@ -2618,33 +2976,9 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="276">
-			2			</div>
-			<div class="stat_candi_info 276">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kazufumi Nieda (50)<br>Finance Manager<br>Autodesk Japan K.K.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=121633&pg=ajx')">121633</a>
-										</div>
-							<div class="hover_row colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Wants at least 10M.  Was on 13M base at Autodesk before.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
-										</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="276">
@@ -2662,15 +2996,103 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kazufumi Nieda (50)<br>Finance Manager<br>Autodesk Japan K.K.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=121633&pg=ajx')">121633</a>
 										</div>
 							<div class="hover_row colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Wants at least 10M.  Was on 13M base at Autodesk before.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Just returned from working in the Yukon territories in Canada.  His wife and kid are still there but they will be returning to Japan soon.  Is looking for a role in Tokyo, really likes the IoT areas, and AI, in cutting edge technologies.  Would like 14M but this is a bit high.  Very good E and is open minded at this point.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
 										</div>
 							<div class="hover_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Nagai (38)<br>Senior Consultant, Industrial Products and Heavy Industry Unit<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i><p>Just returned from working in the Yukon territories in Canada.  His wife and kid are still there but they will be returning to Japan soon.  Is looking for a role in Tokyo, really likes the IoT areas, and AI, in cutting edge technologies.  Would like 14M but this is a bit high.  Very good E and is open minded at this point.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417785&pg=ajx')">417785</a>
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Miyuki Nakamura (27)<br>eCommerce & Digital Marketing eCommerce customer Marketing Executive<br>Unilever<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420541&pg=ajx')">420541</a>
 										</div>
 							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="276">
+			4			</div>
+			<div class="stat_candi_info 276">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kazufumi Nieda (50)<br>Finance Manager<br>Autodesk Japan K.K.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=121633&pg=ajx')">121633</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Just returned from working in the Yukon territories in Canada.  His wife and kid are still there but they will be returning to Japan soon.  Is looking for a role in Tokyo, really likes the IoT areas, and AI, in cutting edge technologies.  Would like 14M but this is a bit high.  Very good E and is open minded at this point.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
+										</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Miyuki Nakamura (27)<br>eCommerce & Digital Marketing eCommerce customer Marketing Executive<br>Unilever<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420541&pg=ajx')">420541</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Nagai (38)<br>Senior Consultant, Industrial Products and Heavy Industry Unit<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417785&pg=ajx')">417785</a>
+										</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="276">
+			2			</div>
+			<div class="stat_candi_info 276">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Just returned from working in the Yukon territories in Canada.  His wife and kid are still there but they will be returning to Japan soon.  Is looking for a role in Tokyo, really likes the IoT areas, and AI, in cutting edge technologies.  Would like 14M but this is a bit high.  Very good E and is open minded at this point.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
+										</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
+										</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="276">
+			2			</div>
+			<div class="stat_candi_info 276">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Jun Kato (45)<br>Product Marketing<br>Vistanet<br><br><i><p>Just returned from working in the Yukon territories in Canada.  His wife and kid are still there but they will be returning to Japan soon.  Is looking for a role in Tokyo, really likes the IoT areas, and AI, in cutting edge technologies.  Would like 14M but this is a bit high.  Very good E and is open minded at this point.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=206683&pg=ajx')">206683</a>
+										</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
+										</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -2692,9 +3114,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -2717,59 +3141,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
 										</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="276">
-			1			</div>
-			<div class="stat_candi_info 276">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
-										</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="276">
-			1			</div>
-			<div class="stat_candi_info 276">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
-										</div>
-							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -2795,6 +3171,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -2820,6 +3198,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
@@ -2841,9 +3221,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -2866,9 +3248,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a data-toggle="tooltip" title="Candidate ID: 419833" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9484&pg=ajx')">9484</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -2893,6 +3277,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Christophers William Benjamin (33)<br>FP&A Manager<br>Otis Japan<br><br><i><p>met with Tada -was OK.  Personality test plus a Japanese test, English teats, numerical test, and a verbal reasoning test. 45 minutes with HRD then a different HR Member.  </p>
 <p>was at 11 at PWC -now at 8.  going to interviews and the benchmark is now about 10~11.  DTC 13M range.  </p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=413977&pg=ajx')">413977</a>
 										</div>
@@ -2919,6 +3305,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Christophers William Benjamin (33)<br>FP&A Manager<br>Otis Japan<br><br><i><p>met with Tada -was OK.  Personality test plus a Japanese test, English teats, numerical test, and a verbal reasoning test. 45 minutes with HRD then a different HR Member.  </p>
 <p>was at 11 at PWC -now at 8.  going to interviews and the benchmark is now about 10~11.  DTC 13M range.  </p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=413977&pg=ajx')">413977</a>
 										</div>
@@ -3775,59 +4163,160 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 					<tr class="hover_row">
 	<!--<td>consultant</td>-->
 	<!--<td>Consultant</td>-->
+		<td class="name_column revenueSize">S. D.V.</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="521">
+			0			</div>
+			<div class="stat_candi_info 521">
+						</div>
+		</td>
+	</tr>
+	
+					<tr class="hover_row even_row">
+	<!--<td>consultant</td>-->
+	<!--<td>Consultant</td>-->
 		<td class="name_column revenueSize">V. Maslyuk</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="130">
-			6			</div>
+			8			</div>
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Sato (-)<br>Senior Engineer<br>Dow Chemical<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420602&pg=ajx')">420602</a>
-										</div>
-							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kazuya Nakajima (-)<br>Supply Chain Material Controller<br>Sony Corporaiton<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420603&pg=ajx')">420603</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Akio Yuza (-)<br>Technical manager<br>BASF Japan Ltd.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420614&pg=ajx')">420614</a>
 										</div>
-							<div class="hover_row  colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoko Hano (38)<br>Packaging engineer<br>Godiva Japan, Inc.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420360&pg=ajx')">420360</a>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Hiroshi Takahashi (-)<br>Supply Chain Manager<br>Petit Bateau Japan<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420630&pg=ajx')">420630</a>
+										</div>
+							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yusuke Sasaki (-)<br>Business Development Manager<br>SGS Japan Inc.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420633&pg=ajx')">420633</a>
 										</div>
 							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoko Hano (38)<br>Packaging engineer<br>Godiva Japan, Inc.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420360&pg=ajx')">420360</a>
+										</div>
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ryotaro Kubo (35)<br>Food Safety<br>Asuzac Foods<br><br><i><p>got him on phone when calling to office. He is not interested in changing a job. He does not want to share his email address and ask me to send message through linkedin.</p>
 <p>E5 or lower.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=412403&pg=ajx')">412403</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tadahiro Fujita (34)<br>Buyer<br>BASF Japan Ltd.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420599&pg=ajx')">420599</a>
 										</div>
+							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Sato (45)<br>Senior Engineer<br>Dow Chemical<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420602&pg=ajx')">420602</a>
+										</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="130">
-			3			</div>
+			4			</div>
 			<div class="stat_candi_info 130">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoko Hano (38)<br>Packaging engineer<br>Godiva Japan, Inc.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420360&pg=ajx')">420360</a>
 										</div>
-							<div class="hover_row">
+							<div class="hover_row colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ryotaro Kubo (35)<br>Food Safety<br>Asuzac Foods<br><br><i><p>got him on phone when calling to office. He is not interested in changing a job. He does not want to share his email address and ask me to send message through linkedin.</p>
 <p>E5 or lower.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=412403&pg=ajx')">412403</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tadahiro Fujita (34)<br>Buyer<br>BASF Japan Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420599&pg=ajx')">420599</a>
+										</div>
+							<div class="hover_row colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Sato (45)<br>Senior Engineer<br>Dow Chemical<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420602&pg=ajx')">420602</a>
 										</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 						</div>
 		</td>
@@ -3837,19 +4326,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3859,19 +4352,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3881,19 +4378,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3903,19 +4404,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3925,19 +4430,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3947,19 +4456,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -3969,45 +4482,54 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="130">
-			3			</div>
+			4			</div>
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Naoko Hano (38)<br>Packaging engineer<br>Godiva Japan, Inc.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420360&pg=ajx')">420360</a>
 										</div>
-							<div class="hover_row ">
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ryotaro Kubo (35)<br>Food Safety<br>Asuzac Foods<br><br><i><p>got him on phone when calling to office. He is not interested in changing a job. He does not want to share his email address and ask me to send message through linkedin.</p>
 <p>E5 or lower.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=412403&pg=ajx')">412403</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tadahiro Fujita (34)<br>Buyer<br>BASF Japan Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420599&pg=ajx')">420599</a>
+										</div>
+							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Sato (45)<br>Senior Engineer<br>Dow Chemical<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420602&pg=ajx')">420602</a>
 										</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -4017,19 +4539,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -4039,20 +4565,24 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a data-toggle="tooltip" title="Candidate ID: 420314" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9503&pg=ajx')">9503</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -4062,19 +4592,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Yukinori Yamada (50)<br>Engineering Director<br>Coca-Cola East Japan<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=406734&pg=ajx')">406734</a>
 										</div>
 									</div>
@@ -4085,52 +4619,62 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 130">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
 	</tr>
 	
-					<tr class="hover_row even_row">
+					<tr class="hover_row">
 	<!--<td>consultant</td>-->
 	<!--<td>Consultant</td>-->
 		<td class="name_column revenueSize">Y. Takagi</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="347">
-			5			</div>
+			7			</div>
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Adachi (50)<br>Associate Manager<br>Bayer Ltd.<br><br><i><p>PERSONALITY: E5. Educated with PhD degree. Polite, nice, not quite Talkative. Positive personality. He just arrived from Osaka with a duffle bag. <br />CURRENT POSITION: He has been Associate Manager at Medical affairs oncology and hematology division (10 members), Medical Affairs department of Bayer, Osaka since 2013. He joined MA department in 2008 after the Schering-Bayer merger in 2007. He is now in charge of two projects (Oncology and Urology). Also, he will be in charge of a new project</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=118608&pg=ajx')">118608</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Norikazu Fushimi (29)<br>Regional Study Manager<br>CSL Behring K.K.<br><br><i><p>shared JD on MSJ RPM role / no feedback...position already closed. Not a serious mover for now.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=342311&pg=ajx')">342311</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takako Saito (-)<br>CLINICAL OPS LEADER<br>Parexel International K.K.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417038&pg=ajx')">417038</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Hamada (43)<br>Clinical Project Manager<br>AbbVie<br><br><i><p>濱田</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=319967&pg=ajx')">319967</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Nishimura (36)<br>Specialist<br>AbbVie<br><br><i>LN at this time due to phone only, but possible HN.  Waiting on resume also.  Want a f2f</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=343620&pg=ajx')">343620</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Imokawa Yoshiki (-)<br>staff<br>A2 Healthcare<br><br><i><p>met him at Tokyo Dome Hotel, biostatistician. introduced by Aando who was placed to Novartis by us.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=408767&pg=ajx')">408767</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4142,22 +4686,26 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Mika Hiratsuka (36)<br>Clinical Trial Specialist<br>Parexel International K.K.<br><br><i><p>duplicate to&nbsp;#405237 assessed</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=354177&pg=ajx')">354177</a>
 										</div>
 							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Keiko  Araragi (33)<br>CRA<br>Quintiles Transnational Japan K.K.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417104&pg=ajx')">417104</a>
 										</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Teruki Nakagawa (42)<br>Clinical Team Leader<br>Quintiles Transnational Japan K.K.<br><br><i><p>Spoke.</p>
 <p>Going to Cebu for 3months (without family) to learn English.</p>
 <p>will be back in the end of Jan to beginning of Feb for Taxing, then try to go to US for PMP certificate</p>
@@ -4175,43 +4723,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="347">
-			0			</div>
-			<div class="stat_candi_info 347">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4221,23 +4749,27 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_holder revenueSize2" id="347">
 			0			</div>
 			<div class="stat_candi_info 347">
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -4247,19 +4779,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4271,43 +4807,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="347">
-			0			</div>
-			<div class="stat_candi_info 347">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4319,19 +4835,79 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="347">
+			0			</div>
+			<div class="stat_candi_info 347">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="347">
+			0			</div>
+			<div class="stat_candi_info 347">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4343,22 +4919,26 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Mika Hiratsuka (36)<br>Clinical Trial Specialist<br>Parexel International K.K.<br><br><i><p>duplicate to&nbsp;#405237 assessed</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=354177&pg=ajx')">354177</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Keiko  Araragi (33)<br>CRA<br>Quintiles Transnational Japan K.K.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417104&pg=ajx')">417104</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4370,19 +4950,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4394,19 +4978,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4418,19 +5006,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenpei Ogura (32)<br>QA Supervisor<br>MSD K.K.<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=344151&pg=ajx')">344151</a>
@@ -4443,19 +5035,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 347">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4470,11 +5066,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			Total :
 		</td>
 		<td class='revenueSize3'>
-			40		</td>
+			53		</td>
 		<td class='revenueSize3'>
 			10		</td>
 		<td class='revenueSize3'>
-			6		</td>
+			7		</td>
 		<td class='revenueSize3'>
 			9		</td>
 		<td class='revenueSize3'>
@@ -4519,18 +5115,16 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Zhao Wenwu (42)<br>Onsite Project Manager<br>Neusoft Japan Co., Ltd.<br><br><i><p>This candidate would have not been found if I had not changed the details in department and occupation. Prior to me changing the details in the data stated  Packing . I found the candidate through resume note text search as he has technical in his resume. He is a Technical Operations candidate with a CMO QA Slant.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=413096&pg=ajx')">413096</a>
 										</div>
 							<div class="hover_row  colored_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masahiro Nakao (52)<br>Supplier Performance Engineer<br>Visteon Japan Ltd.<br><br><i><p>Is wanting to leave Neusoft as it is a Chinese SIer and the salaries are increasing so he does not know how long they can keep the edge.</p>
-<p> </p>
-<p>Is looking for Project Manager in Automotive or Device area.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=301095&pg=ajx')">301095</a>
-										</div>
-							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i><p>Open to new opps. Same requirements as before: QA, AQE, or Supplier Quality is ok, needs to be Yokohama or near, expected salary above 9M. Still at Visteon, and still working as a QE. </p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
-										</div>
-							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dinesh Vudathu (40)<br>Senior Project manger<br>Accel Japan<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420571&pg=ajx')">420571</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masahiro Nakao (52)<br>Supplier Performance Engineer<br>Visteon Japan Ltd.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=301095&pg=ajx')">301095</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -4540,12 +5134,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="516">
-			3			</div>
+			4			</div>
 			<div class="stat_candi_info 516">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row colored_row">
@@ -4553,6 +5143,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 										</div>
 							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Hikaru Kitamura (30)<br>Inside Sales Advisor<br>Tesla Motors<br><br><i><p>Had a phone meeting with him. Good energy, native level English (graduated in Canada). Now working at Tesla Motors as an Inside Sales Advisor. It is a junior role, mostly taking care of customer experience and customer satisfaction, taking orders for cars, organising promotion. Does a lot of communication with his clients by phone and in person (only B2c experience so far). Making 4M at the moment. Will be an active mover in 6 months, since has only been with Tesla since October last year. 28</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=404397&pg=ajx')">404397</a>
@@ -4704,12 +5299,8 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="516">
-			3			</div>
+			4			</div>
 			<div class="stat_candi_info 516">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row  colored_row">
@@ -4717,6 +5308,11 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kenji Tadano (38)<br>R&D Engineer<br>Mitsubishi Automotive Techno-Service Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420601&pg=ajx')">420601</a>
+										</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Kentaro Yamada (40)<br>Interior Quality Manager for Asia<br>Continental AG<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420247&pg=ajx')">420247</a>
 										</div>
 							<div class="hover_row  colored_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Hikaru Kitamura (30)<br>Inside Sales Advisor<br>Tesla Motors<br><br><i><p>Had a phone meeting with him. Good energy, native level English (graduated in Canada). Now working at Tesla Motors as an Inside Sales Advisor. It is a junior role, mostly taking care of customer experience and customer satisfaction, taking orders for cars, organising promotion. Does a lot of communication with his clients by phone and in person (only B2c experience so far). Making 4M at the moment. Will be an active mover in 6 months, since has only been with Tesla since October last year. 28</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=404397&pg=ajx')">404397</a>
@@ -4808,8 +5404,98 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 	</tr>
 	
 			
-			
 					<tr class="hover_row even_row">
+	<!--<td>researcher</td>-->
+	<!--<td>Researcher</td>-->
+		<td class="name_column revenueSize">D. Kadyrbekov</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="522">
+			0			</div>
+			<div class="stat_candi_info 522">
+						</div>
+		</td>
+	</tr>
+	
+			
+					<tr class="hover_row">
 	<!--<td>researcher</td>-->
 	<!--<td>Researcher</td>-->
 		<td class="name_column revenueSize">E. Kodaka</td>
@@ -4899,7 +5585,7 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 		</td>
 	</tr>
 	
-					<tr class="hover_row">
+					<tr class="hover_row even_row">
 	<!--<td>researcher</td>-->
 	<!--<td>Researcher</td>-->
 		<td class="name_column revenueSize">E. Nguyen</td>
@@ -5019,30 +5705,29 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 		</td>
 	</tr>
 	
-					<tr class="hover_row even_row">
+					<tr class="hover_row">
 	<!--<td>researcher</td>-->
 	<!--<td>Researcher</td>-->
 		<td class="name_column revenueSize">P. Greeff</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="480">
-			5			</div>
+			4			</div>
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ramdan Abbacha (48)<br>Senior Estimator<br>Construction G.C.<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420569&pg=ajx')">420569</a>
 										</div>
-							<div class="hover_row  colored_row2">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Nischal Pradhan (27)<br>Service Delivery Manager / Senior Engineer<br>Eire Systems<br><br><i><p>Originally from Algeria, been in Canada 20 Years. Has Citizenship. Work on large scale projects ranging from $500K - $100 mil dollars. Has 15 years experience in Heavy civil construction. Has worked with hard rock, has built roads, bridges, etc.&nbsp; He was part of the project for the Champlain bridge in Quebec. This was a joint venture between 3 companies and his part was worth $100 mil. Has managed up to 4 Junior estimators. Wants to move out of Montreal as the work situation isnt very go</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420595&pg=ajx')">420595</a>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tsuyoshi Hashiguchi (31)<br>Consultant<br>Kurt Salmon Associates<br><br><i><p>Originally from Algeria, been in Canada 20 Years. Has Citizenship. Work on large scale projects ranging from $500K - $100 mil dollars. Has 15 years experience in Heavy civil construction. Has worked with hard rock, has built roads, bridges, etc.&nbsp; He was part of the project for the Champlain bridge in Quebec. This was a joint venture between 3 companies and his part was worth $100 mil. Has managed up to 4 Junior estimators. Wants to move out of Montreal as the work situation isnt very go</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=418389&pg=ajx')">418389</a>
 										</div>
 							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Tsuyoshi Hashiguchi (31)<br>Consultant<br>Kurt Salmon Associates<br><br><i><p>JLPT N2</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=418389&pg=ajx')">418389</a>
-										</div>
-							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ryohei Maeda (26)<br>Marketing Executive<br>American Express<br><br><i><p>Working in retail/apparel space right now. His specialty is communications. He is interested in Retail space. Kurt Salmon is being acquired by Accenture and he isnt sure if he wants to stay or move.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420619&pg=ajx')">420619</a>
 										</div>
-							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5054,16 +5739,16 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
 										</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5071,21 +5756,44 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 		</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="480">
-			1			</div>
+			2			</div>
 			<div class="stat_candi_info 480">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
 										</div>
-							<div class="hover_row colored_row2">
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Miyuki Nakamura (27)<br>eCommerce & Digital Marketing eCommerce customer Marketing Executive<br>Unilever<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420541&pg=ajx')">420541</a>
+										</div>
+							<div class="hover_row colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="480">
+			2			</div>
+			<div class="stat_candi_info 480">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Miyuki Nakamura (27)<br>eCommerce & Digital Marketing eCommerce customer Marketing Executive<br>Unilever<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420541&pg=ajx')">420541</a>
+										</div>
+							<div class="hover_row colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Nagai (38)<br>Senior Consultant, Industrial Products and Heavy Industry Unit<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417785&pg=ajx')">417785</a>
+										</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
@@ -5094,38 +5802,17 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_holder revenueSize2" id="480">
 			1			</div>
 			<div class="stat_candi_info 480">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row2">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Nagai (38)<br>Senior Consultant, Industrial Products and Heavy Industry Unit<br>Deloitte Tohmatsu Consulting Co., Ltd.<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417785&pg=ajx')">417785</a>
-										</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="480">
-			1			</div>
-			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
@@ -5138,36 +5825,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
-										</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="480">
-			1			</div>
-			<div class="stat_candi_info 480">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
@@ -5180,15 +5846,36 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
+										</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="480">
+			1			</div>
+			<div class="stat_candi_info 480">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
@@ -5201,15 +5888,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5221,16 +5908,16 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i><p>Originally from Ontario. Living in Olds AB. General Manger of Foran Equipment. Has 10 years experience in blasting and drilling. His whole career was in Heavy civil also knows how to operate equipment. Has class 5 gave up his class 1 as he isnt operating heavy equipment anymore. Responsibilities is to run the business face clients, manage estimate from take off to handover and all day to day operations. Making $140K - $145K and is flexible. Manages anything from 30 to 40 people at a time dep</i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
+							<div class="hover_row  colored_row">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Dwayne Jewett (48)<br>General Manager/Operations Manager<br>Foran Equipment Ltd<br><br><i></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=420573&pg=ajx')">420573</a>
 										</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5242,15 +5929,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Ayako Sato (37)<br>Executive Secretary<br>Qunie Corporation<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=419833&pg=ajx')">419833</a>
@@ -5263,15 +5950,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a data-toggle="tooltip" title="Candidate ID: 419833" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9484&pg=ajx')">9484</a>
@@ -5284,15 +5971,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5304,15 +5991,15 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 480">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row2">
+							<div class="hover_row  colored_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5321,30 +6008,36 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 	</tr>
 	
 			
-					<tr class="hover_row">
+					<tr class="hover_row even_row">
 	<!--<td>researcher</td>-->
 	<!--<td>Researcher</td>-->
 		<td class="name_column revenueSize">T. Tanigawa</td>
 		<td>
 			<div class="stat_holder revenueSize2" id="514">
-			5			</div>
+			7			</div>
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Masatoshi Adachi (50)<br>Associate Manager<br>Bayer Ltd.<br><br><i><p>Base salary is 4.3M, and get OT, so total is around 5M.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=118608&pg=ajx')">118608</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Norikazu Fushimi (29)<br>Regional Study Manager<br>CSL Behring K.K.<br><br><i><p>PERSONALITY: E5. Educated with PhD degree. Polite, nice, not quite Talkative. Positive personality. He just arrived from Osaka with a duffle bag. <br />CURRENT POSITION: He has been Associate Manager at Medical affairs oncology and hematology division (10 members), Medical Affairs department of Bayer, Osaka since 2013. He joined MA department in 2008 after the Schering-Bayer merger in 2007. He is now in charge of two projects (Oncology and Urology). Also, he will be in charge of a new project</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=342311&pg=ajx')">342311</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takako Saito (-)<br>CLINICAL OPS LEADER<br>Parexel International K.K.<br><br><i><p>shared JD on MSJ RPM role / no feedback...position already closed. Not a serious mover for now.</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=417038&pg=ajx')">417038</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Hamada (43)<br>Clinical Project Manager<br>AbbVie<br><br><i></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=319967&pg=ajx')">319967</a>
+										</div>
+							<div class="hover_row ">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Takashi Nishimura (36)<br>Specialist<br>AbbVie<br><br><i><p>濱田</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=343620&pg=ajx')">343620</a>
+										</div>
+							<div class="hover_row  colored_row2">
+										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Imokawa Yoshiki (-)<br>staff<br>A2 Healthcare<br><br><i>LN at this time due to phone only, but possible HN.  Waiting on resume also.  Want a f2f</i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=408767&pg=ajx')">408767</a>
 										</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>"  href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5356,16 +6049,20 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Mika Hiratsuka (36)<br>Clinical Trial Specialist<br>Parexel International K.K.<br><br><i><p>duplicate to&nbsp;#405237 assessed</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=354177&pg=ajx')">354177</a>
 										</div>
 							<div class="hover_row">
@@ -5379,35 +6076,19 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="514">
-			0			</div>
-			<div class="stat_candi_info 514">
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5417,19 +6098,23 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_holder revenueSize2" id="514">
 			0			</div>
 			<div class="stat_candi_info 514">
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
+							<div class="hover_row">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row">
 				<a href='javascript:'><center>-</center></a>				</div>
 									</div>
 		</td>
@@ -5439,15 +6124,19 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5459,35 +6148,19 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="514">
-			0			</div>
-			<div class="stat_candi_info 514">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5499,15 +6172,67 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="514">
+			0			</div>
+			<div class="stat_candi_info 514">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="514">
+			0			</div>
+			<div class="stat_candi_info 514">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5519,16 +6244,20 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Motoyuki Takano (54)<br>Head of Pharmacovigilance<br>Shire Baxalta<br><br><i><p>Ex-Sanofi. Placed in Ferring in 2014</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=403735&pg=ajx')">403735</a>
 										</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 										<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="Mika Hiratsuka (36)<br>Clinical Trial Specialist<br>Parexel International K.K.<br><br><i><p>duplicate to&nbsp;#405237 assessed</p></i>" href="javascript: view_candi('https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=354177&pg=ajx')">354177</a>
 										</div>
 							<div class="hover_row ">
@@ -5542,35 +6271,19 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-									</div>
-		</td>
-		<td>
-			<div class="stat_holder revenueSize2" id="514">
-			0			</div>
-			<div class="stat_candi_info 514">
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row ">
-				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5582,15 +6295,19 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5602,15 +6319,43 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			<div class="stat_candi_info 514">
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
-							<div class="hover_row  colored_row">
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+									</div>
+		</td>
+		<td>
+			<div class="stat_holder revenueSize2" id="514">
+			0			</div>
+			<div class="stat_candi_info 514">
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row ">
+				<a href='javascript:'><center>-</center></a>				</div>
+							<div class="hover_row  colored_row2">
 				<a href='javascript:'><center>-</center></a>				</div>
 							<div class="hover_row ">
 				<a href='javascript:'><center>-</center></a>				</div>
@@ -5625,7 +6370,7 @@ Has worked with Various Pharma & Med. Companies... Mentioned he worked Epidemiol
 			Total :
 		</td>
 		<td class='revenueSize3'>
-			7		</td>
+			8		</td>
 		<td class='revenueSize3'>
 			1		</td>
 		<td class='revenueSize3'>

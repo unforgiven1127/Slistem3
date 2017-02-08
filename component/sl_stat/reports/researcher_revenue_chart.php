@@ -58,8 +58,8 @@
 
 																	<tr class="hover_row even_row">
 							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/JP_32.png" title=""  /></td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">E. Kodaka</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/KYG_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">D. Kadyrbekov</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
@@ -70,8 +70,8 @@
 
 																	<tr class="hover_row">
 							<td style="height: 10%; font-size: 300%;" class="text_center">5</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/US_32.png" title=""  /></td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">E. Nguyen</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/JP_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">E. Kodaka</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
@@ -94,6 +94,18 @@
 
 																	<tr class="hover_row">
 							<td style="height: 10%; font-size: 300%;" class="text_center">7</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/US_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">E. Nguyen</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
+							<!--<td class="text_center"></td>-->
+							<!--<td style="height: 55px; font-size: 250%;" class="text_right"></td>-->
+						</tr>
+
+																	<tr class="hover_row even_row">
+							<td style="height: 10%; font-size: 300%;" class="text_center">8</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/world_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">Former</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;596,400</td>

@@ -34,12 +34,12 @@
 $(function () {
 
     var title = "New Candidates Met February 01, 2017 to Present";
-    var met_target = "5";
+    var met_target = "7";
 //-----------------------------------------------------------------------------------------//
-    var users = " ;L.Fry |15|;R.Pedersen |8|;J.Kovaliovas |6|;V.Maslyuk |3|;Y.Takagi |3|;C.Chen |2|;O.Rondos |1|;P.Thai |1|;K.Kapur |1|;B.Mo |0|;M.Moir |0|;P.Miles Harry |0|";
+    var users = " ;L.Fry |26|;R.Pedersen |8|;J.Kovaliovas |7|;V.Maslyuk |4|;Y.Takagi |3|;C.Chen |2|;K.Kapur |1|;O.Rondos |1|;P.Thai |1|;S.D.V. |0|;B.Mo |0|;M.Moir |0|;P.Miles Harry |0|";
     users = users.split(';');
 //-----------------------------------------------------------------------------------------//
-    var count = "0;15;8;6;3;3;2;1;1;1;0;0;0";
+    var count = "0;26;8;7;4;3;2;1;1;1;0;0;0;0";
     count = count.split(';');
 
     for(var i=0; i<count.length; i++) { count[i] = parseInt(count[i], 10); }
