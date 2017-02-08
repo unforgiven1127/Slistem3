@@ -1413,7 +1413,7 @@ class CSearchEx extends CSearch
           {
             $psNote = "sl_candidate_old_companies;".$vFieldValue[0];
             $oQB->setNote($psNote);
-            ////ChromePhp::log($vFieldValue);
+            ChromePhp::log($vFieldValue);
             //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
           }
 ////ChromePhp::log($asFieldData);
