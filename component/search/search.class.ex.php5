@@ -1542,7 +1542,7 @@ class CSearchEx extends CSearch
                   if($sFieldName == 'company_prev')
                   {
                     $company_id = $vValue;
-                    $search_key = "[ #".$company_id." -";
+                    $search_key = "#".$company_id." -";
                     $company_information = getCompanyInformation($vValue);
                     $company_name = $company_information['name'];
 
