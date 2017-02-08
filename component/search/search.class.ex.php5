@@ -1543,7 +1543,7 @@ class CSearchEx extends CSearch
                   {
                     $company_id = $vValue;
                     $test = "[ #1325";
-                    $search_key = "#".$company_id;
+                    $search_key = "%#".$company_id;
                     $company_information = getCompanyInformation($vValue);
                     $company_name = $company_information['name'];
                     //$search_key = $company_name." ]";
