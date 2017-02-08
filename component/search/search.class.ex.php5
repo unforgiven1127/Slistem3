@@ -1413,14 +1413,7 @@ class CSearchEx extends CSearch
           {
             $psNote = "sl_candidate_old_companies;".$vFieldValue[0];
             $oQB->setNote($psNote);
-
-            $company_info = getCompanyInformation($vFieldValue[0]);
-            //ChromePhp::log($company_info);
-            if(isset($company_info['name']))
-            {
-              $vFieldValue[0] = $company_info['name'];
-            }
-
+            ////ChromePhp::log($vFieldValue);
             //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
           }
 ////ChromePhp::log($asFieldData);
@@ -1552,7 +1545,7 @@ class CSearchEx extends CSearch
                     $company_name = $company_information['name'];
 
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ';
-                    ////ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
+                    ChromePhp::log(' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ") ');
                   }
                   else
                   {
