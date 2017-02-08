@@ -1415,7 +1415,8 @@ class CSearchEx extends CSearch
             $oQB->setNote($psNote);
 
             $company_info = getCompanyInformation($vFieldValue[0]);
-            ChromePhp::log($company_info);
+            //ChromePhp::log($company_info);
+            $vFieldValue[0] = $company_info['name'];
             //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
           }
 ////ChromePhp::log($asFieldData);
