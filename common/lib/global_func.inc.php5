@@ -4516,7 +4516,7 @@ var_dump($query);*/
       $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
       $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-      $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+      //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
       $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
       $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
@@ -4646,7 +4646,7 @@ var_dump($query);*/
         $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
         $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
         $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
         $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
@@ -4759,7 +4759,7 @@ var_dump($query);*/
         $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
         $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
         $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
         $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
