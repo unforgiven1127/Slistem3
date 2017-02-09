@@ -4103,20 +4103,14 @@ var_dump($query);*/
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
 ////ChromePhp::log($where);
-    if($distinct != '')
-    {
 
+    if($where == '')
+    {
+      $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->skip($skip);
     }
     else
     {
-      if($where == '')
-      {
-        $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->skip($skip);
-      }
-      else
-      {
-        $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
-      }
+      $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
     }
 
 ////ChromePhp::log($allLogs);
