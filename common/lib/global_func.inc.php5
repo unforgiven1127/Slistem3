@@ -4572,6 +4572,7 @@ var_dump($query);*/
       }
       $checkArray[] = $value['cp_pk'];
     }
+    $logs = array_values($logs);
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
     $logsContactSeen = $logs;
     //$value = $blah[0];
