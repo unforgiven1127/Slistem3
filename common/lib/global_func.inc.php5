@@ -4543,9 +4543,13 @@ var_dump($query);*/
 
     $result = $db_result->getAll();*/
 ////ChromePhp::log('securityCheckContactView');
+    $dNow = date('Y-m-d');
+    $startDate = $dNow." 00:00:00";
     $where = array( '$and' => array(
+        array('distinct' => 'logs', "key" => "cp_pk"),
         array('action' => 'Contacts viewed'),
-        array('userfk' => $user_id)
+        array('userfk' => $user_id),
+        array('date' => array('$gte' => $startDate))
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
     $orderBy = '';
@@ -4558,7 +4562,7 @@ var_dump($query);*/
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
 
     //$value = $blah[0];
-////ChromePhp::log($logs);
+ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
