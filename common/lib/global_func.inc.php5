@@ -4546,7 +4546,6 @@ var_dump($query);*/
     $dNow = date('Y-m-d');
     $startDate = $dNow." 00:00:00";
     $where = array( '$and' => array(
-        array('distinct' => 'logs', "key" => "cp_pk"),
         array('action' => 'Contacts viewed'),
         array('userfk' => $user_id),
         array('date' => array('$gte' => $startDate))
