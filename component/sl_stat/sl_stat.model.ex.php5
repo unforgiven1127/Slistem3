@@ -946,7 +946,7 @@ order by m.candidatefk
   public function get_revenue_data($request_date = '', $location = '')
   {
     error_reporting(E_ALL & ~E_NOTICE);
-ChromePhp::log('get_revenue_data');
+//ChromePhp::log('get_revenue_data');
     $revenue_data = $revenue_data_raw = array();
 
     if (empty($request_date))
@@ -1025,21 +1025,13 @@ ChromePhp::log('get_revenue_data');
 
         $ccm1_count = (int)$ccms[$user_id]['ccm1_done'];
         $mccm_count = (int)$ccms[$user_id]['ccm2_done'] + (int)$ccms['researcher'][$user_id]['mccm_done'];
-        $placed_count = (int)$ccms[$user_id]['placedRevenue'];
+        //$placed_count = (int)$ccms[$user_id]['placedRevenue'];
 
         $researcherPlacementQuery = "SELECT count(rm.loginpk) as count FROM revenue r INNER JOIN revenue_member rm on rm.revenue_id = r.id and rm.loginpk = '".$user_id."' AND rm.user_position = 'Researcher' WHERE r.date_due >= '".$date_start."' AND r.date_due <= '".$date_end."'";
         $researcherPlacement = $this->oDB->executeQuery($researcherPlacementQuery);
         $researcherPlacement = $researcherPlacement->getAll();
 
         $placed_count = count($researcherPlacement);
-
-        if($user_id == '481')
-        {
-          ChromePhp::log($researcherPlacementQuery);
-          ChromePhp::log($placed_count);
-          //var_dump($researcherPlacement);
-
-        }
 
         if (!$row['status'] || $row['revenue_chart_flag'] == "p")
         {
