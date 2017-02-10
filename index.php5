@@ -10,7 +10,7 @@ require_once './common/lib/ChromePhp.php';
 session_start();
 header("Cache-Control: no-cache");
 header("Pragma: no-cache");
-//error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE);
 // Connect to redis
 $GLOBALS['redis'] = new Redis();
 $GLOBALS['redis']->pconnect('127.0.0.1');
