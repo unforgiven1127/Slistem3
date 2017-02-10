@@ -1032,7 +1032,11 @@ ChromePhp::log('get_revenue_data');
         $researcherPlacement = $this->oDB->executeQuery($query);
         $researcherPlacement = $researcherPlacement->getAll();
         if($user_id == '418')
-          var_dump($researcherPlacement);
+        {
+          ChromePhp::log($researcherPlacement);
+          //var_dump($researcherPlacement);
+
+        }
 
         if (!$row['status'] || $row['revenue_chart_flag'] == "p")
         {
