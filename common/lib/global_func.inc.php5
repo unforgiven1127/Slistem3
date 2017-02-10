@@ -3681,6 +3681,8 @@ var_dump($query);*/
 
     $read = $db_result->readFirst();
 
+    $row = array();
+
     while ($read)
     {
       $row = $db_result->getData();
@@ -3895,57 +3897,6 @@ var_dump($query);*/
     return $result;
   }
 
-  function getActivityListJustMongo($candidate_id)
-  {
-    $where = array( '$and' => array(
-        array( '$or' => array(
-            array('table' => 'sl_candidate'),
-            array('table' => 'document'),
-            array('table' => 'sl_document'),
-            array('table' => 'sl_meeting'),
-            array('table' => 'position'),
-            array('table' => 'user_history'),
-            )),
-            array('cp_pk' => (int)$candidate_id)
-        )
-      );
-
-    /*$where = array( '$and' => array(
-        array( '$or' => array(
-            array('table' => 'sl_candidate'),
-            array('table' => 'document'),
-            array('table' => 'sl_document'),
-            array('table' => 'sl_meeting'),
-            array('table' => 'position'),
-            array('table' => 'user_history'),
-            )),
-            array( '$or' => array(
-              array('cp_pk' => (int)$candidate_id),
-              array('cp_pk' => $candidate_id))
-            )
-        )
-      );*/
-
-    $newLogs = getMongoLog($where);
-
-    $newLogs = iterator_to_array($newLogs, false);
-
-    return $newLogs;
-  }
-
-  function getCompanyHistoryJustMongo($candidate_id)
-  {
-    $where = array( '$and' => array(
-        array('table' => 'company_history'),
-        array('cp_pk' => (int)$candidate_id)
-        ) );
-    $newLogs = getMongoLog($where);
-
-    $newLogs = iterator_to_array($newLogs, false);
-
-    return $newLogs;
-  }
-
   function getCompanyHistory($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
@@ -4122,91 +4073,8 @@ var_dump($query);*/
 
   }
 
-  function getActivityListFormatted($candidate_id)
+  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
-$startT = strtotime("now");
-    $activityList = getActivityListJustMongo($candidate_id);
-
-    $html = '';
-    $count = 0;
-    foreach ($activityList as $key => $value)
-    {
-      $count++;
-      $user_information = getUserInformaiton($value['userfk']);
-
-      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
-
-      $format = "<div class='entry'>
-                  <div class='note_header'>
-                  &nbsp;→&nbsp;&nbsp;
-                  <span>
-                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
-                  </span>
-                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
-                  </div>
-                  <div class='note_content'>".$value['action']."</div>
-              </div>";
-
-      $html .= $format;
-    }
-
-    $returnArray = array();
-    $returnArray['html'] = $html;
-    $returnArray['count'] = $count;
-
-$endT = strtotime("now");
-$exec_time = $endT - $startT;
-
-$time = $exec_time.' sec getActivityListFormatted';
-
-ChromePhp::log($time);
-
-    return $returnArray;
-  }
-
-  function getCompanyHistoryFormatted($candidate_id)
-  {
-$startT = strtotime("now");
-    $companyHistory = getCompanyHistoryJustMongo($candidate_id);
-
-    $html = '';
-    $count = 0;
-    foreach ($companyHistory as $key => $value)
-    {
-      $count++;
-      $user_information = getUserInformaiton($value['userfk']);
-
-      $fullUserName = $user_information['firstname'].' '.$user_information['lastname'];
-
-      $format = "<div class='entry'>
-                  <div class='note_header'>
-                  &nbsp;→&nbsp;&nbsp;
-                  <span>
-                    <a href='javascript:;' class='user_link ' title='[".$fullUserName."  - extension: ".$user_information['phone_ext']." - email: ".$user_information['email']." ]' active='1' loginfk='101' onclick=' stp(this); '>".$fullUserName." </a>
-                  </span>
-                  <span style='margin-right:10px;' class='note_chronology'>".$value['date']."</span>
-                  </div>
-                  <div class='note_content'>".$value['action']."</div>
-              </div>";
-
-      $html .= $format;
-    }
-
-    $returnArray = array();
-    $returnArray['html'] = $html;
-    $returnArray['count'] = $count;
-$endT = strtotime("now");
-$exec_time = $endT - $startT;
-
-$time = $exec_time.' sec getCompanyHistoryFormatted';
-
-ChromePhp::log($time);
-    return $returnArray;
-  }
-
-  function getMongoLog($where = '',$orderBy = '',$limit = '100' ,$table = 'logs',$skip = 0)
-  {
-    //$startT = strtotime("now");
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
@@ -4235,6 +4103,7 @@ ChromePhp::log($time);
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
 ////ChromePhp::log($where);
+
     if($where == '')
     {
       $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->skip($skip);
@@ -4243,6 +4112,7 @@ ChromePhp::log($time);
     {
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
     }
+
 ////ChromePhp::log($allLogs);
     //$returnArray = array();
     /*$count = 0;
@@ -4252,12 +4122,6 @@ ChromePhp::log($time);
         //ChromePhp::log($log);
         //$returnArray[] = $log;
     }*/
-
-    //$endT = strtotime("now");
-    //$exec_time = $endT - $startT;
-
-    //ChromePhp::log('EXECUTION TIME');
-    //ChromePhp::log($exec_time);
 
     return $allLogs;
   }
@@ -4654,7 +4518,7 @@ ChromePhp::log($time);
       $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
       $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-      $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+      //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
       $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
       $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
@@ -4681,22 +4545,38 @@ ChromePhp::log($time);
 
     $result = $db_result->getAll();*/
 ////ChromePhp::log('securityCheckContactView');
+    $dNow = date('Y-m-d');
+    $startDate = $dNow." 00:00:00";
     $where = array( '$and' => array(
         array('action' => 'Contacts viewed'),
-        array('userfk' => $user_id)
+        array('userfk' => $user_id),
+        array('date' => array('$gte' => $startDate))
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
+
     $orderBy = '';
-    $limit = '5';
-    $logs = getMongoLog($where,$orderBy,$limit);
+    //$limit = '5';
+
+    $logs = getMongoLog($where,$orderBy);
 ////ChromePhp::log($logs);
 
-    $logsContactSeen = iterator_to_array($logs, false);
+    //  $logsContactSeen = iterator_to_array($logs, false);
     $logs = iterator_to_array($logs, false);
-    //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
 
+    $checkArray = array();
+    foreach ($logs as $key => $value)
+    {
+      if(in_array($value['cp_pk'],$checkArray))
+      {
+        unset($logs[$key]);
+      }
+      $checkArray[] = $value['cp_pk'];
+    }
+    $logs = array_values($logs);
+    //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
+    $logsContactSeen = $logs;
     //$value = $blah[0];
-////ChromePhp::log($logs);
+//ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
@@ -4784,7 +4664,7 @@ ChromePhp::log($time);
         $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
         $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
         $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
         $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
@@ -4897,7 +4777,7 @@ ChromePhp::log($time);
         $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
 
         $oMail->addRecipient('ray@slate-ghc.com', 'Ray Pedersen');
-        $oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
+        //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
         $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
         $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
 
@@ -5698,7 +5578,7 @@ function get_revenue_chart_loop()
 
 function check_session_expiry()
 {
-  $expiry_time = 60 * 60 * 8000; // 5 hour
+  $expiry_time = 60 * 60 * 80000; // 3 hour
   //$expiry_time = 60; // 1 min?
   $logout = false;
   if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $expiry_time))
