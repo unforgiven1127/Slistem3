@@ -1022,23 +1022,9 @@ order by m.candidatefk
         //array_push($users,$user_id);
         $ccms = $this->get_ccm_data($users, $ccm1_start_date, $ccm1_end_date, $group = 'researcher');
 
-        if(isset($ccms[$user_id]['ccm1_done']))
-        {
-          $ccm1_count = (int)$ccms[$user_id]['ccm1_done'];
-        }
-        else
-        {
-          $ccm1_count = 0;
-        }
-
-        if(isset($ccms['researcher']))
-        {
-          $mccm_count = (int)$ccms[$user_id]['ccm2_done'] + (int)$ccms['researcher'][$user_id]['mccm_done'];
-        }
-        if(isset($ccms[$user_id]['placedRevenue']))
-        {
-          $placed_count = (int)$ccms[$user_id]['placedRevenue'];
-        }
+        $ccm1_count = (int)$ccms[$user_id]['ccm1_done'];
+        $mccm_count = (int)$ccms[$user_id]['ccm2_done'] + (int)$ccms['researcher'][$user_id]['mccm_done'];
+        $placed_count = (int)$ccms[$user_id]['placedRevenue'];
 
         //var_dump($user_id);
 
@@ -1143,10 +1129,6 @@ order by m.candidatefk
 
             else if ($row['user_position'] == 'Researcher' && !isset($revenue_data[$row['user_position']][$user_id][$row['userPosition']]['do_not_count_placed'][$row['loginpk']]))
             {
-              if($user_id == '481')
-              {
-                ChromePhp::log($revenue_data);
-              }
               $temp_placed = $this->get_placement_number_revenue(array($row['loginpk']), $date_start, $date_end);
               $revenue_data[$row['user_position']][$user_id][$row['userPosition']]['placedRevenue'] += $temp_placed[$row['loginpk']]['placed'];
               $revenue_data[$row['user_position']][$user_id][$row['userPosition']]['candidates'] .= ';'.$clear_data[$row['revenue_id']]['candidate'];
