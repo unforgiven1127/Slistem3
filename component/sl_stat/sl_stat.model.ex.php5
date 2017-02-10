@@ -1096,6 +1096,13 @@ ChromePhp::log('get_revenue_data');
       while($read)
       {
         $row = $db_result->getData();
+ChromePhp::log($row);
+        /*ChromePhp::log('HERE');
+        ChromePhp::log($user_id);
+        if($user_id == '481')
+        {
+          ChromePhp::log($revenue_data[$row['user_position']][$user_id]);
+        }*/
 
         if ($row['id'] == 'bizreach' || $row['id'] == 'othercollab' || empty($row['id']))
         {
@@ -1145,12 +1152,6 @@ ChromePhp::log('get_revenue_data');
           {
             $user_id = $row['loginpk'];
 
-              ChromePhp::log('HERE');
-              ChromePhp::log($user_id);
-              if($user_id == '481')
-              {
-                ChromePhp::log($revenue_data[$row['user_position']][$user_id]);
-              }
             if (empty($revenue_data[$row['user_position']][$user_id][$row['user_position']]['placed']))
               $revenue_data[$row['user_position']][$user_id][$row['user_position']]['placed'] = 0;
 
