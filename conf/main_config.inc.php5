@@ -94,7 +94,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     case 'slistem1.slate.co.jp':
     case 'slistem2.slate.co.jp':
     case 'beta2.slate.co.jp':
-
+//
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
     // manage loadbalancer non transparency. I might have an environment var from tyhe VHOST, or a HTTP_X_FORWARDED_FOR entry
