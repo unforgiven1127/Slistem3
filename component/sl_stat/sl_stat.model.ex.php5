@@ -1130,6 +1130,7 @@ ChromePhp::log('get_revenue_data');
             else if ($row['user_position'] == 'Researcher' && !isset($revenue_data[$row['user_position']][$user_id][$row['userPosition']]['do_not_count_placed'][$row['loginpk']]))
             {
               ChromePhp::log('HERE');
+              ChromePhp::log($user_id);
               if($user_id == '481')
               {
                 ChromePhp::log($revenue_data);
