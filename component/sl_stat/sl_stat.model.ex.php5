@@ -945,7 +945,7 @@ order by m.candidatefk
 
   public function get_revenue_data($request_date = '', $location = '')
   {
-ChromePhp::log('get_revenue_data');
+
     $revenue_data = $revenue_data_raw = array();
 
     if (empty($request_date))
@@ -992,7 +992,7 @@ ChromePhp::log('get_revenue_data');
                 FROM login l
                 LEFT JOIN sl_position_link s ON s.created_by = l.loginpk  AND active = 0 AND date_completed BETWEEN '".$ccm1_start_date."' AND '".$ccm1_end_date."'
                 LEFT JOIN sl_nationality sln ON l.nationalityfk = sln.sl_nationalitypk
-                WHERE (l.position = 'Researcher' OR l.loginpk = '457' OR l.loginpk = '481' OR l.loginpk = '466') AND l.loginpk != '382'"; // saruul cici vs hem consultant hem researcher da gorunebilmesi icin...
+                WHERE (l.position = 'Researcher' OR l.loginpk = '457' OR l.loginpk = '481' OR l.loginpk = '466') AND l.loginpk != '382'"; // saruul un hem consultant hem researcher da gorunebilmesi icin...
 
       $db_result = $this->oDB->executeQuery($query);
       $read = $db_result->readFirst();
@@ -1026,18 +1026,7 @@ ChromePhp::log('get_revenue_data');
         $mccm_count = (int)$ccms[$user_id]['ccm2_done'] + (int)$ccms['researcher'][$user_id]['mccm_done'];
         $placed_count = (int)$ccms[$user_id]['placedRevenue'];
 
-        $researcherPlacementQuery = "SELECT rm.* FROM revenue r
-INNER JOIN revenue_member rm on rm.revenue_id = r.id and rm.loginpk = '481' AND rm.user_position = 'Researcher'
-WHERE r.date_due >= '2017-01-01' AND r.date_due <= '2017-12-31'";
-        $researcherPlacement = $this->oDB->executeQuery($researcherPlacementQuery);
-        $researcherPlacement = $researcherPlacement->getAll();
-        if($user_id == '418')
-        {
-          ChromePhp::log($researcherPlacementQuery);
-          ChromePhp::log($researcherPlacement);
-          //var_dump($researcherPlacement);
-
-        }
+        //var_dump($user_id);
 
         if (!$row['status'] || $row['revenue_chart_flag'] == "p")
         {
@@ -1107,13 +1096,6 @@ WHERE r.date_due >= '2017-01-01' AND r.date_due <= '2017-12-31'";
       while($read)
       {
         $row = $db_result->getData();
-
-        //ChromePhp::log('HERE');
-        //ChromePhp::log($user_id);
-        if($row['loginpk'] == '481')
-        {
-          //ChromePhp::log($row);
-        }
 
         if ($row['id'] == 'bizreach' || $row['id'] == 'othercollab' || empty($row['id']))
         {
