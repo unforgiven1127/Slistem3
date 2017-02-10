@@ -1033,6 +1033,7 @@ ChromePhp::log('get_revenue_data');
         $researcherPlacement = $researcherPlacement->getAll();
         if($user_id == '418')
         {
+          ChromePhp::log($researcherPlacementQuery);
           ChromePhp::log($researcherPlacement);
           //var_dump($researcherPlacement);
 
