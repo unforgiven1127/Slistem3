@@ -1111,7 +1111,7 @@ ChromePhp::log('get_revenue_data');
         //ChromePhp::log($user_id);
         if($row['loginpk'] == '481')
         {
-          ChromePhp::log($row);
+          //ChromePhp::log($row);
         }
 
         if ($row['id'] == 'bizreach' || $row['id'] == 'othercollab' || empty($row['id']))
