@@ -945,6 +945,7 @@ order by m.candidatefk
 
   public function get_revenue_data($request_date = '', $location = '')
   {
+    error_reporting(E_ALL & ~E_NOTICE);
 ChromePhp::log('get_revenue_data');
     $revenue_data = $revenue_data_raw = array();
 
