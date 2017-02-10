@@ -1096,13 +1096,13 @@ ChromePhp::log('get_revenue_data');
       while($read)
       {
         $row = $db_result->getData();
-ChromePhp::log($row);
-        /*ChromePhp::log('HERE');
-        ChromePhp::log($user_id);
-        if($user_id == '481')
+
+        //ChromePhp::log('HERE');
+        //ChromePhp::log($user_id);
+        if($row['loginpk'] == '481')
         {
-          ChromePhp::log($revenue_data[$row['user_position']][$user_id]);
-        }*/
+          ChromePhp::log($row);
+        }
 
         if ($row['id'] == 'bizreach' || $row['id'] == 'othercollab' || empty($row['id']))
         {
