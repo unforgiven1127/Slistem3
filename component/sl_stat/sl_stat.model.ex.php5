@@ -1030,7 +1030,7 @@ ChromePhp::log('get_revenue_data');
                                      INNER JOIN revenue_member rm on rm.revenue_id = r.id
                                      WHERE r.date_due >= '".$ccm1_start_date."' AND r.date_due <= '".$ccm1_end_date."' AND rm.loginpk = '".$user_id."'";
         $researcherPlacement = $this->oDB->executeQuery($query);
-        $researcherPlacement = $researcherPlacement->gelAll();
+        $researcherPlacement = $researcherPlacement->getAll();
         var_dump($researcherPlacementQuery);
 
         if (!$row['status'] || $row['revenue_chart_flag'] == "p")
