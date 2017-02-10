@@ -945,7 +945,7 @@ order by m.candidatefk
 
   public function get_revenue_data($request_date = '', $location = '')
   {
-
+ChromePhp::log('get_revenue_data');
     $revenue_data = $revenue_data_raw = array();
 
     if (empty($request_date))
@@ -1129,6 +1129,7 @@ order by m.candidatefk
 
             else if ($row['user_position'] == 'Researcher' && !isset($revenue_data[$row['user_position']][$user_id][$row['userPosition']]['do_not_count_placed'][$row['loginpk']]))
             {
+              ChromePhp::log('HERE');
               if($user_id == '481')
               {
                 ChromePhp::log($revenue_data);
