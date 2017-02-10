@@ -4073,7 +4073,7 @@ var_dump($query);*/
 
   }
 
-  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
+  function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0,)
   {
     $username = MONGO_USER;
     $password = MONGO_PASS;
@@ -4103,7 +4103,6 @@ var_dump($query);*/
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
 ////ChromePhp::log($where);
-
     if($where == '')
     {
       $allLogs = $logsSlistemMongo->find()->sort($orderBy)->limit($limit)->skip($skip);
@@ -4112,7 +4111,6 @@ var_dump($query);*/
     {
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
     }
-
 ////ChromePhp::log($allLogs);
     //$returnArray = array();
     /*$count = 0;
@@ -4553,30 +4551,19 @@ var_dump($query);*/
         array('date' => array('$gte' => $startDate))
         ) );
     //$orderBy = array('login_system_historypk' => '-1');
+    $distinct = array('distinct' => 'logs', "key" => "cp_pk");
 
     $orderBy = '';
-    //$limit = '5';
-
-    $logs = getMongoLog($where,$orderBy);
+    $limit = '5';
+    $logs = getMongoLog($where,$orderBy,$limit);
 ////ChromePhp::log($logs);
 
-    //  $logsContactSeen = iterator_to_array($logs, false);
+    $logsContactSeen = iterator_to_array($logs, false);
     $logs = iterator_to_array($logs, false);
-
-    $checkArray = array();
-    foreach ($logs as $key => $value)
-    {
-      if(in_array($value['cp_pk'],$checkArray))
-      {
-        unset($logs[$key]);
-      }
-      $checkArray[] = $value['cp_pk'];
-    }
-    $logs = array_values($logs);
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
-    $logsContactSeen = $logs;
+
     //$value = $blah[0];
-//ChromePhp::log($logs);
+ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
