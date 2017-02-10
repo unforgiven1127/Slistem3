@@ -1029,10 +1029,13 @@ ChromePhp::log('get_revenue_data');
         $researcherPlacementQuery = "SELECT count(rm.loginpk) as count FROM revenue r INNER JOIN revenue_member rm on rm.revenue_id = r.id and rm.loginpk = '".$user_id."' AND rm.user_position = 'Researcher' WHERE r.date_due >= '".$date_start."' AND r.date_due <= '".$date_end."'";
         $researcherPlacement = $this->oDB->executeQuery($researcherPlacementQuery);
         $researcherPlacement = $researcherPlacement->getAll();
+
+        $placed_count = count($researcherPlacement);
+
         if($user_id == '481')
         {
           ChromePhp::log($researcherPlacementQuery);
-          ChromePhp::log($researcherPlacement);
+          ChromePhp::log($placed_count);
           //var_dump($researcherPlacement);
 
         }
