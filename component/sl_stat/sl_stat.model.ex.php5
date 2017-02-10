@@ -1026,7 +1026,9 @@ ChromePhp::log('get_revenue_data');
         $mccm_count = (int)$ccms[$user_id]['ccm2_done'] + (int)$ccms['researcher'][$user_id]['mccm_done'];
         $placed_count = (int)$ccms[$user_id]['placedRevenue'];
 
-        $researcherPlacementQuery = "SELECT rm.* FROM revenue r INNER JOIN revenue_member rm on rm.revenue_id = r.id and rm.loginpk = '".$user_id."' AND rm.user_position = 'Researcher' WHERE r.date_due >= '".$date_start."' AND r.date_due <= '".$date_end."'";
+        $researcherPlacementQuery = "SELECT rm.* FROM revenue r
+INNER JOIN revenue_member rm on rm.revenue_id = r.id and rm.loginpk = '481' AND rm.user_position = 'Researcher'
+WHERE r.date_due >= '2017-01-01' AND r.date_due <= '2017-12-31'";
         $researcherPlacement = $this->oDB->executeQuery($researcherPlacementQuery);
         $researcherPlacement = $researcherPlacement->getAll();
         if($user_id == '418')
