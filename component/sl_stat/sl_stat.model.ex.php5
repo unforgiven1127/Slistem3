@@ -1031,7 +1031,8 @@ ChromePhp::log('get_revenue_data');
                                      WHERE r.date_due >= '".$ccm1_start_date."' AND r.date_due <= '".$ccm1_end_date."' AND rm.loginpk = '".$user_id."'";
         $researcherPlacement = $this->oDB->executeQuery($query);
         $researcherPlacement = $researcherPlacement->getAll();
-        var_dump($researcherPlacementQuery);
+        if($user_id == '418')
+          var_dump($researcherPlacement);
 
         if (!$row['status'] || $row['revenue_chart_flag'] == "p")
         {
