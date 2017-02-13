@@ -1948,7 +1948,7 @@ class CSl_candidateEx extends CSl_candidate
                 $sCopyEmail = urlencode($sCopyEmail);*/
                 $sCopyEmail = "slistem@slate.co.jp";
 ChromePhp::log($asData);
-                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?bcc='.$sCopyEmail.'\', \'zm_mail\');'));
+                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?bcc='.$sCopyEmail.'&body=Hi,I found this\', \'zm_mail\');'));
                 break;
             }
 
