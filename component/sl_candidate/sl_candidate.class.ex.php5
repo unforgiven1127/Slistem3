@@ -1950,7 +1950,7 @@ class CSl_candidateEx extends CSl_candidate
                 $sCopyEmail = "slistem@slate.co.jp";
                 $whiteText = "<p><font color='red'>This is some text!</font></p>";
 
-                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?bcc='.$sCopyEmail.'&body=<p>TEST</p>\', \'zm_mail\');'));
+                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => 'window.open(\'mailto:'.$asData['value'].'?bcc='.$sCopyEmail.'\', \'zm_mail\');'));
                 break;
             }
 
