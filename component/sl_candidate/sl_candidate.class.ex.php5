@@ -1958,7 +1958,8 @@ class CSl_candidateEx extends CSl_candidate
           else
           {
 
-            if($bVisible)
+            //if($bVisible)
+            if(1)
             {
               $sMaskedValue = substr($asData['value'], 0, 5).'<span class="contact_masked_symbol"> ';
               for($nLetter = 0; $nLetter < (strlen($asData['value']) -5); $nLetter++)
