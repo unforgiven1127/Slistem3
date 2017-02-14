@@ -10766,7 +10766,7 @@ $bonusManual = getValue('bonus');
                 $loginfk = $this->_oLogin->getUserPk();
                 $cp_pk = $pasOldData['sl_candidatepk'];
                 $text = '['.$sLabel.'] changed from: '.$old_variable.' -> to: '.$new_variable;
-ChromePhp::log('MONGO EKLE');
+//ChromePhp::log('MONGO EKLE');
                 //insertLog($loginfk, $cp_pk, $text, "company_history");
                 insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
