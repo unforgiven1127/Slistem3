@@ -337,6 +337,7 @@ class CSl_eventEx extends CSl_event
 
         array_push($asNotes,$addNotes);
       }
+      //BOTH SELECT SAME QUERY...
       /*if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
       {
         foreach ($companyHistory as $key => $value)
