@@ -1984,7 +1984,8 @@ class CSl_candidateEx extends CSl_candidate
           else
             $sItem.= $this->_oDisplay->getBloc('','<em>updated '.date('Y-M-d', strtotime($sDate)).'</em><br />'.$sUser, array('class' => 'contactDate'));
 
-          if($bVisible)
+          //if($bVisible)
+          if(1)
           {
             if(!empty($asData['description']))
               $sItem.= $this->_oDisplay->getBloc('', $asData['description'], array('class' => 'contactDescription'));
