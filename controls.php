@@ -308,7 +308,14 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
           $asToAddress = $asMatches;
           foreach($asToAddress as $sTo)
           {
-            var_dump($sTo);
+            if(isset($sTo[0]))
+            {
+                $sTo = $sTo[0];
+            }
+            else
+            {
+                $sTo = '';
+            }
             //--------------------------------------------------
             //look into the email addresses if there's an item pattern
             $asItem = array();
