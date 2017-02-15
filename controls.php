@@ -294,6 +294,8 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         //smaller item being "ct1" -> 3 char
         $asMatches = array();
         preg_match_all('/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})@'.$sCatchAllDomain.'/i', $sHeader, $asMatches);
+        var_dump($asMatches);
+        echo '<br><br>';
         if(empty($asMatches[2]))
         {
           echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
