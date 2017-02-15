@@ -299,13 +299,13 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         echo '<br><br>';
         var_dump($asMatches);
         echo '<br><br>';
-        if(empty($asMatches[1]))
+        if(empty($asMatches))
         {
           echo 'No catchAll address in the header [([a-z0-9_ \-]{3,}@slate.co.jp)]<br />';
         }
         else
         {
-          $asToAddress = $asMatches[1];
+          $asToAddress = $asMatches;
           foreach($asToAddress as $sTo)
           {
             //--------------------------------------------------
