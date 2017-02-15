@@ -134,7 +134,7 @@ $json = json_decode($str, true);
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
 imap_timeout(IMAP_OPENTIMEOUT, 5);
-$oMailBox = imap_open ('{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}inbox', CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
+$oMailBox = imap_open ("{".CONST_PHPMAILER_SMTP_HOST.":".CONST_MAIL_IMAP_PORT."/imap/ssl/novalidate-cert}Rossana Kiyamu's Sent", CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 if($oMailBox === false)
 {
     echo 'ERROR';
