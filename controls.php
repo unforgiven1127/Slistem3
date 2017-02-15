@@ -297,9 +297,11 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         //var_dump($asMatches);
         var_dump($sHeader);
         echo '<br><br>';
+        var_dump($asMatches);
+        echo '<br><br>';
         if(empty($asMatches[2]))
         {
-          echo 'No catchAll address in the header [/(cc:|bcc:|to:) ([a-z0-9_ \-]{3,})\@'.$sCatchAllDomain.'/i]<br />';
+          echo 'No catchAll address in the header [([a-z0-9_ \-]{3,}@slate.co.jp)]<br />';
         }
         else
         {
