@@ -155,10 +155,10 @@ else
     $sMessageIds = implode(',', $asFiltered);
     $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
 
-    foreach ($variable as $key => $value)
+    foreach ($asFiltered as $key => $value)
     {
         echo '<br><br><br><br><br>';
-        var_dump($asFiltered);
+        var_dump($value);
     }
 
 
