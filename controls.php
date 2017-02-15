@@ -312,7 +312,7 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
             //look into the email addresses if there's an item pattern
             $asItem = array();
 
-            if(preg_match('/[0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10}$/i', $sTo) === 1)
+            if(preg_match('([0-9]{3}-[0-9]{3}__[a-z]{0,10}__[a-z]{0,10}__[0-9]{1,10})', $sTo) === 1)
             {
               dump('found an item std format ['.$sTo.']');
               $asItem = explode('__', $sTo);
