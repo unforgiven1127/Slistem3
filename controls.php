@@ -30,7 +30,7 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-echo "MONGO LOG CONTROL<br><br>";
+/*echo "MONGO LOG CONTROL<br><br>";
 
 $username = MONGO_USER;
 $password = MONGO_PASS;;
@@ -82,7 +82,7 @@ $where = array('userfk' => 494,'cp_pk' => 154310);
   array("userfk" => "101"),
   array("table" => "user_history_all_view")
 ));*/
-$orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
+/*$orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
 
 $dNow = date('Y-m-d');
 $startDate = $dNow." 00:00:00";
@@ -118,7 +118,7 @@ foreach($allLogs as $log)
     //var_dump($log);
     echo "<br><br>------------------------------------------------------<br><br>";
 
-}
+}*/
 
 //imap_timeout(IMAP_OPENTIMEOUT, 10);//hata gitmis gorunuyor.
 
@@ -133,7 +133,7 @@ $json = json_decode($str, true);
 
 echo '<pre>' . print_r($json, true) . '</pre>';*/
 
-/*imap_timeout(IMAP_OPENTIMEOUT, 5);
+imap_timeout(IMAP_OPENTIMEOUT, 5);
 $oMailBox = imap_open ('{'.CONST_PHPMAILER_SMTP_HOST.':'.CONST_MAIL_IMAP_PORT.'/imap/ssl/novalidate-cert}inbox', CONST_PHPMAILER_SMTP_LOGIN, CONST_PHPMAILER_SMTP_PASSWORD);
 if($oMailBox === false)
 {
@@ -142,11 +142,11 @@ if($oMailBox === false)
 }
 else
 {
-    /*echo 'mail box: '.$oMailBox.'<br><br>';
+    echo 'mail box: '.$oMailBox.'<br><br>';
     echo 'OK<br><br>';
     var_dump($oMailBox);
-    echo '<br><br>';*/
-
+    echo '<br><br>';
+}
     /*$oBoxInfo = imap_mailboxmsginfo($oMailBox);
     /*var_dump($oBoxInfo);
 
