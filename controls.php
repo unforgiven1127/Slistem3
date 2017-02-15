@@ -411,15 +411,15 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
       {
         imap_delete($oMailBox, $oEmail->msgno);
       }
-      else
-      {
-        $bMoved = imap_mail_move($oMailBox, $oEmail->msgno, 'rkiyamu_sent/'.$sMovedTo);
+      //else
+      //{
+      //  $bMoved = imap_mail_move($oMailBox, $oEmail->msgno, 'rkiyamu_sent/'.$sMovedTo);
 
-        if(!$bMoved)
-          assert('false; /* email could not be moved ['.$oEmail->msgno.' , rkiyamu_sent/'.$sMovedTo.'] */ ');
-        else
-          dump('Email #'.$oEmail->msgno.' moved to '.$sMovedTo);
-      }
+       // if(!$bMoved)
+       //   assert('false; /* email could not be moved ['.$oEmail->msgno.' , rkiyamu_sent/'.$sMovedTo.'] */ ');
+       // else
+       //   dump('Email #'.$oEmail->msgno.' moved to '.$sMovedTo);
+      //}
     }
 
     imap_setflag_full($oMailBox, $sMessageIds, '\\Seen', ST_UID);
