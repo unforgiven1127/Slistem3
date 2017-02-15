@@ -147,8 +147,8 @@ else
     var_dump($oMailBox);
     echo '<br><br>';
 
-    $oBoxInfo = imap_mailboxmsginfo($oMailBox);
-    var_dump($oBoxInfo);
+    $asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
+    var_dump($asFiltered);
 
 }
     /*$oBoxInfo = imap_mailboxmsginfo($oMailBox);
