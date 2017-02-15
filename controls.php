@@ -293,7 +293,7 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         //2. We need to look into the header for the specific email address it was bcc to
         //smaller item being "ct1" -> 3 char
         $asMatches = array();
-        preg_match_all('/(cc:|Bcc:|to:) ([a-z0-9_ \-]{3,})@'.$sCatchAllDomain.'/i', $sHeader, $asMatches);
+        preg_match_all('([a-z0-9_ \-]{3,}@slate.co.jp)', $sHeader, $asMatches);
         //var_dump($asMatches);
         var_dump($sHeader);
         echo '<br><br>';
