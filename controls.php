@@ -147,7 +147,13 @@ else
     var_dump($oMailBox);
     echo '<br><br>';
 
+    $oBoxInfo = imap_mailboxmsginfo($oMailBox);
+
     $asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
+
+
+    $sMessageIds = implode(',', $asFiltered);
+    $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
     var_dump($asFiltered);
 
 }
