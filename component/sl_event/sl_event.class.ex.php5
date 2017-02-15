@@ -297,7 +297,7 @@ class CSl_eventEx extends CSl_event
     if($psNoteType == 'cp_history')
     {
       $candidate_id = $pnItemPk;
-      $companyHistory = getCompanyHistory($candidate_id);
+      //$companyHistory = getCompanyHistory($candidate_id);
 
       $where = array( '$and' => array(
         array( '$or' => array(
@@ -308,8 +308,10 @@ class CSl_eventEx extends CSl_event
         )
       );
 
-      $newLogs = getMongoLog($where);
-      $newLogs = iterator_to_array($newLogs, false);
+      //$newLogs = getMongoLog($where);
+      //$newLogs = iterator_to_array($newLogs, false);
+
+      $newLogs = array();
 
       foreach ($newLogs as $key => $value)
       {
