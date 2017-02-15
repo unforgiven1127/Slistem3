@@ -293,7 +293,7 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         //2. We need to look into the header for the specific email address it was bcc to
         //smaller item being "ct1" -> 3 char
         $asMatches = array();
-        preg_match_all('([a-z0-9_ \-]{3,}@slate.co.jp)', $sHeader, $asMatches);
+        preg_match_all('(555-001__ppav__candi__[a-z0-9_ \-]{3,}@slate.co.jp)', $sHeader, $asMatches);
         //var_dump($asMatches);
         var_dump($sHeader);
         echo '<br><br>';
@@ -301,7 +301,7 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
         echo '<br><br>';
         if(empty($asMatches))
         {
-          echo 'No catchAll address in the header [([a-z0-9_ \-]{3,}@slate.co.jp)]<br />';
+          echo 'No catchAll address in the header [(555-001__ppav__candi__[a-z0-9_ \-]{3,}@slate.co.jp)]<br />';
         }
         else
         {
