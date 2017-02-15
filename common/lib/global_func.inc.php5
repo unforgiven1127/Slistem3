@@ -4076,7 +4076,7 @@ var_dump($query);*/
   function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
     $test = array();
-    return $test;
+    return true;
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
