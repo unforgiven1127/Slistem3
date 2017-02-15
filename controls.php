@@ -227,7 +227,8 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
     //treat emails
 
     $asCatchAll = explode('@', CONST_MAIL_IMAP_CATCHALL_ADDRESS);
-    $sCatchAllDomain = $asCatchAll[1];
+    //$sCatchAllDomain = $asCatchAll[1];
+    $sCatchAllDomain = 'slate.co.jp';
 
     if(!CONST_MAIL_IMAP_CATCHALL_ADDRESS)
     {
