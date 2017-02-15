@@ -154,7 +154,13 @@ else
 
     $sMessageIds = implode(',', $asFiltered);
     $asFiltered = imap_fetch_overview($oMailBox, $sMessageIds);
-    var_dump($asFiltered);
+
+    foreach ($variable as $key => $value)
+    {
+        echo '<br><br><br><br><br>';
+        var_dump($asFiltered);
+    }
+
 
 }
     /*$oBoxInfo = imap_mailboxmsginfo($oMailBox);
