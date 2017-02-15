@@ -173,8 +173,8 @@ echo '<pre>' . print_r($json, true) . '</pre>';*/
 
 
     //$oFiltered = imap_search ($oMailBox, 'FROM "slistem@slistem.com" SINCE "'.date('Y-m-d', strtotime('-7 days')).'"' , int $options = SE_FREE [, string $charset = NIL ]] )
-    $asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
-    //$asFiltered = imap_search ($oMailBox, 'UNSEEN', SE_FREE, 'utf-8');
+    //$asFiltered = imap_search($oMailBox, 'ALL', SE_FREE, 'utf-8');
+    $asFiltered = imap_search ($oMailBox, 'UNSEEN', SE_FREE, 'utf-8');
 
     if($asFiltered == false)
     {
