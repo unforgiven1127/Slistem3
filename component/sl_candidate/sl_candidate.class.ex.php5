@@ -2237,7 +2237,7 @@ class CSl_candidateEx extends CSl_candidate
 {
   //ChromePhp::log($user_info);
 }*/
-          if(is_null($user_info) || empty($user_info))
+          if(!isset($user_info) || is_null($user_info) || empty($user_info))
           {
             ////ChromePhp::log('NULL');
             ////ChromePhp::log($user_info);
