@@ -308,8 +308,8 @@ class CSl_eventEx extends CSl_event
         )
       );
 
-      //$newLogs = getMongoLog($where);
-      //$newLogs = iterator_to_array($newLogs, false);
+      $newLogs = getMongoLog($where);
+      $newLogs = iterator_to_array($newLogs, false);
 
       $newLogs = array();
 

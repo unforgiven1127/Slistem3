@@ -4075,9 +4075,7 @@ var_dump($query);*/
 
   function getMongoLog($where = '',$orderBy = '',$limit = '200' ,$table = 'logs',$skip = 0)
   {
-    $iterator = new ArrayIterator([1, 2, 3]);
-    $test = array();
-    return $iterator;
+
     $username = MONGO_USER;
     $password = MONGO_PASS;
 
@@ -4131,7 +4129,7 @@ var_dump($query);*/
 
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
-    return true;
+    //return true;
 ////ChromePhp::log($table);
 
     /*if($table == 'user_history_all_view')
