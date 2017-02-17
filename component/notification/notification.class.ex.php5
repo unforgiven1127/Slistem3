@@ -1677,16 +1677,33 @@ class CNotificationEx extends CNotification
       {
         $sTitle = 'Send a message';
         $sBtnLabel = 'Send.';
-        $oPage->addCustomJs("
+        /*$oPage->addCustomJs("
           $('#formSubmitButton').click(function(){
             alert('MUNIR');
           });
-        ");
+        ");*/
       }
       else
       {
         $sTitle = 'Create a new reminder';
         $sBtnLabel = 'Save reminder';
+      }
+
+      if($pbAsMessage)
+      {
+        $oPage->addCustomJs("
+          function testMNR()
+          {
+            alert('test MNR');
+          };
+        ");
+
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel, 'onBeforeSubmit' => 'testMNR();'));
+      }
+
+      else
+      {
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       }
 
       $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
