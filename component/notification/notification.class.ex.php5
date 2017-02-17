@@ -1698,7 +1698,7 @@ class CNotificationEx extends CNotification
           };
         ");
 
-        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel, 'onBeforeSubmit' => 'alert("test");'));
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel, 'onclick' => 'alert("test");'));
       }
 
       else
