@@ -1791,6 +1791,7 @@ class CNotificationEx extends CNotification
 
   private function _getReminderSave($pnReminderPk = 0)
   {
+    ChromePhp::log('_getReminderSave');
     if(!assert('is_integer($pnReminderPk)'))
       return array('error' => 'Bad parameters.');
 
