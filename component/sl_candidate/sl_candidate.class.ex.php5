@@ -8041,7 +8041,6 @@ die();*/
 
     private function _saveCandidateData($pnCandidatePk = 0,$pbTest = true, $pbSave = false, $pasCandidate = array())
     {
-ChromePhp::log('_saveCandidateData');
       if(!assert('is_integer($pnCandidatePk)'))
         return array('error' => 'Bad parameters.');
 
@@ -8487,6 +8486,7 @@ $bonusManual = getValue('bonus');
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         //candidate table added or update... deal with the business profile
+        ChromePhp::log($bNewCandidate);
         if($bNewCandidate)
         {
           //$asMonth = array('A','B','C','D','E','F','G','H','I','J','K','L');
@@ -8502,6 +8502,7 @@ $bonusManual = getValue('bonus');
         }
         else
         {
+          ChromePhp::log('ELSE');
           $this->casCandidateData['profile']['date_updated'] = date('Y-m-d H:i:s');
           $this->casCandidateData['profile']['updated_by'] = (int)$this->casUserData['loginpk'];
 
