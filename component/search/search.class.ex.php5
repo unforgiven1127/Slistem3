@@ -1587,7 +1587,7 @@ class CSearchEx extends CSearch
               }
             }
           }
-//ChromePhp::log($sCondition);
+ChromePhp::log($sCondition);
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;

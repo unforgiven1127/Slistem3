@@ -10754,7 +10754,7 @@ $bonusManual = getValue('bonus');
 
               if (is_array($new_variable))
                 $new_variable = $new_variable['label'];
-ChromePhp::log($sLabel);
+
               if($sLabel == 'company')
               {
                 $old_id = $old_variable;
