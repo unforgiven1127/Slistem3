@@ -1706,7 +1706,7 @@ ChromePhp::log('disableButton');
         $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       }
 
-      $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
+      //$oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       $oForm->setFormDisplayParams(array('noCancelButton' => true));
       $oForm->addField('misc', '', array('type' => 'title', 'title'=> $sTitle));
     }
