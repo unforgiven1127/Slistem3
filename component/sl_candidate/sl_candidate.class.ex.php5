@@ -8508,7 +8508,7 @@ $bonusManual = getValue('bonus');
 
           $bSaved = $this->_getModel()->update($this->casCandidateData['profile'], 'sl_candidate_profile', 'sl_candidate_profilepk = '.$nProfilePk);
 
-ChromePhp::log($this->casCandidateData['profile']['previous_company']);
+ChromePhp::log($pasCandidate);
 
           if(isset($this->casCandidateData['profile']['previous_company']))
           {
