@@ -1587,7 +1587,7 @@ class CSearchEx extends CSearch
               }
             }
           }
-ChromePhp::log($sCondition);
+//ChromePhp::log($sCondition);
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;
@@ -1659,8 +1659,8 @@ ChromePhp::log($sCondition);
       $oQB->setTitle('CpxSearch: '.implode(' , ', $asMessage['long']));
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
-//$asSql = $oQB->getSqlArray();
-////ChromePhp::log($asSql);
+$asSql = $oQB->getSqlArray();
+ChromePhp::log($asSql);
 
     return $oQB;
   }
