@@ -514,13 +514,13 @@ class CModel
       $pasData['log_detail'] = $this->oDB->dbEscapeString($pasData['log_detail']);
 
 
-    $sQuery = 'INSERT INTO `login_system_history` (`date` ,`userfk` ,`action` , `table`, `component`, `cp_uid`, `cp_action`, `cp_type`, `cp_pk`, `uri` ,`value`, `description`)
+    /*$sQuery = 'INSERT INTO `login_system_history` (`date` ,`userfk` ,`action` , `table`, `component`, `cp_uid`, `cp_action`, `cp_type`, `cp_pk`, `uri` ,`value`, `description`)
     VALUES ("'.date('Y-m-d H:i:s').'", "'.$nUserPk.'", '.$this->oDB->dbEscapeString($psAction).', '.$this->oDB->dbEscapeString($psTable).',
     '.$this->oDB->dbEscapeString($psShortId).', '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_UID]).',
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_ACTION]).', '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]).',
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]).', '.$this->oDB->dbEscapeString($oPage->getRequestedUrl()).',
-    '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';
-ChromePhp::log($sQuery);
+    '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';*/
+
     insertMongoLog($nUserPk,
       $pasComponent[CONST_CP_PK],
       $psAction,

@@ -10754,7 +10754,7 @@ $bonusManual = getValue('bonus');
 
               if (is_array($new_variable))
                 $new_variable = $new_variable['label'];
-
+ChromePhp::log($sLabel);
               if($sLabel == 'company')
               {
                 $old_id = $old_variable;
@@ -10774,10 +10774,10 @@ $bonusManual = getValue('bonus');
                 insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
               }
-              if($sLabel == 'company')
+              /*if($sLabel == 'company')
               {
 
-              }
+              }*/
               if($sLabel == 'grade')
               {
                 $old_variable = getGrade($pasOldData['grade']);
