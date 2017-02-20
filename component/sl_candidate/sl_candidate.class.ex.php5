@@ -8508,7 +8508,7 @@ $bonusManual = getValue('bonus');
 
           $bSaved = $this->_getModel()->update($this->casCandidateData['profile'], 'sl_candidate_profile', 'sl_candidate_profilepk = '.$nProfilePk);
 
-ChromePhp::log($pasCandidate);
+
 
           //if(isset($this->casCandidateData['profile']['previous_company']))
           if(isset($pasCandidate['companyfk']))
@@ -8526,7 +8526,7 @@ ChromePhp::log($pasCandidate);
             $nCompany = $asData['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sNote.= 'to [ #'.$nCompany.' - '.$asCompany['name'].' ]<br />';
-
+ChromePhp::log($sNote);
             //add a note from  system user
             $oNote->addNote($nCandidatePk, 'cp_history', $sNote, (int)$this->casUserData['pk']);
             $oNote->addNote($nCandidatePk, 'cp_hidden', $sFrom, (int)$this->casUserData['pk']);
