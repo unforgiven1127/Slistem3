@@ -1697,8 +1697,8 @@ class CNotificationEx extends CNotification
             alert('test MNR');
           };
         ");*/
-
-        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel , 'onbeforesubmit' => 'alert("test");'));
+ChromePhp::log('disableButton');
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm disableButton', 'submitLabel' => $sBtnLabel , 'onbeforesubmit' => 'alert("test");'));
       }
 
       else
