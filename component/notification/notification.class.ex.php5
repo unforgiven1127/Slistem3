@@ -1677,11 +1677,11 @@ class CNotificationEx extends CNotification
       {
         $sTitle = 'Send a message';
         $sBtnLabel = 'Send.';
-        $oPage->addCustomJs("
+        /*$oPage->addCustomJs("
           $('#formSubmitButton').click(function(){
             alert('MUNIR');
           });
-        ");
+        ");*/
       }
       else
       {
