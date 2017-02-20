@@ -8508,7 +8508,8 @@ $bonusManual = getValue('bonus');
 
           $bSaved = $this->_getModel()->update($this->casCandidateData['profile'], 'sl_candidate_profile', 'sl_candidate_profilepk = '.$nProfilePk);
 
-          if(isset($this->casCandidateData['profile']['previous_company']))
+          //if(isset($this->casCandidateData['profile']['previous_company']))
+          if(1)
           {
             //need to log the company changing
             $oNote = CDependency::getComponentByName('sl_event');
