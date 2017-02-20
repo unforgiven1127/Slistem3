@@ -8510,17 +8510,20 @@ $bonusManual = getValue('bonus');
 
 ChromePhp::log($pasCandidate);
 
-          if(isset($this->casCandidateData['profile']['previous_company']))
+          //if(isset($this->casCandidateData['profile']['previous_company']))
+          if(isset($pasCandidate['companyfk']))
           {
             //need to log the company changing
             $oNote = CDependency::getComponentByName('sl_event');
 
-            $nCompany = (int)$this->casCandidateData['profile']['previous_company'];
+            //$nCompany = (int)$this->casCandidateData['profile']['previous_company'];
+            $nCompany = (int)$pasCandidate['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sFrom = $asCompany['name'];
             $sNote = 'Candidate has been updated. Company changed from [ #'.$nCompany.' - '.$sFrom.'] ';
 
-            $nCompany = $this->casCandidateData['profile']['companyfk'];
+            //$nCompany = $this->casCandidateData['profile']['companyfk'];
+            $nCompany = $asData['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sNote.= 'to [ #'.$nCompany.' - '.$asCompany['name'].' ]<br />';
 
