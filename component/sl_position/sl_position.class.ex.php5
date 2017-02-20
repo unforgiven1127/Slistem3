@@ -1383,7 +1383,6 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
     private function _savePositionLink($pnLinkPk = 0)
     {
-ChromePhp::log('_savePositionLink');
       $pre_record_id = $pnLinkPk;// bir onceki islemin id sini veriyor
       if(!assert('is_integer($pnLinkPk)'))
         return array('error' => 'Missing parameters.');

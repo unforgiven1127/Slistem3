@@ -8041,6 +8041,7 @@ die();*/
 
     private function _saveCandidateData($pnCandidatePk = 0,$pbTest = true, $pbSave = false, $pasCandidate = array())
     {
+ChromePhp::log('_saveCandidateData');
       if(!assert('is_integer($pnCandidatePk)'))
         return array('error' => 'Bad parameters.');
 
