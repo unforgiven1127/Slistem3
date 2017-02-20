@@ -1691,14 +1691,14 @@ class CNotificationEx extends CNotification
 
       if($pbAsMessage)
       {
-        $oPage->addCustomJs("
+        /*$oPage->addCustomJs("
           function testMNR()
           {
             alert('test MNR');
           };
-        ");
+        ");*/
 
-        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel, 'onclick' => 'alert("test");'));
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       }
 
       else
