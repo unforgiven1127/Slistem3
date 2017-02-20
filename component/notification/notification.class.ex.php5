@@ -1698,7 +1698,7 @@ class CNotificationEx extends CNotification
           };
         ");*/
 ChromePhp::log('disableButton');
-        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'disableButton fullPageForm', 'submitLabel' => $sBtnLabel , 'onBeforeSubmit' => 'alert("test");'));
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'disableButton fullPageForm', 'submitLabel' => $sBtnLabel , 'onBeforeSubmit' => '$("#formSubmitButton").attr("disabled", true);'));
       }
 
       else
