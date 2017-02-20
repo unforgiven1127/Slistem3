@@ -520,7 +520,7 @@ class CModel
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_ACTION]).', '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_TYPE]).',
     '.$this->oDB->dbEscapeString($pasComponent[CONST_CP_PK]).', '.$this->oDB->dbEscapeString($oPage->getRequestedUrl()).',
     '.$this->oDB->dbEscapeString(var_export($pasData, true)).', '.$pasData['log_detail'].') ';*/
-
+ChromePhp::log($psTable);
     insertMongoLog($nUserPk,
       $pasComponent[CONST_CP_PK],
       $psAction,
