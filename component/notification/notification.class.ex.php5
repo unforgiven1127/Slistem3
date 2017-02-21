@@ -1697,8 +1697,8 @@ class CNotificationEx extends CNotification
             alert('test MNR');
           };
         ");*/
-
-        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
+ChromePhp::log('disableButton');
+        $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'disableButton fullPageForm', 'submitLabel' => $sBtnLabel , 'onBeforeSubmit' => '$("#formSubmitButton").attr("disabled", true);'));
       }
 
       else
@@ -1706,7 +1706,7 @@ class CNotificationEx extends CNotification
         $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       }
 
-      $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
+      //$oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'fullPageForm', 'submitLabel' => $sBtnLabel));
       $oForm->setFormDisplayParams(array('noCancelButton' => true));
       $oForm->addField('misc', '', array('type' => 'title', 'title'=> $sTitle));
     }
