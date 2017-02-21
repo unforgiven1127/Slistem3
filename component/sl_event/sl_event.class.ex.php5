@@ -934,8 +934,6 @@ class CSl_eventEx extends CSl_event
     if(!empty($pnLoginfk))
       $asEvent['loginfk'] = $pnLoginfk;
 
-ChromePhp::log($asEvent['type']);
-
     return parent::_getEventSave(0, $asEvent);
   }
 
@@ -1044,7 +1042,6 @@ ChromePhp::log($asEvent['type']);
       $note = $userName." edited note #".$this->cnPk;
     }
 
-//ChromePhp::log($event_type);
     //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note))
     {
