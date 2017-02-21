@@ -8486,6 +8486,7 @@ $bonusManual = getValue('bonus');
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         //candidate table added or update... deal with the business profile
+        ChromePhp::log($bNewCandidate);
         if($bNewCandidate)
         {
           //$asMonth = array('A','B','C','D','E','F','G','H','I','J','K','L');
@@ -8501,25 +8502,31 @@ $bonusManual = getValue('bonus');
         }
         else
         {
+          ChromePhp::log('ELSE');
           $this->casCandidateData['profile']['date_updated'] = date('Y-m-d H:i:s');
           $this->casCandidateData['profile']['updated_by'] = (int)$this->casUserData['loginpk'];
 
           $bSaved = $this->_getModel()->update($this->casCandidateData['profile'], 'sl_candidate_profile', 'sl_candidate_profilepk = '.$nProfilePk);
 
-          if(isset($this->casCandidateData['profile']['previous_company']))
+
+
+          //if(isset($this->casCandidateData['profile']['previous_company']))
+          if(isset($pasCandidate['companyfk']))
           {
             //need to log the company changing
             $oNote = CDependency::getComponentByName('sl_event');
 
-            $nCompany = (int)$this->casCandidateData['profile']['previous_company'];
+            //$nCompany = (int)$this->casCandidateData['profile']['previous_company'];
+            $nCompany = (int)$pasCandidate['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sFrom = $asCompany['name'];
             $sNote = 'Candidate has been updated. Company changed from [ #'.$nCompany.' - '.$sFrom.'] ';
 
-            $nCompany = $this->casCandidateData['profile']['companyfk'];
+            //$nCompany = $this->casCandidateData['profile']['companyfk'];
+            $nCompany = $asData['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sNote.= 'to [ #'.$nCompany.' - '.$asCompany['name'].' ]<br />';
-
+//ChromePhp::log($sFrom);
             //add a note from  system user
             $oNote->addNote($nCandidatePk, 'cp_history', $sNote, (int)$this->casUserData['pk']);
             $oNote->addNote($nCandidatePk, 'cp_hidden', $sFrom, (int)$this->casUserData['pk']);
@@ -10774,10 +10781,10 @@ $bonusManual = getValue('bonus');
                 insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
               }
-              if($sLabel == 'company')
+              /*if($sLabel == 'company')
               {
 
-              }
+              }*/
               if($sLabel == 'grade')
               {
                 $old_variable = getGrade($pasOldData['grade']);

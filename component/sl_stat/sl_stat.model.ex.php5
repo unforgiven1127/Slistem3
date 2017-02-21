@@ -589,6 +589,11 @@ order by m.candidatefk
           ($temp_validation_date >= date('Y-m', strtotime($start_date)) &&
             $temp_validation_date <= date('Y-m', strtotime($end_date))) */
 
+if($meeting['created_by'] == '521')
+{
+  ChromePhp::log($meeting);
+}
+
         if ((int)$meeting['meeting_done'] > 0
           && ($met_candidates_array[$meeting['candidatefk']]['times_met'] <= 1 ))
         {
