@@ -618,8 +618,12 @@
 			 	?>
 				<div class="hover_row <?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['newCandiPlayFlag']) && isset($data['hoverTooltip']))
+					if(isset($data['newCandiPlayFlag']))
 					{
+						if(!isset($data['hoverTooltip']))
+						{
+							$data['hoverTooltip'] = '-';
+						}
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>
 						<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="<?php echo $data['hoverTooltip']; ?>" href="javascript: view_candi('<?php echo $url; ?>')"><?php echo $candidate_id; ?></a>

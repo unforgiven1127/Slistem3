@@ -5759,7 +5759,7 @@ class CSl_statEx extends CSl_stat
               }
             }
 
-            if($id == '480')
+            /*if($id == '480')
             {
               echo '<br><br><br><br>';
               foreach ($allCanidatesArray['researcher'][$id] as $key => $value) {
@@ -5770,7 +5770,7 @@ class CSl_statEx extends CSl_stat
                 echo '<br><br>-------------------------------';
                 echo '<br><br>';
               }
-            }
+            }*/
 
             foreach ($stats_data['researcher'][$id]['new_position_info'] as $key => $candidate)
             {
