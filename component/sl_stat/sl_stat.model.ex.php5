@@ -600,7 +600,6 @@ if($meeting['created_by'] == '521')
 //&& ($met_candidates_array[$meeting['candidatefk']]['times_met'] <= 1 )
         if ((int)$meeting['meeting_done'] > 0)
         {
-
           $data[$meeting[$group_switch]]['met'] += 1;
           $data[$meeting[$group_switch]]['met_meeting_info'][] = array('candidate' => $meeting['candidatefk'],
             'date' => $meeting['date_met']);
@@ -1390,10 +1389,10 @@ if($meeting['created_by'] == '521')
                   //AND date_created <= "'.$end_date.'"';
     }
 
-/*if ($group == 'researcher'){
+if ($group == 'researcher'){
   echo '<br><br><br>';
   var_dump($query);
-}*/
+}
     //else
     /*{
       $query = 'SELECT sl_meeting.date_met, sl_position_link.positionfk, sl_position_link.candidatefk, sl_position_link.status,';
