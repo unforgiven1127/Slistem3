@@ -1805,7 +1805,7 @@ class CSharedspaceEx extends CSharedspace
       //dump($aDocTypes);
 
       if(!in_array($sMimeType, $aDocTypes))
-        return array( 'error' => 'The format of the file =[ '.$_FILES['document']['name'].' ]= you\'ve uploaded ('.$sMimeType.') is not supported. ['.implode('<br />', $aDocTypes).']');
+        return array( 'error' => 'The Format of the file =[ '.$_FILES['document']['name'].' ]= you\'ve uploaded ('.$sMimeType.') is not supported. ['.implode('<br />', $aDocTypes).']');
 
       //$sExtension = strtolower(substr(strrchr($_FILES['document']['name'], '.'), 1));
       if(!isset($asFile['extension']) || empty($asFile['extension']))
