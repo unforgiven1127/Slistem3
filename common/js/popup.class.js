@@ -326,6 +326,7 @@ var CPopup = function()
 
     if (psClass === 'ui-state-error')
     {
+      alert('test');
       oPopup.open = function() { $("#close_button").focus(); };
 
       if ($('.ui-state-error').dialog("isOpen") === true)
