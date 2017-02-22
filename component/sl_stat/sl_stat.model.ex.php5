@@ -1536,6 +1536,23 @@ if ($group == 'researcher'){
               'date' => $row['ccm_create_date'], 'ccm_position' => $row['positionfk']);
           }
         }
+        if($row['candidatefk'] == '420478')
+        {
+          echo '<br><br><br>';
+          echo $row_complete_date;
+          echo '<br>';
+          echo $control_start_date;
+          echo '<br>';
+          echo $row_complete_date;
+          echo '<br>';
+          echo $control_end_date;
+          echo '<br>';
+          echo $diff;
+          echo '<br>';
+          echo $control_flag;
+          echo '<br><br><br>';
+        }
+
         if($row['active'] == 0 && $row_complete_date >= $control_start_date && $row_complete_date <= $control_end_date && $diff < 184 && $control_flag)
         {
           if($group == 'consultant')
