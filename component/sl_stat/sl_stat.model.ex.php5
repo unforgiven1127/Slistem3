@@ -591,13 +591,14 @@ order by m.candidatefk
 
 if($meeting['created_by'] == '521')
 {
-  ChromePhp::log($meeting['candidatefk']);
-  ChromePhp::log($meeting);
+  //ChromePhp::log($meeting['candidatefk']);
+  //ChromePhp::log($meeting['meeting_done']);
+  //ChromePhp::log($meeting['meeting_done']);
 
 }
-
-        if ((int)$meeting['meeting_done'] > 0
-          && ($met_candidates_array[$meeting['candidatefk']]['times_met'] <= 1 ))
+//
+//&& ($met_candidates_array[$meeting['candidatefk']]['times_met'] <= 1 )
+        if ((int)$meeting['meeting_done'] > 0)
         {
 
           $data[$meeting[$group_switch]]['met'] += 1;
