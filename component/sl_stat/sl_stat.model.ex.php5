@@ -1574,12 +1574,12 @@ if($meeting['created_by'] == '521')
 
           if($group == 'researcher')// && $row['created_by'] != $row['meeting_created_by']
           {
-            if($row['candidatefk'] == '420478')
+            /*if($row['candidatefk'] == '420478')
             {
               echo '<br><br><br>';
               echo 'HERE';
               echo '<br><br><br>';
-            }
+            }*/
             $ccm_data[$row['meeting_created_by']]['ccm1_done'] += 1;
             $ccm_data[$row['meeting_created_by']]['ccm_info']['ccm1'][$array_key]['ccm_done_candidate'] = $row['candidatefk'];
           }
