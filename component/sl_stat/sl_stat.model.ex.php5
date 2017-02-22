@@ -1561,7 +1561,7 @@ if ($group == 'researcher'){
             $ccm_data[$row['created_by']]['ccm_info']['ccm1'][$array_key]['ccm_done_candidate'] = $row['candidatefk'];
           }
 
-            if($row['candidatefk'] == '420478')
+            /*if($row['candidatefk'] == '420478')
             {
               echo '<br><br><br>';
               echo 'HERE HERE HERE';
@@ -1570,9 +1570,9 @@ if ($group == 'researcher'){
               echo '<br>';
               echo $row['meeting_created_by'];
               echo '<br><br><br>';
-            }
+            }*/
 
-          if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'])
+          if($group == 'researcher')// && $row['created_by'] != $row['meeting_created_by']
           {
             if($row['candidatefk'] == '420478')
             {
