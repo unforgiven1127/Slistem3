@@ -328,6 +328,7 @@ var CPopup = function()
     {
       $( ".ani" ).remove();
       $( ".overlay" ).remove();
+      $( ".bg" ).remove();
       oPopup.open = function() { $("#close_button").focus(); };
 
       if ($('.ui-state-error').dialog("isOpen") === true)
