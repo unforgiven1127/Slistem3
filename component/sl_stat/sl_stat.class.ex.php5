@@ -5258,6 +5258,10 @@ class CSl_statEx extends CSl_stat
 
           if (!empty($temp_in_play[$id]['new_positions']))
           {
+            if($id == '480')
+            {
+              var_dump($temp_in_play[$id]);
+            }
             $count = count($temp_in_play[$id]['new_positions']);
             $stats_data['researcher'][$id]['new_positions'] = $count;
             $stats_data['researcher'][$id]['new_position_info'] = $temp_in_play[$id]['new_positions'];
