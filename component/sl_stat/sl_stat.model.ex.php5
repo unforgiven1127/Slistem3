@@ -1536,7 +1536,7 @@ if ($group == 'researcher'){
               'date' => $row['ccm_create_date'], 'ccm_position' => $row['positionfk']);
           }
         }
-        if($row['candidatefk'] == '420478')
+        /*if($row['candidatefk'] == '420478')
         {
           echo '<br><br><br>';
           echo $row_complete_date;
@@ -1551,7 +1551,7 @@ if ($group == 'researcher'){
           echo '<br>';
           echo $control_flag;
           echo '<br><br><br>';
-        }
+        }*/
 
         if($row['active'] == 0 && $row_complete_date >= $control_start_date && $row_complete_date <= $control_end_date && $diff < 184 && $control_flag)
         {
@@ -1561,8 +1561,25 @@ if ($group == 'researcher'){
             $ccm_data[$row['created_by']]['ccm_info']['ccm1'][$array_key]['ccm_done_candidate'] = $row['candidatefk'];
           }
 
+            if($row['candidatefk'] == '420478')
+            {
+              echo '<br><br><br>';
+              echo 'HERE HERE HERE';
+              echo '<br>';
+              echo $row['created_by'];
+              echo '<br>';
+              echo $row['meeting_created_by'];
+              echo '<br><br><br>';
+            }
+
           if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'])
           {
+            if($row['candidatefk'] == '420478')
+            {
+              echo '<br><br><br>';
+              echo 'HERE';
+              echo '<br><br><br>';
+            }
             $ccm_data[$row['meeting_created_by']]['ccm1_done'] += 1;
             $ccm_data[$row['meeting_created_by']]['ccm_info']['ccm1'][$array_key]['ccm_done_candidate'] = $row['candidatefk'];
           }
