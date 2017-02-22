@@ -5251,7 +5251,7 @@ class CSl_statEx extends CSl_stat
             $stats_data['researcher'][$id]['new_candidates'] = $count;
             $stats_data['researcher'][$id]['new_candidate_info'] = $temp_in_play[$id]['new_candidates'];
 
-            if($id == '480')
+            /*if($id == '480')
             {
               echo '<br><br><br>';
               echo count($temp_in_play[$id]['new_candidates']);
@@ -5265,7 +5265,7 @@ class CSl_statEx extends CSl_stat
                 var_dump($value);
                 echo '<br><br>';
               }
-            }
+            }*/
           }
           else
           {
@@ -5742,6 +5742,11 @@ class CSl_statEx extends CSl_stat
 
             foreach ($stats_data['researcher'][$id]['new_candidate_info'] as $key => $candidate)
             {
+              if($id == '480')
+              {
+                echo '<br><br>';
+                var_dump($candidate);
+              }
               if(isset($candidate['candidatefk']))
               {
                 $candidate_id = $candidate['candidatefk']; // new candidate in play
