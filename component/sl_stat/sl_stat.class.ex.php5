@@ -5749,6 +5749,10 @@ class CSl_statEx extends CSl_stat
               }
               if(isset($candidate['candidatefk']))
               {
+                if($id == '480')
+              {
+                echo '<br><br>HERE HERE HERE';
+              }
                 $candidate_id = $candidate['candidatefk']; // new candidate in play
 
                 $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
