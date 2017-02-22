@@ -5763,7 +5763,10 @@ class CSl_statEx extends CSl_stat
             {
               echo '<br><br><br><br>';
               foreach ($allCanidatesArray['researcher'][$id] as $key => $value) {
+                var_dump($key);
+                echo ' ------ ';
                 var_dump($value);
+
                 echo '<br><br>-------------------------------';
                 echo '<br><br>';
               }
