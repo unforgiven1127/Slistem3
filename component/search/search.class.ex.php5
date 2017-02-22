@@ -1660,7 +1660,7 @@ class CSearchEx extends CSearch
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
 $asSql = $oQB->getSqlArray();
-ChromePhp::log($asSql);
+//ChromePhp::log($asSql);
 
     return $oQB;
   }

@@ -591,7 +591,9 @@ order by m.candidatefk
 
 if($meeting['created_by'] == '521')
 {
+  ChromePhp::log($meeting['candidatefk']);
   ChromePhp::log($meeting);
+
 }
 
         if ((int)$meeting['meeting_done'] > 0
