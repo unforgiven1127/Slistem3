@@ -5260,7 +5260,11 @@ class CSl_statEx extends CSl_stat
           {
             if($id == '480')
             {
-              var_dump($temp_in_play[$id]);
+              echo '<br><br><br>';
+              foreach ($temp_in_play[$id] as $key => $value) {
+                var_dump($value);
+                echo '<br><br>';
+              }
             }
             $count = count($temp_in_play[$id]['new_positions']);
             $stats_data['researcher'][$id]['new_positions'] = $count;
