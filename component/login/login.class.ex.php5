@@ -1536,6 +1536,8 @@ class CLoginEx extends CLogin
     $oForm->setFieldControl('pseudo', array('jsFieldMinSize' => '2', 'jsFieldMaxSize' => 255));
 
     $oForm->addField('select', 'nationality', array('label'=>$this->casText['LOGIN_NATIONALITY'], 'class' => ''));
+    $oForm->setFieldControl('nationality', array('jsFieldNotEmpty' => ''));
+
     $oForm->addOptionHtml('nationality', $this->getVars()->getNationalityOption($oResult->getFieldValue('nationalityfk')));
 
     if($bmanager)
