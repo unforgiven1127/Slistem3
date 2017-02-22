@@ -5246,6 +5246,17 @@ class CSl_statEx extends CSl_stat
           //------------------------------------------------------------
           if (!empty($temp_in_play[$id]['new_candidates']))
           {
+            if($id == '480')
+            {
+              echo '<br><br><br>';
+              echo count($temp_in_play[$id]['new_candidates']);
+              echo '<br><br><br>';
+              foreach ($temp_in_play[$id]['new_candidates'] as $key => $value) {
+                var_dump($value);
+                echo '<br><br>';
+              }
+            }
+
             $count = count($temp_in_play[$id]['new_candidates']);
             $stats_data['researcher'][$id]['new_candidates'] = $count;
             $stats_data['researcher'][$id]['new_candidate_info'] = $temp_in_play[$id]['new_candidates'];
@@ -5258,16 +5269,7 @@ class CSl_statEx extends CSl_stat
 
           if (!empty($temp_in_play[$id]['new_positions']))
           {
-            if($id == '480')
-            {
-              echo '<br><br><br>';
-              echo count($temp_in_play[$id]['new_positions']);
-              echo '<br><br><br>';
-              foreach ($temp_in_play[$id]['new_positions'] as $key => $value) {
-                var_dump($value);
-                echo '<br><br>';
-              }
-            }
+
             $count = count($temp_in_play[$id]['new_positions']);
             $stats_data['researcher'][$id]['new_positions'] = $count;
             $stats_data['researcher'][$id]['new_position_info'] = $temp_in_play[$id]['new_positions'];
