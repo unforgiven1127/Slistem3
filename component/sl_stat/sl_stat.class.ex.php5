@@ -5170,12 +5170,7 @@ class CSl_statEx extends CSl_stat
 
           if (!empty($temp_ccm[$id]['ccm1']))
           {
-            if($id == '480')
-            {
-              echo '<br><br><br>';
-              var_dump($temp_ccm[$id]['ccm1']);
-              echo '<br><br><br>';
-            }
+
             $stats_data['researcher'][$id]['ccm1'] = $temp_ccm[$id]['ccm1'];
             $stats_data['researcher'][$id]['ccm1_done'] = $temp_ccm[$id]['ccm1_done'];
             $stats_data['researcher'][$id]['ccm1_info'] = $temp_ccm[$id]['ccm_info']['ccm1'];
