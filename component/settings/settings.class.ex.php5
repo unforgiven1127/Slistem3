@@ -1290,7 +1290,7 @@ class CSettingsEx extends CSettings
         $oForm->addField('textarea', 'menu_'.$sLanguage, array('label'=> 'Menu ['.$sLanguage.']', 'value' =>$oDbResult->getFieldValue('value'),'style'=>'width:680px;'));
         $oForm->setFieldControl('menu_'.$sLanguage, array('jsFieldNotEmpty' => ''));
 
-        $oForm->addField('textarea', 'menu_userialized_'.$sLanguage, array('label'=> 'Menu unserialized ['.$sLanguage.'] ', 'value' => var_export(unserialize(base64_decode($oDbResult->getFieldValue('value'))), true), 'readonly' => 'readonly', 'style'=>'width:680px;'));
+        $oForm->addField('textarea', 'menu_userialized_'.$sLanguage, array('label'=> 'Menu unserialized ['.$sLanguage.'] ', 'value' => var_export(unserialize(base64_decode($oDbResult->getFieldValue('value'))), true),  'style'=>'width:680px;'));//'readonly' => 'readonly',
         $oForm->addField('misc', '', array('type'=> 'br'));
       }
 
