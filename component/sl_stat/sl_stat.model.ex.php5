@@ -1525,11 +1525,13 @@ if($meeting['created_by'] == '521')
         //  strtotime($row['ccm_create_date']) <= $end_date_stamp)
         if($row_create_date >= $control_start_date && $row_create_date <= $control_end_date)
         {
+          $sameCandidateControl = array();
+          $sameCandidateControl[$row['created_by']] = $row['candidatefk'];
           $ccm_data[$row['created_by']]['ccm1'] += 1;
           $ccm_data[$row['created_by']]['ccm_info']['ccm1'][$array_key] = array('candidate' => $row['candidatefk'],
             'date' => $row['ccm_create_date'], 'ccm_position' => $row['positionfk']);
 
-          if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'])
+          if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'] && !isset($sameCandidateControl[$row['meeting_created_by']]))
           {
             $ccm_data[$row['meeting_created_by']]['ccm1'] += 1;
             $ccm_data[$row['meeting_created_by']]['ccm_info']['ccm1'][$array_key] = array('candidate' => $row['candidatefk'],
