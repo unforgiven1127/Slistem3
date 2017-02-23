@@ -5659,13 +5659,15 @@ class CSl_statEx extends CSl_stat
                 $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
               }
 
-              if($id == '480')
-              {
-                echo '<br><br><br>';
-                var_dump($allCanidatesArray['researcher'][$id][$candidate_id]);
-                echo '<br><br><br>';
-              }
+              
 
+            }
+
+            foreach ($allCanidatesArray['researcher']['480'] as $key => $value)
+            {
+                echo '<br><br><br>';
+                var_dump($value);
+                echo '<br><br><br>';
             }
 
             foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
