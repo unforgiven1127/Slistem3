@@ -5644,6 +5644,12 @@ class CSl_statEx extends CSl_stat
 
             foreach ($stats_data['researcher'][$id]['ccm1_info'] as $key => $candidate)
             {
+              if($id == '480')
+              {
+                echo '<br><br><br>';
+                var_dump($stats_data['researcher'][$id]);
+                echo '<br><br><br>';
+              }
               if(isset($candidate['candidate']))
               {
                 $candiNotes = "";
