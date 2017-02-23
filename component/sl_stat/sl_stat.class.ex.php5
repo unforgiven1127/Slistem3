@@ -5662,7 +5662,7 @@ class CSl_statEx extends CSl_stat
               if($id == '480')
               {
                 echo '<br><br><br>';
-                var_dump($allCanidatesArray['researcher'][$id]);
+                var_dump($allCanidatesArray['researcher'][$id][$candidate_id]);
                 echo '<br><br><br>';
               }
 
