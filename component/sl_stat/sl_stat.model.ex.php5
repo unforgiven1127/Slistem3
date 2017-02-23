@@ -1416,6 +1416,8 @@ if($meeting['created_by'] == '521')
     $db_result = $this->oDB->executeQuery($query);
     $read = $db_result->readFirst();
 
+    $researcherControl = array();
+
     while($read)
     {
       $row = $db_result->getData();
@@ -1531,8 +1533,9 @@ if($meeting['created_by'] == '521')
           $ccm_data[$row['created_by']]['ccm_info']['ccm1'][$array_key] = array('candidate' => $row['candidatefk'],
             'date' => $row['ccm_create_date'], 'ccm_position' => $row['positionfk']);
 
-          if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'] && !isset($sameCandidateControl[$row['meeting_created_by']]))
+          if($group == 'researcher' && $row['created_by'] != $row['meeting_created_by'] && !isset($researcherControl[$row['meeting_created_by']][$row['candidatefk']]))
           {
+            $researcherControl[$row['meeting_created_by']][$row['candidatefk']] = 1;
             $ccm_data[$row['meeting_created_by']]['ccm1'] += 1;
             $ccm_data[$row['meeting_created_by']]['ccm_info']['ccm1'][$array_key] = array('candidate' => $row['candidatefk'],
               'date' => $row['ccm_create_date'], 'ccm_position' => $row['positionfk']);
