@@ -1284,7 +1284,7 @@ class CSettingsEx extends CSettings
         $asLanguages = $this->casSettings['languages'];
       else
         $asLanguages = array(CONST_DEFAULT_LANGUAGE);
-
+ChromePhp::log('test');
       /*foreach($asLanguages as $sLanguage)
       {
         $oForm->addField('textarea', 'menu_'.$sLanguage, array('label'=> 'Menu ['.$sLanguage.']', 'value' =>$oDbResult->getFieldValue('value'),'style'=>'width:680px;'));
