@@ -1958,7 +1958,7 @@ class CSl_candidateEx extends CSl_candidate
                 $candidate_mail = $asData['value'];
                 $candidate_id = $pasCandidateData['sl_candidatepk'];
 
-                $sURL = $this->_oPage->getAjaxUrl('555-005', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $candidate_id);
+                $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
                 $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
