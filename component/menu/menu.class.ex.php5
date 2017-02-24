@@ -394,6 +394,7 @@ class CMenuEx extends CMenu
       return '';
 
     $sMenuName = 'menunav'.$pnMenuNumber;
+ChromePhp::log($sMenuName);
     $asMenu = $this->_oSettings->getSettingValue($sMenuName);
 
 
