@@ -183,6 +183,13 @@ class CSl_candidateEx extends CSl_candidate
 
     switch($this->csType)
     {
+      case CANDIDATE_MAIL_SEND:
+        switch ($this->csAction)
+        {
+          case MAIL_SEND_POPUP:
+            return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_candidate_mail_send($this->cnPk)))));
+            break;
+        }
       case CONST_CANDIDATE_TYPE_CANDI:
 
         switch($this->csAction)
@@ -1951,7 +1958,7 @@ class CSl_candidateEx extends CSl_candidate
                 $candidate_mail = $asData['value'];
                 $candidate_id = $pasCandidateData['sl_candidatepk'];
 
-                $sURL = $this->_oPage->getAjaxUrl('555-005', CONST_ACTION_ADD, CONST_POSITION_TYPE_LINK, 0, array('candidatepk' => $candidate_id));
+                $sURL = $this->_oPage->getAjaxUrl('555-005', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, array('candidatepk' => $candidate_id));
 
                 $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
@@ -6549,7 +6556,12 @@ $searchTitle = explode(':',$poQB->getTitle());
       return $sHTML;
     }
 
+    private function _candidate_mail_send($candidate_id = 0)
+    {
+      $html = 'Candidate ID: '.$candidate_id;
 
+      return $html;
+    }
     private function _getCandidateAddForm($pnCandidatePk = 0)
     {
       if(!assert('is_integer($pnCandidatePk)'))
