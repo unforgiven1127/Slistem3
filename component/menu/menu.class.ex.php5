@@ -680,8 +680,9 @@ ChromePhp::log($asMenuItems);
     if($asChildren['name'] == 'DBA-R using Zimbra')
     {
       $asChildren['name'] = 'DBA-R using Slistem';
+      $asChildren['url'] = '';
     }
-//ChromePhp::log($asChildren);
+ChromePhp::log($asChildren);
 
     if(!isset($asChildren['onclick']))
         $asChildren['onclick'] = '';
