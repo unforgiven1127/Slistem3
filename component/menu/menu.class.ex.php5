@@ -680,7 +680,7 @@ ChromePhp::log($asMenuItems);
     if($asChildren['name'] == 'DBA-R using Zimbra')
     {
       $asChildren['name'] = 'DBA-R using Slistem';
-      $asChildren['url'] = '';
+      $asChildren['onclick'] = " var sURL = '/index.php5?uid=333-333&ppa=ppaa&ppt=msg&pg=ajx'; var oItem = $('.candiTopSectLeft:visible .itemDataDescription'); if(oItem.length) sURL+= '&cp_item_selector='+encodeURI($(oItem).attr('data-cp_item_selector')); var oConf = goPopup.getConfig(); oConf.draggable = true; oConf.height = 550; oConf.width = 850; goPopup.setLayerFromAjax(oConf, sURL); ";
     }
 ChromePhp::log($asChildren);
 
