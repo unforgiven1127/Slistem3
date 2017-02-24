@@ -6560,9 +6560,9 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_candidate_mail_send');
 
-      $html = 'Candidate ID: '.$candidate_id;
+      $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
-      return $html;
+      return $sHTML;
     }
     private function _getCandidateAddForm($pnCandidatePk = 0)
     {
