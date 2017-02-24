@@ -10,7 +10,7 @@
 	}
 </style>
 
-<form name="reminderAddForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" >
+<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
