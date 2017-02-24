@@ -6578,6 +6578,8 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _candidate_mail_send_action()
     {
       ChromePhp::log('_candidate_mail_send_action');
+
+      return true;
     }
 
     private function _getCandidateAddForm($pnCandidatePk = 0)
