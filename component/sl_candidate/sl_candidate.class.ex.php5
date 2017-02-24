@@ -6560,6 +6560,8 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_candidate_mail_send');
 
+      $data['candidate_id'] = $candidate_id;
+
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
       return $sHTML;
