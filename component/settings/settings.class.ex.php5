@@ -1284,15 +1284,15 @@ class CSettingsEx extends CSettings
         $asLanguages = $this->casSettings['languages'];
       else
         $asLanguages = array(CONST_DEFAULT_LANGUAGE);
-ChromePhp::log('test');
-      /*foreach($asLanguages as $sLanguage)
+
+      foreach($asLanguages as $sLanguage)
       {
         $oForm->addField('textarea', 'menu_'.$sLanguage, array('label'=> 'Menu ['.$sLanguage.']', 'value' =>$oDbResult->getFieldValue('value'),'style'=>'width:680px;'));
         $oForm->setFieldControl('menu_'.$sLanguage, array('jsFieldNotEmpty' => ''));
 
         $oForm->addField('textarea', 'menu_userialized_'.$sLanguage, array('label'=> 'Menu unserialized ['.$sLanguage.'] ', 'value' => var_export(unserialize(base64_decode($oDbResult->getFieldValue('value'))), true),  'style'=>'width:680px;'));//'readonly' => 'readonly',
         $oForm->addField('misc', '', array('type'=> 'br'));
-      }*/
+      }
 
       $oForm->addField('misc', '', array('type'=> 'text', 'text' => 'use the menu_generator here: <a href="/component/settings/resources/menu_generator.php" target="_blank">menu_generator.php</a>'));
 

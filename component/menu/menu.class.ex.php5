@@ -432,7 +432,7 @@ class CMenuEx extends CMenu
         $this->_addComponentActions($asMenuArray, $sLanguage);
       }
     }
-
+ChromePhp::log('menuNavList');
     $sHTML = $this->_oDisplay->getListStart('',array('class' => 'menuNavList'));
 
       //add a first link to expand/reduce the menu
