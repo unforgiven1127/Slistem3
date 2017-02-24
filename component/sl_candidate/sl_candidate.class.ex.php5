@@ -6568,6 +6568,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
 
+      $data['sURL'] = $sURL;
+
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
       return $sHTML;

@@ -10,7 +10,7 @@
 	}
 </style>
 
-<form name="reminderAddForm" enctype="multipart/form-data" submitajax="1" action="https://beta2.slate.co.jp/index.php5?uid=333-333&amp;ppa=ppasa&amp;ppt=not&amp;ppk=0&amp;pg=ajx" >
+<form name="reminderAddForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" >
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
