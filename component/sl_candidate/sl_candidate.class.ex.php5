@@ -1950,7 +1950,11 @@ class CSl_candidateEx extends CSl_candidate
                 $sCopyEmail = urlencode($sCopyEmail);*/
                 $candidate_mail = $asData['value'];
 
-                
+                $sURL = $oPage->getAjaxUrl('sharedspace', CONST_ACTION_ADD, CONST_SS_TYPE_DOCUMENT, 0);
+                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
+
+                $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
+
                 /*$sCopyEmail = "slistem@slate.co.jp";
                 $whiteText = "<p><font color='red'>This is some text!</font></p>";
 
