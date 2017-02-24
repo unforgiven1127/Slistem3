@@ -20,7 +20,7 @@
 	</table>
 	<table style="width:100%;" valign="top">
 		<tr>
-			<td style='margin-left: 50px;'><b>To: </b></td>
+			<td style='padding-left: 50px;'><b>To: </b></td>
 			<td>
 				<input type="text" id="receipent_email" style="outline: none; width: 300px;">
 			</td>
