@@ -32,4 +32,11 @@
 			</td>
 		</tr>
 	</table>
+	<table style="width:100%;" valign="top">
+		<tr>
+			<td>
+				<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+			</td>
+		</tr>
+	</table>
 <form>
