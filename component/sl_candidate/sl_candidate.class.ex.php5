@@ -187,9 +187,13 @@ class CSl_candidateEx extends CSl_candidate
         switch ($this->csAction)
         {
           case MAIL_SEND_POPUP:
-            return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send($this->cnPk))));
+            return json_encode($this->_candidate_mail_send($this->cnPk));
             break;
 
+            case MAIL_SEND_ACTION:
+            return json_encode($this->_candidate_mail_send_action($this->cnPk));
+            //return json_encode($oPage->getAjaxExtraContent($this->_candidate_mail_send_action($this->cnPk)));
+            break;
         }
       case CONST_CANDIDATE_TYPE_CANDI:
 
@@ -583,16 +587,6 @@ class CSl_candidateEx extends CSl_candidate
 
     switch($this->csType)
     {
-
-      case CANDIDATE_MAIL_SEND:
-        switch ($this->csAction)
-        {
-          case MAIL_SEND_ACTION:
-            return $this->_candidate_mail_send_action();
-            break;
-
-        }
-
       case CONST_CANDIDATE_TYPE_CANDI:
 
         switch($this->csAction)
@@ -6582,16 +6576,16 @@ $searchTitle = explode(':',$poQB->getTitle());
       return $sHTML;
     }
 
-    private function _candidate_mail_send_action()
+    private function _candidate_mail_send_action($candidate_id = 0)
     {
       ChromePhp::log('_candidate_mail_send_action');
       ChromePhp::log($candidate_id);
 
       $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
 
-    $html = 'test';
-
-    return $html;
+    return array('notice' => 'Candidate saved.', 'action' => '
+        goPopup.removeLastByType(\'layer\');
+        view_candi(\''.$sURL.'\'); ');
     }
 
     private function _getCandidateAddForm($pnCandidatePk = 0)
