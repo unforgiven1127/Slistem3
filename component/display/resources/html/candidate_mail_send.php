@@ -35,7 +35,9 @@
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td>
-				<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+				<center>
+					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+				</center>
 			</td>
 		</tr>
 	</table>
