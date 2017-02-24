@@ -677,6 +677,8 @@ ChromePhp::log($asMenuItems);
     if(!$this->_canAccessMenu($asChildren))
       return '';
 
+ChromePhp::log($asChildren);
+
     if(!isset($asChildren['onclick']))
         $asChildren['onclick'] = '';
 
