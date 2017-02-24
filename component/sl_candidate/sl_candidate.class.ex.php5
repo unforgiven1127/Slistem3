@@ -189,6 +189,10 @@ class CSl_candidateEx extends CSl_candidate
           case MAIL_SEND_POPUP:
             return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send($this->cnPk))));
             break;
+
+            case MAIL_SEND_ACTION:
+            return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send_action())));
+            break;
         }
       case CONST_CANDIDATE_TYPE_CANDI:
 
@@ -6562,10 +6566,18 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['candidate_id'] = $candidate_id;
 
+      $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
+
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
       return $sHTML;
     }
+
+    private function _candidate_mail_send_action()
+    {
+      ChromePhp::log('_candidate_mail_send_action');
+    }
+
     private function _getCandidateAddForm($pnCandidatePk = 0)
     {
       if(!assert('is_integer($pnCandidatePk)'))
