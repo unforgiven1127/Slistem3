@@ -28,7 +28,7 @@
 		<tr>
 			<td style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 600px;" name="message" class="msgField" inajax="" id="messageId"></textarea>
+				<textarea style="outline: none; width: 500px; height: 400px;" name="message" class="msgField" inajax="" id="messageId"></textarea>
 			</td>
 		</tr>
 	</table>
