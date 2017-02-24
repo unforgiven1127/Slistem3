@@ -13,14 +13,16 @@
 <form>
 	<table style="width:100%;" valign="top">
 		<tr>
-			<td style="width:100%;" valign="top" colspan="2">
+			<td style="width:100%;" valign="top">
 				<div inajax="" id="58afb3d10beb2Id" class="formFieldTitle">Send a message</div>
 			</td>
 		</tr>
+	</table>
+	<table style="width:100%;" valign="top">
 		<tr>
-			<td>To: </td>
+			<td style='margin-left: 50px;'><b>To: </b></td>
 			<td>
-				<input type="text" id="receipent_email" style="outline: none; width: 30px;">
+				<input type="text" id="receipent_email" style="outline: none; width: 300px;">
 			</td>
 		</tr>
 	</table>
