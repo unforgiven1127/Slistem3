@@ -1342,7 +1342,7 @@ $asArray = array();
       ),
       1 =>
       array (
-        'name' => 'DBA-R using Slistem',
+        'name' => 'DBA-R using Zimbra',
         'link' => 'javascript:;',
         'icon' => '/media/picture/slistem/zimbra_48.png',
         'target' => '',
@@ -1350,21 +1350,16 @@ $asArray = array();
         'type' => '',
         'action' => '',
         'pk' => 0,
+        'embedLink' => 0,
         'onclick' => "
-
-          var sURL = '/index.php5?uid=333-333&ppa=ppaa&ppt=msg&pg=ajx';
-
+          var sURL = '/index.php5?uid=555-003&ppa=&ppt=email&pg=ajx';
           var oItem = $('.candiTopSectLeft:visible .itemDataDescription');
           if(oItem.length)
+          {
             sURL+= '&cp_item_selector='+encodeURI($(oItem).attr('data-cp_item_selector'));
-
-          var oConf = goPopup.getConfig();
-          oConf.draggable = true;
-          oConf.height = 550;
-          oConf.width = 850;
-          goPopup.setLayerFromAjax(oConf, sURL);
+          }
+          AjaxRequest(sURL);
         ",
-        'embedLink' => 0,
         'right' => array ('logged'),
       ),
       2 =>
