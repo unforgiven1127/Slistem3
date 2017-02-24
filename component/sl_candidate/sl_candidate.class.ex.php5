@@ -6589,9 +6589,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
 
-    return array('notice' => 'Candidate saved.', 'action' => '
-        goPopup.removeLastByType(\'layer\');
-        view_candi(\''.$sURL.'\'); ');
+    $html = 'test';
+
+    return $html;
     }
 
     private function _getCandidateAddForm($pnCandidatePk = 0)
