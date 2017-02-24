@@ -1949,8 +1949,10 @@ class CSl_candidateEx extends CSl_candidate
                 /*$sCopyEmail = '<keep_to_copy_email_in_slistem_note '.$this->csUid.'__'.CONST_ACTION_VIEW.'__'.CONST_CANDIDATE_TYPE_CANDI.'__'.$pasCandidateData['sl_candidatepk'].'@slistem.slate.co.jp>';
                 $sCopyEmail = urlencode($sCopyEmail);*/
                 $candidate_mail = $asData['value'];
+                $candidate_id = $pasCandidateData['sl_candidatepk'];
 
-                $sURL = $oPage->getAjaxUrl('sharedspace', CONST_ACTION_ADD, CONST_SS_TYPE_DOCUMENT, 0);
+                $sURL = $this->_oPage->getAjaxUrl('555-005', CONST_ACTION_ADD, CONST_POSITION_TYPE_LINK, 0, array('candidatepk' => $candidate_id));
+
                 $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
