@@ -365,6 +365,9 @@ define('CONST_URL_EMBED', 'embed');
 define('MERGE_COMPANY', 'meco');
 define('DELETE_SELECTED_COMPANY', 'dsco');
 
+define('MAIL_SEND_POPUP', 'msp');
+define('CANDIDATE_MAIL_SEND', 'cms');
+
 define('CONST_URL_PARAM_PAGE_AJAX', 'ajx');
 define('CONST_URL_PARAM_PAGE_NORMAL', 'pn');
 define('CONST_URL_PARAM_PAGE_EMBED', 'emb');
