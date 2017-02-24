@@ -432,7 +432,7 @@ class CMenuEx extends CMenu
         $this->_addComponentActions($asMenuArray, $sLanguage);
       }
     }
-ChromePhp::log('menuNavList');
+
     $sHTML = $this->_oDisplay->getListStart('',array('class' => 'menuNavList'));
 
       //add a first link to expand/reduce the menu
@@ -453,7 +453,7 @@ ChromePhp::log('menuNavList');
       {
         foreach($asMenuArray as $asMenuItems)
         {
-
+ChromePhp::log($asMenuItems);
           $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
           $onclickNew = "window.open('$mainPageUrl','_self');";
           if($asMenuItems['name'] == 'Reports')
