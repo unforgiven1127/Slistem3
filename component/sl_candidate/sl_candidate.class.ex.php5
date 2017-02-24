@@ -1960,7 +1960,7 @@ class CSl_candidateEx extends CSl_candidate
 
                 $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
-                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 750; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
+                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
 
