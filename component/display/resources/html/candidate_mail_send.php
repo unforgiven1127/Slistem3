@@ -20,15 +20,15 @@
 	</table>
 	<table style="width:100%;" valign="top">
 		<tr>
-			<td style='padding-left: 50px; width:50px;'><b>Email to: </b></td>
+			<td style='padding-left: 50px; width:70px;'><b>Email to: </b></td>
 			<td align="left">
-				<input type="text" id="receipent_email" style="outline: none; width: 300px;">
+				<input type="text" id="receipent_email" style="outline: none; width: 505px;">
 			</td>
 		</tr>
 		<tr>
-			<td style='padding-left: 50px; width:50px;'><b>Message: </b></td>
-			<td align="left">
-				<textarea style="outline: none; width: 300px;" name="message" class="msgField" inajax="" id="messageId"></textarea>
+			<td style='padding-top:20px; padding-left: 50px; width:70px;'><b>Message: </b></td>
+			<td style='padding-top:20px;' align="left">
+				<textarea style="outline: none; width: 500px;" name="message" class="msgField" inajax="" id="messageId"></textarea>
 			</td>
 		</tr>
 	</table>
