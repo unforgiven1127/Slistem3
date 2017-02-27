@@ -191,8 +191,11 @@ class CSl_candidateEx extends CSl_candidate
             break;
 
             case MAIL_SEND_ACTION:
-            return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send_action($this->cnPk))));
+            //$this->_accessRmContactDetails($this->cnPk);
+            return json_encode(array('data' => 'ok'));
             break;
+            /*return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send_action($this->cnPk))));
+            break;*/
         }
       case CONST_CANDIDATE_TYPE_CANDI:
 
