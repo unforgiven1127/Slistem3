@@ -1,3 +1,22 @@
+<script>
+$('#sendMailToCandidate').click({
+
+	$.ajax({
+	    type: 'POST',
+	    // make sure you respect the same origin policy with this url:
+	    // http://en.wikipedia.org/wiki/Same_origin_policy
+	    url: '<?php echo $sURL; ?>',
+	    data: {
+	        'foo': 'bar' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+	    },
+	    success: function(msg){
+	        alert('wow');
+	    }
+	});
+});
+
+</script>
+
 <style>
 	div.formFieldTitle
 	{
@@ -10,7 +29,7 @@
 	}
 </style>
 
-<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
+
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
@@ -36,9 +55,8 @@
 		<tr>
 			<td>
 				<center>
-					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+					<input name="Send" type="button" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
 			</td>
 		</tr>
 	</table>
-<form>
