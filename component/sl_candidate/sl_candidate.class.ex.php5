@@ -6580,12 +6580,15 @@ $searchTitle = explode(':',$poQB->getTitle());
       $email = $_POST['receipent_email'];
       $message = $_POST['message'];
 
-      ChromePhp::log($email);
-      ChromePhp::log($message);
+      //ChromePhp::log($email);
+      //ChromePhp::log($message);
 
       $data['message'] = 'return message';
+      $return = json_encode($data);
 
-      return json_encode($data);
+      ChromePhp::log($return);
+
+      return $return;
       //return 'return message';
 
     }
