@@ -6608,17 +6608,26 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log($loop);
       //
-      ChromePhp::log($email);
-      ChromePhp::log($user_email);
-      ChromePhp::log($subject);
-      ChromePhp::log($message);
-      $result = mail_send($email, $user_email, $subject, $message);
-      ChromePhp::log($result);
 
-      echo json_encode(array('error' => array(
-          'message' => 'Your mail sent successfully!!',
-          'code' => 123,
-      )));
+      $result = mail_send($email, $user_email, $subject, $message);
+
+
+      if($result == 1)
+      {
+        echo json_encode(array('error' => array(
+            'message' => 'Your mail sent successfully!!',
+            'code' => 1,
+        )));
+      }
+      else
+      {
+        echo json_encode(array('error' => array(
+            'message' => 'Error occured please contact with admin!!',
+            'code' => 0,
+        )));
+      }
+
+
       exit;
 
       //return false;
