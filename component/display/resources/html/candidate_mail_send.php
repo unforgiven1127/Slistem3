@@ -7,7 +7,7 @@ $( "#sendMailToCandidate" ).click(function() {
     //alert(message);
     if(receipent_email == '' || receipent_email == '')
     {
-    	alert('Please fill the message area!!');
+    	alert('Please fill the all the areas!!');
     }
     else
     {

@@ -6562,7 +6562,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send($candidate_id = 0)
     {
-      //ChromePhp::log('_candidate_mail_send');
+      ChromePhp::log($this->cnPk);
+      ChromePhp::log($candidate_id);
 
       $data['candidate_id'] = $candidate_id;
 
