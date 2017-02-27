@@ -57,8 +57,8 @@ $( "#sendMailToCandidate" ).click(function() {
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Email to: </b></td>
-			<td style='padding-top:10px;' align="left">
-				<input disabled value="<?php echo $candidate_email; ?>" type="text" id="receipent_email" style="outline: none; width: 303px;">
+			<td style='padding-top:10px; width: 303px;' align="left">
+				<input disabled value=" <?php echo $candidate_email; ?>" type="text" id="receipent_email" style="outline: none; width: 303px;">
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
 				<input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 197px;">
@@ -68,7 +68,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
-			<td colspan="2" style='padding-top:15px;' align="left">
+			<td style='padding-top:15px;' align="left">
 				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"></textarea>
 			</td>
 		</tr>
