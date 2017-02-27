@@ -6580,11 +6580,11 @@ $searchTitle = explode(':',$poQB->getTitle());
       ChromePhp::log('_candidate_mail_send_action');
       ChromePhp::log($candidate_id);
 
-      $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
+      //$sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
 
       $data = array();
 
-      $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
+      $sHTML = '';
 
       return $sHTML;
 
