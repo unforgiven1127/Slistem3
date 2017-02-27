@@ -5,6 +5,10 @@ $( "#sendMailToCandidate" ).click(function() {
     var message = $('#messageId').val();
     //alert(receipent_email);
     //alert(message);
+    if(receipent_email == null)
+    {
+    	alert('Please fill the message area!!');
+    }
 	$.ajax({
 	    type: 'POST',
 	    // make sure you respect the same origin policy with this url:
@@ -15,12 +19,11 @@ $( "#sendMailToCandidate" ).click(function() {
 	        'message': message,
 	    },
 	    success: function(data){
-	    	alert('test');
-	    	alert(data);
-	        var obj = jQuery.parseJSON(data);
-	        //alert(obj);
-	        alert (JSON.stringify(obj));
-       		alert(obj.message);
+	    	alert('Mail send successfully');
+	    },
+	    error: function()
+	    {
+	    	alert('Error!');
 	    }
 	});
 });
