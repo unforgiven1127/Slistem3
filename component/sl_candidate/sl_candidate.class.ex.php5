@@ -6582,7 +6582,11 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log('_candidate_mail_send');
 
-      return $this->_getCandidateView(154310);
+      $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, 154310);
+
+      return array('notice' => 'Candidate saved.', 'action' => '
+        goPopup.removeLastByType(\'layer\');
+        view_candi(\''.$sURL.'\'); ');
 
       //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
