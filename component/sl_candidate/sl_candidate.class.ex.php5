@@ -6566,14 +6566,17 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['candidate_id'] = $candidate_id;
 
-      //$sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
-      $sURL = $this->_oPage->getAjaxUrl('sl_candidate', CANDI_LOG, CONST_CANDIDATE_TYPE_CANDI);
+      $oPage = CDependency::getCpPage();
 
-      $data['sURL'] = $sURL;
+      //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
-      $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
+      //$sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
-      return $sHTML;
+      //$asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
+
+      $sHTML = '';
+
+      return array('content' => $sHTML);
     }
 
     private function _candidate_mail_send_action($candidate_id = 0)
