@@ -19,7 +19,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	    	alert(data);
 	        var obj = jQuery.parseJSON(data);
 	        alert(obj);
-       		alert(obj.message);
+       		alert(obj['message']);
 	    }
 	});
 });
