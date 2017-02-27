@@ -1964,6 +1964,9 @@ class CSl_candidateEx extends CSl_candidate
 
                 $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
+                $email = $asData['value'];
+                ChromePhp::log($candidate_info);
+
                 $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
@@ -6573,8 +6576,9 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['candidate_id'] = $candidate_id;
 
       $candidate_info = getCandidateInformation($candidate_id);
-      $candidate_email = $candidate_info['email'];
-      $data['candidate_email'] = $candidate_email;
+      //$candidate_email = $candidate_info['email'];
+      $candidate_contact_info = getCandidateContactInfo($candidate_id);
+      //$data['candidate_email'] = $candidate_email;
 
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
