@@ -1,6 +1,6 @@
 <script>
 $('#sendMailToCandidate').click({
-
+	alert('test');
 	$.ajax({
 	    type: 'POST',
 	    // make sure you respect the same origin policy with this url:
