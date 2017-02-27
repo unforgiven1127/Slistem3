@@ -6573,6 +6573,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['candidate_id'] = $candidate_id;
 
+      $email_test = $_GET['cem'];
+      ChromePhp::log($email_test);
+
       $sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
 
       $data['sURL'] = $sURL;
