@@ -6597,10 +6597,12 @@ $searchTitle = explode(':',$poQB->getTitle());
       ChromePhp::log($message);
       ChromePhp::log($candidate_id);
 
+      $loop = get_revenue_chart_loop();
+
       //$data['message'] = 'return message';
       //$return = json_encode($data);
 
-      //ChromePhp::log($return);
+      ChromePhp::log($loop);
 
       echo json_encode(array('error' => array(
           'message' => 'Error message',
