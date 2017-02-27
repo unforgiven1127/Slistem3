@@ -4,9 +4,10 @@ $( "#sendMailToCandidate" ).click(function() {
     var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
     var candidate_id = $('#candidate_id').val();
+    var subject = $('#subject').val();
     //alert(receipent_email);
     //alert(message);
-    if(message == '' || receipent_email == '')
+    if(message == '' || receipent_email == '' || subject == '')
     {
     	alert('Please fill the all the areas!!');
     }
@@ -20,6 +21,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    data: {
 		        'receipent_email': receipent_email,
 		        'message': message,
+		        'subject': subject,
 		        'candidate_id': candidate_id
 		    },
 		    success: function(data){
