@@ -6582,11 +6582,6 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['candidate_id'] = $candidate_id;
       $data['candidate_email'] = $candidate_email;
 
-      //$candidate_info = getCandidateInformation($candidate_id);
-      //$candidate_email = $candidate_info['email'];
-      //$candidate_contact_info = getCandidateContactInfo($candidate_id);
-      //$data['candidate_email'] = $candidate_email;
-
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
       return $sHTML;

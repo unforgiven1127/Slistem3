@@ -23,7 +23,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    success: function(data){
 		    	alert('Mail send successfully');
 		    },
-		    error: function()
+		    error: function(data)
 		    {
 		    	alert('Error!');
 		    }
@@ -68,6 +68,13 @@ $( "#sendMailToCandidate" ).click(function() {
 			</td>
 		</tr>
 	</table>
+	<table>
+		<tr>
+			<td style='padding-top:10px;' align="left">
+				<input disabled value="candidate #<?php echo $candidate_id; ?>" type="text" id="receipent_email" style="outline: none; width: 503px;">
+			</td>
+		</tr>
+	</table>
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td>
@@ -77,3 +84,4 @@ $( "#sendMailToCandidate" ).click(function() {
 			</td>
 		</tr>
 	</table>
+
