@@ -64,6 +64,8 @@ $( "#sendMailToCandidate" ).click(function() {
 				<input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 197px;">
 			</td>
 		</tr>
+	</table>
+	<table style="width:100%;" valign="top">
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td colspan="2" style='padding-top:15px;' align="left">
