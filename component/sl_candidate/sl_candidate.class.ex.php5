@@ -6602,7 +6602,13 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log($return);
 
-      return false;
+      echo json_encode(array('error' => array(
+          'message' => 'Error message',
+          'code' => 123,
+      )));
+      exit;
+
+      //return false;
       //return 'return message';
 
     }
