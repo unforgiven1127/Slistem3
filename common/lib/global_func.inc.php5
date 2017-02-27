@@ -4544,8 +4544,8 @@ var_dump($query);*/
 
     $oMail->addRecipient($to);
 
-    $oMail->addBCCRecipient($from);
-    $oMail->addBCCRecipient('slistem@slate.co.jp');
+    $oMail->addCCRecipient($from);
+    $oMail->addCCRecipient('slistem@slate.co.jp');
 
     $oResult = $oMail->send($subject, $message);
 

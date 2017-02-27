@@ -6608,6 +6608,10 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log($loop);
       //
+      ChromePhp::log($email);
+      ChromePhp::log($user_email);
+      ChromePhp::log($subject);
+      ChromePhp::log($message);
       $result = mail_send($email, $user_email, $subject, $message);
       ChromePhp::log($result);
 
