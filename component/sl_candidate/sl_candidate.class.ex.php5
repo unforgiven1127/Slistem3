@@ -6592,20 +6592,25 @@ $searchTitle = explode(':',$poQB->getTitle());
       $email = $_POST['receipent_email'];
       $message = $_POST['message'];
       $candidate_id = $_POST['candidate_id'];
+      $subject = $_POST['subject'];
 
-      ChromePhp::log($email);
+      $user_id = $oLogin->getUserPk();
+      $user_info = getUserInformaiton($user_id);
+      $user_email = $user_info['email'];
+
+      /*ChromePhp::log($email);
       ChromePhp::log($message);
-      ChromePhp::log($candidate_id);
-
-      $loop = get_revenue_chart_loop();
+      ChromePhp::log($candidate_id);*/
 
       //$data['message'] = 'return message';
       //$return = json_encode($data);
 
-      ChromePhp::log($loop);
+      //ChromePhp::log($loop);
+      //
+      mail_send($email, $user_email, $subject, $message);
 
       echo json_encode(array('error' => array(
-          'message' => 'Error message',
+          'message' => 'Your mail sent successfully!!',
           'code' => 123,
       )));
       exit;

@@ -6,7 +6,7 @@ $( "#sendMailToCandidate" ).click(function() {
     var candidate_id = $('#candidate_id').val();
     var subject = $('#subject').val();
     //alert(receipent_email);
-    //alert(message);
+    //alert(message);//
     if(message == '' || receipent_email == '' || subject == '')
     {
     	alert('Please fill the all the areas!!');

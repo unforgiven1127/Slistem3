@@ -4535,6 +4535,21 @@ var_dump($query);*/
 
   }
 
+  function mail_send($to, $from, $subject, $message)
+  {
+    $oMail = CDependency::getComponentByName('mail');
+
+    $oMail->createNewEmail();
+    $oMail->setFrom($from, 'Slistem notification');
+
+    $oMail->addRecipient($to);
+
+    $oMail->addCCRecipient($from);
+    $oMail->addCCRecipient('slistem@slate.co.jp');
+
+    $oMail->send($subject, $message);
+  }
+
   function securityCheckContactView($user_id)
   {
 
