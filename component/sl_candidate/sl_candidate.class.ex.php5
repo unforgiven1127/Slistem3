@@ -6591,6 +6591,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       $email = $_POST['receipent_email'];
       $message = $_POST['message'];
+      
 
       //ChromePhp::log($email);
       //ChromePhp::log($message);

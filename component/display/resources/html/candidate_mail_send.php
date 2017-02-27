@@ -3,6 +3,7 @@ $( "#sendMailToCandidate" ).click(function() {
 
     var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
+    var candidate_id = $('#candidate_id').val();
     //alert(receipent_email);
     //alert(message);
     if(message == '' || receipent_email == '')
@@ -19,6 +20,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    data: {
 		        'receipent_email': receipent_email,
 		        'message': message,
+		        'candidate_id': candidate_id
 		    },
 		    success: function(data){
 		    	alert('Mail send successfully');
@@ -58,10 +60,10 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Email to: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<input disabled value=" <?php echo $candidate_email; ?>" type="text" id="receipent_email" style="outline: none; width: 303px;">
+				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" id="receipent_email" style="outline: none; width: 303px;"></b>
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 187px;">
+				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text"  id="candidate_id" style="outline: none; width: 187px;"></b>
 			</td>
 		</tr>
 	</table>
