@@ -6566,6 +6566,24 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['candidate_id'] = $candidate_id;
 
+      $sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
+
+      $data['sURL'] = $sURL;
+
+      $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
+
+      return $sHTML;
+    }
+
+    private function _candidate_mail_send_action($candidate_id = 0)
+    {
+      ChromePhp::log('_candidate_mail_send_action');
+      ChromePhp::log($candidate_id);
+
+      //ChromePhp::log('_candidate_mail_send');
+
+      $data['candidate_id'] = $candidate_id;
+
       $oPage = CDependency::getCpPage();
 
       //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
@@ -6577,20 +6595,6 @@ $searchTitle = explode(':',$poQB->getTitle());
       $sHTML = '';
 
       return array('content' => $sHTML);
-    }
-
-    private function _candidate_mail_send_action($candidate_id = 0)
-    {
-      ChromePhp::log('_candidate_mail_send_action');
-      ChromePhp::log($candidate_id);
-
-      //$sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
-
-      $data = array();
-
-      $sHTML = '';
-
-      //return $sHTML;
 
     }
 
