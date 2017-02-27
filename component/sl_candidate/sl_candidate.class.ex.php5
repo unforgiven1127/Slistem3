@@ -6583,7 +6583,10 @@ $searchTitle = explode(':',$poQB->getTitle());
       ChromePhp::log($email);
       ChromePhp::log($message);
 
-      return 'return message';
+      $data['message'] = 'return message';
+
+      echo json_encode($data);
+      //return 'return message';
 
     }
 

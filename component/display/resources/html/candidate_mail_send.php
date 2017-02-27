@@ -14,8 +14,9 @@ $( "#sendMailToCandidate" ).click(function() {
 	        'receipent_email': receipent_email,
 	        'message': message,
 	    },
-	    success: function(msg){
-	        alert(msg);
+	    success: function(data){
+	        var obj = jQuery.parseJSON(data);
+       		alert(obj.message);
 	    }
 	});
 });
