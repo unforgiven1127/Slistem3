@@ -3,8 +3,8 @@ $( "#sendMailToCandidate" ).click(function() {
 
     var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
-    alert(receipent_email);
-    alert(message);
+    //alert(receipent_email);
+    //alert(message);
 	$.ajax({
 	    type: 'POST',
 	    // make sure you respect the same origin policy with this url:
@@ -15,7 +15,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	        'message': message,
 	    },
 	    success: function(msg){
-	        alert(msg.responseText);
+	        alert(msg);
 	    }
 	});
 });
