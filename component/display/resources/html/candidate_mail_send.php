@@ -15,7 +15,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	        'message': message,
 	    },
 	    success: function(msg){
-	        alert('wow');
+	        alert(msg);
 	    }
 	});
 });
