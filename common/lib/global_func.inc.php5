@@ -4540,7 +4540,7 @@ var_dump($query);*/
     $oMail = CDependency::getComponentByName('mail');
 
     $oMail->createNewEmail();
-    $oMail->setFrom(CONST_CRM_MAIL_SENDER, 'Slistem notification');
+    $oMail->setFrom($from);
 
     $oMail->addRecipient($to);
 
