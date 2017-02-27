@@ -75,7 +75,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Subject: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input type="text" id="subject" style="outline: none; width: 500px;"></b>
+				<b><input type="text" id="subject" style="outline: none; width: 503px;"></b>
 			</td>
 		</tr>
 	</table>
