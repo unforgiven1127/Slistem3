@@ -6588,7 +6588,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       ChromePhp::log($return);
 
-      echo $return;
+      return $data;
       //return 'return message';
 
     }
