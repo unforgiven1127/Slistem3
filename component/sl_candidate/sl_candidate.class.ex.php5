@@ -6582,7 +6582,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log('_candidate_mail_send');
 
-      $this->_getCandidateView('154310');
+      $this->_getCandidateView(154310);
 
       //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
