@@ -6582,9 +6582,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log('_candidate_mail_send');
 
-      $data['candidate_id'] = $candidate_id;
-
-      $oPage = CDependency::getCpPage();
+      _getCandidateView('154310');
 
       //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
@@ -6592,9 +6590,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
 
-      $sHTML = '';
+      //$sHTML = '';
 
-      return array('content' => $sHTML);
+      //return array('content' => $sHTML);
 
     }
 
