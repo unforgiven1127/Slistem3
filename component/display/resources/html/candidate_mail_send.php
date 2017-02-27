@@ -23,6 +23,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		        'candidate_id': candidate_id
 		    },
 		    success: function(data){
+		    	alert('test');
 		    	alert(data.error.message);
 		    	//alert('Mail send successfully');
 		    },
