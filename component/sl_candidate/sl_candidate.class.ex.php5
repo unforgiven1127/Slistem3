@@ -6581,7 +6581,12 @@ $searchTitle = explode(':',$poQB->getTitle());
       ChromePhp::log($candidate_id);
 
       $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, '154310');
-      break;
+
+      $data = array();
+
+      $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
+
+      return $sHTML;
 
     }
 
