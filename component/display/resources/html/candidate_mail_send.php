@@ -24,6 +24,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    },
 		    success: function(data){
 		    	alert('test');
+		    	alert(data);
 		    	alert(data.error.message);
 		    	//alert('Mail send successfully');
 		    },
