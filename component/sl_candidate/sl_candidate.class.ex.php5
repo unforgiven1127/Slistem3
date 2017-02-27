@@ -6562,14 +6562,19 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send($candidate_id = 0)
     {
-      ChromePhp::log($this->cnPk);
-      ChromePhp::log($candidate_id);
+      //ChromePhp::log($this->cnPk);
+      //ChromePhp::log($candidate_id);
 
       $data['candidate_id'] = $candidate_id;
 
       $sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
 
       $data['sURL'] = $sURL;
+      $data['candidate_id'] = $candidate_id;
+
+      $candidate_info = getCandidateInformation($candidate_id);
+      $candidate_email = $candidate_info['email'];
+      $data['candidate_email'] = $candidate_email;
 
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
