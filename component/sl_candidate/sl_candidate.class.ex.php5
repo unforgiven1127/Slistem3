@@ -6585,7 +6585,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['message'] = 'return message';
 
-      echo json_encode($data);
+      return json_encode($data);
       //return 'return message';
 
     }
