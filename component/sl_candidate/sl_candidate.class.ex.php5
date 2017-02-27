@@ -6586,7 +6586,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sHTML = '';
 
-      return $sHTML;
+      //return $sHTML;
 
     }
 
