@@ -6594,20 +6594,15 @@ $searchTitle = explode(':',$poQB->getTitle());
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
 
+      $sNote = $subject.'<br><br>'.$message;
+
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
       $user_info = getUserInformaiton($user_id);
       $user_email = $user_info['email'];
 
-      /*ChromePhp::log($email);
-      ChromePhp::log($message);
-      ChromePhp::log($candidate_id);*/
-
-      //$data['message'] = 'return message';
-      //$return = json_encode($data);
-
-      //ChromePhp::log($loop);
-      //
+      $oEvent = CDependency::getComponentByName('sl_event');
+      $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
       $result = mail_send($email, $user_email, $subject, $message);
 
@@ -6627,11 +6622,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         )));
       }
 
-
       exit;
-
-      //return false;
-      //return 'return message';
 
     }
 
