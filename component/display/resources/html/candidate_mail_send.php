@@ -1,13 +1,18 @@
 <script>
 $( "#sendMailToCandidate" ).click(function() {
-    alert('test');
+
+    var receipent_email = $('#receipent_email').val();
+    var message = $('#messageId').val();
+    alert(receipent_email);
+    alert(message);
 	$.ajax({
 	    type: 'POST',
 	    // make sure you respect the same origin policy with this url:
 	    // http://en.wikipedia.org/wiki/Same_origin_policy
 	    url: '<?php echo $sURL; ?>',
 	    data: {
-	        'foo': 'bar' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+	        'receipent_email': receipent_email,
+	        'message': message,
 	    },
 	    success: function(msg){
 	        alert('wow');

@@ -6577,26 +6577,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-      ChromePhp::log('_candidate_mail_send_action');
-      ChromePhp::log($candidate_id);
-
-      //ChromePhp::log('_candidate_mail_send');
-
-      $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, 154310);
-
-      return array('notice' => 'Candidate saved.', 'action' => '
-        goPopup.removeLastByType(\'layer\');
-        view_candi(\''.$sURL.'\'); ');
-
-      //$sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
-
-      //$sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
-
-      //$asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
-
-      //$sHTML = '';
-
-      //return array('content' => $sHTML);
+      
 
     }
 
