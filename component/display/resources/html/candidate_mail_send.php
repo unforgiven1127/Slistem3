@@ -5,27 +5,31 @@ $( "#sendMailToCandidate" ).click(function() {
     var message = $('#messageId').val();
     //alert(receipent_email);
     //alert(message);
-    if(receipent_email == null)
+    if(receipent_email == '')
     {
     	alert('Please fill the message area!!');
     }
-	$.ajax({
-	    type: 'POST',
-	    // make sure you respect the same origin policy with this url:
-	    // http://en.wikipedia.org/wiki/Same_origin_policy
-	    url: '<?php echo $sURL; ?>',
-	    data: {
-	        'receipent_email': receipent_email,
-	        'message': message,
-	    },
-	    success: function(data){
-	    	alert('Mail send successfully');
-	    },
-	    error: function()
-	    {
-	    	alert('Error!');
-	    }
-	});
+    else
+    {
+    	$.ajax({
+		    type: 'POST',
+		    // make sure you respect the same origin policy with this url:
+		    // http://en.wikipedia.org/wiki/Same_origin_policy
+		    url: '<?php echo $sURL; ?>',
+		    data: {
+		        'receipent_email': receipent_email,
+		        'message': message,
+		    },
+		    success: function(data){
+		    	alert('Mail send successfully');
+		    },
+		    error: function()
+		    {
+		    	alert('Error!');
+		    }
+		});
+    }
+
 });
 
 </script>
