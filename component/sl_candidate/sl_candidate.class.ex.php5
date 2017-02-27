@@ -6589,8 +6589,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-      //$email = trim($_POST['receipent_email']);
-      $email =$_POST['receipent_email'];
+      $email = trim($_POST['receipent_email']);
       $message = $_POST['message'];
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
