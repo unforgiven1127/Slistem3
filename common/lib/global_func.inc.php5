@@ -4547,7 +4547,9 @@ var_dump($query);*/
     $oMail->addBCCRecipient($from);
     $oMail->addBCCRecipient('slistem@slate.co.jp');
 
-    $oMail->send($subject, $message);
+    $oResult = $oMail->send($subject, $message);
+
+    return $oResult;
   }
 
   function securityCheckContactView($user_id)

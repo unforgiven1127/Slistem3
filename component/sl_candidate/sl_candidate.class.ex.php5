@@ -6608,7 +6608,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log($loop);
       //
-      mail_send($email, $user_email, $subject, $message);
+      $result = mail_send($email, $user_email, $subject, $message);
+      ChromePhp::log($result);
 
       echo json_encode(array('error' => array(
           'message' => 'Your mail sent successfully!!',
