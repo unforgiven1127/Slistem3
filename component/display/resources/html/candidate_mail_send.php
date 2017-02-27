@@ -25,8 +25,8 @@ $( "#sendMailToCandidate" ).click(function() {
 		        'candidate_id': candidate_id
 		    },
 		    success: function(data){
-		    	alert('test');
-		    	alert(data);
+		    	//alert('test');
+		    	//alert(data);
 		    	var my_array = $.parseJSON(data);
 		    	alert(my_array.error.message);
 		    	//alert('Mail send successfully');
