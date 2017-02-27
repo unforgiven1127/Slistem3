@@ -6591,17 +6591,18 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       $email = $_POST['receipent_email'];
       $message = $_POST['message'];
-      
+      $candidate_id = $_POST['candidate_id'];
 
-      //ChromePhp::log($email);
-      //ChromePhp::log($message);
+      ChromePhp::log($email);
+      ChromePhp::log($message);
+      ChromePhp::log($candidate_id);
 
-      $data['message'] = 'return message';
-      $return = json_encode($data);
+      //$data['message'] = 'return message';
+      //$return = json_encode($data);
 
-      ChromePhp::log($return);
+      //ChromePhp::log($return);
 
-      return $data;
+      return true;
       //return 'return message';
 
     }
