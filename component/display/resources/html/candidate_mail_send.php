@@ -1,6 +1,13 @@
 <script>
+function loading()
+{
+    $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
+    $('body').append("<div id='overlay' class='overlay'></div>");
+}
+
 $( "#sendMailToCandidate" ).click(function() {
 
+	loading();
     var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
     var candidate_id = $('#candidate_id').val();
@@ -27,12 +34,18 @@ $( "#sendMailToCandidate" ).click(function() {
 		    success: function(data){
 		    	//alert('test');
 		    	//alert(data);
+		    	$( ".ani" ).remove();
+				$( ".overlay" ).remove();
+				$( ".bg" ).remove();
 		    	var my_array = $.parseJSON(data);
 		    	alert(my_array.error.message);
 		    	//alert('Mail send successfully');
 		    },
 		    error: function(data)
 		    {
+		    	$( ".ani" ).remove();
+				$( ".overlay" ).remove();
+				$( ".bg" ).remove();
 		    	alert('Error!');
 		    }
 		});

@@ -6594,7 +6594,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
 
-      $sNote = $subject.'<br><br>'.$message;
+      $sNote = '<b>'.$subject.'</b><br><br>'.$message;
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
