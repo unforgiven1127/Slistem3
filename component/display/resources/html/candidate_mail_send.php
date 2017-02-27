@@ -61,7 +61,7 @@ $( "#sendMailToCandidate" ).click(function() {
 				<input disabled value=" <?php echo $candidate_email; ?>" type="text" id="receipent_email" style="outline: none; width: 303px;">
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 197px;">
+				<input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 187px;">
 			</td>
 		</tr>
 	</table>
