@@ -15,6 +15,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	        'message': message,
 	    },
 	    success: function(data){
+	    	alert('test');
 	        var obj = jQuery.parseJSON(data);
        		alert(obj.message);
 	    }
