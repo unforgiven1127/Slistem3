@@ -6602,7 +6602,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //ChromePhp::log($return);
 
-      return true;
+      return false;
       //return 'return message';
 
     }
