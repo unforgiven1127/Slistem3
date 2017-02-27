@@ -6573,14 +6573,14 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['candidate_id'] = $candidate_id;
 
-      $email_test = $_GET['cem'];
-      ChromePhp::log($email_test);
+      $candidate_email = $_GET['cem'];
+      //ChromePhp::log($email_test);
 
       $sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
 
       $data['sURL'] = $sURL;
       $data['candidate_id'] = $candidate_id;
-      $data['candidate_email'] = $GLOBALS['redis']->get('candidate_email');
+      $data['candidate_email'] = $candidate_email;
 
       //$candidate_info = getCandidateInformation($candidate_id);
       //$candidate_email = $candidate_info['email'];
