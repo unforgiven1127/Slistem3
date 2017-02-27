@@ -1965,7 +1965,7 @@ class CSl_candidateEx extends CSl_candidate
                 $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
 
                 $email = $asData['value'];
-                ChromePhp::log($candidate_info);
+                ChromePhp::log($email);
 
                 $GLOBALS['redis']->set('candidate_email', $email);
 
