@@ -1970,7 +1970,7 @@ class CSl_candidateEx extends CSl_candidate
 
                 //$GLOBALS['redis']->set('candidate_email', $email);
 
-                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
+                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 750;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
 

@@ -92,7 +92,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>CC: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input placeholder="for multiple email addresses please use;" type="text" id="cc" style="outline: none; width: 505px;"></b>
+				<b><input placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="cc" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
 	</table>
@@ -100,7 +100,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>BCC: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input placeholder="for multiple email addresses please use;" type="text" id="bcc" style="outline: none; width: 505px;"></b>
+				<b><input placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="bcc" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
 	</table>
