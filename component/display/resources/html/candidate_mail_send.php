@@ -60,7 +60,7 @@ $( "#sendMailToCandidate" ).click(function() {
 				$( ".overlay" ).remove();
 				$( ".bg" ).remove();
 				$( "#slLoadingScreen" ).remove();
-		    	alert('Completed?!');
+		    	//alert('Completed?!');
 		    }
 		});
     }

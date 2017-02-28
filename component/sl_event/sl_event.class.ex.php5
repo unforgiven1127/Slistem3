@@ -934,7 +934,7 @@ class CSl_eventEx extends CSl_event
     if(!empty($pnLoginfk))
       $asEvent['loginfk'] = $pnLoginfk;
 
-ChromePhp::log($asEvent['type']);
+//ChromePhp::log($asEvent['type']);
 
     return parent::_getEventSave(0, $asEvent);
   }

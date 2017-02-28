@@ -1098,7 +1098,7 @@ class CEventEx extends CEvent
     if(empty($pnPk))
       return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
 
-    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl);
+    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl,'event_pk' => $pnPk);
   }
 
   /**
