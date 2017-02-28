@@ -6582,6 +6582,14 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['candidate_id'] = $candidate_id;
       $data['candidate_email'] = $candidate_email;
 
+      $oLogin = CDependency::getCpLogin();
+      $user_id = $oLogin->getUserPk();
+
+      $user_info = getUserInformaiton($user_id);
+      $signeture = $user_info['signeture'];
+      $signeture = '<br><br><br>'.$signeture;
+      $data['signeture'] = $signeture;
+
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
 
       return $sHTML;
@@ -6603,14 +6611,14 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_info = getUserInformaiton($user_id);
       $user_email = $user_info['email'];
 
-      $signeture = $user_info['signeture'];
+      //$signeture = $user_info['signeture'];
 
       $oEvent = CDependency::getComponentByName('sl_event');
       $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
       $event_id = $asResult['event_pk'];
 
-      $subject .= '<br><br><br>'.$signeture;
+      //$subject .= '<br><br><br>'.$signeture;
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
