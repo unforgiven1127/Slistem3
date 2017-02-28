@@ -6606,6 +6606,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $oEvent = CDependency::getComponentByName('sl_event');
       $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
+      ChromePhp::log($asResult);
+
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
 
