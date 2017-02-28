@@ -6603,10 +6603,14 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_info = getUserInformaiton($user_id);
       $user_email = $user_info['email'];
 
+      $signeture = $user_info['signeture'];
+
       $oEvent = CDependency::getComponentByName('sl_event');
       $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
-      ChromePhp::log($asResult);
+      $event_id = $asResult['event_pk'];
+
+      $subject .= '<br><br><br>'.$signeture;
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
