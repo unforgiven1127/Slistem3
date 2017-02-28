@@ -53,6 +53,14 @@ $( "#sendMailToCandidate" ).click(function() {
 				$( ".bg" ).remove();
 				$( "#slLoadingScreen" ).remove();
 		    	alert('Error!');
+		    },
+		    complete: function(data)
+		    {
+				$( ".ani" ).remove();
+				$( ".overlay" ).remove();
+				$( ".bg" ).remove();
+				$( "#slLoadingScreen" ).remove();
+		    	alert('Completed?!');
 		    }
 		});
     }
