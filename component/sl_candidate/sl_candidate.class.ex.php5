@@ -6587,7 +6587,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['signature'];
-      ChromePhp::log($signature);
+      //ChromePhp::log($signature);
       $signature = '&#13;&#13;&#13;'.$signature;
       $data['signature'] = $signature;
 
@@ -8432,7 +8432,7 @@ $bonusManual = getValue('bonus');
         $asData['statusfk'] = (int)getValue('status');
         //extra test & actions here
 
-        if(($asData['statusfk'] != $pasCandidate['statusfk']) && ($asData['statusfk'] == 5 || $asData['statusfk'] == 6))
+        if(isset($asData['statusfk']) && (($asData['statusfk'] != $pasCandidate['statusfk']) && ($asData['statusfk'] == 5 || $asData['statusfk'] == 6)))
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
 
