@@ -916,6 +916,8 @@ class CEventEx extends CEvent
       $oDbResult->readFirst();
       $nEventfk = (int)$oDbResult->getFieldValue('pk');
 
+      $newAddedEventID = $nEventfk;
+
       //link the event to the uid/action/type/pk from the url
       $asLink = array();
       $asLink[] = ' ('.$oDB->dbEscapeString($nEventfk).', '.$oDB->dbEscapeString($asEvent['item_uid']).', '.$oDB->dbEscapeString($asEvent['item_action']).', '.$oDB->dbEscapeString($asEvent['item_type']).', '.$oDB->dbEscapeString($asEvent['item_pk']).') ';
@@ -1094,11 +1096,11 @@ class CEventEx extends CEvent
 
     $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk'], '', $asEvent['item_type'].'_tab_eventId');
 
-ChromePhp::log($pnPk);
+ChromePhp::log($newAddedEventID);
     if(empty($pnPk))
-      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl);
+      return array('notice' => 'Activity saved successfully.', 'timedUrl' => $sUrl,'event_pk' => $newAddedEventID);
 
-    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl,'event_pk' => $pnPk);
+    return array('notice' => 'Activity updated successfully.', 'timedUrl' => $sUrl,'event_pk' => $newAddedEventID);
   }
 
   /**
