@@ -136,7 +136,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"><?php echo $signeture; ?></textarea>
+				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>

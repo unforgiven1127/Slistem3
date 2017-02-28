@@ -6586,8 +6586,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_id = $oLogin->getUserPk();
 
       $user_info = getUserInformaiton($user_id);
-      $signeture = $user_info['signeture'];
-      $signeture = '<br><br><br>'.$signeture;
+      $signature = $user_info['signature'];
+      $signature = '<br><br><br>'.$signature;
       $data['signeture'] = $signeture;
 
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
