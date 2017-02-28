@@ -6588,7 +6588,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['signature'];
       ChromePhp::log($signature);
-      $signature = '<br><br><br>'.$signature;
+      $signature = '&#13;&#13;&#13;'.$signature;
       $data['signature'] = $signature;
 
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);
