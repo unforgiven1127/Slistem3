@@ -37,6 +37,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    	$( ".ani" ).remove();
 				$( ".overlay" ).remove();
 				$( ".bg" ).remove();
+				$( "#slLoadingScreen" ).remove();
 		    	var my_array = $.parseJSON(data);
 		    	alert(my_array.error.message);
 		    	//alert('Mail send successfully');
@@ -46,6 +47,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		    	$( ".ani" ).remove();
 				$( ".overlay" ).remove();
 				$( ".bg" ).remove();
+				$( "#slLoadingScreen" ).remove();
 		    	alert('Error!');
 		    }
 		});
