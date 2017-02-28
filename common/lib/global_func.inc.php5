@@ -4535,7 +4535,7 @@ var_dump($query);*/
 
   }
 
-  function mail_send($to, $from, $subject, $message)
+  function mail_send($to,$cc,$bcc, $from, $subject, $message)
   {
     $oMail = CDependency::getComponentByName('mail');
 
@@ -4546,6 +4546,24 @@ var_dump($query);*/
 
     $oMail->addBCCRecipient($from);
     $oMail->addBCCRecipient('slistem@slate.co.jp');
+
+    if(!empty($cc))
+    {
+      $cc = explode(';',$cc);
+      foreach ($cc as $key => $value)
+      {
+        $oMail->addCCRecipient(trim($value));
+      }
+    }
+    if(!empty($bcc))
+    {
+      $bcc = explode(';',$bcc);
+      foreach ($bcc as $key => $value)
+      {
+        $oMail->addBCCRecipient(trim($value));
+      }
+    }
+
 
     $oResult = $oMail->send($subject, $message);
 

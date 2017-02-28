@@ -12,6 +12,8 @@ $( "#sendMailToCandidate" ).click(function() {
     var message = $('#messageId').val();
     var candidate_id = $('#candidate_id').val();
     var subject = $('#subject').val();
+    var subject = $('#cc').val();
+    var subject = $('#bcc').val();
     //alert(receipent_email);
     //alert(message);//
     if(message == '' || receipent_email == '' || subject == '')
@@ -27,6 +29,8 @@ $( "#sendMailToCandidate" ).click(function() {
 		    url: '<?php echo $sURL; ?>',
 		    data: {
 		        'receipent_email': receipent_email,
+		        'cc': cc,
+		        'bcc': bcc,
 		        'message': message,
 		        'subject': subject,
 		        'candidate_id': candidate_id

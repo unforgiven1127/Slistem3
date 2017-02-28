@@ -6593,6 +6593,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $message = $_POST['message'];
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
+      $cc = $_POST['cc'];
+      $bcc = $_POST['bcc'];
 
       $sNote = '<b>'.$subject.'</b><br><br>'.$message;
 
@@ -6604,7 +6606,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $oEvent = CDependency::getComponentByName('sl_event');
       $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
-      $result = mail_send($email, $user_email, $subject, $message);
+      $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
 
       if($result == 1)
