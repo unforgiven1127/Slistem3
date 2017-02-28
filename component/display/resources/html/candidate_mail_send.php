@@ -112,6 +112,13 @@ $( "#sendMailToCandidate" ).click(function() {
 			</td>
 		</tr>
 	</table>
+	<table>
+		<tr>
+			<td>
+				<a href="javascript:;" onclick="var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, 'https://beta2.slate.co.jp/index.php5?uid=999-111&amp;ppa=ppaa&amp;ppt=shdoc&amp;ppk=0&amp;cp_uid=555-001&amp;cp_action=ppav&amp;cp_type=candi&amp;cp_pk=154310&amp;document_title=Test+User%27s+resume&amp;callback=refresh_candi%28154310%2C+true%29%3B+&amp;pg=ajx'); "> Upload a document</a>
+			</td>
+		</tr>
+	</table>
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
