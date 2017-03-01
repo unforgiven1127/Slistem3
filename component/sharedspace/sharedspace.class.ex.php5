@@ -1824,18 +1824,23 @@ class CSharedspaceEx extends CSharedspace
         return array('error' => 'The file =[ '.$_FILES['document']['name'].' ]= doesn\'t have any extension. Please specify one and upload it again.<br /><br />
           Suggested document type: '.$asMime[$sMimeType].'');
       }
-
+ChromePhp::log('HERE 1');
 
 
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/document/'.$nDocPk.'/';
       $sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
+ChromePhp::log('HERE 2');
+
       if(!is_dir($sNewPath) && !makePath($sNewPath))
         return array( 'error' => __LINE__.' - Destination folder doesn\'t exist.('.$sNewPath.')');
+
+ChromePhp::log('HERE 3');
 
       if(!is_writable($sNewPath))
         return array( 'error' => __LINE__.' - Can\'t write in the destination folder.');
 
+ChromePhp::log('HERE 4');
       //move_uploaded_file only accept files uplaoded through php.
       //we need an alternative when files are already there
       if($pbExternalFile)
@@ -1899,7 +1904,7 @@ class CSharedspaceEx extends CSharedspace
 
 
       $nDocFilePk = $this->_getModel()->add($aDataFile, 'document_file');
-
+ChromePhp::log('HERE 5');
       if(!is_key($nDocFilePk))
         return array( 'error' => 'Could not create the file in database. Please contact the administrator.');
     }
@@ -1987,7 +1992,7 @@ class CSharedspaceEx extends CSharedspace
         unlink($asNotify[$nUserPk]);
       $this->_notifyUsers($nDocPk, $asNotify);
     }
-
+ChromePhp::log('HERE 6');
     if($asDocument['notify'] && $aData['private']==0)
     {
       $asNotify = $oLogin->getUserList(0, true, false);
@@ -2014,7 +2019,7 @@ class CSharedspaceEx extends CSharedspace
     {
       $this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
     }
-
+ChromePhp::log('HERE 7');
     if(is_key($nFolderFk))
     {
       $oPage = CDependency::getCpPage();
@@ -2031,13 +2036,13 @@ class CSharedspaceEx extends CSharedspace
     {
       $aOutput['action'].= $asDocument['callback'];
     }
-
+ChromePhp::log('HERE 8');
     //if action called, we close the edit popup
     if(empty($asDocument['callback']))
     {
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
     }
-
+ChromePhp::log('HERE 9');
     //return array( 'error' => __LINE__.' - Document uploaded successfully.');
     return $aOutput;
   }
