@@ -2318,12 +2318,18 @@ ChromePhp::log($sFileContent);
   }
   else
   {
+    ChromePhp::log('HERE 14');
     if($pbFTSOptimized)
     {
+      ChromePhp::log('HERE 15');
       $sFileContent = $this->getFtsString($sFileContent);
     }
     else
+    {
+      ChromePhp::log('HERE 16');
       $sFileContent = $sFileContent;
+    }
+ChromePhp::log($sFileContent);
   }
 
   $asResult['fulltext'] = $sFileContent;
