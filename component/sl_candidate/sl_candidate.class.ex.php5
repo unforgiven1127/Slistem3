@@ -6635,11 +6635,11 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      $_POST['candidate'] = (int)$candidate_id;
+      //$_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
 
-      $oQB = $this->_getModel()->getQueryBuilder();
+      /*$oQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
       $oQS = new CQuickSearch($oQB);
@@ -6672,10 +6672,10 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sHTML.=  $this->_oDisplay->getListEnd();
       $sHTML.=  $this->_oDisplay->getBlocEnd();
-      return $sHTML;
+      return $sHTML;*/
       //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
       //return $this->_getCandidateView((int)$candidate_id);
-
+return $this->_getCandidateView((int)$candidate_id);
       /*if($result == 1)
       {
         echo json_encode(array('error' => array(
