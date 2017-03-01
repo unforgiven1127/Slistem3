@@ -6610,6 +6610,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_candidate_mail_send_action');
       $email = trim($_POST['receipent_email']);
+      ChromePhp::log($email);
       $message = $_POST['message'];
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
