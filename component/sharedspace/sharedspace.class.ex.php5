@@ -2311,7 +2311,10 @@ ChromePhp::log($sLanguage);
   //if(isCJK($sFileContent))
   if($sLanguage != 'en')
   {
+ChromePhp::log('HERE 13');
     $sFileContent = $this->tokenizeCjk($sFileContent, $pbFTSOptimized);
+
+ChromePhp::log($sFileContent);
   }
   else
   {
