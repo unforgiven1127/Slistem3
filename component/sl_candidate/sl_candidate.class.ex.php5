@@ -6638,11 +6638,11 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
 
-      $oQB = $this->_getModel()->getQueryBuilder('candi');
+      $oQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
       $oQS = new CQuickSearch($oQB);
-      $sError = $oQS->buildQuickSearch();
+      $sError = $oQS->buildQuickSearch('candi');
       if(!empty($sError))
         return json_encode(array('alert' => $sError));
 
