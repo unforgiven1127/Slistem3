@@ -6629,9 +6629,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$subject .= '<br><br><br>'.$signeture;
 
-      //$result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
+      $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      return $this->_getCandidateView($candidate_id);
+      return $this->_getCandidateView((int)$candidate_id);
 
       /*if($result == 1)
       {
