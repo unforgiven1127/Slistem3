@@ -6607,11 +6607,17 @@ $searchTitle = explode(':',$poQB->getTitle());
     {
       ChromePhp::log('_candidate_mail_send_action');
       $email = trim($_POST['receipent_email']);
+      ChromePhp::log($email);
       $message = $_POST['message'];
+      ChromePhp::log($message);
       $candidate_id = $_POST['candidate_id'];
+      ChromePhp::log($candidate_id);
       $subject = $_POST['subject'];
+      ChromePhp::log($subject);
       $cc = $_POST['cc'];
+      ChromePhp::log($cc);
       $bcc = $_POST['bcc'];
+      ChromePhp::log($bcc);
 
       $sNote = '<b>'.$subject.'</b><br><br>'.$message;
 
