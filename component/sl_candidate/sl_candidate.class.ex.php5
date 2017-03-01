@@ -588,7 +588,8 @@ ChromePhp::log($this->csAction);
         switch ($this->csAction)
         {
             case MAIL_SEND_ACTION:
-            return $this->_candidate_mail_send_action($this->cnPk);
+            return json_encode($oPage->getAjaxExtraContent($this->_candidate_mail_send_action($this->cnPk)));
+            //return $this->_candidate_mail_send_action($this->cnPk);
             break;
         }
 
