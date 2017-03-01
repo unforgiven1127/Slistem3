@@ -6638,6 +6638,14 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
 
+      $oQB = $this->_getModel()->getQueryBuilder();
+
+      require_once('component/sl_candidate/resources/search/quick_search.class.php5');
+      $oQS = new CQuickSearch($oQB);
+      $sError = $oQS->buildQuickSearch();
+      if(!empty($sError))
+        return json_encode(array('alert' => $sError));
+
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
@@ -6656,7 +6664,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $sHTML.= $this->_getCandidateList($pbInAjax);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQS);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
