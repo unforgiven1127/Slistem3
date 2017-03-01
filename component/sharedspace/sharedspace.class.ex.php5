@@ -2318,6 +2318,7 @@ ChromePhp::log($sFileContent);
   }
   else
   {
+ChromePhp::log($sFileContent);
     ChromePhp::log('HERE 14');
     if($pbFTSOptimized)
     {
