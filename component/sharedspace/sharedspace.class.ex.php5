@@ -1841,22 +1841,20 @@ ChromePhp::log('HERE 4');
       //we need an alternative when files are already there
       if($pbExternalFile)
       {
-        ChromePhp::log('HERE 5');
         if(!rename($sTmpFileName, $sNewPath.$sNewName))
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
       }
       else
       {
-        ChromePhp::log('HERE 6');
         if(!move_uploaded_file($sTmpFileName, $sNewPath.$sNewName))
         {
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
         }
       }
-
+ChromePhp::log('HERE 7');
       $nFileSize = filesize($sNewPath.$sNewName);
       $sUnit = 'B';
-
+ChromePhp::log($nFileSize);
       //use 1000 instead of 1024 to not display 1008.16B, 1015.01Kb
       if($nFileSize > 1000000000)  //1024*1024*1024
       {
@@ -1890,14 +1888,16 @@ ChromePhp::log('HERE 4');
           'date_creation' => $dToday,
           'live' => 1
           );
-
+ChromePhp::log('HERE 8');
       if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
       {
+ChromePhp::log('HERE 9');
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 
         $aDataFile['original'] = $aParsedDocument['text'];
         $aDataFile['compressed'] = $aParsedDocument['fulltext'];
         $aDataFile['language'] = $aParsedDocument['language'];
+ChromePhp::log('HERE 10');
       }
 
 
