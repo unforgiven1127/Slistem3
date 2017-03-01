@@ -6656,8 +6656,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          //$sHTML.= $this->_getCandidateList($pbInAjax);
-          $sHTML.= $this->_getCandidateList();
+          $sHTML.= $this->_getCandidateList($pbInAjax);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
