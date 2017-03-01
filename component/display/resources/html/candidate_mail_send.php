@@ -5,7 +5,7 @@ function loading()
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
 
-$( "#sendMailToCandidate" ).click(function() {
+$( "#sendMailToCandidate1" ).click(function() {
 
 	loading();
     var receipent_email = $('#receipent_email').val();
@@ -81,6 +81,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	}
 </style>
 
+<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
 
 	<table style="width:100%;" valign="top">
 		<tr>
@@ -151,9 +152,10 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td>
 				<center>
-					<input name="Send" type="button" id="sendMailToCandidate" value="Send" onclick="">
+					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
 			</td>
 		</tr>
 	</table>
 
+</form>
