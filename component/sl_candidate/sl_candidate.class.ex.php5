@@ -6606,12 +6606,12 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _candidate_mail_send_action($candidate_id = 0)
     {
       ChromePhp::log('_candidate_mail_send_action');
-      $email = trim($_GET['receipent_email']);
-      $message = $_GET['message'];
-      $candidate_id = $_GET['candidate_id'];
-      $subject = $_GET['subject'];
-      $cc = $_GET['cc'];
-      $bcc = $_GET['bcc'];
+      $email = trim($_POST['receipent_email']);
+      $message = $_POST['message'];
+      $candidate_id = $_POST['candidate_id'];
+      $subject = $_POST['subject'];
+      $cc = $_POST['cc'];
+      $bcc = $_POST['bcc'];
 
       $sNote = '<b>'.$subject.'</b><br><br>'.$message;
 
