@@ -6609,15 +6609,10 @@ $searchTitle = explode(':',$poQB->getTitle());
       $email = trim($_POST['receipent_email']);
       ChromePhp::log($email);
       $message = $_POST['message'];
-      ChromePhp::log($message);
       $candidate_id = $_POST['candidate_id'];
-      ChromePhp::log($candidate_id);
       $subject = $_POST['subject'];
-      ChromePhp::log($subject);
       $cc = $_POST['cc'];
-      ChromePhp::log($cc);
       $bcc = $_POST['bcc'];
-      ChromePhp::log($bcc);
 
       $sNote = '<b>'.$subject.'</b><br><br>'.$message;
 
@@ -6637,7 +6632,46 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      return $this->_getCandidateView((int)$candidate_id);
+      $_POST['candidate'] = (int)$candidate_id;
+      //$candidate_list = $this->_getCandidateList();
+      //ChromePhp::log($candidate_list);
+
+      $oQB = $this->_getModel()->getQueryBuilder();
+
+      require_once('component/sl_candidate/resources/search/quick_search.class.php5');
+      $oQS = new CQuickSearch($oQB);
+      $sError = $oQS->buildQuickSearch('candi');
+      if(!empty($sError))
+        return json_encode(array('alert' => $sError));
+
+      $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
+      $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
+      $sHTML = $this->_getTopPageSection();
+
+      $pbInAjax = false;
+
+      $sLiId = uniqid();
+      if(!$pbInAjax)
+        $this->_oPage->addCustomJs('$(document).ready(function(){  initHeaderManager(); goTabs.preload(\'candi\', \''.$sLiId.'\', true); });');
+
+
+      //container in which we'll put the list
+      $sHTML.=  $this->_oDisplay->getBlocStart('', array('id' => 'bottomCandidateSection', 'class' => 'bottomCandidateSection'));
+      $sHTML.=  $this->_oDisplay->getListStart('tab_content_container');
+
+        $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
+
+          //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQS);
+          //$sHTML.= $this->_oDisplay->getBlocEnd();
+
+        $sHTML.=  $this->_oDisplay->getListItemEnd();
+
+      $sHTML.=  $this->_oDisplay->getListEnd();
+      $sHTML.=  $this->_oDisplay->getBlocEnd();
+      return $sHTML;
+      //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
+      //return $this->_getCandidateView((int)$candidate_id);
 
       /*if($result == 1)
       {
