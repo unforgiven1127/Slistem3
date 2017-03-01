@@ -6631,7 +6631,13 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      return $this->_getCandidateView((int)$candidate_id);
+      $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
+
+      return array('notice' => 'Candidate saved.', 'action' => '
+        goPopup.removeLastByType(\'layer\');
+        view_candi(\''.$sURL.'\'); ');
+
+      //return $this->_getCandidateView((int)$candidate_id);
 
       /*if($result == 1)
       {
@@ -9658,7 +9664,6 @@ $bonusManual = getValue('bonus');
 
     private function _getResumeSaveAdd($array = '' , $passTitle ='Resume')
     {
-;
       // check form, create a html file from it
 
       if(isset($array[0]))
