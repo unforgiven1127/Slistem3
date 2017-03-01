@@ -1824,18 +1824,14 @@ class CSharedspaceEx extends CSharedspace
         return array('error' => 'The file =[ '.$_FILES['document']['name'].' ]= doesn\'t have any extension. Please specify one and upload it again.<br /><br />
           Suggested document type: '.$asMime[$sMimeType].'');
       }
-ChromePhp::log('HERE 1');
-
 
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/document/'.$nDocPk.'/';
       $sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
-ChromePhp::log('HERE 2');
 
       if(!is_dir($sNewPath) && !makePath($sNewPath))
         return array( 'error' => __LINE__.' - Destination folder doesn\'t exist.('.$sNewPath.')');
 
-ChromePhp::log('HERE 3');
 
       if(!is_writable($sNewPath))
         return array( 'error' => __LINE__.' - Can\'t write in the destination folder.');
@@ -1845,11 +1841,13 @@ ChromePhp::log('HERE 4');
       //we need an alternative when files are already there
       if($pbExternalFile)
       {
+        ChromePhp::log('HERE 5');
         if(!rename($sTmpFileName, $sNewPath.$sNewName))
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
       }
       else
       {
+        ChromePhp::log('HERE 6');
         if(!move_uploaded_file($sTmpFileName, $sNewPath.$sNewName))
         {
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
