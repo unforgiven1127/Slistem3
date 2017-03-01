@@ -2281,7 +2281,8 @@ private function _parseDocument($psFilePath, $pbFTSOptimized = true)
 
   $sFileContent = $this->_getFileContent($psFilePath);
   //echo 'Converted<br /><br /></hr>'.$sFileContent.'<hr />';
-
+ChromePhp::log('HERE 11');
+ChromePhp::log($sFileContent);
 
   $sEncoding = mb_detect_encoding($sFileContent);
   //If we can't get the character encoding, we abort the process to not store crap in the db
@@ -2295,9 +2296,10 @@ private function _parseDocument($psFilePath, $pbFTSOptimized = true)
   if($sEncoding != 'UTF8' && $sEncoding != 'UTF-8')
     $sFileContent = mb_convert_encoding($sFileContent, 'UTF-8', $sEncoding);
 
-
+ChromePhp::log('HERE 12');
   $sLanguage = getTextLangType($sFileContent);
 
+ChromePhp::log($sLanguage);
   //save the original text version
   $asResult = array('text' => $sFileContent, 'fulltext' => '', 'language' => $sLanguage);
   $sFileContent = strip_tags($sFileContent);
