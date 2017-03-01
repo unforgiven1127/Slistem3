@@ -6650,7 +6650,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
 
-      $pbInAjax = true;
+      $pbInAjax = false;
 
       $sLiId = uniqid();
       if(!$pbInAjax)
