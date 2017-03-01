@@ -579,9 +579,11 @@ class CSl_candidateEx extends CSl_candidate
       return $oLogin->displayList(false);
     }
 
-
+ChromePhp::log($this->csType);
+ChromePhp::log($this->csAction);
     switch($this->csType)
     {
+
       case CANDIDATE_MAIL_SEND:
         switch ($this->csAction)
         {
