@@ -1890,7 +1890,7 @@ class CSharedspaceEx extends CSharedspace
 
       $server_name = trim($_SERVER['SERVER_NAME']);
       if($server_name != 'beta2.slate.co.jp' && $aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
-      {
+      {// doesnot work on beta
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
 
         $aDataFile['original'] = $aParsedDocument['text'];

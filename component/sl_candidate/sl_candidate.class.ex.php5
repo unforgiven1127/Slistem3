@@ -189,10 +189,6 @@ class CSl_candidateEx extends CSl_candidate
           case MAIL_SEND_POPUP:
             return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send($this->cnPk))));
             break;
-
-            case MAIL_SEND_ACTION:
-            return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send_action($this->cnPk))));
-            break;
         }
       case CONST_CANDIDATE_TYPE_CANDI:
 
@@ -586,6 +582,14 @@ class CSl_candidateEx extends CSl_candidate
 
     switch($this->csType)
     {
+      case CANDIDATE_MAIL_SEND:
+        switch ($this->csAction)
+        {
+            case MAIL_SEND_ACTION:
+            return $this->_candidate_mail_send_action($this->cnPk);
+            break;
+        }
+
       case CONST_CANDIDATE_TYPE_CANDI:
 
         switch($this->csAction)
@@ -6623,8 +6627,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
+      return $this->_getCandidateView($candidate_id);
 
-      if($result == 1)
+      /*if($result == 1)
       {
         echo json_encode(array('error' => array(
             'message' => 'Your mail sent successfully!!',
@@ -6637,9 +6642,9 @@ $searchTitle = explode(':',$poQB->getTitle());
             'message' => 'Error occured please contact with admin!!',
             'code' => 0,
         )));
-      }
+      }*/
 
-      exit;
+      //exit;
 
     }
 
