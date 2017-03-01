@@ -94,7 +94,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Email to: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" name="receipent_email" id="receipent_email" style="outline: none; width: 303px;"></b>
+				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" name="receipent_email_visible" id="receipent_email_visible" style="outline: none; width: 303px;"></b>
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
 				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 187px;"></b>
@@ -145,6 +145,11 @@ $( "#sendMailToCandidate1" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
 				<b><input hidden value="<?php echo $candidate_id; ?>"type="text" name="candidate_id" id="candidate_id" style="outline: none; width: 187px;"></b>
+			</td>
+		</tr>
+		<tr>
+			<td style='padding-top:10px; padding-left: 10px;' align="left">
+				<b><input hidden value="<?php echo $candidate_email; ?>"type="text" name="receipent_email" id="receipent_email" style="outline: none; width: 187px;"></b>
 			</td>
 		</tr>
 	</table>
