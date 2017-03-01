@@ -1889,16 +1889,16 @@ ChromePhp::log($nFileSize);
           'live' => 1
           );
 ChromePhp::log('HERE 8');
-      /*if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
+      if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
       {
 ChromePhp::log('HERE 9');
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
-
+ChromePhp::log($aParsedDocument);
         $aDataFile['original'] = $aParsedDocument['text'];
         $aDataFile['compressed'] = $aParsedDocument['fulltext'];
         $aDataFile['language'] = $aParsedDocument['language'];
 ChromePhp::log('HERE 10');
-      }*/
+      }
 
 
       $nDocFilePk = $this->_getModel()->add($aDataFile, 'document_file');
