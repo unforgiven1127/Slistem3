@@ -1825,18 +1825,17 @@ class CSharedspaceEx extends CSharedspace
           Suggested document type: '.$asMime[$sMimeType].'');
       }
 
+
+
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/document/'.$nDocPk.'/';
       $sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
-
 
       if(!is_dir($sNewPath) && !makePath($sNewPath))
         return array( 'error' => __LINE__.' - Destination folder doesn\'t exist.('.$sNewPath.')');
 
-
       if(!is_writable($sNewPath))
         return array( 'error' => __LINE__.' - Can\'t write in the destination folder.');
 
-ChromePhp::log('HERE 4');
       //move_uploaded_file only accept files uplaoded through php.
       //we need an alternative when files are already there
       if($pbExternalFile)
@@ -1851,10 +1850,10 @@ ChromePhp::log('HERE 4');
           return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
         }
       }
-ChromePhp::log('HERE 7');
+
       $nFileSize = filesize($sNewPath.$sNewName);
       $sUnit = 'B';
-ChromePhp::log($nFileSize);
+
       //use 1000 instead of 1024 to not display 1008.16B, 1015.01Kb
       if($nFileSize > 1000000000)  //1024*1024*1024
       {
@@ -1888,21 +1887,20 @@ ChromePhp::log($nFileSize);
           'date_creation' => $dToday,
           'live' => 1
           );
-ChromePhp::log('HERE 8');
-      if($aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
+
+      $server_name = trim($_SERVER['SERVER_NAME']);
+      if($server_name != 'beta2.slate.co.jp' && $aDataFile['mime_type'] != 'application/pdf' && $aDataFile['mime_type'] != 'text/html')
       {
-ChromePhp::log('HERE 9');
         $aParsedDocument = $this->_parseDocument($sNewPath.$sNewName);
-ChromePhp::log($aParsedDocument);
+
         $aDataFile['original'] = $aParsedDocument['text'];
         $aDataFile['compressed'] = $aParsedDocument['fulltext'];
         $aDataFile['language'] = $aParsedDocument['language'];
-ChromePhp::log('HERE 10');
       }
 
 
       $nDocFilePk = $this->_getModel()->add($aDataFile, 'document_file');
-ChromePhp::log('HERE 5');
+
       if(!is_key($nDocFilePk))
         return array( 'error' => 'Could not create the file in database. Please contact the administrator.');
     }
@@ -1990,7 +1988,7 @@ ChromePhp::log('HERE 5');
         unlink($asNotify[$nUserPk]);
       $this->_notifyUsers($nDocPk, $asNotify);
     }
-ChromePhp::log('HERE 6');
+
     if($asDocument['notify'] && $aData['private']==0)
     {
       $asNotify = $oLogin->getUserList(0, true, false);
@@ -2017,7 +2015,7 @@ ChromePhp::log('HERE 6');
     {
       $this->_getModel()->_logChanges($aCpValues, 'document', 'new document added. ['.$asDocument['title'].']', '', $aCpValues);
     }
-ChromePhp::log('HERE 7');
+
     if(is_key($nFolderFk))
     {
       $oPage = CDependency::getCpPage();
@@ -2034,13 +2032,13 @@ ChromePhp::log('HERE 7');
     {
       $aOutput['action'].= $asDocument['callback'];
     }
-ChromePhp::log('HERE 8');
+
     //if action called, we close the edit popup
     if(empty($asDocument['callback']))
     {
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
     }
-ChromePhp::log('HERE 9');
+
     //return array( 'error' => __LINE__.' - Document uploaded successfully.');
     return $aOutput;
   }
@@ -2281,8 +2279,7 @@ private function _parseDocument($psFilePath, $pbFTSOptimized = true)
 
   $sFileContent = $this->_getFileContent($psFilePath);
   //echo 'Converted<br /><br /></hr>'.$sFileContent.'<hr />';
-ChromePhp::log('HERE 11');
-ChromePhp::log($sFileContent);
+
 
   $sEncoding = mb_detect_encoding($sFileContent);
   //If we can't get the character encoding, we abort the process to not store crap in the db
@@ -2296,10 +2293,9 @@ ChromePhp::log($sFileContent);
   if($sEncoding != 'UTF8' && $sEncoding != 'UTF-8')
     $sFileContent = mb_convert_encoding($sFileContent, 'UTF-8', $sEncoding);
 
-ChromePhp::log('HERE 12');
+
   $sLanguage = getTextLangType($sFileContent);
 
-ChromePhp::log($sLanguage);
   //save the original text version
   $asResult = array('text' => $sFileContent, 'fulltext' => '', 'language' => $sLanguage);
   $sFileContent = strip_tags($sFileContent);
@@ -2309,28 +2305,18 @@ ChromePhp::log($sLanguage);
   dump($sFileContent);*/
 
   //if(isCJK($sFileContent))
-  if($sLanguage != 'en' && $sLanguage != 'mix')
+  if($sLanguage != 'en')
   {
-ChromePhp::log('HERE 13');
     $sFileContent = $this->tokenizeCjk($sFileContent, $pbFTSOptimized);
-
-ChromePhp::log($sFileContent);
   }
   else
   {
-ChromePhp::log($sFileContent);
-ChromePhp::log('HERE 14');
     if($pbFTSOptimized)
     {
-ChromePhp::log('HERE 15');
       $sFileContent = $this->getFtsString($sFileContent);
     }
     else
-    {
-      ChromePhp::log('HERE 16');
       $sFileContent = $sFileContent;
-    }
-ChromePhp::log($sFileContent);
   }
 
   $asResult['fulltext'] = $sFileContent;
