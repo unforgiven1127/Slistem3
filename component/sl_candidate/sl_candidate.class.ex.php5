@@ -6631,7 +6631,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      return $this->_getCandidateView((int)$candidate_id);
+      return $this->_getCandidateView((int)$candidate_id),(int)$candidate_id);
 
       /*if($result == 1)
       {
