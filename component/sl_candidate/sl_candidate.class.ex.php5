@@ -579,8 +579,8 @@ class CSl_candidateEx extends CSl_candidate
       return $oLogin->displayList(false);
     }
 
-ChromePhp::log($this->csType);
-ChromePhp::log($this->csAction);
+//ChromePhp::log($this->csType);
+//ChromePhp::log($this->csAction);
     switch($this->csType)
     {
 
@@ -588,8 +588,7 @@ ChromePhp::log($this->csAction);
         switch ($this->csAction)
         {
             case MAIL_SEND_ACTION:
-            return json_encode($this->_oPage->getAjaxExtraContent($this->_candidate_mail_send_action($this->cnPk)));
-            //return $this->_candidate_mail_send_action($this->cnPk);
+            return $this->_candidate_mail_send_action($this->cnPk);
             break;
         }
 
@@ -1227,7 +1226,7 @@ ChromePhp::log($this->csAction);
       if(isset($_GET['searchId']))
       {
         $searchID = $_GET['searchId'];
-
+ChromePhp::log($searchID);
         $pbInAjax = 'search_'.$searchID;
         return $this->_displayCandidateList($pbInAjax);
       }
@@ -6632,13 +6631,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$result = mail_send($email,$cc,$bcc, $user_email, $subject, $message);
 
-      $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
-
-      return array('notice' => 'Candidate saved.', 'action' => '
-        goPopup.removeLastByType(\'layer\');
-        view_candi(\''.$sURL.'\'); ');
-
-      //return $this->_getCandidateView((int)$candidate_id);
+      return $this->_getCandidateView((int)$candidate_id);
 
       /*if($result == 1)
       {
