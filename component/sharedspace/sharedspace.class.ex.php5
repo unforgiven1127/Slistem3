@@ -2319,10 +2319,10 @@ ChromePhp::log($sFileContent);
   else
   {
 ChromePhp::log($sFileContent);
-    ChromePhp::log('HERE 14');
+ChromePhp::log('HERE 14');
     if($pbFTSOptimized)
     {
-      ChromePhp::log('HERE 15');
+ChromePhp::log('HERE 15');
       $sFileContent = $this->getFtsString($sFileContent);
     }
     else
