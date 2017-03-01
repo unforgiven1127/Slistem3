@@ -2929,7 +2929,10 @@ ChromePhp::log($this->csAction);
       //echo $test;
       if($poQB != null)
       {
-        $exploded = explode('_',$poQB->getTitle());
+        if(isset($poQB->getTitle()))
+        {
+          $exploded = explode('_',$poQB->getTitle());
+        }
       }
       global $gbNewSearch;
       $oDb = CDependency::getComponentByName('database');
