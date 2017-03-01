@@ -3167,7 +3167,7 @@ ChromePhp::log($searchID);
 
 $searchTitle = explode(':',$poQB->getTitle());
 ////ChromePhp::log($searchTitle);
-      if ($nPagerOffset)
+      if(isset($nPagerOffset) && $nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
 
@@ -6641,6 +6641,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
+
+      $pbInAjax = true;
 
       $sLiId = uniqid();
       if(!$pbInAjax)
