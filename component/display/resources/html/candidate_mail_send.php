@@ -144,7 +144,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 	<table>
 		<tr>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input hidden disabled value="<?php echo $candidate_id; ?>" type="text" name="candidate_id" id="candidate_id" style="outline: none; width: 187px;"></b>
+				<b><input hidden disabled value="<?php echo $candidate_id; ?>"type="text" name="candidate_id" id="candidate_id" style="outline: none; width: 187px;"></b>
 			</td>
 		</tr>
 	</table>
