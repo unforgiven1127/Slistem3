@@ -1,4 +1,12 @@
 <script>
+function addNewDocumentSelection()
+{
+	alert('test');
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "file");
+    document.body.appendChild(x);
+}
+
 function loading()
 {
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
@@ -6,14 +14,6 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-
-	function addNewDocumentSelection()
-	{
-		alert('test');
-	    var x = document.createElement("INPUT");
-	    x.setAttribute("type", "file");
-	    document.body.appendChild(x);
-	}
 
 	loading();
     /*var receipent_email = $('#receipent_email').val();
