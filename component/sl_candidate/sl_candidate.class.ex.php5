@@ -6638,6 +6638,9 @@ $searchTitle = explode(':',$poQB->getTitle());
       //ChromePhp::log($candidate_list);
 
       $oQB = $this->_getModel()->getQueryBuilder();
+      $oQB->setTitle('QuickSearch: refId = '.$candidate_id);
+
+      //$poQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
       $oQS = new CQuickSearch($oQB);
