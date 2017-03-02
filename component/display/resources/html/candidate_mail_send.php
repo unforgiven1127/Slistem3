@@ -5,10 +5,10 @@ function loading()
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
 
-$( "#sendMailToCandidate1" ).click(function() {
+$( "#sendMailToCandidate" ).click(function() {
 
 	loading();
-    var receipent_email = $('#receipent_email').val();
+    /*var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
     var candidate_id = $('#candidate_id').val();
     var subject = $('#subject').val();
@@ -63,7 +63,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 		    	//alert('Completed?!');
 		    }
 		});
-    }
+    }*/
 
 });
 

@@ -1176,7 +1176,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
           $user_id = $oLogin->getuserPk();
           $userInformation = getUserInformaiton($user_id);
 
-          ChromePhp::log($userInformation);
+          //ChromePhp::log($userInformation);
 
           //candidate can be pitched no matter his status, but it needs to be assessed to go further
           if($userInformation['loginpk'] != "101"  &&!empty($nCurrentStatus) && $asCandidate['status'] < 4)
