@@ -4,7 +4,7 @@ function addNewDocumentSelection()
 	alert('test');
     var x = document.createElement("INPUT");
     x.setAttribute("type", "file");
-    document.body.appendChild(x);
+    document.getElementById('addDS').appendChild(x);
 }
 
 function loading()
@@ -88,7 +88,9 @@ $( "#sendMailToCandidate" ).click(function() {
 	  padding: 5px;
 	}
 </style>
-
+<!DOCTYPE html>
+<html>
+<body>
 <form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
 
 	<table style="width:100%;" valign="top">
@@ -164,7 +166,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	<table>
 		<tr>
 			<td>
-				<button type="button" onclick="addNewDocumentSelection()">New document</button>
+				<button id='addDS' type="button" onclick="addNewDocumentSelection()">New document</button>
 			</td>
 		</tr>
 	</table>
@@ -179,3 +181,5 @@ $( "#sendMailToCandidate" ).click(function() {
 	</table>
 
 </form>
+</body>
+</html>
