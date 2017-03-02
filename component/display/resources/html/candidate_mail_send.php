@@ -1,11 +1,4 @@
 <script>
-function addNewDocumentSelection()
-{
-	alert('test');
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "file");
-    document.getElementById('addDS').appendChild(x);
-}
 
 function loading()
 {
@@ -166,7 +159,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	<table>
 		<tr>
 			<td id='addDS'>
-				<button type="button" onclick="addNewDocumentSelection()">New document</button>
+				<input type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
 			</td>
 		</tr>
 	</table>
