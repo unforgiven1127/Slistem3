@@ -7,6 +7,13 @@ function loading()
 
 $( "#sendMailToCandidate" ).click(function() {
 
+	function addNewDocumentSelection()
+	{
+	    var x = document.createElement("INPUT");
+	    x.setAttribute("type", "file");
+	    document.body.appendChild(x);
+	}
+
 	loading();
     /*var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
@@ -150,6 +157,13 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
 				<b><input hidden value="<?php echo $candidate_email; ?>"type="text" name="receipent_email" id="receipent_email" style="outline: none; width: 187px;"></b>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				<button onclick="addNewDocumentSelection()">New document</button>
 			</td>
 		</tr>
 	</table>

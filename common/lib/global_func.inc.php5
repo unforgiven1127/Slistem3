@@ -4564,8 +4564,7 @@ var_dump($query);*/
       }
     }
 
-
-    $oResult = $oMail->send($subject, $message);
+    $oResult = $oMail->send($subject, $message);//, '', $attachment
 
     return $oResult;
   }
