@@ -158,7 +158,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	</table>
 	<table>
 		<tr>
-			<td id='addDS'>
+			<td id='addDS' style='padding-left: 50px;'>
 				<input type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
 			</td>
 		</tr>
