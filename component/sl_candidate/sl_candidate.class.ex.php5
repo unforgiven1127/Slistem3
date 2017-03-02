@@ -6643,8 +6643,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$poQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
-      $oQS = new CQuickSearch($oQB);
-      $sError = $oQS->buildQuickSearch('candi');
+      //$oQS = new CQuickSearch($oQB);
+      $sError = $oQB->buildQuickSearch('candi');
       ChromePhp::log($oQS);
       if(!empty($sError))
         return json_encode(array('alert' => $sError));
