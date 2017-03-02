@@ -6643,7 +6643,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$poQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
-      //$oQS = new CQuickSearch($oQB);
+      $oQS = new CQuickSearch($oQB);
       $sError = $oQB->buildQuickSearch('candi');
       ChromePhp::log($oQS);
       if(!empty($sError))
@@ -6667,7 +6667,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQS);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
