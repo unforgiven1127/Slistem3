@@ -4535,7 +4535,7 @@ var_dump($query);*/
 
   }
 
-  function mail_send($to,$cc,$bcc, $from, $subject, $message)
+  function mail_send($to,$cc,$bcc, $from, $subject, $message, $files)
   {
     $oMail = CDependency::getComponentByName('mail');
 
@@ -4564,7 +4564,7 @@ var_dump($query);*/
       }
     }
 
-    $oResult = $oMail->send($subject, $message);//, '', $attachment
+    $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
 
     return $oResult;
   }
