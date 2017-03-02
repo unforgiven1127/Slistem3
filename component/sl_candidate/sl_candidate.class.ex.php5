@@ -2926,6 +2926,7 @@ ChromePhp::log($this->csAction);
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
+      ChromePhp::log($poQB);
       //echo $test;
       if($poQB != null)
       {
