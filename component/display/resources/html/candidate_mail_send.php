@@ -165,8 +165,8 @@ $( "#sendMailToCandidate" ).click(function() {
 	</table>
 	<table>
 		<tr>
-			<td>
-				<button id='addDS' type="button" onclick="addNewDocumentSelection()">New document</button>
+			<td id='addDS'>
+				<button type="button" onclick="addNewDocumentSelection()">New document</button>
 			</td>
 		</tr>
 	</table>
