@@ -6635,6 +6635,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //********FILE UPLOAD**********
 
+      $uniqueDate = strtotime();
+      ChromePhp::log($uniqueDate);
 
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
@@ -6665,7 +6667,7 @@ $searchTitle = explode(':',$poQB->getTitle());
                     //ChromePhp::log($sTmpFileName);
                     if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
-                      ChromePhp::log('ERROR!!!!!!!!!!');
+                      //ChromePhp::log('ERROR!!!!!!!!!!');
                       //return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
                     }
                     //if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
