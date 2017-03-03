@@ -6661,7 +6661,7 @@ ChromePhp::log($path);
               continue; // Skip invalid file formats
             }*/
                 else{ // No error found! Move uploaded files
-                    if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name))
+                    if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
                     $count++; // Number of successfully uploaded file
                 }
             }
