@@ -6606,9 +6606,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-      ChromePhp::log('_candidate_mail_send_action');
+      //ChromePhp::log('_candidate_mail_send_action');
       $email = trim($_POST['receipent_email']);
-      ChromePhp::log($email);
+      //ChromePhp::log($email);
       $message = $_POST['message'];
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
@@ -6643,14 +6643,11 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
 
-
-      $count = 0;
-
       if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // Loop $_FILES to exeicute all files
         foreach ($_FILES['files']['name'] as $f => $name)
         {
-            ChromePhp::log($name);
+            //ChromePhp::log($name);
             if ($_FILES['files']['error'][$f] == 4) {
                 continue; // Skip file if any error found
             }
@@ -6668,6 +6665,7 @@ $searchTitle = explode(':',$poQB->getTitle());
                     ChromePhp::log($sTmpFileName);
                     if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
+                      ChromePhp::log('ERROR!!!!!!!!!!');
                       return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
                     }
                     //if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
@@ -6695,7 +6693,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
       $oQS = new CQuickSearch($oQB);
       $sError = $oQS->buildQuickSearch('candi');
-      ChromePhp::log($oQS);
+      //ChromePhp::log($oQS);
       if(!empty($sError))
         return json_encode(array('alert' => $sError));
 
