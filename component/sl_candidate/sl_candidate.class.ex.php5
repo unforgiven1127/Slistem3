@@ -6629,7 +6629,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $event_id = $asResult['event_pk'];
 
-      $message.= '<br><br>RefID: '.$event_id;
+      $message.= '<br><br><br>RefID: '.$event_id;
 
       //$subject .= '<br><br><br>'.$signeture;
 
@@ -6637,6 +6637,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //********FILE UPLOAD**********
 
+      $uploaded_files = array();
       $uniqueDate = strtotime('now');
       $uniqueDate = $candidate_id.'_'.$uniqueDate;
       //ChromePhp::log($uniqueDate);
@@ -6669,10 +6670,9 @@ $searchTitle = explode(':',$poQB->getTitle());
                 else{ // No error found! Move uploaded files
                     $sTmpFileName = $_FILES['files']['tmp_name'][$f];
                     //ChromePhp::log($sTmpFileName);
-                    if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
+                    if(move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
-                      //ChromePhp::log('ERROR!!!!!!!!!!');
-                      //return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
+                      $uploaded_files[] = $sNewPath.$name;
                     }
                     //if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
                     //$count++; // Number of successfully uploaded file
@@ -6685,7 +6685,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       //********FILE UPLOAD**********
 
 
-      $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$_FILES['files']);
+      $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$uploaded_files);
 
       $_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
