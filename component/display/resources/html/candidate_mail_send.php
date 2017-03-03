@@ -1,30 +1,3 @@
-<link rel="stylesheet" href="/common/lib/FroalaEditor/css/plugins/image.min.css">
-
-<!-- Include the plugin js file. -->
-<script src="/common/lib/FroalaEditor/js/plugins/image.min.js"></script>
-
-<script>
-  $(function() {
-    $.FroalaEditor.DefineIcon('imageInfo', {NAME: 'info'});
-    $.FroalaEditor.RegisterCommand('imageInfo', {
-      title: 'Info',
-      focus: false,
-      undo: false,
-      refreshAfterCallback: false,
-      callback: function () {
-        var $img = this.image.get();
-        alert($img.attr('src'));
-      }
-    });
-
-    $('#froala-editor').froalaEditor({
-      // Set image buttons, including the name
-      // of the buttons defined in customImageButtons.
-      imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove']
-    })
-  });
-</script>
-
 <script>
 
 function loading()
@@ -196,16 +169,6 @@ $( "#sendMailToCandidate" ).click(function() {
 				<center>
 					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td>
-				<div id="froala-editor">
-				  <p>Click on the image below to see the custom image button.</p>
-				  <img src="/common/lib/FroalaEditor/img/photo1.jpg" class="fr-fil" alt="book" width="150"/>
-				</div>
 			</td>
 		</tr>
 	</table>
