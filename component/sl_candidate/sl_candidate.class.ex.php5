@@ -6629,6 +6629,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $event_id = $asResult['event_pk'];
 
+      $message.= '<br><br>RefID: '.$event_id;
+
       //$subject .= '<br><br><br>'.$signeture;
 
       //ChromePhp::log($_FILES['files']);
@@ -6646,7 +6648,6 @@ $searchTitle = explode(':',$poQB->getTitle());
       mkdir($sNewPath, 0777, true);
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/mail_uploads/'.$uniqueDate.'/';
       //$sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
-
 
       if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // Loop $_FILES to exeicute all files
