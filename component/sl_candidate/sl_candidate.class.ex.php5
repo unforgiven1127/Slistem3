@@ -6639,7 +6639,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
       //$path = "/web/slistem/__upload__/sharedspace/mail_uploads"; // Upload directory
-      $path = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/documents/';
+      $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/document/';
+      //$sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
 ChromePhp::log($path);
 
@@ -6661,8 +6662,13 @@ ChromePhp::log($path);
               continue; // Skip invalid file formats
             }*/
                 else{ // No error found! Move uploaded files
-                    if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
-                    $count++; // Number of successfully uploaded file
+                    $sTmpFileName = $_FILES['document']['tmp_name'];
+                    if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
+                    {
+                      return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$sNewName.']');
+                    }
+                    //if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
+                    //$count++; // Number of successfully uploaded file
                 }
             }
         }
