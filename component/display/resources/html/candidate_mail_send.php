@@ -175,7 +175,7 @@ $( "#sendMailToCandidate" ).click(function() {
 
 </form>
 <div id="sample">
-  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+  <script type="text/javascript" src="https://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
 //<![CDATA[
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
   //]]>
