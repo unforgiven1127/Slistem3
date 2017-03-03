@@ -1,5 +1,5 @@
 <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+<script>tinymce.init({ selector:'textarea',plugins:['image'] });</script>
 <script>
 
 function loading()
