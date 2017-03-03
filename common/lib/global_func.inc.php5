@@ -4567,7 +4567,7 @@ var_dump($query);*/
       }
     }
 
-    $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
+    $oResult = $oMail->send($subject, $message);//, '', $attachment
 
     return $oResult;
   }
