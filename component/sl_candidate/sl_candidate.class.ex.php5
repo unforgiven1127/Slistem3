@@ -6631,6 +6631,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$subject .= '<br><br><br>'.$signeture;
 
+      ChromePhp::log($_FILES['files']);
+
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$_FILES['files']);
 
       $_POST['candidate'] = (int)$candidate_id;
