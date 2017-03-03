@@ -6638,7 +6638,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
-      $path = "/web/slistem/__upload__/sharedspace/mail_uploads"; // Upload directory
+      //$path = "/web/slistem/__upload__/sharedspace/mail_uploads"; // Upload directory
+      $path = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/mail_uploads/';
       $count = 0;
 
       if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
