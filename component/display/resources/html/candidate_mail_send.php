@@ -17,7 +17,7 @@
       }
     });
 
-    $('div#froala-editor').froalaEditor({
+    $('#froala-editor').froalaEditor({
       // Set image buttons, including the name
       // of the buttons defined in customImageButtons.
       imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove']
