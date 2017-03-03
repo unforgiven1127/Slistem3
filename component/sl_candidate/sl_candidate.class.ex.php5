@@ -6635,7 +6635,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //********FILE UPLOAD**********
 
-      $uniqueDate = strtotime();
+      $uniqueDate = strtotime('now');
       ChromePhp::log($uniqueDate);
 
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
