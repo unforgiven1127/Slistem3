@@ -142,14 +142,15 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"></textarea>
+				<textarea style="outline: none; width: 500px; height: 200px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"></textarea>
 			</td>
 		</tr>
 	</table>
 	<table>
 		<tr>
+		<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Signature: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 300px;" name="signature" class="msgField" inajax="" id="signature"><?php echo $signature; ?></textarea>
+				<textarea style="outline: none; width: 500px; height: 100px;" name="signature" class="msgField" inajax="" id="signature"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>
