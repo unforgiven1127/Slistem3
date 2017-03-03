@@ -172,14 +172,6 @@ $( "#sendMailToCandidate" ).click(function() {
 			</td>
 		</tr>
 	</table>
-	<table>
-		<tr>
-			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"><?php echo $signature; ?></textarea>
-			</td>
-		</tr>
-	</table>
-
 </form>
 </body>
 </html>
