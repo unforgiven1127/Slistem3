@@ -6664,7 +6664,8 @@ $searchTitle = explode(':',$poQB->getTitle());
               continue; // Skip invalid file formats
             }*/
                 else{ // No error found! Move uploaded files
-                    $sTmpFileName = $_FILES['files']['tmp_name'];
+                    $sTmpFileName = $_FILES['files']['tmp_name'][$f];
+                    ChromePhp::log($sTmpFileName);
                     if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
                       return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
