@@ -1,3 +1,30 @@
+<link rel="stylesheet" href="/common/lib/FroalaEditor/css/plugins/image.min.css">
+
+<!-- Include the plugin js file. -->
+<script src="/common/lib/FroalaEditor/js/plugins/image.min.js"></script>
+
+<script>
+  $(function() {
+    $.FroalaEditor.DefineIcon('imageInfo', {NAME: 'info'});
+    $.FroalaEditor.RegisterCommand('imageInfo', {
+      title: 'Info',
+      focus: false,
+      undo: false,
+      refreshAfterCallback: false,
+      callback: function () {
+        var $img = this.image.get();
+        alert($img.attr('src'));
+      }
+    });
+
+    $('div#froala-editor').froalaEditor({
+      // Set image buttons, including the name
+      // of the buttons defined in customImageButtons.
+      imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove']
+    })
+  });
+</script>
+
 <script>
 
 function loading()
