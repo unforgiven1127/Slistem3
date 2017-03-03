@@ -172,6 +172,16 @@ $( "#sendMailToCandidate" ).click(function() {
 			</td>
 		</tr>
 	</table>
+	<table>
+		<tr>
+			<td>
+				<div id="froala-editor">
+				  <p>Click on the image below to see the custom image button.</p>
+				  <img src="/common/lib/FroalaEditor/img/photo1.jpg" class="fr-fil" alt="book" width="150"/>
+				</div>
+			</td>
+		</tr>
+	</table>
 </form>
 </body>
 </html>
