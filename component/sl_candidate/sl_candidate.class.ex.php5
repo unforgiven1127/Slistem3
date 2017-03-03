@@ -6631,7 +6631,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$subject .= '<br><br><br>'.$signeture;
 
-      ChromePhp::log($_FILES['files']);
+      //ChromePhp::log($_FILES['files']);
 
       //********FILE UPLOAD**********
 
@@ -6640,6 +6640,9 @@ $searchTitle = explode(':',$poQB->getTitle());
       $max_file_size = 1024*100; //100 kb
       //$path = "/web/slistem/__upload__/sharedspace/mail_uploads"; // Upload directory
       $path = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/mail_uploads/';
+
+ChromePhp::log($path);
+
       $count = 0;
 
       if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
