@@ -1976,7 +1976,7 @@ ChromePhp::log($this->csAction);
 
                 //$GLOBALS['redis']->set('candidate_email', $email);
 
-                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 850;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
+                $sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 850; oConf.height = 750;  goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
                 $asData['value'] = $this->_oDisplay->getLink($asData['value'], 'javascript:;', array('onclick' => $sJavascript));
 
