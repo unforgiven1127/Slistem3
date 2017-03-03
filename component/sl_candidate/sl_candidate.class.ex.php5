@@ -6642,13 +6642,15 @@ $searchTitle = explode(':',$poQB->getTitle());
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/document/';
       //$sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
-ChromePhp::log($path);
+
 
       $count = 0;
 
       if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         // Loop $_FILES to exeicute all files
-        foreach ($_FILES['files']['name'] as $f => $name) {
+        foreach ($_FILES['files']['name'] as $f => $name)
+        {
+            ChromePhp::log($name);
             if ($_FILES['files']['error'][$f] == 4) {
                 continue; // Skip file if any error found
             }
