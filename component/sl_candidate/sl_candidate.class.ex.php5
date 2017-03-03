@@ -6642,8 +6642,9 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
       //$path = "/web/slistem/__upload__/sharedspace/mail_uploads"; // Upload directory
+      $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/mail_uploads/'.$uniqueDate;
+      mkdir($sNewPath, 0777, true);
       $sNewPath = $_SERVER['DOCUMENT_ROOT'].CONST_PATH_UPLOAD_DIR.'sharedspace/mail_uploads/'.$uniqueDate.'/';
-       mkdir($sNewPath, 0777, true);
       //$sNewName = date('YmdHis').'_'.$nUserPk.'_'.uniqid('doc'.$nDocPk.'_').'_'.$sFileName;
 
 
