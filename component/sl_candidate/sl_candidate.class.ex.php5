@@ -6662,11 +6662,11 @@ $searchTitle = explode(':',$poQB->getTitle());
             }*/
                 else{ // No error found! Move uploaded files
                     $sTmpFileName = $_FILES['files']['tmp_name'][$f];
-                    ChromePhp::log($sTmpFileName);
+                    //ChromePhp::log($sTmpFileName);
                     if(!move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
                       ChromePhp::log('ERROR!!!!!!!!!!');
-                      return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
+                      //return array( 'error' => __LINE__.' - Couldn\'t move the uploaded file. ['.$sTmpFileName.'|||'.$sNewPath.$name.']');
                     }
                     //if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path))
                     //$count++; // Number of successfully uploaded file
