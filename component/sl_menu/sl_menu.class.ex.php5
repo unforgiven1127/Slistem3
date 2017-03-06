@@ -285,6 +285,7 @@ class CSl_menuEx extends CSl_menu
       $sNameOrder = $pasSettings['qs_name_order'];
 
     //Inline => always displayed, need to be compacted
+    $KeywordField = '';
     if($pbInline)
     {
       $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainer', array( 'class' => 'qs_inline'));
