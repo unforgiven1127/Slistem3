@@ -6604,7 +6604,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $signature = '';
       }
-      
+
       $data['signature'] = $signature;
 
       $sHTML = $this->_oDisplay->render('candidate_mail_send', $data);

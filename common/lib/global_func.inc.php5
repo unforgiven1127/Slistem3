@@ -4566,7 +4566,7 @@ var_dump($query);*/
         $oMail->addBCCRecipient(trim($value));
       }
     }
-
+ChromePhp::log($message);
     $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
 
     return $oResult;
