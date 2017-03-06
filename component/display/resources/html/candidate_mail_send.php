@@ -14,22 +14,20 @@ $( "#sendMailToCandidate" ).click(function() {
     validation = true;
 alert(cc.length);
 alert(bcc.length);
-    if(message.length == 0 || subject.length == 0 || (cc.length > 0 && cc.indexOf("@") < 0) || (bcc.length > 0 && bcc.indexOf("@") < 0))
+    if(message.length == 0 || subject.length == 0)
     {
+    	alert('Subject & Message should be filled.');
     	$validation = false;
     }
-    else
+    if((cc.length > 0 && cc.indexOf("@") < 0) || (bcc.length > 0 && bcc.indexOf("@") < 0))
     {
-    	validation = true;
+		alert('CC & BCC should be valid.');
+    	$validation = false;
     }
 
 	if ($validation) {
 	    // submit with AJAX
 	    loading();
-	}
-	else
-	{
-		alert('Validation error!!');
 	}
 
     /*var receipent_email = $('#receipent_email').val();
