@@ -579,8 +579,8 @@ class CSl_candidateEx extends CSl_candidate
       return $oLogin->displayList(false);
     }
 
-ChromePhp::log($this->csType);
-ChromePhp::log($this->csAction);
+///ChromePhp::log($this->csType);
+//ChromePhp::log($this->csAction);
     switch($this->csType)
     {
 
@@ -2926,7 +2926,7 @@ ChromePhp::log($this->csAction);
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      ChromePhp::log($poQB);
+      //ChromePhp::log($poQB);
       //echo $test;
       if($poQB != null)
       {
