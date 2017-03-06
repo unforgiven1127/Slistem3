@@ -15,19 +15,19 @@ alert('test');
     validation = true;
 //alert(cc.length);
 //alert(bcc.length);
-alert($validation);
+alert(validation);
     if(message.length == 0 || subject.length == 0)
     {
     	alert('Subject & Message should be filled.');
-    	$validation = false;
+    	validation = false;
     }
     if((cc.length > 0 && cc.indexOf("@") < 0) || (bcc.length > 0 && bcc.indexOf("@") < 0))
     {
 		alert('CC & BCC should be valid.');
-    	$validation = false;
+    	validation = false;
     }
-alert($validation);
-	if ($validation)
+alert(validation);
+	if (validation)
 	{
 	    // submit with AJAX
 	    loading();
