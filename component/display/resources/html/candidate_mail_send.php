@@ -7,7 +7,7 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-alert('test');
+
 	var message = $('#messageId').val();
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
@@ -15,7 +15,6 @@ alert('test');
     validation = true;
 //alert(cc.length);
 //alert(bcc.length);
-alert(validation);
     if(message.length == 0 || subject.length == 0)
     {
     	alert('Subject & Message should be filled.');
@@ -26,10 +25,8 @@ alert(validation);
 		alert('CC & BCC should be valid.');
     	validation = false;
     }
-alert(validation);
 	if (validation)
 	{
-	    // submit with AJAX
 	    loading();
 	}
 
