@@ -12,14 +12,7 @@ $( "#sendMailToCandidate" ).click(function() {
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
 //alert(cc.indexOf("@"));
-    if(message == "" || subject == "")
-    {
-    	$validation = false;
-    }
-    else if(cc != '' && cc.indexOf("@") < 0)
-    {
-    	$validation = false;
-    }else if(bcc != '' && bcc.indexOf("@") < 0)
+    if(message == "" || subject == "" || (cc != "" && cc.indexOf("@") < 0) || (bcc != "" && bcc.indexOf("@") < 0))
     {
     	$validation = false;
     }
