@@ -7,8 +7,8 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-
-	var validator = $("#sendMailForm").validate(options);
+	alert('test');
+	var validator = $("#sendMailForm").validate();
 	alert(validator);
 	alert(validator.form());
 	if (validator.form()) {
