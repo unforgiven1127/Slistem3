@@ -3165,7 +3165,7 @@ ChromePhp::log($this->csAction);
 
 $searchTitle = explode(':',$poQB->getTitle());
 ////ChromePhp::log($searchTitle);
-      if ($nPagerOffset)
+      if (isset($nPagerOffset) && $nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
 
