@@ -24,8 +24,9 @@ alert(bcc.length);
 		alert('CC & BCC should be valid.');
     	$validation = false;
     }
-
-	if ($validation) {
+alert($validation);
+	if ($validation)
+	{
 	    // submit with AJAX
 	    loading();
 	}
