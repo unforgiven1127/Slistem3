@@ -579,7 +579,7 @@ class CSl_candidateEx extends CSl_candidate
       return $oLogin->displayList(false);
     }
 
-///ChromePhp::log($this->csType);
+//ChromePhp::log($this->csType);
 //ChromePhp::log($this->csAction);
     switch($this->csType)
     {
@@ -6617,7 +6617,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       //ChromePhp::log('_candidate_mail_send_action');
       $email = trim($_POST['receipent_email']);
       //ChromePhp::log($email);
-      $message = $_POST['message'];
+      $message = nl2br($_POST['message']);
       //ChromePhp::log($message);
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
