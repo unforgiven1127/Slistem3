@@ -9,6 +9,8 @@ function loading()
 $( "#sendMailToCandidate" ).click(function() {
 
 	var validator = $("#sendMailForm").validate(options);
+	alert(validator);
+	alert(validator.form());
 	if (validator.form()) {
 	    // submit with AJAX
 	    loading();
