@@ -7,11 +7,21 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-	alert('test');
-	var validator = $("#sendMailForm").validate();
-	alert(validator);
-	alert(validator.form());
-	if (validator.form()) {
+	var message = $('#messageId').val();
+	var subject = $('#subject').val();
+	var cc = $('#cc').val();
+    var bcc = $('#bcc').val();
+
+    if(message == "" || subject == "")
+    {
+    	$validation = false;
+    }
+    else
+    {
+    	validation = true;
+    }
+
+	if ($validation) {
 	    // submit with AJAX
 	    loading();
 	}
