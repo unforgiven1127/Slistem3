@@ -12,8 +12,8 @@ $( "#sendMailToCandidate" ).click(function() {
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
     validation = true;
-alert(cc.length);
-alert(bcc.length);
+//alert(cc.length);
+//alert(bcc.length);
     if(message.length == 0 || subject.length == 0)
     {
     	alert('Subject & Message should be filled.');
