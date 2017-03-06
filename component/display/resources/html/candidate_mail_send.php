@@ -8,7 +8,16 @@ function loading()
 
 $( "#sendMailToCandidate" ).click(function() {
 
-	loading();
+	var validator = $("#comment_form").validate(options);
+	if (validator.form()) {
+	    // submit with AJAX
+	    loading();
+	}
+	else
+	{
+		alert('Validation error!!');
+	}
+
     /*var receipent_email = $('#receipent_email').val();
     var message = $('#messageId').val();
     var candidate_id = $('#candidate_id').val();
@@ -124,7 +133,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Subject: </b></td>
 			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input type="text" id="subject" name="subject" style="outline: none; width: 505px;"></b>
+				<b><input required type="text" id="subject" name="subject" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
 	</table>
@@ -140,7 +149,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"><?php echo $signature; ?></textarea>
+				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>
