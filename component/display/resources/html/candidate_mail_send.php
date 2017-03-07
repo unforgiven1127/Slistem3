@@ -4,7 +4,7 @@
         selector: '#messageId',
         plugins: ["image"],
         file_browser_callback: function(field_name, url, type, win) {
-            if(type=='image') $('#my_form input').click();
+            if(type=='image') $('#sendMailForm input').click();
         }
     });
 </script>
