@@ -1,8 +1,15 @@
+<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '#messageId',
+        plugins: ["image"],
+        file_browser_callback: function(field_name, url, type, win) {
+            if(type=='image') $('#my_form input').click();
+        }
+    });
+</script>
 
 
-<script>tinymce.init({ selector:'textarea',plugins: [
-    'image'
-  ], });</script>
 
 <script>
 
