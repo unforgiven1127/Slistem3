@@ -1,5 +1,7 @@
 
 
+<script>tinymce.init({ selector:'textarea' });</script>
+
 <script>
 
 function loading()
