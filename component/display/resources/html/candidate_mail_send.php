@@ -1,6 +1,8 @@
 
 
-<script>tinymce.init({ selector:'textarea' });</script>
+<script>tinymce.init({ selector:'textarea',plugins: [
+    'image'
+  ], });</script>
 
 <script>
 
