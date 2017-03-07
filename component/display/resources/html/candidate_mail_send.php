@@ -25,7 +25,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		alert('CC & BCC should be valid.');
     	validation = false;
     }
-	if (validation)
+	if(validation)
 	{
 	    loading();
 	}
