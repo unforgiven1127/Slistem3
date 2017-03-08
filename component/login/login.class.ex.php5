@@ -1244,13 +1244,15 @@ class CLoginEx extends CLogin
     foreach($aoComponent as $oComponent)
     {
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
-      ChromePhp::log($asTab);
+      //ChromePhp::log($asTab);
       if(!empty($asTab))
       {
         //$sFoldersUrl   = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
         $asTabs[] = array('title' => $asTab['title'], 'label' => $asTab['label'], 'content' => $oHTML->getBloc('area_'.$asTab['label']), 'options' => array('link' => $asTab['url']));
       }
     }
+
+    $asTabs[] = array('title' => 'Signature', 'label' => 'signature', 'content' => $oHTML->getBloc('area_signature'), 'options' => array('link' => "https://beta2.slate.co.jp/index.php5?uid=555-002&ppa=ppal&ppt=&ppk=101&pg=ajx"));
 
     $sHTML.= $oHTML->getTabs('login_tabs', $asTabs, $sDefault);
 
