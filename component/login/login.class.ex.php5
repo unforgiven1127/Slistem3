@@ -1243,8 +1243,8 @@ class CLoginEx extends CLogin
     $aoComponent = CDependency::getComponentsByInterface('user_account_tab');
     foreach($aoComponent as $oComponent)
     {
-      ChromePhp::log($oComponent);
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
+      ChromePhp::log($asTab);
       if(!empty($asTab))
       {
         //$sFoldersUrl   = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
