@@ -140,34 +140,16 @@ alert(message.length);
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Signature: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="message"><?php echo $signature; ?></textarea>
+				<textarea required style="outline: none; width: 500px; height: 300px;" name="signature" class="msgField" inajax="" id="signature"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>
-	<table>
-		<tr>
-			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input hidden value="<?php echo $candidate_id; ?>"type="text" name="candidate_id" id="candidate_id" style="outline: none; width: 187px;"></b>
-			</td>
-		</tr>
-		<tr>
-			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input hidden value="<?php echo $candidate_email; ?>"type="text" name="receipent_email" id="receipent_email" style="outline: none; width: 187px;"></b>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td id='addDS' style='padding-left: 60px;'>
-				<input type="file" id="file" name="files[]" multiple="multiple" />
-			</td>
-		</tr>
-	</table>
+
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td>
 				<center>
-					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+					<input name="saveSignature" type="submit" id="saveSignature" value="Save" onclick="">
 				</center>
 			</td>
 		</tr>
