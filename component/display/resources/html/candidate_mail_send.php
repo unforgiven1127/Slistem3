@@ -1,8 +1,8 @@
 
 
-<script>tinymce.init({ selector:'textarea',plugins: [
+<!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
-  ], });</script>
+  ], });</script>-->
 
 <script>
 
@@ -15,13 +15,12 @@ function loading()
 $( "#sendMailToCandidate" ).click(function() {
 
 	var message = $('#messageId').val();
-alert(message);
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
     validation = true;
-alert(message.length);
-alert(subject.length);
+//alert(cc.length);
+//alert(bcc.length);
     if(message.length == 0 || subject.length == 0)
     {
     	alert('Subject & Message should be filled.');
