@@ -1252,7 +1252,8 @@ class CLoginEx extends CLogin
       }
     }
 
-    $asTabs[] = array('title' => 'Signature', 'label' => 'signature', 'content' => $oHTML->getBloc('area_signature'), 'options' => array('link' => "https://beta2.slate.co.jp/index.php5?uid=555-002&ppa=ppal&ppt=&ppk=101&pg=ajx"));
+    $signatureURL = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
+    $asTabs[] = array('title' => 'Signature', 'label' => 'signature', 'content' => $oHTML->getBloc('area_signature'), 'options' => array('link' => $signatureURL));
 
     $sHTML.= $oHTML->getTabs('login_tabs', $asTabs, $sDefault);
 
