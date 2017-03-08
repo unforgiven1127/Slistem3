@@ -1409,7 +1409,7 @@ class CLoginEx extends CLogin
     //$html = '_addChangeSignature page';
     $this->_oDisplay = CDependency::getCpHtml();
     $data['signature'] = 'signature';
-    $html = $this->_oDisplay->render('add_signature_send', $data);
+    $html = $this->_oDisplay->render('add_signature', $data);
     return $oPage->getAjaxExtraContent(array('data' => $html));
   }
 
