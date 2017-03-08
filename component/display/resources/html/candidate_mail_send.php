@@ -4,7 +4,7 @@
         selector: '#messageId',
         plugins: ["image"],
         file_browser_callback: function(field_name, url, type, win) {
-            if(type=='image') $('#sendMailForm input').click();
+            if(type=='image') $('#message_filest').click();
         }
     });
 </script>
@@ -194,6 +194,9 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td id='addDS' style='padding-left: 60px;'>
 				<input type="file" id="file" name="files[]" multiple="multiple" />
+			</td>
+			<td id='addDS2' style='padding-left: 60px;'>
+				<input hidden type="file" id="message_files" name="message_files[]" multiple="multiple" />
 			</td>
 		</tr>
 	</table>
