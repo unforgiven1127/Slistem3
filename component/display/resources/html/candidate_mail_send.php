@@ -3,17 +3,11 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
-
-<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
-<script type="text/javascript">
-	bkLib.onDomLoaded(function() {
-	        new nicEditor().panelInstance('messageId');
-	  });
-</script>
+<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
 
 
 <script>
-
+CKEDITOR.replace( 'editor1' );
 function loading()
 {
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
@@ -120,7 +114,7 @@ $( "#sendMailToCandidate" ).click(function() {
 <html>
 <body>
 <form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
-
+<textarea name="editor1"></textarea>
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
