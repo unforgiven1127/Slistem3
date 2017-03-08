@@ -15,6 +15,7 @@ function loading()
 $( "#sendMailToCandidate" ).click(function() {
 
 	var message = $('#messageId').val();
+alert(message);
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
