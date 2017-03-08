@@ -5,7 +5,7 @@
   ], });</script>-->
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'messageId' );
+    CKEDITOR.replace( 'message' );
 </script>
 <script>
 
@@ -170,7 +170,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId" name="messageId"><?php echo $signature; ?></textarea>
+				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>
