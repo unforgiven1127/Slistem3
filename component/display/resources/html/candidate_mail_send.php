@@ -143,7 +143,7 @@ alert(message.length);
 				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" name="receipent_email_visible" id="receipent_email_visible" style="outline: none; width: 303px;"></b>
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 287px;"></b>
+				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 285px;"></b>
 			</td>
 		</tr>
 	</table>
