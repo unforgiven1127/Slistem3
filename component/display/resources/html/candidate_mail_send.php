@@ -1,15 +1,8 @@
-<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-<script>
-    tinymce.init({
-        selector: '#messageId',
-        plugins: ["image"],
-        file_browser_callback: function(field_name, url, type, win) {
-            if(type=='image') $('#sendMailForm input').click();
-        }
-    });
-</script>
 
 
+<script>tinymce.init({ selector:'textarea',plugins: [
+    'image'
+  ], });</script>
 
 <script>
 
@@ -26,8 +19,8 @@ $( "#sendMailToCandidate" ).click(function() {
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
     validation = true;
-//alert(cc.length);
-//alert(bcc.length);
+alert(message.length);
+alert(subject.length);
     if(message.length == 0 || subject.length == 0)
     {
     	alert('Subject & Message should be filled.');
