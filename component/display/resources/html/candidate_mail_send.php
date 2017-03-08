@@ -8,7 +8,7 @@
                 // instance, using default configuration.
     CKEDITOR.replace( 'message',
 	{
-		width: '500px',
+		width: '700px',
 		toolbar :
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
