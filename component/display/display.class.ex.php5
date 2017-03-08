@@ -919,15 +919,15 @@ class CDisplayEx extends CDisplay
     <script type="text/javascript" src="'.CONST_PATH_JS_JQUERYUI.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/yepnope.1.5.4-min.js'.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/jquery.iframe-transport.min.js'.$sTime.'"></script>
-    
+    <script type="text/javascript" src="/component/form/resources/js/tinymce/jquery.tinymce.min.js'.$sTime.'"></script>
+    <script type="text/javascript" src="/component/form/resources/js/tinymce/tinymce.min.js'.$sTime.'"></script>
     <script type="text/javascript" src="/component/form/resources/js/jquery.tokeninput.js'.$sTime.'"></script>
     <script type="text/javascript" src="'.CONST_PATH_JS_POPUP.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/velocity.min.js'.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/my-js.js"></script>
-    <script type="text/javascript" src="/common/lib/tinymce/js/tinymce.min.js"></script>
     <script type="text/javascript" src="/common/lib/verticalSlider/js/jquery.totemticker.js"></script>
     <script type="text/javascript" src="'.CONST_PATH_JS_COMMON.$sTime.'"></script>';
-
+//    <script type="text/javascript" src="/common/lib/tinymce/js/tinymce.min.js"></script>
     $asJsFile[] = CONST_PATH_JS_JQUERY;
     $asJsFile[] = CONST_PATH_JS_JQUERYUI;
     $asJsFile[] = '/component/form/resources/js/tiny_mce/jquery.tinymce.js';

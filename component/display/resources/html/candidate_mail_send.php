@@ -3,7 +3,10 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
-
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'messageId' );
+</script>
 <script>
 
 function loading()
