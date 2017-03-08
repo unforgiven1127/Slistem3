@@ -4,7 +4,7 @@
         selector: '#messageId',
         plugins: ["image"],
         file_browser_callback: function(field_name, url, type, win) {
-            if(type=='image') $('#message_filest').click();
+            if(type=='image') $('#message_files').click();
         }
     });
 </script>
