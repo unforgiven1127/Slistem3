@@ -143,14 +143,14 @@ alert(message.length);
 				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" name="receipent_email_visible" id="receipent_email_visible" style="outline: none; width: 303px;"></b>
 			</td>
 			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 187px;"></b>
+				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 287px;"></b>
 			</td>
 		</tr>
 	</table>
 	<table>
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>CC: </b></td>
-			<td style='padding-top:10px; width: 303px;' align="left">
+			<td style='padding-top:10px; width: 403px;' align="left">
 				<b><input type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="cc" name="cc" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
@@ -158,7 +158,7 @@ alert(message.length);
 	<table>
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>BCC: </b></td>
-			<td style='padding-top:10px; width: 303px;' align="left">
+			<td style='padding-top:10px; width: 403px;' align="left">
 				<b><input type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="bcc" name="bcc" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
@@ -166,7 +166,7 @@ alert(message.length);
 	<table>
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Subject: </b></td>
-			<td style='padding-top:10px; width: 303px;' align="left">
+			<td style='padding-top:10px; width: 403px;' align="left">
 				<b><input required type="text" id="subject" name="subject" style="outline: none; width: 505px;"></b>
 			</td>
 		</tr>
