@@ -4,7 +4,13 @@
     'image'
   ], });</script>-->
 
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
+<script type="text/javascript">
+//<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
+
 
 <script>
 
@@ -170,9 +176,6 @@ $( "#sendMailToCandidate" ).click(function() {
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
 				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"><?php echo $signature; ?></textarea>
-				<script>
-				    CKEDITOR.replace( 'message' );
-				</script>
 			</td>
 		</tr>
 	</table>
