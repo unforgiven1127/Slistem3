@@ -6639,7 +6639,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $event_id = $asResult['event_pk'];
 
       //$message.= '<br><br><br>RefID: '.$event_id;
-      $message.= '<br><br><br>RefID: '.$candidate_id;
+      $message.= '<br><br><br>Mail ID: '.$candidate_id;
 
       //$subject .= '<br><br><br>'.$signeture;
 
