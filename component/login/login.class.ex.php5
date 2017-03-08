@@ -550,7 +550,7 @@ class CLoginEx extends CLogin
               break;
 
             case CONST_ACTION_ADD_SIGNATURE:
-              return json_encode($this->_addUser());
+              return json_encode($this->_addChangeSignature());
               break;
           }
           break;
@@ -1402,6 +1402,12 @@ class CLoginEx extends CLogin
     return array('notice' => 'Authorized IP updated successfully.', 'action' => 'goPopup.removeByType("layer"); ');
   }
 
+
+  private function _addChangeSignature()
+  {
+    $html = '_addChangeSignature page';
+    return $oPage->getAjaxExtraContent(array('data' => $html));
+  }
 
   private function _addUser()
   {
