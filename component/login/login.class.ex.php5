@@ -1253,7 +1253,7 @@ class CLoginEx extends CLogin
     }
 
     //$signatureURL = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
-    $signatureURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_LIST, '', $this->getUserPk());
+    $signatureURL = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_ADD, CONST_LOGIN_TYPE_USER);
     $asTabs[] = array('title' => 'Signature', 'label' => 'signature', 'content' => $oHTML->getBloc('area_signature'), 'options' => array('link' => $signatureURL));
 
     $sHTML.= $oHTML->getTabs('login_tabs', $asTabs, $sDefault);
