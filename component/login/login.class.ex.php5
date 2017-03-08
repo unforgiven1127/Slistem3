@@ -1405,6 +1405,7 @@ class CLoginEx extends CLogin
 
   private function _addChangeSignature()
   {
+    $oPage = CDependency::getCpPage();
     $html = '_addChangeSignature page';
     return $oPage->getAjaxExtraContent(array('data' => $html));
   }
