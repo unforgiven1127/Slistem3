@@ -23,8 +23,7 @@
 		toolbar :
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
-			{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','SpecialChar','PageBreak' ] },
-			{ name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+			{ name: 'insert', items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }
 		]
 	});
