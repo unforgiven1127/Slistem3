@@ -3,11 +3,15 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
-
+<script type="text/javascript" >
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+    CKEDITOR.replace( 'message' );
+</script>
 
 
 <script>
-CKEDITOR.replace( 'editor1' );
+
 function loading()
 {
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
@@ -16,7 +20,7 @@ function loading()
 
 $( "#sendMailToCandidate" ).click(function() {
 
-	var message = $('#messageId').val();
+	var message = $('#message').val();
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
@@ -169,7 +173,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
 			<td style='padding-top:15px;' align="left">
-				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="messageId"><?php echo $signature; ?></textarea>
+				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="message"><?php echo $signature; ?></textarea>
 			</td>
 		</tr>
 	</table>
