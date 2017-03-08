@@ -368,6 +368,8 @@ define('DELETE_SELECTED_COMPANY', 'dsco');
 define('MAIL_SEND_POPUP', 'msp');
 define('CANDIDATE_MAIL_SEND', 'cms');
 define('MAIL_SEND_ACTION', 'msa');
+define('CONST_ACTION_ADD_SIGNATURE', 'caad');
+
 
 define('CONST_URL_PARAM_PAGE_AJAX', 'ajx');
 define('CONST_URL_PARAM_PAGE_NORMAL', 'pn');

@@ -548,6 +548,10 @@ class CLoginEx extends CLogin
             case CONST_ACTION_ADD:
               return json_encode($this->_addUser());
               break;
+
+            case CONST_ACTION_ADD_SIGNATURE:
+              return json_encode($this->_addUser());
+              break;
           }
           break;
 
@@ -1253,7 +1257,7 @@ class CLoginEx extends CLogin
     }
 
     //$signatureURL = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
-    $signatureURL = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_ADD, CONST_LOGIN_TYPE_USER);
+    $signatureURL = $oPage->getAjaxUrl($this->getComponentUid(), CONST_ACTION_ADD_SIGNATURE, CONST_LOGIN_TYPE_USER);
     $asTabs[] = array('title' => 'Signature', 'label' => 'signature', 'content' => $oHTML->getBloc('area_signature'), 'options' => array('link' => $signatureURL));
 
     $sHTML.= $oHTML->getTabs('login_tabs', $asTabs, $sDefault);
