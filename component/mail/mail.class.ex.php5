@@ -373,7 +373,8 @@ class CMailEx extends CMail
 
     //------------------------------------------------
     // apply a template if none have been set
-    if(empty($this->csTemplate))
+    $emailTepmlate = $GLOBALS['redis']->get('emailTepmlate');
+    if(empty($this->csTemplate) && $emailTepmlate)
     {
       $this->loadTemplate($psTemplate, $pasTemplateVar);
     }
