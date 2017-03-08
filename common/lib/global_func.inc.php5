@@ -4090,12 +4090,9 @@ var_dump($query);*/
             'db'       => 'slistem'
         ));
         $slistemMongo = $mongo->selectDB('slistem');
-    }
-    catch(MongoConnectionException $e)
-    {
-      echo '<br><br><br>ERROR : '. $e->getMessage();
-      return false;
-      //die('ERROR : ' . $e->getMessage());
+    } catch(MongoConnectionException $e) {
+
+    die('ERROR : ' . $e->getMessage());
 
     }
 
