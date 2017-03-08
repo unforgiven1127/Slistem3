@@ -6,7 +6,7 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-    CKEDITOR.replace( 'message',
+    CKEDITOR.replace( 'signature',
 	{
 		width: '600px',
 		toolbar :
