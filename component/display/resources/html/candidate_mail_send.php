@@ -24,8 +24,8 @@
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
 			{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','SpecialChar','PageBreak' ] },
-			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
-			{ name: 'tools', items : [ 'Maximize','-','About' ] }
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }
 		]
 	});
 
