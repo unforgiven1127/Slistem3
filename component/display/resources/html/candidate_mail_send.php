@@ -196,7 +196,7 @@ $( "#sendMailToCandidate" ).click(function() {
 				<input type="file" id="file" name="files[]" multiple="multiple" />
 			</td>
 			<td id='addDS2' style='padding-left: 60px;'>
-				<input hidden type="file" id="message_files" name="message_files[]" multiple="multiple" />
+				<input type="file" id="message_files" name="message_files[]" multiple="multiple" />
 			</td>
 		</tr>
 	</table>
