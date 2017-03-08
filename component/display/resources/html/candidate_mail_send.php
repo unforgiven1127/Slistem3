@@ -3,7 +3,7 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
-<script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+
 
 
 <script>

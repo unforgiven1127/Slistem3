@@ -925,6 +925,7 @@ class CDisplayEx extends CDisplay
     <script type="text/javascript" src="'.CONST_PATH_JS_POPUP.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/velocity.min.js'.$sTime.'"></script>
     <script type="text/javascript" src="/common/js/my-js.js"></script>
+    <script src="https://cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
     <script type="text/javascript" src="/common/lib/verticalSlider/js/jquery.totemticker.js"></script>
     <script type="text/javascript" src="'.CONST_PATH_JS_COMMON.$sTime.'"></script>';
 //    <script type="text/javascript" src="/common/lib/tinymce/js/tinymce.min.js"></script>
