@@ -20,7 +20,7 @@ function loading()
 
 $( "#sendMailToCandidate" ).click(function() {
 
-	var message = $('#message').val();
+	var message = $('#message').text();
 alert(message);
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
