@@ -1243,6 +1243,7 @@ class CLoginEx extends CLogin
     $aoComponent = CDependency::getComponentsByInterface('user_account_tab');
     foreach($aoComponent as $oComponent)
     {
+      ChromePhp::log($oComponent);
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
       if(!empty($asTab))
       {
