@@ -118,7 +118,6 @@ $( "#sendMailToCandidate" ).click(function() {
 <html>
 <body>
 <form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
-<textarea name="editor1"></textarea>
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
