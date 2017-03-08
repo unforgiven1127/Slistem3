@@ -3,8 +3,10 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
+
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
+alert('test');
     CKEDITOR.replace( 'message' );
 </script>
 <script>
