@@ -4,6 +4,18 @@
     'image'
   ], });</script>-->
 <script type="text/javascript" >
+	CKEDITOR.editorConfig = function( config )
+	{
+		config.toolbar = 'MyToolbar';
+
+		config.toolbar_MyToolbar =
+		[
+			{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak' ] },
+			{ name: 'styles', items : [ 'Styles','Format' ] },
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+			{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote' ] }
+		];
+	};
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
     CKEDITOR.replace( 'message',
@@ -11,6 +23,7 @@
 		toolbar :
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
+			{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','SpecialChar','PageBreak' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
 			{ name: 'tools', items : [ 'Maximize','-','About' ] }
 		]
