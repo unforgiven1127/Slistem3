@@ -132,56 +132,13 @@ alert(message.length);
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
-				<div inajax="" id="58afb3d10beb2Id" class="formFieldTitle">Send a message</div>
+				<div inajax="" id="58afb3d10beb2Id" class="formFieldTitle">Add / Change Signature</div>
 			</td>
 		</tr>
-	</table>
+
 	<table style="width:100%;" valign="top">
 		<tr>
-			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Email to: </b></td>
-			<td style='padding-top:10px; width: 303px;' align="left">
-				<b><input disabled value=" <?php echo $candidate_email; ?>" type="text" name="receipent_email_visible" id="receipent_email_visible" style="outline: none; width: 303px;"></b>
-			</td>
-			<td style='padding-top:10px; padding-left: 10px;' align="left">
-				<b><input disabled value=" candidate #<?php echo $candidate_id; ?>" type="text" style="outline: none; width: 283px;"></b>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>CC: </b></td>
-			<td style='padding-top:10px; width: 403px;' align="left">
-				<b><input type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="cc" name="cc" style="outline: none; width: 598px;"></b>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>BCC: </b></td>
-			<td style='padding-top:10px; width: 403px;' align="left">
-				<b><input type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="bcc" name="bcc" style="outline: none; width: 598px;"></b>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>Subject: </b></td>
-			<td style='padding-top:10px; width: 403px;' align="left">
-				<b><input required type="text" id="subject" name="subject" style="outline: none; width: 600px;"></b>
-			</td>
-		</tr>
-	</table>
-	<!--<table>
-		<tr>
-			<td>
-				<a href="javascript:;" onclick="var oConf = goPopup.getConfig(); oConf.width = 950; oConf.height = 550;  goPopup.setLayerFromAjax(oConf, 'https://beta2.slate.co.jp/index.php5?uid=999-111&amp;ppa=ppaa&amp;ppt=shdoc&amp;ppk=0&amp;cp_uid=555-001&amp;cp_action=ppav&amp;cp_type=candi&amp;cp_pk=154310&amp;document_title=Test+User%27s+resume&amp;callback=refresh_candi%28154310%2C+true%29%3B+&amp;pg=ajx'); "> Upload a document
-				</a>
-			</td>
-		</tr>-->
-	</table>
-	<table style="width:100%;" valign="top">
-		<tr>
-			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Message: </b></td>
+			<td valign="top" style='padding-top:15px; padding-left: 50px; width:70px;'><b>Signature: </b></td>
 			<td style='padding-top:15px;' align="left">
 				<textarea required style="outline: none; width: 500px; height: 300px;" name="message" class="msgField" inajax="" id="message"><?php echo $signature; ?></textarea>
 			</td>
