@@ -1407,6 +1407,7 @@ class CLoginEx extends CLogin
   {
     $oPage = CDependency::getCpPage();
     //$html = '_addChangeSignature page';
+    $this->_oDisplay = CDependency::getCpHtml();
     $data['test'] = 'test';
     $html = $this->_oDisplay->render('candidate_mail_send', $data);
     return $oPage->getAjaxExtraContent(array('data' => $html));
