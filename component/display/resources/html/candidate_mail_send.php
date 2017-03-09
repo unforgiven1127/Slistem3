@@ -31,12 +31,12 @@ function loading()
 $( "#sendMailToCandidate" ).click(function() {
 
 	var message = $('#message').text();
-alert(message);
+//alert(message);
 	var subject = $('#subject').val();
 	var cc = $('#cc').val();
     var bcc = $('#bcc').val();
     validation = true;
-alert(message.length);
+//alert(message.length);
 //alert(bcc.length);
     if(message.length == 0 || subject.length == 0)
     {
