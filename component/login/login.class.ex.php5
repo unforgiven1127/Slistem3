@@ -465,6 +465,10 @@ class CLoginEx extends CLogin
         case CONST_LOGIN_TYPE_USER:
           switch($this->csAction)
           {
+            case CONST_ACTION_SAVE_SIGNATURE:
+              return $this->_saveSignature($this->cnPk);
+              break;
+
             case CONST_ACTION_LIST:
             return $this->_displayList();
               break;
@@ -1410,7 +1414,22 @@ class CLoginEx extends CLogin
     $this->_oDisplay = CDependency::getCpHtml();
     $data['signature'] = 'signature';
     $html = $this->_oDisplay->render('add_signature', $data);
+
+    $data['sURL'] = $oPage->getUrl($this->getComponentUid(), CONST_ACTION_SAVE_SIGNATURE, CONST_LOGIN_TYPE_USER);
+    //$sURL = $this->_oPage->getUrl($this->csUid, MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
+
     return $oPage->getAjaxExtraContent(array('data' => $html));
+  }
+
+  private function _saveSignature()
+  {
+    $oLogin = CDependency::getCpLogin();
+    $user_id = $oLogin->getUserPk();
+
+    ChromePhp::log('_saveSignature');
+
+    header("Location: https://beta2.slate.co.jp/");
+    die();
   }
 
   private function _addUser()

@@ -4535,6 +4535,11 @@ var_dump($query);*/
 
   }
 
+  function signature_save($user_id, $signature)
+  {
+    //html_signature
+  }
+
   function mail_send($to,$cc,$bcc, $from, $subject, $message, $files)
   {
     $oMail = CDependency::getComponentByName('mail');
