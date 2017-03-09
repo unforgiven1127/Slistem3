@@ -9,8 +9,8 @@
 
     CKEDITOR.replace( 'message',
 	{
-		filebrowserUploadUrl : '/common/pictures/slistem/',
-		filebrowserBrowseUrl : '/common/pictures/slistem/',
+		filebrowserUploadUrl : '/test/',
+		filebrowserBrowseUrl : '/test/',
 		width: '600px',
 		toolbar :
 		[

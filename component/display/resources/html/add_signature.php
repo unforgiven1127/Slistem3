@@ -8,8 +8,8 @@
                 // instance, using default configuration.
     CKEDITOR.replace( 'signature',
 	{
-		filebrowserUploadUrl : '/common/pictures/slistem/',
-		filebrowserBrowseUrl : '/common/pictures/slistem/',
+		filebrowserUploadUrl : '/test/',
+		filebrowserBrowseUrl : '/test/',
 		width: '600px',
 		toolbar :
 		[
