@@ -349,7 +349,7 @@ class CRightEx extends CRight
   public function canAccess($psUid, $psAction = '', $psType = '', $pnPk = 0, $pasCallback = array())
   {
 
-    if($psAction == 'ppcl' || $psAction == 'ppadd' || $psAction == 'csam' || $psAction == 'cdc' || $psAction == 'asrc' || $psAction == 'caca' || $psAction == 'msp' || $psAction == 'cms' || $psAction == 'msa')
+    if($psAction == 'ppcl' || $psAction == 'ppadd' || $psAction == 'csam' || $psAction == 'cdc' || $psAction == 'asrc' || $psAction == 'caca' || $psAction == 'msp' || $psAction == 'cms' || $psAction == 'msa' || $psAction == 'caas' || $psAction == 'cass')
     {// ajax ile gonderilenleri db den cekince olmadi asagida bulunan $pasCallback controlu bozuyor...
       return true;
     }
