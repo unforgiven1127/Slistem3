@@ -9,7 +9,7 @@
     CKEDITOR.replace( 'signature',
 	{
 		//filebrowserUploadUrl : 'test/',
-		filebrowserBrowseUrl : '/common/publicPictures/',
+		filebrowserBrowseUrl : "/common/publicPictures/",
 		width: '600px',
 		toolbar :
 		[
