@@ -1428,7 +1428,7 @@ class CLoginEx extends CLogin
 
     ChromePhp::log('_saveSignature');
 
-    header("Location: https://beta2.slate.co.jp/");
+    //header("Location: https://beta2.slate.co.jp/");
     die();
   }
 
