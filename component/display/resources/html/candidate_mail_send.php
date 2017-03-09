@@ -11,7 +11,7 @@
 		width: '600px',
 		toolbar :
 		[
-			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Link' ] },
 			{ name: 'insert', items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }
 		]
