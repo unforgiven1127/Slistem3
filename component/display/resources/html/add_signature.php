@@ -12,7 +12,7 @@
 		toolbar :
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic','Link' ] },
-			{ name: 'insert', items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
+			{ name: 'insert', items : ['Image','Table','HorizontalRule','SpecialChar','PageBreak','Source'] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }
 		]
 	});
