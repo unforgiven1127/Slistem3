@@ -9,7 +9,7 @@
     CKEDITOR.replace( 'signature',
 	{
 		//filebrowserUploadUrl : 'test/',
-		filebrowserBrowseUrl : 'https://beta2.slate.co.jp/common/pictures/',
+		filebrowserBrowseUrl : '/common/publicPictures/',
 		width: '600px',
 		toolbar :
 		[
