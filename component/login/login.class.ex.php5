@@ -1414,7 +1414,14 @@ class CLoginEx extends CLogin
     $data['sURL'] = $oPage->getUrl($this->getComponentUid(), CONST_ACTION_SAVE_SIGNATURE, CONST_LOGIN_TYPE_USER);
     //$html = '_addChangeSignature page';
     $this->_oDisplay = CDependency::getCpHtml();
-    $data['signature'] = 'signature';
+
+    $oLogin = CDependency::getCpLogin();
+    $user_id = $oLogin->getUserPk();
+
+    $user_info = getUserInformaiton($user_id);
+    $signature = $user_info['html_signature'];
+
+    $data['signature'] = $signature;
     $html = $this->_oDisplay->render('add_signature', $data);
 
     //$sURL = $this->_oPage->getUrl($this->csUid, MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
