@@ -10,10 +10,7 @@
 	{
 		//filebrowserUploadUrl : 'test/',
 		//filebrowserBrowseUrl : "https://beta2.slate.co.jp/common/pictures",
-		filebrowserBrowseUrl : '/browser/browse.php',
-        filebrowserImageBrowseUrl : '/browser/browse.php?type=Images',
-        filebrowserUploadUrl : '/uploader/upload.php',
-        filebrowserImageUploadUrl : '/uploader/upload.php?type=Images',
+		//
 		width: '600px',
 		toolbar :
 		[
