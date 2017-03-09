@@ -6594,7 +6594,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_id = $oLogin->getUserPk();
 
       $user_info = getUserInformaiton($user_id);
-      $signature = $user_info['signature'];
+      $signature = $user_info['html_signature'];
       //ChromePhp::log($signature);
       if(isset($signature) && !empty($signature))
       {
