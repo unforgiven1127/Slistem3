@@ -9,6 +9,7 @@
     CKEDITOR.replace( 'signature',
 	{
 		filebrowserUploadUrl : '/uploader/upload.php',
+		filebrowserBrowseUrl : '/browser/browse.php',
 		width: '600px',
 		toolbar :
 		[
