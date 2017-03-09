@@ -6,19 +6,15 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-    CKEDITOR.replace( 'message',
+    CKEDITOR.replace( 'signature',
 	{
+		filebrowserUploadUrl : '/uploader/upload.php',
 		filebrowserBrowseUrl : '/browser/browse.php',
-		filebrowserUploadUrl : '/uploader/upload.php'
-	});
-    CKEDITOR.replace( 'message',
-	{
 		width: '600px',
 		toolbar :
 		[
 			{ name: 'basicstyles', items : [ 'Bold','Italic','Link' ] },
-			{ name: 'insert', items : ['Image','Table','HorizontalRule','SpecialChar','PageBreak']},
-			{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+			{ name: 'insert', items : ['Image','Table','HorizontalRule','SpecialChar','PageBreak'] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }
 		]
 	});

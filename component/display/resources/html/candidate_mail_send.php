@@ -6,13 +6,11 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
+
     CKEDITOR.replace( 'message',
 	{
+		filebrowserUploadUrl : '/uploader/upload.php',
 		filebrowserBrowseUrl : '/browser/browse.php',
-		filebrowserUploadUrl : '/uploader/upload.php'
-	});
-    CKEDITOR.replace( 'message',
-	{
 		width: '600px',
 		toolbar :
 		[
