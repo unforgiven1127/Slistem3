@@ -1434,7 +1434,7 @@ class CLoginEx extends CLogin
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
 
-    $signature = nl2br($_POST['signature']);
+    $signature = $_POST['signature'];
 
     signature_save($user_id, $signature);
 
