@@ -6,9 +6,10 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-    config.extraPlugins = 'filebrowser';
+
     CKEDITOR.replace( 'message',
 	{
+		filebrowserUploadUrl : '/uploader/upload.php',
 		width: '600px',
 		toolbar :
 		[

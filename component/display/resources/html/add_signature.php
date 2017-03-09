@@ -8,6 +8,7 @@
                 // instance, using default configuration.
     CKEDITOR.replace( 'signature',
 	{
+		filebrowserUploadUrl : '/uploader/upload.php',
 		width: '600px',
 		toolbar :
 		[
