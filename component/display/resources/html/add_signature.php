@@ -14,7 +14,7 @@
 			{ name: 'basicstyles', items : [ 'Bold','Italic' ] },
 			{ name: 'insert', items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
-			{ name: 'links', groups: [ 'links' ] },
+			{ name: 'links', items: [ 'links' ] },
 		]
 	});
 
