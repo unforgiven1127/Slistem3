@@ -1410,12 +1410,13 @@ class CLoginEx extends CLogin
   private function _addChangeSignature()
   {
     $oPage = CDependency::getCpPage();
+
+    $data['sURL'] = $oPage->getUrl($this->getComponentUid(), CONST_ACTION_SAVE_SIGNATURE, CONST_LOGIN_TYPE_USER);
     //$html = '_addChangeSignature page';
     $this->_oDisplay = CDependency::getCpHtml();
     $data['signature'] = 'signature';
     $html = $this->_oDisplay->render('add_signature', $data);
 
-    $data['sURL'] = $oPage->getUrl($this->getComponentUid(), CONST_ACTION_SAVE_SIGNATURE, CONST_LOGIN_TYPE_USER);
     //$sURL = $this->_oPage->getUrl($this->csUid, MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
 
     return $oPage->getAjaxExtraContent(array('data' => $html));
@@ -1428,7 +1429,7 @@ class CLoginEx extends CLogin
 
     ChromePhp::log('_saveSignature');
 
-    //header("Location: https://beta2.slate.co.jp/");
+    header("Location: https://beta2.slate.co.jp/");
     die();
   }
 
