@@ -10,7 +10,7 @@
     CKEDITOR.replace( 'message',
 	{
 		//filebrowserUploadUrl : 'test/',
-		filebrowserBrowseUrl : "https://beta2.slate.co.jp/common/pictures/slistem_logo.gif",
+		filebrowserBrowseUrl : "https://beta2.slate.co.jp/common/pictures/",
 		width: '600px',
 		toolbar :
 		[
