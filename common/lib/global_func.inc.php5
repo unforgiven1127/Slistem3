@@ -4538,6 +4538,14 @@ var_dump($query);*/
   function signature_save($user_id, $signature)
   {
     //html_signature
+    //
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "UPDATE login set html_signature = '".$signature."' WHERE loginpk = '".$user_id."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    return $db_result;
   }
 
   function mail_send($to,$cc,$bcc, $from, $subject, $message, $files)

@@ -466,7 +466,6 @@ class CLoginEx extends CLogin
           switch($this->csAction)
           {
             case CONST_ACTION_SAVE_SIGNATURE:
-              ChromePhp::log('_saveSignature get html');
               return $this->_saveSignature($this->cnPk);
               break;
 
@@ -1428,10 +1427,14 @@ class CLoginEx extends CLogin
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
 
-    ChromePhp::log('_saveSignature');
+    $signature = nl2br($_POST['signature']);
 
-    //header("Location: https://beta2.slate.co.jp/");
-    //die();
+    signature_save($user_id, $signature);
+
+    //ChromePhp::log('_saveSignature');
+
+    header("Location: https://beta2.slate.co.jp/");
+    die();
   }
 
   private function _addUser()
