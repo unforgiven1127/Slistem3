@@ -631,6 +631,8 @@
 	$('form[name=addcandidate]').submit(function(event){
 		event.preventDefault();
 
+		alert('test before submit');
+
 		var sURL = $('form[name=addcandidate]').attr('action');
 		var sFormId = $('form[name=addcandidate]').attr('id');
 		var sAjaxTarget = 'candi_duplicate';
