@@ -8235,9 +8235,9 @@ die();*/
         if(!empty($asError))
           return array('popupError' => implode("\n", $asError));
 
-        /*$asError =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
+        $asError =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
         if(!empty($asError))
-          return array('popupError' => implode("\n", $asError));*/
+          return array('popupError' => implode("\n", $asError));
       }
 
 
@@ -8654,12 +8654,6 @@ $bonusManual = getValue('bonus');
             {
               $asError[] = 'There may be duplicates. Please check the duplicate tab.';
               $this->casCandidateData['dup_tab'] = $sDuplicate;
-            }
-            else
-            {
-              $asError[] =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
-              /*if(!empty($asError))
-                return array('popupError' => implode("\n", $asError));*/
             }
           }
         }

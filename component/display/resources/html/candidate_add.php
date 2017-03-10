@@ -466,7 +466,7 @@
 	</div>
 
 	<div class="general_form_row add_margin_top_10" style="text-align: center;">
-		<input id="saveCandi" type="submit" value="Save candidate" />
+		<input id="saveCandi" type="submit" value="Save candidate." />
 	</div>
 </form>
 
