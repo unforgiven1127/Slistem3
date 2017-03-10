@@ -632,6 +632,8 @@
 		event.preventDefault();
 
 		alert('test before submit');
+		var occupationHIdden = $("input[name=occupationfk]").val();
+		alert(occupationHIdden);
 
 		var sURL = $('form[name=addcandidate]').attr('action');
 		var sFormId = $('form[name=addcandidate]').attr('id');
