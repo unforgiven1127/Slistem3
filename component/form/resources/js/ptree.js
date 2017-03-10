@@ -40,6 +40,7 @@ function init_ptree(psFieldId, psContainerId, psDummyId)
 
   jQuery(".TSelect_lvl_1 li", oTreeContainer).bind("click", function()
   {
+    alert('test');
     if(jQuery(this).hasClass("final"))
       return saveTreeValue(this, psDummyId, psFieldId, psContainerId);
 
