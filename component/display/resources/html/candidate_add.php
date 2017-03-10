@@ -56,11 +56,11 @@
 				<div class="general_form_row">
 					<div class="general_form_label">Lastname</div>
 					<div class="general_form_column">
-						<input <?php echo $readonly_name; ?> type="text" name="lastname" value="<?php echo $lastname; ?>" />
+						<input <?php echo $readonly_name; ?> required type="text" name="lastname" value="<?php echo $lastname; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">Firstname</div>
 					<div class="general_form_column">
-						<input <?php echo $readonly_name; ?> type="text" name="firstname" value="<?php echo $firstname; ?>" />
+						<input <?php echo $readonly_name; ?> required type="text" name="firstname" value="<?php echo $firstname; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">
 						<a href="javascript:;" onclick="change_date_field('birth_date');">Birth</a> /
