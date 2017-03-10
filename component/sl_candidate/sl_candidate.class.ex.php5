@@ -8235,9 +8235,9 @@ die();*/
         if(!empty($asError))
           return array('popupError' => implode("\n", $asError));
 
-        $asError =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
+        /*$asError =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
         if(!empty($asError))
-          return array('popupError' => implode("\n", $asError));
+          return array('popupError' => implode("\n", $asError));*/
       }
 
 
@@ -8654,6 +8654,12 @@ $bonusManual = getValue('bonus');
             {
               $asError[] = 'There may be duplicates. Please check the duplicate tab.';
               $this->casCandidateData['dup_tab'] = $sDuplicate;
+            }
+            else
+            {
+              $asError[] =  $this->_saveResume(false, true, $this->casCandidateData['profile']);
+              /*if(!empty($asError))
+                return array('popupError' => implode("\n", $asError));*/
             }
           }
         }
@@ -9093,13 +9099,13 @@ $bonusManual = getValue('bonus');
 
     private function _saveResume($pbTest = true, $pbSave = false, $pasCandidate = array())
     {
-      ChromePhp::log('_saveResume');
+      //ChromePhp::log('_saveResume');
       $asError = array();
 
       $desc = getValue('doc_description');
       if($pbSave && isset($desc) && !empty($desc) && isset($pasCandidate['candidatefk']) && !empty($pasCandidate['candidatefk']))
       {
-        ChromePhp::log('IF');
+        //ChromePhp::log('IF');
         $desc = getValue('doc_description');
         $passResume = $desc;
 
@@ -9112,8 +9118,8 @@ $bonusManual = getValue('bonus');
 
       else
       {
-        ChromePhp::log('ELSE');
-        ChromePhp::log($pbTest);
+        //ChromePhp::log('ELSE');
+        //ChromePhp::log($pbTest);
         if(empty($_FILES) || empty($_FILES['document']['name']))
         {
           $asError[] = 'No file selected.';
@@ -9147,7 +9153,7 @@ $bonusManual = getValue('bonus');
             $asError[] = $asResult['error'];
         }
       }
-ChromePhp::log($asError);
+//ChromePhp::log($asError);
       return $asError;
     }
 
