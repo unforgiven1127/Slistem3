@@ -56,11 +56,11 @@
 				<div class="general_form_row">
 					<div class="general_form_label">Lastname</div>
 					<div class="general_form_column">
-						<input <?php echo $readonly_name; ?> required type="text" name="lastname" value="<?php echo $lastname; ?>" />
+						<input <?php echo $readonly_name; ?> type="text" name="lastname" value="<?php echo $lastname; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">Firstname</div>
 					<div class="general_form_column">
-						<input <?php echo $readonly_name; ?> required type="text" name="firstname" value="<?php echo $firstname; ?>" />
+						<input <?php echo $readonly_name; ?> type="text" name="firstname" value="<?php echo $firstname; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">
 						<a href="javascript:;" onclick="change_date_field('birth_date');">Birth</a> /
@@ -99,7 +99,7 @@
 				<div class="general_form_row extended_input">
 					<div class="general_form_label">Company</div>
 					<div class="general_form_column" style="width: 183px;">
-						<input required id="company" type="text" name="companypk" value="<?php echo $company; ?>" />
+						<input id="company" type="text" name="companypk" value="<?php echo $company; ?>" />
 					</div>
 					<div class="general_form_column add_margin_left_30" style="width: 278px;">
 						<a href="javascript:;"
@@ -321,7 +321,7 @@
 				<div class="general_form_row extended_select extended_input">
 					<div class="general_form_label">alt. occupation</div>
 					<div class="general_form_column">
-						<input required id="alt_occupation" type="text" name="alt_occupationpk" value="<?php echo $alt_occupationpk; ?>" />
+						<input id="alt_occupation" type="text" name="alt_occupationpk" value="<?php echo $alt_occupationpk; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">alt. industry</div>
 					<div class="general_form_column">
