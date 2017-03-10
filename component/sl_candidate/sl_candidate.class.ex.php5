@@ -9099,6 +9099,7 @@ $bonusManual = getValue('bonus');
       $desc = getValue('doc_description');
       if($pbSave && isset($desc) && !empty($desc) && isset($pasCandidate['candidatefk']) && !empty($pasCandidate['candidatefk']))
       {
+        ChromePhp::log('IF');
         $desc = getValue('doc_description');
         $passResume = $desc;
 
@@ -9111,6 +9112,8 @@ $bonusManual = getValue('bonus');
 
       else
       {
+        ChromePhp::log('ELSE');
+        ChromePhp::log($pbTest);
         if(empty($_FILES) || empty($_FILES['document']['name']))
         {
           $asError[] = 'No file selected.';
@@ -9144,7 +9147,7 @@ $bonusManual = getValue('bonus');
             $asError[] = $asResult['error'];
         }
       }
-
+ChromePhp::log($asError);
       return $asError;
     }
 
