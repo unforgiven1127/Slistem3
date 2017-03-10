@@ -632,7 +632,7 @@
 		event.preventDefault();
 
 		alert('test before submit');
-		var occupationHIdden = $("input[name=occupationfk]").val();
+		var occupationHIdden = $("input[name=occupationpk]").val();
 		alert(occupationHIdden);
 
 		var sURL = $('form[name=addcandidate]').attr('action');
