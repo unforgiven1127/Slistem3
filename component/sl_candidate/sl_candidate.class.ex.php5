@@ -8226,6 +8226,7 @@ die();*/
 
       if(empty($pnCandidatePk))
       {
+        ChromePhp::log('HERE AGAIN');
         $asResult = $this->_getCandidateContactSave(true, $this->casCandidateData['profile']['candidatefk']);
         if(isset($asResult['error']))
           return array('popupError' => $asResult['error']);
@@ -9092,6 +9093,7 @@ $bonusManual = getValue('bonus');
 
     private function _saveResume($pbTest = true, $pbSave = false, $pasCandidate = array())
     {
+      ChromePhp::log('_saveResume');
       $asError = array();
 
       $desc = getValue('doc_description');

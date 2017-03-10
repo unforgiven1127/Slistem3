@@ -32,9 +32,7 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-
 	loading();
-
 });
 
 </script>
