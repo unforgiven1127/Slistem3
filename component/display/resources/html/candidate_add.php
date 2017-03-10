@@ -115,7 +115,7 @@
 				</div>
 				<div class="general_form_row extended_input">
 					<div class="general_form_label">Occupation</div>
-					<div required class="general_form_column" style="width: 183px;">
+					<div class="general_form_column" style="width: 183px;">
 					<?php echo $occupation_tree; ?>
 					</div>
 					<div class="general_form_label add_margin_left_30">Industry</div>
@@ -321,7 +321,7 @@
 				<div class="general_form_row extended_select extended_input">
 					<div class="general_form_label">alt. occupation</div>
 					<div class="general_form_column">
-						<input id="alt_occupation" type="text" name="alt_occupationpk" value="<?php echo $alt_occupationpk; ?>" />
+						<input required id="alt_occupation" type="text" name="alt_occupationpk" value="<?php echo $alt_occupationpk; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">alt. industry</div>
 					<div class="general_form_column">
