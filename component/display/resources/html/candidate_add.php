@@ -631,18 +631,20 @@
 	$('form[name=addcandidate]').submit(function(event){
 		event.preventDefault();
 
-		alert('test before submit');
+		//KONTROLU BU SEKILDE YAPABILIRIZ
+		/*alert('test before submit');
 		var occupationHIdden = $("input[name=occupationpk]").val();
 		alert(occupationHIdden);
 
 		if(occupationHIdden > 0)
 		{
-			var sURL = $('form[name=addcandidate]').attr('action');
-			var sFormId = $('form[name=addcandidate]').attr('id');
-			var sAjaxTarget = 'candi_duplicate';
-			setTimeout(" AjaxRequest('"+sURL+"', '.body.', '"+sFormId+"', '"+sAjaxTarget+"', '', '', 'setCoverScreen(false);  '); ", 350);
-		}
 
+		}*/
+
+		var sURL = $('form[name=addcandidate]').attr('action');
+		var sFormId = $('form[name=addcandidate]').attr('id');
+		var sAjaxTarget = 'candi_duplicate';
+		setTimeout(" AjaxRequest('"+sURL+"', '.body.', '"+sFormId+"', '"+sAjaxTarget+"', '', '', 'setCoverScreen(false);  '); ", 350);
 
 		return false;
 	});
