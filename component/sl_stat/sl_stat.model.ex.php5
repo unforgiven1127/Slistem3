@@ -1802,7 +1802,7 @@ if($meeting['created_by'] == '521')
       $query .= ' INNER JOIN sl_position_link spl2 ON spl.candidatefk = spl2.candidatefk AND (spl2.status = 2)';
       $query .= ' WHERE spl.created_by IN ('.implode(',', $user_ids).')';
       $query .= ' AND spl.date_created BETWEEN "'.$start_date.'" AND "'.$end_date.'"';
-      $query .= ' AND (spl.status = 2 OR spl.status = 51) GROUP BY spl.candidatefk, spl.positionfk';
+      $query .= ' AND (spl.status = 2 OR spl.status = 51) GROUP BY spl.candidatefk';
     }
     else
     {
