@@ -8652,7 +8652,7 @@ $bonusManual = getValue('bonus');
             $sDuplicate = $this->_checkDuplicate($asData);
             if(!empty($sDuplicate))
             {
-              $asError[] = 'There may be duplicates. Please check the duplicate tab.';
+              $asError[] = 'There may be duplicates. Please check the duplicate tab.<br><b> *If a file selected please select again. </b>';
               $this->casCandidateData['dup_tab'] = $sDuplicate;
             }
           }
