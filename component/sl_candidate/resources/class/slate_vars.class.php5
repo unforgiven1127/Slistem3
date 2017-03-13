@@ -165,6 +165,7 @@ class CSlateVars
 
   public function getLocationList()
   {
+    ChromePhp::log('getLocationList');
     if(isset($_SESSION['sl_location_list']))
       return $_SESSION['sl_location_list'];
 
