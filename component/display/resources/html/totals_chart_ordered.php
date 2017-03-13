@@ -253,10 +253,10 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
-					if(isset($data['user_id']) && $data['user_id'] == '521')
+					/*if(isset($data['user_id']) && $data['user_id'] == '521')
 					{
 						ChromePhp::log($data);
-					}
+					}*/
 					if(isset($data['resumeSentFlag']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);

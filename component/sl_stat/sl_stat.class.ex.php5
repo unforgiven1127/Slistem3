@@ -5386,10 +5386,10 @@ class CSl_statEx extends CSl_stat
 
             foreach ($stats_data['consultant'][$id]['resumes_sent_info'] as $key => $candidate)
             {
-              if($id == '521')
+              /*if($id == '521') //sathish
               {
                 ChromePhp::log($candidate);
-              }
+              }*/
               if(isset($candidate['candidate']))
               {
                 $candiNotes = "";
