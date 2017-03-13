@@ -253,13 +253,14 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
-				ChromePhp::log('sdsdsdsdsdgdssd');
+				//ChromePhp::log('sdsdsdsdsdgdssd');
 					$ff = true;
-					echo '<br><br><br><br>sadsadsads';
+					//echo '<br><br><br><br>sadsadsads';
 					if($ff)
 					{
-						echo '<br><br><br><br>';
-						var_dump($data);
+						ChromePhp::log($data);
+						//echo '<br><br><br><br>';
+						//var_dump($data);
 						$ff = false;
 					}
 					if(isset($data['resumeSentFlag']))
