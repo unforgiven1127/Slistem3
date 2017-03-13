@@ -253,15 +253,9 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
-				//ChromePhp::log('sdsdsdsdsdgdssd');
-					$ff = true;
-					//echo '<br><br><br><br>sadsadsads';
-					if($ff)
+					if(isset($data['user_id']) && $data['user_id'] == '521')
 					{
 						ChromePhp::log($data);
-						//echo '<br><br><br><br>';
-						//var_dump($data);
-						$ff = false;
 					}
 					if(isset($data['resumeSentFlag']))
 					{
