@@ -253,6 +253,7 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
+				ChromePhp::log('sdsdsdsdsdgdssd');
 					$ff = true;
 					echo '<br><br><br><br>sadsadsads';
 					if($ff)
