@@ -253,6 +253,13 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
+					$ff = true;
+					if($ff)
+					{
+						echo '<br><br><br><br>';
+						var_dump($data);
+						$ff = false;
+					}
 					if(isset($data['resumeSentFlag']))
 					{
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
