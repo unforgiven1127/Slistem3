@@ -165,12 +165,12 @@ class CSlateVars
 
   public function getLocationList()
   {
-    ChromePhp::log('getLocationList');
+    //ChromePhp::log('getLocationList');
     if(isset($_SESSION['sl_location_list']))
       return $_SESSION['sl_location_list'];
 
     $oDb = CDependency::getComponentByName('database');
-    $sQuery = 'SELECT * FROM sl_location ORDER BY location WHERE flag = "a"';
+    $sQuery = 'SELECT * FROM sl_location WHERE flag = "a" ORDER BY location';
     $oDbResult = $oDb->executeQuery($sQuery);
     $bRead = $oDbResult->readFirst();
 
