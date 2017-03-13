@@ -170,7 +170,7 @@ class CSlateVars
       return $_SESSION['sl_location_list'];
 
     $oDb = CDependency::getComponentByName('database');
-    $sQuery = 'SELECT * FROM sl_location ORDER BY location ';
+    $sQuery = 'SELECT * FROM sl_location ORDER BY location WHERE flag = "a"';
     $oDbResult = $oDb->executeQuery($sQuery);
     $bRead = $oDbResult->readFirst();
 
