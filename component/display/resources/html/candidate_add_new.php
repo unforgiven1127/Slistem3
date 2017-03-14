@@ -1,4 +1,3 @@
-
 <form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
 	action="<?php echo $form_url; ?>" class="candiAddForm" ajaxTarget="candi_duplicate"
 	method="POST" id="addcandidateId" onBeforeSubmit="" onsubmit="">
@@ -472,9 +471,6 @@
 </form>
 
 <script>
-
-alert('test 1');
-
 
 	if ($.browser.mozilla)
 	{
