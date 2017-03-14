@@ -1803,6 +1803,8 @@ if($meeting['created_by'] == '521')
       $query .= ' WHERE spl.created_by IN ('.implode(',', $user_ids).')';
       $query .= ' AND spl.date_created BETWEEN "'.$start_date.'" AND "'.$end_date.'"';
       $query .= ' AND (spl.status = 2 OR spl.status = 51) GROUP BY spl.candidatefk, spl.positionfk';
+
+      ChromePhp::log($query);
     }
     else
     {
