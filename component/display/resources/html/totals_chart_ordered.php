@@ -261,7 +261,7 @@
 					{
 						if(isset($data['resumeSentCount']) && $data['resumeSentCount'] > 1)
 						{
-							$resumeSentCount = '( '.$data['resumeSentCount'].' )';
+							$resumeSentCount = ' ('.$data['resumeSentCount'].')';
 						}
 						else
 						{
