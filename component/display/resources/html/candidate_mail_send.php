@@ -8,7 +8,7 @@
                 // instance, using default configuration.
 
 
-    var http = require('http');
+var socket = require( 'socket.io' );
 
 
 alert('test');
