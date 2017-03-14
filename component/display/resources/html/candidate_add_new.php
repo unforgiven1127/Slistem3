@@ -1,5 +1,13 @@
 <script>
-	
+	var mysql = require('mysql');
+
+	var connection = mysql.createConnection({
+	  host: '127.0.0.1',
+	  user: 'pma_admin',
+	  password: 'KVW4PVVAWHASuRDz',
+	  database: 'slistem'
+	});
+	connection.connect();
 </script>
 
 <form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
