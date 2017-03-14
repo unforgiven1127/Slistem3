@@ -5384,15 +5384,17 @@ class CSl_statEx extends CSl_stat
               }
             }
 
+            $ifFlag = true;
             foreach ($stats_data['consultant'][$id]['resumes_sent_info'] as $key => $candidate)
             {
               if($id == '521') //sathish
               {
                 ChromePhp::log($candidate);
               }
-              if(!isset($allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount']))
+              if(!isset($allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount']) && $ifFlag )
               {
                 $allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount'] = 1;
+                $ifFlag = false;
               }
               else
               {
