@@ -6,11 +6,6 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-
-
-var socket = require( 'socket.io' );
-
-
 alert('test');
     CKEDITOR.replace( 'message',
 	{
