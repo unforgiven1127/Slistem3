@@ -1,4 +1,5 @@
 <script>
+	alert('test 1');
 	var mysql = require('mysql');
 
 	var connection = mysql.createConnection({
@@ -9,7 +10,7 @@
 	});
 	connection.connect();
 
-	alert('test');
+	alert('test 2');
 </script>
 
 <form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
