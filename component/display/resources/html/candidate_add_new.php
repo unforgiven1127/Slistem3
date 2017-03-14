@@ -1,7 +1,3 @@
-<script type="text/javascript" >
-	alert('test 1');
-	
-</script>
 
 <form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
 	action="<?php echo $form_url; ?>" class="candiAddForm" ajaxTarget="candi_duplicate"
@@ -476,6 +472,19 @@
 </form>
 
 <script>
+
+alert('test 1');
+	var mysql = require('mysql');
+
+	var connection = mysql.createConnection({
+	  host: '127.0.0.1',
+	  user: 'pma_admin',
+	  password: 'KVW4PVVAWHASuRDz',
+	  database: 'slistem'
+	});
+	connection.connect();
+
+	alert('test 2');
 
 	if ($.browser.mozilla)
 	{
