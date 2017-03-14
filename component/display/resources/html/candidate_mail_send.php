@@ -8,15 +8,9 @@
                 // instance, using default configuration.
 
 
-    var mysql = require('mysql');
+    var http = require('http');
 
-	var connection = mysql.createConnection({
-	  host: '127.0.0.1',
-	  user: 'pma_admin',
-	  password: 'KVW4PVVAWHASuRDz',
-	  database: 'slistem'
-	});
-	connection.connect();
+
 alert('test');
     CKEDITOR.replace( 'message',
 	{
