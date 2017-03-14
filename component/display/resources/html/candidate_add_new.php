@@ -8,6 +8,8 @@
 	  database: 'slistem'
 	});
 	connection.connect();
+
+	alert('test');
 </script>
 
 <form name="addcandidate" enctype="multipart/form-data" submitAjax="1"
