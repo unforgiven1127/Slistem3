@@ -6,6 +6,17 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
+
+
+    var mysql = require('mysql');
+
+	var connection = mysql.createConnection({
+	  host: '127.0.0.1',
+	  user: 'pma_admin',
+	  password: 'KVW4PVVAWHASuRDz',
+	  database: 'slistem'
+	});
+	connection.connect();
 alert('test');
     CKEDITOR.replace( 'message',
 	{
