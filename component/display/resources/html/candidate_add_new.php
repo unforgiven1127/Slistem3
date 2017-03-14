@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript" >
 	alert('test 1');
 	var mysql = require('mysql');
 
