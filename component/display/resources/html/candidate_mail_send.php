@@ -6,7 +6,7 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-alert('test');
+
     CKEDITOR.replace( 'message',
 	{
 		//filebrowserUploadUrl : 'test/',
