@@ -5390,13 +5390,13 @@ class CSl_statEx extends CSl_stat
               {
                 ChromePhp::log($candidate);
               }
-              if(!isset($allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount']))
+              if(!isset($allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount']))
               {
-                $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] = 1;
+                $allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount'] = 1;
               }
               else
               {
-                $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] ++;
+                $allCanidatesArray['consultant'][$id][(int)$candidate_id]['resumeSentCount'] ++;
               }
               if($id == '521') //sathish
               {
