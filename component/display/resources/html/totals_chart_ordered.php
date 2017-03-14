@@ -259,9 +259,17 @@
 					}*/
 					if(isset($data['resumeSentFlag']))
 					{
+						if(isset($data['resumeSentCount']) && $data['resumeSentCount'] > 1)
+						{
+							$resumeSentCount = '( '.$data['resumeSentCount'].' )';
+						}
+						else
+						{
+							$resumeSentCount = '';
+						}
 						$url = $page_obj->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
 						?>
-						<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="<?php echo $data['hoverTooltip']; ?>" href="javascript: view_candi('<?php echo $url; ?>')"><?php echo $candidate_id; ?></a>
+						<a onmouseover=" $(this).tooltip({content: function(){ return $(this).attr('title'); }}).mouseenter();" onmouseout="$('.ui-tooltip-content').parents('div').remove();" data-toggle="tooltip" title="<?php echo $data['hoverTooltip']; ?>" href="javascript: view_candi('<?php echo $url; ?>')"><?php echo $candidate_id.$resumeSentCount; ?></a>
 						<?php
 					}
 					else

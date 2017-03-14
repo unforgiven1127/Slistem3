@@ -5390,6 +5390,13 @@ class CSl_statEx extends CSl_stat
               {
                 ChromePhp::log($candidate);
               }*/
+              if(!isset($allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount']))
+              {
+                $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] = 0;
+              }
+
+              $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] ++;
+
               if(isset($candidate['candidate']))
               {
                 $candiNotes = "";
