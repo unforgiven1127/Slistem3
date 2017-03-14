@@ -5394,8 +5394,10 @@ class CSl_statEx extends CSl_stat
               {
                 $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] = 1;
               }
-
-              $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] ++;
+              else
+              {
+                $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentCount'] ++;
+              }
 
               if(isset($candidate['candidate']))
               {
