@@ -4558,7 +4558,7 @@ var_dump($query);*/
     $oMail->addRecipient($to);
 
     //ChromePhp::log($_FILES['files']);
-    //ChromePhp::log($files);
+    ChromePhp::log($message);
 
     $oMail->addBCCRecipient($from);
     $oMail->addBCCRecipient('slistem@slate.co.jp');
