@@ -4555,7 +4555,7 @@ var_dump($query);*/
     $oMail->createNewEmail();
     $oMail->setFrom($from);
 
-    $oMail->addRecipient($to);
+    $oMail->addRecipient(trim($to));
 
     //ChromePhp::log($_FILES['files']);
     ChromePhp::log($message);
