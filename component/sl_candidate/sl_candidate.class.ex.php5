@@ -6590,12 +6590,11 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['candidate_id'] = $candidate_id;
       $data['candidate_email'] = $candidate_email;
 
-
+      $oLogin = CDependency::getCpLogin();
+      $user_id = $oLogin->getUserPk();
       $user_info = getUserInformaiton($user_id);
       $user_email = $user_info['email'];
 
-      $oLogin = CDependency::getCpLogin();
-      $user_id = $oLogin->getUserPk();
 
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['html_signature'];
