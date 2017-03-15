@@ -6588,8 +6588,11 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['sURL'] = $sURL;
       $data['candidate_id'] = $candidate_id;
+      $data['candidate_email'] = $candidate_email;
 
 
+      $user_info = getUserInformaiton($user_id);
+      $user_email = $user_info['email'];
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
