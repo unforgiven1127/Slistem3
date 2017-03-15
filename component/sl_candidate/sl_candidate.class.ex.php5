@@ -6592,13 +6592,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
-      $user_info = getUserInformaiton($user_id);
-      $user_email = $user_info['email'];
-
 
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['html_signature'];
-      $data['user_email'] = $user_info['email'];
       //ChromePhp::log($signature);
       if(isset($signature) && !empty($signature))
       {
