@@ -6588,13 +6588,15 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $data['sURL'] = $sURL;
       $data['candidate_id'] = $candidate_id;
-      $data['candidate_email'] = $candidate_email;
+
+
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['html_signature'];
+      $data['user_email'] = $user_info['email'];
       //ChromePhp::log($signature);
       if(isset($signature) && !empty($signature))
       {
