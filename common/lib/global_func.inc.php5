@@ -4563,7 +4563,7 @@ var_dump($query);*/
     ChromePhp::log($from);
 
     $oMail->addBCCRecipient('slistem@slate.co.jp');
-    $oMail->addBCCRecipient(trim($from));
+    //$oMail->addBCCRecipient(trim($from));
 
     if(!empty($cc))
     {

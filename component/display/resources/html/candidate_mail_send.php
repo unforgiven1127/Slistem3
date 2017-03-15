@@ -163,7 +163,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td style='padding-top:10px; padding-left: 50px; width:70px;'><b>BCC: </b></td>
 			<td style='padding-top:10px; width: 403px;' align="left">
-				<b><input value="#<?php echo $user_email; ?>"  type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="bcc" name="bcc" style="outline: none; width: 598px;"></b>
+				<b><input value="<?php echo $user_email; ?>"  type='email' placeholder=" for multiple email addresses please use ; to seperate emails" type="text" id="bcc" name="bcc" style="outline: none; width: 598px;"></b>
 			</td>
 		</tr>
 	</table>
