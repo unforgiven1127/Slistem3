@@ -381,10 +381,14 @@ class CMailEx extends CMail
 
     $psContent = $this->csHeader . $psContent . $this->csFooter;
 
+    $sEncoding = 'UTF-8';
+    $psContent = mb_convert_encoding($psContent, 'UTF-8', $sEncoding);
 
     $sEncoding = mb_check_encoding($psSubject);
     if($sEncoding != 'UTF8')
+    {
       $this->coPhpMailer->Body = mb_convert_encoding($psContent, 'utf8');
+    }
     else
      $this->coPhpMailer->Body = $psContent;
 
