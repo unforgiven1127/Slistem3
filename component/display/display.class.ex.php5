@@ -602,7 +602,8 @@ class CDisplayEx extends CDisplay
  {
     if(!assert('is_array($pasTabs) && !empty($pasTabs)'))
       return '';
-  ChromePhp::log($pasTabs);
+echo '<br><br><br><br>';
+var_dump($pasTabs);
     if(empty($psId))
       $psId = uniqid();
 
