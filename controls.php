@@ -52,7 +52,7 @@ $count = 0;
 
 while($meetingData = mysql_fetch_assoc($slistemQuery))
 {
-  if($meetingData['position_detail_id'] == null)
+  if($meetingData['position_detail_id'] > 0)
   {
     $count++;
   }
