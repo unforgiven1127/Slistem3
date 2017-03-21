@@ -10280,7 +10280,7 @@ $bonusManual = getValue('bonus');
       else // OR is_nc_ok = 0 vardi kaldirdik
         $sQuery = 'SELECT * FROM sl_company WHERE level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
 
-      ////ChromePhp::log($sQuery);
+      ChromePhp::log($sQuery);
 
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
       $bRead = $oDbResult->readFirst();
