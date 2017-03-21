@@ -10275,7 +10275,7 @@ $bonusManual = getValue('bonus');
 
       if(!empty($nLevel) && $nLevel == 8)
       {
-        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' ORDER BY name ASC';
+        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' ORDER BY name ASC LIMIT 100';
       }
       else if(!empty($nLevel))
       {// parantez icinde OR is_nc_ok = 0 vardi kaldirdik
