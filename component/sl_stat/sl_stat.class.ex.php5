@@ -4500,7 +4500,7 @@ class CSl_statEx extends CSl_stat
 
     private get_archive()
     {
-      $html = $this->_oDisplay->render('archive_main_page', $data);
+      $html = $this->_oDisplay->render('archive_main_page');
 
       return $html;
     }
