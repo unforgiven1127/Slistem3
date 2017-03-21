@@ -10360,6 +10360,7 @@ $bonusManual = getValue('bonus');
         $sHTML.= '<option value="'.$sURL.'&filter_level=1" '.(($nLevel == 1)? 'selected="selected"' : '').'> A </option>';
         $sHTML.= '<option value="'.$sURL.'&filter_level=2" '.(($nLevel == 2)? 'selected="selected"' : '').'> B </option>';
         $sHTML.= '<option value="'.$sURL.'&filter_level=3" '.(($nLevel == 3)? 'selected="selected"' : '').'> C </option>';
+        $sHTML.= '<option value="'.$sURL.'&filter_level=8" '.(($nLevel == 8)? 'selected="selected"' : '').'> H </option>';
         $sHTML.= '</select>';
         $sHTML.= $oHTML->getBlocEnd();
       $sHTML.= $oHTML->getCR();
