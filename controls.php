@@ -39,7 +39,11 @@ mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(m
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = " SELECT * FROM sl_company slc WHERE slc.level = '8' ";
+$slistemQuery = " SELECT slc.sl_companypk as company_id, slc.name as company_name,slpd.sl_position_detailpk as position_detail_id
+FROM sl_company slc
+left JOIN sl_position slp on slp.companyfk = slc.sl_companypk
+left JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
+WHERE slc.level = '8' ";
 $slistemQuery = mysql_query($slistemQuery);
 
 $allMeetings = array();
@@ -48,7 +52,10 @@ $count = 0;
 
 while($meetingData = mysql_fetch_assoc($slistemQuery))
 {
+  if($meetingData['position_detail_id'] == null)
+  {
     $count++;
+  }
 }
 
 echo $count;
