@@ -10275,15 +10275,15 @@ $bonusManual = getValue('bonus');
 
       if(!empty($nLevel) && $nLevel == 8)
       {
-        $sQuery = 'SELECT * FROM sl_company WHERE LEN(name) > 3 AND  level = '.$nLevel.' ORDER BY name ASC LIMIT 100';
+        $sQuery = 'SELECT * FROM sl_company WHERE length(name) > 3 AND  level = '.$nLevel.' ORDER BY name ASC LIMIT 100';
       }
       else if(!empty($nLevel))
       {// parantez icinde OR is_nc_ok = 0 vardi kaldirdik
-        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' AND (is_client = 1) ORDER BY name ASC';
+        $sQuery = 'SELECT * FROM sl_company WHERE length(name) > 3 AND  level = '.$nLevel.' AND (is_client = 1) ORDER BY name ASC';
       }
       else // OR is_nc_ok = 0 vardi kaldirdik
       {
-        $sQuery = 'SELECT * FROM sl_company WHERE level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
+        $sQuery = 'SELECT * FROM sl_company WHERE length(name) > 3 AND  level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
       }
 
 
