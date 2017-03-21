@@ -42,7 +42,28 @@ $( "#sendMailToCandidate" ).click(function() {
 			<table>
 				<tr>
 					<td>
-						Active Users
+						Active Users + -
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						Munir Anameric
+					</td>
+					<td>
+						Consultant
+					</td>
+					<td>
+						+ -
+					</td>
+				</tr>
+			</table>
+			<br><br>
+			<table>
+				<tr>
+					<td>
+						Passive Users + -
 					</td>
 				</tr>
 			</table>
