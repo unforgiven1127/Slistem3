@@ -1696,7 +1696,7 @@ $asArray = array();
         'right' => array ('logged')
       ),
       2 => array (
-        'name' => 'Revenue chart',
+        'name' => 'Archive',
         'link' => '',
         'icon' => '',
         'target' => '',
