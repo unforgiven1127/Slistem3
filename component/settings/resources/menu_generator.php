@@ -1695,6 +1695,18 @@ $asArray = array();
         'ajaxpopup' => 0,
         'right' => array ('logged')
       ),
+      2 => array (
+        'name' => 'Revenue chart',
+        'link' => '',
+        'icon' => '',
+        'target' => '',
+        'uid' => '555-006',
+        'type' => 'revenue&watercooler=1',
+        'action' => 'pprev',
+        'pk' => 0,
+        'ajaxpopup' => 0,
+        'right' => array ('logged')
+      ),
     )
   ),
   4 =>
