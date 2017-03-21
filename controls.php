@@ -39,7 +39,7 @@ mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(m
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = " SELECT * FROM sl_companty slc WHERE slc.level = 8 ";
+$slistemQuery = " SELECT * FROM sl_company slc WHERE slc.level = '8' ";
 $slistemQuery = mysql_query($slistemQuery);
 
 $allMeetings = array();
