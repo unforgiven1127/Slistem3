@@ -10352,7 +10352,14 @@ $bonusManual = getValue('bonus');
 
         $asCompany[$sFirstLetter][] = $sCompany;
         //echo '<br><br><br>'.$sFirstLetter;
-        $asLetters[$sFirstLetter] = $oHTML->getLink($sFirstLetter, '#'.$sFirstLetter);
+        if(isset($sFirstLetter) && !empty($sFirstLetter))
+        {
+          $asLetters[$sFirstLetter] = $oHTML->getLink($sFirstLetter, '#'.$sFirstLetter);
+        }
+        else
+        {
+          $asLetters['H'] = 'H';
+        }
 
         $nCount++;
         $bRead = $oDbResult->readNext();
