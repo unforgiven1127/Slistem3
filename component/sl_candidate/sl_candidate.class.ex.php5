@@ -10351,6 +10351,7 @@ $bonusManual = getValue('bonus');
 // employeeCount yerine $asCpData['num_employee'] vardi
 
         $asCompany[$sFirstLetter][] = $sCompany;
+        echo '<br><br><br>'.$sFirstLetter;
         $asLetters[$sFirstLetter] = $oHTML->getLink($sFirstLetter, '#'.$sFirstLetter);
 
         $nCount++;
@@ -10359,7 +10360,7 @@ $bonusManual = getValue('bonus');
 
 if(!empty($nLevel) && $nLevel == 8)
       {
-      ChromePhp::log($sQuery);
+      //ChromePhp::log($sQuery);
 
       return 'end of while';
     }
