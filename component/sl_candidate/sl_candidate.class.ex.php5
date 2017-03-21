@@ -10365,12 +10365,12 @@ $bonusManual = getValue('bonus');
         $bRead = $oDbResult->readNext();
       }
 
-if(!empty($nLevel) && $nLevel == 8)
+/*if(!empty($nLevel) && $nLevel == 8)
       {
       //ChromePhp::log($sQuery);
 
       return 'end of while';
-    }
+    }*/
 
       $sHTML = $oHTML->getTitle($nCount.' Companies in the list', 'h3', true);
 
