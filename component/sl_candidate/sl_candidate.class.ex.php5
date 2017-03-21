@@ -10275,20 +10275,18 @@ $bonusManual = getValue('bonus');
 
       if(!empty($nLevel) && $nLevel == 8)
       {
-        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' ORDER BY name ASC LIMIT 100';
+        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' ORDER BY name ASC LIMIT 2';
       }
       else if(!empty($nLevel))
       {// parantez icinde OR is_nc_ok = 0 vardi kaldirdik
         $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' AND (is_client = 1) ORDER BY name ASC';
       }
       else // OR is_nc_ok = 0 vardi kaldirdik
-        $sQuery = 'SELECT * FROM sl_company WHERE level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
-if(!empty($nLevel) && $nLevel == 8)
       {
-      ChromePhp::log($sQuery);
+        $sQuery = 'SELECT * FROM sl_company WHERE level in(1,2,3) AND is_client = 1  ORDER BY name ASC';
+      }
 
-      return 'test';
-    }
+
 
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
       $bRead = $oDbResult->readFirst();
@@ -10358,6 +10356,13 @@ if(!empty($nLevel) && $nLevel == 8)
         $nCount++;
         $bRead = $oDbResult->readNext();
       }
+
+if(!empty($nLevel) && $nLevel == 8)
+      {
+      ChromePhp::log($sQuery);
+
+      return 'end of while';
+    }
 
       $sHTML = $oHTML->getTitle($nCount.' Companies in the list', 'h3', true);
 
