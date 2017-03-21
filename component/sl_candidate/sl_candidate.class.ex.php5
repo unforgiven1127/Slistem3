@@ -10286,6 +10286,8 @@ $bonusManual = getValue('bonus');
 
       ChromePhp::log($sQuery);
 
+      return 'test';
+
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
