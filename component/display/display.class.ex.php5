@@ -1087,7 +1087,7 @@ class CDisplayEx extends CDisplay
 
   private function _getUserMenuBloc($pbIsLogged)
   {
-    ChromePhp::log('_getUserMenuBloc');
+    //ChromePhp::log('_getUserMenuBloc');
     if(!$pbIsLogged)
        return '';
 
@@ -1107,6 +1107,7 @@ class CDisplayEx extends CDisplay
         $sHTML.= '<option>'.$sUser.'</option>';
         foreach($asUserLogins as $nUserLoginFk => $sUserLoginName)
         {
+          ChromePhp::log($sUserLoginName);
           if(in_array($nUserLoginFk, $asUser))
           {
             $sUrl = $oPage->getAjaxUrl('579-704', CONST_ACTION_RELOG, '', $nUserLoginFk);
