@@ -1107,7 +1107,6 @@ class CDisplayEx extends CDisplay
         $sHTML.= '<option>'.$sUser.'</option>';
         foreach($asUserLogins as $nUserLoginFk => $sUserLoginName)
         {
-          ChromePhp::log($sUserLoginName);
           if(in_array($nUserLoginFk, $asUser))
           {
             $sUrl = $oPage->getAjaxUrl('579-704', CONST_ACTION_RELOG, '', $nUserLoginFk);
