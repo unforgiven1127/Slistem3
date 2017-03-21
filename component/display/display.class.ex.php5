@@ -1087,6 +1087,7 @@ class CDisplayEx extends CDisplay
 
   private function _getUserMenuBloc($pbIsLogged)
   {
+    ChromePhp::log('_getUserMenuBloc');
     if(!$pbIsLogged)
        return '';
 
