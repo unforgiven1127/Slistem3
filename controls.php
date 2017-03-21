@@ -54,8 +54,8 @@ while($meetingData = mysql_fetch_assoc($slistemQuery))
 {
   if($meetingData['position_detail_id'] == null)
   {
-    $company_id = $meetingData['company_id'];
-    $update_quert = " UPDATE sl_company SET level = 0 WHERE sl_companypk = '".$company_id."'";
+    //$company_id = $meetingData['company_id'];
+    //$update_quert = " UPDATE sl_company SET level = 0 WHERE sl_companypk = '".$company_id."'";
     //echo $update_quert.'<br>';
     //$query = mysql_query($update_quert);
     $count++;
