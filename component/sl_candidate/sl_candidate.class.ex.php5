@@ -10289,7 +10289,7 @@ $bonusManual = getValue('bonus');
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
-      $asLetter = array(1=>'A', 2=>'B', 3=>'C');
+      $asLetter = array(1=>'A', 2=>'B', 3=>'C', 8=>'H');
       $asCompany = array();
       $asLetters = array();
       $nCount = 0;
