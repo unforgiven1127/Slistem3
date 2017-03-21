@@ -4498,6 +4498,13 @@ class CSl_statEx extends CSl_stat
       return $html;
     }
 
+    private get_archive()
+    {
+      $html = $this->_oDisplay->render('archive_main_page', $data);
+
+      return $html;
+    }
+
     private function get_general_total_chart($nextloop = '666')
     {
       $start_date = $start_date_original = getValue('start_date', '');
