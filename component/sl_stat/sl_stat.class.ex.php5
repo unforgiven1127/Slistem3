@@ -4498,7 +4498,7 @@ class CSl_statEx extends CSl_stat
       return $html;
     }
 
-    private get_archive()
+    private function get_archive()
     {
       ChromePhp::log('get_archive');
       $html = $this->_oDisplay->render('archive_main_page');
