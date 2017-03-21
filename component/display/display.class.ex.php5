@@ -600,10 +600,10 @@ class CDisplayEx extends CDisplay
 
  public function getTabs($psId, $pasTabs, $psSelected = '', $psTemplate = 'inline', $psDisplayall = false)
  {
-    if(!assert('is_array($pasTabs) && !empty($pasTabs)'))
+    /*if(!assert('is_array($pasTabs) && !empty($pasTabs)'))
       return '';
 echo '<br><br><br><br>';
-var_dump($pasTabs);
+var_dump($pasTabs);*/
 /*echo '<br><br><br><br>';
 var_dump($psId);
 echo '<br><br><br><br>';
