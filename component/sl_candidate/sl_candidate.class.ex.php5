@@ -10273,7 +10273,11 @@ $bonusManual = getValue('bonus');
       $oPage->addCssFile(self::getResourcePath().'css/no_scout_list.css');
       $nLevel = (int)getValue('filter_level', 0);
 
-      if(!empty($nLevel))
+      if(!empty($nLevel) && $nLevel == 8)
+      {
+        $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' ORDER BY name ASC';
+      }
+      else if(!empty($nLevel))
       {// parantez icinde OR is_nc_ok = 0 vardi kaldirdik
         $sQuery = 'SELECT * FROM sl_company WHERE level = '.$nLevel.' AND (is_client = 1) ORDER BY name ASC';
       }
