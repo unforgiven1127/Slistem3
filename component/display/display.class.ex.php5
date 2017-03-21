@@ -600,7 +600,6 @@ class CDisplayEx extends CDisplay
 
  public function getTabs($psId, $pasTabs, $psSelected = '', $psTemplate = 'inline', $psDisplayall = false)
  {
-  ChromePhp::log($pasTabs);
     if(!assert('is_array($pasTabs) && !empty($pasTabs)'))
       return '';
 
