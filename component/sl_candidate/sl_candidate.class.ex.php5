@@ -10351,7 +10351,7 @@ $bonusManual = getValue('bonus');
 // employeeCount yerine $asCpData['num_employee'] vardi
 
         $asCompany[$sFirstLetter][] = $sCompany;
-        echo '<br><br><br>'.$sFirstLetter;
+        //echo '<br><br><br>'.$sFirstLetter;
         $asLetters[$sFirstLetter] = $oHTML->getLink($sFirstLetter, '#'.$sFirstLetter);
 
         $nCount++;
