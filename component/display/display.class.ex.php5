@@ -604,6 +604,10 @@ class CDisplayEx extends CDisplay
       return '';
 echo '<br><br><br><br>';
 var_dump($pasTabs);
+echo '<br><br><br><br>';
+var_dump($psId);
+echo '<br><br><br><br>';
+var_dump($psSelected);
     if(empty($psId))
       $psId = uniqid();
 
