@@ -39,6 +39,7 @@ $( "#sendMailToCandidate" ).click(function() {
 					</td>
 				</tr>
 			</table>
+			<br><br>
 			<table>
 				<tr>
 					<td>
