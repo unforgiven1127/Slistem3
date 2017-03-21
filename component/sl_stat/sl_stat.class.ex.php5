@@ -180,6 +180,10 @@ class CSl_statEx extends CSl_stat
         return $this->get_general_total_chart();
         break;
 
+      case ACTION_ARCHIVE:
+        return $this->get_archive();
+        break;
+
       case ACTION_CALL_LOG_CHART:
         return $this->get_call_log_chart();
         break;
