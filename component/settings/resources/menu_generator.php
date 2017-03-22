@@ -1564,6 +1564,18 @@ $asArray = array();
         'pk' => 0,
         'right' => array ('logged')
       ),
+      2 => array (
+        'name' => 'Position Archive',
+        'link' => '',
+        'icon' => '',
+        'target' => '',
+        'uid' => '555-006',
+        'type' => 'revenue&watercooler=1',
+        'action' => 'aao',
+        'pk' => 0,
+        'ajaxpopup' => 0,
+        'right' => array ('logged')
+      ),
     )
   ),
   31 =>
@@ -1691,18 +1703,6 @@ $asArray = array();
         'uid' => '555-006',
         'type' => 'revenue&watercooler=1',
         'action' => 'pprev',
-        'pk' => 0,
-        'ajaxpopup' => 0,
-        'right' => array ('logged')
-      ),
-      2 => array (
-        'name' => 'Archive',
-        'link' => '',
-        'icon' => '',
-        'target' => '',
-        'uid' => '555-006',
-        'type' => 'revenue&watercooler=1',
-        'action' => 'aao',
         'pk' => 0,
         'ajaxpopup' => 0,
         'right' => array ('logged')
