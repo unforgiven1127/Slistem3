@@ -73,8 +73,8 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th>
-						<p style='font-size: 14pt; font-weight: bold;'>Active Users</p>
+					<th style='font-size: 14pt; font-weight: bold;'>
+						Active Users
 					</th>
 					<td ><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'></td>
 				</tr>
