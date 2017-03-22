@@ -99,8 +99,11 @@
 			<table style='width:100%;'>
 				<tr class="border_bottom">
 					<th style='font-size: 14pt; font-weight: bold;'>
-						Active Users <img style='margin-left:20px; cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'>
+						Active Users
 					</th>
+					<td>
+						<img style='margin-left:20px; cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'>
+					</td>
 				</tr>
 			</table>
 			<table style='width:100%; margin-top: 10px;' id='activeUsers' class="table table-striped1">
