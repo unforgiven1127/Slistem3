@@ -36,6 +36,7 @@
 		font-size: 12pt;
 		font-weight: bold;
 		padding-left: 5px !important;
+		width: 200px !important;
 	}
 </style>
 <!DOCTYPE html>
