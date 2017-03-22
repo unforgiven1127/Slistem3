@@ -9,7 +9,9 @@
 
 
 <style>
-
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
 </style>
 <!DOCTYPE html>
 <html>
