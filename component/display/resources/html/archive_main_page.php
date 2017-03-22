@@ -74,9 +74,8 @@
 			<table style='width:100%;'>
 				<tr class="border_bottom">
 					<th style='font-size: 14pt; font-weight: bold;'>
-						Active Users
+						Active Users <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'>
 					</th>
-					<td ><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'></td>
 				</tr>
 			</table>
 			<table style='width:100%;' id='activeUsers' class="table table-striped1">
