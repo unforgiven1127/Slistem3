@@ -4522,7 +4522,7 @@ class CSl_statEx extends CSl_stat
 
         $data['positions'][$value['created_by']]['position_id'][] = $value['sl_positionpk'];
         $data['positions'][$value['created_by']]['position_name'][] = $value['title'];
-        //$data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
+        $data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
       }
 
       /*$i=0;
