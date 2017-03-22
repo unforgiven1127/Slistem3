@@ -76,7 +76,7 @@
 					<td style='padding-left: 110px !important;'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'></td>
 				</tr>
 			</table>
-			<table style='width:100%;' id='activeUsers' class="table table-striped'">
+			<table style='width:100%;' id='activeUsers' class="table table-striped">
 
 					<?php foreach ($positions as $key => $position)
 					{
