@@ -105,7 +105,7 @@
 					</td>
 				</tr>
 			</table>
-			<table style='width:700px; margin-top: 10px;' id='activeUsers' class="table table-striped1">
+			<table style='width:1000px; margin-top: 10px;' id='activeUsers' class="table table-striped1">
 
 					<tr style="background-color: #446184;" >
 						<td class='header'>User</td>
