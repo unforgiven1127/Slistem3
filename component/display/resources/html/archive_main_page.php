@@ -35,7 +35,7 @@
   		background-color: #f9f9f9;
 	}
 	.striped1:nth-of-type(2) {
-	    background: #f9f9f9;
+	    background: red;
 	}
 	.table {
 		border-collapse: collapse !important;
