@@ -18,6 +18,7 @@
 	.inner{
 		padding-left: 30px !important;
 		font-size: 10pt;
+		width: 114px !important;
 	}
 	.userInfo{
 		font-size: 12pt;
