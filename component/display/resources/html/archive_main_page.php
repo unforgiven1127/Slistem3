@@ -65,7 +65,7 @@
 		overflow: hidden;
 	}
 	.header{
-		padding-left: 10px;
+		padding-left: 5px;
 		color:white;
 		border-left: 1px solid #e3e3e3;
 		white-space: nowrap;
