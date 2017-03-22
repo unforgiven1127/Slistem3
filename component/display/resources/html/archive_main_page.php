@@ -59,6 +59,9 @@
 	.pname{
 		width: 445px !important;
 	}
+	.cname{
+		width: 250px !important;
+	}
 	.dateCreated{
 		padding-left: 5px !important;
 	}
@@ -155,7 +158,7 @@
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
-									echo "<td class='pname'>".$company_name."</td>";
+									echo "<td class='cname'>".$company_name."</td>";
 									echo "</tr>";
 								}
 							}
