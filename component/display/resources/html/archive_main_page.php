@@ -188,6 +188,10 @@
 							echo "<tr>";
 							echo "<td colspan='2'>";
 							echo "<table id='hidden_".$position['user_id']."' hidden style='width:100%;' class='table table-striped'>";
+							echo "<tr>";
+							echo "<th>Position ID</th>";
+							echo "<th>Position Title</th>";
+							echo "</tr>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
