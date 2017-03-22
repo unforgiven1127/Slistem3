@@ -67,6 +67,9 @@
 	.dateCreated{
 		padding-left: 7px !important;
 	}
+	.lastStatus{
+		width: 100px !important;
+	}
 	.userInfo{
 		font-size: 12pt;
 		font-weight: bold;
@@ -161,7 +164,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
-									echo "<td class='pname'>".$position_status."</td>";
+									echo "<td class='lastStatus'>".$position_status."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
 									echo "<td class='cname'>".$company_name."</td>";
 									echo "</tr>";
