@@ -60,7 +60,7 @@
 		width: 445px !important;
 	}
 	.dateCreated{
-		padding-left: 10px !important;
+		padding-left: 5px !important;
 	}
 	.userInfo{
 		font-size: 12pt;
@@ -136,7 +136,7 @@
 							echo "<tr>";
 							echo "<th class='inner'>Position ID</th>";
 							echo "<th>Position Title</th>";
-							echo "<th style='witdh:100px;'>Date Created</th>";
+							echo "<th style='width:100px !important;'>Date Created</th>";
 							echo "<th>Company Name</th>";
 							echo "</tr>";
 							foreach ($position['position_id'] as $key => $value)
