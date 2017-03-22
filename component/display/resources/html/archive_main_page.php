@@ -148,7 +148,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
-									echo "<td>".substr($position['date_created'],0,10)."</td>";
+									echo "<td><center>".substr($position['date_created'],0,10)."</center></td>";
 									echo "</tr>";
 								}
 							}
