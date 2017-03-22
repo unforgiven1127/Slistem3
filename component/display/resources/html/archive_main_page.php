@@ -124,7 +124,7 @@
 			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
 					<tr style="background-color: #446184;" >
-						<td style='margin-left: 10px;'>User</td>
+						<td style='margin-left: 10px; color;white;>User</td>
 						<td>Show/Hide Positions</td>
 					</tr>
 					<?php $classFlag = true;
