@@ -50,7 +50,7 @@ $( "#sendMailToCandidate" ).click(function() {
 			<table>
 				<tr>
 					<?php foreach ($positions as $key => $position) {
-						echo "<td>$position['username']</td>";
+						echo "<td>".$position['username']."</td>";
 					} ?>
 					<td>
 						Consultant
