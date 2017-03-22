@@ -19,12 +19,12 @@
 	}
 	function openActiveUsers()
 	{
-		alert('show');
+		//alert('show');
 		$('#activeUsers').show();
 	}
 	function closeActiveUsers()
 	{
-		alert('hide');
+		//alert('hide');
 		$('#activeUsers').hide();
 	}
 </script>
@@ -49,7 +49,7 @@
 		width: 200px !important;
 	}
 	tr.border_bottom td, th {
-	  border-bottom:1pt solid black;
+	  border-bottom:1pt dashed black;
 	}
 
 </style>
