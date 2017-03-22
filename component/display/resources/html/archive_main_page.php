@@ -59,6 +59,9 @@
 	.pname{
 		width: 445px !important;
 	}
+	.dateCreated{
+		padding-left: 10px !important;
+	}
 	.userInfo{
 		font-size: 12pt;
 		font-weight: bold;
@@ -148,7 +151,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
-									echo "<td><center>".substr($position['date_created'],0,10)."</center></td>";
+									echo "<td class='dateCreated'>".substr($position['date_created'],0,10)."</td>";
 									echo "</tr>";
 								}
 							}
