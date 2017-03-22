@@ -34,6 +34,9 @@
 	.table-striped > tbody > tr:nth-of-type(odd) {
   		background-color: #f9f9f9;
 	}
+	.table-striped1 > tbody > tr:nth-of-type(odd) {
+  		background-color: #f9f9f9;
+	}
 	.table {
 		border-collapse: collapse !important;
 	}
@@ -76,7 +79,7 @@
 					<td style='padding-left: 110px !important;'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers();'></td>
 				</tr>
 			</table>
-			<table style='width:100%;' id='activeUsers' class="table table-striped">
+			<table style='width:100%;' id='activeUsers' class="table table-striped1">
 
 					<?php foreach ($positions as $key => $position)
 					{
