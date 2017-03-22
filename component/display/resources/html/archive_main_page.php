@@ -140,9 +140,9 @@
 								{
 									$position_name = $position['position_name'][$key];
 									$string_length = strlen($position_name);
-									if($string_length  > 50)
+									if($string_length  > 70)
 									{
-										$position_name = substr($position_name,0,50);
+										$position_name = substr($position_name,0,70);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
@@ -201,9 +201,9 @@
 								{
 									$position_name = $position['position_name'][$key];
 									$string_length = strlen($position_name);
-									if($string_length  > 50)
+									if($string_length  > 70)
 									{
-										$position_name = substr($position_name,0,50);
+										$position_name = substr($position_name,0,70);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
