@@ -123,7 +123,7 @@
 			</table>
 			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
-					<tr class='cp_ns_row'>
+					<tr class=''>
 						<td>User</td>
 						<td>Action</td>
 					</tr>
