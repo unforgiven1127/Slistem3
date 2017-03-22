@@ -57,6 +57,8 @@
 							echo "<td class='userInfo'>".$position['username']."</td>";
 							echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
+							echo "<tr>";
+							echo "<td>";
 							echo "<table class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
@@ -66,6 +68,8 @@
 								echo "<td>".$position_name."</td>";
 								echo "</tr>";
 							}
+							echo "</td>";
+							echo "</tr>";
 							echo "</table>";
 						}
 
