@@ -18,6 +18,9 @@
 	.inner{
 		padding-left: 20px !important;
 	}
+	.userInfo{
+		font-size: 12pt;
+	}
 </style>
 <!DOCTYPE html>
 <html>
@@ -37,7 +40,7 @@
 			<table>
 				<tr>
 					<th>
-						<h3>Active Users + -</h3>
+						<h2>Active Users + -</h2>
 					</th>
 				</tr>
 			</table>
@@ -48,8 +51,8 @@
 						if($position['status'] == 1)//active users
 						{
 							echo "<tr>";
-							echo "<td>".$position['username']."</td>";
-							echo "<td>".$position['user_position']."</td>";
+							echo "<td class='userInfo'>".$position['username']."</td>";
+							echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
 							echo "<div>";
 							foreach ($position['position_id'] as $key => $value)
