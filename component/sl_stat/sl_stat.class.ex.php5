@@ -4500,8 +4500,26 @@ class CSl_statEx extends CSl_stat
 
     private function get_archive()
     {
-      ChromePhp::log('get_archive');
-      $html = $this->_oDisplay->render('archive_main_page');
+      $userPosition = getUserPosition();
+
+      $data['positions'] = array();
+      foreach ($userPosition as $key => $value)
+      {
+        if(!isset($data['positions'][$value['created_by']]))
+        {
+          $data['positions'][$value['created_by']] = array();
+        }
+        $data['positions'][$value['created_by']]['username'] = $value['lastname'].' '.$value['lastname'];
+        $data['positions'][$value['created_by']]['user_id'] = $value['created_by'];
+        $data['positions'][$value['created_by']]['user_position'] = $value['position'];
+        $data['positions'][$value['created_by']]['position_id'] = $value['sl_positionpk'];
+        $data['positions'][$value['created_by']]['position_name'] = $value['title'];
+        $data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
+      }
+
+      ChromePhp::log($data);
+
+      $html = $this->_oDisplay->render('archive_main_page',$data);
 
       return $html;
     }

@@ -1496,6 +1496,24 @@ function _live_dump($pvTrace, $psTitle = null)
     return $result;
   }
 
+  function getUserPosition()
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT slp.sl_positionpk, slp.companyfk, slp.created_by
+              , slp.date_created,slpd.title, l.lastname, l.firstname, l.position, l.status
+              FROM sl_position slp
+              inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
+              inner join login l on l.loginpk = slp.created_by
+              WHERE l.position in ('Consultant','Researcher')";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getMeetingInformation($meeting_id)
   {
     $oDB = CDependency::getComponentByName('database');
