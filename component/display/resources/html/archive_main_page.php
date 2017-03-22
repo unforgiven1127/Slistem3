@@ -59,7 +59,7 @@
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
-							echo "<table style='width:100%;' class='table table-striped'>";
+							echo "<table hidden style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
