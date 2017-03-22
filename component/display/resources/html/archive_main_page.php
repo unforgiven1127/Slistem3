@@ -4,7 +4,12 @@
     'image'
   ], });</script>-->
 <script type="text/javascript" >
-
+function openExtra(id)
+{
+	var open_id = "hidden_"+id;
+	alert(open_id);
+	$('#'+open_id).show();
+}
 </script>
 
 
@@ -56,11 +61,11 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							echo "<td class='userInfo'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra()'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></td>";
+							echo "<td class='userInfo'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra(".$position['user_id'].")'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra(".$position['user_id'].")'></td>";
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
-							echo "<table hidden style='width:100%;' class='table table-striped'>";
+							echo "<table id='hidden_".$position['user_id']."' hidden style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
