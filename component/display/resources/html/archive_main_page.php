@@ -56,7 +56,7 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							echo "<td class='userInfo'>".$position['user_position']."</td>";
+							echo "<td class='userInfo'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra()'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></td>";
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
