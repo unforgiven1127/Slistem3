@@ -1505,7 +1505,8 @@ function _live_dump($pvTrace, $psTitle = null)
               FROM sl_position slp
               inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
               inner join login l on l.loginpk = slp.created_by
-              WHERE l.position in ('Consultant','Researcher')";
+              WHERE l.position in ('Consultant','Researcher')
+              ORDER BY l.position, l.firstname";
 
     $db_result = $oDB->executeQuery($sQuery);
 
