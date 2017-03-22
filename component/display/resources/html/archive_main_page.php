@@ -98,7 +98,7 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th style='font-size: 14pt; font-weight: bold;'>
+					<th style='font-size: 14pt; font-weight: bold; width:150px !important;'>
 						Active Users
 					</th>
 					<td>
