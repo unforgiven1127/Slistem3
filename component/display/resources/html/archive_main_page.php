@@ -27,6 +27,16 @@
 		//alert('hide');
 		$('#activeUsers').hide();
 	}
+	function openPassiveUsers()
+	{
+		//alert('hide');
+		$('#passiveUsers').show();
+	}
+	function closePassiveUsers()
+	{
+		//alert('hide');
+		$('#passiveUsers').hide();
+	}
 </script>
 
 
@@ -126,25 +136,59 @@
 					} ?>
 			</table>
 			<br><br>
-			<table>
-				<tr>
-					<td>
-						Passive Users + -
-					</td>
+			<table style='width:100%;'>
+				<tr class="border_bottom">
+					<th style='font-size: 14pt; font-weight: bold;'>
+						Active Users <img style='margin-left:20px; cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openPassiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closePassiveUsers();'>
+					</th>
 				</tr>
 			</table>
-			<table>
-				<tr>
-					<td>
-						Munir Anameric
-					</td>
-					<td>
-						Consultant
-					</td>
-					<td>
-						+ -
-					</td>
-				</tr>
+			<table style='width:100%; margin-top: 20px;' id='passiveUsers' class="table table-striped1">
+
+					<?php $classFlag = true;
+					foreach ($positions as $key => $position)
+					{
+						if($position['status'] == 0)//active users
+						{
+							if($classFlag)
+							{
+								$classFlag = false;
+								$addClass = 'striped1';
+							}
+							else
+							{
+								$classFlag = true;
+								$addClass = '';
+							}
+							echo "<tr class='".$addClass."'>";
+							echo "<td class='userInfo'>".$position['username']."</td>";
+							echo "<td class='userInfo'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra(".$position['user_id'].")'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra(".$position['user_id'].")'></td>";
+							echo "</tr>";
+							echo "<tr>";
+							echo "<td colspan='2'>";
+							echo "<table id='hidden_".$position['user_id']."' hidden style='width:100%;' class='table table-striped'>";
+							foreach ($position['position_id'] as $key => $value)
+							{
+								if(!empty($position['position_name'][$key]))
+								{
+									$position_name = $position['position_name'][$key];
+									$string_length = strlen($position_name);
+									if($string_length  > 50)
+									{
+										$position_name = substr($position_name,0,50);
+									}
+									echo "<tr class='user_".$position['user_id']."'>";
+									echo "<td class='inner'>".$value."</td>";
+									echo "<td>".$position_name."</td>";
+									echo "</tr>";
+								}
+							}
+							echo "</table>";
+							echo "</td>";
+							echo "</tr>";
+						}
+
+					} ?>
 			</table>
 		</td>
 	</tr>
