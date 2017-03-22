@@ -49,9 +49,9 @@ $( "#sendMailToCandidate" ).click(function() {
 			</table>
 			<table>
 				<tr>
-					<td>
-						Munir Anameric
-					</td>
+					<?php foreach ($positions as $key => $position) {
+						echo "<td>$position['username']</td>";
+					} ?>
 					<td>
 						Consultant
 					</td>

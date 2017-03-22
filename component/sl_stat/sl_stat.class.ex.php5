@@ -4509,9 +4509,10 @@ class CSl_statEx extends CSl_stat
         {
           $data['positions'][$value['created_by']] = array();
         }
-        $data['positions'][$value['created_by']]['username'] = $value['lastname'].' '.$value['lastname'];
+        $data['positions'][$value['created_by']]['username'] = $value['firstname'].' '.$value['lastname'];
         $data['positions'][$value['created_by']]['user_id'] = $value['created_by'];
         $data['positions'][$value['created_by']]['user_position'] = $value['position'];
+        $data['positions'][$value['created_by']]['status'] = $value['status'];
 
         if(!isset($data['positions'][$value['created_by']]['position_id']))
         {
@@ -4524,7 +4525,7 @@ class CSl_statEx extends CSl_stat
         //$data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
       }
 
-      $i=0;
+      /*$i=0;
       foreach ($data['positions'] as $key => $value)
       {
         if($i < 10)
@@ -4534,7 +4535,7 @@ class CSl_statEx extends CSl_stat
         }
         $i ++;
 
-      }
+      }*/
       //ChromePhp::log($data);
 
       $html = $this->_oDisplay->render('archive_main_page',$data);
