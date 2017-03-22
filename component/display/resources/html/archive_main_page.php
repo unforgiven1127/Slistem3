@@ -57,7 +57,7 @@
 							echo "<td class='userInfo'>".$position['username']."</td>";
 							echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
-							echo "<table>";
+							echo "<table class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								$position_name = $position['position_name'][$key];
