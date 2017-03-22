@@ -59,7 +59,7 @@
 							echo "<td class='userInfo'>-</td>";
 							echo "</tr>";
 							echo "<tr>";
-							echo "<td colspan='2'>";
+							echo "<td colspan='3'>";
 							echo "<table  class='user_".$position['user_id']." table table-striped' style='width:100%;'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
