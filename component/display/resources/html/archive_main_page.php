@@ -55,7 +55,7 @@
 							foreach ($position['position_id'] as $key => $value)
 							{
 								$position_name = $position['position_name'][$key];
-								echo "<tr>";
+								echo "<tr class='".$position['user_id']."'>";
 								echo "<td class='inner'>".$value."</td>";
 								echo "<td>".$position_name."</td>";
 								echo "</tr>";
