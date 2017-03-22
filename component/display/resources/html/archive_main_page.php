@@ -55,11 +55,12 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							echo "<td class='userInfo'>".$position['user_position']."</td>";
+							echo "<td class='userInfo'>+</td>";
+							echo "<td class='userInfo'>-</td>";
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
-							echo "<table  class='user_".$position['user_id']." hidden style='width:100%;' class='table table-striped'>";
+							echo "<table  class='user_".$position['user_id']." style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
