@@ -19,10 +19,12 @@
 	}
 	function openActiveUsers(id)
 	{
+		alert('show');
 		$('#activeUsers').show();
 	}
 	function closeActiveUsers(id)
 	{
+		alert('hide');
 		$('#activeUsers').hide();
 	}
 </script>
