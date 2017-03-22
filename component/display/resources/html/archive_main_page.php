@@ -19,9 +19,9 @@
 		padding-left: 30px !important;
 	}
 	.userInfo{
-		font-size: 11pt;
+		font-size: 12pt;
 		font-weight: bold;
-		padding-left: 10px !important;
+		padding-left: 5px !important;
 	}
 </style>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@
 			<table>
 				<tr>
 					<th>
-						<p style='font-size: 12pt; font-weight: bold;'>Active Users + -</p>
+						<p style='font-size: 14pt; font-weight: bold;'>Active Users + -</p>
 					</th>
 				</tr>
 			</table>
