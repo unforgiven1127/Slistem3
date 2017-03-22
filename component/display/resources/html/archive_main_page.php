@@ -55,7 +55,7 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							//echo "<td class='userInfo'>".$position['user_position']."</td>";
+							echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
