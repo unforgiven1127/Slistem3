@@ -98,7 +98,7 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th style='font-size: 14pt; font-weight: bold; width:150px !important;'>
+					<th style='font-size: 14pt; font-weight: bold; width:100px !important;'>
 						Active Users
 					</th>
 					<td>
@@ -160,9 +160,12 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th style='font-size: 14pt; font-weight: bold;'>
-						Passive Users <img style='margin-left:20px; cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openPassiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closePassiveUsers();'>
+					<th style='font-size: 14pt; font-weight: bold; width:100px !important;'>
+						Passive Users
 					</th>
+					<td>
+						<img style='margin-left:20px; cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openPassiveUsers();'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closePassiveUsers();'>
+					</td>
 				</tr>
 			</table>
 			<table style='width:100%; margin-top: 10px;' hidden id='passiveUsers' class="table table-striped1">
