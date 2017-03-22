@@ -48,6 +48,9 @@
 		padding-left: 5px !important;
 		width: 200px !important;
 	}
+	tr.border_bottom td {
+	  border-bottom:1pt solid black;
+	}
 </style>
 <!DOCTYPE html>
 <html>
@@ -65,7 +68,7 @@
 			</table>
 			<br><br>
 			<table>
-				<tr>
+				<tr class="border_bottom">
 					<th>
 						<p style='font-size: 14pt; font-weight: bold;'>Active Users</p>
 					</th>
