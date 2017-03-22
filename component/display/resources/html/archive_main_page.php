@@ -54,6 +54,7 @@
 		padding-left: 30px !important;
 		font-size: 10pt;
 		width: 114px !important;
+		cursor:pointer;
 	}
 	.userInfo{
 		font-size: 12pt;
