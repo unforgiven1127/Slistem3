@@ -4524,7 +4524,7 @@ class CSl_statEx extends CSl_stat
         //$data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
       }
 
-      ChromePhp::log($data);
+      //ChromePhp::log($data);
 
       $html = $this->_oDisplay->render('archive_main_page',$data);
 
