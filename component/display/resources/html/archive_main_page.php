@@ -128,8 +128,9 @@
 							echo "<td colspan='2'>";
 							echo "<table id='hidden_".$position['user_id']."' hidden style='width:100%;' class='table table-striped'>";
 							echo "<tr>";
-							echo "<th>Position ID</th>";
+							echo "<th class='inner'>Position ID</th>";
 							echo "<th>Position Title</th>";
+							echo "<th>Date Created</th>";
 							echo "</tr>";
 							foreach ($position['position_id'] as $key => $value)
 							{
@@ -144,6 +145,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td>".$position_name."</td>";
+									echo "<td>".$position['date_created']."</td>";
 									echo "</tr>";
 								}
 							}
@@ -193,7 +195,7 @@
 							echo "<td colspan='2'>";
 							echo "<table id='hidden_".$position['user_id']."' hidden style='width:100%;' class='table table-striped'>";
 							echo "<tr>";
-							echo "<th>Position ID</th>";
+							echo "<th class='inner'>Position ID</th>";
 							echo "<th>Position Title</th>";
 							echo "</tr>";
 							foreach ($position['position_id'] as $key => $value)
