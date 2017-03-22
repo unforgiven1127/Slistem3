@@ -4524,8 +4524,17 @@ class CSl_statEx extends CSl_stat
         //$data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
       }
 
-      echo '<br><br>';
-      var_dump($data);
+      $i=0;
+      foreach ($data['positions'] as $key => $value)
+      {
+        if($i < 10)
+        {
+          echo '<br><br>';
+          var_dump($value);
+        }
+        $i ++;
+
+      }
       //ChromePhp::log($data);
 
       $html = $this->_oDisplay->render('archive_main_page',$data);
