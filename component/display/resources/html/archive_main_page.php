@@ -48,17 +48,13 @@ $( "#sendMailToCandidate" ).click(function() {
 				</tr>
 			</table>
 			<table>
-				<tr>
-					<?php foreach ($positions as $key => $position) {
+					<?php foreach ($positions as $key => $position)
+					{
+						echo "<tr>";
 						echo "<td>".$position['username']."</td>";
+						echo "<td>".$position['position']."</td>";
+						echo "</tr>";
 					} ?>
-					<td>
-						Consultant
-					</td>
-					<td>
-						+ -
-					</td>
-				</tr>
 			</table>
 			<br><br>
 			<table>
