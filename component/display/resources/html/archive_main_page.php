@@ -17,6 +17,14 @@
 		//alert(open_id);
 		$('#'+open_id).hide();
 	}
+	function openActiveUsers(id)
+	{
+		$('#activeUsers').show();
+	}
+	function closeActiveUsers(id)
+	{
+		$('#activeUsers').hide();
+	}
 </script>
 
 
@@ -59,6 +67,7 @@
 					<th>
 						<p style='font-size: 14pt; font-weight: bold;'>Active Users + -</p>
 					</th>
+					<td><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openActiveUsers('activeUsers')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeActiveUsers('activeUsers')'></td>
 				</tr>
 			</table>
 			<table style='width:100%;' id='activeUsers' class="table table-striped'">
