@@ -50,10 +50,13 @@ $( "#sendMailToCandidate" ).click(function() {
 			<table>
 					<?php foreach ($positions as $key => $position)
 					{
-						echo "<tr>";
-						echo "<td>".$position['username']."</td>";
-						echo "<td>".$position['user_position']."</td>";
-						echo "</tr>";
+						if($position == 1)//active users
+						{
+							echo "<tr>";
+							echo "<td>".$position['username']."</td>";
+							echo "<td>".$position['user_position']."</td>";
+							echo "</tr>";
+						}
 					} ?>
 			</table>
 			<br><br>
