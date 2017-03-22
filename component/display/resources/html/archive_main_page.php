@@ -123,7 +123,7 @@
 			</table>
 			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
-					<tr style="background-color: blue;" >
+					<tr style="background-color: #446184;" >
 						<td style='margin-left: 10px;'>User</td>
 						<td>Show/Hide Positions</td>
 					</tr>
