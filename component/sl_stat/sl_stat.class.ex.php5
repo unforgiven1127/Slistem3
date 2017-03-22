@@ -4512,9 +4512,19 @@ class CSl_statEx extends CSl_stat
         $data['positions'][$value['created_by']]['username'] = $value['lastname'].' '.$value['lastname'];
         $data['positions'][$value['created_by']]['user_id'] = $value['created_by'];
         $data['positions'][$value['created_by']]['user_position'] = $value['position'];
-        $data['positions'][$value['created_by']]['position_id'] = $value['sl_positionpk'];
-        $data['positions'][$value['created_by']]['position_name'] = $value['title'];
-        $data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
+
+        if(!isset($data['positions'][$value['created_by']]['position_id']))
+        {
+          $data['positions'][$value['created_by']]['position_id'] = array();
+        }
+        if(!isset($data['positions'][$value['created_by']]['position_name']))
+        {
+          $data['positions'][$value['created_by']]['position_name'] = array();
+        }
+
+        $data['positions'][$value['created_by']]['position_id'][] = $value['sl_positionpk'];
+        $data['positions'][$value['created_by']]['position_name'][] = $value['title'];
+        //$data['positions'][$value['created_by']]['date_created'] = $value['date_created'];
       }
 
       ChromePhp::log($data);
