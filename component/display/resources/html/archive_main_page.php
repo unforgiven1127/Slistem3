@@ -50,7 +50,7 @@ $( "#sendMailToCandidate" ).click(function() {
 			<table>
 					<?php foreach ($positions as $key => $position)
 					{
-						if($position == 1)//active users
+						if($position['status'] == 1)//active users
 						{
 							echo "<tr>";
 							echo "<td>".$position['username']."</td>";
