@@ -34,8 +34,8 @@
 	.table-striped > tbody > tr:nth-of-type(odd) {
   		background-color: #f9f9f9;
 	}
-	.striped1:nth-of-type(2) {
-  		background-color: #f9f9f9;
+	.striped1:nth-of-type(3) {
+	    background: red;
 	}
 	.table {
 		border-collapse: collapse !important;
@@ -85,8 +85,8 @@
 					{
 						if($position['status'] == 1)//active users
 						{
-							echo "<tr class=''>";
-							echo "<td class='striped1 userInfo'>".$position['username']."</td>";
+							echo "<tr class='striped1'>";
+							echo "<td class='userInfo'>".$position['username']."</td>";
 							echo "<td class='userInfo'><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra(".$position['user_id'].")'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra(".$position['user_id'].")'></td>";
 							echo "</tr>";
 							echo "<tr>";
