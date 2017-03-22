@@ -71,7 +71,7 @@
 				</tr>
 			</table>
 			<br><br>
-			<table>
+			<table style='width:100%;'>
 				<tr class="border_bottom">
 					<th>
 						<p style='font-size: 14pt; font-weight: bold;'>Active Users</p>
