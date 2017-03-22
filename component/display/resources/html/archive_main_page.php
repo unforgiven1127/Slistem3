@@ -62,11 +62,14 @@
 							echo "<table style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
-								$position_name = $position['position_name'][$key];
-								echo "<tr class='user_".$position['user_id']."'>";
-								echo "<td class='inner'>".$value."</td>";
-								echo "<td>".$position_name."</td>";
-								echo "</tr>";
+								if(!empty($position['position_name'][$key]))
+								{
+									$position_name = $position['position_name'][$key];
+									echo "<tr class='user_".$position['user_id']."'>";
+									echo "<td class='inner'>".$value."</td>";
+									echo "<td>".$position_name."</td>";
+									echo "</tr>";
+								}
 							}
 							echo "</td>";
 							echo "</tr>";
