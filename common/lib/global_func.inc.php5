@@ -1501,12 +1501,13 @@ function _live_dump($pvTrace, $psTitle = null)
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT slp.sl_positionpk, slp.companyfk, slp.created_by
-              , slp.date_created,slpd.title, l.lastname, l.firstname, l.position, l.status
+              , slp.date_created,slpd.title, l.lastname, l.firstname, l.position, l.status, slc.name as company_name
               FROM sl_position slp
               inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
               inner join login l on l.loginpk = slp.created_by
+              inner join sl_company slc on slc.sl_companypk = slp.companyfk
               WHERE l.position in ('Consultant','Researcher')
-              ORDER BY  l.firstname";//l.position,
+              ORDER BY  l.firstname, slpd.title";//l.position,
 
     $db_result = $oDB->executeQuery($sQuery);
 

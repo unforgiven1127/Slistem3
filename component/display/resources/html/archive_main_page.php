@@ -137,6 +137,7 @@
 							echo "<th class='inner'>Position ID</th>";
 							echo "<th>Position Title</th>";
 							echo "<th>Date Created</th>";
+							echo "<th>Company Name</th>";
 							echo "</tr>";
 							foreach ($position['position_id'] as $key => $value)
 							{
@@ -152,6 +153,7 @@
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
 									echo "<td class='dateCreated'>".substr($position['date_created'],0,10)."</td>";
+									echo "<td class='pname'>".$position['company_name']."</td>";
 									echo "</tr>";
 								}
 							}
