@@ -65,7 +65,7 @@
 							{
 								if(!empty($position['position_name'][$key]))
 								{
-									$position_name = $position['position_name'][$key];
+									$position_name = trim($position['position_name'][$key]);
 									echo "<tr'>";
 									echo "<td class='inner'>".$value."</td>";
 									echo "<td>".$position_name."</td>";
