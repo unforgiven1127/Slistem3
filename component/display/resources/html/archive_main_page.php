@@ -15,6 +15,9 @@
 	.table {
 		border-collapse: collapse !important;
 	}
+	.inner{
+		margin-left: 20px !important;
+	}
 </style>
 <!DOCTYPE html>
 <html>
@@ -48,15 +51,16 @@
 							echo "<td>".$position['username']."</td>";
 							echo "<td>".$position['user_position']."</td>";
 							echo "</tr>";
+							foreach ($position['position_id'] as $key => $value)
+							{
+								$position_name = $position['position_name'][$key];
+								echo "<tr>";
+								echo "<td class='inner'>".$value."</td>";
+								echo "<td>".$position_name."</td>";
+								echo "</tr>";
+							}
 						}
-						foreach ($position['position_id'] as $key => $value)
-						{
-							$position_name = $position['position_name'][$key];
-							echo "<tr>";
-							echo "<td>".$value."</td>";
-							echo "<td>".$position_name."</td>";
-							echo "</tr>";
-						}
+
 					} ?>
 			</table>
 			<br><br>
