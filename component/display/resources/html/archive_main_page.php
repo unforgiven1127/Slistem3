@@ -52,7 +52,7 @@ $( "#sendMailToCandidate" ).click(function() {
 					{
 						echo "<tr>";
 						echo "<td>".$position['username']."</td>";
-						echo "<td>".$position['position']."</td>";
+						echo "<td>".$position['user_position']."</td>";
 						echo "</tr>";
 					} ?>
 			</table>
