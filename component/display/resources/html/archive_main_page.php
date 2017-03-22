@@ -34,7 +34,7 @@
 	.table-striped > tbody > tr:nth-of-type(odd) {
   		background-color: #f9f9f9;
 	}
-	.table-striped1 > tbody > tr > .striped1:nth-of-type(2) {
+	.striped1:nth-of-type(2) {
   		background-color: #f9f9f9;
 	}
 	.table {
