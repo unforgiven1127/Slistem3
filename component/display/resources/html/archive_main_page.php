@@ -108,9 +108,9 @@
 								{
 									$position_name = $position['position_name'][$key];
 									$string_length = strlen($position_name);
-									if($string_length  > 60)
+									if($string_length  > 50)
 									{
-										$position_name = substr($position_name,0,60);
+										$position_name = substr($position_name,0,50);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'>".$value."</td>";
