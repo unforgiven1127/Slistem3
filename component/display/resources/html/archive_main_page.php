@@ -56,6 +56,9 @@
 		width: 114px !important;
 		cursor:pointer;
 	}
+	.pname{
+		width: 445 !important;
+	}
 	.userInfo{
 		font-size: 12pt;
 		font-weight: bold;
@@ -144,7 +147,7 @@
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
-									echo "<td>".$position_name."</td>";
+									echo "<td class='pname'>".$position_name."</td>";
 									echo "<td>".$position['date_created']."</td>";
 									echo "</tr>";
 								}
