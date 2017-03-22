@@ -141,7 +141,7 @@
 										$position_name = substr($position_name,0,50);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
-									echo "<td class='inner'>".$value."</td>";
+									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td>".$position_name."</td>";
 									echo "</tr>";
 								}
@@ -199,7 +199,7 @@
 										$position_name = substr($position_name,0,50);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
-									echo "<td class='inner'>".$value."</td>";
+									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td>".$position_name."</td>";
 									echo "</tr>";
 								}
