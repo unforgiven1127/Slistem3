@@ -124,8 +124,8 @@
 			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
 					<tr style="background-color: #446184;" >
-						<td style='margin-left: 20px; color:white;'>User</td>
-						<td style='margin-left: 20px; color:white;'>Show/Hide Positions</td>
+						<td style='padding-left: 20px; color:white;'>User</td>
+						<td style='color:white;'>Show/Hide Positions</td>
 					</tr>
 					<?php $classFlag = true;
 					foreach ($positions as $key => $position)
