@@ -144,6 +144,8 @@
 								if(!empty($position['position_name'][$key]))
 								{
 									$position_name = $position['position_name'][$key];
+									$date_created = $position['date_created'][$key];
+									$company_name = $position['company_name'][$key];
 									$string_length = strlen($position_name);
 									if($string_length  > 150)
 									{
@@ -152,8 +154,8 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
-									echo "<td class='dateCreated'>".substr($position['date_created'],0,10)."</td>";
-									echo "<td class='pname'>".$position['company_name']."</td>";
+									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
+									echo "<td class='pname'>".$company_name."</td>";
 									echo "</tr>";
 								}
 							}
