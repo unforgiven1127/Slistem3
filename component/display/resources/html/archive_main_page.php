@@ -59,13 +59,13 @@
 							echo "</tr>";
 							echo "<tr>";
 							echo "<td colspan='2'>";
-							echo "<table hidden style='width:100%;' class='table table-striped'>";
+							echo "<table  class='user_".$position['user_id']." hidden style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
 								{
 									$position_name = $position['position_name'][$key];
-									echo "<tr class='user_".$position['user_id']."'>";
+									echo "<tr'>";
 									echo "<td class='inner'>".$value."</td>";
 									echo "<td>".$position_name."</td>";
 									echo "</tr>";
