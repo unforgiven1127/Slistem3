@@ -57,7 +57,7 @@
 		cursor:pointer;
 	}
 	.pname{
-		width: 445 !important;
+		width: 445px !important;
 	}
 	.userInfo{
 		font-size: 12pt;
