@@ -48,13 +48,13 @@
 					</th>
 				</tr>
 			</table>
-			<table id='activeUsers' class="table table-striped">
+			<table id='activeUsers' class="table ">
 
 					<?php foreach ($positions as $key => $position)
 					{
 						if($position['status'] == 1)//active users
 						{
-							echo "<tr>";
+							echo "<tr class='cp_ns_row header'>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
 							//echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
