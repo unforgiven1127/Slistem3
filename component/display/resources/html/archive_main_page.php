@@ -48,9 +48,10 @@
 		padding-left: 5px !important;
 		width: 200px !important;
 	}
-	tr.border_bottom td {
+	tr.border_bottom td th {
 	  border-bottom:1pt solid black;
 	}
+
 </style>
 <!DOCTYPE html>
 <html>
