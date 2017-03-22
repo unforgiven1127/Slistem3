@@ -70,43 +70,12 @@
 		border-left: 1px solid #e3e3e3;
 		white-space: nowrap;
 		overflow: hidden;
+		font-size: 12pt;
 	}
 	tr.border_bottom td, th {
 	  border-bottom:1pt dashed black;
 	}
-	.cp_ns_row
-	{
-	  border-bottom: 1px solid #e3e3e3;
-	  height: 25px;
-	  overflow: hidden;
-	  width: 99%;
-	  float: left;
-	  background-color: #fff;
-	}
 
-	.cp_ns_row > div
-	{
-	  float: left;
-	  line-height: 25px;
-	  padding: 0 5px;
-	  border-left: 1px solid #e3e3e3;
-	  white-space: nowrap;
-	  overflow: hidden;
-	}
-
-	.cp_ns_row.header
-	{
-	  background-color: #446184;
-	}
-	.cp_ns_row.header > div
-	{
-	  color: #fff;
-	}
-	.cp_ns_row > div.cp_id
-	{
-	  width: 60px;
-	  padding-left: 15px;
-	}
 
 </style>
 <!DOCTYPE html>
