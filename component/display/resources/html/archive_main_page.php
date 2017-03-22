@@ -141,6 +141,7 @@
 							echo "<tr>";
 							echo "<th class='inner'>Position ID</th>";
 							echo "<th>Position Title</th>";
+							echo "<th>Last Status</th>";
 							echo "<th style='width:100px !important;'>Date Created</th>";
 							echo "<th>Company Name</th>";
 							echo "</tr>";
@@ -151,6 +152,7 @@
 									$position_name = $position['position_name'][$key];
 									$date_created = $position['date_created'][$key];
 									$company_name = $position['company_name'][$key];
+									$position_status = $position['position_status'][$key];
 									$string_length = strlen($position_name);
 									if($string_length  > 150)
 									{
@@ -159,6 +161,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
+									echo "<td class='pname'>".$position_status."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
 									echo "<td class='cname'>".$company_name."</td>";
 									echo "</tr>";
