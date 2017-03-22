@@ -61,7 +61,7 @@
 					</th>
 				</tr>
 			</table>
-			<table id='activeUsers' class="table table-striped'">
+			<table style='width:100%;' id='activeUsers' class="table table-striped'">
 
 					<?php foreach ($positions as $key => $position)
 					{
