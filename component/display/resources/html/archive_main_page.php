@@ -36,9 +36,9 @@
 			<br><br>
 			<table>
 				<tr>
-					<td>
-						Active Users + -
-					</td>
+					<th>
+						<h3>Active Users + -</h3>
+					</th>
 				</tr>
 			</table>
 			<table id='activeUsers' class="table table-striped">
@@ -55,7 +55,7 @@
 							foreach ($position['position_id'] as $key => $value)
 							{
 								$position_name = $position['position_name'][$key];
-								echo "<tr class='".$position['user_id']."'>";
+								echo "<tr class='user_".$position['user_id']."'>";
 								echo "<td class='inner'>".$value."</td>";
 								echo "<td>".$position_name."</td>";
 								echo "</tr>";
