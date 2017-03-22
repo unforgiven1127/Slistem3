@@ -16,10 +16,12 @@
 		border-collapse: collapse !important;
 	}
 	.inner{
-		padding-left: 20px !important;
+		padding-left: 30px !important;
 	}
 	.userInfo{
 		font-size: 11pt;
+		font-weight: bold;
+		padding-left: 10px !important;
 	}
 </style>
 <!DOCTYPE html>
@@ -40,7 +42,7 @@
 			<table>
 				<tr>
 					<th>
-						<p style='font-size: 11pt; font-weight: bold;'>Active Users + -</p>
+						<p style='font-size: 12pt; font-weight: bold;'>Active Users + -</p>
 					</th>
 				</tr>
 			</table>
