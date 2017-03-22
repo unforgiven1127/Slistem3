@@ -4,12 +4,19 @@
     'image'
   ], });</script>-->
 <script type="text/javascript" >
-function openExtra(id)
-{
-	var open_id = "hidden_"+id;
-	alert(open_id);
-	$('#'+open_id).show();
-}
+	function openExtra(id)
+	{
+		var open_id = "hidden_"+id;
+		//alert(open_id);
+		$('#'+open_id).show();
+	}
+
+	function closeExtra(id)
+	{
+		var open_id = "hidden_"+id;
+		//alert(open_id);
+		$('#'+open_id).hide();
+	}
 </script>
 
 
