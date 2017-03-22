@@ -48,7 +48,7 @@
 					</th>
 				</tr>
 			</table>
-			<table id='activeUsers' class="table ">
+			<table id='activeUsers' class="table table-striped'">
 
 					<?php foreach ($positions as $key => $position)
 					{
@@ -56,10 +56,10 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							//echo "<td class='userInfo'>".$position['user_position']."</td>";
+							echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
 							echo "<tr>";
-							echo "<td>";
+							echo "<td colspan='2'>";
 							echo "<table hidden style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
