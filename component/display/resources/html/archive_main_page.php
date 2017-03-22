@@ -60,6 +60,9 @@
 		font-weight: bold;
 		padding-left: 5px !important;
 		width: 200px !important;
+		border-left: 1px solid #e3e3e3;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	tr.border_bottom td, th {
 	  border-bottom:1pt dashed black;
@@ -124,8 +127,8 @@
 			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
 					<tr style="background-color: #446184;" >
-						<td style='padding-left: 20px; color:white;'>User</td>
-						<td style='color:white;'>Show/Hide Positions</td>
+						<td style='padding-left: 10px; color:white;'>User</td>
+						<td style='padding-left: 10px; color:white;'>Show/Hide Positions</td>
 					</tr>
 					<?php $classFlag = true;
 					foreach ($positions as $key => $position)
