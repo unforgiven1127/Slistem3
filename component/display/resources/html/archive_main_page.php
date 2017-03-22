@@ -54,8 +54,8 @@
 					{
 						if($position['status'] == 1)//active users
 						{
-							echo "<tr class=''>";
-							echo "<td class='cp_ns_row header'>".$position['username']."</td>";
+							echo "<tr>";
+							echo "<td class='userInfo'>".$position['username']."</td>";
 							//echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
 							echo "<tr>";
