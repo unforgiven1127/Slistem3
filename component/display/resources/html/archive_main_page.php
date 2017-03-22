@@ -78,7 +78,7 @@
 					</th>
 				</tr>
 			</table>
-			<table style='width:100%; padding-top: 20px;' id='activeUsers' class="table table-striped1">
+			<table style='width:100%; margin-top: 20px;' id='activeUsers' class="table table-striped1">
 
 					<?php $classFlag = true;
 					foreach ($positions as $key => $position)
