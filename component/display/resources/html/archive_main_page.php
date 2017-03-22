@@ -98,7 +98,7 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th style='font-size: 14pt; font-weight: bold; width:100px !important;'>
+					<th style='font-size: 14pt; font-weight: bold; width:110px !important;'>
 						Active Users
 					</th>
 					<td>
@@ -160,7 +160,7 @@
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
-					<th style='font-size: 14pt; font-weight: bold; width:100px !important;'>
+					<th style='font-size: 14pt; font-weight: bold; width:110px !important;'>
 						Passive Users
 					</th>
 					<td>
