@@ -55,18 +55,17 @@
 						{
 							echo "<tr>";
 							echo "<td class='userInfo'>".$position['username']."</td>";
-							echo "<td class='userInfo'>+</td>";
-							echo "<td class='userInfo'>-</td>";
+							//echo "<td class='userInfo'>".$position['user_position']."</td>";
 							echo "</tr>";
 							echo "<tr>";
-							echo "<td colspan='3'>";
-							echo "<table  class='user_".$position['user_id']." table table-striped' style='width:100%;'>";
+							echo "<td colspan='2'>";
+							echo "<table style='width:100%;' class='table table-striped'>";
 							foreach ($position['position_id'] as $key => $value)
 							{
 								if(!empty($position['position_name'][$key]))
 								{
-									$position_name = trim($position['position_name'][$key]);
-									echo "<tr'>";
+									$position_name = $position['position_name'][$key];
+									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'>".$value."</td>";
 									echo "<td>".$position_name."</td>";
 									echo "</tr>";
