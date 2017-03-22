@@ -16,7 +16,7 @@
 		border-collapse: collapse !important;
 	}
 	.inner{
-		margin-left: 20px !important;
+		padding-left: 20px !important;
 	}
 </style>
 <!DOCTYPE html>
