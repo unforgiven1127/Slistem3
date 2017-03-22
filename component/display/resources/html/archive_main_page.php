@@ -58,12 +58,14 @@
 	}
 	.pname{
 		width: 445px !important;
+		padding-left: 3px !important;
 	}
 	.cname{
 		width: 250px !important;
+		padding-left: 3px !important;
 	}
 	.dateCreated{
-		padding-left: 5px !important;
+		padding-left: 7px !important;
 	}
 	.userInfo{
 		font-size: 12pt;
