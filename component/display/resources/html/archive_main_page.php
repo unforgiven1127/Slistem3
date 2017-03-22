@@ -88,13 +88,6 @@
 <table>
 	<tr>
 		<td>
-			<table>
-				<tr>
-					<td>
-						Consultant / Position Archive
-					</td>
-				</tr>
-			</table>
 			<br><br>
 			<table style='width:100%;'>
 				<tr class="border_bottom">
