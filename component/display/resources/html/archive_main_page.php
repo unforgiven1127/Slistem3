@@ -156,6 +156,7 @@
 									$date_created = $position['date_created'][$key];
 									$company_name = $position['company_name'][$key];
 									$position_status = $position['position_status'][$key];
+									$status_title = $position['status_title'][$key];
 									//$positionURL = $position['positionURL'][$key];
 									$string_length = strlen($position_name);
 									if($string_length  > 150)
@@ -165,7 +166,7 @@
 									echo "<tr class='user_".$position['user_id']."'>";
 									echo "<td class='inner'><a onclick=\"view_position('https://beta2.slate.co.jp/index.php5?uid=555-005&amp;ppa=ppav&amp;ppt=jd&amp;ppk=".$value."&amp;pg=ajx');\">".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
-									echo "<td class='lastStatus'>".$position_status."</td>";
+									echo "<td class='lastStatus'>".$status_title."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
 									echo "<td class='cname'>".$company_name."</td>";
 									echo "</tr>";
