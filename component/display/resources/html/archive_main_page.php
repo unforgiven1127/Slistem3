@@ -156,13 +156,14 @@
 									$date_created = $position['date_created'][$key];
 									$company_name = $position['company_name'][$key];
 									$position_status = $position['position_status'][$key];
+									$positionURL = $position['positionURL'][$key];
 									$string_length = strlen($position_name);
 									if($string_length  > 150)
 									{
 										$position_name = substr($position_name,0,150);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
-									echo "<td class='inner'><a>".$value."</a></td>";
+									echo "<td class='inner'><a onclick='".$positionURL."'>".$value."</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
 									echo "<td class='lastStatus'>".$position_status."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";

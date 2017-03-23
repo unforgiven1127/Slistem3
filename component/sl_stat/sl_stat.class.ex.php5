@@ -4521,6 +4521,7 @@ class CSl_statEx extends CSl_stat
           $data['positions'][$value['created_by']]['date_created'] = array();
           $data['positions'][$value['created_by']]['company_name'] = array();
           $data['positions'][$value['created_by']]['position_status'] = array();
+          $data['positions'][$value['created_by']]['positionURL'] = array();
         }
 
         $data['positions'][$value['created_by']]['position_id'][] = $value['sl_positionpk'];
@@ -4528,6 +4529,9 @@ class CSl_statEx extends CSl_stat
         $data['positions'][$value['created_by']]['date_created'][] = $value['date_created'];
         $data['positions'][$value['created_by']]['company_name'][] = $value['company_name'];
         $data['positions'][$value['created_by']]['position_status'][] = $value['position_status'];
+        $sViewURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$value['sl_positionpk']);
+
+        $data['positions'][$value['created_by']]['positionURL'][] = "view_position('".$sViewURL."')";
       }
 
       /*$i=0;
