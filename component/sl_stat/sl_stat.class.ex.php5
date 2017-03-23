@@ -4531,7 +4531,7 @@ class CSl_statEx extends CSl_stat
         $data['positions'][$value['created_by']]['position_status'][] = $value['position_status'];
         $sViewURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$value['sl_positionpk']);
 
-        $data['positions'][$value['created_by']]['positionURL'][] = "view_position(\'".$sViewURL."\')";
+        $data['positions'][$value['created_by']]['positionURL'][] = 'view_position(\''.$sViewURL.'\');'
       }
 
       /*$i=0;
