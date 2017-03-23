@@ -4502,6 +4502,7 @@ class CSl_statEx extends CSl_stat
     {
       $userPosition = getUserPosition();
 
+      $data['server_name'] = $_SERVER['SERVER_NAME'];
       $data['positions'] = array();
       foreach ($userPosition as $key => $value)
       {
