@@ -4531,7 +4531,8 @@ class CSl_statEx extends CSl_stat
         $data['positions'][$value['created_by']]['position_status'][] = $value['position_status'];
         $sViewURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$value['sl_positionpk']);
 
-        $data['positions'][$value['created_by']]['positionURL'][] = 'view_position(\''.$sViewURL.'\');';
+        $data['positions'][$value['created_by']]['positionURL'][] = 'https://beta2.slate.co.jp/index.php5?uid=555-005&ppa=ppav&ppt=jd&ppk=9799&pg=ajx';
+        //$data['positions'][$value['created_by']]['positionURL'][] = 'view_position(\''.$sViewURL.'\');';
       }
 
       /*$i=0;
