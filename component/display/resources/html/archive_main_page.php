@@ -163,7 +163,7 @@
 										$position_name = substr($position_name,0,150);
 									}
 									echo "<tr class='user_".$position['user_id']."'>";
-									echo "<td class='inner'><a onclick='view_position('".$positionURL."')'>".$value."</a></td>";
+									echo "<td class='inner'><a onclick="view_position('https://beta2.slate.co.jp/index.php5?uid=555-005&amp;ppa=ppav&amp;ppt=jd&amp;ppk=9799&amp;pg=ajx');">8392</a></td>";
 									echo "<td class='pname'>".$position_name."</td>";
 									echo "<td class='lastStatus'>".$position_status."</td>";
 									echo "<td class='dateCreated'>".substr($date_created,0,10)."</td>";
