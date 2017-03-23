@@ -1506,7 +1506,7 @@ function _live_dump($pvTrace, $psTitle = null)
               inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
               inner join login l on l.loginpk = slp.created_by
               inner join sl_company slc on slc.sl_companypk = slp.companyfk
-              LEFT JOIN sl_position_link slpl on slpl.positionfk = slp.sl_positionpk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2 where slpl2.positionfk = slpl.positionfk AND slps2.created_by <> -1)
+              LEFT JOIN sl_position_link slpl on slpl.positionfk = slp.sl_positionpk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2 where slpl2.positionfk = slpl.positionfk AND slpl2.created_by <> -1)
               WHERE l.position in ('Consultant','Researcher')
               ORDER BY  l.firstname, slpd.title";//l.position,
 
