@@ -116,7 +116,7 @@
 			<table style='width:1000px; margin-top: 10px;' id='activeUsers' class="table table-striped1">
 
 					<tr style="background-color: #446184;" >
-						<td class='header'>User</td>
+						<td class='header'>User (Position Count)</td>
 						<td class='header'>Show/Hide Positions</td>
 					</tr>
 					<?php $classFlag = true;
@@ -192,7 +192,7 @@
 			</table>
 			<table style='width:1000px; margin-top: 10px;' hidden id='passiveUsers' class="table table-striped1">
 					<tr style="background-color: #446184;" >
-						<td class='header'>User</td>
+						<td class='header'>User (Position Count)</td>
 						<td class='header'>Show/Hide Positions</td>
 					</tr>
 					<?php $classFlag = true;
