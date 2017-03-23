@@ -188,7 +188,7 @@
 					</td>
 				</tr>
 			</table>
-			<table style='width:100%; margin-top: 10px;' hidden id='passiveUsers' class="table table-striped1">
+			<table style='width:1000px; margin-top: 10px;' hidden id='passiveUsers' class="table table-striped1">
 					<tr style="background-color: #446184;" >
 						<td class='header'>User</td>
 						<td class='header'>Show/Hide Positions</td>
