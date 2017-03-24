@@ -3398,7 +3398,7 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM sl_position WHERE companyfk = '".$company_id."'";
+    $sQuery = "SELECT slp.*,slpd.title FROM sl_position slp INNER JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk WHERE slp.companyfk = '".$company_id."'";
 
     $db_result = $oDB->executeQuery($sQuery);
 
