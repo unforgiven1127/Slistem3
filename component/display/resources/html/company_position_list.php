@@ -28,6 +28,7 @@
     .lnk
     {
         cursor:pointer;
+        color: #2A6991;
     }
     .last
     {
