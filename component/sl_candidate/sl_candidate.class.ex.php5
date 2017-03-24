@@ -6458,7 +6458,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     // ====================================================================================
     // ====================================================================================
     // start CANDIDATE section
-    private _getCompanyPositionList($company_id = 0)
+    private function _getCompanyPositionList($company_id = 0)
     {
       $data['test'] = 'test';
       $sHTML = $this->_oDisplay->render('company_position_list', $data);
