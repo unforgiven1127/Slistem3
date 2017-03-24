@@ -2928,14 +2928,14 @@ class CSl_candidateEx extends CSl_candidate
     {
       //ChromePhp::log('_getCandidateList');
       //ChromePhp::log($poQB);
-      $GLOBALS['redis']->set('lastSearch', $poQB);
+      $GLOBALS['redis']->set('lastSearch', &$poQB);
       //$lastSearch = $GLOBALS['redis']->get('lastSearch');
       //ChromePhp::log($lastSearch);
       //echo $test;
-      /*if($poQB != null)
+      if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
-      }*/
+      }
       global $gbNewSearch;
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
@@ -6706,7 +6706,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
 
-      //$oQB = $this->_getModel()->getQueryBuilder();
+      $oQB = $this->_getModel()->getQueryBuilder();
       //$oQB->setTitle('QuickSearch: refId = '.$candidate_id);
 
       //$poQB = $this->_getModel()->getQueryBuilder();
@@ -6736,9 +6736,9 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $lastSearch = $GLOBALS['redis']->get('lastSearch');
+          &$oQB = $GLOBALS['redis']->get('lastSearch');
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$lastSearch);
+          $sHTML.= $this->_getCandidateList($pbInAjax,&$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
