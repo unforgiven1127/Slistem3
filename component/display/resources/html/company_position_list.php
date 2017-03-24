@@ -30,6 +30,9 @@
         cursor:pointer;
         color: #2A6991;
     }
+    a {
+        color: hotpink !important;
+    }
     .last
     {
         border-right: 1px solid #e3e3e3;
