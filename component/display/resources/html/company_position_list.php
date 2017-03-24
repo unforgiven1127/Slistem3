@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p style='font-weight: bold'><?php echo $company_name.'('.$company_id.')'; ?> has total <?php echo $count; ?> positions</p>
+<p style='font-weight: bold'><?php echo $company_name.' (#'.$company_id.')'; ?> has total <?php echo $count; ?> positions</p>
 <table style='width:1000px; margin-top: 10px;' id='activeUsers' class="tableS">
     <tr style="background-color: #446184;" >
         <td class='headerS'>Position ID</td>
