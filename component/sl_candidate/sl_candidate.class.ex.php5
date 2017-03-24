@@ -6464,6 +6464,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $companyInfo = getCompanyInformation($company_id);
       $data['company_name'] = $companyInfo['name'];
       $data['company_id'] = $companyInfo['sl_companypk'];
+      $data['server_name'] = $_SERVER['SERVER_NAME'];
 
       ChromePhp::log($data);
 
