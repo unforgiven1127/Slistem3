@@ -18,7 +18,7 @@
     {
         font-size: 10pt;
         /*font-weight: bold;*/
-        /*padding-left: 5px !important;*/
+        padding-left: 5px !important;
         /*width: 200px !important;*/
         border-left: 1px solid #e3e3e3;
         border-bottom: 1px solid #e3e3e3;
@@ -40,11 +40,11 @@
     </tr>
     <?php foreach ($companyPositionList as $key => $position) {
         echo "<tr>";
-            echo "<td>".$position['sl_positionpk']."</td>";
-            echo "<td>".$position['title']."</td>";
-            echo "<td>".$position['position_status']."</td>";
-            echo "<td>".$position['firstname']." ".$position['lastname']."</td>";
-            echo "<td>".substr($position['date_created'],0,10)."</td>";
+            echo "<td class='positionInfo'>".$position['sl_positionpk']."</td>";
+            echo "<td class='positionInfo'>".$position['title']."</td>";
+            echo "<td class='positionInfo'>".$position['position_status']."</td>";
+            echo "<td class='positionInfo'>".$position['firstname']." ".$position['lastname']."</td>";
+            echo "<td class='positionInfo'>".substr($position['date_created'],0,10)."</td>";
         echo "</tr>";
     } ?>
 </table>
