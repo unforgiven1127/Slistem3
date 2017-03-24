@@ -6738,7 +6738,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $GLOBALS['redis']->get('lastSearch');
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,&$oQB);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
