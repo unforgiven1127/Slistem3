@@ -28,10 +28,7 @@
     .lnk
     {
         cursor:pointer;
-        color: #2A6991;
-    }
-    a {
-        color: hotpink !important;
+        color: #2A6991 !important;
     }
     .last
     {
