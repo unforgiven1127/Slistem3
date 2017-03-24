@@ -10343,6 +10343,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_quality qlt_'.$asCpData['level_letter'].'">'.$asCpData['level_letter'].'</div>
             <div class="cp_id">#'.$asCpData['sl_companypk'].'</div>
             <div class="cp_name"><a href="javascript:;" onclick="popup_candi(this, \''.$sURL.'\');">'.$asCpData['name'].'</div>
+            <div style="width:25px;" class="cp_action">+-</div>
             <div class="cp_consultant">'.$owner_names.'</div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
             <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
@@ -10398,6 +10399,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_quality">Level</div>
             <div class="cp_id">refId</div>
             <div class="cp_name">Company name</div>
+            <div style="width:25px;" class="cp_action">Positions</div>
             <div class="cp_consultant">Owner(s)</div>
             <div class="cp_update">Last update</div>
             <div class="cp_employee">Nb employee</div>
