@@ -2926,7 +2926,6 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-
       //ChromePhp::log($poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
@@ -6735,7 +6734,8 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $oQB = $_SESSION['lastSearch'];
+          $oQB = $obj = unserialize($_SESSION['lastSearch']);
+          //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
