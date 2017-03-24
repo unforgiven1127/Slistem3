@@ -2932,10 +2932,10 @@ class CSl_candidateEx extends CSl_candidate
       //$lastSearch = $GLOBALS['redis']->get('lastSearch');
       //ChromePhp::log($lastSearch);
       //echo $test;
-      if($poQB != null)
+      /*if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
-      }
+      }*/
       global $gbNewSearch;
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
