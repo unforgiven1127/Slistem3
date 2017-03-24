@@ -10363,7 +10363,7 @@ $bonusManual = getValue('bonus');
             <div class="cp_id">#'.$asCpData['sl_companypk'].'</div>
             <div class="cp_name"><a href="javascript:;" onclick="popup_candi(this, \''.$sURL.'\');">'.$asCpData['name'].'</div>
             <div class="cp_consultant">'.$owner_names.'</div>
-            <div class="plist"><a href="javascript:;" onclick="popup_candi(this, \''.$positionsURL.'\',1100,700);" style="cursor: pointer;">Position list</a></div>
+            <div class="plist"><a href="javascript:;" onclick="popup_candi(this, \''.$positionsURL.'\',1000,700);" style="cursor: pointer;">Position list</a></div>
             <div class="cp_update">'.substr($asCpData['date_updated'], 0, 10).'&nbsp;</div>
             <div class="cp_employee">'.$employeeCount.'&nbsp;</div>
             <div class="cp_activity"><a href="javascript:;" onclick="popup_candi(this, \''.$activityURL.'\');" style="cursor: pointer;">Activity list</a></div>
