@@ -3398,7 +3398,13 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT slp.*,slpd.title FROM sl_position slp INNER JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk WHERE slp.companyfk = '".$company_id."'";
+    $sQuery = "SELECT slp.*,slpd.title,, slpl.status as position_status,l.lastname,l.firstname 
+    FROM sl_position slp
+    INNER JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
+    INNER JOIN login l on l.loginpk = slp.created_by
+    LEFT JOIN sl_position_link slpl on slpl.positionfk = slp.sl_positionpk 
+    AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) 
+    FROM  sl_position_link slpl2 where slpl2.positionfk = slpl.positionfk AND slpl2.created_by <> -1) WHERE slp.companyfk = '".$company_id."'";
 
     $db_result = $oDB->executeQuery($sQuery);
 
