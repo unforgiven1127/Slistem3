@@ -12,14 +12,14 @@
         border-bottom: 1px solid #e3e3e3;
         white-space: nowrap;
         overflow: hidden;
-        font-size: 12pt;
+        font-size: 10pt;
     }
     .positionInfo
     {
-        font-size: 12pt;
-        font-weight: bold;
-        padding-left: 5px !important;
-        width: 200px !important;
+        font-size: 10pt;
+        /*font-weight: bold;*/
+        /*padding-left: 5px !important;*/
+        /*width: 200px !important;*/
         border-left: 1px solid #e3e3e3;
         border-bottom: 1px solid #e3e3e3;
         white-space: nowrap;
