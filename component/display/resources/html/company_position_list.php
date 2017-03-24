@@ -25,6 +25,10 @@
         white-space: nowrap;
         overflow: hidden;
     }
+    .last
+    {
+        border-right: 1px solid #e3e3e3;
+    }
 </style>
 
 <!DOCTYPE html>
@@ -42,9 +46,9 @@
         echo "<tr>";
             echo "<td class='positionInfo'>".$position['sl_positionpk']."</td>";
             echo "<td class='positionInfo'>".$position['title']."</td>";
-            echo "<td class='positionInfo'>".$position['position_status']."</td>";
+            echo "<td class='positionInfo'>".$position['statusTitle']."</td>";
             echo "<td class='positionInfo'>".$position['firstname']." ".$position['lastname']."</td>";
-            echo "<td class='positionInfo'>".substr($position['date_created'],0,10)."</td>";
+            echo "<td class='positionInfo last'>".substr($position['date_created'],0,10)."</td>";
         echo "</tr>";
     } ?>
 </table>

@@ -6461,6 +6461,10 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyPositionList($company_id = 0)
     {
       $companyPositionList = getCompanyPositionList($company_id);
+      foreach ($companyPositionList as $key => $value)
+      {
+        $companyPositionList[$key]['statusTitle'] = getStatusTitle($value['position_status']);
+      }
       $data['companyPositionList'] = $companyPositionList;
       $sHTML = $this->_oDisplay->render('company_position_list', $data);
       return $sHTML;
