@@ -38,6 +38,15 @@
         <td class='headerS'>Created By</td>
         <td class='headerS'>Create Date</td>
     </tr>
+    <?php foreach ($companyPositionList as $key => $position) {
+        echo "<tr>";
+            echo "<td>".$position['sl_positionpk']."</td>";
+            echo "<td>".$position['title']."</td>";
+            echo "<td>".$position['position_status']."</td>";
+            echo "<td>".$position['firstname']." ".$position['lastname']."</td>";
+            echo "<td>".substr($position['date_created'],0,10)."</td>";
+        echo "</tr>";
+    } ?>
 </table>
 </body>
 </html>
