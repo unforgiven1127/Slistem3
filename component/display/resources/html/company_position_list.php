@@ -34,6 +34,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+<p>Abbott(#1234) has total 1234 positions</p>
 <table style='width:1000px; margin-top: 10px;' id='activeUsers' class="tableS">
     <tr style="background-color: #446184;" >
         <td class='headerS'>Position ID</td>

@@ -6461,11 +6461,14 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyPositionList($company_id = 0)
     {
       $companyPositionList = getCompanyPositionList($company_id);
+      $count = 0;
       foreach ($companyPositionList as $key => $value)
       {
+        $count++;
         $companyPositionList[$key]['statusTitle'] = getStatusTitle($value['position_status']);
       }
       $data['companyPositionList'] = $companyPositionList;
+      $data['count'] = $count;
       $sHTML = $this->_oDisplay->render('company_position_list', $data);
       return $sHTML;
     }
