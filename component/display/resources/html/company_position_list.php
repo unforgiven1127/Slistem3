@@ -50,7 +50,7 @@
     </tr>
     <?php foreach ($companyPositionList as $key => $position) {
         echo "<tr>";
-            echo "<td class='positionInfo lnk'><a onclick=\"view_position('https://".$server_name."/index.php5?uid=555-005&amp;ppa=ppav&amp;ppt=jd&amp;ppk=".$position['sl_positionpk']."&amp;pg=ajx');\">".$position['sl_positionpk']."</a></td>";
+            echo "<td class='positionInfo'><a class='lnk' onclick=\"view_position('https://".$server_name."/index.php5?uid=555-005&amp;ppa=ppav&amp;ppt=jd&amp;ppk=".$position['sl_positionpk']."&amp;pg=ajx');\">".$position['sl_positionpk']."</a></td>";
             echo "<td class='positionInfo'>".$position['title']."</td>";
             echo "<td class='positionInfo'>".$position['statusTitle']."</td>";
             echo "<td class='positionInfo'>".$position['firstname']." ".$position['lastname']."</td>";
