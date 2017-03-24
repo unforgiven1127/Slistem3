@@ -312,6 +312,10 @@ class CSl_candidateEx extends CSl_candidate
           return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCompanyActionList($this->cnPk)))));
               break;
 
+          case CONST_ACTION_COMPANY_POSITIONS:
+          return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCompanyPositionList($this->cnPk)))));
+              break;
+
           case CONST_ACTION_LIST:
             //list and search
             /*$asHTML = $this->_getCompanyList();
@@ -6454,6 +6458,13 @@ $searchTitle = explode(':',$poQB->getTitle());
     // ====================================================================================
     // ====================================================================================
     // start CANDIDATE section
+    private _getCompanyPositionList($company_id = 0)
+    {
+      $data['test'] = 'test';
+      $sHTML = $this->_oDisplay->render('company_position_list', $data);
+      return $sHTML;
+    }
+
     private function _getCompanyActionList($company_id = 0)
     {
       $actionInfo = getCompanyActionList($company_id);
@@ -10338,6 +10349,8 @@ $bonusManual = getValue('bonus');
         $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
         $activityURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
+
+        $positionsURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_COMPANY_ACTION, CONST_CANDIDATE_TYPE_COMP, (int)$asCpData['sl_companypk']);
 
         //$activityURL = $oPage->getAjaxUrl('sl_candidate', CONST_ACTION_COMPANY_ACTION,CONST_CANDIDATE_TYPE_CANDI);
         //$sJavascript = 'var oConf = goPopup.getConfig(); oConf.width = 1080; oConf.height = 725; goPopup.setLayerFromAjax(oConf, \''.$activityURL.'\'); ';

@@ -380,6 +380,8 @@ define('CONST_ACTION_FULL_LIST', 'ppafl');
 define('CONST_ACTION_LIST', 'ppal');
 define('CONST_ACTION_VIEW', 'ppav');
 define('CONST_ACTION_COMPANY_ACTION', 'caca');
+define('CONST_ACTION_COMPANY_POSITIONS', 'cacp');
+
 define('CANDI_LOG', 'ppcl');
 define('CONTACT_SEEN_MAIL', 'csam');
 define('COMPANY_DUPLI_CONTROL', 'cdc');
