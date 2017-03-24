@@ -6461,6 +6461,9 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyPositionList($company_id = 0)
     {
       $companyPositionList = getCompanyPositionList($company_id);
+      $companyInfo = getCompanyInformation($company_id);
+      $data['company_name'] = $companyInfo['name'];
+      $date['company_id'] = $companyInfo['sl_companypk'];
       $count = 0;
       foreach ($companyPositionList as $key => $value)
       {
