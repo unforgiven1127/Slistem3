@@ -6463,7 +6463,10 @@ $searchTitle = explode(':',$poQB->getTitle());
       $companyPositionList = getCompanyPositionList($company_id);
       $companyInfo = getCompanyInformation($company_id);
       $data['company_name'] = $companyInfo['name'];
-      $date['company_id'] = $companyInfo['sl_companypk'];
+      $data['company_id'] = $companyInfo['sl_companypk'];
+
+      ChromePhp::log($data);
+
       $count = 0;
       foreach ($companyPositionList as $key => $value)
       {
