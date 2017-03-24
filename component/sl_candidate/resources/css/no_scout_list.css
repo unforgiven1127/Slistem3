@@ -82,6 +82,9 @@
   font-size: 11px;
   color: #666;
 }
+.plist{
+  width: 30px;
+}
 
 .cp_update,
 .cp_employee
