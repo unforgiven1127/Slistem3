@@ -2926,11 +2926,11 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      ChromePhp::log('_getCandidateList');
-      ChromePhp::log($poQB);
+      //ChromePhp::log('_getCandidateList');
+      //ChromePhp::log($poQB);
       $GLOBALS['redis']->set('lastSearch', $poQB);
-      $lastSearch = $GLOBALS['redis']->get('lastSearch');
-      ChromePhp::log($lastSearch);
+      //$lastSearch = $GLOBALS['redis']->get('lastSearch');
+      //ChromePhp::log($lastSearch);
       //echo $test;
       if($poQB != null)
       {
@@ -6706,17 +6706,17 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
 
-      $oQB = $this->_getModel()->getQueryBuilder();
-      $oQB->setTitle('QuickSearch: refId = '.$candidate_id);
+      //$oQB = $this->_getModel()->getQueryBuilder();
+      //$oQB->setTitle('QuickSearch: refId = '.$candidate_id);
 
       //$poQB = $this->_getModel()->getQueryBuilder();
 
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
-      $oQS = new CQuickSearch($oQB);
-      $sError = $oQS->buildQuickSearch('candi');
+      //$oQS = new CQuickSearch($oQB);
+      //$sError = $oQS->buildQuickSearch('candi');
       //ChromePhp::log($oQS);
-      if(!empty($sError))
-        return json_encode(array('alert' => $sError));
+      //if(!empty($sError))
+        //return json_encode(array('alert' => $sError));
 
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
@@ -6736,7 +6736,9 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
+          $lastSearch = $GLOBALS['redis']->get('lastSearch');
+          //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$lastSearch);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
