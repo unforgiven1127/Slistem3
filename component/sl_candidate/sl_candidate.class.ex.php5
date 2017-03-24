@@ -2928,7 +2928,7 @@ class CSl_candidateEx extends CSl_candidate
     {
       //ChromePhp::log('_getCandidateList');
       //ChromePhp::log($poQB);
-      $GLOBALS['redis']->set('lastSearch', &$poQB);
+      $GLOBALS['redis']->set('lastSearch', $poQB);
       //$lastSearch = $GLOBALS['redis']->get('lastSearch');
       //ChromePhp::log($lastSearch);
       //echo $test;
