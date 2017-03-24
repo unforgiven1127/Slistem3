@@ -1,4 +1,12 @@
 <style>
+    .table
+    {
+        border-collapse: collapse !important;
+    }
+    .striped1
+    {
+        background-color: #f9f9f9;
+    }
     .header
     {
         padding-left: 5px;
