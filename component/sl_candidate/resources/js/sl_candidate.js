@@ -173,7 +173,7 @@ function edit_candi(psUrl)
   goPopup.setLayerFromAjax(oConf, psUrl);
 }
 
-function popup_candi(poTag, psURL)
+function popup_candi(poTag, psURL,width=0,height=0)
 {
   var oPosition = $(poTag).offset();
   var nPageHeight = $(document).innerHeight();
@@ -198,6 +198,16 @@ function popup_candi(poTag, psURL)
   }
 
   oConf.height = 430;
+
+  if(width != 0)
+  {
+    oConf.width = width;
+  }
+  if(height != 0)
+  {
+    oConf.height = height;
+  }
+
   oConf.modal = 0;
   oConf.draggable = true;
 
