@@ -82,6 +82,9 @@
   font-size: 11px;
   color: #666;
 }
+.cp_position{
+  width: 25px;
+}
 
 .cp_update,
 .cp_employee
