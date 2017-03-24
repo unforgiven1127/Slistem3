@@ -88,6 +88,10 @@
   font-size: 11px;
   color: #666;
 }
+.cp_activity{
+  font-style: italic;
+  font-size: 11px;
+}
 
 .cp_update,
 .cp_employee
