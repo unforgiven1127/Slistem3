@@ -6461,7 +6461,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyPositionList($company_id = 0)
     {
       $companyPositionList = getCompanyPositionList($company_id);
-      $data['test'] = 'test';
+      $data['companyPositionList'] = $companyPositionList;
       $sHTML = $this->_oDisplay->render('company_position_list', $data);
       return $sHTML;
     }
