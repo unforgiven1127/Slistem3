@@ -2926,12 +2926,11 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      //ChromePhp::log('_getCandidateList');
-      //ChromePhp::log($poQB);
-      $GLOBALS['redis']->set('lastSearch', $poQB);
-      //$lastSearch = $GLOBALS['redis']->get('lastSearch');
-      //ChromePhp::log($lastSearch);
-      //echo $test;
+
+      ChromePhp::log($poQB);
+      $_SESSION['obj'] = serialize($poQB);
+      $obj = unserialize($_SESSION['obj']);
+      ChromePhp::log($obj);
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
