@@ -84,6 +84,9 @@
 }
 .plist{
   width: 70px;
+  font-style: italic;
+  font-size: 11px;
+  color: #666;
 }
 
 .cp_update,
