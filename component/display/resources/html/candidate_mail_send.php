@@ -145,7 +145,8 @@ $( "#sendMailToCandidate" ).click(function() {
       });
 
       $('.single-upload-form .submitBtnClass').click(function(){
-        loadingNew();
+      	alert('test');
+        //loadingNew();
         var dataToUpload = new Array();
         dataToUpload.formData = $('.single-upload-form').serializeArray();
         dataToUpload.files = fileToUpload;
@@ -166,7 +167,7 @@ $( "#sendMailToCandidate" ).click(function() {
           });
         return false;
       });
-      </script>
+</script>
 
 <style>
 	div.formFieldTitle
@@ -265,7 +266,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td>
 				<center>
-					<input class='submitBtnClass' name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+					<input class='submitBtnClass' name="Send" type="button" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
 			</td>
 		</tr>
