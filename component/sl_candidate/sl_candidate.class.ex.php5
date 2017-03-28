@@ -6772,7 +6772,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $sHTML.=  $this->_oDisplay->getBlocEnd();
 
       $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
-      return $aOutput
+      return $aOutput;
 
 
       //return $sHTML;
