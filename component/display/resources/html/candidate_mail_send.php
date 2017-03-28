@@ -118,6 +118,56 @@ $( "#sendMailToCandidate" ).click(function() {
 
 </script>
 
+<script>
+      var dataToUpload = new Array();
+      $('.single-upload-form').fileupload({
+          dataType: 'json',
+          sequentialUploads : true,
+          add: function (e, data)
+          {
+            var inputText = data.files[0].name;
+            fileToUpload = data.files;
+            $('#single-upload-filelist > span').text(inputText);
+            $('#single-upload-filelist').show();
+            $('#single-upload-input').hide();
+            $('#fileNameHidden').val(inputText);
+          }
+        });
+
+      $('#removeFile').click(function(){
+          $('.single-upload-input').val('');
+          $('#single-upload-input').show();
+          $('#single-upload-filelist > span').empty();
+          $('#single-upload-filelist').hide();
+          $('#fileNameHidden').val(0);
+
+          return false;
+      });
+
+      $('.single-upload-form .submitBtnClass').click(function(){
+        loadingNew();
+        var dataToUpload = new Array();
+        dataToUpload.formData = $('.single-upload-form').serializeArray();
+        dataToUpload.files = fileToUpload;
+        var jqXHR = $('.single-upload-form').fileupload('send', dataToUpload)
+          .success(function (result) {
+              if (result.error)
+                goPopup.setErrorMessage(result.error, true);
+
+              if (result.notice)
+              {
+                goPopup.removeByType('layer');
+                goPopup.setNotice(result.notice, {delay: 3000}, true, true);
+              }
+
+              if (result.action)
+                eval(result.action);
+
+          });
+        return false;
+      });
+      </script>
+
 <style>
 	div.formFieldTitle
 	{
@@ -215,7 +265,7 @@ $( "#sendMailToCandidate" ).click(function() {
 		<tr>
 			<td>
 				<center>
-					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+					<input class='submitBtnClass' name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
 			</td>
 		</tr>
