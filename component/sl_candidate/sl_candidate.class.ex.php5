@@ -189,6 +189,10 @@ class CSl_candidateEx extends CSl_candidate
           case MAIL_SEND_POPUP:
             return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_candidate_mail_send($this->cnPk))));
             break;
+
+            case MAIL_SEND_ACTION:
+              return json_encode($this->_candidate_mail_send_action($this->cnPk));
+              break;
         }
       case CONST_CANDIDATE_TYPE_CANDI:
 
@@ -588,13 +592,13 @@ class CSl_candidateEx extends CSl_candidate
     switch($this->csType)
     {
 
-      case CANDIDATE_MAIL_SEND:
+      /*case CANDIDATE_MAIL_SEND:
         switch ($this->csAction)
         {
             case MAIL_SEND_ACTION:
             return $this->_candidate_mail_send_action($this->cnPk);
             break;
-        }
+        }*/
 
       case CONST_CANDIDATE_TYPE_CANDI:
 
@@ -6771,7 +6775,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $sHTML.=  $this->_oDisplay->getListEnd();
       $sHTML.=  $this->_oDisplay->getBlocEnd();
 
-      $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
+      $aOutput['action'] = 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
       return $aOutput;
 
 
