@@ -6770,7 +6770,12 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sHTML.=  $this->_oDisplay->getListEnd();
       $sHTML.=  $this->_oDisplay->getBlocEnd();
-      return $sHTML;
+
+      $aOutput['action'].= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
+      return $aOutput
+
+
+      //return $sHTML;
       //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
       //return $this->_getCandidateView((int)$candidate_id);
 
