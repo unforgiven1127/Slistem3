@@ -3,6 +3,8 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
+<script src="/common/js/jquery.fileupload.js"></script>
+<script src="/component/sharedspace/resources/js/sharedspace.js"></script>
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
