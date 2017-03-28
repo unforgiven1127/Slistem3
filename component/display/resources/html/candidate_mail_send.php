@@ -120,7 +120,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 
 <script>
       var dataToUpload = new Array();
-      $('.single-upload-form').fileupload({
+      /*$('.single-upload-form').fileupload({
           dataType: 'json',
           sequentialUploads : true,
           add: function (e, data)
@@ -142,7 +142,7 @@ $( "#sendMailToCandidate1" ).click(function() {
           $('#fileNameHidden').val(0);
 
           return false;
-      });
+      });*/
 
       $('#sendMailToCandidate').click(function(){
       	alert('test');
