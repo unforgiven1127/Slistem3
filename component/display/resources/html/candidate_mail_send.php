@@ -32,7 +32,7 @@ function loading()
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
 
-$( "#sendMailToCandidate" ).click(function() {
+$( "#sendMailToCandidate1" ).click(function() {
 
 	var message = $('#message').text();
 //alert(message);
@@ -144,7 +144,7 @@ $( "#sendMailToCandidate" ).click(function() {
           return false;
       });
 
-      $('.single-upload-form .submitBtnClass').click(function(){
+      $('#sendMailToCandidate').click(function(){
       	alert('test');
         //loadingNew();
         var dataToUpload = new Array();
