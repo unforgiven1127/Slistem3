@@ -3,8 +3,6 @@
 <!--<script>tinymce.init({ selector:'textarea',plugins: [
     'image'
   ], });</script>-->
-<script src="/common/js/jquery.fileupload.js"></script>
-<script src="/component/sharedspace/resources/js/sharedspace.js"></script>
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
@@ -34,7 +32,7 @@ function loading()
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
 
-$( "#sendMailToCandidate1" ).click(function() {
+$( "#sendMailToCandidate" ).click(function() {
 
 	var message = $('#message').text();
 //alert(message);
@@ -120,57 +118,6 @@ $( "#sendMailToCandidate1" ).click(function() {
 
 </script>
 
-<script>
-      var dataToUpload = new Array();
-      $('.single-upload-form').fileupload({
-          dataType: 'json',
-          sequentialUploads : true,
-          add: function (e, data)
-          {
-            var inputText = data.files[0].name;
-            fileToUpload = data.files;
-            $('#single-upload-filelist > span').text(inputText);
-            $('#single-upload-filelist').show();
-            $('#single-upload-input').hide();
-            $('#fileNameHidden').val(inputText);
-          }
-        });
-
-      $('#removeFile').click(function(){
-          $('.single-upload-input').val('');
-          $('#single-upload-input').show();
-          $('#single-upload-filelist > span').empty();
-          $('#single-upload-filelist').hide();
-          $('#fileNameHidden').val(0);
-
-          return false;
-      });
-
-      $('#sendMailToCandidate').click(function(){
-      	alert('test');
-        loadingNew();
-        var dataToUpload = new Array();
-        dataToUpload.formData = $('.single-upload-form').serializeArray();
-        dataToUpload.files = fileToUpload;
-        var jqXHR = $('.single-upload-form').fileupload('send', dataToUpload)
-          .success(function (result) {
-              if (result.error)
-                goPopup.setErrorMessage(result.error, true);
-
-              if (result.notice)
-              {
-                goPopup.removeByType('layer');
-                goPopup.setNotice(result.notice, {delay: 3000}, true, true);
-              }
-
-              if (result.action)
-                eval(result.action);
-
-          });
-        return false;
-      });
-</script>
-
 <style>
 	div.formFieldTitle
 	{
@@ -185,8 +132,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 <!DOCTYPE html>
 <html>
 <body>
-<!--<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">-->
-<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" inajax="inajax" class="single-upload-form" nocancelbutton="noCancelButton" id="addNewDocumentButton" method="POST" onbeforesubmit="" onsubmit="">
+<form name="sendMailForm" enctype="multipart/form-data" submitajax="1" action="<?php echo $sURL; ?>" class="fullPageForm" method="POST" id="sendMailForm" onsubmit="">
 	<table style="width:100%;" valign="top">
 		<tr>
 			<td style="width:100%;" valign="top">
@@ -268,7 +214,7 @@ $( "#sendMailToCandidate1" ).click(function() {
 		<tr>
 			<td>
 				<center>
-					<input class='submitBtnClass' name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
+					<input name="Send" type="submit" id="sendMailToCandidate" value="Send" onclick="">
 				</center>
 			</td>
 		</tr>
