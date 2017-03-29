@@ -395,7 +395,17 @@ class CPagerEx extends CPager
     if($pnResult < $this->cnMinResultNb)
       return '';
 
-    $nPagerOffset = $this->cnPagerOffset;
+    $pageNumber = $_SESSION['pageNumber'];
+    if(isset($pageNumber) && !empty($pageNumber))
+    {
+      $nPagerOffset = $pageNumber;
+      unset($_SESSION['pageNumber']);
+    }
+    else
+    {
+      $nPagerOffset = $this->cnPagerOffset;
+    }
+
     $nPagerLimit = $this->cnPagerLimit;
 
     $oPage = CDependency::getCpPage();

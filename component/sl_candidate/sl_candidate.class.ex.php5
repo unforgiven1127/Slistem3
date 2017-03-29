@@ -3186,7 +3186,7 @@ ChromePhp::log($nPagerOffset);
 ChromePhp::log('IN');
         $record_start = $nPagerOffset*$nLimit;
 
-        if ($record_start > $nResult)
+        if($record_start > $nResult)
         {
           $poQB->addLimit('0, '.$nLimit);
           $sQuery = $poQB->getSql();
