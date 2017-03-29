@@ -2986,7 +2986,7 @@ class CSl_candidateEx extends CSl_candidate
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
         $nLimit = 50;
-        $_SESSION['pageNumber'] = 0;
+        //$_SESSION['pageNumber'] = 0;
       }
       else
       {
