@@ -2997,7 +2997,7 @@ class CSl_candidateEx extends CSl_candidate
 ChromePhp::log($pageNumber);
         if($pageNumber != 0)
         {
-          $oPager->setOffset($pageNumber);
+          $oPager->setOffset($pageNumber+1);
         }
         //else
         //{
