@@ -2995,14 +2995,15 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
 ChromePhp::log($pageNumber);
-        /*if($pageNumber != 0)
+        if($pageNumber != 0)
         {
           $oPager->setOffset($pageNumber);
-        }*/
+        }
         //else
         //{
           //$oPager->setOffset();
           $nPagerOffset = $oPager->getOffset();
+ChromePhp::log($nPagerOffset);
         //}
         $_SESSION['pageNumber'] = $nPagerOffset;
 
