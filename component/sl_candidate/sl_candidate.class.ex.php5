@@ -3011,6 +3011,7 @@ ChromePhp::log($pageoffsetClicked);
         {
 ChromePhp::log('setofset');
           $oPager->setOffset($pageNumber+1);
+          $nPagerOffset = $oPager->getOffset();
         }
         //else
         //{
