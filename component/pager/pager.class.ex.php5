@@ -104,25 +104,7 @@ class CPagerEx extends CPager
   public function getOffset()
   {
     //cnPagerOffset is the actual requested page, meaning it's all the results from cnPagerOffset-1 + current limit
-    if(isset($_SESSION['pageoffsetClicked']))
-    {
-ChromePhp::log('EXISTSs');
-      $returnVal = $_SESSION['pageoffsetClicked'];
-ChromePhp::log($returnVal);
-      if($returnVal > 0)
-      {
-        //unset($_SESSION['pageoffsetClicked']);
-        return $returnVal;
-      }
-      else
-      {
-        if(($this->cnPagerOffset-1) < 0)
-          return 0;
-
-        return ($this->cnPagerOffset-1);
-      }
-    }
-    else if(($this->cnPagerOffset-1) < 0)
+    if(($this->cnPagerOffset-1) < 0)
        return 0;
 
     return ($this->cnPagerOffset-1);
@@ -414,8 +396,6 @@ ChromePhp::log($returnVal);
       return '';
 
     $nPagerOffset = $this->cnPagerOffset;
-    $test = 'GETCOMPACT DISPLAY OFSET: '.$nPagerOffset;
-    ChromePhp::log($test);
     $nPagerLimit = $this->cnPagerLimit;
 
     $oPage = CDependency::getCpPage();
