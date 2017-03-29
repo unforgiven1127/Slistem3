@@ -2994,12 +2994,13 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        //if($pageNumber != 0)
-        //{
-        //  $nPagerOffset = $pageNumber;
-        //}
+        if($pageNumber != 0)
+        {
+          $oPager->setOffset($pageNumber);
+        }
         //else
         //{
+          //$oPager->setOffset();
           $nPagerOffset = $oPager->getOffset();
         //}
         $_SESSION['pageNumber'] = $nPagerOffset;
