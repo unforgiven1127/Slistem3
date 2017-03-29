@@ -2956,6 +2956,12 @@ class CSl_candidateEx extends CSl_candidate
 ////ChromePhp::log('_getCandidateList');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
+      $pageoffsetClicked = (int)getValue('pageoffset');
+      if(isset($pageoffsetClicked))
+      {
+ChromePhp::log('pageoffsetClicked');
+        $oPager->setOffset($pageoffsetClicked);
+      }
 //BURADAN
       if($nHistoryPk > 0 && $pageNumber == 0)
       {
