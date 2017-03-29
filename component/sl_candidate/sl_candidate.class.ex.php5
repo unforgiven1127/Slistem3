@@ -2985,8 +2985,9 @@ class CSl_candidateEx extends CSl_candidate
       // ============================================
       // search and pagination management
 
-      if(empty($this->csSearchId) && empty($nHistoryPk) && !$fromMail)
+      if(empty($this->csSearchId) && empty($nHistoryPk))// && !$fromMail
       {
+        ChromePhp::log('not from mail');
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
