@@ -2929,9 +2929,9 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null,$pageNumber = 0)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-//ChromePhp::log('_getCandidateList');
+      //ChromePhp::log($poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
@@ -2956,10 +2956,8 @@ class CSl_candidateEx extends CSl_candidate
 ////ChromePhp::log('_getCandidateList');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $pageoffsetClicked = (int)getValue('pageoffset');
-
 //BURADAN
-      if($nHistoryPk > 0 && $pageNumber == 0)
+      if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
@@ -2982,55 +2980,26 @@ class CSl_candidateEx extends CSl_candidate
       // ============================================
       // search and pagination management
 
-      if(empty($this->csSearchId) && empty($nHistoryPk) && $pageNumber == 0)
+      if(empty($this->csSearchId) && empty($nHistoryPk))
       {
-ChromePhp::log('EMPTY');
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
         $nLimit = 50;
-        $_SESSION['pageNumber'] = 0;
       }
       else
       {
-ChromePhp::log('else');
         //$asListMsg[] = ' just apply pager to reloaded search. ';
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-ChromePhp::log($pageNumber);
-
-        if(isset($pageoffsetClicked) && $pageoffsetClicked >0)
-        {
-ChromePhp::log('pageoffsetClicked setofset');
-ChromePhp::log($pageoffsetClicked);
-          $oPager->setOffset($pageoffsetClicked);
-          $nPagerOffset = $pageoffsetClicked;
-        }
-        else if($pageNumber != 0)
-        {
-ChromePhp::log('setofset');
-          $oPager->setOffset($pageNumber+1);
-          $nPagerOffset = $oPager->getOffset();
-          unset($_SESSION['pageNumber']);
-        }
-        else
-        {
-          $nPagerOffset = $oPager->getOffset();
-        }
-        //else
-        //{
-          //$oPager->setOffset();
-          //$nPagerOffset = $oPager->getOffset();
-ChromePhp::log($nPagerOffset);
-        //}
-        $_SESSION['pageNumber'] = $nPagerOffset;
+        $nPagerOffset = $oPager->getOffset();
+//$_SESSION['lastSearch'] = serialize($poQB);
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
-ChromePhp::log(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
-//ChromePhp::log($nPagerOffset);
+ChromePhp::log($nLimit);
 
       // =============================================================
       //TODO: to be moved when the search arrives
@@ -3173,23 +3142,14 @@ ChromePhp::log(($nPagerOffset*$nLimit).' ,'. $nLimit);
 //ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 //ChromePhp::log($searchID);
-        try{
-          $savedQuery = getLoggedQuery(new MongoId($searchID));
+        $savedQuery = getLoggedQuery(new MongoId($searchID));
 //ChromePhp::log($savedQuery);
-          $sQuery = $savedQuery[0]['action'];
+        $sQuery = $savedQuery[0]['action'];
 
-          $oDbResult = $oDb->ExecuteQuery($sQuery);
-          $bRead = $oDbResult->readFirst();
-          $all = $oDbResult->getAll();
-          $nResult = count($all);
-        }
-        catch(Exception $e)
-        {
-          $oDbResult = $oDb->ExecuteQuery($sQuery);
-          $bRead = $oDbResult->readFirst();
-          $nResult = (int)$oDbResult->getFieldValue('nCount');
-        }
-
+        $oDbResult = $oDb->ExecuteQuery($sQuery);
+        $bRead = $oDbResult->readFirst();
+        $all = $oDbResult->getAll();
+        $nResult = count($all);
       }
       else
       {
@@ -3211,14 +3171,13 @@ ChromePhp::log(($nPagerOffset*$nLimit).' ,'. $nLimit);
       //dump($sQuery);
 
 
-      $searchTitle = explode(':',$poQB->getTitle());
-ChromePhp::log($nPagerOffset);
+$searchTitle = explode(':',$poQB->getTitle());
+////ChromePhp::log($searchTitle);
       if (isset($nPagerOffset) && $nPagerOffset)
       {
-ChromePhp::log('IN');
         $record_start = $nPagerOffset*$nLimit;
 
-        if($record_start > $nResult)
+        if ($record_start > $nResult)
         {
           $poQB->addLimit('0, '.$nLimit);
           $sQuery = $poQB->getSql();
@@ -3436,24 +3395,17 @@ ChromePhp::log('IN');
       if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
         $searchID = $exploded[1];
-        try{
-          $savedQuery = getLoggedQuery(new MongoId($searchID));
-          $sQuery = $savedQuery[0]['action'];
 
-          $oDbResult = $oDb->ExecuteQuery($sQuery);
-          $bRead = $oDbResult->readFirst();
-          $all = $oDbResult->getAll();
-          $nResult = count($all);
-        }
-        catch(Exception $e)
-        {
-
-        }
         //ChromePhp::log('HERE 2');
         //ChromePhp::log($searchID);
+        $savedQuery = getLoggedQuery(new MongoId($searchID));
+        $sQuery = $savedQuery[0]['action'];
 
+        $oDbResult = $oDb->ExecuteQuery($sQuery);
+        $bRead = $oDbResult->readFirst();
+        $all = $oDbResult->getAll();
+        $nResult = count($all);
       }
-//ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3794,7 +3746,6 @@ ChromePhp::log('IN');
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
 
-      $_SESSION['lastHtml'] = serialize($sHTML);
       return $sHTML;
     }
 
@@ -6797,8 +6748,6 @@ ChromePhp::log('IN');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
 
-      $lasthtml = unserialize($_SESSION['lastHtml']);
-      $sHTML .= $lasthtml;
       $pbInAjax = false;
 
       $sLiId = uniqid();
@@ -6814,10 +6763,9 @@ ChromePhp::log('IN');
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          $pageNumber = $_SESSION['pageNumber'];
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,$pageNumber);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
