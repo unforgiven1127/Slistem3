@@ -3153,14 +3153,17 @@ ChromePhp::log($nPagerOffset);
 //ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
 //ChromePhp::log($searchID);
-        $savedQuery = getLoggedQuery(new MongoId($searchID));
+        try{
+          $savedQuery = getLoggedQuery(new MongoId($searchID));
 //ChromePhp::log($savedQuery);
-        $sQuery = $savedQuery[0]['action'];
+          $sQuery = $savedQuery[0]['action'];
 
-        $oDbResult = $oDb->ExecuteQuery($sQuery);
-        $bRead = $oDbResult->readFirst();
-        $all = $oDbResult->getAll();
-        $nResult = count($all);
+          $oDbResult = $oDb->ExecuteQuery($sQuery);
+          $bRead = $oDbResult->readFirst();
+          $all = $oDbResult->getAll();
+          $nResult = count($all);
+        }
+
       }
       else
       {
@@ -3407,16 +3410,18 @@ ChromePhp::log('IN');
       if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
         $searchID = $exploded[1];
+        try{
+          $savedQuery = getLoggedQuery(new MongoId($searchID));
+          $sQuery = $savedQuery[0]['action'];
 
+          $oDbResult = $oDb->ExecuteQuery($sQuery);
+          $bRead = $oDbResult->readFirst();
+          $all = $oDbResult->getAll();
+          $nResult = count($all);
+        }
         //ChromePhp::log('HERE 2');
         //ChromePhp::log($searchID);
-        $savedQuery = getLoggedQuery(new MongoId($searchID));
-        $sQuery = $savedQuery[0]['action'];
 
-        $oDbResult = $oDb->ExecuteQuery($sQuery);
-        $bRead = $oDbResult->readFirst();
-        $all = $oDbResult->getAll();
-        $nResult = count($all);
       }
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
