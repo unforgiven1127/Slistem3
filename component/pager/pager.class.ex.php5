@@ -111,7 +111,7 @@ ChromePhp::log('EXISTSs');
 ChromePhp::log($returnVal);
       if($returnVal > 0)
       {
-        unset($_SESSION['pageoffsetClicked']);
+        //unset($_SESSION['pageoffsetClicked']);
         return $returnVal;
       }
       else
