@@ -3005,6 +3005,7 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         $nPagerOffset = $oPager->getOffset();
+        unset($_SESSION['pageoffsetClicked']);
         ChromePhp::log($nPagerOffset);
 //$_SESSION['lastSearch'] = serialize($poQB);
 
