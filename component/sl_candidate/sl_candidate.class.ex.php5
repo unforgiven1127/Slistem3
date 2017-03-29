@@ -6759,7 +6759,7 @@ ChromePhp::log('IN');
       $lastHtml = unserialize($_SESSION['lastHtml']);
 
       return $lastHtml;
-      
+
       $_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
