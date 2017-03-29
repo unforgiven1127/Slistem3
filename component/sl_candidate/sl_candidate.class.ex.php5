@@ -6757,13 +6757,6 @@ ChromePhp::log('IN');
 
       $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$uploaded_files);
 
-      $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
-      $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
-      $lastHtml = $this->_getTopPageSection();
-      $lastHtml .= unserialize($_SESSION['lastHtml']);
-
-      return $lastHtml;
-
       $_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
       //ChromePhp::log($candidate_list);
