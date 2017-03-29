@@ -2943,6 +2943,7 @@ class CSl_candidateEx extends CSl_candidate
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
       $oLogin = CDependency::getCpLogin();
+      $oPager = CDependency::getComponentByName('pager');
 
       $user_id = $oLogin->getUserPk();
       securityCheckSearch($user_id);
@@ -2999,7 +3000,7 @@ ChromePhp::log('EMPTY');
       {
 ChromePhp::log('else');
         //$asListMsg[] = ' just apply pager to reloaded search. ';
-        $oPager = CDependency::getComponentByName('pager');
+        //$oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
 ChromePhp::log($pageNumber);
