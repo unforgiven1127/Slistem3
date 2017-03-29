@@ -3004,7 +3004,7 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        if($fromMail)
+        if($fromMail && isset($_SESSION['pageoffsetClicked']))
         {
           $nPagerOffset = $_SESSION['pageoffsetClicked'];
         }
