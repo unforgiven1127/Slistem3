@@ -3165,7 +3165,9 @@ ChromePhp::log($nPagerOffset);
         }
         catch(Exception $e)
         {
-
+          $oDbResult = $oDb->ExecuteQuery($sQuery);
+          $bRead = $oDbResult->readFirst();
+          $nResult = (int)$oDbResult->getFieldValue('nCount');
         }
 
       }
