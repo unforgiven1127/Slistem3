@@ -3336,7 +3336,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $limitlessQuery = $limitlessQuery[0];
 
       $searchTitle = explode(':',$poQB->getTitle());
-
+ChromePhp::log($searchTitle);
       if(isset($searchTitle[1]))
       {
         $desc = $searchTitle[1];
