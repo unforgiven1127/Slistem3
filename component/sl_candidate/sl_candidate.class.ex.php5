@@ -2943,7 +2943,6 @@ class CSl_candidateEx extends CSl_candidate
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
       $oLogin = CDependency::getCpLogin();
-      $oPager = CDependency::getComponentByName('pager');
 
       $user_id = $oLogin->getUserPk();
       securityCheckSearch($user_id);
@@ -2958,11 +2957,7 @@ class CSl_candidateEx extends CSl_candidate
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
       $pageoffsetClicked = (int)getValue('pageoffset');
-      if(isset($pageoffsetClicked))
-      {
-ChromePhp::log('pageoffsetClicked');
-        $oPager->setOffset($pageoffsetClicked);
-      }
+
 //BURADAN
       if($nHistoryPk > 0 && $pageNumber == 0)
       {
@@ -3000,10 +2995,19 @@ ChromePhp::log('EMPTY');
       {
 ChromePhp::log('else');
         //$asListMsg[] = ' just apply pager to reloaded search. ';
-        //$oPager = CDependency::getComponentByName('pager');
+        $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
 ChromePhp::log($pageNumber);
+
+        if(isset($pageoffsetClicked))
+        {
+ChromePhp::log('pageoffsetClicked setofset');
+ChromePhp::log($pageoffsetClicked);
+          $oPager->setOffset($pageoffsetClicked);
+        }
+
+
         if($pageNumber != 0)
         {
 ChromePhp::log('setofset');
