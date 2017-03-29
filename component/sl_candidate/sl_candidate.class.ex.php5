@@ -3335,7 +3335,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $limitlessQuery = explode('LIMIT', $sQuery);
       $limitlessQuery = $limitlessQuery[0];
 
-      if($mailFlag)
+      if($fromMail)
       {
         $searchTitle = explode('_',$poQB->getTitle());
       }
