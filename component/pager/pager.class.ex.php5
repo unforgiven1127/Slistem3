@@ -106,6 +106,7 @@ class CPagerEx extends CPager
     //cnPagerOffset is the actual requested page, meaning it's all the results from cnPagerOffset-1 + current limit
     if(isset($_SESSION['pageoffsetClicked']))
     {
+      ChromePhp::log('EXISTSs');
       return $_SESSION['pageoffsetClicked'];
     }
     else if(($this->cnPagerOffset-1) < 0)
