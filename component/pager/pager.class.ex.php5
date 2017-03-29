@@ -104,6 +104,12 @@ class CPagerEx extends CPager
   public function getOffset()
   {
     //cnPagerOffset is the actual requested page, meaning it's all the results from cnPagerOffset-1 + current limit
+    if(isset($_SESSION['pageNumber']))
+    {
+      $return = $_SESSION['pageNumber'];
+      unset($_SESSION['pageNumber']);
+      return $return;
+    }
     if(($this->cnPagerOffset-1) < 0)
        return 0;
 
@@ -395,17 +401,7 @@ class CPagerEx extends CPager
     if($pnResult < $this->cnMinResultNb)
       return '';
 
-    $pageNumber = $_SESSION['pageNumber'];
-    if(isset($pageNumber) && !empty($pageNumber))
-    {
-      $nPagerOffset = $pageNumber;
-      unset($_SESSION['pageNumber']);
-    }
-    else
-    {
-      $nPagerOffset = $this->cnPagerOffset;
-    }
-
+    $nPagerOffset = $this->cnPagerOffset;
     $nPagerLimit = $this->cnPagerLimit;
 
     $oPage = CDependency::getCpPage();
