@@ -3011,6 +3011,7 @@ ChromePhp::log($nPagerOffset);
         $_SESSION['pageNumber'] = $nPagerOffset;
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
+ChromePhp::log(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
 //ChromePhp::log($nPagerOffset);
