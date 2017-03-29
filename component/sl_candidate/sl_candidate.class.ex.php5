@@ -2982,6 +2982,7 @@ class CSl_candidateEx extends CSl_candidate
 
       if(empty($this->csSearchId) && empty($nHistoryPk) && $pageNumber == 0)
       {
+ChromePhp::log('EMPTY');
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
@@ -2990,6 +2991,7 @@ class CSl_candidateEx extends CSl_candidate
       }
       else
       {
+ChromePhp::log('else');
         //$asListMsg[] = ' just apply pager to reloaded search. ';
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
