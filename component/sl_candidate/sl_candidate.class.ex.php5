@@ -3000,7 +3000,7 @@ ChromePhp::log('else');
         $nLimit = $oPager->getLimit();
 ChromePhp::log($pageNumber);
 
-        if(isset($pageoffsetClicked))
+        if(isset($pageoffsetClicked) && $pageoffsetClicked >0)
         {
 ChromePhp::log('pageoffsetClicked setofset');
 ChromePhp::log($pageoffsetClicked);
