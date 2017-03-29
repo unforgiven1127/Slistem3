@@ -396,6 +396,7 @@ class CPagerEx extends CPager
       return '';
 
     $nPagerOffset = $this->cnPagerOffset;
+    ChromePhp::log($nPagerOffset);
     $nPagerLimit = $this->cnPagerLimit;
 
     $oPage = CDependency::getCpPage();

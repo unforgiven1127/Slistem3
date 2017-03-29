@@ -3437,7 +3437,7 @@ ChromePhp::log('IN');
         //ChromePhp::log($searchID);
 
       }
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
