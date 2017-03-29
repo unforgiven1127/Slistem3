@@ -6759,7 +6759,8 @@ ChromePhp::log('IN');
 
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
-      $lastHtml = unserialize($_SESSION['lastHtml']);
+      $lastHtml = $this->_getTopPageSection();
+      $lastHtml .= unserialize($_SESSION['lastHtml']);
 
       return $lastHtml;
 
