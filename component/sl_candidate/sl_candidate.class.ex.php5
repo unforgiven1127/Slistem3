@@ -2931,7 +2931,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      //ChromePhp::log($poQB);
+ChromePhp::log('_getCandidateList');
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
