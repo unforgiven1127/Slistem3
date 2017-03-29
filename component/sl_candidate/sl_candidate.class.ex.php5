@@ -3000,12 +3000,13 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         $nPagerOffset = $oPager->getOffset();
+        ChromePhp::log($nPagerOffset);
 //$_SESSION['lastSearch'] = serialize($poQB);
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
-ChromePhp::log($nLimit);
+//ChromePhp::log($nLimit);
 
       // =============================================================
       //TODO: to be moved when the search arrives
