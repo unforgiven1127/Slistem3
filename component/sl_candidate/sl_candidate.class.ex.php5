@@ -2929,7 +2929,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null,$pageNumber = 0)
     {
 ChromePhp::log('_getCandidateList');
       $_SESSION['lastSearch'] = serialize($poQB);
@@ -2980,12 +2980,13 @@ ChromePhp::log('_getCandidateList');
       // ============================================
       // search and pagination management
 
-      if(empty($this->csSearchId) && empty($nHistoryPk))
+      if(empty($this->csSearchId) && empty($nHistoryPk) && $pageNumber == 0)
       {
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
         $nLimit = 50;
+        $_SESSION['pageNumber'] = 0;
       }
       else
       {
@@ -2993,13 +2994,20 @@ ChromePhp::log('_getCandidateList');
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        $nPagerOffset = $oPager->getOffset();
-//$_SESSION['lastSearch'] = serialize($poQB);
+        if($pageNumber != 0)
+        {
+          $nPagerOffset = $pageNumber;
+        }
+        else
+        {
+          $nPagerOffset = $oPager->getOffset();
+        }
+        $_SESSION['pageNumber'] = $nPagerOffset;
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
-ChromePhp::log($nPagerOffset);
+//ChromePhp::log($nPagerOffset);
 
       // =============================================================
       //TODO: to be moved when the search arrives
@@ -6763,9 +6771,10 @@ $searchTitle = explode(':',$poQB->getTitle());
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
+          $pageNumber = $_SESSION['pageNumber'];
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,$pageNumber);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
