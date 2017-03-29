@@ -6797,6 +6797,8 @@ ChromePhp::log('IN');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
 
+      $lasthtml = unserialize($_SESSION['lastHtml']);
+      $sHTML .= $lasthtml;
       $pbInAjax = false;
 
       $sLiId = uniqid();
