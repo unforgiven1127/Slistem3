@@ -3005,10 +3005,9 @@ ChromePhp::log($pageNumber);
 ChromePhp::log('pageoffsetClicked setofset');
 ChromePhp::log($pageoffsetClicked);
           $oPager->setOffset($pageoffsetClicked);
+          $nPagerOffset = $pageoffsetClicked;
         }
-
-
-        if($pageNumber != 0)
+        else if($pageNumber != 0)
         {
 ChromePhp::log('setofset');
           $oPager->setOffset($pageNumber+1);
@@ -3016,7 +3015,7 @@ ChromePhp::log('setofset');
         //else
         //{
           //$oPager->setOffset();
-          $nPagerOffset = $oPager->getOffset();
+          //$nPagerOffset = $oPager->getOffset();
 ChromePhp::log($nPagerOffset);
         //}
         $_SESSION['pageNumber'] = $nPagerOffset;
