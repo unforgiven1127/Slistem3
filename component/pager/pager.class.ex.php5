@@ -107,7 +107,19 @@ class CPagerEx extends CPager
     if(isset($_SESSION['pageoffsetClicked']))
     {
       ChromePhp::log('EXISTSs');
-      return $_SESSION['pageoffsetClicked'];
+      $returnVal = $_SESSION['pageoffsetClicked'];
+      if($returnVal > 0)
+      {
+        unset($_SESSION['pageoffsetClicked']);
+        return $returnVal;
+      }
+      else
+      {
+        if(($this->cnPagerOffset-1) < 0)
+          return 0;
+
+        return ($this->cnPagerOffset-1);
+      }
     }
     else if(($this->cnPagerOffset-1) < 0)
        return 0;
