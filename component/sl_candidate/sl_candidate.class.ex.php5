@@ -2939,7 +2939,7 @@ class CSl_candidateEx extends CSl_candidate
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
-      else
+      elseif(isset($_SESSION['pageoffsetClicked']))
       {
         ChromePhp::log($_SESSION['pageoffsetClicked']);
       }
