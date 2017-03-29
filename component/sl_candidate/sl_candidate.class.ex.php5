@@ -2933,6 +2933,11 @@ class CSl_candidateEx extends CSl_candidate
     {
       //ChromePhp::log($poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
+      $pageoffsetClicked = (int)getValue('pageoffset');
+      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
+      {
+        $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
+      }
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
       if($poQB != null)

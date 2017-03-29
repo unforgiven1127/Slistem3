@@ -104,10 +104,21 @@ class CPagerEx extends CPager
   public function getOffset()
   {
     //cnPagerOffset is the actual requested page, meaning it's all the results from cnPagerOffset-1 + current limit
-    if(($this->cnPagerOffset-1) < 0)
-       return 0;
+    try
+    {
+      $pageoffsetClicked = $_SESSION['pageoffsetClicked'];
+      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
+      {
+        return $pageoffsetClicked;
+      }
+    }
+    catch (Exception $e) {
+        if(($this->cnPagerOffset-1) < 0)
+         return 0;
 
-    return ($this->cnPagerOffset-1);
+      return ($this->cnPagerOffset-1);
+    }
+
   }
 
   public function getSqlOffset()
