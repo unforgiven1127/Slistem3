@@ -3163,7 +3163,9 @@ ChromePhp::log($nPagerOffset);
           $all = $oDbResult->getAll();
           $nResult = count($all);
         }
-        catch{
+        catch(Exception $e)
+        {
+
         }
 
       }
@@ -3421,7 +3423,9 @@ ChromePhp::log('IN');
           $all = $oDbResult->getAll();
           $nResult = count($all);
         }
-        catch{
+        catch(Exception $e)
+        {
+
         }
         //ChromePhp::log('HERE 2');
         //ChromePhp::log($searchID);
