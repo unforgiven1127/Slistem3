@@ -2999,7 +2999,7 @@ ChromePhp::log('_getCandidateList');
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
-ChromePhp::log($nLimit);
+ChromePhp::log($nPagerOffset);
 
       // =============================================================
       //TODO: to be moved when the search arrives
