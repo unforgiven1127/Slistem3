@@ -2997,6 +2997,7 @@ class CSl_candidateEx extends CSl_candidate
 ChromePhp::log($pageNumber);
         if($pageNumber != 0)
         {
+ChromePhp::log('setofset');
           $oPager->setOffset($pageNumber+1);
         }
         //else
@@ -3773,6 +3774,7 @@ ChromePhp::log('IN');
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
 
+      $_SESSION['lastHtml'] = serialize($sHTML);
       return $sHTML;
     }
 
