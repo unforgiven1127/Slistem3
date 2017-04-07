@@ -1241,7 +1241,6 @@ if($meeting['created_by'] == '521')
             if ($row['status'])
             {
               $revenue_data[$row['user_position']][$user_id]['total_amount'] += ($current_revenue_info['amount'] - $current_revenue_info['refund_amount']) * ($row['percentage'] / 100);
-
             }
             /*else
             {
