@@ -4119,18 +4119,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      try{
-        shell_exec('sudo service mongod start');
-        $mongo = new MongoClient('mongodb://localhost', array(
-            'username' => $username,
-            'password' => $password,
-            'db'       => 'slistem'
-        ));
-        $slistemMongo = $mongo->selectDB('slistem');
-      }
-      catch(MongoConnectionException $e) {
-        die('ERROR : ' . $e->getMessage());
-      }
+      die('ERROR : ' . $e->getMessage());
 
     }
 
