@@ -38,7 +38,7 @@ define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
-echo(shell_exec('sudo service mongod start'));
+echo(shell_exec('service mongod start'));
 
 /*$slistemQuery = " SELECT slc.sl_companypk as company_id, slc.name as company_name,slpd.sl_position_detailpk as position_detail_id
 FROM sl_company slc
