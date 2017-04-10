@@ -2929,9 +2929,15 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null,$fromMail = false)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null,$fromMail = false,$lastHTML = '')
     {
       //ChromePhp::log($poQB);
+      if(isset($lastHTML) && !empty($lastHTML))
+      {
+        $returnThis = unserialize($_SESSION['lastHTML']);
+        unset($_SESSION['lastHTML']);
+        return $returnThis;
+      }
       $_SESSION['lastSearch'] = serialize($poQB);
       $pageoffsetClicked = (int)getValue('pageoffset');
       ChromePhp::log($pageoffsetClicked);
@@ -3773,6 +3779,8 @@ ChromePhp::log($searchTitle);
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
 
+      //lastSearch
+      $_SESSION['lastHTML'] = serialize($sHTML);
       return $sHTML;
     }
 
@@ -6790,9 +6798,10 @@ ChromePhp::log($searchTitle);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
+          $lastHTML = $obj = unserialize($_SESSION['lastHTML']);
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true,$lastHTML);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
