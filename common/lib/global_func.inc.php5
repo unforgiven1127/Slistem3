@@ -4011,8 +4011,14 @@ var_dump($query);*/
     $limit = '15';
     $logs = getMongoLog($where,$orderBy,$limit);
 ////ChromePhp::log($logs);
-
-    $result = iterator_to_array($logs, false);
+    if(!empty($logs))
+    {
+      $result = iterator_to_array($logs, false);
+    }
+    else
+    {
+      $result = array();
+    }
 
     return $result;
   }
