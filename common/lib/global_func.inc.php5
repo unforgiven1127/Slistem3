@@ -4126,7 +4126,7 @@ var_dump($query);*/
     } catch(MongoConnectionException $e) {
 
       echo '<br><br>'.'MONGO-gml ERROR : ' . $e->getMessage();
-      shell_exec('sudo service mongod start');
+      shell_exec('service mongod start');
       $emptyArray = array();
       return $emptyArray;
       //die('ERROR : ' . $e->getMessage());
