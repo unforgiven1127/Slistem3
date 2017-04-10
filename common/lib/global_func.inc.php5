@@ -4120,6 +4120,8 @@ var_dump($query);*/
     } catch(MongoConnectionException $e) {
 
       echo '<br><br>'.'MONGO-gml ERROR : ' . $e->getMessage();
+      $emptyArray = array();
+      return $emptyArray;
       //die('ERROR : ' . $e->getMessage());
 
     }
