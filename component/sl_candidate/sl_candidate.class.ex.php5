@@ -1042,6 +1042,7 @@ class CSl_candidateEx extends CSl_candidate
       $nItemPk = (int)getValue('slpk', 0);
       $sItemType = getValue('sltype');
 
+      ChromePhp::log('_getTopPageSection');
       //ChromePhp::log($nItemPk);
       //ChromePhp::log($sItemType);
 
