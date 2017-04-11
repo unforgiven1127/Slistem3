@@ -1,23 +1,7 @@
 <script>
-//alert('test 1');
-window.onbeforeunload = function (event) {
-    var message = 'Are you sure to leave this page?';
-    if (typeof event == 'undefined') {
-        event = window.event;
-    }
-    if (event) {
-        event.returnValue = message;
-    }
-    return message;
-};
-
-$(function () {
-    $("a").not('#lnkLogOut').click(function () {
-        window.onbeforeunload = null;
-    });
-    $(".btn").click(function () {
-        window.onbeforeunload = null;
-});
+alert('test 1');
+$( window ).unload(function() {
+  return "Handler for .unload() called.";
 });
 </script>
 <?php
