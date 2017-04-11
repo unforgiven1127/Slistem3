@@ -2,11 +2,12 @@
 
 window.onbeforeunload = function (event)
 {
-    alert('test');
+    alert('test 5');
     var url = window.location.href;
     alert(url);
     if(url != 'https://beta2.slate.co.jp/?')
     {
+      alert('test 4');
       var message = 'Are you sure you want to exit?';
       if (typeof event == 'undefined') {
           event = window.event;
@@ -21,10 +22,14 @@ window.onbeforeunload = function (event)
 $(function ()
 {
     alert('test 1');
-    $("a").not('#lnkLogOut').click(function () {
+    $("a").not('#lnkLogOut').click(function ()
+    {
+        alert('test 2');
         window.onbeforeunload = null;
     });
-    $(".btn").click(function () {
+    $(".btn").click(function ()
+    {
+        alert('test 3');
         window.onbeforeunload = null;
     });
 });
