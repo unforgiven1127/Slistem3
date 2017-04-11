@@ -2987,7 +2987,9 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         //$nPagerOffset = $oPager->getOffset();
-        $oPager->setOffset(2);
+        $pageoffsetClicked = (int)getValue('pageoffset');
+        ChromePhp::log($pageoffsetClicked);
+        $oPager->setOffset(3);
         $nPagerOffset = 2;
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
