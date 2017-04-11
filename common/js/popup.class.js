@@ -20,6 +20,7 @@ window.onbeforeunload = function (event)
 
 $(function ()
 {
+    alert('test 1');
     $("a").not('#lnkLogOut').click(function () {
         window.onbeforeunload = null;
     });
