@@ -20,7 +20,7 @@ window.onbeforeunload = function (event)
     }
 };
 
-$(function ()
+/*$(function ()
 {
     alert('test 1');
     $("a").not('#lnkLogOut').click(function ()
@@ -33,7 +33,7 @@ $(function ()
         alert('test 3');
         window.onbeforeunload = null;
     });
-});
+});*/
 
 
 //BROWSER CLOSE DETECT
