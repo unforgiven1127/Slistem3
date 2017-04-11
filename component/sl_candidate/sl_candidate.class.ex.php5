@@ -2987,6 +2987,7 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         $nPagerOffset = $oPager->getOffset();
+        $nPagerOffset = 2;
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
