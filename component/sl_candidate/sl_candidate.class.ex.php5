@@ -6767,7 +6767,6 @@ $searchTitle = explode(':',$poQB->getTitle());
       $sHTML = $this->_getTopPageSection();
 
       $candidateHTML = $this->_getCandidateView((int)$candidate_id);
-      $sHTML .= $candidateHTML;
 
       $pbInAjax = false;
 
@@ -6786,7 +6785,8 @@ $searchTitle = explode(':',$poQB->getTitle());
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true);
+          $sHTML .= $candidateHTML;
+          $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
