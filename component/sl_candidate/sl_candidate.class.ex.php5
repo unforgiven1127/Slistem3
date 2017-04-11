@@ -2929,7 +2929,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false)
     {
       ////ChromePhp::log$poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
@@ -2980,7 +2980,7 @@ class CSl_candidateEx extends CSl_candidate
       // ============================================
       // search and pagination management
 
-      if(empty($this->csSearchId) && empty($nHistoryPk))
+      if(empty($this->csSearchId) && empty($nHistoryPk) && !$fromMail)
       {
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
@@ -6764,7 +6764,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
