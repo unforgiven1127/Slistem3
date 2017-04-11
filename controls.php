@@ -1,8 +1,24 @@
 <script>
 alert('test 1');
 window.onbeforeunload = function (event) {
-    alert('test 2');
+    var message = 'Important: Please click on \'Save\' button to leave this page.';
+    if (typeof event == 'undefined') {
+        event = window.event;
+    }
+    if (event) {
+        event.returnValue = message;
+    }
+    return message;
 };
+
+$(function () {
+    $("a").not('#lnkLogOut').click(function () {
+        window.onbeforeunload = null;
+    });
+    $(".btn").click(function () {
+        window.onbeforeunload = null;
+});
+});
 </script>
 <?php
 
@@ -40,7 +56,7 @@ define('DB_SERVER_SLISTEM', '127.0.0.1');
 define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
-
+echo 'TEST FOR BROWSER CLOSE DETECT';
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
