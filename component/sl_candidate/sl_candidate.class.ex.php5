@@ -2932,12 +2932,13 @@ class CSl_candidateEx extends CSl_candidate
     private function _getCandidateList($pbInAjax = false, &$poQB = null,$fromMail = false,$lastHTML = '')
     {
       //ChromePhp::log($poQB);
-      /*if(isset($lastHTML) && !empty($lastHTML))
+      if(isset($lastHTML) && !empty($lastHTML))
       {
         $returnThis = unserialize($_SESSION['lastHTML']);
         unset($_SESSION['lastHTML']);
-        return $returnThis;
-      }*/
+        ChromePhp::log($returnThis);
+        //return $returnThis;
+      }
       $_SESSION['lastSearch'] = serialize($poQB);
       $pageoffsetClicked = (int)getValue('pageoffset');
       ChromePhp::log($pageoffsetClicked);
@@ -2951,11 +2952,11 @@ class CSl_candidateEx extends CSl_candidate
       }
       $pageLink = "";
       //if($fromMail)
-      /*{
+      {
         $pageLink = '<a href="javascript:;" ajaxtarget="#search_58ec0858a7cb7" ajaxcallback=""
           onclick="AjaxRequest(\'https://beta2.slate.co.jp/index.php5?uid=555-001&amp;ppa=ppasea&amp;ppt=candi&amp;ppk=0&amp;searchId=search_58ec0858a7cb7&amp;__filtered=1&amp;data_type=candi&amp;replay_search=2008913&amp;pg=ajx&amp;list=1&amp;nbresult=25&amp;pageoffset=2\', \'body\', \'\', \'#search_58ec0858a7cb7\', \'\', \'\', \'\');">PAGELINK
           </a>';
-      }*/
+      }
       //$pageLink = "";
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
@@ -6793,9 +6794,6 @@ ChromePhp::log($searchTitle);
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
-      $lastHTML = unserialize($_SESSION['lastHTML']);
-      $sHTML.=$lastHTML;
-      return $sHTML;
 
       $pbInAjax = false;
 
@@ -6812,8 +6810,7 @@ ChromePhp::log($searchTitle);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          $lastHTML = unserialize($_SESSION['lastHTML']);
-          //return $lastHTML;
+          $lastHTML = $obj = unserialize($_SESSION['lastHTML']);
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true,$lastHTML);
@@ -6826,7 +6823,7 @@ ChromePhp::log($searchTitle);
 
       //$aOutput['action']= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
 
-      return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($lastHTML))));
+
       return $sHTML;
       //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
       //return $this->_getCandidateView((int)$candidate_id);
