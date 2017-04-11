@@ -6793,6 +6793,9 @@ ChromePhp::log($searchTitle);
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
+      $lastHTML = unserialize($_SESSION['lastHTML']);
+      $sHTML.=$lastHTML;
+      return $sHTML;
 
       $pbInAjax = false;
 
@@ -6809,7 +6812,8 @@ ChromePhp::log($searchTitle);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          $lastHTML = $obj = unserialize($_SESSION['lastHTML']);
+          $lastHTML = unserialize($_SESSION['lastHTML']);
+          //return $lastHTML;
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true,$lastHTML);
