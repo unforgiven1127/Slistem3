@@ -4011,14 +4011,8 @@ var_dump($query);*/
     $limit = '15';
     $logs = getMongoLog($where,$orderBy,$limit);
 ////ChromePhp::log($logs);
-    if(!empty($logs))
-    {
-      $result = iterator_to_array($logs, false);
-    }
-    else
-    {
-      $result = array();
-    }
+
+    $result = iterator_to_array($logs, false);
 
     return $result;
   }
@@ -4125,11 +4119,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      echo '<br><br>'.'MONGO-gml ERROR : ' . $e->getMessage();
-      shell_exec('service mongod start');
-      $emptyArray = array();
-      return $emptyArray;
-      //die('ERROR : ' . $e->getMessage());
+    die('ERROR : ' . $e->getMessage());
 
     }
 
@@ -4210,8 +4200,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      die('ERROR : ' . $e->getMessage());
-      //echo '<br><br>'.'MONGO-iml ERROR : ' . $e->getMessage();
+    die('ERROR : ' . $e->getMessage());
 
     }
 

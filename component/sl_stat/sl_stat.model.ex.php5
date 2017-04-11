@@ -1229,18 +1229,10 @@ if($meeting['created_by'] == '521')
 
             $revenue_data[$row['user_position']][$user_id]['sort'] += $revenue_data[$row['user_position']][$user_id]['researcher']['signed']*10000000;
 
-            if($revenue_data[$row['user_position']][$user_id]['researcher']['signed'] > 0)
-            {
-              //do nothng
-            }
-            else
-            {
-              $revenue_data['Researcher'][$user_id][$row['position']]['placedRevenue'] = 0;
-            }
-
             if ($row['status'])
             {
               $revenue_data[$row['user_position']][$user_id]['total_amount'] += ($current_revenue_info['amount'] - $current_revenue_info['refund_amount']) * ($row['percentage'] / 100);
+
             }
             /*else
             {
