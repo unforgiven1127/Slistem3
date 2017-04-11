@@ -2956,7 +2956,7 @@ class CSl_candidateEx extends CSl_candidate
           onclick="AjaxRequest(\'https://beta2.slate.co.jp/index.php5?uid=555-001&amp;ppa=ppasea&amp;ppt=candi&amp;ppk=0&amp;searchId=search_58ec0858a7cb7&amp;__filtered=1&amp;data_type=candi&amp;replay_search=2008913&amp;pg=ajx&amp;list=1&amp;nbresult=25&amp;pageoffset=2\', \'body\', \'\', \'#search_58ec0858a7cb7\', \'\', \'\', \'\');">PAGELINK
           </a>';
       }
-      $pageLink = "";
+      //$pageLink = "";
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
       if($poQB != null)
