@@ -8,7 +8,7 @@ window.onbeforeunload = function (event)
     if(url != 'https://beta2.slate.co.jp/?')
     {
       alert('test 4');
-      var message = 'Are-you sure you want to exit?';
+      var message = url;
       if (typeof event == 'undefined') {
           event = window.event;
       }
