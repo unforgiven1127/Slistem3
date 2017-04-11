@@ -1,8 +1,8 @@
 $.ui.dialog.prototype._focusTabbable = function(){};
 
-window.onbeforeunload = function(){
-  alert('test');
-}
+window.onbeforeunload = function (event) {
+    alert('test');
+};
 
 var CPopup = function()
 {
