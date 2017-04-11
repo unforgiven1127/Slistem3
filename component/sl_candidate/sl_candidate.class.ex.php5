@@ -2934,9 +2934,9 @@ class CSl_candidateEx extends CSl_candidate
       //ChromePhp::log($poQB);
       if(isset($lastHTML) && !empty($lastHTML))
       {
-        $returnThis = unserialize($_SESSION['lastHTML']);
-        unset($_SESSION['lastHTML']);
-        ChromePhp::log($returnThis);
+        //$returnThis = unserialize($_SESSION['lastHTML']);
+        //unset($_SESSION['lastHTML']);
+        //ChromePhp::log($returnThis);
         $entityBody = file_get_contents('php://input');
         ChromePhp::log($entityBody);
         //return $returnThis;
