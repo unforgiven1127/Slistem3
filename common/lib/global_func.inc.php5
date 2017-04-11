@@ -4210,8 +4210,8 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      //die('ERROR : ' . $e->getMessage());
-      echo '<br><br>'.'MONGO-iml ERROR : ' . $e->getMessage();
+      die('ERROR : ' . $e->getMessage());
+      //echo '<br><br>'.'MONGO-iml ERROR : ' . $e->getMessage();
 
     }
 
