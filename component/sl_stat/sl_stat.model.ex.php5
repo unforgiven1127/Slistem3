@@ -573,10 +573,10 @@ order by m.candidatefk
         {echo '<br><br>';
         echo '<br><br>';
         echo '<br><br>';
-          ////ChromePhp::log($met_candidates_array[$meeting['candidatefk']]['times_met']);
-          ////ChromePhp::log($temp_validation_date);
-          ////ChromePhp::log($temp_validation_date);
-          ////ChromePhp::log($flip_user_ids[$meeting[$group_switch]]);
+          //////ChromePhp::log$met_candidates_array[$meeting['candidatefk']]['times_met']);
+          //////ChromePhp::log$temp_validation_date);
+          //////ChromePhp::log$temp_validation_date);
+          //////ChromePhp::log$flip_user_ids[$meeting[$group_switch]]);
           var_dump($meeting);echo '<br>';
           var_dump($met_candidates_array[$meeting['candidatefk']]['times_met']);echo '<br>';
           var_dump($temp_validation_date);echo '<br>';
@@ -591,9 +591,9 @@ order by m.candidatefk
 
 if($meeting['created_by'] == '521')
 {
-  //ChromePhp::log($meeting['candidatefk']);
-  //ChromePhp::log($meeting['meeting_done']);
-  //ChromePhp::log($meeting['meeting_done']);
+  ////ChromePhp::log$meeting['candidatefk']);
+  ////ChromePhp::log$meeting['meeting_done']);
+  ////ChromePhp::log$meeting['meeting_done']);
 
 }
 //
@@ -953,7 +953,7 @@ if($meeting['created_by'] == '521')
   public function get_revenue_data($request_date = '', $location = '')
   {
     error_reporting(E_ALL & ~E_NOTICE);
-//ChromePhp::log('get_revenue_data');
+////ChromePhp::log'get_revenue_data');
     $revenue_data = $revenue_data_raw = array();
 
     if (empty($request_date))
@@ -1109,11 +1109,11 @@ if($meeting['created_by'] == '521')
       {
         $row = $db_result->getData();
 
-        //ChromePhp::log('HERE');
-        //ChromePhp::log($user_id);
+        ////ChromePhp::log'HERE');
+        ////ChromePhp::log$user_id);
         if($row['loginpk'] == '443')
         {
-          ChromePhp::log($row);
+          //ChromePhp::log$row);
         }
 
         if ($row['id'] == 'bizreach' || $row['id'] == 'othercollab' || empty($row['id']))
@@ -1804,7 +1804,7 @@ if($meeting['created_by'] == '521')
       $query .= ' AND spl.date_created BETWEEN "'.$start_date.'" AND "'.$end_date.'"';
       $query .= ' AND (spl.status = 2 OR spl.status = 51) GROUP BY spl.candidatefk, spl.positionfk';
 
-      //ChromePhp::log($query);
+      ////ChromePhp::log$query);
     }
     else
     {
@@ -1904,7 +1904,7 @@ if($meeting['created_by'] == '521')
 //echo '<br><br>';
 
     $oDbResult = array();
-////ChromePhp::log($query);
+//////ChromePhp::log$query);
     $oDbResult = $this->oDB->executeQuery($query);
     $read = $oDbResult->readFirst();
 

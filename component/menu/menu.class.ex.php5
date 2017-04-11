@@ -394,9 +394,9 @@ class CMenuEx extends CMenu
       return '';
 
     $sMenuName = 'menunav'.$pnMenuNumber;
-//ChromePhp::log($sMenuName);
+////ChromePhp::log$sMenuName);
     $asMenu = $this->_oSettings->getSettingValue($sMenuName);
-//ChromePhp::log($asMenu);
+////ChromePhp::log$asMenu);
 
     if(!is_array($asMenu) || empty($asMenu))
       return '';
@@ -454,7 +454,7 @@ class CMenuEx extends CMenu
       {
         foreach($asMenuArray as $asMenuItems)
         {
-//ChromePhp::log($asMenuItems);
+////ChromePhp::log$asMenuItems);
           $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
           $onclickNew = "window.open('$mainPageUrl','_self');";
           if($asMenuItems['name'] == 'Reports')

@@ -583,8 +583,8 @@ class CSl_candidateEx extends CSl_candidate
       return $oLogin->displayList(false);
     }
 
-//ChromePhp::log($this->csType);
-//ChromePhp::log($this->csAction);
+////ChromePhp::log$this->csType);
+////ChromePhp::log$this->csAction);
     switch($this->csType)
     {
 
@@ -882,7 +882,7 @@ class CSl_candidateEx extends CSl_candidate
   */
   public function getItemDescription($pvItemPk, $psAction = '', $psItemType = 'candi')
   {
-    ////ChromePhp::log('getItemDescription 3');
+    //////ChromePhp::log'getItemDescription 3');
     if(!assert('is_arrayOfInt($pvItemPk) || is_key($pvItemPk)'))
       return array();
 
@@ -1129,7 +1129,7 @@ class CSl_candidateEx extends CSl_candidate
 
         if($ownerFlag)
         {
-          #//ChromePhp::log('NO MAIL!!');
+          #////ChromePhp::log'NO MAIL!!');
           #do nothing
         }
         else
@@ -1220,7 +1220,7 @@ class CSl_candidateEx extends CSl_candidate
       {
         $text = "Candidate viewed";
       }
-//ChromePhp::log($text);
+////ChromePhp::log$text);
       //insertLog($user_id, $candidate_id, $text, "user_history");
       insertMongoLog($user_id, $candidate_id, $text, "user_history");
     }
@@ -1975,9 +1975,9 @@ class CSl_candidateEx extends CSl_candidate
 
                 $sURL = $oPage->getAjaxUrl('sl_candidate', MAIL_SEND_POPUP, CANDIDATE_MAIL_SEND, $pasCandidateData['sl_candidatepk']);
                 $sURL.= "&cem=".$asData['value'];
-//ChromePhp::log('send message');
+////ChromePhp::log'send message');
                 //$email = $asData['value'];
-                //ChromePhp::log($email);
+                ////ChromePhp::log$email);
 
                 //$GLOBALS['redis']->set('candidate_email', $email);
 
@@ -2192,8 +2192,8 @@ class CSl_candidateEx extends CSl_candidate
           'uids' => array('555-001', '999-111'),
           );
 
-      ////ChromePhp::log($asComponent);
-      ////ChromePhp::log($sLimit);
+      //////ChromePhp::log$asComponent);
+      //////ChromePhp::log$sLimit);
       $asHistory = $this->_oLogin->getSystemHistoryItem($asComponent, $sLimit);
       //$where = array('cp_pk' => (int)$pnPk);
       $where = array( '$and' => array(
@@ -2215,13 +2215,13 @@ class CSl_candidateEx extends CSl_candidate
       $limit = 25;
       $skip = 0;
       $explodedLimit = explode(',',$sLimit);
-////ChromePhp::log($sLimit);
-////ChromePhp::log($explodedLimit);
+//////ChromePhp::log$sLimit);
+//////ChromePhp::log$explodedLimit);
       if(isset($explodedLimit[1]))
       {
         $skip = $explodedLimit[1];
       }
-////ChromePhp::log($skip);
+//////ChromePhp::log$skip);
 
       $orderBy = '';
       $table = 'logs';
@@ -2235,7 +2235,7 @@ class CSl_candidateEx extends CSl_candidate
 
 /*foreach ($asHistory as $key => $value)
 {
-  ChromePhp::log($value);
+  //ChromePhp::log$value);
 }*/
       $flagContinue = 0;
       $sId = 'activity_feed_'.$pnPk.'_'.$pnPage;
@@ -2254,31 +2254,31 @@ class CSl_candidateEx extends CSl_candidate
           if (in_array($asHistoryData['action'], $skip_activity))
           {
             $flagContinue = 1;
-            //ChromePhp::log('INSIDE');
-            //ChromePhp::log($asHistoryData);
+            ////ChromePhp::log'INSIDE');
+            ////ChromePhp::log$asHistoryData);
             continue;
           }
           if($flagContinue == 1)
           {
             $flagContinue = 0;
             continue;
-            //ChromePhp::log('CIKMIS OLMASI LAZIM');
+            ////ChromePhp::log'CIKMIS OLMASI LAZIM');
           }
           //if($asHistoryData['userfk'] == '234')//BOYLE BIR USER YOK
             //continue;
-////ChromePhp::log($asHistoryData['userfk']);
+//////ChromePhp::log$asHistoryData['userfk']);
           if(isset($asHistoryData['userfk']) && $asHistoryData['userfk'] > 0)
           {
             $user_info = getUserInformaiton($asHistoryData['userfk']);
           }
 /*if($asHistoryData['userfk'] == '234')
 {
-  //ChromePhp::log($user_info);
+  ////ChromePhp::log$user_info);
 }*/
           if(!isset($user_info) || is_null($user_info) || empty($user_info))
           {
-            ////ChromePhp::log('NULL');
-            ////ChromePhp::log($user_info);
+            //////ChromePhp::log'NULL');
+            //////ChromePhp::log$user_info);
             //continue;
           }
           else
@@ -2301,7 +2301,7 @@ class CSl_candidateEx extends CSl_candidate
 
               if(!empty($asHistoryData['description']) && $asHistoryData['description'] != 'null')
               {
-                 //ChromePhp::log($asHistoryData['description']);
+                 ////ChromePhp::log$asHistoryData['description']);
                  $sHTML.= '<br />'.$asHistoryData['description'];
               }
 
@@ -2931,10 +2931,10 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
-      //ChromePhp::log($poQB);
+      ////ChromePhp::log$poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
-      //ChromePhp::log($obj);
+      ////ChromePhp::log$obj);
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -2953,7 +2953,7 @@ class CSl_candidateEx extends CSl_candidate
       $bDisplayPositionField = false;
       //$bLogged = false;
       $bFilteredList = (bool)getValue('__filtered');
-////ChromePhp::log('_getCandidateList');
+//////ChromePhp::log'_getCandidateList');
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
 //BURADAN
@@ -3134,15 +3134,15 @@ class CSl_candidateEx extends CSl_candidate
 
       //dump($poQB);
       $sQuery = $poQB->getCountSql();
-//ChromePhp::log($exploded);
+////ChromePhp::log$exploded);
       //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
-//ChromePhp::log('HERE 1');
+////ChromePhp::log'HERE 1');
         $searchID = $exploded[1];
-//ChromePhp::log($searchID);
+////ChromePhp::log$searchID);
         $savedQuery = getLoggedQuery(new MongoId($searchID));
-//ChromePhp::log($savedQuery);
+////ChromePhp::log$savedQuery);
         $sQuery = $savedQuery[0]['action'];
 
         $oDbResult = $oDb->ExecuteQuery($sQuery);
@@ -3152,7 +3152,7 @@ class CSl_candidateEx extends CSl_candidate
       }
       else
       {
-        ////ChromePhp::log($sQuery);
+        //////ChromePhp::log$sQuery);
         $oDbResult = $oDb->ExecuteQuery($sQuery);
         $bRead = $oDbResult->readFirst();
         $nResult = (int)$oDbResult->getFieldValue('nCount');
@@ -3171,7 +3171,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 $searchTitle = explode(':',$poQB->getTitle());
-////ChromePhp::log($searchTitle);
+//////ChromePhp::log$searchTitle);
       if (isset($nPagerOffset) && $nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
@@ -3183,7 +3183,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $oPager->setOffset(1);
         }
       }
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
       //Some joins are too heavy to make (notes, contacts...)
       //So we put the main query in a subquery, and join with the filtered / size-limited result
       if($bHeavyJoin)
@@ -3389,14 +3389,14 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $asData = array();
       $asPk = array();
-//ChromePhp::log($exploded);
+////ChromePhp::log$exploded);
       //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
       if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
         $searchID = $exploded[1];
 
-        //ChromePhp::log('HERE 2');
-        //ChromePhp::log($searchID);
+        ////ChromePhp::log'HERE 2');
+        ////ChromePhp::log$searchID);
         $savedQuery = getLoggedQuery(new MongoId($searchID));
         $sQuery = $savedQuery[0]['action'];
 
@@ -6467,7 +6467,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $data['company_id'] = $companyInfo['sl_companypk'];
       $data['server_name'] = $_SERVER['SERVER_NAME'];
 
-      ChromePhp::log($data);
+      //ChromePhp::log$data);
 
       $count = 0;
       foreach ($companyPositionList as $key => $value)
@@ -6560,7 +6560,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         }
 
-//ChromePhp::log($companyList[$company_id]['totalCandidates']);
+////ChromePhp::log$companyList[$company_id]['totalCandidates']);
 
         $data['totalCandidates'] = count($companyList[$company_id]['totalCandidates']);
         $data['activeCandidates'] = count($companyList[$company_id]['activeCandidates']);
@@ -6580,7 +6580,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       else
       {
         $company_info = getCompanyInformation($company_id);
-        ////ChromePhp::log($company_info);
+        //////ChromePhp::log$company_info);
         $data['totalCandidates'] = 0;
         $data['activeCandidates'] = 0;
         $data['compantId'] = $company_id;
@@ -6604,13 +6604,13 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send($candidate_id = 0)
     {
-      //ChromePhp::log($this->cnPk);
-      //ChromePhp::log($candidate_id);
+      ////ChromePhp::log$this->cnPk);
+      ////ChromePhp::log$candidate_id);
 
       $data['candidate_id'] = $candidate_id;
 
       $candidate_email = $_GET['cem'];
-      //ChromePhp::log($email_test);
+      ////ChromePhp::log$email_test);
 
       //$sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
       $sURL = $this->_oPage->getUrl($this->csUid, CONST_ACTION_SEARCH, CANDIDATE_MAIL_SEND);
@@ -6624,7 +6624,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $user_info = getUserInformaiton($user_id);
       $signature = $user_info['html_signature'];
-      //ChromePhp::log($signature);
+      ////ChromePhp::log$signature);
       if(isset($signature) && !empty($signature))
       {
         $signature = '&#13;&#13;&#13;'.$signature;
@@ -6643,12 +6643,12 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-      //ChromePhp::log('_candidate_mail_send_action');
+      ////ChromePhp::log'_candidate_mail_send_action');
       $email = trim($_POST['receipent_email']);
-      //ChromePhp::log($email);
+      ////ChromePhp::log$email);
       //$message = nl2br($_POST['message']);
       $message = $_POST['message'];
-      //ChromePhp::log($message);
+      ////ChromePhp::log$message);
       $candidate_id = $_POST['candidate_id'];
       $subject = $_POST['subject'];
       $cc = $_POST['cc'];
@@ -6673,14 +6673,14 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //$subject .= '<br><br><br>'.$signeture;
 
-      //ChromePhp::log($_FILES['files']);
+      ////ChromePhp::log$_FILES['files']);
 
       //********FILE UPLOAD**********
 
       $uploaded_files = array();
       $uniqueDate = strtotime('now');
       $uniqueDate = $candidate_id.'_'.$uniqueDate;
-      //ChromePhp::log($uniqueDate);
+      ////ChromePhp::log$uniqueDate);
 
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
@@ -6694,7 +6694,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         // Loop $_FILES to exeicute all files
         foreach ($_FILES['files']['name'] as $f => $name)
         {
-            //ChromePhp::log($name);
+            ////ChromePhp::log$name);
             if ($_FILES['files']['error'][$f] == 4) {
                 continue; // Skip file if any error found
             }
@@ -6709,7 +6709,7 @@ $searchTitle = explode(':',$poQB->getTitle());
             }*/
                 else{ // No error found! Move uploaded files
                     $sTmpFileName = $_FILES['files']['tmp_name'][$f];
-                    //ChromePhp::log($sTmpFileName);
+                    ////ChromePhp::log$sTmpFileName);
                     if(move_uploaded_file($sTmpFileName, $sNewPath.$name))
                     {
                       $uploaded_files[] = $sNewPath.$name;
@@ -6729,7 +6729,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
-      //ChromePhp::log($candidate_list);
+      ////ChromePhp::log$candidate_list);
 
       $oQB = $this->_getModel()->getQueryBuilder();
       //$oQB->setTitle('QuickSearch: refId = '.$candidate_id);
@@ -6739,7 +6739,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       require_once('component/sl_candidate/resources/search/quick_search.class.php5');
       //$oQS = new CQuickSearch($oQB);
       //$sError = $oQS->buildQuickSearch('candi');
-      //ChromePhp::log($oQS);
+      ////ChromePhp::log$oQS);
       //if(!empty($sError))
         //return json_encode(array('alert' => $sError));
 
@@ -6762,7 +6762,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          //ChromePhp::log($oQB);
+          ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
@@ -7181,7 +7181,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
     public function controlCompanyDuplicate()
     {
-      ////ChromePhp::log('controlCompanyDuplicate');
+      //////ChromePhp::log'controlCompanyDuplicate');
       //url
       //https://beta.slate.co.jp/index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx
       $company_name = $_POST['cname'];
@@ -7260,17 +7260,17 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $somthing = false;
       }
-////ChromePhp::log($somthing);
+//////ChromePhp::log$somthing);
       if($somthing)
       {
         $sQuery = trim($sQuery, "OR ");
         $sQuery = trim($sQuery, "OR");
         $sQuery .= " LIMIT 80";
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
         $db_result = $oDB->executeQuery($sQuery);
 
         $result = $db_result->getAll();
-////ChromePhp::log($result);
+//////ChromePhp::log$result);
         $company_list = "";
         $adet = count($result);
 
@@ -7278,7 +7278,7 @@ $searchTitle = explode(':',$poQB->getTitle());
         {
           foreach ($result as $key => $value)
           {
-////ChromePhp::log($value['name']);
+//////ChromePhp::log$value['name']);
             //$company_list.= "test".',<br>';
             $company_list.= '&#x25cf; '.$value['name'].' (#'.$value['sl_companypk'].')'.',<br>';
             //$company_list.= $value['sl_companypk']."-".$value['name']."_";
@@ -7294,7 +7294,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $company_list = "none";
       }
-      ////ChromePhp::log($company_list);
+      //////ChromePhp::log$company_list);
 
 
       //$company_list = "test (#123456), Test (#123456)";
@@ -7302,11 +7302,11 @@ $searchTitle = explode(':',$poQB->getTitle());
       $jsonData = json_encode($company_list);
 
       return $jsonData;
-      ////ChromePhp::log($result);
+      //////ChromePhp::log$result);
       //return 'RESULT';
 
       //$possibleDuplicates = getDuplicateCompanies($company_name);
-      ////ChromePhp::log($possibleDuplicates);
+      //////ChromePhp::log$possibleDuplicates);
       //echo 'asdasdasd';
 
     }
@@ -7314,7 +7314,7 @@ $searchTitle = explode(':',$poQB->getTitle());
     private function _getCompanyForm($pnPk = 0)
     {
       $testUrl = $this->_oPage->getAjaxUrl($this->csUid, COMPANY_DUPLI_CONTROL, CONST_CANDIDATE_TYPE_CANDI);
-      ////ChromePhp::log($testUrl);
+      //////ChromePhp::log$testUrl);
 
 
       if(!assert('is_integer($pnPk)'))
@@ -7499,7 +7499,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           {
             foreach ($owners as $key => $value)
             {
-              //ChromePhp::log($value);
+              ////ChromePhp::log$value);
             }
           }*/
 
@@ -7617,7 +7617,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $mailFlag = $_GET['mailFlg'];
       }
-////ChromePhp::log($mailFlag);
+//////ChromePhp::log$mailFlag);
       if($mailFlag == 'yes' || $mailFlag == 'normal')
       {
 
@@ -7722,7 +7722,7 @@ $searchTitle = explode(':',$poQB->getTitle());
             $company_id = $newCompanyOwner[1];
             insertNewOwner($newOwner,$user_id,$company_id);
           }
-          ////ChromePhp::log($company_owners);
+          //////ChromePhp::log$company_owners);
         }
 
         $asIndustry = explode(',', getValue('industrypk'));
@@ -7877,14 +7877,14 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
         else
         {
-//          //ChromePhp::log('HERE');
+//          ////ChromePhp::log'HERE');
           $oQb->addOrder("scom.$sSortField $sSortOrder");
         }
       }
       else
         $oQb->addOrder('scom.name DESC');
 
-      ////ChromePhp::log($oQb->getSql());
+      //////ChromePhp::log$oQb->getSql());
       $sql = $oQb->getSql();
 
       if(!empty($sSortField))
@@ -7898,7 +7898,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $explodeLimit = explode('LIMIT',$sql);
       $noLimit = $explodeLimit[0];
 
-      ////ChromePhp::log($noLimit);
+      //////ChromePhp::log$noLimit);
       $oDB = CDependency::getComponentByName('database');
 
       $db_result = $oDB->executeQuery($noLimit);
@@ -8262,7 +8262,7 @@ die();*/
 
       if(empty($pnCandidatePk))
       {
-        ChromePhp::log('HERE AGAIN');
+        //ChromePhp::log'HERE AGAIN');
         $asResult = $this->_getCandidateContactSave(true, $this->casCandidateData['profile']['candidatefk']);
         if(isset($asResult['error']))
           return array('popupError' => $asResult['error']);
@@ -8510,16 +8510,16 @@ die();*/
         $asBonus = $oCurrency->getCurrencyFromPost('bonus');
         $this->_getSalaryInYen($asBonus);
 
-////ChromePhp::log($asSalary);
-////ChromePhp::log($asSalary['value']);
+//////ChromePhp::log$asSalary);
+//////ChromePhp::log$asSalary['value']);
 
 $salaryManual = getValue('salary');
 $salaryUnit = getValue('salary_unit');
 $salaryCurrency = getValue('salary_currency');
 
 $bonusManual = getValue('bonus');
-////ChromePhp::log($salaryManual);
-////ChromePhp::log($salaryUnit);
+//////ChromePhp::log$salaryManual);
+//////ChromePhp::log$salaryUnit);
 
 
         if($salaryUnit == 'M')
@@ -8565,7 +8565,7 @@ $bonusManual = getValue('bonus');
 
         $testTargetSalary = (int)getValue('target_low');
 
-        ////ChromePhp::log($asTargetLow['yen']);
+        //////ChromePhp::log$asTargetLow['yen']);
 
         $this->_getSalaryInYen($asTargetLow);
 
@@ -8592,11 +8592,11 @@ $bonusManual = getValue('bonus');
         {// meeting needed
           $candidateMeetingCount = getCandidateMeetingCount($pnCandidatePk);
 
-          ////ChromePhp::log($candidateMeetingCount);
+          //////ChromePhp::log$candidateMeetingCount);
 
           $candidateMeetingCount = $candidateMeetingCount[0];
 
-          ////ChromePhp::log($candidateMeetingCount);
+          //////ChromePhp::log$candidateMeetingCount);
 
           if($candidateMeetingCount['meetingCount'] == 0)
           {
@@ -8745,7 +8745,7 @@ $bonusManual = getValue('bonus');
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         //candidate table added or update... deal with the business profile
-        ChromePhp::log($bNewCandidate);
+        //ChromePhp::log$bNewCandidate);
         if($bNewCandidate)
         {
           //$asMonth = array('A','B','C','D','E','F','G','H','I','J','K','L');
@@ -8761,7 +8761,7 @@ $bonusManual = getValue('bonus');
         }
         else
         {
-          ChromePhp::log('ELSE');
+          //ChromePhp::log'ELSE');
           $this->casCandidateData['profile']['date_updated'] = date('Y-m-d H:i:s');
           $this->casCandidateData['profile']['updated_by'] = (int)$this->casUserData['loginpk'];
 
@@ -8785,7 +8785,7 @@ $bonusManual = getValue('bonus');
             $nCompany = $asData['companyfk'];
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
             $sNote.= 'to [ #'.$nCompany.' - '.$asCompany['name'].' ]<br />';
-//ChromePhp::log($sFrom);
+////ChromePhp::log$sFrom);
             //add a note from  system user
             $oNote->addNote($nCandidatePk, 'cp_history', $sNote, (int)$this->casUserData['pk']);
             $oNote->addNote($nCandidatePk, 'cp_hidden', $sFrom, (int)$this->casUserData['pk']);
@@ -9057,7 +9057,7 @@ $bonusManual = getValue('bonus');
       //varsa 8 alanin doldurulmasi yetecek yoksa 10 ve her alanda 20 karakter olmak zorunda...
 
       //$completedMeetings = getCompletedMeetings($candidate_id);
-      ////ChromePhp::log($completedMeetings);
+      //////ChromePhp::log$completedMeetings);
       // bu kisimda aday zaten ilk dea ekleniyor o nedenle hepsi doldurulacak ve minimum 25 character olacak.
 
       /*$pnL = strlen($personality_note);
@@ -9129,13 +9129,13 @@ $bonusManual = getValue('bonus');
 
     private function _saveResume($pbTest = true, $pbSave = false, $pasCandidate = array())
     {
-      //ChromePhp::log('_saveResume');
+      ////ChromePhp::log'_saveResume');
       $asError = array();
 
       $desc = getValue('doc_description');
       if($pbSave && isset($desc) && !empty($desc) && isset($pasCandidate['candidatefk']) && !empty($pasCandidate['candidatefk']))
       {
-        //ChromePhp::log('IF');
+        ////ChromePhp::log'IF');
         $desc = getValue('doc_description');
         $passResume = $desc;
 
@@ -9148,8 +9148,8 @@ $bonusManual = getValue('bonus');
 
       else
       {
-        //ChromePhp::log('ELSE');
-        //ChromePhp::log($pbTest);
+        ////ChromePhp::log'ELSE');
+        ////ChromePhp::log$pbTest);
         if(empty($_FILES) || empty($_FILES['document']['name']))
         {
           $asError[] = 'No file selected.';
@@ -9183,7 +9183,7 @@ $bonusManual = getValue('bonus');
             $asError[] = $asResult['error'];
         }
       }
-//ChromePhp::log($asError);
+////ChromePhp::log$asError);
       return $asError;
     }
 
@@ -10248,8 +10248,8 @@ $bonusManual = getValue('bonus');
         $escapedString = $this->_getModel()->dbEscapeString($sSearchString);
         $stringCount = strlen($escapedString);
         $stringCount = $stringCount-2; // iki adet " geliyor o nedenle -2
-        ////ChromePhp::log($escapedString);
-        ////ChromePhp::log($stringCount);
+        //////ChromePhp::log$escapedString);
+        //////ChromePhp::log$stringCount);
 
         $poQB->addSelect('scom.*, IF(scom.name LIKE '.$this->_getModel()->dbEscapeString($sSearchString).', 1, 0) as exact_name ');
 
@@ -10267,7 +10267,7 @@ $bonusManual = getValue('bonus');
       }
 
       $createdSql = $poQB->getSql();
-      ////ChromePhp::log($createdSql);
+      //////ChromePhp::log$createdSql);
 
       $oDbResult = $this->_getModel()->executeQuery($poQB->getSql());
       $bRead = $oDbResult->readFirst();
@@ -10359,7 +10359,7 @@ $bonusManual = getValue('bonus');
         {
           $owner_names = $oLogin->getUserLink(101,false,false,true);
         }
-        ////ChromePhp::log($owner_names);
+        //////ChromePhp::log$owner_names);
 
         $asCpData['level_letter'] = $asLetter[$asCpData['level']];
         $sFirstLetter = strtoupper(substr($asCpData['name'], 0, 1));
@@ -10406,7 +10406,7 @@ $bonusManual = getValue('bonus');
 
 /*if(!empty($nLevel) && $nLevel == 8)
       {
-      //ChromePhp::log($sQuery);
+      ////ChromePhp::log$sQuery);
 
       return 'end of while';
     }*/
@@ -11064,7 +11064,7 @@ $bonusManual = getValue('bonus');
                 $loginfk = $this->_oLogin->getUserPk();
                 $cp_pk = $pasOldData['sl_candidatepk'];
                 $text = '['.$sLabel.'] changed from: '.$old_variable.' -> to: '.$new_variable;
-//ChromePhp::log('MONGO EKLE');
+////ChromePhp::log'MONGO EKLE');
                 //insertLog($loginfk, $cp_pk, $text, "company_history");
                 insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);

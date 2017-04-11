@@ -1252,7 +1252,7 @@ class CLoginEx extends CLogin
     foreach($aoComponent as $oComponent)
     {
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
-      //ChromePhp::log($asTab);
+      ////ChromePhp::log$asTab);
       if(!empty($asTab))
       {
         //$sFoldersUrl   = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
@@ -1438,7 +1438,7 @@ class CLoginEx extends CLogin
 
     signature_save($user_id, $signature);
 
-    //ChromePhp::log('_saveSignature');
+    ////ChromePhp::log'_saveSignature');
 
     header("Location: https://beta2.slate.co.jp/");
     die();

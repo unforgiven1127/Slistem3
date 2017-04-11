@@ -1027,7 +1027,7 @@ function _live_dump($pvTrace, $psTitle = null)
   //SearchHistory functions
   function manageSearchHistory($psGuid='', $psType='', $pbForceNew = false)
   {
-    //ChromePhp::log('manageSearchHistory');
+    ////ChromePhp::log'manageSearchHistory');
     //starts with maintenance: keep session array size under 50 for every component/type
     if(isset($_SESSION['searchHistory'][$psGuid][$psType]) && count($_SESSION['searchHistory'][$psGuid][$psType]) > 50)
     {
@@ -1462,7 +1462,7 @@ function _live_dump($pvTrace, $psTitle = null)
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT COUNT(*) as meetingCount FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
@@ -3257,7 +3257,7 @@ var_dump($query);*/
 
   function mergeCharacterAssassments($candidate_id, $target_candidate_id)
   {
-    ////ChromePhp::log('mergeCharacterAssassments');
+    //////ChromePhp::log'mergeCharacterAssassments');
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
@@ -3424,7 +3424,7 @@ var_dump($query);*/
                 left join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
                 left join sl_company slc on slc.sl_companypk = slp.companyfk
                 WHERE slp.companyfk = '".$company_id."'";
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
@@ -3968,7 +3968,7 @@ var_dump($query);*/
 
   function getLoggedQuery($searchID)
   {
-//ChromePhp::log('getLoggedQuery');
+////ChromePhp::log'getLoggedQuery');
     /*$oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT * FROM login_system_history lhs WHERE lhs.login_system_historypk = '".$searchID."'";
@@ -3982,7 +3982,7 @@ var_dump($query);*/
     //$orderBy = '';
     //$limit = '17';
     $logs = getMongoLog($where);
-////ChromePhp::log($logs);
+//////ChromePhp::log$logs);
 
     $result = iterator_to_array($logs, false);
 
@@ -4010,7 +4010,7 @@ var_dump($query);*/
     $orderBy = '';
     $limit = '15';
     $logs = getMongoLog($where,$orderBy,$limit);
-////ChromePhp::log($logs);
+//////ChromePhp::log$logs);
 
     $result = iterator_to_array($logs, false);
 
@@ -4130,7 +4130,7 @@ var_dump($query);*/
     {
       $orderBy = array('date' => -1);//(1 : ASC , -1 : DESC)
     }
-////ChromePhp::log($where);
+//////ChromePhp::log$where);
 
     if($where == '')
     {
@@ -4141,13 +4141,13 @@ var_dump($query);*/
       $allLogs = $logsSlistemMongo->find($where)->sort($orderBy)->limit($limit)->skip($skip);
     }
 
-////ChromePhp::log($allLogs);
+//////ChromePhp::log$allLogs);
     //$returnArray = array();
     /*$count = 0;
     foreach($allLogs as $log)
     {
       //$count++;
-        //ChromePhp::log($log);
+        ////ChromePhp::log$log);
         //$returnArray[] = $log;
     }*/
 
@@ -4157,7 +4157,7 @@ var_dump($query);*/
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
     //return true;
-////ChromePhp::log($table);
+//////ChromePhp::log$table);
 
     /*if($table == 'user_history_all_view')
     {
@@ -4200,7 +4200,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-    die('ERROR : ' . $e->getMessage());
+      die('ERROR : ' . $e->getMessage());
 
     }
 
@@ -4225,7 +4225,7 @@ var_dump($query);*/
         'value' => $value,
         'flag' => 'a',
     );
-////ChromePhp::log($newLog);
+//////ChromePhp::log$newLog);
     $logsSlistemMongo->insert($newLog);
 
     return true;
@@ -4469,7 +4469,7 @@ var_dump($query);*/
                FROM security_alert lsh
                WHERE lsh.type = '".$type."' AND user_id = '".$user_id."' AND action_date >= '".$today."' AND company_id = '".$company_id."' ";
 
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -4482,7 +4482,7 @@ var_dump($query);*/
   function securityCheckSearch($user_id)
   {
     // if user do more than 5 search in 5 minutes
-////ChromePhp::log('securityCheckSearch');
+//////ChromePhp::log'securityCheckSearch');
     $now = date('Y-m-d H:i:s');
     $fiveMinBefore = date('Y-m-d H:i:s', strtotime('-5 minutes'));
 
@@ -4506,19 +4506,19 @@ var_dump($query);*/
       $logs = getMongoLog($where);
 
       $count = $logs->count();
-////ChromePhp::log($sQuery);
+//////ChromePhp::log$sQuery);
     /*$db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-////ChromePhp::log($result);
+//////ChromePhp::log$result);
     $count = $result[0]['count'];*/
-////ChromePhp::log($count);
+//////ChromePhp::log$count);
 
 
 
     if($user_id != '101' AND $count >= 10) // count starts from 0
     {
-      ////ChromePhp::log('Action: Do more than 5 searches in 5 minutes.');
+      //////ChromePhp::log'Action: Do more than 5 searches in 5 minutes.');
       $dNow = date('Y-m-d H:i:s'); // Japan time
       $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                  VALUES('".$user_id."','search_in_five','".$dNow."')";
@@ -4584,8 +4584,8 @@ var_dump($query);*/
 
     $oMail->addRecipient($to);
 
-    //ChromePhp::log($_FILES['files']);
-    //ChromePhp::log($files);
+    ////ChromePhp::log$_FILES['files']);
+    ////ChromePhp::log$files);
 
     $oMail->addBCCRecipient($from);
     $oMail->addBCCRecipient('slistem@slate.co.jp');
@@ -4606,7 +4606,7 @@ var_dump($query);*/
         $oMail->addBCCRecipient(trim($value));
       }
     }
-//ChromePhp::log($message);
+////ChromePhp::log$message);
     $GLOBALS['redis']->set('emailTepmlate', false);
     $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
     $GLOBALS['redis']->set('emailTepmlate', true);
@@ -4624,7 +4624,7 @@ var_dump($query);*/
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();*/
-////ChromePhp::log('securityCheckContactView');
+//////ChromePhp::log'securityCheckContactView');
     $dNow = date('Y-m-d');
     $startDate = $dNow." 00:00:00";
     $where = array( '$and' => array(
@@ -4638,7 +4638,7 @@ var_dump($query);*/
     //$limit = '5';
 
     $logs = getMongoLog($where,$orderBy);
-////ChromePhp::log($logs);
+//////ChromePhp::log$logs);
 
     //  $logsContactSeen = iterator_to_array($logs, false);
     $logs = iterator_to_array($logs, false);
@@ -4656,18 +4656,18 @@ var_dump($query);*/
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
     $logsContactSeen = $logs;
     //$value = $blah[0];
-//ChromePhp::log($logs);
+////ChromePhp::log$logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
-////ChromePhp::log('HERE');
-////ChromePhp::log($logs[4]);
+//////ChromePhp::log'HERE');
+//////ChromePhp::log$logs[4]);
       //$first = $result[4]; // 5 kayittan ilk olani sectik
       //$controlDate = $first['date'];
       $first = $logs[4];
-////ChromePhp::log($first);
+//////ChromePhp::log$first);
       $controlDate = $first['date'];
-////ChromePhp::log($controlDate);
+//////ChromePhp::log$controlDate);
       /*$sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
                  WHERE (lsh.action LIKE '%created a new character note%'
                  OR lsh.action LIKE '%created a new email note%'
@@ -4696,7 +4696,7 @@ var_dump($query);*/
 
       $logCount = $logs->count();
       $logs = iterator_to_array($logs, false);
-////ChromePhp::log($logCount);
+//////ChromePhp::log$logCount);
 
 
       /*$db_result = $oDB->executeQuery($sQuery);
@@ -4708,8 +4708,8 @@ var_dump($query);*/
       //if($count == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       if($logCount == 0) // 0 ise herhangi bir not girmemis demek oluyor.
       {
-        ////ChromePhp::log('SEND MAIL');
-        ////ChromePhp::log('Action: View 5 contact details but not any note entry.');
+        //////ChromePhp::log'SEND MAIL');
+        //////ChromePhp::log'Action: View 5 contact details but not any note entry.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','contact_view','".$dNow."')";
@@ -4729,7 +4729,7 @@ var_dump($query);*/
             'X-Mailer: PHP/' . phpversion();*/
 
         $message .= '<br><br>Related candidates:';
-        ////ChromePhp::log($logsContactSeen);
+        //////ChromePhp::log$logsContactSeen);
         foreach ($logsContactSeen as $key => $log)
         {
           $candidate_id = $log['cp_pk'];
@@ -4737,7 +4737,7 @@ var_dump($query);*/
           $candidate_fullname = $candidate_info['firstname'].' '.$candidate_info['lastname'];
           $message .= '<br>'.$candidate_fullname.' ( #'.$candidate_id.' )';
         }
-        ////ChromePhp::log($message);
+        //////ChromePhp::log$message);
         $oMail = CDependency::getComponentByName('mail');
 
         $oMail->createNewEmail();
@@ -4758,7 +4758,7 @@ var_dump($query);*/
     }
     else
     {
-      ////ChromePhp::log('ELSE');
+      //////ChromePhp::log'ELSE');
     }
     return true;
   }
@@ -4788,14 +4788,14 @@ var_dump($query);*/
 
   function securityCheckView($user_id)
   {
-////ChromePhp::log('securityCheckView start');
+//////ChromePhp::log'securityCheckView start');
     // if saturday and holiday than look for that days count > 50?
     // db holiday table a bugunun tarihini yolla donen olursa holiday flag 1 yap
     $dayname = date('l'); // dayname
     $dNow = date('Y-m-d'); // sadece yil-ay-gun
 
     $holidays = getHolidayCount($dNow); // 0 gelince patlamiyor...
-    ////ChromePhp::log($holidays[0]['count']);
+    //////ChromePhp::log$holidays[0]['count']);
 
     if($user_id != '101' AND ($dayname == 'Saturday' || $dayname == 'Sunday') && $holidays[0]['count'] > 0) //Japan Saturday & Sunday
     {
@@ -4824,7 +4824,7 @@ var_dump($query);*/
       $logs = getMongoLog($where);
 
       $logCount = $logs->count();
-////ChromePhp::log($logCount);
+//////ChromePhp::log$logCount);
 
       $db_result = $oDB->executeQuery($sQuery);
 
@@ -4832,7 +4832,7 @@ var_dump($query);*/
 
       if($logCount > 50) // 50 den buyuk ise mail
       {
-        ////ChromePhp::log('Action: View more than 50 candidates on holiday.');
+        //////ChromePhp::log'Action: View more than 50 candidates on holiday.');
         $dNow = date('Y-m-d H:i:s'); // Japan time
         $sQuery = "INSERT INTO `security_alert` (`user_id`,`type`,`action_date`)
                    VALUES('".$user_id."','holiday_fifty_view','".$dNow."')";
@@ -5039,8 +5039,8 @@ var_dump($query);*/
 
   function editNote($note_id,$array)
   {
-    ////ChromePhp::log($note_id);
-    ////ChromePhp::log($array);
+    //////ChromePhp::log$note_id);
+    //////ChromePhp::log$array);
 
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
@@ -5081,7 +5081,7 @@ var_dump($query);*/
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
-////ChromePhp::log($result);
+//////ChromePhp::log$result);
     if(isset($result[0]))
     {
       $preStatus = $result[0]['status'];
@@ -5094,7 +5094,7 @@ var_dump($query);*/
     }
 
     $statusTitle = getStatusTitle($preStatus);
-////ChromePhp::log($statusTitle);
+//////ChromePhp::log$statusTitle);
     $returnArray = array($statusTitle,$preDate);
     return $returnArray;
 

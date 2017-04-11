@@ -934,7 +934,7 @@ class CSl_eventEx extends CSl_event
     if(!empty($pnLoginfk))
       $asEvent['loginfk'] = $pnLoginfk;
 
-//ChromePhp::log($asEvent['type']);
+////ChromePhp::log$asEvent['type']);
 
     return parent::_getEventSave(0, $asEvent);
   }
@@ -988,7 +988,7 @@ class CSl_eventEx extends CSl_event
     $EditTheNotes = getValue('EditTheNotes');
     $editFlag = false;
 
-    ////ChromePhp::log($EditTheNotes);
+    //////ChromePhp::log$EditTheNotes);
     $editArray = array();
     if(isset($EditTheNotes) && !empty($EditTheNotes) && $EditTheNotes != false)
     {
@@ -999,7 +999,7 @@ class CSl_eventEx extends CSl_event
         $explodedNote = explode(';',$value);
         $editArray[$explodedNote[0]] = $explodedNote[1];//type,id
       }
-      ////ChromePhp::log($EditTheNotes);
+      //////ChromePhp::log$EditTheNotes);
     }
 
     $note_title = purify_html(getValue('title'));
@@ -1044,7 +1044,7 @@ class CSl_eventEx extends CSl_event
       $note = $userName." edited note #".$this->cnPk;
     }
 
-//ChromePhp::log($event_type);
+////ChromePhp::log$event_type);
     //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note))
     {

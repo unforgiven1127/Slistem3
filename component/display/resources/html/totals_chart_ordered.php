@@ -255,7 +255,7 @@
 				<?php
 					/*if(isset($data['user_id']) && $data['user_id'] == '521')
 					{
-						ChromePhp::log($data);
+						//ChromePhp::log$data);
 					}*/
 					if(isset($data['resumeSentFlag']))
 					{
