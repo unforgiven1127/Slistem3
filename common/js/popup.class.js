@@ -2,14 +2,18 @@
 
 window.onbeforeunload = function (event)
 {
-    var message = 'Are you sure you want to exit?';
-    if (typeof event == 'undefined') {
-        event = window.event;
+    var url = window.location.href;
+    if(url != 'https://beta2.slate.co.jp/?')
+    {
+      var message = 'Are you sure you want to exit?';
+      if (typeof event == 'undefined') {
+          event = window.event;
+      }
+      if (event) {
+          event.returnValue = message;
+      }
+      return message;
     }
-    if (event) {
-        event.returnValue = message;
-    }
-    return message;
 };
 
 $(function ()
