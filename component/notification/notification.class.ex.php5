@@ -2025,9 +2025,9 @@ class CNotificationEx extends CNotification
       $csUid = "555-001";
       $csAction = "ppav";
       $csType= "candi";
-ChromePhp::log($user_id);
-ChromePhp::log($target_candidate_id);
-ChromePhp::log($note);
+//ChromePhp::log($user_id);
+//ChromePhp::log($target_candidate_id);
+//ChromePhp::log($note);
       //$addLog = insertLog($user_id, $target_candidate_id, $note);
       $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
 
