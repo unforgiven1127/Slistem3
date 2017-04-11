@@ -2986,7 +2986,8 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        $nPagerOffset = $oPager->getOffset();
+        //$nPagerOffset = $oPager->getOffset();
+        $oPager->setOffset(2);
         $nPagerOffset = 2;
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
