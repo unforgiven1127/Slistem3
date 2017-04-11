@@ -592,6 +592,7 @@ class CSl_candidateEx extends CSl_candidate
         switch ($this->csAction)
         {
             case MAIL_SEND_ACTION:
+            case CONST_ACTION_SEARCH:
             return $this->_candidate_mail_send_action($this->cnPk);
             break;
         }
@@ -6612,7 +6613,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       //ChromePhp::log($email_test);
 
       //$sURL = $this->_oPage->getAjaxUrl('sl_candidate', MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
-      $sURL = $this->_oPage->getUrl($this->csUid, MAIL_SEND_ACTION, CANDIDATE_MAIL_SEND);
+      $sURL = $this->_oPage->getUrl($this->csUid, CONST_ACTION_SEARCH, CANDIDATE_MAIL_SEND);
 
       $data['sURL'] = $sURL;
       $data['candidate_id'] = $candidate_id;
@@ -6770,6 +6771,10 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $sHTML.=  $this->_oDisplay->getListEnd();
       $sHTML.=  $this->_oDisplay->getBlocEnd();
+
+      //$aOutput['action']= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
+
+
       return $sHTML;
       //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
       //return $this->_getCandidateView((int)$candidate_id);

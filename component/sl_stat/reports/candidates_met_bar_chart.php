@@ -33,13 +33,13 @@
 <script type="text/javascript">
 $(function () {
 
-    var title = "New Candidates Met March 01, 2017 to Present";
-    var met_target = "25";
+    var title = "New Candidates Met April 01, 2017 to Present";
+    var met_target = "8";
 //-----------------------------------------------------------------------------------------//
-    var users = " ;L.Fry |41|;M.Moir |24|;V.Maslyuk |17|;Y.Takagi |17|;O.Rondos |16|;P.Thai |13|;K.Kapur |12|;C.Chen |11|;J.Kovaliovas |10|;Y.Kubota |9|;R.Pedersen |9|;S.D.V. |6|;P.Miles Harry |1|";
+    var users = " ;L.Fry |15|;S.D.V. |10|;V.Maslyuk |7|;Y.Takagi |6|;R.Pedersen |5|;Y.Kubota |3|;P.Thai |3|;O.Rondos |3|;C.Chen |2|;J.Kovaliovas |1|;K.Kapur |0|;P.Miles Harry |0|;M.Moir |0|";
     users = users.split(';');
 //-----------------------------------------------------------------------------------------//
-    var count = "0;41;24;17;17;16;13;12;11;10;9;9;6;1";
+    var count = "0;15;10;7;6;5;3;3;3;2;1;0;0;0";
     count = count.split(';');
 
     for(var i=0; i<count.length; i++) { count[i] = parseInt(count[i], 10); }
