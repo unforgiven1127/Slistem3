@@ -3017,14 +3017,14 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        if($fromMail && isset($_SESSION['pageoffsetClicked']))
+        /*if($fromMail && isset($_SESSION['pageoffsetClicked']))
         {
           $nPagerOffset = $_SESSION['pageoffsetClicked'];
-        }
-        else
-        {
+        }*/
+        //else
+        //{
           $nPagerOffset = $oPager->getOffset();
-        }
+        //}
 
         ChromePhp::log($nPagerOffset);
 //$_SESSION['lastSearch'] = serialize($poQB);
