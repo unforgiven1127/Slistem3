@@ -6785,7 +6785,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML .= $candidateHTML;
+          //$sHTML .= $candidateHTML;
           $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
