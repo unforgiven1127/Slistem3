@@ -3756,7 +3756,10 @@ $searchTitle = explode(':',$poQB->getTitle());
         else if($fromMail)
         {
           $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
-          $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
+
+          $candidate_click = ".candidate_".$candidate_id;
+          $sHTML.="<script> ('".$candidate_click."').click(); </script>";
+          //$sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
         }
 
         //DEBUG: Dropp the query at the end
