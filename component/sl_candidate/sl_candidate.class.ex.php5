@@ -3749,6 +3749,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         if(count($asData) == 1)
         {
+          ChromePhp::log($this->csUid);
           $asData = current($asData);
           $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$asData['sl_candidatepk']);
           $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
