@@ -1037,14 +1037,18 @@ class CSl_candidateEx extends CSl_candidate
     }
 
 
-    private function _getTopPageSection()
+    private function _getTopPageSection($candidate_id = 0)
     {
       $nItemPk = (int)getValue('slpk', 0);
       $sItemType = getValue('sltype');
 
-      ChromePhp::log($nItemPk);
-      ChromePhp::log($sItemType);
+      //ChromePhp::log($nItemPk);
+      //ChromePhp::log($sItemType);
 
+      if($candidate_id > 0)
+      {
+        $nItemPk = $candidate_id;
+      }
       if(!empty($nItemPk))
       {
         if(empty($sItemType))
@@ -6767,9 +6771,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
-      $sHTML = $this->_getTopPageSection();
+      $sHTML = $this->_getTopPageSection((int)$candidate_id);
 
-      $candidateHTML = $this->_getCandidateView((int)$candidate_id);
+      //$candidateHTML = $this->_getCandidateView((int)$candidate_id);
 
       $pbInAjax = false;
 
