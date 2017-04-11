@@ -2,6 +2,7 @@
 
 window.onbeforeunload = function (event)
 {
+    alert('test');
     var url = window.location.href;
     alert(url);
     if(url != 'https://beta2.slate.co.jp/?')
