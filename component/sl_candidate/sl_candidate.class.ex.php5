@@ -3755,7 +3755,6 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
         if($fromMail)
         {
-          $asData = current($asData);
           $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
           $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
         }
