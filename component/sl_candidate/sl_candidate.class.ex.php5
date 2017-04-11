@@ -2929,37 +2929,10 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null,$fromMail = false,$lastHTML = '')
+    private function _getCandidateList($pbInAjax = false, &$poQB = null)
     {
       //ChromePhp::log($poQB);
-      if(isset($lastHTML) && !empty($lastHTML))
-      {
-        //$returnThis = unserialize($_SESSION['lastHTML']);
-        //unset($_SESSION['lastHTML']);
-        //ChromePhp::log($returnThis);
-        $entityBody = file_get_contents('php://input');
-        //ChromePhp::log($entityBody);
-        //return $returnThis;
-      }
       $_SESSION['lastSearch'] = serialize($poQB);
-      $pageoffsetClicked = (int)getValue('pageoffset');
-      ChromePhp::log($pageoffsetClicked);
-      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
-      {
-        $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
-      }
-      elseif(isset($_SESSION['pageoffsetClicked']))
-      {
-        ChromePhp::log($_SESSION['pageoffsetClicked']);
-      }
-      $pageLink = "";
-      //if($fromMail)
-      {
-        $pageLink = '<a href="javascript:;" ajaxtarget="#search_58ec0858a7cb7" ajaxcallback=""
-          onclick="AjaxRequest(\'https://beta2.slate.co.jp/index.php5?uid=555-001&amp;ppa=ppasea&amp;ppt=candi&amp;ppk=0&amp;searchId=search_58ec0858a7cb7&amp;__filtered=1&amp;data_type=candi&amp;replay_search=2008913&amp;pg=ajx&amp;list=1&amp;nbresult=25&amp;pageoffset=2\', \'body\', \'\', \'#search_58ec0858a7cb7\', \'\', \'\', \'\');">PAGELINK
-          </a>';
-      }
-      //$pageLink = "";
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
       if($poQB != null)
@@ -2987,9 +2960,6 @@ class CSl_candidateEx extends CSl_candidate
       if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
-        $search_id = getValue('searchId');
-        ChromePhp::log('SEARCH_ID');
-        ChromePhp::log($search_id);
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
         $asHistoryData = $oLogin->getUserActivityByPk($nHistoryPk);
@@ -3010,9 +2980,8 @@ class CSl_candidateEx extends CSl_candidate
       // ============================================
       // search and pagination management
 
-      if(empty($this->csSearchId) && empty($nHistoryPk) && !$fromMail)// && !$fromMail
+      if(empty($this->csSearchId) && empty($nHistoryPk))
       {
-        ChromePhp::log('not from mail');
         //$asListMsg[] = ' new search id [empty sId or history]. ';
         $this->csSearchId = manageSearchHistory($this->csUid, CONST_CANDIDATE_TYPE_CANDI);
         $poQB->addLimit('0, 50');
@@ -3024,22 +2993,12 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        /*if($fromMail && isset($_SESSION['pageoffsetClicked']))
-        {
-          $nPagerOffset = $_SESSION['pageoffsetClicked'];
-        }*/
-        //else
-        //{
-          $nPagerOffset = $oPager->getOffset();
-        //}
-
-        ChromePhp::log($nPagerOffset);
-//$_SESSION['lastSearch'] = serialize($poQB);
+        $nPagerOffset = $oPager->getOffset();
 
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
-//ChromePhp::log($nLimit);
+
 
       // =============================================================
       //TODO: to be moved when the search arrives
@@ -3177,7 +3136,7 @@ class CSl_candidateEx extends CSl_candidate
       $sQuery = $poQB->getCountSql();
 //ChromePhp::log($exploded);
       //if(isset($exploded[1]) && !isset($exploded[2]) && $exploded[1] == "QuickSearch")
-      if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch" && !$fromMail)
+      if(isset($exploded[0]) && !isset($exploded[2]) && $exploded[0] == "QuickSearch")
       {
 //ChromePhp::log('HERE 1');
         $searchID = $exploded[1];
@@ -3355,15 +3314,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $limitlessQuery = explode('LIMIT', $sQuery);
       $limitlessQuery = $limitlessQuery[0];
 
-      if($fromMail)
-      {
-        $searchTitle = explode('_',$poQB->getTitle());
-      }
-      else
-      {
-        $searchTitle = explode(':',$poQB->getTitle());
-      }
-ChromePhp::log($searchTitle);
+      $searchTitle = explode(':',$poQB->getTitle());
+
       if(isset($searchTitle[1]))
       {
         $desc = $searchTitle[1];
@@ -3666,7 +3618,7 @@ ChromePhp::log($searchTitle);
       //===========================================
       //start building the HTML
       $sHTML = '';
-      $sHTML.= $pageLink;
+
       /* debug
        *
       if(!$bFilteredList)
@@ -3793,8 +3745,6 @@ ChromePhp::log($searchTitle);
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
 
-      //lastSearch
-      $_SESSION['lastHTML'] = serialize($sHTML);
       return $sHTML;
     }
 
@@ -6812,10 +6762,9 @@ ChromePhp::log($searchTitle);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          $lastHTML = $obj = unserialize($_SESSION['lastHTML']);
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
-          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true,$lastHTML);
+          $sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
