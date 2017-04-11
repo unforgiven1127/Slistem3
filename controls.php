@@ -1,7 +1,7 @@
 <script>
-alert('test 1');
+//alert('test 1');
 window.onbeforeunload = function (event) {
-    var message = 'Important: Please click on \'Save\' button to leave this page.';
+    var message = 'Are you sure to leave this page?';
     if (typeof event == 'undefined') {
         event = window.event;
     }
