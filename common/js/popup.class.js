@@ -1,5 +1,9 @@
 $.ui.dialog.prototype._focusTabbable = function(){};
 
+window.onbeforeunload = function(){
+  alert('test');
+}
+
 var CPopup = function()
 {
   //contain the list of all the popups:  popupId => poPopupConf
