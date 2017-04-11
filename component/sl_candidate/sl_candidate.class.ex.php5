@@ -6826,7 +6826,7 @@ ChromePhp::log($searchTitle);
 
       //$aOutput['action']= 'var oPopup = $(\'#documentFormId\').closest(\'.ui-dialog-content\'); goPopup.remove(oPopup); ';
 
-
+      return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($lastHTML))));
       return $sHTML;
       //return mb_convert_encoding($this->_getCandidateList(), 'utf8');
       //return $this->_getCandidateView((int)$candidate_id);
