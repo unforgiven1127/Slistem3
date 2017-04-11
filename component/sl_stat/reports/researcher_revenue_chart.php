@@ -22,48 +22,48 @@
 
 																<tr class="hover_row">
 							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/CN_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">C. Chen</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;705,600</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">5</td>
+							<!--<td class="text_center">Team IT</td>-->
+							<!--<td style="height: 55px; font-size: 250%;" class="text_right">1</td>-->
+						</tr>
+
+																	<tr class="hover_row even_row">
+							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/ZA_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">P. Greeff</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;522,188</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;353,438</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">15</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">14</td>
 							<!--<td class="text_center">Not defined</td>-->
 							<!--<td style="height: 55px; font-size: 250%;" class="text_right">0</td>-->
 						</tr>
 
-																	<tr class="hover_row even_row">
-							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/CN_32.png" title=""  /></td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">C. Chen</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">6</td>
-							<!--<td class="text_center"></td>-->
-							<!--<td style="height: 55px; font-size: 250%;" class="text_right"></td>-->
-						</tr>
-
 																	<tr class="hover_row">
 							<td style="height: 10%; font-size: 300%;" class="text_center">3</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/JP_32.png" title=""  /></td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">T. Tanigawa</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">6</td>
-							<!--<td class="text_center"></td>-->
-							<!--<td style="height: 55px; font-size: 250%;" class="text_right"></td>-->
-						</tr>
-
-																	<tr class="hover_row even_row">
-							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/IN_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">A. Mishra</td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">5</td>
+							<!--<td class="text_center"></td>-->
+							<!--<td style="height: 55px; font-size: 250%;" class="text_right"></td>-->
+						</tr>
+
+																	<tr class="hover_row even_row">
+							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/JP_32.png" title=""  /></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">T. Tanigawa</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">0</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">4</td>
 							<!--<td class="text_center"></td>-->
 							<!--<td style="height: 55px; font-size: 250%;" class="text_right"></td>-->
 						</tr>
@@ -84,20 +84,20 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center">6</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><img src="https://slistem.slate.co.jp/common/pictures/flags/world_32.png" title=""  /></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">Former</td>
-							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;596,400</td>
+							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;795,200</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
 							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
-							<td style="height: 10%; font-size: 300%;" class="text_center">2</td>
+							<td style="height: 10%; font-size: 300%;" class="text_center">1</td>
 							<!--<td class="text_center">Not defined</td>-->
 							<!--<td style="height: 55px; font-size: 250%;" class="text_right">0</td>-->
 						</tr>
 
 																<tr class="revenue_table_footer">
 						<td style="height: 40px; font-size: 300%;" class="text_center" colspan="3">Total</td>
-						<td style="height: 40px; font-size: 300%;" class="text_right">&yen;1,118,588</td>
+						<td style="height: 40px; font-size: 300%;" class="text_right">&yen;1,854,238</td>
 						<td style="height: 40px; font-size: 300%;" class="text_center">6</td>
 						<td style="height: 40px; font-size: 300%;" class="text_center">7</td>
-						<td style="height: 40px; font-size: 300%;" class="text_center">34</td>
+						<td style="height: 40px; font-size: 300%;" class="text_center">29</td>
 						<!--<td style="height: 55px; font-size: 250%;" class="text_right">&yen;353,438</td>-->
 						<!--<td style="height: 55px; font-size: 250%;" class="text_right">6</td>-->
 					</tr>

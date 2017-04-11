@@ -33,20 +33,20 @@
 <script type="text/javascript">
 $(function () {
 
-    var title = "New candidates met / New candidates in play / New positions in play April 01, 2017 to Present";
+    var title = "New candidates met / New candidates in play / New positions in play March 01, 2017 to Present";
 
     var max_rabbit_1 = "5";
-    var max_rabbit_2 = "11";
+    var max_rabbit_2 = "16";
 //-----------------------------------------------------------------------------------------//
-    var users = "L.Fry |15| |0| |0|;S.D.V. |10| |0| |0|;V.Maslyuk |7| |0| |0|;Y.Takagi |6| |1| |0|;R.Pedersen |5| |0| |0|;Y.Kubota |3| |0| |0|;P.Thai |3| |0| |0|;O.Rondos |3| |1| |0|;C.Chen |2| |1| |1|;J.Kovaliovas |1| |0| |0|;K.Kapur |0| |3| |0|;P.Miles Harry |0| |0| |0|;M.Moir |0| |0| |0|";
+    var users = "L.Fry |41| |7| |8|;M.Moir |24| |3| |3|;V.Maslyuk |17| |2| |2|;Y.Takagi |17| |4| |3|;O.Rondos |16| |2| |0|;P.Thai |13| |5| |1|;K.Kapur |12| |15| |8|;C.Chen |11| |2| |1|;J.Kovaliovas |10| |5| |10|;Y.Kubota |9| |1| |1|;R.Pedersen |9| |2| |1|;S.D.V. |6| |0| |0|;P.Miles Harry |1| |5| |3|";
     users = users.split(';');
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_count = "5;0;0;0;0;1;0;0;0;1;0;1;0";
+/*    var inplay_count = "4;2;3;5;3;4;4;3;3;1;2;0;3";
     inplay_count = inplay_count.split(';');
 
     for(var i=0; i<inplay_count.length; i++) { inplay_count[i] = parseInt(inplay_count[i], 10); }*/
 //-----------------------------------------------------------------------------------------//
-/*    var inplay_rsc = "6;0;2;0;4;0;1;3;3;7;0;5;0";
+/*    var inplay_rsc = "11;3;6;10;13;11;12;9;8;7;6;7;7";
     inplay_rsc = inplay_rsc.split(';');
 
     for(var i=0; i<inplay_rsc.length; i++) { inplay_rsc[i] = parseInt(inplay_rsc[i], 10); }*/
@@ -56,21 +56,21 @@ $(function () {
 //
 //
 //-----------------------------------------------------------------------------------------//
-    var new_candi_met = "15;10;7;6;5;3;3;3;2;1;0;0;0";
+    var new_candi_met = "41;24;17;17;16;13;12;11;10;9;9;6;1";
     new_candi_met = new_candi_met.split(';');
 
     for(var i=0; i<new_candi_met.length; i++) { new_candi_met[i] = parseInt(new_candi_met[i], 10); }
 //-----------------------------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------------------------//
-    var new_candi_count = "0;0;0;1;0;0;0;1;1;0;3;0;0";
+    var new_candi_count = "7;3;2;4;2;5;15;2;5;1;2;0;5";
     new_candi_count = new_candi_count.split(';');
 
     for(var i=0; i<new_candi_count.length; i++) { new_candi_count[i] = parseInt(new_candi_count[i], 10); }
 //-----------------------------------------------------------------------------------------//
 //
 //-----------------------------------------------------------------------------------------//
-    var new_posi_count = "0;0;0;0;0;0;0;0;1;0;0;0;0";
+    var new_posi_count = "8;3;2;3;0;1;8;1;10;1;1;0;3";
     new_posi_count = new_posi_count.split(';');
 
     for(var i=0; i<new_posi_count.length; i++) { new_posi_count[i] = parseInt(new_posi_count[i], 10); }
