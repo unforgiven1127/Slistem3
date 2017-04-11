@@ -3754,7 +3754,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$asData['sl_candidatepk']);
           $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
         }
-        if($fromMail)
+        else if($fromMail)
         {
           $sURL = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
           $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
@@ -6778,8 +6778,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
-      $sHTML = $this->_getTopPageSection((int)$candidate_id);
-
+      //$sHTML = $this->_getTopPageSection((int)$candidate_id);
+      $sHTML = '';
       //$candidateHTML = $this->_getCandidateView((int)$candidate_id);
 
       $pbInAjax = false;
