@@ -2932,12 +2932,12 @@ class CSl_candidateEx extends CSl_candidate
     private function _getCandidateList($pbInAjax = false, &$poQB = null,$fromMail = false,$lastHTML = '')
     {
       //ChromePhp::log($poQB);
-      if(isset($lastHTML) && !empty($lastHTML))
+      /*if(isset($lastHTML) && !empty($lastHTML))
       {
         $returnThis = unserialize($_SESSION['lastHTML']);
         unset($_SESSION['lastHTML']);
         return $returnThis;
-      }
+      }*/
       $_SESSION['lastSearch'] = serialize($poQB);
       $pageoffsetClicked = (int)getValue('pageoffset');
       ChromePhp::log($pageoffsetClicked);
@@ -2949,6 +2949,14 @@ class CSl_candidateEx extends CSl_candidate
       {
         ChromePhp::log($_SESSION['pageoffsetClicked']);
       }
+      $pageLink = "";
+      //if($fromMail)
+      /*{
+        $pageLink = '<a href="javascript:;" ajaxtarget="#search_58ec0858a7cb7" ajaxcallback=""
+          onclick="AjaxRequest(\'https://beta2.slate.co.jp/index.php5?uid=555-001&amp;ppa=ppasea&amp;ppt=candi&amp;ppk=0&amp;searchId=search_58ec0858a7cb7&amp;__filtered=1&amp;data_type=candi&amp;replay_search=2008913&amp;pg=ajx&amp;list=1&amp;nbresult=25&amp;pageoffset=2\', \'body\', \'\', \'#search_58ec0858a7cb7\', \'\', \'\', \'\');">PAGELINK
+          </a>';
+      }*/
+      //$pageLink = "";
       //$obj = unserialize($_SESSION['lastSearch']);
       //ChromePhp::log($obj);
       if($poQB != null)
@@ -2976,6 +2984,9 @@ class CSl_candidateEx extends CSl_candidate
       if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
+        $search_id = getValue('searchId');
+        ChromePhp::log('SEARCH_ID');
+        ChromePhp::log($search_id);
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
         $asHistoryData = $oLogin->getUserActivityByPk($nHistoryPk);
@@ -3010,14 +3021,14 @@ class CSl_candidateEx extends CSl_candidate
         $oPager = CDependency::getComponentByName('pager');
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
-        if($fromMail && isset($_SESSION['pageoffsetClicked']))
+        /*if($fromMail && isset($_SESSION['pageoffsetClicked']))
         {
           $nPagerOffset = $_SESSION['pageoffsetClicked'];
-        }
-        else
-        {
+        }*/
+        //else
+        //{
           $nPagerOffset = $oPager->getOffset();
-        }
+        //}
 
         ChromePhp::log($nPagerOffset);
 //$_SESSION['lastSearch'] = serialize($poQB);
@@ -3652,7 +3663,7 @@ ChromePhp::log($searchTitle);
       //===========================================
       //start building the HTML
       $sHTML = '';
-
+      $sHTML.= $pageLink;
       /* debug
        *
       if(!$bFilteredList)
@@ -6782,6 +6793,9 @@ ChromePhp::log($searchTitle);
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
+      $lastHTML = unserialize($_SESSION['lastHTML']);
+      $sHTML.=$lastHTML;
+      return $sHTML;
 
       $pbInAjax = false;
 
@@ -6798,7 +6812,8 @@ ChromePhp::log($searchTitle);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
-          $lastHTML = $obj = unserialize($_SESSION['lastHTML']);
+          $lastHTML = unserialize($_SESSION['lastHTML']);
+          //return $lastHTML;
           //ChromePhp::log($oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           $sHTML.= $this->_getCandidateList($pbInAjax,$oQB,true,$lastHTML);
