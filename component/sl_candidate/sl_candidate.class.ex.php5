@@ -2950,7 +2950,7 @@ class CSl_candidateEx extends CSl_candidate
         ChromePhp::log($_SESSION['pageoffsetClicked']);
       }
       $pageLink = "";
-      if($fromMail)
+      //if($fromMail)
       {
         $pageLink = '<a href="javascript:;" ajaxtarget="#search_58ec0858a7cb7" ajaxcallback=""
           onclick="AjaxRequest(\'https://beta2.slate.co.jp/index.php5?uid=555-001&amp;ppa=ppasea&amp;ppt=candi&amp;ppk=0&amp;searchId=search_58ec0858a7cb7&amp;__filtered=1&amp;data_type=candi&amp;replay_search=2008913&amp;pg=ajx&amp;list=1&amp;nbresult=25&amp;pageoffset=2\', \'body\', \'\', \'#search_58ec0858a7cb7\', \'\', \'\', \'\');">PAGELINK
