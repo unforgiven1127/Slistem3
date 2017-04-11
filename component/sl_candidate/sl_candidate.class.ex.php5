@@ -2937,7 +2937,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0)
     {
       ////ChromePhp::log$poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
@@ -3199,7 +3199,7 @@ class CSl_candidateEx extends CSl_candidate
 
 $searchTitle = explode(':',$poQB->getTitle());
 //////ChromePhp::log$searchTitle);
-      if (isset($nPagerOffset) && $nPagerOffset)
+      if(isset($nPagerOffset) && $nPagerOffset)
       {
         $record_start = $nPagerOffset*$nLimit;
 
@@ -3751,6 +3751,12 @@ $searchTitle = explode(':',$poQB->getTitle());
         {
           $asData = current($asData);
           $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$asData['sl_candidatepk']);
+          $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
+        }
+        if($fromMail)
+        {
+          $asData = current($asData);
+          $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate_id);
           $sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
         }
 
@@ -6794,7 +6800,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML .= $candidateHTML;
-          $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true);
+          $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true,$candidate_id);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
