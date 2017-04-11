@@ -1042,6 +1042,9 @@ class CSl_candidateEx extends CSl_candidate
       $nItemPk = (int)getValue('slpk', 0);
       $sItemType = getValue('sltype');
 
+      ChromePhp::log($nItemPk);
+      ChromePhp::log($sItemType);
+
       if(!empty($nItemPk))
       {
         if(empty($sItemType))
