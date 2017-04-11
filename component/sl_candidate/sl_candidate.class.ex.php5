@@ -2984,6 +2984,9 @@ class CSl_candidateEx extends CSl_candidate
       if($nHistoryPk > 0)
       {
         $this->csSearchId = getValue('searchId');
+        $search_id = getValue('searchId');
+        ChromePhp::log('SEARCH_ID');
+        ChromePhp::log($search_id);
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
         $asHistoryData = $oLogin->getUserActivityByPk($nHistoryPk);
