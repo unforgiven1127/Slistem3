@@ -303,7 +303,9 @@ class CCandi_row extends CTemplate
     else*/
     {
       set_array($pasColumnParam[6]['tag'], '');
-      $asOption = array('class' => $pasColumnParam[6]['tag'].' tplCandiRow_continuous tpl_link_cell');
+
+      $candidate_id_class = 'candidate_'.$candidate_id;
+      $asOption = array('class' => $pasColumnParam[6]['tag'].' tplCandiRow_continuous tpl_link_cell '.$candidate_id_class);
 
       if($pasData['_sys_status'] > 0)
         $asOption['class'].= ' deleted';
