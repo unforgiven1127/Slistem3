@@ -13,6 +13,7 @@ window.onbeforeunload = function (event)
           event = window.event;
       }
       if (event) {
+        alert('test 6');
           event.returnValue = message;
       }
       return message;
