@@ -2935,6 +2935,11 @@ class CSl_candidateEx extends CSl_candidate
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
       ////ChromePhp::log$obj);
+      $pageoffsetClicked = (int)getValue('pageoffset');
+      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
+      {
+        $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
+      }
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -2987,8 +2992,8 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         //$nPagerOffset = $oPager->getOffset();
-        $pageoffsetClicked = (int)getValue('pageoffset');
-        ChromePhp::log($pageoffsetClicked);
+        $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
+        ChromePhp::log($pageoffsetClickedSession);
         $oPager->setOffset(3);
         $nPagerOffset = 2;
 
