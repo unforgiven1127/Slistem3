@@ -3,6 +3,7 @@
 window.onbeforeunload = function (event)
 {
     var url = window.location.href;
+    alert(url);
     if(url != 'https://beta2.slate.co.jp/?')
     {
       var message = 'Are you sure you want to exit?';
