@@ -2993,7 +2993,7 @@ class CSl_candidateEx extends CSl_candidate
         $nLimit = $oPager->getLimit();
         //$nPagerOffset = $oPager->getOffset();
         $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
-        ChromePhp::log($pageoffsetClickedSession);
+        //ChromePhp::log($pageoffsetClickedSession);
         $oPager->setOffset($pageoffsetClickedSession);
         $nPagerOffset = $pageoffsetClickedSession - 1;
 
@@ -6765,6 +6765,9 @@ $searchTitle = explode(':',$poQB->getTitle());
       $this->_oPage->addCssFile(self::getResourcePath().'css/sl_candidate.css');
       $this->_oPage->addJsFile(self::getResourcePath().'js/sl_candidate.js');
       $sHTML = $this->_getTopPageSection();
+
+      $candidateHTML = $this->_getCandidateView((int)$candidate_id);
+      $sHTML .= $candidateHTML;
 
       $pbInAjax = false;
 
