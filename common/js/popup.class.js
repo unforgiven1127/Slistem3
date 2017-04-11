@@ -2,7 +2,7 @@
 
 window.onbeforeunload = function (event)
 {
-    var message = 'Are you sure to leave this page?';
+    var message = 'Are you sure you want to exit?';
     if (typeof event == 'undefined') {
         event = window.event;
     }
