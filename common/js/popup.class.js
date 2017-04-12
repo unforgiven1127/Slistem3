@@ -4,7 +4,7 @@ window.onbeforeunload = function (event)
 {
   var loginFlag = localStorage.getItem("loginFlag");
   var url = window.location.href;
-  if(url == 'https://beta2.slate.co.jp/?')
+  if(url == 'https://beta2.slate.co.jp/?' || url == 'https://slistem.slate.co.jp/?')
   {
     //return 'if';
   }
