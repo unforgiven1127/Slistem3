@@ -4685,13 +4685,13 @@ var_dump($query);*/
         array('userfk' => $user_id),
         array('date' => array('$gte' => $controlDate)),
           array( '$or' => array(
-            array('action' => new MongoRegex("/created a new character note/")),
-            array('action' => new MongoRegex("/created a new email note/")),
-            array('action' => new MongoRegex("/created a new meeting note/")),
-            array('action' => new MongoRegex("/created a new phone note/")),
-            array('action' => new MongoRegex("/created a new update note/")),
-            array('action' => new MongoRegex("/created a new company history note/")),
-            array('action' => new MongoRegex("/created a new note/")),
+            array('action' => new MongoRegex("/.*created a new character note.*/")),
+            array('action' => new MongoRegex("/.*created a new email note.*/")),
+            array('action' => new MongoRegex("/.*created a new meeting note.*/")),
+            array('action' => new MongoRegex("/.*created a new phone note.*/")),
+            array('action' => new MongoRegex("/.*created a new update note.*/")),
+            array('action' => new MongoRegex("/.*created a new company history note.*/")),
+            array('action' => new MongoRegex("/.*created a new note.*/")),
             ))
         ) );
 
