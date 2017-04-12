@@ -64,7 +64,7 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
 
 function loading()
 {
-  alert('loading');
+  //alert('loading');
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 99999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; "><div class="bg"></div><div class="ani"></div></div>');
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
