@@ -5,11 +5,11 @@ window.onbeforeunload = function (event)
   var url = window.location.href;
   if(url == 'https://beta2.slate.co.jp/?')
   {
-    return 'if';
+    //return 'if';
   }
   else
   {
-    return 'else';
+    return 'Are you sure you want to exit?';
   }
     /*alert('test 5');
     var url = window.location.href;
