@@ -467,11 +467,12 @@ class CMenuEx extends CMenu
           }
           else if($asMenuItems['name'] == 'KPI - totals')
           {
-            $onclickNew = " localStorage.setItem('loginFlag', 'loginPage');";
+            ChromePhp::log('KPI - totals');
+            $onclickNew = " localStorage.setItem('loginFlag', 'loginPage'); ";
           }
           else if($asMenuItems['name'] == 'Revenue chart')
           {
-            $onclickNew = " localStorage.setItem('loginFlag', 'loginPage');";
+            $onclickNew = " localStorage.setItem('loginFlag', 'loginPage'); ";
           }
 
           if($this->_canAccessMenu($asMenuItems))
