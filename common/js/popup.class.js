@@ -3,7 +3,14 @@
 window.onbeforeunload = function (event)
 {
   var url = window.location.href;
-  return url;
+  if(url == 'https://beta2.slate.co.jp/?')
+  {
+    return 'if';
+  }
+  else
+  {
+    return 'else';
+  }
     /*alert('test 5');
     var url = window.location.href;
     alert(url);
