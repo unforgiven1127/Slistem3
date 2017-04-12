@@ -687,7 +687,7 @@ class CMenuEx extends CMenu
     if(!$this->_canAccessMenu($asChildren))
       return '';
 
-    ChromePhp::log($asChildren);
+    //ChromePhp::log($asChildren);
 
     if(!isset($asChildren['onclick']))
     {
