@@ -2,6 +2,10 @@
 
 window.onbeforeunload = function (event)
 {
+  document.onkeypress = function (e) {
+      e = e || window.event;
+      localStorage.setItem("loginFlag", "loginPage");
+  };
   var loginFlag = localStorage.getItem("loginFlag");
   var url = window.location.href;
   if(url == 'https://beta2.slate.co.jp/?' || url == 'https://slistem.slate.co.jp/?')
