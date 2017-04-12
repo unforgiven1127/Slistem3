@@ -77,7 +77,6 @@ $(window).bind('beforeunload', function(){ bUnloading = true; });
 function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh, pbReloadPage,  pbSynch, psCallback, pbWithAnimation)
 {
 
-  localStorage.setItem("loginFlag", "loginPage");
   if(!psZoneToRefresh)
     psZoneToRefresh = '';
 
