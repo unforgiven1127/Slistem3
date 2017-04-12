@@ -4157,7 +4157,7 @@ var_dump($query);*/
   function insertMongoLog($loginfk, $cp_pk, $text,$table = "user_history",$desctiption = '',$cp_type = "candi",$component = '',$cp_uid = '',$cp_action = '',$uri = '',$value = '')
   {
     //return true;
-//////ChromePhp::log$table);
+//ChromePhp::log($desctiption);
 
     /*if($table == 'user_history_all_view')
     {
@@ -4681,18 +4681,24 @@ var_dump($query);*/
                  OR lsh.action LIKE '%created a new note%')
                  AND lsh.userfk = '".$user_id."' AND lsh.date > '".$controlDate."'";*/
 
-      $where = array( '$and' => array(
+      /*$where = array( '$and' => array(
         array('userfk' => $user_id),
         array('date' => array('$gte' => $controlDate)),
           array( '$or' => array(
-            array('action' => new MongoRegex("/.*created a new character note.*/")),
-            array('action' => new MongoRegex("/.*created a new email note.*/")),
-            array('action' => new MongoRegex("/.*created a new meeting note.*/")),
-            array('action' => new MongoRegex("/.*created a new phone note.*/")),
-            array('action' => new MongoRegex("/.*created a new update note.*/")),
-            array('action' => new MongoRegex("/.*created a new company history note.*/")),
-            array('action' => new MongoRegex("/.*created a new note.*/")),
+            array('action' => new MongoRegex("/created a new character note/")),
+            array('action' => new MongoRegex("/created a new email note/")),
+            array('action' => new MongoRegex("/created a new meeting note/")),
+            array('action' => new MongoRegex("/created a new phone note/")),
+            array('action' => new MongoRegex("/created a new update note/")),
+            array('action' => new MongoRegex("/created a new company history note/")),
+            array('action' => new MongoRegex("/created a new note/")),
             ))
+        ) );*/
+
+      $where = array( '$and' => array(
+        array('userfk' => $user_id),
+        array('date' => array('$gte' => $controlDate)),
+        array('description' => 'noteAdded')
         ) );
 
       $logs = getMongoLog($where);
