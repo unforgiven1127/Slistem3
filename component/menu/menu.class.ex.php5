@@ -690,7 +690,10 @@ class CMenuEx extends CMenu
     ChromePhp::log($asChildren);
 
     if(!isset($asChildren['onclick']))
-        $asChildren['onclick'] = '';
+    {
+        //$asChildren['onclick'] = '';
+        $asChildren['onclick'] = " localStorage.setItem('loginFlag', 'loginPage'); ";
+    }
 
     if(!isset($asChildren['target']))
         $asChildren['target'] = '';
