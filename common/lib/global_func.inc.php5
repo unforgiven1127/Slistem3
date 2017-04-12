@@ -4699,7 +4699,7 @@ var_dump($query);*/
 
       $logCount = $logs->count();
       $logs = iterator_to_array($logs, false);
-//ChromePhp::log($logCount);
+ChromePhp::log($logCount);
 
 
       /*$db_result = $oDB->executeQuery($sQuery);
