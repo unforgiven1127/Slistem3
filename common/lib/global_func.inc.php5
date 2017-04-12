@@ -4669,7 +4669,9 @@ var_dump($query);*/
       //$controlDate = $first['date'];
       $first = $checkArray[4];
 //////ChromePhp::log$first);
-      $controlDate = $first['date'];
+      //$controlDate = $first['date'];
+      $controlDate = date('Y-m-d');
+      $controlDate.= " 00:00:00";
 //////ChromePhp::log$controlDate);
       /*$sQuery = "SELECT COUNT(*) as count FROM  login_system_history lsh
                  WHERE (lsh.action LIKE '%created a new character note%'
