@@ -2,15 +2,15 @@
 
 window.onbeforeunload = function (event)
 {
-  $(document).click(function(event) {
-      var text = $(event.target).text();
-  });
-
-  return text;
+  var loginFlag = localStorage.getItem("loginFlag");
   var url = window.location.href;
   if(url == 'https://beta2.slate.co.jp/?')
   {
     //return 'if';
+  }
+  else if(loginFlag == 'loginPage')
+  {
+    localStorage.removeItem("loginFlag");
   }
   else
   {
