@@ -4660,7 +4660,7 @@ ChromePhp::log($logs);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
-//////ChromePhp::log'HERE');
+ChromePhp::log('HERE');
 //////ChromePhp::log$logs[4]);
       //$first = $result[4]; // 5 kayittan ilk olani sectik
       //$controlDate = $first['date'];
