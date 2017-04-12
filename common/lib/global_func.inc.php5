@@ -4650,7 +4650,10 @@ var_dump($query);*/
       {
         unset($logs[$key]);
       }
-      $checkArray[] = $value['cp_pk'];
+      else
+      {
+        $checkArray[] = $value['cp_pk'];
+      }
     }
     $logs = array_values($logs);
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
