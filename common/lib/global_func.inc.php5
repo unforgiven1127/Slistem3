@@ -4638,7 +4638,7 @@ var_dump($query);*/
     //$limit = '5';
 
     $logs = getMongoLog($where,$orderBy);
-//////ChromePhp::log$logs);
+ChromePhp::log($logs);
 
     //  $logsContactSeen = iterator_to_array($logs, false);
     $logs = iterator_to_array($logs, false);
