@@ -2,7 +2,8 @@
 
 window.onbeforeunload = function (event)
 {
-    alert('test 5');
+  return 'test';
+    /*alert('test 5');
     var url = window.location.href;
     alert(url);
     if(url != 'https://beta2.slate.co.jp/?')
@@ -17,7 +18,7 @@ window.onbeforeunload = function (event)
           event.returnValue = message;
       }
       return message;
-    }
+    }*/
 };
 
 /*$(function ()
