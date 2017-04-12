@@ -4656,7 +4656,7 @@ var_dump($query);*/
     //$logs = array_slice($logs, 1, 1, true); // array(0 => 1)
     $logsContactSeen = $logs;
     //$value = $blah[0];
-ChromePhp::log($logs[4]);
+ChromePhp::log($checkArray);
     //if($user_id != '101' AND isset($result[4]))
     if($user_id != '101' AND isset($logs[4]))
     {
