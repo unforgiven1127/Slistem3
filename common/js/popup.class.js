@@ -2,8 +2,8 @@
 
 window.onbeforeunload = function (event)
 {
-  alert('test');
-  return 'test';
+  var url = window.location.href;
+  return url;
     /*alert('test 5');
     var url = window.location.href;
     alert(url);
