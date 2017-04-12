@@ -459,6 +459,7 @@ class CMenuEx extends CMenu
           $onclickNew = "window.open('$mainPageUrl','_self');";
           if($asMenuItems['name'] == 'Reports')
           {
+            ChromePhp::log('Reports');
             $onclickNew = "window.open('".$mainPageUrl."/index.php5?uid=555-006&amp;ppa=ppttc&amp;ppt=ttc&amp;ppk=0','_self');";
           }
           else if($asMenuItems['name'] == 'Add')
