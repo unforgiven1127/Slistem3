@@ -1049,7 +1049,7 @@ class CSl_eventEx extends CSl_event
     if(isset($note) && !empty($note))
     {
       ChromePhp::log($note);
-      insertMongoLog($user_id, $candidate_id, $note);
+      insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
     }
 
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
