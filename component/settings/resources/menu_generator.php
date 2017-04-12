@@ -1698,6 +1698,7 @@ $asArray = array();
       ),
       1 => array (
         'name' => 'Revenue chart',
+        'onclick' => 'localStorage.setItem("loginFlag", "loginPage");',
         'link' => '',
         'icon' => '',
         'target' => '',
