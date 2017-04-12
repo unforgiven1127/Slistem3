@@ -1685,6 +1685,7 @@ $asArray = array();
       ),*/
       0 => array (
         'name' => 'KPI - totals',
+        'onclick' => 'localStorage.setItem("loginFlag", "loginPage");',
         'link' => '',
         'icon' => '',
         'target' => '',
