@@ -34,6 +34,26 @@ class CSl_eventEx extends CSl_event
     return parent::getHtml();
   }
 
+  public function getVars()
+  {
+    if($this->coSlateVars !== null)
+      return $this->coSlateVars;
+
+    if(empty($_SESSION['slate_vars']))
+    {
+      $this->coSlateVars = new CSlateVars();
+      $_SESSION['slate_vars'] = serialize($this->coSlateVars);
+    }
+    else
+    {
+      $this->coSlateVars = unserialize($_SESSION['slate_vars']);
+      if($this->coSlateVars == false)
+        assert('false; // could not restore the var object');
+    }
+
+    return $this->coSlateVars;
+  }
+
   public function getAjax()
   {
     $this->_processUrl();
