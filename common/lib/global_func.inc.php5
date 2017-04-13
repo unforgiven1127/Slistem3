@@ -4707,7 +4707,7 @@ var_dump($query);*/
 
       $logCount = $logs->count();
       $logs = iterator_to_array($logs, false);
-ChromePhp::log($logCount);
+//ChromePhp::log($logCount);
 
 
       /*$db_result = $oDB->executeQuery($sQuery);
@@ -4729,6 +4729,7 @@ ChromePhp::log($logCount);
 
         $user_information = getUserInformaiton($user_id);
         $username = $user_information['firstname']." ".$user_information['lastname'];
+        $user_email = $user_information['email'];
 
         //$to      = 'munir@slate-ghc.com';
         //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
@@ -4758,6 +4759,7 @@ ChromePhp::log($logCount);
         //$oMail->addRecipient('mmoir@slate.co.jp', 'Mitchill Moir');
         $oMail->addRecipient('rkiyamu@slate.co.jp', 'Rossana Kiyamu');
         $oMail->addCCRecipient('munir@slate-ghc.com','Munir Anameric');
+        $oMail->addCCRecipient($user_email);
 
         $flag = securityMailControl($user_id,'contact_view');
         if($flag) // ayni gun mail atilmis mi kontrol ediyoruz
