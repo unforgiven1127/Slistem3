@@ -453,6 +453,24 @@
 						value="" readonly />
 					</div>
 				</div>
+				<div class="general_form_row">
+					<div class="general_form_label">Target sal. from</div>
+					<div class="general_form_column">
+						<input class="salary_field" type="text" name="target_low" value="<?php echo $target_low; ?>" />
+						<input id="target_low_unit" class="salary_manipulation_small read_only_field" type="text" name="target_low_unit"
+							value="" readonly />
+						<input id="target_low_currency" class="salary_manipulation_small read_only_field" type="text" name="target_low_currency"
+							value="" readonly />
+					</div>
+					<div class="general_form_label add_margin_left_30">To</div>
+					<div class="general_form_column">
+						<input class="salary_field" type="text" name="target_high" value="<?php echo $target_high; ?>" />
+						<input id="target_high_unit" class="salary_manipulation_small read_only_field" type="text" name="target_high_unit"
+							value="" readonly />
+						<input id="target_high_currency" class="salary_manipulation_small read_only_field" type="text" name="target_high_currency"
+							value="" readonly />
+					</div>
+				</div>
 		</td>
 	</tr>
 </table>
