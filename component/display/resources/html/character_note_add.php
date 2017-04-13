@@ -439,7 +439,7 @@
 
 <table>
 	<tr>
-		<td>
+		<td style='padding-left: 50px !important;'>
 			<div class="general_form_row  extended_select">
 				<div class="general_form_label">Grade</div>
 				<div class="general_form_column">
