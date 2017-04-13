@@ -404,7 +404,7 @@
 	</tr>
 </table>
 
-<table class="box" align="center">
+<table style="padding-top: 20px;" class="box" align="center">
 	<tr>
 		<td>
 			<div class="general_form_row">

@@ -4704,6 +4704,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         $candidate_info = getCandidateInformation($pnCandiPk);
 
+        $candidate_salary_bonus = formatNumber(round($candidate_info['bonus']), $this->casSettings['candi_salary_format']);
+
         foreach ($skillArray as $key => $value)
         {
           if(!empty($candidate_info[$key]))
