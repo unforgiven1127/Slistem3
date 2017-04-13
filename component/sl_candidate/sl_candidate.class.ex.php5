@@ -4704,7 +4704,7 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         $candidate_info = getCandidateInformation($pnCandiPk);
 
-        $is_client = $candidate_info['is_client'];
+        $data['is_client'] = $candidate_info['is_client'];
 
         $data['keyword'] = $candidate_info['keyword'];
 
