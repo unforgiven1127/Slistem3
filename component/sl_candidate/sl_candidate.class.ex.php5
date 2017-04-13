@@ -6707,12 +6707,15 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_email = $user_info['email'];
 
       $html_signature = $user_info['html_signature'];
-      ChromePhp::log($html_signature);
+      //ChromePhp::log($html_signature);
 
       $oEvent = CDependency::getComponentByName('sl_event');
 
-      ChromePhp::log($sNote);
-      $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
+      //ChromePhp::log($sNote);
+
+      $noteWithoutSign = str_replace($html_signature,'',$sNote);
+
+      $asResult = $oEvent->addNote((int)$candidate_id, 'note', $noteWithoutSign);
 
       $event_id = $asResult['event_pk'];
 
