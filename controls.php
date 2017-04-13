@@ -1,8 +1,6 @@
 <script>
-alert('test 1');
-$( window ).unload(function() {
-  return "Handler for .unload() called.";
-});
+
+
 </script>
 <?php
 
