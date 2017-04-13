@@ -7,6 +7,7 @@ class CSl_eventEx extends CSl_event
   private $casCpParam = array();
   private $_oDisplay = null;
   private $casSettings = array();
+  private $coSlateVars = null;
 
   public function __construct()
   {
