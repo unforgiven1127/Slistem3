@@ -1048,7 +1048,7 @@ class CSl_eventEx extends CSl_event
     //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note))
     {
-      ChromePhp::log($note);
+      //ChromePhp::log($note);
       insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
     }
 

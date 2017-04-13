@@ -3005,6 +3005,8 @@ class CSl_candidateEx extends CSl_candidate
         $oPager->setOffset($pageoffsetClickedSession);
         $nPagerOffset = $pageoffsetClickedSession - 1;
 
+        unset($_SESSION['pageoffsetClicked']);
+
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
       else if(empty($this->csSearchId) && empty($nHistoryPk))

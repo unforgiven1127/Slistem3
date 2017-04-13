@@ -4771,7 +4771,7 @@ var_dump($query);*/
     }
     else
     {
-      //////ChromePhp::log'ELSE');
+      //////ChromePhp::log('ELSE');
     }
     return true;
   }
