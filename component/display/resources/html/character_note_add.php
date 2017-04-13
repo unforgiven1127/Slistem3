@@ -202,6 +202,11 @@
 	  font-size: 11px;
 	}
 
+	.salary_field
+	{
+	  width: 81px;
+	}
+
 	.box {
 	    /*margin: 0 auto !important;*/
 	    /*margin-top:15px !important;*/
