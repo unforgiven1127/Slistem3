@@ -438,8 +438,8 @@
 </table>
 
 <table style="padding-top: 20px;" class="box" align="center">
-	<tr>
-		<td>
+	<tr style='width: 100% !important;'>
+		<td style='width: 100% !important;'>
 			<div class="general_form_row">
 					<div class="general_form_label">Salary</div>
 					<div class="general_form_column">
