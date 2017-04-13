@@ -4704,6 +4704,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         $candidate_info = getCandidateInformation($pnCandiPk);
 
+        $data['keyword'] = $candidate_info['keyword'];
+
         $data['candidate_salary_bonus'] = formatNumber(round($candidate_info['bonus']), $this->casSettings['candi_salary_format']);
         $data['candidate_salary'] = formatNumber(round($candidate_info['salary']), $this->casSettings['candi_salary_format']);
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
