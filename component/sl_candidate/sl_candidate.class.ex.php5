@@ -2949,10 +2949,6 @@ ChromePhp::log($pageoffsetClicked);
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
-      else
-      {
-        $_SESSION['pageoffsetClicked'] = -1;
-      }
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -3005,19 +3001,18 @@ ChromePhp::log($pageoffsetClicked);
         $oPager->initPager();
         $nLimit = $oPager->getLimit();
         //$nPagerOffset = $oPager->getOffset();
-        $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
-ChromePhp::log($pageoffsetClickedSession);
-        if($pageoffsetClickedSession > -1)
+        if(isset($_SESSION['pageoffsetClicked']))
         {
-ChromePhp::log('IF');
-          $oPager->setOffset($pageoffsetClickedSession);
-          $nPagerOffset = $pageoffsetClickedSession - 1;
+          $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
         }
         else
         {
-ChromePhp::log('ELSE');
-          $nPagerOffset = $oPager->getOffset();
+          $pageoffsetClickedSession = $oPager->getOffset();
         }
+
+
+        $oPager->setOffset($pageoffsetClickedSession);
+        $nPagerOffset = $pageoffsetClickedSession - 1;
 
         unset($_SESSION['pageoffsetClicked']);
 
