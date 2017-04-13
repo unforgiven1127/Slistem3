@@ -6,14 +6,18 @@ class CSl_eventEx extends CSl_event
 {
   private $casCpParam = array();
   private $_oDisplay = null;
+  private $casSettings = array();
 
   public function __construct()
   {
     parent::__construct();
 
     $sCandiUid = CDependency::getComponentUidByName('sl_candidate');
+    $oSettings = CDependency::getComponentByName('settings');
+
     $this->_oDisplay = CDependency::getCpHtml();
     $this->casCpParam = array(CONST_CP_UID => $sCandiUid, CONST_CP_ACTION => CONST_ACTION_VIEW, CONST_CP_TYPE => '', CONST_CP_PK => 0);
+    $this->casSettings = $oSettings->getSettings(array('candidate_tabs', 'candidate_template', 'candi_list_field', 'candi_salary_format'), false);
 
     return true;
   }
