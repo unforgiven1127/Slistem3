@@ -440,40 +440,39 @@
 <table>
 	<tr>
 		<td>
-
-		<div class="general_form_row  extended_select">
-					<div class="general_form_label">Grade</div>
-					<div class="general_form_column">
-						<select style='width: 100px !important;' name="grade" >
-						<?php echo $grade; ?>
-						</select>
-					</div>
-					<div class="general_form_label add_margin_left_30">Status</div>
-					<div class="general_form_column">
-						<select  style='width: 100px !important;' name="status" onchange="manageFormStatus(this, <?php echo $candidate_id; ?>);">
-						<?php echo $status_options; ?>
-						</select>
-					</div>
-					<div class="general_form_label add_margin_left_30">MBA/CPA</div>
-					<div class="general_form_column">
-						<select style='width: 100px !important;' name="diploma">
-							<option value="">none</option>
-							<?php echo $diploma_options; ?>
-						</select>
-					</div>
+			<div class="general_form_row  extended_select">
+				<div class="general_form_label">Grade</div>
+				<div class="general_form_column">
+					<select style='width: 120px !important;' name="grade" >
+					<?php echo $grade; ?>
+					</select>
 				</div>
-				<div class="general_form_row">
-					<div class="general_form_label">Keyword</div>
-					<div class="general_form_column extended_input">
-						<input type="text" name="keyword" value="<?php echo $keyword; ?>" />
-					</div>
-					<div class="general_form_label add_margin_left_30">Is client</div>
-					<div class="general_form_column">
-						<input id="is_client" class="css-checkbox" type="checkbox" name="client"
-							<?php if (!empty($is_client)) echo 'checked'; ?> />
-						<label for="is_client" class="css-label">&nbsp;</label>
-					</div>
+				<div class="general_form_label add_margin_left_30">Status</div>
+				<div class="general_form_column">
+					<select  style='width: 120px !important;' name="status" onchange="manageFormStatus(this, <?php echo $candidate_id; ?>);">
+					<?php echo $status_options; ?>
+					</select>
 				</div>
+				<div class="general_form_label add_margin_left_30">MBA/CPA</div>
+				<div class="general_form_column">
+					<select style='width: 120px !important;' name="diploma">
+						<option value="">none</option>
+						<?php echo $diploma_options; ?>
+					</select>
+				</div>
+			</div>
+			<div class="general_form_row">
+				<div class="general_form_label">Keyword</div>
+				<div class="general_form_column extended_input">
+					<input type="text" name="keyword" value="<?php echo $keyword; ?>" />
+				</div>
+				<div class="general_form_label add_margin_left_30">Is client</div>
+				<div class="general_form_column">
+					<input id="is_client" class="css-checkbox" type="checkbox" name="client"
+						<?php if (!empty($is_client)) echo 'checked'; ?> />
+					<label for="is_client" class="css-label">&nbsp;</label>
+				</div>
+			</div>
 		</td>
 	</tr>
 </table>
