@@ -2948,6 +2948,10 @@ class CSl_candidateEx extends CSl_candidate
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
+      else
+      {
+        unset($_SESSION['pageoffsetClicked']);
+      }
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
