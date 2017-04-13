@@ -3205,7 +3205,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $record_start = $nPagerOffset*$nLimit;
 
-        if ($record_start > $nResult)
+        if ($record_start > $nResult || $record_start < 0)
         {
           $poQB->addLimit('0, '.$nLimit);
           $sQuery = $poQB->getSql();
@@ -3323,7 +3323,6 @@ $searchTitle = explode(':',$poQB->getTitle());
         {
           $sQuery.= ' ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC ';
         }
-
 
         if(!empty($limit))
           $sQuery.= " LIMIT ".$limit;
