@@ -2939,12 +2939,12 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0)
     {
-      ////ChromePhp::log$poQB);
+      ////ChromePhp::log($poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
       //$obj = unserialize($_SESSION['lastSearch']);
-      ////ChromePhp::log$obj);
+      ////ChromePhp::log($obj);
       $pageoffsetClicked = (int)getValue('pageoffset');
-      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)//
+      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
@@ -3005,14 +3005,16 @@ class CSl_candidateEx extends CSl_candidate
         $nLimit = $oPager->getLimit();
         //$nPagerOffset = $oPager->getOffset();
         $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
-        //ChromePhp::log($pageoffsetClickedSession);
+ChromePhp::log($pageoffsetClickedSession);
         if($pageoffsetClickedSession > -1)
         {
+ChromePhp::log('IF');
           $oPager->setOffset($pageoffsetClickedSession);
           $nPagerOffset = $pageoffsetClickedSession - 1;
         }
         else
         {
+ChromePhp::log('ELSE');
           $nPagerOffset = $oPager->getOffset();
         }
 
