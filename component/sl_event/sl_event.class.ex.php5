@@ -762,6 +762,8 @@ class CSl_eventEx extends CSl_event
 
         $data['keyword'] = $candidate_info['keyword'];
 
+        $data['grade'] = $this->getVars()->getCandidateGradeOption($candidate_info['grade']);
+
         $data['candidate_salary_bonus'] = formatNumber(round($candidate_info['bonus']), $this->casSettings['candi_salary_format']);
         $data['candidate_salary'] = formatNumber(round($candidate_info['salary']), $this->casSettings['candi_salary_format']);
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
