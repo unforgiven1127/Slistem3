@@ -756,6 +756,11 @@ class CSl_eventEx extends CSl_event
 
         $candidate_info = getCandidateInformation($nCp_Pk);
 
+        $data['candidate_salary_bonus'] = formatNumber(round($candidate_info['bonus']), $this->casSettings['candi_salary_format']);
+        $data['candidate_salary'] = formatNumber(round($candidate_info['salary']), $this->casSettings['candi_salary_format']);
+        $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
+        $data['target_high'] = formatNumber(round($candidate_info['target_high']), $this->casSettings['candi_salary_format']);
+
         foreach ($skillArray as $key => $value)
         {
           if(!empty($candidate_info[$key]))
