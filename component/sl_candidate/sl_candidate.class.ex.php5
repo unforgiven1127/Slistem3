@@ -3011,7 +3011,10 @@ class CSl_candidateEx extends CSl_candidate
           $oPager->setOffset($pageoffsetClickedSession);
           $nPagerOffset = $pageoffsetClickedSession - 1;
         }
-        $nPagerOffset = $oPager->getOffset();
+        else
+        {
+          $nPagerOffset = $oPager->getOffset();
+        }
 
         unset($_SESSION['pageoffsetClicked']);
 
