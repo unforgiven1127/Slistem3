@@ -781,6 +781,8 @@ class CSl_eventEx extends CSl_event
 
         $candidate_info = getCandidateInformation($nCp_Pk);
 
+        $is_client = (int)$candidate_info['client'] + (int)$candidate_info['is_client'];
+
         $data['keyword'] = $candidate_info['keyword'];
 
         $data['grade'] = $this->getVars()->getCandidateGradeOption($candidate_info['grade']);

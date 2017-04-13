@@ -4704,6 +4704,8 @@ $searchTitle = explode(':',$poQB->getTitle());
 
         $candidate_info = getCandidateInformation($pnCandiPk);
 
+        $is_client = (int)$candidate_info['client'] + (int)$candidate_info['is_client'];
+
         $data['keyword'] = $candidate_info['keyword'];
 
         $data['grade'] = $this->getVars()->getCandidateGradeOption($candidate_info['grade']);
