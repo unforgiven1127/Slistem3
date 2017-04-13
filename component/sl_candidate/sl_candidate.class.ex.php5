@@ -3400,7 +3400,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $rmResult = $rmResultDB->getAll();
         }
       }*/
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
