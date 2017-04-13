@@ -6706,7 +6706,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       $user_info = getUserInformaiton($user_id);
       $user_email = $user_info['email'];
 
-      //$signeture = $user_info['signeture'];
+      $html_signature = $user_info['html_signature'];
+      ChromePhp::log($sNote);
 
       $oEvent = CDependency::getComponentByName('sl_event');
 
