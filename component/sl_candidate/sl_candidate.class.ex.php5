@@ -4709,6 +4709,8 @@ $searchTitle = explode(':',$poQB->getTitle());
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
         $data['target_high'] = formatNumber(round($candidate_info['target_high']), $this->casSettings['candi_salary_format']);
 
+        ChromePhp::log($data);
+
         foreach ($skillArray as $key => $value)
         {
           if(!empty($candidate_info[$key]))
