@@ -785,6 +785,39 @@ class CSl_eventEx extends CSl_event
 
         $data['grade'] = $this->getVars()->getCandidateGradeOption($candidate_info['grade']);
 
+        if ($candidate_info['cpa'] && $candidate_info['mba'])
+        {
+          $data['diploma_options'] = '
+            <option value="cpa">CPA</option>
+            <option value="mba">MBA</option>
+            <option value="both" selected>both</option>
+            ';
+        }
+        else if ($candidate_info['cpa'])
+        {
+          $data['diploma_options'] = '
+            <option value="cpa" selected>CPA</option>
+            <option value="mba">MBA</option>
+            <option value="both">both</option>
+            ';
+        }
+        else if ($candidate_info['mba'])
+        {
+          $data['diploma_options'] = '
+            <option value="cpa">CPA</option>
+            <option value="mba" selected>MBA</option>
+            <option value="both">both</option>
+            ';
+        }
+        else
+        {
+          $data['diploma_options'] = '
+            <option value="cpa">CPA</option>
+            <option value="mba">MBA</option>
+            <option value="both">both</option>
+            ';
+        }
+
         $data['candidate_salary_bonus'] = formatNumber(round($candidate_info['bonus']), $this->casSettings['candi_salary_format']);
         $data['candidate_salary'] = formatNumber(round($candidate_info['salary']), $this->casSettings['candi_salary_format']);
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
