@@ -209,14 +209,14 @@
 
 	.salary_manipulation
 	{
-	  width: 45px;
+	  width: 45px !important;
 	  text-align: center;
 	  text-transform: uppercase;
 	}
 
 	.salary_manipulation_small
 	{
-	  width: 43px;
+	  width: 43px !important;
 	  text-align: center;
 	  text-transform: uppercase;
 	}
