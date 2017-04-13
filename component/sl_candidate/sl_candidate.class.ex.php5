@@ -2948,6 +2948,10 @@ class CSl_candidateEx extends CSl_candidate
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
+      else
+      {
+        $_SESSION['pageoffsetClicked'] = -1;
+      }
       if($poQB != null)
       {
         $exploded = explode('_',$poQB->getTitle());
@@ -3002,8 +3006,12 @@ class CSl_candidateEx extends CSl_candidate
         //$nPagerOffset = $oPager->getOffset();
         $pageoffsetClickedSession = $_SESSION['pageoffsetClicked'];
         //ChromePhp::log($pageoffsetClickedSession);
-        $oPager->setOffset($pageoffsetClickedSession);
-        $nPagerOffset = $pageoffsetClickedSession - 1;
+        if($pageoffsetClickedSession > -1)
+        {
+          $oPager->setOffset($pageoffsetClickedSession);
+          $nPagerOffset = $pageoffsetClickedSession - 1;
+        }
+        $nPagerOffset = $oPager->getOffset();
 
         unset($_SESSION['pageoffsetClicked']);
 
