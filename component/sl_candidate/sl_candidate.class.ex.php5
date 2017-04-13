@@ -2944,7 +2944,7 @@ class CSl_candidateEx extends CSl_candidate
       //$obj = unserialize($_SESSION['lastSearch']);
       ////ChromePhp::log$obj);
       $pageoffsetClicked = (int)getValue('pageoffset');
-      if(isset($pageoffsetClicked) && $pageoffsetClicked > 0)
+      if(isset($pageoffsetClicked))// && $pageoffsetClicked > 0
       {
         $_SESSION['pageoffsetClicked'] = $pageoffsetClicked;
       }
