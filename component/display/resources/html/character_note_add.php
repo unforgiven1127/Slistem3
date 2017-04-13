@@ -141,7 +141,7 @@
 				$('#compensation_note').css({'background-color':''});
 			}
 		}
-		
+
 	});
 
 	var initialSkills = new Array();
@@ -188,6 +188,20 @@
 </script>
 
 <style>
+	.general_form_label
+	{
+	  width: 90px;
+	  min-width: 90px;
+	  border: 1px dotted #CFCFCF;
+	  border-radius: 3px;
+	  /*font-size: 11px;*/
+	  padding: 3px 2px 2px 0;
+	  text-align: right;
+	  background-color: #FFEFD3;
+	  float: left;
+	  font-size: 11px;
+	}
+
 	.box {
 	    /*margin: 0 auto !important;*/
 	    /*margin-top:15px !important;*/
