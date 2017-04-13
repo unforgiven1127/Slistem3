@@ -6709,6 +6709,8 @@ $searchTitle = explode(':',$poQB->getTitle());
       //$signeture = $user_info['signeture'];
 
       $oEvent = CDependency::getComponentByName('sl_event');
+
+      ChromePhp::log($sNote);
       $asResult = $oEvent->addNote((int)$candidate_id, 'note', $sNote);
 
       $event_id = $asResult['event_pk'];
@@ -6725,7 +6727,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $uploaded_files = array();
       $uniqueDate = strtotime('now');
       $uniqueDate = $candidate_id.'_'.$uniqueDate;
-      ////ChromePhp::log$uniqueDate);
+      ////ChromePhp::log($uniqueDate);
 
       //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
       $max_file_size = 1024*100; //100 kb
