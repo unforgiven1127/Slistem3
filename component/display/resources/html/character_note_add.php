@@ -207,6 +207,20 @@
 	  width: 81px !important;
 	}
 
+	.salary_manipulation
+	{
+	  width: 45px;
+	  text-align: center;
+	  text-transform: uppercase;
+	}
+
+	.salary_manipulation_small
+	{
+	  width: 43px;
+	  text-align: center;
+	  text-transform: uppercase;
+	}
+
 	.box {
 	    /*margin: 0 auto !important;*/
 	    /*margin-top:15px !important;*/
