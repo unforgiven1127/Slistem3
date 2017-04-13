@@ -204,7 +204,7 @@
 
 	.salary_field
 	{
-	  width: 81px;
+	  width: 81px !important;
 	}
 
 	.box {
