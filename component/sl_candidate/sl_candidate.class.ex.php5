@@ -3205,7 +3205,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       {
         $record_start = $nPagerOffset*$nLimit;
 
-        if ($record_start > $nResult)//|| $record_start < 0
+        if ($record_start > $nResult || $record_start < 0)//
         {
           $poQB->addLimit('0, '.$nLimit);
           $sQuery = $poQB->getSql();
