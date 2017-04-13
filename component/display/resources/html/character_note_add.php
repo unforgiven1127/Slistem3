@@ -444,19 +444,19 @@
 		<div class="general_form_row  extended_select">
 					<div class="general_form_label">Grade</div>
 					<div class="general_form_column">
-						<select name="grade" >
+						<select style='width: 100px !important;' name="grade" >
 						<?php echo $grade; ?>
 						</select>
 					</div>
 					<div class="general_form_label add_margin_left_30">Status</div>
 					<div class="general_form_column">
-						<select name="status" onchange="manageFormStatus(this, <?php echo $candidate_id; ?>);">
+						<select  style='width: 100px !important;' name="status" onchange="manageFormStatus(this, <?php echo $candidate_id; ?>);">
 						<?php echo $status_options; ?>
 						</select>
 					</div>
 					<div class="general_form_label add_margin_left_30">MBA/CPA</div>
 					<div class="general_form_column">
-						<select name="diploma">
+						<select style='width: 100px !important;' name="diploma">
 							<option value="">none</option>
 							<?php echo $diploma_options; ?>
 						</select>
