@@ -826,6 +826,16 @@ class CSl_eventEx extends CSl_event
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
         $data['target_high'] = formatNumber(round($candidate_info['target_high']), $this->casSettings['candi_salary_format']);
 
+        $nStatus = $candidate_info['status'];
+
+        $data['asStatus'] = '<option value="0"> - </option>
+          <option value="1" '.(($nStatus === 1)? ' selected ':'').'> Name Collect </option>
+          <option value="2" '.(($nStatus === 2)? ' selected ':'').'> Contacted </option>
+          <option value="3" '.(($nStatus === 3)? ' selected ':'').' class="unavailable"> Interview set</option>
+          <option value="5" '.(($nStatus === 5)? ' selected ':'').'> Phone assessed </option>
+          <option value="6" '.(($nStatus === 6)? ' selected ':'').'> Assessed in person </option>
+          <option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
+
         $data['currencyCode'] = 'jpy';
         if(isset($candidate_info['currency']) && !empty($candidate_info['currency']))
         {
