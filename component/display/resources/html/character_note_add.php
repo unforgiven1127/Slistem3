@@ -157,6 +157,10 @@
 	initialSkills['skill_e']  = $('#skill_e').val();
 	initialSkills['skill_ex'] = $('#skill_ex').val();
 
+	linkCurrencyFields('salary_unit', 'bonus', 'salary');
+	linkCurrencyFields('salary_unit', 'target_low', 'salary');
+	linkCurrencyFields('salary_unit', 'target_high', 'salary');
+
 	$pressedKey = '';
 	$(".inputsSkill").keypress(function(e){
 	    $pressedKey = e.keyCode;
