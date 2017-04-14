@@ -836,10 +836,10 @@ class CSl_eventEx extends CSl_event
           <option value="6" '.(($nStatus === 6)? ' selected ':'').'> Assessed in person </option>
           ';
 
-          if(CDependency::getCpLogin()->isAdmin())
-          {
-            $data['status_options'] .= '<option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
-          }
+        if(CDependency::getCpLogin()->isAdmin())
+        {
+          $data['status_options'] .= '<option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
+        }
 
         $data['currencyCode'] = 'jpy';
         if(isset($candidate_info['currency']) && !empty($candidate_info['currency']))

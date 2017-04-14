@@ -4715,6 +4715,21 @@ $searchTitle = explode(':',$poQB->getTitle());
         $data['target_low'] = formatNumber(round($candidate_info['target_low']), $this->casSettings['candi_salary_format']);
         $data['target_high'] = formatNumber(round($candidate_info['target_high']), $this->casSettings['candi_salary_format']);
 
+        $nStatus = $candidate_info['statusfk'];
+
+        $data['status_options'] = '<option value="0"> - </option>
+          <option value="1" '.(($nStatus === 1)? ' selected ':'').'> Name Collect </option>
+          <option value="2" '.(($nStatus === 2)? ' selected ':'').'> Contacted </option>
+          <option value="3" '.(($nStatus === 3)? ' selected ':'').' disabled class="unavailable"> Interview set</option>
+          <option value="5" '.(($nStatus === 5)? ' selected ':'').'> Phone assessed </option>
+          <option value="6" '.(($nStatus === 6)? ' selected ':'').'> Assessed in person </option>
+          ';
+
+        if(CDependency::getCpLogin()->isAdmin())
+        {
+          $data['status_options'] .= '<option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
+        }
+
         $data['currencyCode'] = 'jpy';
         if(isset($candidate_info['currency']) && !empty($candidate_info['currency']))
         {
