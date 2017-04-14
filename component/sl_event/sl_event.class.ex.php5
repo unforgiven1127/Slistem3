@@ -1165,6 +1165,19 @@ class CSl_eventEx extends CSl_event
     $skillValues['skill_pl'] = getValue('skill_pl');
     $skillValues['skill_e'] = getValue('skill_e');
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
+    //
+    $errorArray = "";
+
+    $status_update = getValue('status');
+    $grade_update = getValue('grade');
+
+    if($status_update == 5 || $status_update == 6)
+    {// when status phone assessed or assessd in person
+      if(empty($grade_update) || $grade_update == 0)
+      {
+        $errorArray .= 'Grade should be selected<br>';
+      }
+    }
 
     if($event_type == 'character' && empty($delete_flag) && empty($this->cnPk))
     {
@@ -1180,7 +1193,6 @@ class CSl_eventEx extends CSl_event
 
       $characterNoteFlag = false;
       $characterNote = "";
-      $errorArray = "";
 
       if(empty($simpleCharacterNote))
       {
@@ -1425,6 +1437,23 @@ class CSl_eventEx extends CSl_event
 
       $asResult['timedUrl'] = '';
       $asResult['url'] = '';
+
+      //Grade Status MBA Keyword Salary UPDATES
+
+      $grade_update = getValue('grade');
+      $status_update = getValue('status');
+      $mba_update = getValue('diploma');
+      $keyword_update = getValue('keyword');
+      $isClient_update = getValue('client');
+      $salary_update = getValue('salary');
+      $bonus_update = getValue('bonus');
+      $targetLow_update = getValue('target_low');
+      $targetTo_update = getValue('target_high');
+      $currency_update = getValue('salary_currency');
+      $salaryUnit_update = getValue('salary_unit');
+
+
+      //Grade Status MBA Keyword Salary UPDATES
     }
 
     return $asResult;
