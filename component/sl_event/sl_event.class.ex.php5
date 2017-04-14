@@ -786,6 +786,7 @@ class CSl_eventEx extends CSl_event
         $data['keyword'] = $candidate_info['keyword'];
 
         $data['grade'] = $this->getVars()->getCandidateGradeOption($candidate_info['grade']);
+        $data['money_unit'] = $this->casSettings['candi_salary_format'];
 
         if ($candidate_info['cpa'] && $candidate_info['mba'])
         {
