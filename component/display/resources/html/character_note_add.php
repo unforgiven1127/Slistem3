@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="/component/form/resources/js/currency.js"></script>
 <script type="text/javascript">
 
 	$(function(){
