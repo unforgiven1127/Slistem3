@@ -834,7 +834,12 @@ class CSl_eventEx extends CSl_event
           <option value="3" '.(($nStatus === 3)? ' selected ':'').' disabled class="unavailable"> Interview set</option>
           <option value="5" '.(($nStatus === 5)? ' selected ':'').'> Phone assessed </option>
           <option value="6" '.(($nStatus === 6)? ' selected ':'').'> Assessed in person </option>
-          <option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
+          ';
+
+          if(CDependency::getCpLogin()->isAdmin())
+          {
+            $data['status_options'] .= '<option value="8" '.(($nStatus === 8)? ' selected ':'').'> Lost </option>';
+          }
 
         $data['currencyCode'] = 'jpy';
         if(isset($candidate_info['currency']) && !empty($candidate_info['currency']))
