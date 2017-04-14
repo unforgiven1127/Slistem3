@@ -5581,6 +5581,17 @@ $searchTitle = explode(':',$poQB->getTitle());
       $characterNote = "";
       $errorArray = '';
 
+      $status_update = getValue('status');
+      $grade_update = getValue('grade');
+
+      if($status_update == 5 || $status_update == 6)
+      {// when status phone assessed or assessd in person
+        if(empty($grade_update) || $grade_update == 0)
+        {
+          $errorArray .= 'Grade should be selected<br>';
+        }
+      }
+
       if(!$characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
