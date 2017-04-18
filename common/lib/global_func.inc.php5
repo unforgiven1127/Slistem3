@@ -3399,11 +3399,11 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
-    $sQuery = "UPDATE sl_candidate_profile SET grade = '".$updates['grade_update']."', keyword = '".$updates['keyword_update']."', bonus = '".$updates['bonus_update']."', currency = '".$updates['currency_update']."', target_low = '".$updates['targetLow_update']."', target_high = '".$updates['targetTo_update']."' WHERE candidatefk = '".$candidate_id."'";
+    $sQuery = "UPDATE sl_candidate_profile SET grade = '".$updates['grade_update']."', keyword = '".$updates['keyword_update']."', bonus = '".$updates['bonus_update']."', currency = '".$updates['currency_update']."', target_low = '".$updates['targetLow_update']."', target_high = '".$updates['targetTo_update']."', date_updated = '".$sDate."', updated_by = '".$user_id."' WHERE candidatefk = '".$candidate_id."'";
 
     $db_result = $oDB->executeQuery($sQuery);
 
-    
+
   }
 
   function getCompanyPositionList($company_id)
