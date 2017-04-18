@@ -1068,6 +1068,7 @@ class CSl_eventEx extends CSl_event
     $oLogin = CDependency::getCpLogin();
     $event_type = filter_var(getValue('event_type'), FILTER_SANITIZE_STRING);
     $content = purify_html(getValue('content'));
+    $oCurrency = $oForm->getStandaloneField('currency');
 
     if(empty($content))
     {
@@ -1178,6 +1179,50 @@ class CSl_eventEx extends CSl_event
         $errorArray .= 'Grade should be selected<br>';
       }
     }
+
+    //SALARY CONTROL
+    $targetLow_update = getValue('target_low');
+    $targetTo_update = getValue('target_high');
+    $salary_update = getValue('salary');
+    $bonus_update = getValue('bonus');
+    $salaryManual = getValue('salary');
+    $bonusManual = getValue('bonus');
+    $salaryCurrency = getValue('salary_currency');
+
+    $asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
+    $this->_getSalaryInYen($asTargetLow);
+
+    $asTargetHigh = $oCurrency->getCurrencyFromPost('target_high');
+    $this->_getSalaryInYen($asTargetHigh);
+
+    $salaryUnit = getValue('salary_unit');
+
+    if($salaryUnit == 'M')
+    {
+      $newSalary = $salaryManual * 1000000;
+      $newBonus = $bonusManual * 1000000;
+    }
+    else if($salaryUnit == 'K')
+    {// M ile K arasinda herhangi bir fark yok neden seciyoruz??
+      $newSalary = $salaryManual * 1000;
+      $newBonus = $bonusManual * 1000;
+    }
+    else
+    {
+      $newSalary = $salaryManual * 1000000;
+      $newBonus = $bonusManual * 1000000;
+    }
+
+    if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
+    {
+      $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
+    }
+    if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+    {
+      $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
+    }
+
+    //SALARY CONTROL
 
     if($event_type == 'character' && empty($delete_flag) && empty($this->cnPk))
     {
@@ -1370,15 +1415,17 @@ class CSl_eventEx extends CSl_event
 
             //Grade Status MBA Keyword Salary UPDATES
 
+
+
             $updates['grade_update'] = getValue('grade');
             $updates['status_update'] = getValue('status');
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
             $updates['isClient_update'] = getValue('client');
-            $updates['salary_update'] = getValue('salary');
-            $updates['bonus_update'] = getValue('bonus');
-            $updates['targetLow_update'] = getValue('target_low');
-            $updates['targetTo_update'] = getValue('target_high');
+            $updates['salary_update'] = $salary_update;
+            $updates['bonus_update'] = $bonus_update;
+            $updates['targetLow_update'] = $targetLow_update;
+            $updates['targetTo_update'] = $targetTo_update;
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
 
@@ -1461,5 +1508,58 @@ class CSl_eventEx extends CSl_event
 
     return $asResult;
   }
+
+    private function _getSalaryInYen(&$pasSalaryData)
+    {
+      //dump($pasSalaryData);
+      if(!assert('is_array($pasSalaryData) && !empty($pasSalaryData)'))
+        return -1;
+
+      if(!isset($pasSalaryData['value']) || !isset($pasSalaryData['currency']))
+      {
+        assert('false; // invalid salary data ');
+        return -1;
+      }
+
+      $pasSalaryData['yen'] = 0;
+      $pasSalaryData['rate'] = 1;
+
+      if(empty($pasSalaryData['value']))
+        return 0;
+
+      if(empty($pasSalaryData['currency']) == 'jpy')
+        return 0;
+
+      //convert the value in yen
+      $asCurrencyRate = $this->getVars()->getCurrencies();
+
+      if(!isset($asCurrencyRate[$pasSalaryData['currency']]))
+        return -1;
+
+      $fRate = (float)$asCurrencyRate[$pasSalaryData['currency']];
+      $pasSalaryData['rate'] = $fRate;
+      $pasSalaryData['yen'] = $this->_roundSalary((int)$pasSalaryData['value'] / $fRate);
+
+      /*dump('currency');
+      dump($pasSalaryData['currency']);
+      dump('currency rate');
+      dump($fRate);
+      dump('calculated value:  '.$fRate.' / '.$pasSalaryData['value']);
+      dump($pasSalaryData['yen']);*/
+
+      return 1;
+    }
+
+    private function _roundSalary($pvNumber, $pnPrecision = 1)
+    {
+      if(!assert('is_integer($pvNumber) || is_float($pvNumber)'))
+        return 0;
+
+      if(!assert('is_integer($pnPrecision)'))
+        return 0;
+
+      $nDivisor = pow(10, $pnPrecision);
+      return round($pvNumber/$nDivisor) * $nDivisor;
+    }
 
 }
