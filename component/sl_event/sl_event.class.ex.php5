@@ -1367,6 +1367,25 @@ class CSl_eventEx extends CSl_event
             $asResult['timedUrl'] = '';
             //$asResult['timedUrl'] = CONST_CRM_DOMAIN."/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk=".$candidate_id."#candi_tab_eventId";
             $asResult['action'] = 'view_candi("'.CONST_CRM_DOMAIN.'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate_id.'&pg=ajx", "#tabLink1"); goPopup.removeByType(\'layer\'); ';
+
+            //Grade Status MBA Keyword Salary UPDATES
+
+            $updates['grade_update'] = getValue('grade');
+            $updates['status_update'] = getValue('status');
+            $updates['mba_update'] = getValue('diploma');
+            $updates['keyword_update'] = getValue('keyword');
+            $updates['isClient_update'] = getValue('client');
+            $updates['salary_update'] = getValue('salary');
+            $updates['bonus_update'] = getValue('bonus');
+            $updates['targetLow_update'] = getValue('target_low');
+            $updates['targetTo_update'] = getValue('target_high');
+            $updates['currency_update'] = getValue('salary_currency');
+            $updates['salaryUnit_update'] = getValue('salary_unit');
+
+            updateCandidateInformation6box($updates,$user_id,$candidate_id);
+
+
+            //Grade Status MBA Keyword Salary UPDATES
         }
       }
       else
@@ -1438,24 +1457,6 @@ class CSl_eventEx extends CSl_event
       $asResult['timedUrl'] = '';
       $asResult['url'] = '';
 
-      //Grade Status MBA Keyword Salary UPDATES
-
-      $updates['grade_update'] = getValue('grade');
-      $updates['status_update'] = getValue('status');
-      $updates['mba_update'] = getValue('diploma');
-      $updates['keyword_update'] = getValue('keyword');
-      $updates['isClient_update'] = getValue('client');
-      $updates['salary_update'] = getValue('salary');
-      $updates['bonus_update'] = getValue('bonus');
-      $updates['targetLow_update'] = getValue('target_low');
-      $updates['targetTo_update'] = getValue('target_high');
-      $updates['currency_update'] = getValue('salary_currency');
-      $updates['salaryUnit_update'] = getValue('salary_unit');
-
-      updateCandidateInformation6box($updates,$user_id,$candidate_id);
-
-
-      //Grade Status MBA Keyword Salary UPDATES
     }
 
     return $asResult;
