@@ -5626,6 +5626,40 @@ $searchTitle = explode(':',$poQB->getTitle());
         }
       }
 
+      //SALARY CONTROL
+
+      $salaryManual = getValue('salary');
+      $salaryUnit = getValue('salary_unit');
+      $salaryCurrency = getValue('salary_currency');
+      $bonusManual = getValue('bonus');
+
+      if($salaryUnit == 'M')
+      {
+        $newSalary = $salaryManual * 1000000;
+        $newBonus = $bonusManual * 1000000;
+      }
+      else if($salaryUnit == 'K')
+      {
+        $newSalary = $salaryManual * 1000;
+        $newBonus = $bonusManual * 1000;
+      }
+      else
+      {
+        $newSalary = $salaryManual * 1000000;
+        $newBonus = $bonusManual * 1000000;
+      }
+
+      if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
+      {
+        $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
+      }
+      if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+      {
+        $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
+      }
+
+      //SALARY CONTROL
+
       if(!$characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
