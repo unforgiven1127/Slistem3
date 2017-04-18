@@ -3401,6 +3401,8 @@ var_dump($query);*/
 
     $sQuery = "UPDATE sl_candidate_profile SET grade = '".$updates['grade_update']."', keyword = '".$updates['keyword_update']."', bonus = '".$updates['bonus_update']."', salary_currency = '".$updates['currency_update']."', target_low = '".$updates['targetLow_update']."', target_high = '".$updates['targetTo_update']."' WHERE candidatefk = '".$candidate_id."'";
 
+    ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
   }
 
