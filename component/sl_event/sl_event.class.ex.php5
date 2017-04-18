@@ -1182,13 +1182,13 @@ class CSl_eventEx extends CSl_event
 
     //SALARY CONTROL
     ChromePhp::log('SALARY CONTROL');
-    $targetLow_update = getValue('target_low');
+    /*$targetLow_update = getValue('target_low');
     $targetTo_update = getValue('target_high');
     $salary_update = getValue('salary');
     $bonus_update = getValue('bonus');
     $salaryManual = getValue('salary');
     $bonusManual = getValue('bonus');
-    $salaryCurrency = getValue('salary_currency');
+    $salaryCurrency = getValue('salary_currency');*/
 
     //$asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
     //$this->_getSalaryInYen($asTargetLow);
@@ -1199,7 +1199,7 @@ class CSl_eventEx extends CSl_event
     $salaryUnit = getValue('salary_unit');
 
 ChromePhp::log($salaryUnit);
-    if($salaryUnit == 'M')
+    /*if($salaryUnit == 'M')
     {
       $newSalary = $salaryManual * 1000000;
       $newBonus = $bonusManual * 1000000;
@@ -1222,7 +1222,7 @@ ChromePhp::log($salaryCurrency);
     if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
     {
       $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
-    }
+    }*/
 
     //SALARY CONTROL
 
@@ -1511,57 +1511,6 @@ ChromePhp::log($salaryCurrency);
     return $asResult;
   }
 
-    private function _getSalaryInYen(&$pasSalaryData)
-    {
-      //dump($pasSalaryData);
-      if(!assert('is_array($pasSalaryData) && !empty($pasSalaryData)'))
-        return -1;
 
-      if(!isset($pasSalaryData['value']) || !isset($pasSalaryData['currency']))
-      {
-        assert('false; // invalid salary data ');
-        return -1;
-      }
-
-      $pasSalaryData['yen'] = 0;
-      $pasSalaryData['rate'] = 1;
-
-      if(empty($pasSalaryData['value']))
-        return 0;
-
-      if(empty($pasSalaryData['currency']) == 'jpy')
-        return 0;
-
-      //convert the value in yen
-      $asCurrencyRate = $this->getVars()->getCurrencies();
-
-      if(!isset($asCurrencyRate[$pasSalaryData['currency']]))
-        return -1;
-
-      $fRate = (float)$asCurrencyRate[$pasSalaryData['currency']];
-      $pasSalaryData['rate'] = $fRate;
-      $pasSalaryData['yen'] = $this->_roundSalary((int)$pasSalaryData['value'] / $fRate);
-
-      /*dump('currency');
-      dump($pasSalaryData['currency']);
-      dump('currency rate');
-      dump($fRate);
-      dump('calculated value:  '.$fRate.' / '.$pasSalaryData['value']);
-      dump($pasSalaryData['yen']);*/
-
-      return 1;
-    }
-
-    private function _roundSalary($pvNumber, $pnPrecision = 1)
-    {
-      if(!assert('is_integer($pvNumber) || is_float($pvNumber)'))
-        return 0;
-
-      if(!assert('is_integer($pnPrecision)'))
-        return 0;
-
-      $nDivisor = pow(10, $pnPrecision);
-      return round($pvNumber/$nDivisor) * $nDivisor;
-    }
 
 }
