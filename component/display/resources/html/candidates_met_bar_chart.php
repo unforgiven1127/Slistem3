@@ -63,7 +63,7 @@ $(function () {
                 width:1,
                 zIndex:4,
                 label:{
-                        text:'CUSTOM TARGET',
+                        text:'MONTHLY TARGET',
                         verticalAlign: 'middle',
                         textAlign: 'center',
                         style: {
@@ -112,7 +112,7 @@ $(function () {
                 width:1,
                 zIndex:4,
                 label:{
-                        text:'DAILY TARGET',
+                        text:'TARGET TO DATE',
                         verticalAlign: 'middle',
                         textAlign: 'center',
                         style: {
