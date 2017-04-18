@@ -1181,6 +1181,7 @@ class CSl_eventEx extends CSl_event
     }
 
     //SALARY CONTROL
+    ChromePhp::log('SALARY CONTROL');
     $targetLow_update = getValue('target_low');
     $targetTo_update = getValue('target_high');
     $salary_update = getValue('salary');
@@ -1197,6 +1198,7 @@ class CSl_eventEx extends CSl_event
 
     $salaryUnit = getValue('salary_unit');
 
+ChromePhp::log($salaryUnit);
     if($salaryUnit == 'M')
     {
       $newSalary = $salaryManual * 1000000;
@@ -1212,7 +1214,7 @@ class CSl_eventEx extends CSl_event
       $newSalary = $salaryManual * 1000000;
       $newBonus = $bonusManual * 1000000;
     }
-
+ChromePhp::log($salaryCurrency);
     if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
     {
       $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
