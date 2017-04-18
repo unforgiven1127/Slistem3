@@ -1189,11 +1189,11 @@ class CSl_eventEx extends CSl_event
     $bonusManual = getValue('bonus');
     $salaryCurrency = getValue('salary_currency');
 
-    $asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
-    $this->_getSalaryInYen($asTargetLow);
+    //$asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
+    //$this->_getSalaryInYen($asTargetLow);
 
-    $asTargetHigh = $oCurrency->getCurrencyFromPost('target_high');
-    $this->_getSalaryInYen($asTargetHigh);
+    //$asTargetHigh = $oCurrency->getCurrencyFromPost('target_high');
+    //$this->_getSalaryInYen($asTargetHigh);
 
     $salaryUnit = getValue('salary_unit');
 
