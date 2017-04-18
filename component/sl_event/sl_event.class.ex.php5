@@ -1068,7 +1068,6 @@ class CSl_eventEx extends CSl_event
     $oLogin = CDependency::getCpLogin();
     $event_type = filter_var(getValue('event_type'), FILTER_SANITIZE_STRING);
     $content = purify_html(getValue('content'));
-    $oCurrency = $oForm->getStandaloneField('currency');
 
     if(empty($content))
     {
