@@ -1180,52 +1180,6 @@ class CSl_eventEx extends CSl_event
       }
     }
 
-    //SALARY CONTROL
-    ChromePhp::log('SALARY CONTROL');
-    /*$targetLow_update = getValue('target_low');
-    $targetTo_update = getValue('target_high');
-    $salary_update = getValue('salary');
-    $bonus_update = getValue('bonus');
-    $salaryManual = getValue('salary');
-    $bonusManual = getValue('bonus');
-    $salaryCurrency = getValue('salary_currency');*/
-
-    //$asTargetLow = $oCurrency->getCurrencyFromPost('target_low');
-    //$this->_getSalaryInYen($asTargetLow);
-
-    //$asTargetHigh = $oCurrency->getCurrencyFromPost('target_high');
-    //$this->_getSalaryInYen($asTargetHigh);
-
-    $salaryUnit = getValue('salary_unit');
-
-ChromePhp::log($salaryUnit);
-    /*if($salaryUnit == 'M')
-    {
-      $newSalary = $salaryManual * 1000000;
-      $newBonus = $bonusManual * 1000000;
-    }
-    else if($salaryUnit == 'K')
-    {// M ile K arasinda herhangi bir fark yok neden seciyoruz??
-      $newSalary = $salaryManual * 1000;
-      $newBonus = $bonusManual * 1000;
-    }
-    else
-    {
-      $newSalary = $salaryManual * 1000000;
-      $newBonus = $bonusManual * 1000000;
-    }
-ChromePhp::log($salaryCurrency);
-    if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
-    {
-      $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
-    }
-    if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
-    {
-      $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
-    }*/
-
-    //SALARY CONTROL
-
     if($event_type == 'character' && empty($delete_flag) && empty($this->cnPk))
     {
       $addedFlag = true;
@@ -1417,17 +1371,15 @@ ChromePhp::log($salaryCurrency);
 
             //Grade Status MBA Keyword Salary UPDATES
 
-
-
             $updates['grade_update'] = getValue('grade');
             $updates['status_update'] = getValue('status');
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
             $updates['isClient_update'] = getValue('client');
-            $updates['salary_update'] = $salary_update;
-            $updates['bonus_update'] = $bonus_update;
-            $updates['targetLow_update'] = $targetLow_update;
-            $updates['targetTo_update'] = $targetTo_update;
+            $updates['salary_update'] = getValue('salary');
+            $updates['bonus_update'] = getValue('bonus');
+            $updates['targetLow_update'] = getValue('target_low');
+            $updates['targetTo_update'] = getValue('target_high');
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
 
@@ -1510,7 +1462,5 @@ ChromePhp::log($salaryCurrency);
 
     return $asResult;
   }
-
-
 
 }
