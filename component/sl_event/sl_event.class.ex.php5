@@ -1440,17 +1440,19 @@ class CSl_eventEx extends CSl_event
 
       //Grade Status MBA Keyword Salary UPDATES
 
-      $grade_update = getValue('grade');
-      $status_update = getValue('status');
-      $mba_update = getValue('diploma');
-      $keyword_update = getValue('keyword');
-      $isClient_update = getValue('client');
-      $salary_update = getValue('salary');
-      $bonus_update = getValue('bonus');
-      $targetLow_update = getValue('target_low');
-      $targetTo_update = getValue('target_high');
-      $currency_update = getValue('salary_currency');
-      $salaryUnit_update = getValue('salary_unit');
+      $updates['grade_update'] = getValue('grade');
+      $updates['status_update'] = getValue('status');
+      $updates['mba_update'] = getValue('diploma');
+      $updates['keyword_update'] = getValue('keyword');
+      $updates['isClient_update'] = getValue('client');
+      $updates['salary_update'] = getValue('salary');
+      $updates['bonus_update'] = getValue('bonus');
+      $updates['targetLow_update'] = getValue('target_low');
+      $updates['targetTo_update'] = getValue('target_high');
+      $updates['currency_update'] = getValue('salary_currency');
+      $updates['salaryUnit_update'] = getValue('salary_unit');
+
+      updateCandidateInformation6box($updates,$user_id,$candidate_id);
 
 
       //Grade Status MBA Keyword Salary UPDATES

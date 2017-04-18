@@ -3394,6 +3394,14 @@ var_dump($query);*/
 
   }
 
+  function updateCandidateInformation6box($updates,$user_id,$candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $sDate = date('Y-m-d H:i:s');
+
+    $sQuery = "UPDATE sl_candidate_profile SET grade = '".$updates['grade_update']."', keyword = '".$updates['keyword_update']."', bonus = '".$updates['bonus_update']."', salary_currency = '".$updates['currency_update']."', target_low = '".$updates['targetLow_update']."', target_high = '".$updates['targetTo_update']."' WHERE candidatefk = '".$candidate_id."'";
+  }
+
   function getCompanyPositionList($company_id)
   {
     $oDB = CDependency::getComponentByName('database');
