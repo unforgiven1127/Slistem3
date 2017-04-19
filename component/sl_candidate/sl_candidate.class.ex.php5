@@ -2937,7 +2937,7 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0)
+    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField,$sortOrder)
     {
       ////ChromePhp::log($poQB);
       $oLogin = CDependency::getCpLogin();
@@ -3123,10 +3123,20 @@ class CSl_candidateEx extends CSl_candidate
       // manage sort field / order
       //no scan.sl_candidatepk  --> make the HeavyJoin mode crash (subQuery)
       $sSortField = getValue('sortfield'); // burasi
+      $sSortOrder = getValue('sortorder');
+
+      if(!empty($sortField))
+      {
+        $sSortField = $sortField;
+      }
+      if(!empty($sortOrder))
+      {
+        $sSortOrder = $sortOrder;
+      }
 
       $lastSearch = serialize($poQB);
       //$_SESSION['lastSearch'] = serialize($poQB);
-      storeLastSearch($lastSearch,$sSortField, $user_id);
+      storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
       if($sSortField == '_in_play')
       {
@@ -3254,9 +3264,6 @@ $searchTitle = explode(':',$poQB->getTitle());
         $limit = $limit[1];
 
         $sQuery = $sQuery[0];
-
-
-        $sSortOrder = getValue('sortorder');
 
 
         if(!empty($sSortField) && !empty($sSortOrder) && $sSortField != null && $sSortOrder != null)
@@ -6977,17 +6984,21 @@ $searchTitle = explode(':',$poQB->getTitle());
           if(isset($lastSearchObject[0]))
           {
             $oQB = unserialize($lastSearchObject[0]['query']);
+            $sortField = $lastSearchObject[0]['sort_field'];
+            $sortOrder = $lastSearchObject[0]['sort_order'];
           }
           else
           {
             $oQB = null;
+            $sortField = '';
+            $sortOrder = '';
           }
           //ChromePhp::log($lastSearchObject);
           //$lastSearch = unserialize($lastSearchObject['query']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML .= $candidateHTML;
-          $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true,$candidate_id);
+          $sHTML .= $this->_getCandidateList($pbInAjax,$oQB,true,$candidate_id,$sortField,$sortOrder);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
         $sHTML.=  $this->_oDisplay->getListItemEnd();
