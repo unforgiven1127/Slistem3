@@ -3405,6 +3405,8 @@ var_dump($query);*/
 
     $sQuery = "UPDATE sl_candidate SET statusfk = '".$updates['status_update']."', is_client = '".$updates['isClient_update']."',cpa = '".$updates['cpa']."',mba = '".$updates['mba']."'  WHERE candidatefk = '".$candidate_id."'";
 
+    $db_result = $oDB->executeQuery($sQuery);
+
 
   }
 
