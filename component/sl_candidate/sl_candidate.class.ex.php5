@@ -6971,9 +6971,17 @@ $searchTitle = explode(':',$poQB->getTitle());
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
-          $oQB = $obj = unserialize($_SESSION['lastSearch']);
+          //$oQB = $obj = unserialize($_SESSION['lastSearch']);
           $lastSearchObject = getLastSearch($user_id);
-          ChromePhp::log($lastSearchObject);
+          if(isset($lastSearchObject[0]))
+          {
+            $oQB = unserialize($lastSearchObject[0]['query']);
+          }
+          else
+          {
+            $oQB = null;
+          }
+          //ChromePhp::log($lastSearchObject);
           //$lastSearch = unserialize($lastSearchObject['query']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
