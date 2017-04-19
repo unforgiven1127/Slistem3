@@ -3576,6 +3576,27 @@ var_dump($query);*/
 
   }
 
+  function storeLastSearch($lastSearch, $user_id)
+  {
+      $sDate = date('Y-m-d H:i:s');
+      $oDB = CDependency::getComponentByName('database');
+
+      $sQuery = "INSERT INTO `last_searches` (`user_id`,`query`,`date`) VALUES('".$user_id."','".$lastSearch."','".$sDate."')";
+
+      $db_result = $oDB->executeQuery($sQuery);
+  }
+
+  function getLastSearch($user_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+      $sQuery = "SELECT * FROM last_searches WHERE user_id = '".$user_id."' ORDER BY id DESC LIMIT 1 ";
+
+      $db_result = $oDB->executeQuery($sQuery);
+
+      return $db_result->getAll();
+  }
+
   function insertNewOwner($newOwner,$added_by,$company_id)
   {
     $controlFlag = controlOwner($newOwner,$company_id);

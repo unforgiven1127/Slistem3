@@ -2940,8 +2940,12 @@ class CSl_candidateEx extends CSl_candidate
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0)
     {
       ////ChromePhp::log($poQB);
+      $oLogin = CDependency::getCpLogin();
+      $user_id = $oLogin->getUserPk();
+
+      $lastSearch = serialize($poQB);
       $_SESSION['lastSearch'] = serialize($poQB);
-      //$obj = unserialize($_SESSION['lastSearch']);
+      storeLastSearch($lastSearch, $user_id);
       ////ChromePhp::log($obj);
       $pageoffsetClicked = (int)getValue('pageoffset');
 //ChromePhp::log($pageoffsetClicked);
@@ -2956,9 +2960,7 @@ class CSl_candidateEx extends CSl_candidate
       global $gbNewSearch;
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
-      $oLogin = CDependency::getCpLogin();
 
-      $user_id = $oLogin->getUserPk();
       securityCheckSearch($user_id);
 
       $asListMsg = array();
@@ -6970,6 +6972,9 @@ $searchTitle = explode(':',$poQB->getTitle());
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
           $oQB = $obj = unserialize($_SESSION['lastSearch']);
+          $lastSearchObject = getLastSearch($user_id);
+          ChromePhp::log($lastSearchObject);
+          //$lastSearch = unserialize($lastSearchObject['query']);
           ////ChromePhp::log$oQB);
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
           //$sHTML .= $candidateHTML;
