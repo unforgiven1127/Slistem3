@@ -2418,7 +2418,11 @@ class CSl_candidateEx extends CSl_candidate
           elseif($asDocData['date_creation'] > $sAMonthAgo)
             $nPriority = 1;
 
-          $sHTML.= '<div class="entry">
+          $sHTML.= '<script type="text/javascript">
+  $(".doc_picture").click(function(){
+  alert("test");
+});
+</script><div class="entry">
             <div class="note_header">
             &rarr;&nbsp;&nbsp;<span class="note_date">'.$asDocData['date_creation'].'</span>
              - <span> by '.$this->_oLogin->getUserLink($this->casUsers[$asDocData['creatorfk']], true).'</span>

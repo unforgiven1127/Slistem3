@@ -1,6 +1,4 @@
-$('.doc_picture').click(function(){
-  alert('test');
-});
+
 function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_client = false)
 {
   //psIdToShow acilacak olan tab
