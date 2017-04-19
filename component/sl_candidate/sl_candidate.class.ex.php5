@@ -5797,6 +5797,22 @@ $searchTitle = explode(':',$poQB->getTitle());
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
 
+            $updates['cpa'] = 0;
+            $updates['mba'] = 0;
+            if($updates['mba_update'] == 'cpa')
+            {
+              $updates['cpa'] = 1;
+            }
+            else if($updates['mba_update'] == 'mba')
+            {
+              $updates['mba'] = 1;
+            }
+            else if($updates['mba_update'] == 'both')
+            {
+              $updates['cpa'] = 1;
+              $updates['mba'] = 1;
+            }
+
             updateCandidateInformation6box($updates,$user_id,$candidate_id);
 
 

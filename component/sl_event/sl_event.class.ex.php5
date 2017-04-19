@@ -1185,21 +1185,29 @@ class CSl_eventEx extends CSl_event
     $salaryUnit = getValue('salary_unit');
     $salaryCurrency = getValue('salary_currency');
     $bonusManual = getValue('bonus');
+    $targetLow_update = getValue('target_low');
+    $targetTo_update = getValue('target_high');
 
     if($salaryUnit == 'M')
     {
       $newSalary = $salaryManual * 1000000;
       $newBonus = $bonusManual * 1000000;
+      $newTargetLow = $targetLow_update * 1000000;
+      $newTargetHigh = $targetTo_update * 1000000;
     }
     else if($salaryUnit == 'K')
     {
       $newSalary = $salaryManual * 1000;
       $newBonus = $bonusManual * 1000;
+      $newTargetLow = $targetLow_update * 1000;
+      $newTargetHigh = $targetTo_update * 1000;
     }
     else
     {
       $newSalary = $salaryManual * 1000000;
       $newBonus = $bonusManual * 1000000;
+      $newTargetLow = $targetLow_update * 1000000;
+      $newTargetHigh = $targetTo_update * 1000000;
     }
 
     if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
@@ -1209,6 +1217,15 @@ class CSl_eventEx extends CSl_event
     if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
     {
       $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
+    }
+
+    if($salaryCurrency == 'jpy' && !empty($newTargetLow) && ($newTargetLow > 100000000 || $newTargetLow < 10000))
+    {
+      $errorArray .= 'Target low value is not a valid number. ['.$newTargetLow.']<br>';
+    }
+    if($salaryCurrency == 'jpy' && !empty($newTargetHigh) && ($newTargetHigh > 100000000 || $newTargetHigh < 10000))
+    {
+      $errorArray .= 'Target high value is not a valid number. ['.$newBonus.']<br>';
     }
 
     //SALARY CONTROL
@@ -1409,12 +1426,29 @@ class CSl_eventEx extends CSl_event
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
             $updates['isClient_update'] = getValue('client');
-            $updates['salary_update'] = getValue('salary');
-            $updates['bonus_update'] = getValue('bonus');
-            $updates['targetLow_update'] = getValue('target_low');
-            $updates['targetTo_update'] = getValue('target_high');
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
+
+            $updates['salary_update'] = $newSalary;
+            $updates['bonus_update'] = $newBonus;
+            $updates['targetLow_update'] = $newTargetLow;
+            $updates['targetTo_update'] = $newTargetHigh;
+
+            $updates['cpa'] = 0;
+            $updates['mba'] = 0;
+            if($updates['mba_update'] == 'cpa')
+            {
+              $updates['cpa'] = 1;
+            }
+            else if($updates['mba_update'] == 'mba')
+            {
+              $updates['mba'] = 1;
+            }
+            else if($updates['mba_update'] == 'both')
+            {
+              $updates['cpa'] = 1;
+              $updates['mba'] = 1;
+            }
 
             updateCandidateInformation6box($updates,$user_id,$candidate_id);
 
