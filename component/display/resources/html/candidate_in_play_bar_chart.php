@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    localStorage.setItem("loginFlag", "loginPage");
+</script>
 <!DOCTYPE HTML>
 <html>
     <head>

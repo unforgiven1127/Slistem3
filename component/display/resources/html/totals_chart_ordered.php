@@ -1,4 +1,5 @@
 <script>
+	localStorage.setItem("loginFlag", "loginPage");
 	var nextloop = <?php echo $nextloop; ?>;
 	var loopFlag = false;
 	if(nextloop < 666)
