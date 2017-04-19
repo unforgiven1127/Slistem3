@@ -2403,6 +2403,11 @@ class CSl_candidateEx extends CSl_candidate
       $sHTML.= '<a href="javascript:;" onclick="'.$sJavascript.'">Create a resume</a>';
       $sHTML.= '</div>';
 
+      $sHTML.= '<script type="text/javascript">
+                  $(".doc_picture").click(function(){
+                    localStorage.setItem("loginFlag", "loginPage");
+                  });
+                </script>';
 
       if($nDocument == 0)
         $sHTML.= '<div class="entry"><div class="note_content"><em>No document found.</em></div></div>';
@@ -2418,11 +2423,7 @@ class CSl_candidateEx extends CSl_candidate
           elseif($asDocData['date_creation'] > $sAMonthAgo)
             $nPriority = 1;
 
-          $sHTML.= '<script type="text/javascript">
-  $(".doc_picture").click(function(){
-  alert("test");
-});
-</script><div class="entry">
+          $sHTML.= '<div class="entry">
             <div class="note_header">
             &rarr;&nbsp;&nbsp;<span class="note_date">'.$asDocData['date_creation'].'</span>
              - <span> by '.$this->_oLogin->getUserLink($this->casUsers[$asDocData['creatorfk']], true).'</span>
