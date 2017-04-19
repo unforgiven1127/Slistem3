@@ -5797,6 +5797,15 @@ $searchTitle = explode(':',$poQB->getTitle());
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
 
+            if($updates['status_update'] == 'on')
+            {
+              $updates['status_update'] = 1;
+            }
+            else
+            {
+              $updates['status_update'] = 0;
+            }
+
             $updates['cpa'] = 0;
             $updates['mba'] = 0;
             if($updates['mba_update'] == 'cpa')
@@ -7134,7 +7143,7 @@ $searchTitle = explode(':',$poQB->getTitle());
       $candidate_salary_bonus = formatNumber(round($oDbResult->getFieldValue('bonus')), $this->casSettings['candi_salary_format']);
 
       $target_low = formatNumber(round($oDbResult->getFieldValue('target_low')), $this->casSettings['candi_salary_format']);
-      $target_high = formatNumber(round($oDbResult->getFieldValue('target_hig')), $this->casSettings['candi_salary_format']);
+      $target_high = formatNumber(round($oDbResult->getFieldValue('target_high')), $this->casSettings['candi_salary_format']);
 
       $nStatus = 0;
       $bInPlay = false;
