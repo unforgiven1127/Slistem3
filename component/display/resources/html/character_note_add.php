@@ -192,6 +192,11 @@
 </script>
 
 <style>
+	.unavailable
+	{
+	  font-style: italic;
+	  color: #888;
+	}
 	.general_form_label
 	{
 	  width: 90px;
