@@ -1421,6 +1421,9 @@ class CSl_eventEx extends CSl_event
 
             //Grade Status MBA Keyword Salary UPDATES
 
+            ChromePhp::log(getValue('client'));
+            ChromePhp::log(getValue('is_client'));
+
             $updates['grade_update'] = getValue('grade');
             $updates['status_update'] = getValue('status');
             $updates['mba_update'] = getValue('diploma');
