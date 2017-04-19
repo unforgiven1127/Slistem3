@@ -2943,9 +2943,6 @@ class CSl_candidateEx extends CSl_candidate
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
-      $lastSearch = serialize($poQB);
-      $_SESSION['lastSearch'] = serialize($poQB);
-      storeLastSearch($lastSearch, $user_id);
       ////ChromePhp::log($obj);
       $pageoffsetClicked = (int)getValue('pageoffset');
 //ChromePhp::log($pageoffsetClicked);
@@ -3126,6 +3123,10 @@ class CSl_candidateEx extends CSl_candidate
       // manage sort field / order
       //no scan.sl_candidatepk  --> make the HeavyJoin mode crash (subQuery)
       $sSortField = getValue('sortfield'); // burasi
+
+      $lastSearch = serialize($poQB);
+      //$_SESSION['lastSearch'] = serialize($poQB);
+      storeLastSearch($lastSearch,$sSortField, $user_id);
 
       if($sSortField == '_in_play')
       {

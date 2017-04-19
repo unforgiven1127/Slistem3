@@ -3576,12 +3576,12 @@ var_dump($query);*/
 
   }
 
-  function storeLastSearch($lastSearch, $user_id)
+  function storeLastSearch($lastSearch,$sSortField, $user_id)
   {
       $sDate = date('Y-m-d H:i:s');
       $oDB = CDependency::getComponentByName('database');
 
-      $sQuery = "INSERT INTO `last_searches` (`user_id`,`query`,`date`) VALUES('".$user_id."','".$lastSearch."','".$sDate."')";
+      $sQuery = "INSERT INTO `last_searches` (`user_id`,`query`,`sort_field`,`date`) VALUES('".$user_id."','".$lastSearch."','".$sSortField."','".$sDate."')";
 
       $db_result = $oDB->executeQuery($sQuery);
   }
