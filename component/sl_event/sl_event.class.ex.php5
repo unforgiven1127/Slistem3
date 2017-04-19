@@ -1434,13 +1434,13 @@ class CSl_eventEx extends CSl_event
             $updates['targetLow_update'] = $newTargetLow;
             $updates['targetTo_update'] = $newTargetHigh;
 
-            if($updates['status_update'] == 'on')
+            if($updates['isClient_update'] == 'on')
             {
-              $updates['status_update'] = 1;
+              $updates['isClient_update'] = 1;
             }
             else
             {
-              $updates['status_update'] = 0;
+              $updates['isClient_update'] = 0;
             }
 
             $updates['cpa'] = 0;
