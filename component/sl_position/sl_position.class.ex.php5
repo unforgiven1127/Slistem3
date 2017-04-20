@@ -1957,6 +1957,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
     private function _getStatusList($pnCurrentStatus = 0, $pbAddStalled = false, $pbAll = false)
     {
+      ChromePhp::log('_getStatusList');
       $asStatus = array();
       $asStatus[1] = 'pitched';
       $asStatus[2] = 'resume sent';
@@ -2007,6 +2008,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
     private function _getCurrentStatusList($pbActiveOnly = false)
     {
+      ChromePhp::log('_getCurrentStatusList');
       $asAllStatus = $this->_getStatusList(0, true, true);
 
       $oDbResult = $this->_getModel()->getCurrentStatus($pbActiveOnly);
