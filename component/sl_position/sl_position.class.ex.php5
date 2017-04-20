@@ -1999,6 +1999,8 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
         $asStatus[251] = 'Position filled';
       }
 
+      $asStatus[200] = 'Fallen off';
+
       return $asStatus;
     }
 
