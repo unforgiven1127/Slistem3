@@ -60,7 +60,7 @@
 							<td style="height: 10%; font-size: 300%;" class="text_center"><?php echo $display_object->getPicture('/common/pictures/flags/'.$flag_pic); ?></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><?php echo $value['Researcher']['name']; ?></td>
 							<td style="height: 10%; font-size: 300%;" class="text_right">&yen;<?php echo number_format($value['researcher']['signed'], $decimals, '.', ','); ?></td>
-							<td style="height: 10%; font-size: 300%;" class="text_center"><?php echo $value['Researcher']['placedRevenue']; ?></td>
+							<td style="height: 10%; font-size: 300%;" class="text_center"><?php if($value['researcher']['signed'] > 0){ echo $value['Researcher']['placedRevenue'];} else echo '0'; ?></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><?php echo $value['Researcher']['mccm']; ?></td>
 							<td style="height: 10%; font-size: 300%;" class="text_center"><?php echo $value['Researcher']['ccm1']; ?></td>
 							<!--<td class="text_center"><?php echo $value['team']; ?></td>-->
