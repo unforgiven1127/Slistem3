@@ -1283,6 +1283,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       if($nCandidateStatus < 2 && !$bAdmin)
       {
          $oForm->addoption('status', array('label' => $asStatusList[1], 'value' => 1));
+         $oForm->addoption('status', array('label' => $asStatusList[200], 'value' => 200));
          $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text' => '<em style="color: #999; font-size: 11px;">* limited by candidate status. Assessed the candidate to unlock next stages.</em>'));
 
       }
@@ -1957,7 +1958,6 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
     private function _getStatusList($pnCurrentStatus = 0, $pbAddStalled = false, $pbAll = false)
     {
-      ChromePhp::log('_getStatusList');
       $asStatus = array();
       $asStatus[1] = 'pitched';
       $asStatus[2] = 'resume sent';
@@ -2001,14 +2001,13 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       }
 
       $asStatus[200] = 'Fallen off';
-ChromePhp::log($asStatus);
+
       return $asStatus;
     }
 
 
     private function _getCurrentStatusList($pbActiveOnly = false)
     {
-      ChromePhp::log('_getCurrentStatusList');
       $asAllStatus = $this->_getStatusList(0, true, true);
 
       $oDbResult = $this->_getModel()->getCurrentStatus($pbActiveOnly);
@@ -2023,8 +2022,6 @@ ChromePhp::log($asStatus);
         $asCurrentStatus[$nStatus] = $asAllStatus[$nStatus];
         $bRead = $oDbResult->readNext();
       }
-
-      $asCurrentStatus[200] = 'Fallen off';
 
       return $asCurrentStatus;
     }
