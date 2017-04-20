@@ -1773,7 +1773,6 @@ class CNotificationEx extends CNotification
 
 
     $oForm->addField('cp_item_selector', 'reminder_item', array('label'=>'Related to', 'interface' => 'notification_item', 'value' => $sCheckedValue));
-    $oForm->setFieldControl('cp_item_selector', array('jsFieldNotEmpty' => ''));
     $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text'=> '* Item description will automatically be added to the message.', 'class' => 'message_help'));
 
 
