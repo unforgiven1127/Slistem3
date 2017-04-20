@@ -2022,6 +2022,8 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
         $bRead = $oDbResult->readNext();
       }
 
+      $asCurrentStatus[200] = 'Fallen off';
+
       return $asCurrentStatus;
     }
 
