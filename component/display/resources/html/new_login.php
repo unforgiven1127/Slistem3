@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="no-cache">
     <title>Sl[i]stem by Slate</title>
 
   <link rel="stylesheet" href="/common/style/login_style.css">
