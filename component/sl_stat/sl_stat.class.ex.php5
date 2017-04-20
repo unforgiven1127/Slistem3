@@ -4091,9 +4091,7 @@ class CSl_statEx extends CSl_stat
 
       $sDate = date('H:i:s');
 
-      /*if(!$fileFlag || ($sDate >= '17:00:00' && $sDate <= '17:15:00')  || ($sDate >= '00:15:00' && $sDate <= '00:30:00'))
-      {*/
-      if(1)
+      if(!$fileFlag || ($sDate >= '17:00:00' && $sDate <= '17:15:00')  || ($sDate >= '00:15:00' && $sDate <= '00:30:00'))
       {
         if (!is_numeric($year))
         {
