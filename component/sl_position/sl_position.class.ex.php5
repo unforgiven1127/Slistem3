@@ -2001,7 +2001,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       }
 
       $asStatus[200] = 'Fallen off';
-
+ChromePhp::log($asStatus);
       return $asStatus;
     }
 
