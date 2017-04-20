@@ -1179,7 +1179,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
           ////ChromePhp::log$userInformation);
 
           //candidate can be pitched no matter his status, but it needs to be assessed to go further
-          if($userInformation['loginpk'] != "101"  &&!empty($nCurrentStatus) && $asCandidate['status'] < 4)
+          if($userInformation['loginpk'] != "101" && $nCurrentStatus!= 1  &&!empty($nCurrentStatus) && $asCandidate['status'] < 4)
           {
             return $this->_oDisplay->getBlocMessage('<span class="font-bigger"><strong>Candidate needs to be updated:</strong><br /><br />
               The candidate status must be [ met ] or [ assessed ] in order to be keep goingh.<br />
