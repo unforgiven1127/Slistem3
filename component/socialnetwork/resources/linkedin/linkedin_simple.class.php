@@ -194,7 +194,7 @@ class LinkedIn {
    * Explicitly clears LinkedIn object from memory upon destruction.
 	 */
   public function __destruct() {
-    unset($this);
+    //unset($this);
 	}
 
 	/**
