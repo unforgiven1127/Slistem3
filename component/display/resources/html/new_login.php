@@ -91,8 +91,8 @@ function deleteAllCookies() {
     var d = new Date();
     document.cookie = "v0=1;expires=" + d.toGMTString() + ";" + ";";
     alert(document.cookie);
-    }
 }
+
 
 function loading()
 {
