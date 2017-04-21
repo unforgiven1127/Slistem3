@@ -83,11 +83,9 @@ function openExtra(open)
 
 
 function deleteAllCookies() {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++)
-    {
-      alert(cookies[i]);
-      eraseCookie(cookies[i].split("=")[0]);
+    var cookies = $.cookie();
+    for(var cookie in cookies) {
+       $.removeCookie(cookie);
     }
 }
 
