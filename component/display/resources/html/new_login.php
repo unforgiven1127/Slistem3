@@ -81,24 +81,10 @@ function openExtra(open)
     document.getElementById(open).style.display = "table-row";
 }
 
-function loadedCookies() {
-     document.cookie = "v0=1;";
-     document.cookie = "v1=2;";
-     alert(document.cookie);
-}
-
-function deleteAllCookies() {
-    var d = new Date();
-    document.cookie = "v0=1;expires=" + d.toGMTString() + ";" + ";";
-    alert(document.cookie);
-}
-
-
 function loading()
 {
     localStorage.setItem("loginFlag", "loginPage");
-    //loadedCookies();
-    deleteAllCookies();
+
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
