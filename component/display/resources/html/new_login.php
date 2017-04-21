@@ -92,7 +92,7 @@ function deleteAllCookies() {
 function loading()
 {
     localStorage.setItem("loginFlag", "loginPage");
-    //deleteAllCookies();
+    deleteAllCookies();
     $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
