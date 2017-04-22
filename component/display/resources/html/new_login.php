@@ -182,7 +182,7 @@ function control()
          <div style="width: 300px;">
             <span class="alert">Invalid Credentials</span>
             <!--<a class="link" href=<?php echo "'".$lost."'"; ?> >Lost your password?</a>-->
-            <button type="submit" id="loginButton" onclick="loading();" class="log-btn" >Log in</button>
+            <!--<button type="submit" id="loginButton" onclick="loading();" class="log-btn" >Log in</button>-->
          </div>
         </form>
 
