@@ -2166,7 +2166,7 @@ ChromePhp::log($bRead);
       $sUrl = $oPage->getUrlHome();
 
     }
-
+ChromePhp::log($sUrl);
     if($pbIsAjax)
     {
       return array('url' => $sUrl);
