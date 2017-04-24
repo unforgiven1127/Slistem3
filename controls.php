@@ -49,7 +49,7 @@ FROM sl_company slc
 left JOIN sl_position slp on slp.companyfk = slc.sl_companypk
 left JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
 WHERE slc.level = '8' ";
-$slistemQuery = mysql_query($slistemQuery);
+$slistemQuery = mysqli_query($slistemQuery);
 
 $allMeetings = array();
 
