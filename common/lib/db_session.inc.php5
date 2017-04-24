@@ -19,7 +19,7 @@ echo '<br><br><br><br><br><br><br><br><br>test<br>';
     else
     {
 echo 'test 2';
-      if($this->coSessDb = mysql_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
+      if($this->coSessDb = mysqli_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
       //if($this->coSessDb = mysqli_connect('172.31.29.60', 'slistem', 'smwXN2RTDm6Zz3hR'))
       {
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
