@@ -2076,7 +2076,7 @@ class CLoginEx extends CLogin
 
   private function _getIdentification($pbIsAjax = false, $pnCookiePk = 0, $bRedirect = true)
   {
-
+ChromePhp::log('_getIdentification');
     $oDB = CDependency::getComponentByName('database');
     $oSetting = CDependency::getComponentByName('settings');
 
