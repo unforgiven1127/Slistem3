@@ -2167,7 +2167,7 @@ ChromePhp::log($bRead);
 
     }
 
-    $this->_redirectUser($sUrl);
+    return array('url' => $sUrl);
 ChromePhp::log($sUrl);
     if($pbIsAjax)
     {
