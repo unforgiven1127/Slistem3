@@ -40,7 +40,7 @@ define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
 //echo phpinfo();
 
-mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+mysqli_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
@@ -49,7 +49,7 @@ FROM sl_company slc
 left JOIN sl_position slp on slp.companyfk = slc.sl_companypk
 left JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
 WHERE slc.level = '8' ";
-$slistemQuery = mysqli_query($slistemQuery);
+$slistemQuery = mysql_query($slistemQuery);
 
 $allMeetings = array();
 
