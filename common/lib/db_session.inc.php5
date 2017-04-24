@@ -18,7 +18,7 @@ echo 'test';
     }
     else
     {
-
+echo 'test 2';
       if($this->coSessDb = mysql_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
       //if($this->coSessDb = mysqli_connect('172.31.29.60', 'slistem', 'smwXN2RTDm6Zz3hR'))
       {
