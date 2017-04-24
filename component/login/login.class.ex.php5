@@ -2166,6 +2166,8 @@ ChromePhp::log($bRead);
       $sUrl = $oPage->getUrlHome();
 
     }
+
+    $this->_redirectUser($sUrl);
 ChromePhp::log($sUrl);
     if($pbIsAjax)
     {
