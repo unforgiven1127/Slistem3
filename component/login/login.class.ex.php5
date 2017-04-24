@@ -2102,10 +2102,10 @@ ChromePhp::log('_getIdentification');
       //$sQuery.= ' AND BINARY `password` = '.$oDB->dbEscapeString($_POST['password']).') ';
       $sQuery.= ' AND `password_crypted` = '.$oDB->dbEscapeString($encrypted_password).') ';
     }
-
+ChromePhp::log($sQuery);
     $oDbResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oDbResult->readFirst();
-
+ChromePhp::log($bRead);
     if(!$bRead)
       return array('error' => __LINE__.' -'.$this->casText['LOGIN_PASSWORD_INCORRECT']);
 

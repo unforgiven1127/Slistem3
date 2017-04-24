@@ -5,7 +5,7 @@ class CDbSessionHandler
 
   function _session_open()
   {
-echo '<br><br><br><br><br><br><br><br><br>test<br>';
+//echo '<br><br><br><br><br><br><br><br><br>test<br>';
     if(trim($_SERVER['SERVER_NAME']) == "slistemlocal.com")
     {
       if ($this->coSessDb = mysqli_connect('localhost', 'slistem', '7088762')) // MCA ADDED FOR LOCAL VERSION !!!!!
@@ -18,7 +18,7 @@ echo '<br><br><br><br><br><br><br><br><br>test<br>';
     }
     else
     {
-echo 'test 2';
+//echo 'test 2';
       if($this->coSessDb = mysqli_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
       //if($this->coSessDb = mysqli_connect('172.31.29.60', 'slistem', 'smwXN2RTDm6Zz3hR'))
       {
