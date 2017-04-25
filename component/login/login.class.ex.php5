@@ -2166,16 +2166,16 @@ ChromePhp::log('_getIdentification');
       $sUrl = $oPage->getUrlHome();
 
     }
-
-    return array('url' => $sUrl);
+ChromePhp::log($pbIsAjax);
     if($pbIsAjax)
     {
+ChromePhp::log('IF');
       return array('url' => $sUrl);
     }
 
     if($bRedirect)
     {
-
+ChromePhp::log('ELSE');
       $this->_redirectUser($sUrl);
     }
     else
