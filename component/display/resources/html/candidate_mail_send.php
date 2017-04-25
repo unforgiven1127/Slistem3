@@ -34,7 +34,7 @@ function loading()
 }
 
 $( "#sendMailToCandidate" ).click(function() {
-
+	localStorage.setItem("loginFlag", "loginPage");
 	var message = $('#message').text();
 //alert(message);
 	var subject = $('#subject').val();
