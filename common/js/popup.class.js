@@ -1,6 +1,6 @@
 //BROWSER CLOSE DETECT
 
-window.onbeforeunload = function (event)
+/*window.onbeforeunload = function (event)
 {
   document.onkeypress = function (e) {
       e = e || window.event;
@@ -36,7 +36,7 @@ window.onbeforeunload = function (event)
       }
       return message;
     }*/
-};
+//};
 
 /*$(function ()
 {
