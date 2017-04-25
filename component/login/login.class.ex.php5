@@ -2365,7 +2365,7 @@ ChromePhp::log('_getIdentification');
 
   private function _redirectUser($psUrl = '')
   {
-
+ChromePhp::log('_redirectUser');
     $oPage = CDependency::getCpPage();
     if(empty($psUrl))
     {
