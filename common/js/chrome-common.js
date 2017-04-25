@@ -359,6 +359,7 @@ function AjaxRequest(psUrl, psLoadingScreen, psFormToSerialize, psZoneToRefresh,
           error = oJsonData['responseText'];
           var res = error.split("{");
           note = res[0]+'<br><br>';
+          note = 'Error: '+note;
           $('#errorMsg').html(note);
           $('#errorMsg').css("font-weight","Bold");
           //send the result to the error report form, and display the error message
