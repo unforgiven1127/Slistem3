@@ -2116,6 +2116,632 @@ ChromePhp::log('_getIdentification');
     if($nStatus == 2)
       return array('error' => __LINE__.' - '.$this->casText['LOGIN_ACCOUNT_SUSPENDED']);
 
+
+echo"<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Sl[i]stem by Slate</title>
+    <meta name='description' content='This is slistem 3.0'/>
+    <meta name='keywords' content='Slistemmmm'/>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta content='utf-8' http-equiv='encoding'>
+    <meta http-equiv='Cache-control' content='private'>
+    <meta http-equiv='Cache-control' content='max-age=43200'>
+    <meta http-equiv='expires' content='Wed, 26 Apr 2017 13:29:44 GMT'>
+
+    <link rel='shortcut icon' href='/common/pictures/slistem_favicon.ico' type='image/vnd.microsoft.icon' />
+    <link rel='shortcut icon' href='/common/pictures/slistem_favicon.ico' type='image/x-icon' />
+    <link rel='icon' href='/common/pictures/slistem_favicon.ico' type='image/vnd.microsoft.icon' />
+    <link rel='icon' href='/common/pictures/slistem_favicon.ico' type='image/x-icon' />
+
+    <link rel='stylesheet' href='/common/style/template.css?v=1.000005' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/common/style/jquery-ui/jquery-ui.min.css?v=1.000005' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/conf/custom_config/slistem/slistem.css?v=1.000005' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/common/style/jquery-ui-timepicker-addon.css?v=1.000005' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/common/style/style.css?v=1.000005' type='text/css' media='screen' /><link rel='stylesheet' href='/component/login/resources//css/login.form.css' /><link rel='stylesheet' href='/component/form/resources/css/form.css' /><link rel='stylesheet' href='/component/sl_candidate/resources/css/sl_candidate.css' /><link rel='stylesheet' href='/component/menu/resources//css/menu.css' /><!--[if gte IE 9]><style type='text/css'>.gradient { filter: none; }</style><![endif]-->
+
+    <script type='text/javascript' src='/common/js/jquery.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/jquery-ui.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/yepnope.1.5.4-min.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/jquery.iframe-transport.min.js?v=1.000005'></script>
+    <script type='text/javascript' src='/component/form/resources/js/tinymce/jquery.tinymce.min.js?v=1.000005'></script>
+    <script type='text/javascript' src='/component/form/resources/js/tinymce/tinymce.min.js?v=1.000005'></script>
+    <script type='text/javascript' src='/component/form/resources/js/jquery.tokeninput.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/popup.class.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/velocity.min.js?v=1.000005'></script>
+    <script type='text/javascript' src='/common/js/my-js.js'></script>
+    <script type='text/javascript' src='/common/lib/ckeditor/ckeditor.js'></script>
+    <script type='text/javascript' src='/common/lib/verticalSlider/js/jquery.totemticker.js'></script>
+    <script type='text/javascript' src='/common/js/chrome-common.js?v=1.000005'></script><script type='text/javascript' src='/component/form/resources/js/fieldControl.js?v=1.000005'></script><script type='text/javascript' src='/component/sl_candidate/resources/js/sl_candidate.js?v=1.000005'></script><script type='text/javascript'>
+
+        function updatePhpWindowSize()
+        {
+          //console.log('update page size => '+$(window).height()+' / '+$(window).width());
+          $.get('https://beta2.slate.co.jp/index.php5?uid=&ppa=ppaa&ppt=pset&ppk=0&pg=ajx&height='+$(window).height()+'&width='+$(window).width());
+        }
+    
+
+
+          $(document).ready(function()
+          {
+            updatePhpWindowSize();
+            var goPage = {'height': $(window).height(), 'width': $(window).width()};
+          });
+
+$(document).ready(function()
+    {
+      $(window).resize();
+      goTabs.preload('', '58fff808c3adc', true);
+    });
+    
+</script><script type='text/javascript'>
+        $(window).resize(function(event)
+        {
+           //resize event is triggered by jquery-ui dialog, we dont treat those
+           if($(event.target).hasClass('ui-resizable'))
+             return true;
+
+           updatePhpWindowSize();
+         });
+      </script><script type='text/javascript'>var gasJsFile = ['/common/js/jquery.js', '/common/js/jquery-ui.js', '/component/form/resources/js/tiny_mce/jquery.tinymce.js', '/component/form/resources/js/tiny_mce/tiny_mce.js', '/component/form/resources/js/jquery.tokeninput.js', '/common/js/popup.class.js', '/common/js/chrome-common.js', '/component/form/resources/js/fieldControl.js', '/component/sl_candidate/resources/js/sl_candidate.js']; var gasCssFile = ['/component/login/resources//css/login.form.css', '/component/form/resources/css/form.css', '/component/sl_candidate/resources/css/sl_candidate.css', '/component/menu/resources//css/menu.css']; var goPopup = new CPopup(); </script><script type='text/javascript'>var anchorId = window.location.hash;if(anchorId){  $(document).ready( function(){$(anchorId).click();});}</script></head><body id='body'  class='page_pc'  uid=''  logged='0' ><div id='pageContainerId'><div id='pageMainId'><a href='https://beta2.slate.co.jp'><div id='websiteLogo'>&nbsp;</div></a><div class='floatHack' ></div><div id='componentContainerId' uid='579-704'  class='containerUnlogged' ><div class='componentMainContainer' ><div class='topCandidateSection hidden ' id='topCandidateSection'></div>
+    <div class='bottomCandidateSection' id='bottomCandidateSection'>
+    <ul id='tab_content_container'><li id='58fff808c3adc' ><div class='scrollingContainer ' ><div><!DOCTYPE html>
+<html >
+  <head>
+    <meta charset='UTF-8' content='no-cache'>
+    <title>Sl[i]stem by Slate</title>
+
+  <link rel='stylesheet' href='/common/style/login_style.css'>
+  <!--<link rel='stylesheet' type='text/css' href='common/lib/verticalSlider/css/style.css'>-->
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+
+
+<script type='text/javascript'>
+
+//alert($('#bottomCandidateSection').height());
+
+var loginHeight = $('#bottomCandidateSection').height();
+var windowHeight = window.innerHeight;
+
+//alert(windowHeight);
+
+var oran = 100*loginHeight/windowHeight;
+//alert(oran);
+var newOran = 95*windowHeight/100;
+newOran = newOran+'px';
+
+var url = document.URL;
+var search = '/?';
+var search2 = ',pg=norma';
+
+if(url.indexOf(search)>-1)
+{
+  url = url.substring(0, url.length - 1);
+  var res = url.split('/?');
+  //alert(res[0]);
+  window.location.href = res;
+  //alert();
+}
+
+if(oran < 85)
+{
+  $('#bottomCandidateSection').height(newOran);
+}
+
+$(window).resize(function() {
+  var loginHeightR = $('#bottomCandidateSection').height();
+  var windowHeightR = window.innerHeight;
+  var oranR = 100*loginHeightR/windowHeightR;
+  //alert(oranR);
+  if(oranR < 90)
+  {
+    var newOranR = 95*windowHeightR/100;
+    newOranR = newOranR+'px';
+    $('#bottomCandidateSection').height(newOranR);
+  }
+});
+//location.reload(); // sayfayi tekrar yukler
+
+//document.getElementsByClassName('userBloc').style.visibility='hidden';
+
+function closeExtra()
+{
+  var divsToHide = document.getElementsByClassName('closeAll');
+
+  for(var i = 0; i < divsToHide.length; i++)
+    {
+    divsToHide[i].style.display='none';
+    }
+}
+
+function openExtra(open)
+{
+
+    var divsToHide = document.getElementsByClassName('closeAll');
+
+    var td_ = open+'_';
+
+    for(var i = 0; i < divsToHide.length; i++)
+    {
+    divsToHide[i].style.display='none';
+    }
+    document.getElementById(open).style.display = 'table-row';
+}
+
+function loading()
+{
+    localStorage.setItem('loginFlag', 'loginPage');
+
+    $('body').addClass('noScroll').append('<div id='slLoadingScreen'  style='z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; '>      <div class='bg'></div><div class='ani'></div></div>');
+    $('body').append('<div id='overlay' class='overlay'></div>');
+}
+
+
+</script>
+
+<script type='text/javascript'>
+
+function control()
+{
+  if ($('.popupMessage')[0])
+  {
+    //alert('test');
+    $('#slLoadingScreen').remove();
+    $('#overlay').remove();
+  }
+}
+  control();
+  setInterval ( control, 500 );
+
+</script>
+
+<style>
+
+  .overlay {
+    background-color: rgba(1, 1, 1, 0.1);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+    .jobs{
+        overflow-y: auto;    /* Trigger vertical scroll    */
+        overflow-x: hidden;  /* Hide the horizontal scroll */
+    }
+
+      .test {
+        font-family: 'Merriweather', serif;
+        margin-left: 5px;
+
+      }
+      .borderlist {
+        list-style-position:inside;
+        border: 1px solid black;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .jobs {
+          border-collapse: collapse;
+          width: 80%;
+          margin-top: 20px;
+      }
+
+      td {
+          padding: 8px;
+          font-size: 12pt;
+          border-bottom: solid 1px #892828;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2}
+
+      /*th {
+          background-color: #4CAF50;
+          color: white;
+      }*/
+
+</style>
+
+  </head>
+
+
+  <body>
+
+
+  <table style='width: 100%; margin-left: -10px;'>
+    <tr>
+      <td valign='middle' align='middle' class='half' style=' width: 50%;'>
+        <div class='login-form'>
+        <form name='loginFormData' enctype='multipart/form-data' submitajax='1' action='https://beta2.slate.co.jp/index.php5?uid=579-704&ppa=ppava&ppt=pswd&ppk=0&pg=ajx' method='POST' id='loginFormDataId' onbeforesubmit onsubmit>
+          <div style='width: 300px;'><center><img style='text-align: center; width: 300px; margin-bottom: 20px;' src='/common/pictures/slistem_large.gif' /></center></div>
+         <div style='width: 300px;' class='form-group '>
+           <input type='text' name='login' class='form-control' placeholder='Username ' id='UserName'>
+           <i class='fa fa-user'></i>
+         </div>
+         <div style='width: 300px;' class='form-group log-status'>
+           <input type='password' name='password' class='form-control' placeholder='Password' id='Passwod'>
+           <i class='fa fa-lock'></i>
+         </div>
+         <div style='width: 300px;'>
+            <span class='alert'>Invalid Credentials</span>
+            <!--<a class='link' href='https://beta2.slate.co.jp/index.php5?uid=579-704&ppa=ppares&ppt=pswd&ppk=0' >Lost your password?</a>-->
+            <button type='submit' id='loginButton' onclick='loading();' class='log-btn' >Log in</button>
+         </div>
+        </form>
+
+       </div>
+      </td>
+
+      <td  style='width: 50%;'>
+        <div class='login-form2'>
+          <center><p class='test' style='color: #892828; font-size: 48px;'>LATEST JOBS</p></center>
+
+          <table class='jobs' align='center'>
+                      <tr>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Johnson & Johnson K.K.</p>
+                <p style='font-size: 12pt;' class='test'>Medical Comp FP&A Snr Man (#9898)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Pam Thai</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('firstFive_0')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Guidewire Software Japan K.K.</p>
+                <p style='font-size: 12pt;' class='test'>Account Manager - Enterpr... (#9893)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;6 - &yen;10</p>
+                <p style='font-size: 12pt;' class='test'>Odis Rondos</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('lastFive_0')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+            </tr>
+            <tr class='closeAll' style='display: none;'  id='firstFive_0' >
+              <th class='extra ' id='firstFive_0_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Johnson & Johnson K.K.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Medical Comp FP&A Snr Man (#9898)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Pam Thai</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+            <tr class='closeAll' style='display: none;' id='lastFive_0' >
+              <th class='extra ' id='lastFive_0_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Guidewire Software Japan K.K.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Account Manager - Enterprise Software Sales (#9893)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;6 - &yen;10</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Odis Rondos</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+
+                        <tr>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Merck Serono Co., Ltd.</p>
+                <p style='font-size: 12pt;' class='test'>Area Manager (#9897)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Yonoshin Takagi</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('firstFive_1')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Johnson & Johnson K.K.</p>
+                <p style='font-size: 12pt;' class='test'>Process Engineer: Haneda... (#9889)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;7 - &yen;9</p>
+                <p style='font-size: 12pt;' class='test'>Viktoria Maslyuk</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('lastFive_1')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+            </tr>
+            <tr class='closeAll' style='display: none;'  id='firstFive_1' >
+              <th class='extra ' id='firstFive_1_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Merck Serono Co., Ltd.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Area Manager (#9897)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Yonoshin Takagi</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'>sales manager in Osaka</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+            <tr class='closeAll' style='display: none;' id='lastFive_1' >
+              <th class='extra ' id='lastFive_1_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Johnson & Johnson K.K.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Process Engineer: Haneda Distribution Center (#9889)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;7 - &yen;9</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Viktoria Maslyuk</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+
+                        <tr>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Amgen Ltd.</p>
+                <p style='font-size: 12pt;' class='test'>Strategic Meeting Manager (#9896)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Yoshinobu Kubota</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('firstFive_2')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+              <td>
+                <p style='font-size: 12pt;' class='test'>ETAS K.K.</p>
+                <p style='font-size: 12pt;' class='test'>FAE (Cyber Security Exper... (#9880)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;7000000 - &yen;9000000</p>
+                <p style='font-size: 12pt;' class='test'>Jonas Kovaliovas</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('lastFive_2')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+            </tr>
+            <tr class='closeAll' style='display: none;'  id='firstFive_2' >
+              <th class='extra ' id='firstFive_2_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Amgen Ltd.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Strategic Meeting Manager (#9896)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Yoshinobu Kubota</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'>Report to Sr Mgr Global Meetings and Travel (US) <br />
+Purpose <br />
+ Collaborate with stakeholders on the business needs for congresses, meetings and events  <br />
+ Provide leadership and direction to agency(s)  <br />
+ Ensure all in-scope congresses, meetings and events are managed  efficiently and effectively, through outsourced model  <br />
+ Track and report on meetings and event spend  <br />
+ Ensure compliance to all internal and external policies and procedures  <br />
+ Ensure audit readiness (archive)  Key Activities & Responsibilities  <br />
+ Partner with business partners on developing and executing program objectives (ROO)  <br />
+ Drive the accountability of compliance with internal Amgen policies and procedures to ensure consistency,   operational efficiencies and integration within audit requirements.  <br />
+ Collaborate with business partners to identify areas for continuous organizational improvement  <br />
+ Supplier Relationship Management (tracking of SLAs & KPIs) – single point of contact for issue escalation  Budget Management, data integrity and validation of cost investments and savings  <br />
+ Ensure agency(s) is developing and executing effective programs within scope, on time and within budget <br />
+ Ensure spend data is captured accurately in meeting management technology platform (Lanyon Super User)  <br />
+ Ensure roles & responsibilities are clear when working with multiple agencies  <br />
+ Ensure compliance to all policies and procedures by both the budget owners  and all outside agencies  <br />
+ Provide guidance and resolution to mitigate risk  <br />
+ Manage hotel sourcing, contracting and negotiations (in partnership with  agency)  <br />
+ Key contact with medical associations ensuring adherence to applicable rules  and regulations, as needed  Monitor and report to management compliance to internal and external policies  <br />
+ Provides expert guidance on best practices for meetings & events  <br />
+ Provide guidance to supplier on hotel and travel escalation issues  </i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'>Qualifications  <br />
+ Bachelor degree or the equivalent education and experience  <br />
+ CMP/CMM preferred  <br />
+ Successful track record in meeting management, supplier management,  relationship-building, negotiation and problem solving  <br />
+ Fluent in Japanese and English  <br />
+Preferred Experience  <br />
+ 5+ years meeting planning and congress industry experience, preferably in the Pharmaceutical industry <br />
+ Preferred Knowledge  <br />
+ Working knowledge and expertise in Strategic Meeting Management  <br />
+ Working knowledge of hotel sourcing, negotiating and contracting  <br />
+ Working knowledge of meetings and congress operating environment  <br />
+ Working knowledge of compliance, legal and regulatory guidelines related to  interactions with health care professionals  <br />
+ Understanding of Amgen business planning process  <br />
+Preferred Competencies  <br />
+ Leadership <br />
+ Change management <br />
+ Process mapping <br />
+ Excellent Communication skills <br />
+ Negotiation skills <br />
+ Internal/External Relationship Building <br />
+ Supplier relationship management <br />
+ Strong organizational skills <br />
+ Presentation skills <br />
+ Problem solving <br />
+ Financial skills (budgeting, data analytics)  </i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+            <tr class='closeAll' style='display: none;' id='lastFive_2' >
+              <th class='extra ' id='lastFive_2_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>ETAS K.K.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>FAE (Cyber Security Expert) (#9880)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;7000000 - &yen;9000000</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Jonas Kovaliovas</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+
+                        <tr>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Walmart / Seiyu</p>
+                <p style='font-size: 12pt;' class='test'>Engineering Consideration (#9895)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Philip Miles Harry</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('firstFive_3')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Sompo Japan Nipponkoa AM</p>
+                <p style='font-size: 12pt;' class='test'>Product Planning Speciali... (#9876)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Cecilia Chen</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('lastFive_3')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+            </tr>
+            <tr class='closeAll' style='display: none;'  id='firstFive_3' >
+              <th class='extra ' id='firstFive_3_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Walmart / Seiyu</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Engineering Consideration (#9895)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Philip Miles Harry</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+            <tr class='closeAll' style='display: none;' id='lastFive_3' >
+              <th class='extra ' id='lastFive_3_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Sompo Japan Nipponkoa AM</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Product Planning Specialist (#9876)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Cecilia Chen</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'><br />
+・社会人経験(3~5 年程度)20 代後半まで ・証券会社、銀行等の金融機関勤務経験者<br />
+・運用会社勤務経験尚可 ※ご経験よりも広範な金融商品知識と運用会社での商品企画への熱意を重視します。<br />
+<br />
+ ・対人業務が苦にならない方(社内折衝・交渉の頻度が高い部署です)</i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+
+                        <tr>
+              <td>
+                <p style='font-size: 12pt;' class='test'>Infosys Technologies Ltd.</p>
+                <p style='font-size: 12pt;' class='test'>Fullstack Engineer (#9894)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;0 - &yen;0</p>
+                <p style='font-size: 12pt;' class='test'>Larry Fry</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('firstFive_4')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+              <td>
+                <p style='font-size: 12pt;' class='test'>First Solar Japan G.K.</p>
+                <p style='font-size: 12pt;' class='test'>Solar Project Development... (#9849)</p>
+                <p style='font-size: 12pt;' class='test'>&yen;9000000 - &yen;15000000</p>
+                <p style='font-size: 12pt;' class='test'>Ray Pedersen</p>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>More: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/plus.png' onclick='openExtra('lastFive_4')'> <img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </td>
+            </tr>
+            <tr class='closeAll' style='display: none;'  id='firstFive_4' >
+              <th class='extra ' id='firstFive_4_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>Infosys Technologies Ltd.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Fullstack Engineer (#9894)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;0 - &yen;0</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Larry Fry</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+            <tr class='closeAll' style='display: none;' id='lastFive_4' >
+              <th class='extra ' id='lastFive_4_'  style=' background-color: rgba(138, 40, 40, 0.08);' colspan='2'>
+                <p style='font-size: 12pt;' class='test'><b>Company: </b><i style='color: #424242; font-size:11pt;'>First Solar Japan G.K.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Title: </b><i style='color: #424242; font-size:11pt;'>Solar Project Development Manager (#9849)</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Salary range: </b><i style='color: #424242; font-size:11pt;'>&yen;9000000 - &yen;15000000</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Consultant: </b><i style='color: #424242; font-size:11pt;'>Ray Pedersen</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Description: </b><i style='color: #424242; font-size:11pt;'>Job Description<br />
+Our high growth and leadership position in the renewable energy business offers outstanding opportunities to individuals seeking an exciting work environment in one of the most important industries for the 21st century. The company is a leader in the development and manufacturing of thin film solar modules used in grid-connected solar power plants, as well as a provider of complete solar generation solutions for U.S. utilities. Our culture is one where teamwork, continuous improvement, achievement of results, and environmental responsibility are core values. We are seeking new associates who are motivated to contribute their talents to making cost-effective solar energy an important part of the world’s energy mix.<br />
+ <br />
+Basic Job Functions:<br />
+Responsible for developing an industry leading portfolio of utility scale solar power projects.<br />
+Leads hands-on Japan project development activities.<br />
+Experience: <br />
+•  10 - 15 years total relevant professional experience, to include<br />
+•  2 years power generation project development experience resulting in the financing and construction of existing utility scale power plants overseas or in Japan.<br />
+•  Alternatively, 5 years real estate development experience resulting in the financing and construction of large-scale projects in Japan.<br />
+Education:<br />
+•  Requires a Bachelor&#39;s Degree in engineering, accounting, finance, economics, or related field.<br />
+Required Skills/Competencies:<br />
+•  Demonstrated track record of developing power plant projects through financing,  construction, and commercial operation overseas or in Japan<br />
+•  Alternatively, demonstrated track record developing real estate projects through financing, construction, and commercial operation in Japan<br />
+•  Strong project management, commercial acumen, and business leadership skills.<br />
+•  Ability to interface successfully with local communities, regulators, and utilities<br />
+•  Native Japanese speaker<br />
+•  Must be motivated self-starter, capable of multitasking and setting priorities.<br />
+Essential Responsibilities:<br />
+This role would suit a highly self-motivated, results-oriented individual who is comfortable in an entrepreneurial environment and can generate breakthrough business results.<br />
+ <br />
+•  Responsible for building a large pipeline of solar power plant project approvals in Japan. This will include sourcing project sites, negotiating land agreements with site owners, obtaining project local approvals, obtaining METI project certification, securing interconnection rights from utilities, and negotiating PPAs with utilities.<br />
+•  Diligence and acquire partially developed project positions. Projects can range from early stage development opportunities to sites holding attractive interconnection position and METI certification. Portfolio and multi-stage, multi-site project acquisition opportunities are typical.<br />
+•  Development areas of focus include project site assessment, land purchase/leases, electric interconnection, power purchase agreement negotiation and financial analysis of project.<br />
+•  Projects will typically range from 10- 100+ MW&#39;s.<br />
+•  Work with the Project Finance team to source project debt and equity.<br />
+•  Engage regulators, local community stakeholders, utilities, banks, and project investors.<br />
+•  Represent the company at public meetings about projects and in industry forums.<br />
+•  A strong desire to be a part of a rapidly growing business with an opportunity to progress.<br />
+<br />
+Please note: potential candidates will meet the education and experience requirements provided on the above job description and excel in completing the listed responsibilities for this role.   All candidates receiving an offer of employment must successfully complete a background check, pre-employment drug screen, and any other test that may be required for the role.</i></p><br>
+                <p style='font-size: 12pt;' class='test'><b>Requirements: </b><i style='color: #424242; font-size:11pt;'></i></p><br>
+                <div style='margin-top: 5px;'>
+                  <p style='font-size: 11pt; ' class='test'><b>Less: </b><img style='cursor:pointer; width: 20px; vertical-align: text-bottom;' src='common/pictures/minus.png' onclick='closeExtra()'></p>
+                </div>
+              </th>
+            </tr>
+
+                      </table>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  </body>
+
+</html><div class='loginScreenContainer ' ><div class='loginScreenContent loginScreenTop' ><div id='menuContainerId'><div id='menuNavContainerId'><div class='userBloc' id=''><a href='http://www.slate.co.jp'><img title='Slate Consulting job board' src='http://jobs.slate.co.jp/component/display/resources/jobboard/pictures/top_slate_logo.png'></a></div><div class='firstMenuContainer' id=''><ul class='menuNavList'><li><div id=''><a class='mainMenuPic' href='http://www.slate.co.jp/about'>ABOUT</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://www.slate.co.jp/about'>Slate Consulting</a></span><ul id='addressbookSubMenu' class='subMenu'><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/about?show=ceo_message'>Message from the CEO</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/about?show=our_mission'>Our Mission</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/about?show=practice_group'>Practice Group</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?team=code_of_ethics'>Code Of Ethics</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/about?show=search_process'>Search Process</a></li></ul></div></li><li><div id=''><a class='mainMenuPic' href='http://www.slate.co.jp/expertise/'>EXPERTISE</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://www.slate.co.jp/expertise/'>What we specialise in</a></span><ul id='addressbookSubMenu' class='subMenu'><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=financial_services'>Financial Services</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=finance_and_accounting'>Fincance &amp; Accounting</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=it_services'>IT Services</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=life_sciences'>Healthcare</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=industrial'>Industrial</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://www.slate.co.jp/expertise?show=consumer_goods'>Consumer Goods</a></li></ul></div></li><li><div id=''><a class='mainMenuPic' href='http://slate.co.jp/people'>PEOPLE</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://slate.co.jp/people'>Meet the team</a></span></div></li><li><div id=''><a class='mainMenuPic' href='http://jobs.slate.co.jp'>JOB BOARD</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://jobs.slate.co.jp'>Candidate Services</a></span><ul id='addressbookSubMenu' class='subMenu'><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://slate.co.jp/career-advice/'>Career Advice</a></li><li><a target='' onclick='/*setCoverScreen(true, true);*/ ' href='http://jobs.slate.co.jp'>Employment Opportunities</a></li></ul></div></li><li><div id=''><a class='mainMenuPic' href='http://slate.co.jp/about'>TESTIMONIALS</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://slate.co.jp/about'>Why people chose us</a></span></div></li><li><div id=''><a class='mainMenuPic' href='http://slate.co.jp/about'>CONTACT</a><br><span class='menuNavLegend' id=''><a class='mainMenuPic' href='http://slate.co.jp/about'>Find out more</a></span></div></li></ul><div class='floatHack'></div><div class='topMenuLayer' id=''>&nbsp;</div></div><div id=''><ul id='eventSubMenu' class='subMenu hidden'><li>Last events</li><li>Reminders</li></ul></div></div></div>
+<div id='gallery'></div>
+<link media='screen' type='text/css' href='/common/style/colorbox.css' rel='stylesheet' />
+<script src='/common/js/jquery.colorbox-min.js' type='text/javascript'></script>
+<script>
+  $(document).ready(function(){ AjaxRequest('/component/portal/resources/page/slistem_home.inc.php5?action=gallery', '', '', 'gallery'); });
+</script></div><div><div class='loginScreenContent loginScreenLeft' ></div><div id='loginFormId' class='loginScreenCenter' ><div id='loginMsgId' class='notice fontError hidden' ></div><form name='loginFormData' enctype='multipart/form-data' submitAjax='1'  action='https://beta2.slate.co.jp/index.php5?uid=579-704&ppa=ppava&ppt=pswd&ppk=0&pg=ajx'  method='POST'  id='loginFormDataId'  onBeforeSubmit=''  onsubmit=''><div id='loginFormDataInnerId' class='innerForm' ><div class='formFieldContainer fieldNameredirect formFieldWidth1  formFieldHidden ' ><div class='formField'><input type='hidden' name='redirect'  value='https://beta2.slate.co.jp/'  inajax=''  id='fldid_58fff808c3953'  /></div><div class='floatHack' ></div></div><div class='formFieldLinebreaker formFieldWidth1' >&nbsp;</div> <div class='submitBtnClass formFieldWidth1'> <input name='Sign_In' type='submit' id='formSubmitButton' value='Sign In' onclick='' /><div class='floatHack' ></div> </div><div class='floatHack' ></div></div><div class='floatHack' ></div></form><script>  $('form[name=loginFormData]').submit(function(event)   {  event.preventDefault();       if(checkForm('loginFormData'))     {       var sURL = $('form[name=loginFormData]').attr('action');       var sFormId = $('form[name=loginFormData]').attr('id');       var sAjaxTarget = '';       setTimeout(' AjaxRequest(''+sURL+'', '.body.', ''+sFormId+'', ''+sAjaxTarget+'', '', '', 'setCoverScreen(false);  '); ', 350);     }     return false;  }); </script><div id='missingPwdLink'><a href='https://beta2.slate.co.jp/index.php5?uid=579-704&ppa=ppares&ppt=pswd&ppk=0'>Forgot password ?</a></div></div><div class='loginScreenContent loginScreenRight' ></div><div class='floatHack' ></div></div><div class='loginScreenContent loginScreenBottom' ><div id='tipContainer'></div>
+<script src='/component/sl_menu/resources/js/tabs.js'></script>
+<script>
+$('head').append('<link rel='stylesheet' href='/conf/custom_config/slistem/home.css' type='text/css' />');
+$(document).ready(function(){ AjaxRequest('/component/portal/resources/page/slistem_home.inc.php5?action=tips', '', '', 'tipContainer'); }); </script></div></div>
+    </div></li></ul>
+    </div></div></div><div class='floatHack' ></div></div></div><div id='footerId'><div id='footerContainerId'></div></div><div id='ajaxErrorContainerId' class='ajaxErrorBlock' ><div id='ajaxErrorInnerId' class='notice2' ><div><div style='float:right; ' ><a href='javascript:;' onclick='setCoverScreen(false); $('#ajaxErrorContainerId').hide();' >Close</a></div><div class='title ' ><div class = 'h2' style='float:left; width:98%;'>Oops, an error occured</div><div class='floatHack'></div></div><br /><div id='errorMsg'></div>An unknown error occured while executing your last action.<br />If you're seeing this message for the first time, please try to reload the page or close your web browser before starting again.<br />In the other case, please contact the administrator or report the problem using <a href='javascript:;' onclick=' $('#dumpFormId').submit();'>this form</a>.<form name='dumpForm' id='dumpFormId' target='_blank' method='post' action='/error_report.php5' class='hidden'
+        onsubmit=' if(!$(this).attr('loaded'))
+        {
+          event.preventDefault();
+          var oHead = $('head').clone();
+          $(oHead).find('script').remove();
+
+          $('#dump_html_id').val('<html><head>' + $(oHead).html() + '</head><body>' + $(body).html() + '</body></html>');
+          $(this).attr('loaded', 1).submit();
+        }' >
+        <input type='hidden' name='dump' id='dumpId' />
+        <textarea class='_hidden' name='dump_html' id='dump_html_id'></textarea></form></div></div></div><div id='embedPopupId'></div><div id='popupBlockId' style='display:none; position:absolute;' ></div>
+        <div id='loadingScreenAnimation'>
+          <img src='/common/pictures/loading_slistem.gif'/>
+        </div>
+      </div>
+
+      <div id='loadingScreen'>
+
+        <div id='loadingScreenAnimation'>
+          <img src='/common/pictures/loading_slistem.gif'/>
+        </div>
+      </div></body></html>";
+exit;
+
     //set session
     //use the standard function. I know it s another query, but it incluses groups management and maybe other features
     $_SESSION['userData'] = $this->getUserDataByPk((int)$oDbResult->getFieldValue('loginpk'), true);
