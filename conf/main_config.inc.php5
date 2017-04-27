@@ -216,7 +216,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     define('CONST_CRM_DOMAIN', 'https://'.$_SERVER['SERVER_NAME']);
     //define('CONST_CRM_MAIL_SENDER', 'slistem@mailmigrate.today');
     define('CONST_CRM_MAIL_SENDER', 'slistem@slate.co.jp');
-    define('CONST_DEV_SERVER', 1);  //debug bar, mail to developer, and other developer features
+    define('CONST_DEV_SERVER', 0);  //debug bar, mail to developer, and other developer features
     define('CONST_SQL_PROFILING', 0);
     define('CONST_DEV_EMAIL', 'munir@slate-ghc.com');
     define('CONST_DEV_EMAIL_2', 'munir@slate-ghc.com');
