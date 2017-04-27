@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	localStorage.setItem("loginFlag", "loginPage");
+	//localStorage.setItem("loginFlag", "loginPage");
 </script>
 <?php $total_consultant_count = 0 ?>
 <table style="width:100%;" valign="top">

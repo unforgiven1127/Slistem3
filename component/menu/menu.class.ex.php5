@@ -691,8 +691,8 @@ class CMenuEx extends CMenu
 
     if(!isset($asChildren['onclick']))
     {
-        //$asChildren['onclick'] = '';
-        $asChildren['onclick'] = " localStorage.setItem('loginFlag', 'loginPage'); ";
+        $asChildren['onclick'] = '';
+        //$asChildren['onclick'] = " localStorage.setItem('loginFlag', 'loginPage'); ";
     }
 
     if(!isset($asChildren['target']))

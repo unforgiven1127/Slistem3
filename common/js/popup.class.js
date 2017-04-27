@@ -4,7 +4,7 @@
 {
   document.onkeypress = function (e) {
       e = e || window.event;
-      localStorage.setItem("loginFlag", "loginPage");
+      //localStorage.setItem("loginFlag", "loginPage");
   };
   var loginFlag = localStorage.getItem("loginFlag");
   var url = window.location.href;

@@ -2405,7 +2405,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $sHTML.= '<script type="text/javascript">
                   $(".doc_picture").click(function(){
-                    localStorage.setItem("loginFlag", "loginPage");
+                    //localStorage.setItem("loginFlag", "loginPage");
                   });
                 </script>';
 
