@@ -5805,12 +5805,17 @@ $searchTitle = explode(':',$poQB->getTitle());
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
             $updates['isClient_update'] = getValue('client');
-            $updates['salary_update'] = getValue('salary');
-            $updates['bonus_update'] = getValue('bonus');
-            $updates['targetLow_update'] = getValue('target_low');
-            $updates['targetTo_update'] = getValue('target_high');
+            //$updates['salary_update'] = getValue('salary');
+            //$updates['bonus_update'] = getValue('bonus');
+            //$updates['targetLow_update'] = getValue('target_low');
+            //$updates['targetTo_update'] = getValue('target_high');
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
+
+            $updates['salary_update'] = $newSalary;
+            $updates['bonus_update'] = $newBonus;
+            $updates['targetLow_update'] = $newTargetLow;
+            $updates['targetTo_update'] = $newTargetHigh;
 
             if($updates['status_update'] == 'on')
             {
