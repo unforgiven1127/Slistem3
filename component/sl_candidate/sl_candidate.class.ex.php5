@@ -5643,37 +5643,54 @@ $searchTitle = explode(':',$poQB->getTitle());
 
       //SALARY CONTROL
 
-      $salaryManual = getValue('salary');
-      $salaryUnit = getValue('salary_unit');
-      $salaryCurrency = getValue('salary_currency');
-      $bonusManual = getValue('bonus');
+    $salaryManual = getValue('salary');
+    $salaryUnit = getValue('salary_unit');
+    $salaryCurrency = getValue('salary_currency');
+    $bonusManual = getValue('bonus');
+    $targetLow_update = getValue('target_low');
+    $targetTo_update = getValue('target_high');
 
-      if($salaryUnit == 'M')
-      {
-        $newSalary = $salaryManual * 1000000;
-        $newBonus = $bonusManual * 1000000;
-      }
-      else if($salaryUnit == 'K')
-      {
-        $newSalary = $salaryManual * 1000;
-        $newBonus = $bonusManual * 1000;
-      }
-      else
-      {
-        $newSalary = $salaryManual * 1000000;
-        $newBonus = $bonusManual * 1000000;
-      }
+    if($salaryUnit == 'M')
+    {
+      $newSalary = $salaryManual * 1000000;
+      $newBonus = $bonusManual * 1000000;
+      $newTargetLow = $targetLow_update * 1000000;
+      $newTargetHigh = $targetTo_update * 1000000;
+    }
+    else if($salaryUnit == 'K')
+    {
+      $newSalary = $salaryManual * 1000;
+      $newBonus = $bonusManual * 1000;
+      $newTargetLow = $targetLow_update * 1000;
+      $newTargetHigh = $targetTo_update * 1000;
+    }
+    else
+    {
+      $newSalary = $salaryManual * 1000000;
+      $newBonus = $bonusManual * 1000000;
+      $newTargetLow = $targetLow_update * 1000000;
+      $newTargetHigh = $targetTo_update * 1000000;
+    }
 
-      if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
-      {
-        $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
-      }
-      if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
-      {
-        $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
-      }
+    if($salaryCurrency == 'jpy' && !empty($newSalary) && ($newSalary > 100000000 || $newSalary < 10000))
+    {
+      $errorArray .= 'Salary value is not a valid number. ['.$newSalary.']<br>';
+    }
+    if($salaryCurrency == 'jpy' && !empty($newBonus) && ($newBonus > 100000000 || $newBonus < 10000))
+    {
+      $errorArray .= 'Bonus value is not a valid number. ['.$newBonus.']<br>';
+    }
 
-      //SALARY CONTROL
+    if($salaryCurrency == 'jpy' && !empty($newTargetLow) && ($newTargetLow > 100000000 || $newTargetLow < 10000))
+    {
+      $errorArray .= 'Target low value is not a valid number. ['.$newTargetLow.']<br>';
+    }
+    if($salaryCurrency == 'jpy' && !empty($newTargetHigh) && ($newTargetHigh > 100000000 || $newTargetHigh < 10000))
+    {
+      $errorArray .= 'Target high value is not a valid number. ['.$newBonus.']<br>';
+    }
+
+    //SALARY CONTROL
 
       if(!$characterNoteControlFlag)
       {
