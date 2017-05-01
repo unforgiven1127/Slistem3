@@ -1821,11 +1821,11 @@ class CNotificationEx extends CNotification
                       var test= $('.autoSearch p').text();
                       if(!test.trim())
                       {
-                        alert(test);
+                        alert('empty');
                       }
                       else
                       {
-                        alert('empty');
+                        alert(test);
                       }
                     }); </script>";
 
