@@ -1772,7 +1772,7 @@ class CNotificationEx extends CNotification
     }
 
 
-    $oForm->addField('cp_item_selector', 'reminder_item', array('label'=>'Related to', 'class' => 'selectCandidate', 'interface' => 'notification_item', 'value' => $sCheckedValue));
+    $oForm->addField('cp_item_selector', 'reminder_item', array('label'=>'Related to', 'interface' => 'notification_item', 'value' => $sCheckedValue));
     $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text'=> '* Item description will automatically be added to the message.', 'class' => 'message_help'));
 
     $selectedCandidate = '';
@@ -1815,8 +1815,11 @@ class CNotificationEx extends CNotification
 
     $oForm->sectionEnd();
 
+    $returnHtml = $oForm->getDisplay();
 
-    return $oForm->getDisplay();
+    $returnHtml .= "<script> var test= $('.autoSearch p').text(); alert(test); </script>";
+
+    return $returnHtml;
   }
 
   private function _getReminderSave($pnReminderPk = 0)
