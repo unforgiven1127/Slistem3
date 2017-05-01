@@ -1500,7 +1500,7 @@ ChromePhp::log($psNoteType);
     }
     else
     {
-
+ChromePhp::log('EDIT NOTE??');
       if((empty($event_type) && !getValue('delete_note')) || (empty($content) && !getValue('delete_note')))
         return array('error' => __LINE__.' - Can not create empty notes.');
 
