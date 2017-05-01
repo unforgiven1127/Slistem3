@@ -1538,7 +1538,7 @@ ChromePhp::log('EDIT NOTE??');
       }
 
       set_array($asResult['action'], '');
-ChromePhp::log('EDIT HERE');
+
 
       if((bool)getValue('no_candi_refresh', 0))
       {
@@ -1551,7 +1551,7 @@ ChromePhp::log('EDIT HERE');
 
       $asResult['timedUrl'] = '';
       $asResult['url'] = '';
-
+ChromePhp::log('EDIT HERE');
     }
 
     return $asResult;
