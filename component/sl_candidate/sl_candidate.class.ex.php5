@@ -3200,14 +3200,14 @@ class CSl_candidateEx extends CSl_candidate
         $savedQuery = getLoggedQuery(new MongoId($searchID));
 ////ChromePhp::log$savedQuery);
         $sQuery = $savedQuery[0]['action'];
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
         $oDbResult = $oDb->ExecuteQuery($sQuery);
         $bRead = $oDbResult->readFirst();
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
       else
-      {ChromePhp::log($sQuery);
+      {//ChromePhp::log($sQuery);
         $oDbResult = $oDb->ExecuteQuery($sQuery);
         $bRead = $oDbResult->readFirst();
         $nResult = (int)$oDbResult->getFieldValue('nCount');
@@ -3410,7 +3410,7 @@ $searchTitle = explode(':',$poQB->getTitle());
           $rmResult = $rmResultDB->getAll();
         }
       }*/
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
