@@ -253,7 +253,7 @@ class CSl_eventEx extends CSl_event
       $asItem = array('cp_uid' => '555-001', 'cp_action' => CONST_ACTION_VIEW,
         'cp_type' => $psItemType, 'cp_pk' => $pnItemPk, 'default_type' => $psLinkDefaultType);
 
-ChromePhp::log($psLinkDefaultType);
+//ChromePhp::log($psLinkDefaultType);
       if($psLinkDefaultType == 'character')
         $sLabel = 'Add character assessment';
       //$sLabel = 'Add a character note';
@@ -265,7 +265,7 @@ ChromePhp::log($psLinkDefaultType);
       $sHTML.= '<a href="javascript:;" onclick="'.$sJavascript.'">'.$sLabel.'</a>';
       $sHTML.= '</div>';
     }
-
+ChromePhp::log($psNoteType);
     if($psNoteType == 'character')
     {// girilen 6 not birlestiriliyor ve id lerini ; ile birlestiriyoruz
       $candidate_id = $pnItemPk;
