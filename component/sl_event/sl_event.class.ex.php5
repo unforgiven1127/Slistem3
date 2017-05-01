@@ -400,6 +400,7 @@ class CSl_eventEx extends CSl_event
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
+      ChromePhp::log('Here is the note');
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
     }
     else
