@@ -1775,14 +1775,6 @@ class CNotificationEx extends CNotification
     $oForm->addField('cp_item_selector', 'reminder_item', array('label'=>'Related to', 'interface' => 'notification_item', 'value' => $sCheckedValue));
     $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text'=> '* Item description will automatically be added to the message.', 'class' => 'message_help'));
 
-    /*$selectedCandidate = '';
-    $explodedValue = explode("#",$sCheckedValue);
-    if(isset($explodedValue[1]))
-    {
-      $selectedCandidate = " #".$explodedValue[1];
-    }
-
-    $oForm->addField('input', 'selectedCandidate', array('disabled'=> 'disabled','label'=> 'Selected Candidate', 'class' => 'selectedCandidate', 'value' => $selectedCandidate));*/
 
     $oForm->addField('textarea', 'message', array('label'=> 'Your message', 'class' => 'msgField', 'value' => $oDbMeeting->getFieldValue('description')));
     $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
@@ -1815,11 +1807,8 @@ class CNotificationEx extends CNotification
 
     $oForm->sectionEnd();
 
-    $returnHtml = $oForm->getDisplay();
 
-    
-
-    return $returnHtml;
+    return $oForm->getDisplay();
   }
 
   private function _getReminderSave($pnReminderPk = 0)
