@@ -6,7 +6,7 @@
 <script type="text/javascript" >
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-
+    CKEDITOR.config.disableNativeSpellChecker = false;
     CKEDITOR.replace( 'message',
 	{
 		//filebrowserUploadUrl : 'test/',
@@ -19,7 +19,6 @@
 			{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList'] }
 		],
-		config.disableNativeSpellChecker = false
 	});
 
 </script>
