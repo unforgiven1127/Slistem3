@@ -1517,7 +1517,7 @@ ChromePhp::log($psNoteType);
       }
 
       $asResult = parent::_getEventSave($this->cnPk);
-      if(isset($asResult['error']))
+      /*if(isset($asResult['error']))
         return $oPage->getAjaxExtraContent($asResult);
 
 
@@ -1533,7 +1533,7 @@ ChromePhp::log($psNoteType);
           $oResult = $oMail->send('Slistem - note cp_history manually created', 'Please add a cp_hidden note with the company name for '.$sURL);
         else
           $oResult = $oMail->send('Slistem - note cp_history manually updated', 'Please check the cp_hidden matches the cp_history note for '.$sURL);
-      }
+      }*/
 
       $asResult['action'] = ' view_candi("'.$sURL.'", "#tabLink1"); goPopup.removeByType(\'layer\'); ';
       unset($asResult['reload']);
