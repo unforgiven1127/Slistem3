@@ -1081,6 +1081,7 @@ ChromePhp::log($psNoteType);
 
   private function _saveNote($psAction = '')
   {
+    ChromePhp::log('_saveNote');
     $oLogin = CDependency::getCpLogin();
     $event_type = filter_var(getValue('event_type'), FILTER_SANITIZE_STRING);
     $content = purify_html(getValue('content'));
