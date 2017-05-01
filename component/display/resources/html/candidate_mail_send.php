@@ -18,7 +18,8 @@
 			{ name: 'insert', items : ['Image','Table','HorizontalRule','SpecialChar','PageBreak']},
 			{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
 			{ name: 'paragraph', items : [ 'NumberedList','BulletedList'] }
-		]
+		],
+		config.disableNativeSpellChecker = false
 	});
 
 </script>
