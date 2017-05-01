@@ -1817,7 +1817,9 @@ class CNotificationEx extends CNotification
 
     $returnHtml = $oForm->getDisplay();
 
-    $returnHtml .= "<script> var test= $('.autoSearch p').text(); alert(test); </script>";
+    $returnHtml .= "<script>  $('.autoSearch p').change(function(){
+                      var test= $('.autoSearch p').text(); alert(test);
+                    }); </script>";
 
     return $returnHtml;
   }
