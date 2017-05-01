@@ -612,6 +612,7 @@ ChromePhp::log($psNoteType);
     }
     else
     {
+      ChromePhp::log('sadsadsa sdadsadsa HERE');
       $oForm->addField('select', 'event_type', array('label'=>'Note type', 'onchange' => 'if($(this).val() == \'character\'){ $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').show(); } else { $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').hide(); } '));
       $oForm->setFieldControl('event_type', array('jsFieldNotEmpty' => ''));
 
