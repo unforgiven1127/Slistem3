@@ -624,13 +624,13 @@ ChromePhp::log($psNoteType);
     }
     else
     {
-      ChromePhp::log('sadsadsa sdadsadsa HERE');
+//ChromePhp::log('sadsadsa sdadsadsa HERE');
       $oForm->addField('select', 'event_type', array('label'=>'Note type', 'onchange' => 'if($(this).val() == \'character\'){ $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').show(); } else { $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').hide(); } '));
       $oForm->setFieldControl('event_type', array('jsFieldNotEmpty' => ''));
 
       if(empty($sEventType))
         $sEventType = getValue('default_type', 'note');
-ChromePhp::log($sEventType);
+//ChromePhp::log($sEventType);
       foreach($asEvent as $asEvents)
       {
         if($sEventType == 'note' && $asEvents['value'] != 'character')// && $asEvents['value'] != 'character'
@@ -1153,7 +1153,7 @@ ChromePhp::log($sEventType);
 
 ////ChromePhp::log$event_type);
     //insertLog($user_id, $candidate_id, $note);
-    if(isset($note) && !empty($note))
+    if(isset($note) && !empty($note) && !empty($candidate_id))
     {
       //ChromePhp::log($note);
       insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
