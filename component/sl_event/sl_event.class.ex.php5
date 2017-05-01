@@ -596,6 +596,10 @@ ChromePhp::log($psNoteType);
 
     $asEvent = getEventTypeList(false, $sCp_Type, CDependency::getCpLogin()->isAdmin());
     $sEventType = $oDbResult->getFieldValue('type');
+    if(empty($sEventType))
+    {
+      $sEventType = 'company';
+    }
     if(isset($_GET['combinedIDs']))
     {
       $sEventType = 'character';
