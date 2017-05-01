@@ -801,6 +801,11 @@ class CEventEx extends CEvent
 
   protected function _getEventSave($pnPk = 0, $pasEventData = array())
   {
+    return true;
+  }
+
+  protected function _getEventSave_($pnPk = 0, $pasEventData = array())
+  {
     if(!assert('is_integer($pnPk)'))
       return array('error' => __LINE__.' - Wrong parameter');
 
