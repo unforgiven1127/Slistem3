@@ -615,6 +615,13 @@ ChromePhp::log($psNoteType);
       $oForm->addField('hidden', 'event_type', array('value' => $sEventType));
       $oForm->addField('hidden', 'custom_type', array('value' => 1));
     }
+    else if(empty($sEventType) && empty(getValue('default_type', 'note')))
+    {
+      $sEventType = 'company';
+      $oForm->addField('input', '', array('label'=>'Note type', 'value' => $sEventType.'     (can\'t be changed)', 'readonly' => 'readonly', 'style' => 'width: 250px; background-color: #efefef; font-style: italic;'));
+      $oForm->addField('hidden', 'event_type', array('value' => $sEventType));
+      $oForm->addField('hidden', 'custom_type', array('value' => 1));
+    }
     else
     {
       ChromePhp::log('sadsadsa sdadsadsa HERE');
