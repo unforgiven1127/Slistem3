@@ -617,7 +617,7 @@ ChromePhp::log($psNoteType);
 
       if(empty($sEventType))
         $sEventType = getValue('default_type', 'note');
-ChromePhp::log($asEvent);
+ChromePhp::log($sEventType);
       foreach($asEvent as $asEvents)
       {
         if($sEventType == 'note' && $asEvents['value'] != 'character')// && $asEvents['value'] != 'character'
