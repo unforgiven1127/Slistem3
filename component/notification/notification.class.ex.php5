@@ -1775,7 +1775,7 @@ class CNotificationEx extends CNotification
     $oForm->addField('cp_item_selector', 'reminder_item', array('label'=>'Related to', 'interface' => 'notification_item', 'value' => $sCheckedValue));
     $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text'=> '* Item description will automatically be added to the message.', 'class' => 'message_help'));
 
-    $oForm->addField('input', 'selectedCandidate', array('label'=> 'Selected Candidate', 'class' => 'selectedCandidate', 'value' => $oDbMeeting->getFieldValue('description')));
+    $oForm->addField('input', 'selectedCandidate', array('label'=> 'Selected Candidate', 'class' => 'selectedCandidate', 'value' => $sCheckedValue));
 
     $oForm->addField('textarea', 'message', array('label'=> 'Your message', 'class' => 'msgField', 'value' => $oDbMeeting->getFieldValue('description')));
     $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
