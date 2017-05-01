@@ -1807,8 +1807,22 @@ class CNotificationEx extends CNotification
 
     $oForm->sectionEnd();
 
+    $returnHtml = $oForm->getDisplay();
+    $returnHtml .= "<script>  $('#formSubmitButton').click(function(e){
+                      var test= $('.autoSearch p').text();
+                      if(!test.trim())
+                      {
+                        alert('Related to could not be empty.');
+                        e.preventDefault();
+                      }
+                      else
+                      {
 
-    return $oForm->getDisplay();
+                      }
+                    }); </script>";
+
+
+    return $returnHtml;
   }
 
   private function _getReminderSave($pnReminderPk = 0)
