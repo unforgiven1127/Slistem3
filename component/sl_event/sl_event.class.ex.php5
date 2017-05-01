@@ -253,6 +253,7 @@ class CSl_eventEx extends CSl_event
       $asItem = array('cp_uid' => '555-001', 'cp_action' => CONST_ACTION_VIEW,
         'cp_type' => $psItemType, 'cp_pk' => $pnItemPk, 'default_type' => $psLinkDefaultType);
 
+ChromePhp::log($psLinkDefaultType);
       if($psLinkDefaultType == 'character')
         $sLabel = 'Add character assessment';
       //$sLabel = 'Add a character note';
