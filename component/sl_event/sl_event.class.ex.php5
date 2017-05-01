@@ -1521,8 +1521,9 @@ ChromePhp::log('EDIT NOTE??');
       if(isset($asResult['error']))
         return $oPage->getAjaxExtraContent($asResult);
 
-
+ChromePhp::log('EDIT HERE');
       $sType = getValue('event_type');
+ChromePhp::log($sType);
       if($sType == 'cp_history')
       {
         $oMail = CDependency::getComponentByName('mail');
