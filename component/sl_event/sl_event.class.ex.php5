@@ -112,7 +112,7 @@ class CSl_eventEx extends CSl_event
     if(!assert('is_key($pnItemPk) && !empty($psItemType)'))
       return array();
 
-
+ChromePhp::log($psItemType);
     $asNotes = array();
     $asNotes = $this->getNotes($pnItemPk, $psItemType, $psNoteType, $pasExcludeType);
 
@@ -121,7 +121,7 @@ class CSl_eventEx extends CSl_event
     {
       $allAreas = array();
       $allAreas['character_note'] = 'character_note';
-     /* $allAreas['current_podition_note'] = 'current_podition_note';
+      /* $allAreas['current_podition_note'] = 'current_podition_note';
       $allAreas['product_exp_note'] = 'product_exp_note';
       $allAreas['compensation_note'] = 'compensation_note';
       $allAreas['move_note'] = 'move_note';
