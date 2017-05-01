@@ -1819,13 +1819,13 @@ class CNotificationEx extends CNotification
 
     $returnHtml .= "<script>  $('#formSubmitButton').click(function(){
                       var test= $('.autoSearch p').text();
-                      if(test.empty())
+                      if(!test.trim())
                       {
-                        alert('empty');
+                        alert(test);
                       }
                       else
                       {
-                        alert(test);
+                        alert('empty');
                       }
                     }); </script>";
 
