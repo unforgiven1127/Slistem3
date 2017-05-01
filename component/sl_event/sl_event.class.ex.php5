@@ -1195,7 +1195,7 @@ ChromePhp::log($psNoteType);
         $errorArray .= 'Grade should be selected<br>';
       }
     }
-
+ChromePhp::log($event_type);
     //SALARY CONTROL
 
     $salaryManual = getValue('salary');
@@ -1500,7 +1500,7 @@ ChromePhp::log($psNoteType);
     }
     else
     {
-ChromePhp::log('EDIT NOTE??');
+//ChromePhp::log('EDIT NOTE??');
       if((empty($event_type) && !getValue('delete_note')) || (empty($content) && !getValue('delete_note')))
         return array('error' => __LINE__.' - Can not create empty notes.');
 
@@ -1551,7 +1551,7 @@ ChromePhp::log('EDIT NOTE??');
 
       $asResult['timedUrl'] = '';
       $asResult['url'] = '';
-ChromePhp::log('EDIT HERE');
+
     }
 
     return $asResult;
