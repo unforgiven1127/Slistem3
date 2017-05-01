@@ -801,11 +801,6 @@ class CEventEx extends CEvent
 
   protected function _getEventSave($pnPk = 0, $pasEventData = array())
   {
-    return true;
-  }
-
-  protected function _getEventSave_($pnPk = 0, $pasEventData = array())
-  {
     if(!assert('is_integer($pnPk)'))
       return array('error' => __LINE__.' - Wrong parameter');
 
@@ -969,14 +964,14 @@ class CEventEx extends CEvent
       $sTitleEvent = $asItemData['label'];
 
       $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
-      //$oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
+      $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, $this->getAction(), CONST_EVENT_TYPE_EVENT, $asEvent['item_pk'], 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
 
       if($asEvent['item_type'] == 'ct')
       {
         $asManager = $oComponent->getAccountManager($asEvent['item_pk'], 'addressbook_contact');
         foreach($asManager as $nManagerFk)
         {
-          //$oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
+          $oLogin->logUserActivity($oLogin->getUserPk(), $this->_getUid(),$this->getAction(),CONST_EVENT_TYPE_EVENT, $nEventfk, 'New activity ['.$asEvent['type'].']', $sTitleEvent, $sUrl, $asEvent['item_pk'], $nManagerFk);
         }
       }
 
@@ -1055,7 +1050,7 @@ class CEventEx extends CEvent
         $sTitleEvent = $asItemData['label'];
 
         $sUrl = $oPage->getUrl($asEvent['item_uid'], $asEvent['item_action'], $asEvent['item_type'], $asEvent['item_pk']);
-        //$oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, CONST_ACTION_SAVEEDIT, CONST_EVENT_TYPE_EVENT, $pnPk, 'Activity updated ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
+        $oLogin->logUserActivity($oLogin->getUserPk(), $this->csUid, CONST_ACTION_SAVEEDIT, CONST_EVENT_TYPE_EVENT, $pnPk, 'Activity updated ['.$asEvent['type'].']', $sTitleEvent, $sUrl);
       }
 
       //------------------------------------------
