@@ -603,6 +603,7 @@ ChromePhp::log($psNoteType);
 
     if(!empty($sEventType) && !isset($asEvent[$sEventType]))
     {
+      ChromePhp::log('HERE HERE HERE');
       //a type that is not available for user selection
       //$oForm->addField('misc', '', array('type' => 'text', 'text' => $sEventType.' (can not be changed)', 'style' => 'position: absolute; right: 0;'));
       $oForm->addField('input', '', array('label'=>'Note type', 'value' => $sEventType.'     (can\'t be changed)', 'readonly' => 'readonly', 'style' => 'width: 250px; background-color: #efefef; font-style: italic;'));
