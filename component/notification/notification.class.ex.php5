@@ -1782,7 +1782,7 @@ class CNotificationEx extends CNotification
       $selectedCandidate = $explodedValue[1];
     }
 
-    $oForm->addField('input', 'selectedCandidate', array('label'=> 'Selected Candidate', 'class' => 'selectedCandidate', 'value' => $sCheckedValue));
+    $oForm->addField('input', 'selectedCandidate', array('disabled'=> 'disabled','label'=> 'Selected Candidate', 'class' => 'selectedCandidate', 'value' => $selectedCandidate));
 
     $oForm->addField('textarea', 'message', array('label'=> 'Your message', 'class' => 'msgField', 'value' => $oDbMeeting->getFieldValue('description')));
     $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
