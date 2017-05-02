@@ -55,7 +55,7 @@ class CItemSelector extends CField
         }
       }
     }
-ChromePhp::log($sFirstUrl);
+//ChromePhp::log($sFirstUrl);
 
     if(!assert('is_array($asAllItems) && !empty($asAllItems)'))
       return '';
@@ -76,7 +76,7 @@ ChromePhp::log($sFirstUrl);
       $autoFillType = $asValue[2];
       $sFirstUrl = str_replace('candi',$autoFillType,$sFirstUrl);
     }
-ChromePhp::log($sFirstUrl);
+//ChromePhp::log($sFirstUrl);
     set_array($this->casFieldParams['nbresult'], 1);
     $sHTML = '';
 
