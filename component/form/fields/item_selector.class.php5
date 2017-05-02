@@ -71,7 +71,12 @@ ChromePhp::log($sFirstUrl);
     else
       $sItemValue = $sItemPk = $sItemLabel = '';
 
-ChromePhp::log($sItemValue);
+    if(isset($asValue[2]))
+    {
+      $autoFillType = $asValue[2];
+      $sFirstUrl = str_replace('candi',$autoFillType,$sFirstUrl);
+    }
+ChromePhp::log($sFirstUrl);
     set_array($this->casFieldParams['nbresult'], 1);
     $sHTML = '';
 
