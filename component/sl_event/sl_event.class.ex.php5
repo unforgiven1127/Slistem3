@@ -1516,6 +1516,8 @@ ChromePhp::log($psNoteType);
         return $oPage->getAjaxExtraContent($asResult);
       }
 
+      ChromePhp::log($this->cnPk);
+      //updateNote($this->cnPk,$event_type,$content,$user_id);
       //$asResult = parent::_getEventSave($this->cnPk);
       /*if(isset($asResult['error']))
         return $oPage->getAjaxExtraContent($asResult);

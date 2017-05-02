@@ -3381,6 +3381,12 @@ var_dump($query);*/
     $result = $db_result->getAll();
   }
 
+  function updateNote($note_pk,$event_type,$content,$user_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $sDate = date('Y-m-d H:i:s');
+  }
+
   function updateCompanyLevel($company_id, $level,$user_id)
   {
     $oDB = CDependency::getComponentByName('database');
