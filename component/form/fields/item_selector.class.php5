@@ -71,7 +71,7 @@ ChromePhp::log($sFirstUrl);
     else
       $sItemValue = $sItemPk = $sItemLabel = '';
 
-
+ChromePhp::log($sItemValue);
     set_array($this->casFieldParams['nbresult'], 1);
     $sHTML = '';
 
@@ -91,7 +91,7 @@ ChromePhp::log($sFirstUrl);
     foreach($asAllItems as $asItemDetail)
     {
       $sValue = $asItemDetail[CONST_CP_UID].'|@|'.$asItemDetail[CONST_CP_ACTION].'|@|'.$asItemDetail[CONST_CP_TYPE];
-ChromePhp::log($sValue);
+
       if($sItemValue == $sValue)
         $sHTML.= '<option data-url="'.$asItemDetail['search_url'].'" value="'.$sValue.'" selected="selected">'.$asItemDetail['label'].'</option>';
       else
