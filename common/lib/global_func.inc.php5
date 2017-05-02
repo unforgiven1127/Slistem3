@@ -3388,6 +3388,8 @@ var_dump($query);*/
 
     $sQuery = "UPDATE event SET type = '".$event_type."', content = '".$content."', date_updated = '".$sDate."', updated_by = '".$user_id."' WHERE eventpk = '".$eventpk."' ";
 
+    ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
   }
 
