@@ -394,9 +394,9 @@ class CMenuEx extends CMenu
       return '';
 
     $sMenuName = 'menunav'.$pnMenuNumber;
-////ChromePhp::log$sMenuName);
+//////ChromePhp::log$sMenuName);
     $asMenu = $this->_oSettings->getSettingValue($sMenuName);
-////ChromePhp::log$asMenu);
+//////ChromePhp::log$asMenu);
 
     if(!is_array($asMenu) || empty($asMenu))
       return '';
@@ -454,12 +454,12 @@ class CMenuEx extends CMenu
       {
         foreach($asMenuArray as $asMenuItems)
         {
-////ChromePhp::log$asMenuItems);
+//////ChromePhp::log$asMenuItems);
           $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
           $onclickNew = "window.open('$mainPageUrl','_self');";
           if($asMenuItems['name'] == 'Reports')
           {
-            ChromePhp::log('Reports');
+            //ChromePhp::log('Reports');
             $onclickNew = "window.open('".$mainPageUrl."/index.php5?uid=555-006&amp;ppa=ppttc&amp;ppt=ttc&amp;ppk=0','_self');";
           }
           else if($asMenuItems['name'] == 'Add')
@@ -468,7 +468,7 @@ class CMenuEx extends CMenu
           }
           /*else if($asMenuItems['name'] == 'KPI - totals')
           {
-            ChromePhp::log('KPI - totals');
+            //ChromePhp::log('KPI - totals');
             $onclickNew = " localStorage.setItem('loginFlag', 'loginPage'); ";
           }
           else if($asMenuItems['name'] == 'Revenue chart')
@@ -687,7 +687,7 @@ class CMenuEx extends CMenu
     if(!$this->_canAccessMenu($asChildren))
       return '';
 
-    //ChromePhp::log($asChildren);
+    ////ChromePhp::log($asChildren);
 
     if(!isset($asChildren['onclick']))
     {

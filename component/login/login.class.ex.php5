@@ -1252,7 +1252,7 @@ class CLoginEx extends CLogin
     foreach($aoComponent as $oComponent)
     {
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
-      ////ChromePhp::log$asTab);
+      //////ChromePhp::log$asTab);
       if(!empty($asTab))
       {
         //$sFoldersUrl   = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
@@ -1438,7 +1438,7 @@ class CLoginEx extends CLogin
 
     signature_save($user_id, $signature);
 
-    ////ChromePhp::log'_saveSignature');
+    //////ChromePhp::log'_saveSignature');
 
     header("Location: https://beta2.slate.co.jp/");
     die();
@@ -2076,7 +2076,7 @@ class CLoginEx extends CLogin
 
   private function _getIdentification($pbIsAjax = false, $pnCookiePk = 0, $bRedirect = true)
   {
-ChromePhp::log('_getIdentification');
+//ChromePhp::log('_getIdentification');
     $oDB = CDependency::getComponentByName('database');
     $oSetting = CDependency::getComponentByName('settings');
 
@@ -2102,10 +2102,10 @@ ChromePhp::log('_getIdentification');
       //$sQuery.= ' AND BINARY `password` = '.$oDB->dbEscapeString($_POST['password']).') ';
       $sQuery.= ' AND `password_crypted` = '.$oDB->dbEscapeString($encrypted_password).') ';
     }
-//ChromePhp::log($sQuery);
+////ChromePhp::log($sQuery);
     $oDbResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oDbResult->readFirst();
-//ChromePhp::log($bRead);
+////ChromePhp::log($bRead);
     if(!$bRead)
       return array('error' => __LINE__.' -'.$this->casText['LOGIN_PASSWORD_INCORRECT']);
 
@@ -2166,16 +2166,16 @@ ChromePhp::log('_getIdentification');
       $sUrl = $oPage->getUrlHome();
 
     }
-ChromePhp::log($pbIsAjax);
+//ChromePhp::log($pbIsAjax);
     if($pbIsAjax)
     {
-ChromePhp::log('IF');
+//ChromePhp::log('IF');
       return array('url' => $sUrl);
     }
 
     if($bRedirect)
     {
-ChromePhp::log('ELSE');
+//ChromePhp::log('ELSE');
       $this->_redirectUser($sUrl);
     }
     else
@@ -2365,7 +2365,7 @@ ChromePhp::log('ELSE');
 
   private function _redirectUser($psUrl = '')
   {
-ChromePhp::log('_redirectUser');
+//ChromePhp::log('_redirectUser');
     $oPage = CDependency::getCpPage();
     if(empty($psUrl))
     {

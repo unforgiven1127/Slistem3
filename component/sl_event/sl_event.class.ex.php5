@@ -112,7 +112,7 @@ class CSl_eventEx extends CSl_event
     if(!assert('is_key($pnItemPk) && !empty($psItemType)'))
       return array();
 
-ChromePhp::log($psItemType);
+//ChromePhp::log($psItemType);
     $asNotes = array();
     $asNotes = $this->getNotes($pnItemPk, $psItemType, $psNoteType, $pasExcludeType);
 
@@ -253,7 +253,7 @@ ChromePhp::log($psItemType);
       $asItem = array('cp_uid' => '555-001', 'cp_action' => CONST_ACTION_VIEW,
         'cp_type' => $psItemType, 'cp_pk' => $pnItemPk, 'default_type' => $psLinkDefaultType);
 
-//ChromePhp::log($psLinkDefaultType);
+////ChromePhp::log($psLinkDefaultType);
       if($psLinkDefaultType == 'character')
         $sLabel = 'Add character assessment';
       //$sLabel = 'Add a character note';
@@ -265,7 +265,7 @@ ChromePhp::log($psItemType);
       $sHTML.= '<a href="javascript:;" onclick="'.$sJavascript.'">'.$sLabel.'</a>';
       $sHTML.= '</div>';
     }
-ChromePhp::log($psNoteType);
+//ChromePhp::log($psNoteType);
     if($psNoteType == 'character')
     {// girilen 6 not birlestiriliyor ve id lerini ; ile birlestiriyoruz
       $candidate_id = $pnItemPk;
@@ -401,7 +401,7 @@ ChromePhp::log($psNoteType);
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
-      ChromePhp::log('Here is the note');
+      //ChromePhp::log('Here is the note');
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
     }
     else
@@ -596,7 +596,7 @@ ChromePhp::log($psNoteType);
 
     $asEvent = getEventTypeList(false, $sCp_Type, CDependency::getCpLogin()->isAdmin());
     $sEventType = $oDbResult->getFieldValue('type');
-    ChromePhp::log($sEventType);
+    //ChromePhp::log($sEventType);
     /*if(empty($sEventType))
     {
       $sEventType = 'company';
@@ -624,13 +624,13 @@ ChromePhp::log($psNoteType);
     }
     else
     {
-//ChromePhp::log('sadsadsa sdadsadsa HERE');
+////ChromePhp::log('sadsadsa sdadsadsa HERE');
       $oForm->addField('select', 'event_type', array('label'=>'Note type', 'onchange' => 'if($(this).val() == \'character\'){ $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').show(); } else { $(this).closest(\'.ui-dialog\').find(\'.note_tip_container\').hide(); } '));
       $oForm->setFieldControl('event_type', array('jsFieldNotEmpty' => ''));
 
       if(empty($sEventType))
         $sEventType = getValue('default_type', 'note');
-//ChromePhp::log($sEventType);
+////ChromePhp::log($sEventType);
       foreach($asEvent as $asEvents)
       {
         if($sEventType == 'note' && $asEvents['value'] != 'character')// && $asEvents['value'] != 'character'
@@ -1041,7 +1041,7 @@ ChromePhp::log($psNoteType);
     if(!empty($pnLoginfk))
       $asEvent['loginfk'] = $pnLoginfk;
 
-////ChromePhp::log$asEvent['type']);
+//////ChromePhp::log$asEvent['type']);
 
     return parent::_getEventSave(0, $asEvent);
   }
@@ -1095,7 +1095,7 @@ ChromePhp::log($psNoteType);
     $EditTheNotes = getValue('EditTheNotes');
     $editFlag = false;
 
-    //////ChromePhp::log$EditTheNotes);
+    ////////ChromePhp::log$EditTheNotes);
     $editArray = array();
     if(isset($EditTheNotes) && !empty($EditTheNotes) && $EditTheNotes != false)
     {
@@ -1106,7 +1106,7 @@ ChromePhp::log($psNoteType);
         $explodedNote = explode(';',$value);
         $editArray[$explodedNote[0]] = $explodedNote[1];//type,id
       }
-      //////ChromePhp::log$EditTheNotes);
+      ////////ChromePhp::log$EditTheNotes);
     }
 
     $note_title = purify_html(getValue('title'));
@@ -1151,11 +1151,11 @@ ChromePhp::log($psNoteType);
       $note = $userName." edited note #".$this->cnPk;
     }
 
-////ChromePhp::log$event_type);
+//////ChromePhp::log$event_type);
     //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note) && !empty($candidate_id))
     {
-      //ChromePhp::log($note);
+      ////ChromePhp::log($note);
       insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
     }
 
@@ -1516,7 +1516,7 @@ ChromePhp::log($psNoteType);
         return $oPage->getAjaxExtraContent($asResult);
       }
 
-      ChromePhp::log($content);
+      //ChromePhp::log($content);
       updateNote($this->cnPk,$event_type,$content,$user_id);
       //$asResult = parent::_getEventSave($this->cnPk);
       /*if(isset($asResult['error']))
