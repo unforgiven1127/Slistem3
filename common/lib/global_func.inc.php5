@@ -3381,10 +3381,14 @@ var_dump($query);*/
     $result = $db_result->getAll();
   }
 
-  function updateNote($note_pk,$event_type,$content,$user_id)
+  function updateNote($eventpk,$event_type,$content,$user_id)
   {
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
+
+    $sQuery = "UPDATE event SET type = '".$event_type."', content = '".$content."', date_updated = '"$sDate"', updated_by = '".$user_id."' WHERE eventpk = '".$eventpk."' ";
+
+    $db_result = $oDB->executeQuery($sQuery);
   }
 
   function updateCompanyLevel($company_id, $level,$user_id)
