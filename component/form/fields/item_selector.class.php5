@@ -29,21 +29,21 @@ class CItemSelector extends CField
 
     $asAllItems = array();
     $sFirstUrl = '';
-ChromePhp::log($sFirstUrl);
+
     foreach((array)$this->casFieldParams['interface'] as $sInterface)
     {
       if(!empty($sInterface))
       {
         $asComponent = CDependency::getComponentUidByInterface($sInterface);
-ChromePhp::log($sFirstUrl);
+
         if(!empty($asComponent))
         {
           foreach($asComponent as $sUid)
           {
             $oComponent = CDependency::getComponentByUid($sUid);
-ChromePhp::log($sFirstUrl);
+
             $asItem = $oComponent->getComponentPublicItems('notification_item');
-ChromePhp::log($sFirstUrl);
+
             if(!empty($asItem))
             {
               $asAllItems = array_merge_recursive($asAllItems, $asItem);
@@ -91,6 +91,7 @@ ChromePhp::log($sFirstUrl);
     foreach($asAllItems as $asItemDetail)
     {
       $sValue = $asItemDetail[CONST_CP_UID].'|@|'.$asItemDetail[CONST_CP_ACTION].'|@|'.$asItemDetail[CONST_CP_TYPE];
+ChromePhp::log($sValue);
       if($sItemValue == $sValue)
         $sHTML.= '<option data-url="'.$asItemDetail['search_url'].'" value="'.$sValue.'" selected="selected">'.$asItemDetail['label'].'</option>';
       else
