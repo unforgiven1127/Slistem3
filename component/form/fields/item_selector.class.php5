@@ -52,6 +52,8 @@ class CItemSelector extends CField
         }
       }
     }
+ChromePhp::log($sFirstUrl);
+ChromePhp::log($asItem[0]['search_url']);
 ChromePhp::log($asItem);
     if(!assert('is_array($asAllItems) && !empty($asAllItems)'))
       return '';
