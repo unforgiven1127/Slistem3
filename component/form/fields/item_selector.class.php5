@@ -41,6 +41,7 @@ ChromePhp::log($sFirstUrl);
           foreach($asComponent as $sUid)
           {
             $oComponent = CDependency::getComponentByUid($sUid);
+ChromePhp::log($sFirstUrl);
             $asItem = $oComponent->getComponentPublicItems('notification_item');
 ChromePhp::log($sFirstUrl);
             if(!empty($asItem))
