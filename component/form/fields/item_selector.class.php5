@@ -52,7 +52,7 @@ class CItemSelector extends CField
         }
       }
     }
-
+ChromePhp::log($sFirstUrl);
     if(!assert('is_array($asAllItems) && !empty($asAllItems)'))
       return '';
 
