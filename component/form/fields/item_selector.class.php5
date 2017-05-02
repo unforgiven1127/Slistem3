@@ -29,18 +29,20 @@ class CItemSelector extends CField
 
     $asAllItems = array();
     $sFirstUrl = '';
+ChromePhp::log($sFirstUrl);
     foreach((array)$this->casFieldParams['interface'] as $sInterface)
     {
       if(!empty($sInterface))
       {
         $asComponent = CDependency::getComponentUidByInterface($sInterface);
+ChromePhp::log($sFirstUrl);
         if(!empty($asComponent))
         {
           foreach($asComponent as $sUid)
           {
             $oComponent = CDependency::getComponentByUid($sUid);
             $asItem = $oComponent->getComponentPublicItems('notification_item');
-
+ChromePhp::log($sFirstUrl);
             if(!empty($asItem))
             {
               $asAllItems = array_merge_recursive($asAllItems, $asItem);
@@ -53,8 +55,7 @@ class CItemSelector extends CField
       }
     }
 ChromePhp::log($sFirstUrl);
-ChromePhp::log($asItem[0]['search_url']);
-ChromePhp::log($asItem);
+
     if(!assert('is_array($asAllItems) && !empty($asAllItems)'))
       return '';
 
