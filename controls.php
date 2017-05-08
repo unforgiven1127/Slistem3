@@ -38,9 +38,10 @@ define('DB_SERVER_SLISTEM', '127.0.0.1');
 define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
-$memoryUsage = memory_get_usage();
-
-echo $memoryUsage;
+$memory_size = memory_get_usage();
+$memory_unit = array('Bytes','KB','MB','GB','TB','PB');
+// Display memory size into kb, mb etc.
+echo 'Used Memory : '.round($memory_size/pow(1024,($x=floor(log($memory_size,1024)))),2).' '.$memory_unit[$x]."\n";
 
 //echo phpinfo();
 
