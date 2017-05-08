@@ -1174,7 +1174,7 @@ class CSl_eventEx extends CSl_event
     $skillValues['skill_pl'] = getValue('skill_pl');
     $skillValues['skill_e'] = getValue('skill_e');
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK
-    //
+
     $errorArray = "";
 
     $status_update = getValue('status');
@@ -1492,13 +1492,11 @@ class CSl_eventEx extends CSl_event
     }
     else
     {
-
       if((empty($event_type) && !getValue('delete_note')) || (empty($content) && !getValue('delete_note')))
         return array('error' => __LINE__.' - Can not create empty notes.');
 
       $oPage = CDependency::getCpPage();
       $sURL = $oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, getValue(CONST_CP_TYPE), (int)getValue(CONST_CP_PK));
-
 
       if(!empty($this->cnPk) && getValue('delete_note') && CDependency::getCpLogin()->isAdmin())
       {
@@ -1510,17 +1508,16 @@ class CSl_eventEx extends CSl_event
       }
 //ChromePhp::log($this->cnPk);
       if($this->cnPk > 0)
-      {
+      {//update the note
         updateNote($this->cnPk,$event_type,$content,$user_id);
       }
       else
-      {
+      {// save the note
         $asResult = parent::_getEventSave($this->cnPk);
       }
       //$asResult = parent::_getEventSave($this->cnPk);
       /*if(isset($asResult['error']))
         return $oPage->getAjaxExtraContent($asResult);
-
 
       $sType = getValue('event_type');
       if($sType == 'cp_history')

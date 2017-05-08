@@ -20,7 +20,7 @@ header("Pragma: no-cache");
 $GLOBALS['redis'] = new Redis();
 $GLOBALS['redis']->pconnect('127.0.0.1');
 
-ini_set('memory_limit', '-1');
+//ini_set('memory_limit', '-1');
 //$nMemory = memory_get_usage();
 
 //prevent infinite loops if assert fires another assert (mailAssert) that is firing a new assert that ...
@@ -38,7 +38,11 @@ define('DB_SERVER_SLISTEM', '127.0.0.1');
 define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
-echo phpinfo();
+$memoryUsage = memory_get_usage();
+
+echo $memoryUsage;
+
+//echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
