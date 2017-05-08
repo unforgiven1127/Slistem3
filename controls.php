@@ -53,15 +53,17 @@ $mem = explode(" ", $free_arr[1]);
 $mem = array_filter($mem);
 $mem = array_merge($mem);
 $memory_usage = $mem[2]/$mem[1]*100;
+$memory_usage = round($memory_usage,2);
 
 
 $load = sys_getloadavg();
 $load = $load[0];
+$load = round($load,2);
 
 echo '<br><br>';
-echo $memory_usage;
+echo $memory_usage.'%';
 echo '<br>';
-echo $load;
+echo $load.'%';
 //echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
