@@ -1508,8 +1508,15 @@ class CSl_eventEx extends CSl_event
         unset($asResult['reload']);
         return $oPage->getAjaxExtraContent($asResult);
       }
-ChromePhp::log($this->cnPk);
-      updateNote($this->cnPk,$event_type,$content,$user_id);
+//ChromePhp::log($this->cnPk);
+      if($this->cnPk > 0)
+      {
+        updateNote($this->cnPk,$event_type,$content,$user_id);
+      }
+      else
+      {
+        $asResult = parent::_getEventSave($this->cnPk);
+      }
       //$asResult = parent::_getEventSave($this->cnPk);
       /*if(isset($asResult['error']))
         return $oPage->getAjaxExtraContent($asResult);
