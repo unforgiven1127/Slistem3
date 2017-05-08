@@ -43,9 +43,25 @@ $memory_unit = array('Bytes','KB','MB','GB','TB','PB');
 // Display memory size into kb, mb etc.
 echo 'Used Memory : '.round($memory_size/pow(1024,($x=floor(log($memory_size,1024)))),2).' '.$memory_unit[$x]."\n";
 
-echo '<br>';
+echo '<br><br>';
 echo ini_get('memory_limit');
 
+$free = shell_exec('free');
+$free = (string)trim($free);
+$free_arr = explode("\n", $free);
+$mem = explode(" ", $free_arr[1]);
+$mem = array_filter($mem);
+$mem = array_merge($mem);
+$memory_usage = $mem[2]/$mem[1]*100;
+
+
+$load = sys_getloadavg();
+$load = $load[0];
+
+echo '<br><br>';
+echo $memory_usage;
+echo '<br>';
+echo $load;
 //echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
