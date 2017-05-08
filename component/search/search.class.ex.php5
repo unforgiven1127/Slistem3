@@ -1199,7 +1199,7 @@ class CSearchEx extends CSearch
   public function buildComplexSearchQuery()
   {
     // sort ta da buraya
-//////ChromePhp::log'buildComplexSearchQuery');
+
     $bComplex = (bool)getValue('complex_mode', 0);
     $sCpUid = getValue('component_uid');
     $sDataType = getValue('data_type');
@@ -1393,8 +1393,6 @@ class CSearchEx extends CSearch
         else
         {
 
-        //////ChromePhp::log$sFieldName);
-        //////ChromePhp::log$vFieldValue);
           //fetch row data
           $sFieldOperator = @$_POST['field_operator'][$nGroup][$nRowNumber];
 
@@ -1445,7 +1443,6 @@ class CSearchEx extends CSearch
           $sCondition = '';
           if(!empty($asFieldData['sql']['unmanageable']))
           {
-            //////ChromePhp::log'IF');
             //replace template operator   !!! some type don't have any !!!
             $sOperator = $this->_getSqlOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
             $sCondition = str_replace('<YYY>', $sOperator, $asFieldData['sql']['unmanageable']);
@@ -1521,7 +1518,6 @@ class CSearchEx extends CSearch
           }
           else
           {
-            //////ChromePhp::log'else');
             // - - - - - - - - - - - - - - - - - - - - - - - -
             //Standard case: use default feature to build sql
 
@@ -1536,7 +1532,6 @@ class CSearchEx extends CSearch
               {
                 if(!empty($vValue))
                 {
-                  ////////ChromePhp::log'TEST');
                   if($sFieldName == 'company_prev')
                   {
                     $company_id = $vValue;
@@ -1547,11 +1542,10 @@ class CSearchEx extends CSearch
                     //$search_key = $company_name." ]";
 
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ';
-                    //////ChromePhp::log' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ');
+
                   }
                   else
                   {
-                    //////ChromePhp::log'else');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
@@ -1568,7 +1562,6 @@ class CSearchEx extends CSearch
                 //$asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 //$sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
                 $sCondition = "scan.sl_candidatepk NOT IN (select slm.candidatefk from sl_meeting slm where slm.meeting_done = '1')";
-                ////////ChromePhp::log$sCondition);
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
@@ -1585,7 +1578,7 @@ class CSearchEx extends CSearch
               }
             }
           }
-//////ChromePhp::log$sCondition);
+
           if(!empty($sCondition))
           {
             $asCondition[] = $sCondition;
@@ -1658,7 +1651,6 @@ class CSearchEx extends CSearch
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
 $asSql = $oQB->getSqlArray();
-//////ChromePhp::log$asSql);
 
     return $oQB;
   }

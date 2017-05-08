@@ -127,7 +127,6 @@ class CNotificationEx extends CNotification
 
   public function getCronJob()
   {
-    //////ChromePhp::log'getCronJob');
     $this->_executeCronAction();
     return '';
   }
@@ -346,7 +345,6 @@ class CNotificationEx extends CNotification
    */
   public function addReminder($psId, $pvRecipientfk, $psMessage, $psTitle = '', $psDate = null, $pnNaggy = 0, $psNagFreq = null, $pbIsHtml = false)
   {
-    ////////ChromePhp::log'addReminder');
     if(!isset($this->casInitId[$psId]) || empty($this->casInitId[$psId]))
     {
       assert('false; // no reminder ID... ');
@@ -423,7 +421,6 @@ class CNotificationEx extends CNotification
 
     if(!$nNotificationPk)
     {
-      ////////ChromePhp::log'fail?');
       assert('false; // failed to create the notification.');
       return 0;
     }
@@ -433,12 +430,9 @@ class CNotificationEx extends CNotification
     //Add a reference to the source component
     $asAdd = array_merge($this->casInitId[$psId], array('notificationfk' => $nNotificationPk, 'linked_to' => 'source'));
 
-    ////////ChromePhp::log$asAdd);
-
     $oDbResult = $this->_getModel()->add($asAdd, 'notification_link');
     if(!$oDbResult)
     {
-      ////////ChromePhp::log'fail 2?');
       assert('false; // could save the source reference of the reminder.');
       return 0;
     }
@@ -452,7 +446,6 @@ class CNotificationEx extends CNotification
       $nPk = $this->_getModel()->add($asAdd, 'notification_recipient');
       if(!$nPk)
       {
-        ////////ChromePhp::log'fail 3?');
         assert('false; // failed to create the notification recipient.');
         return 0;
       }
@@ -492,7 +485,7 @@ class CNotificationEx extends CNotification
      * - delivered = -2 if cancelled by user
      *
     */
-////////ChromePhp::log'_executeCronAction');
+
     //We'd rather be 15 minutes early than 15minute late, right ? NO
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
@@ -569,10 +562,6 @@ class CNotificationEx extends CNotification
 
   private function _executeAction($pasAction, $poMail, $pasUsers)
   {
-////////ChromePhp::log$pasUsers);
-////////ChromePhp::log$poMail);
-////////ChromePhp::log$pasAction);
-////////ChromePhp::log'_executeAction');
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
@@ -630,7 +619,7 @@ class CNotificationEx extends CNotification
       //start creating the mail content
 
       $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
-////////ChromePhp::log$message_info['type']);
+
       foreach ($user_messages as $message_info)
       {
 
@@ -658,7 +647,7 @@ class CNotificationEx extends CNotification
         {
 //reminder
 //$sSubject = CONST_APP_NAME.' reminder';
-////////ChromePhp::log'remainder');
+
           if($message_info['creatorfk'] == $message_info['loginfk'])
           {
             $sMessage.= 'You\'ve set a reminder for ';
@@ -740,14 +729,12 @@ class CNotificationEx extends CNotification
             $poMail->setReplyTo($value);
           }
           //$poMail->setReplyTo($sendCCString);
-          ////////ChromePhp::log$sendCCString);
+
         }
         else
         {
           $sReply = $pasUsers[$message_info['creatorfk']]['email'];
           $poMail->setReplyTo($sReply, $this->coLogin->getUserNameFromData($pasUsers[$message_info['creatorfk']], false, true));
-          ////////ChromePhp::log$sReply);
-          ////////ChromePhp::log$this->coLogin->getUserNameFromData($pasUsers[$message_info['creatorfk']], false, true));
         }
 
       }
@@ -760,12 +747,11 @@ class CNotificationEx extends CNotification
       $sSubject .= '__'.$sendCCString;//  Sl[i]stem daily reminders __ burada ekleniyor
 
       $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
-//////ChromePhp::log$nSent);
+
       add_remainder_log($message_info['notificationpk'],$sEmail);
 
       if($nSent)
       {
-        //////ChromePhp::log'IF');
         foreach ($user_messages as $message_info)
         {
           $sNagDate = $this->_getNextNagDate($message_info);
@@ -804,7 +790,6 @@ class CNotificationEx extends CNotification
       }
       else
       {
-        //////ChromePhp::log'ELSE');
         foreach ($user_messages as $message_info)
         {
           if((int)$message_info['delivered'] == 0)
@@ -1697,7 +1682,7 @@ class CNotificationEx extends CNotification
             alert('test MNR');
           };
         ");*/
-//////ChromePhp::log'disableButton');
+
         $oForm->setFormParams('reminderAddForm', true, array('action' => $sURL, 'class' => 'disableButton fullPageForm', 'submitLabel' => $sBtnLabel , 'onBeforeSubmit' => '$("#formSubmitButton").attr("disabled", true);'));
       }
 
@@ -1827,7 +1812,6 @@ class CNotificationEx extends CNotification
 
   private function _getReminderSave($pnReminderPk = 0)
   {
-    //////ChromePhp::log'_getReminderSave');
     if(!assert('is_integer($pnReminderPk)'))
       return array('error' => 'Bad parameters.');
 
@@ -2039,9 +2023,7 @@ class CNotificationEx extends CNotification
       $csUid = "555-001";
       $csAction = "ppav";
       $csType= "candi";
-//////ChromePhp::log$user_id);
-//////ChromePhp::log$target_candidate_id);
-//////ChromePhp::log$note);
+
       //$addLog = insertLog($user_id, $target_candidate_id, $note);
       $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
 

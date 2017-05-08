@@ -1252,7 +1252,7 @@ class CLoginEx extends CLogin
     foreach($aoComponent as $oComponent)
     {
       $asTab = $oComponent->getUserAccountTabData($this->getUserPk());
-      //////ChromePhp::log$asTab);
+
       if(!empty($asTab))
       {
         //$sFoldersUrl   = $oPage->getAjaxUrl('folder', CONST_ACTION_LIST, '', $this->casUserData['pk']);
@@ -1437,8 +1437,6 @@ class CLoginEx extends CLogin
     $signature = $_POST['signature'];
 
     signature_save($user_id, $signature);
-
-    //////ChromePhp::log'_saveSignature');
 
     header("Location: https://beta2.slate.co.jp/");
     die();
@@ -2076,7 +2074,7 @@ class CLoginEx extends CLogin
 
   private function _getIdentification($pbIsAjax = false, $pnCookiePk = 0, $bRedirect = true)
   {
-//ChromePhp::log('_getIdentification');
+
     $oDB = CDependency::getComponentByName('database');
     $oSetting = CDependency::getComponentByName('settings');
 
@@ -2102,10 +2100,10 @@ class CLoginEx extends CLogin
       //$sQuery.= ' AND BINARY `password` = '.$oDB->dbEscapeString($_POST['password']).') ';
       $sQuery.= ' AND `password_crypted` = '.$oDB->dbEscapeString($encrypted_password).') ';
     }
-////ChromePhp::log($sQuery);
+
     $oDbResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oDbResult->readFirst();
-////ChromePhp::log($bRead);
+
     if(!$bRead)
       return array('error' => __LINE__.' -'.$this->casText['LOGIN_PASSWORD_INCORRECT']);
 
@@ -2164,18 +2162,15 @@ class CLoginEx extends CLogin
       //no redirection => homepage
       $oPage = CDependency::getCpPage();
       $sUrl = $oPage->getUrlHome();
-
     }
-//ChromePhp::log($pbIsAjax);
+
     if($pbIsAjax)
     {
-//ChromePhp::log('IF');
       return array('url' => $sUrl);
     }
 
     if($bRedirect)
     {
-//ChromePhp::log('ELSE');
       $this->_redirectUser($sUrl);
     }
     else
@@ -2365,7 +2360,6 @@ class CLoginEx extends CLogin
 
   private function _redirectUser($psUrl = '')
   {
-//ChromePhp::log('_redirectUser');
     $oPage = CDependency::getCpPage();
     if(empty($psUrl))
     {

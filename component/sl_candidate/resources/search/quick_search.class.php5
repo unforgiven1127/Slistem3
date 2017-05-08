@@ -21,7 +21,6 @@ class CQuickSearch
    */
   public function buildQuickSearch($psDataType = '')
   {
-    //////ChromePhp::log$psDataType);
     if(empty($psDataType))
       $sDataType = getValue('data_type');
     else

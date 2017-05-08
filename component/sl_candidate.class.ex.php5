@@ -6335,7 +6335,6 @@ class CSl_candidateEx extends CSl_candidate
           }
         }
 
-
         if(!$bSaved)
         {
           assert('false; // Could not save the candidate profile.');

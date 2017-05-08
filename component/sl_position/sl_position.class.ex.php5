@@ -1176,8 +1176,6 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
           $user_id = $oLogin->getuserPk();
           $userInformation = getUserInformaiton($user_id);
 
-          //////ChromePhp::log$userInformation);
-
           //candidate can be pitched no matter his status, but it needs to be assessed to go further
           if($userInformation['loginpk'] != "101" && $nCurrentStatus!= 1  &&!empty($nCurrentStatus) && $asCandidate['status'] < 4)
           {
@@ -1855,7 +1853,7 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 
 
       $oLogin = CDependency::getComponentByName('login');
-      ////////ChromePhp::log$oLogin->getUserLink($pnUserPk));
+
       //3. add a system fallen off step
       foreach($asCandidate as $nCanduidatefk) // burada adaylar status 251 oluyor position filled
       {

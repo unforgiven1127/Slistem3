@@ -254,10 +254,7 @@
 				$line ++;?>
 				<div class="hover_row<?php echo $colored_row; ?>">
 				<?php
-					/*if(isset($data['user_id']) && $data['user_id'] == '521')
-					{
-						////ChromePhp::log$data);
-					}*/
+
 					if(isset($data['resumeSentFlag']))
 					{
 						if(isset($data['resumeSentCount']) && $data['resumeSentCount'] > 1)

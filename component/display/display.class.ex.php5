@@ -1087,7 +1087,6 @@ class CDisplayEx extends CDisplay
 
   private function _getUserMenuBloc($pbIsLogged)
   {
-    //////ChromePhp::log'_getUserMenuBloc');
     if(!$pbIsLogged)
        return '';
 
@@ -1961,11 +1960,9 @@ class CDisplayEx extends CDisplay
 
   public function render($filename, $data = array(),$fullPath = '')
   {
-    //////ChromePhp::log$fullPath);
     if($fullPath != '')
     {
       $file = $fullPath;
-      //////ChromePhp::log$file);
     }
     else
     {
