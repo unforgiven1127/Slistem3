@@ -43,6 +43,9 @@ $memory_unit = array('Bytes','KB','MB','GB','TB','PB');
 // Display memory size into kb, mb etc.
 echo 'Used Memory : '.round($memory_size/pow(1024,($x=floor(log($memory_size,1024)))),2).' '.$memory_unit[$x]."\n";
 
+echo '<br>';
+echo ini_get('memory_limit');
+
 //echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
