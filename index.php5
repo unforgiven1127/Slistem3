@@ -16,7 +16,7 @@ $GLOBALS['redis'] = new Redis();
 $GLOBALS['redis']->pconnect('127.0.0.1');
 
 //ini_set('memory_limit', '-1');
-set_time_limit(0);
+//set_time_limit(0);
 ignore_user_abort(1);
 //$nMemory = memory_get_usage();
 
