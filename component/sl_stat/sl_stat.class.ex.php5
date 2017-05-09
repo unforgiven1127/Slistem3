@@ -934,6 +934,7 @@ class CSl_statEx extends CSl_stat
     private function _getSicStat($sDateStart, $sDateEnd, $asUser, $nGroup, $psChartType = 'line',
       $pbReturnHtml = true, $group_name = 'researcher')
     {
+      ChromePhp::log('_getSicStat');
       $oDateStart = new DateTime($sDateStart);
       $oDateEnd = new DateTime($sDateEnd);
       $oInterval = $oDateEnd->diff($oDateStart);
