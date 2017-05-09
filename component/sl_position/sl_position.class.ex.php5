@@ -835,8 +835,8 @@ class CSl_positionEx extends CSl_position
           return array('error' => __LINE__.' - Error while saving the position.');
 
       }
-
-$GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
+      $_SESSION['savedPositionTitle'] = $asPosition['positionfk'];
+//$GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
 //setValue('title', $asPosition['positionfk']);
 
 
@@ -2663,8 +2663,10 @@ $GLOBALS['redis']->set('savedPositionTitle', $asPosition['positionfk']);
       if(!$bFilteredList)
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer'));
 
-      $afterSaveID = $GLOBALS['redis']->get('savedPositionTitle');
-      $GLOBALS['redis']->delete('savedPositionTitle'); // ekleme sonrasi ilk aramadan sonra redisi sil
+      $afterSaveID = $_SESSION['savedPositionTitle'];
+      unset($_SESSION['savedPositionTitle']);// ekleme sonrasi ilk aramadan sonra sil
+      //$afterSaveID = $GLOBALS['redis']->get('savedPositionTitle');
+      //$GLOBALS['redis']->delete('savedPositionTitle'); // ekleme sonrasi ilk aramadan sonra redisi sil
 
       $bSplitted = empty($poQb);
 
