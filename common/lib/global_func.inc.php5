@@ -4610,7 +4610,6 @@ var_dump($query);*/
 
   function mail_send($to,$cc,$bcc, $from, $subject, $message, $files)
   {
-    return true;
     $oMail = CDependency::getComponentByName('mail');
 
     $oMail->createNewEmail();
@@ -4637,7 +4636,7 @@ var_dump($query);*/
         $oMail->addBCCRecipient(trim($value));
       }
     }
-
+return true;
     $GLOBALS['redis']->set('emailTepmlate', false);
     $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
     $GLOBALS['redis']->set('emailTepmlate', true);
