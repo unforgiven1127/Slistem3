@@ -197,7 +197,7 @@ class CSl_statEx extends CSl_stat
   {
     $this->_processUrl();
 
-    $this->_getUserHomeChart();
+    //$this->_getUserHomeChart();
 
     return '';
   }
