@@ -3149,6 +3149,7 @@ class CSl_statEx extends CSl_stat
 
     private function _getUserHomeChart()
     {
+      ChromePhp::log('_getUserHomeChart');
       $login_obj = CDependency::getCpLogin();
       $users = $login_obj->getUserList(0, true, true);
       $user_ids = array_keys($users);
