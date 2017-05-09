@@ -1513,7 +1513,7 @@ class CSl_eventEx extends CSl_event
       }
       else
       {// save the note
-        $asResult = parent::_getEventSave($this->cnPk);
+        $asResult2 = parent::_getEventSave($this->cnPk);
       }
       //$asResult = parent::_getEventSave($this->cnPk);
       /*if(isset($asResult['error']))
