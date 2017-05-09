@@ -8956,9 +8956,10 @@ $bonusManual = getValue('bonus');
             $sNote = 'Candidate has been updated. Company changed from [ #'.$nCompany.' - '.$sFrom.'] ';
 
             //$nCompany = $this->casCandidateData['profile']['companyfk'];
-            $nCompany = $asData['companyfk'];
+            $nCompany = $nNewCompanyFk;
             $asCompany = $this->_getModel()->getCompanyData($nCompany);
-            $sNote.= 'to [ #'.$nCompany.' - '.$asCompany['name'].' ]<br />';
+            $company_info = getCompanyInformation($nNewCompanyFk);
+            $sNote.= 'to [ #'.$nNewCompanyFk.' - '.$company_info['name'].' ]<br />';
 
             //add a note from  system user
             $oNote->addNote($nCandidatePk, 'cp_history', $sNote, (int)$this->casUserData['pk']);
