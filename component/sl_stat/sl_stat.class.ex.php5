@@ -955,13 +955,18 @@ class CSl_statEx extends CSl_stat
       $asStatData['target'] = $this->_getModel()->getSicChartTarget($anUser);
 
 
-      if (empty($GLOBALS['redis']->get('play_'.$group_name)))
+      //if (empty($GLOBALS['redis']->get('play_'.$group_name)))
+      if(empty($_SESSION['play_'.$group_name]))
       {
         $temp = $this->_getModel()->get_new_in_play(0, $sDateStart, $sDateEnd, $group_name);
-        $GLOBALS['redis']->set('play_'.$group_name, json_encode($temp));
+        $_SESSION['play_'.$group_name] = son_encode($temp);
+        //$GLOBALS['redis']->set('play_'.$group_name, json_encode($temp));
       }
       else
-        $temp = json_decode($GLOBALS['redis']->get('play_'.$group_name), true);
+      {
+        $temp = json_decode($_SESSION['play_'.$group_name], true);
+        //$temp = json_decode($GLOBALS['redis']->get('play_'.$group_name), true);
+      }
 
       if (!empty($temp[$user_id]['in_play_info']['new_candidates']))
       {
@@ -994,15 +999,22 @@ class CSl_statEx extends CSl_stat
         $asStatData['position'][$user_id] = array();
 
 
-      if (empty($GLOBALS['redis']->get('met_'.$group_name)))
+      //if (empty($GLOBALS['redis']->get('met_'.$group_name)))
+      if(empty($_SESSION['met_'.$group_name]))
       {
         $temp = $this->_getModel()->getKpiSetVsMet($user_ids, $sDateStart, $sDateEnd, $group_name);
 
         if (!empty($temp))
-          $GLOBALS['redis']->set('met_'.$group_name, json_encode($temp));
+        {
+          $_SESSION['met_'.$group_name] = json_encode($temp);
+          //$GLOBALS['redis']->set('met_'.$group_name, json_encode($temp));
+        }
       }
       else
-        $temp = json_decode($GLOBALS['redis']->get('met_'.$group_name), true);
+      {
+        $temp = json_decode($_SESSION['met_'.$group_name], true);
+        //$temp = json_decode($GLOBALS['redis']->get('met_'.$group_name), true);
+      }
 
 
       if (!empty($temp[$user_id]['met_meeting_info']))
@@ -3147,10 +3159,15 @@ class CSl_statEx extends CSl_stat
 
       $this->_setCustomSize(240, 450);
 
-      $GLOBALS['redis']->set('play_researcher', '');
-      $GLOBALS['redis']->set('play_consultant', '');
-      $GLOBALS['redis']->set('met_researcher', '');
-      $GLOBALS['redis']->set('met_consultant', '');
+      $_SESSION['play_researcher'] = '';
+      $_SESSION['play_consultant'] = '';
+      $_SESSION['met_researcher'] = '';
+      $_SESSION['met_consultant'] = '';
+
+      //$GLOBALS['redis']->set('play_researcher', '');
+      //$GLOBALS['redis']->set('play_consultant', '');
+      //$GLOBALS['redis']->set('met_researcher', '');
+      //$GLOBALS['redis']->set('met_consultant', '');
 
       foreach($users as $user => $user_data)
       {
@@ -3183,7 +3200,12 @@ class CSl_statEx extends CSl_stat
 
       }
 
-      $GLOBALS['redis']->delete('play_researcher', 'play_consultant', 'met_researcher', 'met_consultant');
+      unset($_SESSION['play_researcher']);
+      unset($_SESSION['play_consultant']);
+      unset($_SESSION['met_researcher']);
+      unset($_SESSION['met_consultant']);
+
+      //$GLOBALS['redis']->delete('play_researcher', 'play_consultant', 'met_researcher', 'met_consultant');
 
     }
 
