@@ -180,8 +180,17 @@ class CDatabaseEx extends CDatabase
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
 
+    $free = shell_exec('free');
+    $free = (string)trim($free);
+    $free_arr = explode("\n", $free);
+    $mem = explode(" ", $free_arr[1]);
+    $mem = array_filter($mem);
+    $mem = array_merge($mem);
+    $memory_usage = $mem[2]/$mem[1]*100;
+    $memory_usage = round($memory_usage,2);
+
     $myfile = fopen("sqlTrack.txt", "a");
-    $txt = $psQuery."\n user id: ".$user_id." time interval: ".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
+    $txt = $psQuery."\n user id: ".$user_id." memory usage: ".$memory_usage."% time interval: ".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
     if($exec_time >= 3) //if sql takes longer than 5sec.
     {
