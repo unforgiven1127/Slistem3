@@ -348,7 +348,7 @@ class CMailEx extends CMail
   /*
    * Will return the email pk after email sent and logged in DB
   */
-  public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array())
+  public function send($psSubject, $psContent, $psTextContent = '', $pasAttachement = array(), $psTemplate = '', $pasTemplateVar = array(),$emailTepmlate = true)
   {
     if(!assert('!empty($psSubject) && !empty($psContent)'))
      return 0;
@@ -373,7 +373,7 @@ class CMailEx extends CMail
 
     //------------------------------------------------
     // apply a template if none have been set
-    $emailTepmlate = $GLOBALS['redis']->get('emailTepmlate');
+    //$emailTepmlate = $GLOBALS['redis']->get('emailTepmlate');
     if(empty($this->csTemplate) && $emailTepmlate)
     {
       $this->loadTemplate($psTemplate, $pasTemplateVar);
