@@ -38,13 +38,13 @@ define('DB_SERVER_SLISTEM', '127.0.0.1');
 define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
-$memory_size = memory_get_usage();
-$memory_unit = array('Bytes','KB','MB','GB','TB','PB');
+//$memory_size = memory_get_usage();
+//$memory_unit = array('Bytes','KB','MB','GB','TB','PB');
 // Display memory size into kb, mb etc.
-echo 'Used Memory : '.round($memory_size/pow(1024,($x=floor(log($memory_size,1024)))),2).' '.$memory_unit[$x]."\n";
+//echo 'Used Memory : '.round($memory_size/pow(1024,($x=floor(log($memory_size,1024)))),2).' '.$memory_unit[$x]."\n";
 
-echo '<br><br>';
-echo ini_get('memory_limit');
+//echo '<br><br>';
+echo 'Memory limit: '.ini_get('memory_limit');
 
 $free = shell_exec('free');
 $free = (string)trim($free);
@@ -61,9 +61,9 @@ $load = $load[0];
 $load = round($load,2);
 
 echo '<br><br>';
-echo $memory_usage.'%';
+echo 'Memory usage: '.$memory_usage.'%';
 echo '<br>';
-echo $load.'%';
+echo 'CPU usage: '.$load.'%';
 //echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
