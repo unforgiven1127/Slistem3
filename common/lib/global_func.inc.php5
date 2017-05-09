@@ -4636,10 +4636,10 @@ var_dump($query);*/
         $oMail->addBCCRecipient(trim($value));
       }
     }
-return true;
-    $GLOBALS['redis']->set('emailTepmlate', false);
+//
+    //$GLOBALS['redis']->set('emailTepmlate', false);
     $oResult = $oMail->send($subject, $message,'',$files);//, '', $attachment
-    $GLOBALS['redis']->set('emailTepmlate', true);
+    //$GLOBALS['redis']->set('emailTepmlate', true);
     return $oResult;
   }
 
