@@ -8513,7 +8513,7 @@ die();*/
         $asData['date_updated'] = date('Y-m-d H:i:s');
         $asData['updated_by'] = $this->casUserData['pk'];
       }
-
+      $nNewCompanyFk = (int)getValue('companypk');
       if($pbTest)
       {
         //First form section
@@ -8538,7 +8538,6 @@ die();*/
         $asData['nationalityfk'] = (int)getValue('nationality');
         $asData['locationfk'] = (int)getValue('location');
 
-        $nNewCompanyFk = (int)getValue('companypk');
         $asData['companyfk'] = $nNewCompanyFk;
         $asData['occupationfk'] = (int)getValue('occupationpk');
         $asData['industryfk'] = (int)getValue('industrypk');
