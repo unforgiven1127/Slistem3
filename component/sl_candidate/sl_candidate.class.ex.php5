@@ -6909,7 +6909,7 @@ class CSl_candidateEx extends CSl_candidate
       //********FILE UPLOAD**********
 
 
-      $result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$uploaded_files);
+      //$result = mail_send($email,$cc,$bcc, $user_email, $subject, $message,$uploaded_files);
 
       $_POST['candidate'] = (int)$candidate_id;
       //$candidate_list = $this->_getCandidateList();
