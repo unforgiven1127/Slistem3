@@ -4600,7 +4600,7 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
     $dNow = date('Y-m-d H:i:s');
 
-    $sQuery = "UPDATE sl_contact set date_update = '".$dNow."', updated_by = '".$user_id."', description = '".$description."' WHERE itemfk = '".$candidate_id."' AND item_type = 'candi' AND type = '2'";
+    $sQuery = "UPDATE sl_contact set date_update = '".$dNow."', updated_by = '".$user_id."', description = '".$description."' WHERE itemfk = '".$candidate_id."' AND item_type = 'candi' AND type = '2' AND (description IS NULL OR description = '')";
 
     $db_result = $oDB->executeQuery($sQuery);
 
