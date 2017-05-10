@@ -8495,6 +8495,9 @@ die();*/
 
       $asError = array();
 
+      $oLogin = CDependency::getCpLogin();
+      $user_id = $oLogin->getUserPk();
+
       if(empty($pnCandidatePk))
       {
         $nCandidatePk = $nProfilePk = 0;
@@ -8954,6 +8957,8 @@ $bonusManual = getValue('bonus');
             $sFrom = $asCompany['name'];
             $sNote = 'Candidate has been updated. Company changed from [ #'.$nCompany.' - '.$sFrom.'] ';
 
+            $description = 'Old company work phone for :'.'[ #'.$nCompany.' - '.$sFrom.'] ';
+            update_contact_note($nCandidatePk, $user_id, $description);
             //$nCompany = $this->casCandidateData['profile']['companyfk'];
             $nCompany = $nNewCompanyFk;
             $asCompany = $this->_getModel()->getCompanyData($nCompany);

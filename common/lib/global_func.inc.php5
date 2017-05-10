@@ -4595,6 +4595,18 @@ var_dump($query);*/
 
   }
 
+  function update_contact_note($candidate_id, $user_id, $description)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $dNow = date('Y-m-d H:i:s');
+
+    $sQuery = "UPDATE sl_contact set date_update = '".$dNow."', updated_by = '".$user_id."', description = '".$description."' WHERE itemfk = '".$candidate_id."' AND item_type = 'candi' AND type = '2'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    return $db_result;
+  }
+
   function signature_save($user_id, $signature)
   {
     //html_signature
