@@ -427,17 +427,21 @@ class CCandi_row extends CTemplate
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag']);
         $asOption['sort_value'] = (int)$pasData['lastNote'];
         $note_date = '-';
+        $note_content = '-';
         if(!empty($pasData['note_date']))
         {
           $note_date = $pasData['note_date'];
         }
+        if(isset($pasData['note_content']))
+        {
+          $note_content = htmlentities($pasData['note_content']);
+          $note_content = str_replace(array('"', '\''), '&quot;', $note_content);
+        }
         if(!empty($note_date))
         {
-          $pasData['note_content'] = htmlentities($pasData['note_content']);
-          $pasData['note_content'] = str_replace(array('"', '\''), '&quot;', $pasData['note_content']);
 
           $asOption['class'].= ' tplCandi_note';
-          $asOption['title'] = "<div class=\'list_note_title\'>Last entry on the <span>".$note_date."</span></div>". $pasData["note_content"];
+          $asOption['title'] = "<div class=\'list_note_title\'>Last entry on the <span>".$note_date."</span></div>". $note_content;
           $asOption['onmouseover'] = ' $(this).tooltip({content: function(){ return $(this).attr(\'title\'); }}).mouseenter(); ';
           //$asOption['onmouseover'] = ' $(this).tooltip({content: function(){ return $(this).attr(\'title\'); }}); ';
           //$asOption['onmouseout'] = "alert('test')"; // works
