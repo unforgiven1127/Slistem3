@@ -202,8 +202,8 @@ class CCandi_row extends CTemplate
         $nValue = 0;
       }
 
-
-      if($alreadyPlaced && $CandidatePlacedFlag)
+      $iconAlreadyAddedFlag = strpos($asOption['class'], 'tplCandi_status_placed');
+      if($alreadyPlaced && $CandidatePlacedFlag && !$iconAlreadyAddedFlag)
       {
         $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
       }

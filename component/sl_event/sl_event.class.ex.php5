@@ -1444,7 +1444,7 @@ class CSl_eventEx extends CSl_event
             $updates['targetTo_update'] = $newTargetHigh;
 
             /*if($updates['isClient_update'] == 'on')
-            {
+            {// removed from the gui
               $updates['isClient_update'] = 1;
             }
             else
