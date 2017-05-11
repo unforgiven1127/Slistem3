@@ -3806,7 +3806,7 @@ var_dump($query);*/
     {
       return 'clientLevelC';
     }
-    else if($level == 4)
+    else if($level == 8)
     {
       return 'clientLevelH';
     }
