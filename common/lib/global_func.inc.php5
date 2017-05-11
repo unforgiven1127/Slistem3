@@ -3412,7 +3412,7 @@ var_dump($query);*/
     $db_result = $oDB->executeQuery($sQuery);
 
     $sQuery = "UPDATE sl_candidate SET statusfk = '".$updates['status_update']."', cpa = '".$updates['cpa']."',mba = '".$updates['mba']."'  WHERE sl_candidatepk = '".$candidate_id."'";
-
+ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
 
