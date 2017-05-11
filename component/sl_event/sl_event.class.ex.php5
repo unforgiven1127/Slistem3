@@ -1434,7 +1434,7 @@ class CSl_eventEx extends CSl_event
             $updates['status_update'] = getValue('status');
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
-            $updates['isClient_update'] = getValue('client');
+            //$updates['isClient_update'] = getValue('client');
             $updates['currency_update'] = getValue('salary_currency');
             $updates['salaryUnit_update'] = getValue('salary_unit');
 
@@ -1443,14 +1443,14 @@ class CSl_eventEx extends CSl_event
             $updates['targetLow_update'] = $newTargetLow;
             $updates['targetTo_update'] = $newTargetHigh;
 
-            if($updates['isClient_update'] == 'on')
+            /*if($updates['isClient_update'] == 'on')
             {
               $updates['isClient_update'] = 1;
             }
             else
             {
               $updates['isClient_update'] = 0;
-            }
+            }*/
 
             $updates['cpa'] = 0;
             $updates['mba'] = 0;
