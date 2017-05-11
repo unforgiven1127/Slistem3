@@ -3241,7 +3241,7 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "cp_client")
           {
-            $sQuery.= ' ORDER BY IF(scom.level=0, 999999999, scom.level) ';
+            $sQuery.= ' ORDER BY IF(scom.level=0, 999999999, scom.level '.$sSortOrder.') ';
             //$sQuery.= ' ORDER BY scom.level '.$sSortOrder." ";
             //$sQuery.= ' ORDER BY scan.is_client '.$sSortOrder." ,cp_client ".$sSortOrder." ";
           }
