@@ -570,13 +570,21 @@ class CNotificationEx extends CNotification
     $ccArray = array();
     foreach ($pasAction as $id => $value)
     {
-      $ccArray[] = $pasUsers[$id]['email'];
+      if(isset($pasUsers[$id]['email']))
+      {
+        $ccArray[] = $pasUsers[$id]['email'];
+      }
     }
 
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
     $senderInfo = getUserInformaiton($user_id);
-    $sendetEmail = $senderInfo['email'];
+
+    $sendetEmail = 'admin@slate.co.jp';
+    if(isset($senderInfo['email']))
+    {
+      $sendetEmail = $senderInfo['email'];
+    }
     $ccArray[] = $sendetEmail;
 
     foreach ($pasAction as $id => $user_messages)
