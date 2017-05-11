@@ -416,6 +416,12 @@ class CCandi_row extends CTemplate
 
       if(isset($pasHeader['lastNote']))
       {
+        if($pasData['sl_candidatepk'] == 190928)
+        {
+          ChromePhp::log('lastNote');
+          ChromePhp::log($pasHeader);
+          ChromePhp::log($pasData);
+        }
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag']);
