@@ -223,7 +223,7 @@
 						<input type="text" name="keyword" value="<?php echo $keyword; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">Is client: </div>
-					<div class="general_form_column" style='font-weight: bold; margin-top: 5px;' >
+					<div class="general_form_column" style='font-weight: bold; margin-top: 2px;' >
 						<?php echo $isClient; ?>
 					</div>
 					<!--<div class="general_form_column">
