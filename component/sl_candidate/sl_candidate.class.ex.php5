@@ -7010,6 +7010,8 @@ ChromePhp::log($sQuery);
       $asAttribute = array();
       $parameters = array();
 
+      $isClient = "No client.";
+
       if(empty($pnCandidatePk))
       {
 
@@ -7120,7 +7122,11 @@ ChromePhp::log($sQuery);
       if($oDbResult->getFieldValue('companyfk'))
       {
         $company_id = $oDbResult->getFieldValue('companyfk');
-        ChromePhp::log($company_id);
+        $company_information = getCompanyInformation($company_id);
+        if($company_information['level'] > 0 && $company_information['level'] < 5)
+        {
+          $isClient = "Client.";
+        }
 
         $company_token = '[{id:"'.$oDbResult->getFieldValue('companyfk').'",
           name:"#'.$oDbResult->getFieldValue('companyfk').' - '.$oDbResult->getFieldValue('company_name').'"}]';
@@ -7372,6 +7378,7 @@ ChromePhp::log($sQuery);
         'contact_details_form' => $contact_details_form, 'year_range' => $sYearRange, 'sYearRangeToday' => $sYearRangeToday
       );
 
+      $data['isClient'] = $isClient;
 
       $sHTML = $this->_oDisplay->render('candidate_add', $data);
 
