@@ -223,7 +223,7 @@
 						<input type="text" name="keyword" value="<?php echo $keyword; ?>" />
 					</div>
 					<div class="general_form_label add_margin_left_30">Is client: </div>
-					<div><?php echo $isClient; ?></div>
+					<div class="general_form_column" ><?php echo $isClient; ?></div>
 					<!--<div class="general_form_column">
 						<input id="is_client" class="css-checkbox" type="checkbox" name="client"
 							<?php if (!empty($is_client)) echo 'checked'; ?> />
