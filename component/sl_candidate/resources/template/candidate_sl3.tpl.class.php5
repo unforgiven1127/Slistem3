@@ -217,7 +217,7 @@ class CCandidate_sl3 extends CTemplate
     $deletedClass = '';
     $labelClass = 'candi_detail_label';
 
-    if($company_info['is_client'] == 1 && $level >0)//$pasCandidateData['cp_client'] || vardi kaldirdik
+    if($level >0)//$company_info['is_client'] == 1 && //$pasCandidateData['cp_client'] || vardi kaldirdik
     {
       $labelClass = 'candi_detail_label2';
       $deletedClass = ' deletedClass ';
