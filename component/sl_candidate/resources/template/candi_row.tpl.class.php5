@@ -29,6 +29,12 @@ class CCandi_row extends CTemplate
     $oDisplay = CDependency::getCpHtml();
     $oLogin = CDependency::getCpLogin();
 
+    if($pasData['sl_candidatepk'] == 190928)
+    {
+      ChromePhp::log($pasHeader);
+      ChromePhp::log($pasData);
+    }
+
     if(empty($pasData['_is_admin']) && $pasData['_sys_redirect'] > 0)
       $nCandidatePk = $pasData['_sys_redirect'];
     else
