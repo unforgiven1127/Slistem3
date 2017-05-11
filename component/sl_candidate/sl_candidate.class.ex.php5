@@ -3029,7 +3029,7 @@ class CSl_candidateEx extends CSl_candidate
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
           (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
           scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
-          TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'") AS age,
+          TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'") AS age, scom.level as level,
           scan.sl_candidatepk as PK');
 
       $poQB->addCountSelect('count(DISTINCT scan.sl_candidatepk) as nCount');
@@ -3241,7 +3241,8 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "cp_client")
           {
-            $sQuery.= ' ORDER BY scan.is_client '.$sSortOrder." ,cp_client ".$sSortOrder." ";
+            $sQuery.= ' ORDER BY scom.level '.$sSortOrder." ";
+            //$sQuery.= ' ORDER BY scan.is_client '.$sSortOrder." ,cp_client ".$sSortOrder." ";
           }
           else if($sSortField == "_in_play")
           {
