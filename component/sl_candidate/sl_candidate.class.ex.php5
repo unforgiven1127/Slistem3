@@ -7057,9 +7057,6 @@ ChromePhp::log($sQuery);
               'company_name' => $oDbResult->getFieldValue('company_name'),
               'industryfk' => (int)$oDbResult->getFieldValue('industryfk'));
 
-          $company_id = (int)$oDbResult->getFieldValue('companyfk');
-          ChromePhp::log($company_id);
-
           $oDbResult = new CDbResult();
           foreach($asToKeep as $sField => $vValue)
             $oDbResult->setFieldValue($sField, $vValue);
@@ -7122,6 +7119,9 @@ ChromePhp::log($sQuery);
 
       if($oDbResult->getFieldValue('companyfk'))
       {
+        $company_id = $oDbResult->getFieldValue('companyfk');
+        ChromePhp::log($company_id);
+
         $company_token = '[{id:"'.$oDbResult->getFieldValue('companyfk').'",
           name:"#'.$oDbResult->getFieldValue('companyfk').' - '.$oDbResult->getFieldValue('company_name').'"}]';
       }
