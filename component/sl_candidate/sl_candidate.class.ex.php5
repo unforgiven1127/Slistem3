@@ -5778,7 +5778,7 @@ ChromePhp::log($sQuery);
             $updates['status_update'] = getValue('status');
             $updates['mba_update'] = getValue('diploma');
             $updates['keyword_update'] = getValue('keyword');
-            //$updates['isClient_update'] = getValue('client');
+            $updates['isClient_update'] = getValue('client');
             //$updates['salary_update'] = getValue('salary');
             //$updates['bonus_update'] = getValue('bonus');
             //$updates['targetLow_update'] = getValue('target_low');
@@ -5791,14 +5791,14 @@ ChromePhp::log($sQuery);
             $updates['targetLow_update'] = $newTargetLow;
             $updates['targetTo_update'] = $newTargetHigh;
 
-            /*if($updates['isClient_update'] == 'on')
+            if($updates['isClient_update'] == 'on')
             {
               $updates['isClient_update'] = 1;
             }
             else
             {
               $updates['isClient_update'] = 0;
-            }*/
+            }
 
             $updates['cpa'] = 0;
             $updates['mba'] = 0;
