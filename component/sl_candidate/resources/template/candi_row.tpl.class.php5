@@ -29,12 +29,6 @@ class CCandi_row extends CTemplate
     $oDisplay = CDependency::getCpHtml();
     $oLogin = CDependency::getCpLogin();
 
-    if($pasData['sl_candidatepk'] == 190928)
-    {
-      ChromePhp::log($pasHeader);
-      ChromePhp::log($pasData);
-    }
-
     if(empty($pasData['_is_admin']) && $pasData['_sys_redirect'] > 0)
       $nCandidatePk = $pasData['_sys_redirect'];
     else
@@ -422,12 +416,17 @@ class CCandi_row extends CTemplate
           ChromePhp::log($pasHeader);
           ChromePhp::log($pasData);
         }
+
+        $candidateLastNote = getSelectedNote($pasHeader['lastNote']);
+
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag']);
         $asOption['sort_value'] = (int)$pasData['lastNote'];
-        $note_date = '-';
-        $note_content = '-';
+
+        $note_date = $candidateLastNote['date_create'];
+        $note_content = $candidateLastNote['content'];
+
         if(!empty($pasData['note_date']))
         {
           $note_date = $pasData['note_date'];

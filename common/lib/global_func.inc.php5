@@ -5024,6 +5024,21 @@ var_dump($query);*/
     return $result;
   }
 
+  function getSelectedNote($id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT e.* FROM event_link el
+               INNER JOIN event e on e.eventpk = el.eventfk
+               WHERE el.event_linkpk = '".$id."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getSelectedSlNote($id)
   {
     $oDB = CDependency::getComponentByName('database');
