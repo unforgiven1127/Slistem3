@@ -178,7 +178,7 @@ class CCandi_row extends CTemplate
         $placementCount = getCandidatePlacementCount($candidate_id);
         //ChromePhp::log($placementCount);
         $placementCount = $placementCount[0]['placement_count'];
-        //$asOption['class'].= ' tplCandi_status_placed';
+        $asOption['class'].= ' _tplCandi_status_placed';
         //$sValue = ' placed';
         $asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
@@ -207,13 +207,13 @@ class CCandi_row extends CTemplate
         $nValue = 0;
       }
 
-      $iconAlreadyAddedFlag = strpos($asOption['class'], 'tplCandi_status_placed');
+      $iconAlreadyAddedFlag = strpos($asOption['class'], '_tplCandi_status_placed');
       if($alreadyPlaced && $CandidatePlacedFlag && !$iconAlreadyAddedFlag)
       {
         $placementCount = getCandidatePlacementCount($candidate_id);
         //ChromePhp::log($placementCount);
         $placementCount = $placementCount[0]['placement_count'];
-        //$asOption['class'].= ' tplCandi_status_placed';
+        $asOption['class'].= ' _tplCandi_status_placed';
         //$asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
         //$sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
