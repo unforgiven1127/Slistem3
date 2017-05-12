@@ -176,7 +176,8 @@ class CCandi_row extends CTemplate
       elseif($lastStatus == 101)//$pasData['_pos_status']
       {
         $placementCount = getCandidatePlacementCount($candidate_id);
-        $placementCount = $placementCount[0]['placement_count'];
+        ChromePhp::log($placementCount);
+        //$placementCount = $placementCount[0]['placement_count'];
         $asOption['class'].= ' tplCandi_status_placed';
         //$sValue = ' placed';
         $asOption['title'] = 'Candidate has been placed';
@@ -209,7 +210,8 @@ class CCandi_row extends CTemplate
       if($alreadyPlaced && $CandidatePlacedFlag && !$iconAlreadyAddedFlag)
       {
         $placementCount = getCandidatePlacementCount($candidate_id);
-        $placementCount = $placementCount[0]['placement_count'];
+        ChromePhp::log($placementCount);
+        //$placementCount = $placementCount[0]['placement_count'];
         $asOption['class'].= ' tplCandi_status_placed';
         $asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
