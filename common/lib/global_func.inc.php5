@@ -5031,7 +5031,7 @@ var_dump($query);*/
     $sQuery = "SELECT count(*) as placement_count
     FROM sl_position_link slpl
     WHERE slpl.candidatefk = '".$candidate_id."' AND slpl.ststus = 101";
-
+ChromePhp::log($sQuery);
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
