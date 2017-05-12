@@ -449,7 +449,7 @@ class CCandi_row extends CTemplate
         {
 
           $asOption['class'].= ' tplCandi_note';
-          $asOption['title'] = "<div class=\'list_note_title\'>Last entry on the <span>".$note_date."</span></div>". $note_content;
+          $asOption['title'] = "<div class=\'list_note_title\'>Last entry on the <span>".substr($note_date,0,12)."</span></div>". $note_content;
           $asOption['onmouseover'] = ' $(this).tooltip({content: function(){ return $(this).attr(\'title\'); }}).mouseenter(); ';
           //$asOption['onmouseover'] = ' $(this).tooltip({content: function(){ return $(this).attr(\'title\'); }}); ';
           //$asOption['onmouseout'] = "alert('test')"; // works
