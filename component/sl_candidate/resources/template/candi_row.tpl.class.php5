@@ -424,8 +424,17 @@ class CCandi_row extends CTemplate
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag']);
         $asOption['sort_value'] = (int)$pasData['lastNote'];
 
-        $note_date = $candidateLastNote['date_create'];
-        $note_content = $candidateLastNote['content'];
+        $note_date = '-';
+        $note_content = '-';
+
+        if(isset($candidateLastNote[0]['date_create']))
+        {
+          $note_date = $candidateLastNote[0]['date_create'];
+        }
+        if(isset($candidateLastNote[0]['content']))
+        {
+          $note_content = $candidateLastNote[0]['content'];
+        }
 
         if(!empty($pasData['note_date']))
         {
