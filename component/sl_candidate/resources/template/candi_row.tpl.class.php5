@@ -410,13 +410,7 @@ class CCandi_row extends CTemplate
 
       if(isset($pasHeader['lastNote']))
       {
-        if($pasData['sl_candidatepk'] == 190928)
-        {
-          ChromePhp::log('lastNote');
-          ChromePhp::log($pasHeader);
-          ChromePhp::log($pasData);
-        }
-
+        //paste character note if exists else last note.
         $candidateLastNote = getSelectedNote($pasData['lastNote']);
 
         set_array($pasColumnParam[$nColNumber]['tag'], '');
@@ -434,6 +428,8 @@ class CCandi_row extends CTemplate
         if(isset($candidateLastNote[0]['content']))
         {
           $note_content = $candidateLastNote[0]['content'];
+          $note_content = htmlentities($note_content);
+          $note_content = str_replace(array('"', '\''), '&quot;', $note_content);
         }
 
         if(!empty($pasData['note_date']))
