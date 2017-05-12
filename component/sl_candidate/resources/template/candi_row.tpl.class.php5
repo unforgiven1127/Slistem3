@@ -221,7 +221,7 @@ class CCandi_row extends CTemplate
                     <table>
                       <tr>
                         <td><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></td>
-                        <td>(3X)</td>
+                        <td style='z-index:999;'>(3X)</td>
                       </tr>
                     </table>
                    </div>";
