@@ -182,8 +182,8 @@ class CCandi_row extends CTemplate
         //$sValue = ' placed';
         $asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
-        $sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
-        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+        //$sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
+        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>(".$placementCount.")</div>";
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
@@ -216,8 +216,8 @@ class CCandi_row extends CTemplate
         //$asOption['class'].= ' tplCandi_status_placed';
         //$asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
-        $sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
-        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+        //$sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
+        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>(".$placementCount.")</div>";
       }
 
     }
