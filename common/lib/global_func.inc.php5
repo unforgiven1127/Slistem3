@@ -5024,6 +5024,21 @@ var_dump($query);*/
     return $result;
   }
 
+  function getCandidatePlacementCount($candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT count(*) as placement_count
+    FROM sl_position_link slpl
+    WHERE slpl.candidatefk = '".$candidate_id."' AND slpl.ststus = 101";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getSelectedNote($id)
   {
     $oDB = CDependency::getComponentByName('database');
