@@ -217,7 +217,15 @@ class CCandi_row extends CTemplate
         //$asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
         //$sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
-        $sValue.= "<div style='margin-top:5px;'>(X".$placementCount.")<img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+        $sValue.= "<div style='margin-top:5px;'>
+                    <table>
+                      <tr>
+                        <td><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></td>
+                        <td>(3X)</td>
+                      </tr>
+                    </table>
+                   </div>";
+        //$sValue.= "<div style='margin-top:5px;'>(X".$placementCount.")<img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
       }
 
     }
