@@ -178,11 +178,12 @@ class CCandi_row extends CTemplate
         $placementCount = getCandidatePlacementCount($candidate_id);
         //ChromePhp::log($placementCount);
         $placementCount = $placementCount[0]['placement_count'];
-        $asOption['class'].= ' tplCandi_status_placed';
+        //$asOption['class'].= ' tplCandi_status_placed';
         //$sValue = ' placed';
         $asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
         $sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
+        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
       }
       elseif($lastStatus == 151)//$pasData['_pos_status']
       {
@@ -212,11 +213,11 @@ class CCandi_row extends CTemplate
         $placementCount = getCandidatePlacementCount($candidate_id);
         //ChromePhp::log($placementCount);
         $placementCount = $placementCount[0]['placement_count'];
-        $asOption['class'].= ' tplCandi_status_placed';
-        $asOption['title'] = 'Candidate has been placed';
+        //$asOption['class'].= ' tplCandi_status_placed';
+        //$asOption['title'] = 'Candidate has been placed';
         $nValue = 1;
         $sValue.= "<div style='margin-top:5px;'>(".$placementCount.")</div>";
-        //$sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+        $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
       }
 
     }
