@@ -5972,7 +5972,7 @@ ChromePhp::log($json_from_db);
         $stats_data = array();
         $stats_data = json_decode($json_from_db, true);
 //ChromePhp::log($generatedKPIs);
-//ChromePhp::log($stats_data);
+ChromePhp::log($stats_data);
         $candidate_from_db = $generatedKPIs[1]['json_data'];
         $allCanidatesArray = json_decode($candidate_from_db, true);
 
