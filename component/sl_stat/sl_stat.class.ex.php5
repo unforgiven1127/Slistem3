@@ -4599,7 +4599,7 @@ class CSl_statEx extends CSl_stat
 
       $dateNow = date('Y-m-d');
       $generatedKPIs = getGeneratedKpi($dateNow);
-ChromePhp::log($generatedKPIs);
+//ChromePhp::log($generatedKPIs);
       $generatedKPIsCount = count($generatedKPIs);
       $data = array();
       $submit_totals = getValue('submit_totals');
@@ -5968,6 +5968,7 @@ ChromePhp::log($generatedKPIs);
         //get kpi from database
         ChromePhp::log('get kpi from database');
         $json_from_db = $generatedKPIs[0]['json_data'];
+        $stats_data = array();
         $stats_data = json_decode($json_from_db, true);
 //ChromePhp::log($generatedKPIs);
 //ChromePhp::log($stats_data);
