@@ -72,7 +72,9 @@
 	</div>
 </form>
 
-<?php foreach ($stats_data as $key => $stat): $arrayPosition = $key ?>
+<?php
+var_dump($stats_data);
+foreach ($stats_data as $key => $stat): $arrayPosition = $key ?>
 	<?php
  	$total_ncm = 0;
 	$total_ncip = 0;
