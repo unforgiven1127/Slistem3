@@ -4599,6 +4599,7 @@ class CSl_statEx extends CSl_stat
 
       $dateNow = date('Y-m-d');
       $generatedKPIs = getGeneratedKpi($dateNow);
+ChromePhp::log($generatedKPIs);
       $generatedKPIsCount = count($generatedKPIs);
       $data = array();
       $submit_totals = getValue('submit_totals');
