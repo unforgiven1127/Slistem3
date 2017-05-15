@@ -5435,7 +5435,7 @@ class CSl_statEx extends CSl_stat
                 }
 
                 $allCanidatesArray['consultant'][$id][$candidate_id]['setFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
 
@@ -5461,7 +5461,7 @@ class CSl_statEx extends CSl_stat
                   $candiNotes = $candidateNotes['content'];
                 }
                 $allCanidatesArray['consultant'][$id][$candidate_id]['metFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
 
@@ -5491,7 +5491,7 @@ class CSl_statEx extends CSl_stat
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['resumeSentFlag'] = '1';
                 $allCanidatesArray['consultant'][$id][$candidate_id]['user_id'] = $id;
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
 
               }
             }
@@ -5509,7 +5509,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['ccm1SetFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
             }
@@ -5537,7 +5537,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['ccm2SetFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
             }
@@ -5566,7 +5566,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['mccmSetFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes ."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
             }
@@ -5631,7 +5631,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['offerFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
 
@@ -5648,7 +5648,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['consultant'][$id][$candidate_id]['placedFlag'] = '1';
-                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['consultant'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
           }
@@ -5686,7 +5686,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['setFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
 
@@ -5714,7 +5714,7 @@ class CSl_statEx extends CSl_stat
                     $candiNotes = $candidateNotes['content'];
                   }
                   $allCanidatesArray['researcher'][$id][$candidate_id]['metFlag'] = '1';
-                  $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                  $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
                 }
               }
             }
@@ -5732,7 +5732,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['resumeSentFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
 
               }
             }
@@ -5751,7 +5751,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['ccm1SetFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
 
@@ -5781,7 +5781,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['ccm2SetFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
             }
@@ -5810,7 +5810,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['mccmSetFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
 
             }
@@ -5895,7 +5895,7 @@ class CSl_statEx extends CSl_stat
                 $candidateInfo = getCandidateInformation($candidate_id);
                 $candidateNotes = getCandidateNotes($candidate_id);
                 $allCanidatesArray['researcher'][$id][$candidate_id]['offerFlag'] = '1';
-                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name']."<br><br><i>".$candiNotes."</i>";
+                $allCanidatesArray['researcher'][$id][$candidate_id]['hoverTooltip'] = $candidateInfo['firstname']." ".$candidateInfo['lastname']." (".$candidateInfo['age'].")<br>".$candidateInfo['title']."<br>".$candidateInfo['company_name'];
               }
             }
 
