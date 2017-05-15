@@ -5978,7 +5978,7 @@ class CSl_statEx extends CSl_stat
 //ChromePhp::log($stats_data);
         $candidate_from_db = $generatedKPIs[1]['json_data'];
         //$allCanidatesArray = json_decode($candidate_from_db, true);
-        //$allCanidatesArray = unserialize($candidate_from_db);
+        $allCanidatesArray = unserialize($candidate_from_db);
 
         $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
@@ -5992,7 +5992,7 @@ class CSl_statEx extends CSl_stat
       $data['nextloop'] = $nextloop;
 
 
-      //$data['allCanidatesArray'] = $allCanidatesArray;
+      $data['allCanidatesArray'] = $allCanidatesArray;
       header_remove('Set-Cookie');
 
       $html = $this->_oDisplay->render('totals_chart_ordered', $data);
