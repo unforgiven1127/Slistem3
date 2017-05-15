@@ -5969,7 +5969,7 @@ class CSl_statEx extends CSl_stat
         $json_from_db = $generatedKPIs[0]['json_data'];
         $stats_data = json_decode($json_from_db, true);
 ChromePhp::log($generatedKPIs);
-ChromePhp::log($stats_data);
+//ChromePhp::log($stats_data);
         $candidate_from_db = $generatedKPIs[1]['json_data'];
         $allCanidatesArray = json_decode($candidate_from_db, true);
 
