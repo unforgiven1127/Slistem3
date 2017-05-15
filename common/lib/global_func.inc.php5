@@ -4377,6 +4377,8 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
     $sQuery = "SELECT * FROM sl_generated_kpi gk WHERE gk.created_date = '".$date."' ORDER BY gk.id ASC";
 
+    ChromePhp::log($sQuery);
+
     $db_result = $oDB->executeQuery($sQuery);
 
     $result = $db_result->getAll();
