@@ -5968,6 +5968,7 @@ class CSl_statEx extends CSl_stat
         //get kpi from database
         ChromePhp::log('get kpi from database');
         $json_from_db = $generatedKPIs[0]['json_data'];
+ChromePhp::log($json_from_db);
         $stats_data = array();
         $stats_data = json_decode($json_from_db, true);
 //ChromePhp::log($generatedKPIs);
