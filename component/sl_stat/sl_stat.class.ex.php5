@@ -5953,14 +5953,16 @@ class CSl_statEx extends CSl_stat
           $viewStart = str_replace('-','_',$viewStart);
           $viewEnd = str_replace('-','_',$viewEnd);
 
-          $jsonData = json_encode($stats_data);
+          //$jsonData = json_encode($stats_data);
+          $serializedData = serialize($stats_data);
 
           $oLogin = CDependency::getCpLogin();
           $created_by_id = $oLogin->getUserPk();
-          $added = insertGeneratedKpi($jsonData,$created_by_id,'kpi');
+          $added = insertGeneratedKpi($serializedData,$created_by_id,'kpi');
 
-          $jsonDataCandi = json_encode($allCanidatesArray);
-          $added = insertGeneratedKpi($jsonDataCandi,$created_by_id,'candi');
+          //$jsonDataCandi = json_encode($allCanidatesArray);
+          $serializedData = serialize($allCanidatesArray);
+          $added = insertGeneratedKpi($serializedData,$created_by_id,'candi');
         }
       }
       else
@@ -5970,11 +5972,13 @@ class CSl_statEx extends CSl_stat
         $json_from_db = $generatedKPIs[0]['json_data'];
 ChromePhp::log($json_from_db);
         $stats_data = array();
-        $stats_data = json_decode($json_from_db, true);
+        //$stats_data = json_decode($json_from_db, true);
+        $stats_data = unserialize($json_from_db);
 //ChromePhp::log($generatedKPIs);
 ChromePhp::log($stats_data);
         $candidate_from_db = $generatedKPIs[1]['json_data'];
-        $allCanidatesArray = json_decode($candidate_from_db, true);
+        //$allCanidatesArray = json_decode($candidate_from_db, true);
+        $allCanidatesArray = unserialize($candidate_from_db);
 
         $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
