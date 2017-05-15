@@ -4375,7 +4375,7 @@ var_dump($query);*/
   function getGeneratedKpi($date)
   {
     $oDB = CDependency::getComponentByName('database');
-    $sQuery = "SELECT * FROM sl_generated_kpi gk WHERE gk.type = 'kpi' AND gk.created_date = '".$date."' ORDER BY gk.id ASC LIMIT 2";
+    $sQuery = "SELECT * FROM sl_generated_kpi gk WHERE gk.created_date = '".$date."' ORDER BY gk.id ASC LIMIT 2";
 
     ChromePhp::log($sQuery);
 
