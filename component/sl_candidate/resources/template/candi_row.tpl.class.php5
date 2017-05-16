@@ -47,6 +47,11 @@ class CCandi_row extends CTemplate
       $lastStatusClean = $candidateLastStatus[0];
     }
 
+    if($candidate_id == 418815)
+    {
+      ChromePhp::log($lastStatusClean);
+    }
+
     $lastStatus_ = 0;
     if(isset($candidateLastStatus[0]))
     {
