@@ -221,7 +221,7 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean == 100)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $sValue = ' offer';
         $asOption['title'] = 'Offer';
         $asOption['style'] = "background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px;".$blurClass2;
