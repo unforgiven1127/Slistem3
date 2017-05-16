@@ -71,13 +71,13 @@ class CCandi_row extends CTemplate
 
     $placementCount = getCandidatePlacementCount($candidate_id);
 
-    $candidateActiveFlag = false;
+    $candidateActiveFlag = true;
     $isCandidateActive = isCandidateActive($candidate_id);
     if(isset($isCandidateActive[0]['activeCount']))
     {
       if($isCandidateActive[0]['activeCount'] > 0)
       {
-        $candidateActiveFlag = true;
+        $candidateActiveFlag = false;
       }
     }
 
