@@ -88,7 +88,7 @@ class CCandi_row extends CTemplate
     }
 
     $newClass = "";
-    $blurClass = "";
+    $blurClass = " ";
     if($CandidatePlacementCount > 0)
     {
       if($lastStatusClean > 0)
