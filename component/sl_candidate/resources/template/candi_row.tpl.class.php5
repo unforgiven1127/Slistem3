@@ -77,7 +77,7 @@ class CCandi_row extends CTemplate
     }
 
     $newClass = "";
-    if($CandidatePlacementCount == 1 || $CandidatePlacementCount == 2)
+    if($CandidatePlacementCount > 0)
     {
       if($lastStatusClean > 0)
       {
