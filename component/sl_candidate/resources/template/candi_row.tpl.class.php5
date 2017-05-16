@@ -210,19 +210,19 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean >= 50 && $lastStatusClean <= 70)
       {
-        $asOption['class'].= ' tplCandi_status'.$blurClass;
+        //$asOption['class'].= ' tplCandi_status';
         $nWeighted = ((int)$pasData['_pos_status']-50);
-        $asOption['class'].= ' tplCandi_status_50';
+        $asOption['class'].= ' tplCandi_status_50'.$blurClass;
         $sValue = ' CCM '.$nWeighted;
         $asOption['title'] = $sValue;
         $nValue = $nWeighted+5;
       }
       else if($lastStatusClean == 100)
       {
-        $asOption['class'].= ' tplCandi_status'.$blurClass;
+        //$asOption['class'].= ' tplCandi_status';
         $sValue = ' offer';
         $asOption['title'] = 'Offer';
-        $asOption['class'].= ' tplCandi_status_100';
+        $asOption['class'].= ' tplCandi_status_100'.$blurClass;
         $nValue = 20;
       }
       elseif($lastStatusClean == 151)//$pasData['_pos_status']
