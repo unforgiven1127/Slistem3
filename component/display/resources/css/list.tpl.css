@@ -91,7 +91,7 @@ li.tplListHeaderContainer div.tplListRow div
 {
   opacity: 0.4 !important;
 }
-.blurClass > img
+.blurClass > div.tplCandi_status
 {
   opacity: 0.4 !important;
 }
