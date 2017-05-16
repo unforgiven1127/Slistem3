@@ -82,6 +82,11 @@ li.tplListHeaderContainer div.tplListRow div
   height: 45px !important;
 }
 
+.highClass2 > div
+{
+  height: 55px !important;
+}
+
 .tplListRowContainer div.tplListRow > div
 {
   min-height: 20px;

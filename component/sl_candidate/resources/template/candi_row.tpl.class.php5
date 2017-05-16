@@ -69,11 +69,29 @@ class CCandi_row extends CTemplate
     }
     $CandidatePlacedFlag = getCandidatePlacedFlag($candidate_id);
 
+    $placementCount = getCandidatePlacementCount($candidate_id);
+
+    if(isset($placementCount[0]['placement_count']))
+    {
+      $CandidatePlacementCount = $placementCount[0]['placement_count'];
+    }
+
     $newClass = "";
-    if($alreadyPlaced && $CandidatePlacedFlag)
+    if($CandidatePlacementCount == 1 || $CandidatePlacementCount == 2)
+    {
+      if($lastStatusClean > 0)
+      {
+        $newClass = " highClass2 ";
+      }
+      else
+      {
+        $newClass = " highClass ";
+      }
+    }
+    /*if($alreadyPlaced && $CandidatePlacedFlag)
     {
       $newClass = " highClass ";
-    }
+    }*/
 
     $sHTML = '';
     $sHTML.= $oDisplay->getBlocStart('', array('class' => 'tplListRow '.$newClass.' tplCandiRow'));
@@ -188,7 +206,6 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatus == 101)//$pasData['_pos_status']
       {
-        $placementCount = getCandidatePlacementCount($candidate_id);
         //ChromePhp::log($placementCount);
         $placementCount = $placementCount[0]['placement_count'];
         $asOption['class'].= ' _tplCandi_status_placed';
