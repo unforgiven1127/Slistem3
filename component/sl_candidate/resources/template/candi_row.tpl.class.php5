@@ -41,6 +41,12 @@ class CCandi_row extends CTemplate
     $candidate_id = $pasData['sl_candidatepk'];
     $candidateLastStatus = getLastStatus($candidate_id);
 
+    $lastStatusClean = 0;
+    if(isset($candidateLastStatus[0]))
+    {
+      $lastStatusClean = $candidateLastStatus[0];
+    }
+
     $lastStatus_ = 0;
     if(isset($candidateLastStatus[0]))
     {
@@ -145,7 +151,9 @@ class CCandi_row extends CTemplate
       }
     }
 
+
     //if(!empty($pasData['_pos_status']))
+    $lastStatus = $lastStatusClean;
     if($lastStatus > 0)
     {
       if($lastStatus < 101)//$pasData['_pos_status']
@@ -224,7 +232,7 @@ class CCandi_row extends CTemplate
         $sValue = ' expire';
         $nValue = 3;
       }
-      elseif($lastStatus == 200)
+      elseif($lastStatus == 200 || $lastStatus == 251)
       {
         $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
         $sValue = ' inactive';
