@@ -71,6 +71,7 @@ class CCandi_row extends CTemplate
 
     $placementCount = getCandidatePlacementCount($candidate_id);
 
+    $CandidatePlacementCount = 0;
     if(isset($placementCount[0]['placement_count']))
     {
       $CandidatePlacementCount = $placementCount[0]['placement_count'];
@@ -176,8 +177,87 @@ class CCandi_row extends CTemplate
 
 
     //if(!empty($pasData['_pos_status']))
+    if($CandidatePlacementCount == 1)
+    {
+      $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+    }
+    else if($CandidatePlacementCount == 2)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+    }
+    else if($CandidatePlacementCount == 3)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+    }
+    else if($CandidatePlacementCount > 3)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+    }
     $lastStatus = $lastStatusClean;
-    if($lastStatus > 0)
+    if($lastStatusClean > 0)
+    {
+      if($lastStatusClean == 1)
+      {
+        $asOption['class'].= ' tplCandi_status';
+        $sValue = ' ptchd';
+        $asOption['title'] = 'Pitched';
+      }
+      else if($lastStatusClean == 2)
+      {
+        $asOption['class'].= ' tplCandi_status';
+        $sValue = ' ressnt';
+        $asOption['title'] = 'Resume sent';
+        $nValue = 5;
+      }
+      else if($lastStatusClean >= 50 && $lastStatusClean <= 70)
+      {
+        $asOption['class'].= ' tplCandi_status';
+        $nWeighted = ((int)$pasData['_pos_status']-50);
+        $asOption['class'].= ' tplCandi_status_50';
+        $sValue = ' CCM '.$nWeighted;
+        $asOption['title'] = $sValue;
+        $nValue = $nWeighted+5;
+      }
+      else if($lastStatusClean == 100)
+      {
+        $asOption['class'].= ' tplCandi_status';
+        $sValue = ' offer';
+        $asOption['title'] = 'Offer';
+        $asOption['class'].= ' tplCandi_status_100';
+        $nValue = 20;
+      }
+      elseif($lastStatusClean == 151)//$pasData['_pos_status']
+      {
+        $asOption['class'].= ' tplCandi_status tplCandi_status_151';
+        $asOption['title'] = 'Last action has expired';
+        $sValue = ' expire';
+        $nValue = 3;
+      }
+      elseif($lastStatusClean == 200 || $lastStatusClean == 251)
+      {
+        $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
+        $sValue = ' inactive';
+        $asOption['title'] = 'Candidate inactive: expired, stalled, fallen';
+        $nValue = 2;
+      }
+    }
+    /*if($lastStatus > 0)
     {
       if($lastStatus < 101)//$pasData['_pos_status']
       {
@@ -314,9 +394,9 @@ class CCandi_row extends CTemplate
         //$sValue.= "<div style='margin-top:5px;'><b style='color:black'>(".$placementCount."X)</b><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
       }
 
-    }
-    else
-      $nValue = 0;
+    }*/
+    //else
+      //$nValue = 0;
 
     /* Debug status sort
      * set_array($pasData['sort_status'], 0);
