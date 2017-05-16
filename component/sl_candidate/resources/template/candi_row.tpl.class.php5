@@ -88,6 +88,7 @@ class CCandi_row extends CTemplate
     }
 
     $newClass = "";
+    $blurClass = "";
     if($CandidatePlacementCount > 0)
     {
       if($lastStatusClean > 0)
@@ -101,7 +102,7 @@ class CCandi_row extends CTemplate
     }
     if($candidateActiveFlag)
     {
-      $newClass = " blurClass ";
+      $blurClass = " blurClass ";
     }
     /*if($alreadyPlaced && $CandidatePlacedFlag)
     {
@@ -196,20 +197,20 @@ class CCandi_row extends CTemplate
     {
       if($lastStatusClean == 1)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $sValue = ' ptchd';
         $asOption['title'] = 'Pitched';
       }
       else if($lastStatusClean == 2)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $sValue = ' ressnt';
         $asOption['title'] = 'Resume sent';
         $nValue = 5;
       }
       else if($lastStatusClean >= 50 && $lastStatusClean <= 70)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $nWeighted = ((int)$pasData['_pos_status']-50);
         $asOption['class'].= ' tplCandi_status_50';
         $sValue = ' CCM '.$nWeighted;
@@ -218,7 +219,7 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean == 100)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $sValue = ' offer';
         $asOption['title'] = 'Offer';
         $asOption['class'].= ' tplCandi_status_100';
@@ -226,14 +227,14 @@ class CCandi_row extends CTemplate
       }
       elseif($lastStatusClean == 151)//$pasData['_pos_status']
       {
-        $asOption['class'].= ' tplCandi_status tplCandi_status_151';
+        $asOption['class'].= ' tplCandi_status tplCandi_status_151'.$blurClass;
         $asOption['title'] = 'Last action has expired';
         $sValue = ' expire';
         $nValue = 3;
       }
       elseif($lastStatusClean == 200 || $lastStatusClean == 251)
       {
-        $asOption['class'].= ' tplCandi_status tplCandi_status_inactive';
+        $asOption['class'].= ' tplCandi_status tplCandi_status_inactive'.$blurClass;
         $sValue = ' inactive';
         $asOption['title'] = 'Candidate inactive: expired, stalled, fallen';
         $nValue = 2;
