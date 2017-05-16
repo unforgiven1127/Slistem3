@@ -87,7 +87,7 @@ class CCandi_row extends CTemplate
       $CandidatePlacementCount = $placementCount[0]['placement_count'];
     }
 
-    $newClass = "";
+    $newClass = " ";
     $blurClass = " ";
     if($CandidatePlacementCount > 0)
     {
@@ -210,7 +210,7 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean >= 50 && $lastStatusClean <= 70)
       {
-        //$asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status';
         $nWeighted = ((int)$pasData['_pos_status']-50);
         $asOption['class'].= ' tplCandi_status_50'.$blurClass;
         $sValue = ' CCM '.$nWeighted;
@@ -219,7 +219,7 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean == 100)
       {
-        //$asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status';
         $sValue = ' offer';
         $asOption['title'] = 'Offer';
         $asOption['class'].= ' tplCandi_status_100'.$blurClass;
