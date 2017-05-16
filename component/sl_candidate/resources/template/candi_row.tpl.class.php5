@@ -228,6 +228,10 @@ class CCandi_row extends CTemplate
         //$asOption['class'].= ' tplCandi_status_100'.$blurClass;
         $nValue = 20;
       }
+      else if($lastStatusClean == 100)
+      {
+        $asOption['class'].= $blurClass;
+      }
       elseif($lastStatusClean == 151)//$pasData['_pos_status']
       {
         $asOption['class'].= ' tplCandi_status tplCandi_status_151'.$blurClass;
