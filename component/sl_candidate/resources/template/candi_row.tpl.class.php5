@@ -71,6 +71,16 @@ class CCandi_row extends CTemplate
 
     $placementCount = getCandidatePlacementCount($candidate_id);
 
+    $candidateActiveFlag = false;
+    $isCandidateActive = isCandidateActive($candidate_id);
+    if(isset($isCandidateActive[0]['activeCount']))
+    {
+      if($isCandidateActive[0]['activeCount'] > 0)
+      {
+        $candidateActiveFlag = true;
+      }
+    }
+
     $CandidatePlacementCount = 0;
     if(isset($placementCount[0]['placement_count']))
     {
@@ -88,6 +98,10 @@ class CCandi_row extends CTemplate
       {
         $newClass = " highClass ";
       }
+    }
+    if($candidateActiveFlag)
+    {
+      $newClass = " blurClass ";
     }
     /*if($alreadyPlaced && $CandidatePlacedFlag)
     {

@@ -87,6 +87,19 @@ li.tplListHeaderContainer div.tplListRow div
   height: 60px !important;
 }
 
+.blurClass > div
+{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+
 .tplListRowContainer div.tplListRow > div
 {
   min-height: 20px;

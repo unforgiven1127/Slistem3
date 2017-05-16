@@ -3700,6 +3700,19 @@ var_dump($query);*/
     //return $result;
   }
 
+  function isCandidateActive($candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT count(*) as activeCount FROM sl_position_link WHERE candidatefk = '".$candidate_id."' AND active = 1 AND status < 101 ORDER BY sl_position_linkpk DESC";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getLastStatus($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
