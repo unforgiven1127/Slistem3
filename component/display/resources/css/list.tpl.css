@@ -91,6 +91,10 @@ li.tplListHeaderContainer div.tplListRow div
 {
   opacity: 0.4 !important;
 }
+.blurClass > img
+{
+  opacity: 0.4 !important;
+}
 
 
 .tplListRowContainer div.tplListRow > div
