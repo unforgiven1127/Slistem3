@@ -101,6 +101,10 @@ class CCandi_row extends CTemplate
         $newClass = " highClass ";
       }
     }
+    if($candidate_id == 154310)
+    {
+      ChromePhp::log($candidateActiveFlag);
+    }
     if($candidateActiveFlag)
     {
       $blurClass = "Opac ";
@@ -224,8 +228,8 @@ class CCandi_row extends CTemplate
         $asOption['class'].= ' tplCandi_status'.$blurClass;
         $sValue = ' offer';
         $asOption['title'] = 'Offer';
-        $asOption['style'] = "background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px;".$blurClass2;
-        //$asOption['class'].= ' tplCandi_status_100'.$blurClass;
+        //$asOption['style'] = "background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px;".$blurClass2;
+        $asOption['class'].= ' tplCandi_status_100'.$blurClass;
         $nValue = 20;
       }
       else if($lastStatusClean == 101)
