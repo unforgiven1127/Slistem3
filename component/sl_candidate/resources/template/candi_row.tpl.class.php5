@@ -104,7 +104,7 @@ class CCandi_row extends CTemplate
     if($candidateActiveFlag)
     {
       $blurClass = " blurClass ";
-      $blurClass2 = " opacity: 0.4 !important; ";
+      $blurClass2 = " opacity: 0.5 !important; ";
     }
     /*if($alreadyPlaced && $CandidatePlacedFlag)
     {
