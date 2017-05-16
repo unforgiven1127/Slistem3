@@ -177,38 +177,6 @@ class CCandi_row extends CTemplate
 
 
     //if(!empty($pasData['_pos_status']))
-    if($CandidatePlacementCount == 1)
-    {
-      $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
-    }
-    else if($CandidatePlacementCount == 2)
-    {
-      $sValue.= "<div style='margin-top:5px;'>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-      </div>";
-    }
-    else if($CandidatePlacementCount == 3)
-    {
-      $sValue.= "<div style='margin-top:5px;'>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-      </div>";
-      $sValue.= "<div style='margin-top:5px;'>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-      </div>";
-    }
-    else if($CandidatePlacementCount > 3)
-    {
-      $sValue.= "<div style='margin-top:5px;'>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-      </div>";
-      $sValue.= "<div style='margin-top:5px;'>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
-      </div>";
-    }
     $lastStatus = $lastStatusClean;
     if($lastStatusClean > 0)
     {
@@ -264,6 +232,39 @@ class CCandi_row extends CTemplate
     else
     {
       $nValue = 0;
+    }
+
+    if($CandidatePlacementCount == 1)
+    {
+      $sValue.= "<div style='margin-top:5px;'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+    }
+    else if($CandidatePlacementCount == 2)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+    }
+    else if($CandidatePlacementCount == 3)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+    }
+    else if($CandidatePlacementCount > 3)
+    {
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
+      $sValue.= "<div style='margin-top:5px;'>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+      </div>";
     }
     /*if($lastStatus > 0)
     {
