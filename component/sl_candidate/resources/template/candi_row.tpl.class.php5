@@ -287,7 +287,7 @@ class CCandi_row extends CTemplate
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
-      $sValue.= "<div style='margin-top:5px;'>
+      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
