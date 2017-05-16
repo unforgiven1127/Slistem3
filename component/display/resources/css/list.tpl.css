@@ -94,8 +94,8 @@ li.tplListHeaderContainer div.tplListRow div
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   background-color: #ccc;
 }
 
