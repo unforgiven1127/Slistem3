@@ -256,6 +256,14 @@ class CCandi_row extends CTemplate
         $asOption['title'] = 'Candidate inactive: expired, stalled, fallen';
         $nValue = 2;
       }
+      else
+      {
+        $nValue = 0;
+      }
+    }
+    else
+    {
+      $nValue = 0;
     }
     /*if($lastStatus > 0)
     {
