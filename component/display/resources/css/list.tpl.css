@@ -90,10 +90,7 @@ li.tplListHeaderContainer div.tplListRow div
 .blurClass > div
 {
   opacity: 0.4 !important;
-}
-.blurClass > div.tplCandi_status
-{
-  opacity: 0.4 !important;
+  background: opacity 0.4;
 }
 
 
