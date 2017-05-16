@@ -3704,7 +3704,7 @@ var_dump($query);*/
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM sl_position_link WHERE candidatefk = '".$candidate_id."' AND status < 102 ORDER BY sl_position_linkpk DESC";
+    $sQuery = "SELECT * FROM sl_position_link WHERE candidatefk = '".$candidate_id."' AND status < 101 ORDER BY sl_position_linkpk DESC";
 
     $db_result = $oDB->executeQuery($sQuery);
 
