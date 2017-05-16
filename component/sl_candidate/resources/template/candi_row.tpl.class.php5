@@ -44,7 +44,7 @@ class CCandi_row extends CTemplate
     $lastStatusClean = 0;
     if(isset($candidateLastStatus[0]))
     {
-      $lastStatusClean = $candidateLastStatus[0];
+      $lastStatusClean = $candidateLastStatus[0]['status'];
     }
 
     if($candidate_id == 418815)
