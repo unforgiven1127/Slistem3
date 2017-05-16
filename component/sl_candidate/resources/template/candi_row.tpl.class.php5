@@ -175,7 +175,7 @@ class CCandi_row extends CTemplate
       }
     }
 
-
+    $nValue = 0;
     //if(!empty($pasData['_pos_status']))
     $lastStatus = $lastStatusClean;
     if($lastStatusClean > 0)
