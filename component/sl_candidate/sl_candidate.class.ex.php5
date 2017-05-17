@@ -3032,7 +3032,7 @@ class CSl_candidateEx extends CSl_candidate
         $poQB->addJoin('left', 'sl_position_link', 'slpl', "slpl.candidatefk = scan.sl_candidatepk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2
           where slpl2.positionfk = slpl.positionfk AND slpl2.status < 101)");
 
-        /*if($sSortOrder == 'ASC')
+        if($sSortOrder == 'ASC')
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
@@ -3041,7 +3041,7 @@ class CSl_candidateEx extends CSl_candidate
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
-        }*/
+        }
 
         //ChromePhp::log($sSortField);
       }
@@ -3128,12 +3128,12 @@ class CSl_candidateEx extends CSl_candidate
       //$_SESSION['lastSearch'] = serialize($poQB);
       storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
-      /*if($sSortField == '_in_play')
+      if($sSortField == '_in_play')
       {
         $sSortOrder = getValue('sortorder', 'DESC');
         $poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
         //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-      }*/
+      }
 
       /*if(!empty($sSortField))
       {
@@ -3267,11 +3267,10 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "_in_play")
           {
-            $sQuery.= ' ORDER BY ';
             //$sSortOrder = getValue('sortorder', 'DESC');
             //$poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
             //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-            //$sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
+            $sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
           }
           else if($sSortField == "grade")
           {
