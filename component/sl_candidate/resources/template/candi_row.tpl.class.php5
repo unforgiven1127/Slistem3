@@ -216,7 +216,7 @@ class CCandi_row extends CTemplate
       }
       else if($lastStatusClean >= 50 && $lastStatusClean <= 70)
       {
-        $asOption['class'].= ' tplCandi_status';
+        $asOption['class'].= ' tplCandi_status'.$blurClass;
         $nWeighted = ($lastStatusClean-50);
         $asOption['class'].= ' tplCandi_status_50'.$blurClass;
         $sValue = ' CCM '.$nWeighted;
