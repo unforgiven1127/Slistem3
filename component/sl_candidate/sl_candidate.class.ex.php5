@@ -3012,6 +3012,9 @@ class CSl_candidateEx extends CSl_candidate
         $poQB->addLimit(($nPagerOffset*$nLimit).' ,'. $nLimit);
       }
 
+      $sSortField = getValue('sortfield'); // burasi
+      $sSortOrder = getValue('sortorder');
+
       // =============================================================
       //TODO: to be moved when the search arrives
 
@@ -3023,6 +3026,11 @@ class CSl_candidateEx extends CSl_candidate
       $poQB->addJoin('left', 'sl_industry', 'sind', 'sind.sl_industrypk = scpr.industryfk');
       $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
       //$poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
+      //
+      if(isset($sSortField))
+      {
+        ChromePhp::log($sSortField);
+      }
 
       $sNow = date('Y-m-d H:i:s');
       $poQB->addSelect('scan.*,
@@ -3092,8 +3100,6 @@ class CSl_candidateEx extends CSl_candidate
       // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
       // manage sort field / order
       //no scan.sl_candidatepk  --> make the HeavyJoin mode crash (subQuery)
-      $sSortField = getValue('sortfield'); // burasi
-      $sSortOrder = getValue('sortorder');
 
       if(!empty($sortField))
       {
