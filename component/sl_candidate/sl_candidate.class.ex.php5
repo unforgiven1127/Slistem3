@@ -3030,7 +3030,7 @@ class CSl_candidateEx extends CSl_candidate
       if(isset($sSortField) && !empty($sSortField) && $sSortField == '_in_play')
       {
         $poQB->addJoin('left', 'sl_position_link', 'slpl', "slpl.candidatefk = scan.sl_candidatepk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2
-          where slpl2.positionfk = slpl.positionfk AND slpl.status < 101)");
+          where slpl2.positionfk = slpl.positionfk AND slpl2.status < 101)");
 
         if($sSortOrder == 'ASC')
         {
@@ -3042,7 +3042,7 @@ class CSl_candidateEx extends CSl_candidate
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
-          $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,9999) * 1000) as statusSort');
+          $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,0) * 1000) as statusSort');
         }
 
         //ChromePhp::log($sSortField);
