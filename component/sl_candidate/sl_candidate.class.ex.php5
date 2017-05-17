@@ -3027,9 +3027,13 @@ class CSl_candidateEx extends CSl_candidate
       $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
       //$poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
       //
-      if(isset($sSortField))
+      if(isset($sSortField) && !empty($sSortField) && $sSortField == '_in_play')
       {
-        ChromePhp::log($sSortField);
+        $poQB->addJoin('left', 'sl_position_link', 'slpl', "slpl.candidatefk = scan.sl_candidatepk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2
+          where slpl2.positionfk = slpl.positionfk AND slpl2.status < 101)");
+        $poQB->addSelect('slpl.status as candidateLatestStatus');
+        $poQB->addSelect('slpl.active as candidateActivePassive');
+        //ChromePhp::log($sSortField);
       }
 
       $sNow = date('Y-m-d H:i:s');
