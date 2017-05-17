@@ -3033,12 +3033,14 @@ class CSl_candidateEx extends CSl_candidate
 
         if($sSortOrder == 'asc')
         {
-          $poQB->addSelect('IFNULL(slpl.status,9999) as candidateLatestStatus');
+          $poQB->addSelect('IFNULL(slpl.date_created,0) as slpldate_created');
+          $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
           $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,9999) * 1000) as statusSort');
         }
         else
         {
+          $poQB->addSelect('IFNULL(slpl.date_created,0) as slpldate_created');
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
           $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,0) * 1000) as statusSort');
@@ -3271,7 +3273,7 @@ class CSl_candidateEx extends CSl_candidate
             //$sSortOrder = getValue('sortorder', 'DESC');
             //$poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
             //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-            $sQuery.= ' ORDER BY statusSort '.$sSortOrder." ,scan.sl_candidatepk ".$sSortOrder.' ';
+            $sQuery.= ' ORDER BY statusSort '.$sSortOrder." ,slpldate_created ".$sSortOrder.' ';." ,scan.sl_candidatepk ".$sSortOrder.' ';
             //$sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
           }
           else if($sSortField == "grade")
