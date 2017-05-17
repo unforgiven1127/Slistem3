@@ -3031,6 +3031,9 @@ class CSl_candidateEx extends CSl_candidate
       {
         $poQB->addJoin('left', 'sl_position_link', 'slpl', "slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2 where slpl2.candidatefk = scan.sl_candidatepk AND slpl2.status < 102)");
 
+        $poQB->addJoin('left', 'sl_position_link', 'slpl3', "slpl3.sl_position_linkpk = (SELECT MAX(slpl4.sl_position_linkpk) FROM  sl_position_link slpl4 where slpl4.candidatefk = scan.sl_candidatepk AND slpl4.status < 102 AND slpl4.active = 1)");
+
+        $poQB->addSelect('IFNULL(slpl3.active,0) as candidateActiveFlag');
         if($sSortOrder == 'asc')
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
@@ -3271,7 +3274,7 @@ class CSl_candidateEx extends CSl_candidate
             //$sSortOrder = getValue('sortorder', 'DESC');
             //$poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
             //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-            $sQuery.= ' ORDER BY statusSort '.$sSortOrder." ,scan.sl_candidatepk ".$sSortOrder.' ';
+            $sQuery.= ' ORDER BY candidateActiveFlag '.$sSortOrder.' , statusSort '.$sSortOrder." ,scan.sl_candidatepk ".$sSortOrder.' ';
             //$sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
           }
           else if($sSortField == "grade")
