@@ -3034,9 +3034,9 @@ class CSl_candidateEx extends CSl_candidate
 
         if($sSortOrder == 'ASC')
         {
-          $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
+          $poQB->addSelect('IFNULL(slpl.status,9999) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
-          $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,9999) * 1000) as statusSort');
+          $poQB->addSelect('IFNULL(slpl.status,9999) + (IFNULL(slpl.active,9999) * 1000) as statusSort');
         }
         else
         {
