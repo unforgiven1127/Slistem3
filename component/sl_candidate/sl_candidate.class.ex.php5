@@ -3036,13 +3036,13 @@ class CSl_candidateEx extends CSl_candidate
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
-
+          $poQB->addSelect('candidateLatestStatus * candidateActivePassive as sortStatus');
         }
         else
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
-
+          $poQB->addSelect('candidateLatestStatus * candidateActivePassive as sortStatus');
         }
 
         //ChromePhp::log($sSortField);
@@ -3130,12 +3130,12 @@ class CSl_candidateEx extends CSl_candidate
       //$_SESSION['lastSearch'] = serialize($poQB);
       storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
-      if($sSortField == '_in_play')
+      /*if($sSortField == '_in_play')
       {
         $sSortOrder = getValue('sortorder', 'DESC');
         $poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
         //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-      }
+      }*/
 
       /*if(!empty($sSortField))
       {
@@ -3269,10 +3269,11 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "_in_play")
           {
+            $sQuery.= ' ORDER BY ';
             //$sSortOrder = getValue('sortorder', 'DESC');
             //$poQB->addSelect('IF(_pos_status > 0 AND _pos_status < 101, (_pos_status+1000), IF(_pos_status = 151, 651, IF(_pos_status >= 150 AND _pos_status < 201, (_pos_status+100),  _pos_status))) as sort_status ');
             //$poQB->setOrder('_in_play '.$sSortOrder.', sort_status '.$sSortOrder.' ');
-            $sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
+            //$sQuery.= ' ORDER BY _in_play '.$sSortOrder." ,sort_status ".$sSortOrder.' ';
           }
           else if($sSortField == "grade")
           {
