@@ -3036,13 +3036,13 @@ class CSl_candidateEx extends CSl_candidate
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
-          $poQB->addSelect('(candidateLatestStatus + candidateActivePassive*1000) as candidateActivePassive');
+
         }
         else
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
-          $poQB->addSelect('(candidateLatestStatus + candidateActivePassive*1000) as candidateActivePassive');
+
         }
 
         //ChromePhp::log($sSortField);
