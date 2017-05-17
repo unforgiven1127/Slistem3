@@ -3032,7 +3032,7 @@ class CSl_candidateEx extends CSl_candidate
         $poQB->addJoin('left', 'sl_position_link', 'slpl', "slpl.candidatefk = scan.sl_candidatepk AND slpl.sl_position_linkpk = (SELECT MAX(slpl2.sl_position_linkpk) FROM  sl_position_link slpl2
           where slpl2.positionfk = slpl.positionfk AND slpl2.status < 101)");
 
-        if($sSortOrder == 'ASC')
+        /*if($sSortOrder == 'ASC')
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,9999) as candidateActivePassive');
@@ -3041,7 +3041,7 @@ class CSl_candidateEx extends CSl_candidate
         {
           $poQB->addSelect('IFNULL(slpl.status,0) as candidateLatestStatus');
           $poQB->addSelect('IFNULL(slpl.active,0) as candidateActivePassive');
-        }
+        }*/
 
         //ChromePhp::log($sSortField);
       }
