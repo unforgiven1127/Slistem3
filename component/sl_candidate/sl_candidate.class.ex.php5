@@ -3017,7 +3017,7 @@ class CSl_candidateEx extends CSl_candidate
 
       // =============================================================
       //TODO: to be moved when the search arrives
-
+      $sNow = date('Y-m-d H:i:s');
       $poQB->setTable('sl_candidate', 'scan');
 
       //join profile industry and occupation no matter what by default
@@ -3049,8 +3049,18 @@ class CSl_candidateEx extends CSl_candidate
 
         //ChromePhp::log($sSortField);
       }
+      else if(isset($sSortField) && !empty($sSortField) && $sSortField == "date_birth")
+      {
+        if($sSortOrder == 'asc')
+        {
+          $poQB->addSelect('IFNULL(TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'"),999) AS ageSort');
+        }
+        else
+        {
+          $poQB->addSelect('IFNULL(TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'"),0) AS ageSort');
+        }
+      }
 
-      $sNow = date('Y-m-d H:i:s');
       $poQB->addSelect('scan.*,
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
           (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
@@ -3311,7 +3321,8 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "date_birth")
           {
-            $sQuery.= ' ORDER BY age '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY ageSort '.$sSortOrder." ";
+            //$sQuery.= ' ORDER BY age '.$sSortOrder." ";
           }
           else if($sSortField == "salary")
           {
