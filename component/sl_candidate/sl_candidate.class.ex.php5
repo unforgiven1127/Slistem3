@@ -3060,6 +3060,17 @@ class CSl_candidateEx extends CSl_candidate
           $poQB->addSelect('IFNULL(TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'"),0) AS ageSort');
         }
       }
+      else if(isset($sSortField) && !empty($sSortField) && $sSortField == "salary")
+      {
+        if($sSortOrder == 'asc')
+        {
+          $poQB->addSelect('IFNULL((scpr.salary + scpr.bonus),99999999999999999999999) as salarySort');
+        }
+        else
+        {
+          $poQB->addSelect('IFNULL((scpr.salary + scpr.bonus),0) as salarySort');
+        }
+      }
 
       $poQB->addSelect('scan.*,
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
@@ -3289,44 +3300,45 @@ class CSl_candidateEx extends CSl_candidate
           }
           else if($sSortField == "grade")
           {
-            $sQuery.= ' ORDER BY scpr.grade '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY scpr.grade '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "_has_doc")
           {
-            $sQuery.= ' ORDER BY scpr._has_doc '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY scpr._has_doc '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "lastname")
           {
-            $sQuery.= ' ORDER BY TRIM(scan.lastname) '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY TRIM(scan.lastname) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "firstname")
           {
-            $sQuery.= ' ORDER BY TRIM(scan.firstname) '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY TRIM(scan.firstname) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "company_name")
           {
-            $sQuery.= ' ORDER BY TRIM(scom.name) '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY TRIM(scom.name) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "title")
           {
-            $sQuery.= ' ORDER BY TRIM(scpr.title) '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY TRIM(scpr.title) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "department")
           {
-            $sQuery.= ' ORDER BY TRIM(scpr.department) '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY TRIM(scpr.department) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "lastNote")
           {
-            $sQuery.= ' ORDER BY lastNote '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY lastNote '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
           else if($sSortField == "date_birth")
           {
-            $sQuery.= ' ORDER BY ageSort '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY ageSort '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
             //$sQuery.= ' ORDER BY age '.$sSortOrder." ";
           }
           else if($sSortField == "salary")
           {
-            $sQuery.= ' ORDER BY full_salary '.$sSortOrder." ";
+            $sQuery.= ' ORDER BY salarySort '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
+            //$sQuery.= ' ORDER BY full_salary '.$sSortOrder." ";
           }
         }
         else if(strpos($oldQ,"ratio DESC, ratio_rev DESC") !== false)
