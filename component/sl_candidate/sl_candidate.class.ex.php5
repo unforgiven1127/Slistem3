@@ -3064,7 +3064,8 @@ class CSl_candidateEx extends CSl_candidate
       {
         if($sSortOrder == 'asc')
         {
-          $poQB->addSelect('IFNULL((scpr.salary + scpr.bonus),99999999999999999999999) as salarySort');
+          $poQB->addSelect('CASE WHEN ( (scpr.salary + scpr.bonus = 0) THEN 9999999999999 ELSE (scpr.salary + scpr.bonus))as salarySort');
+          //$poQB->addSelect('IFNULL((scpr.salary + scpr.bonus),99999999999999999999999) as salarySort');
         }
         else
         {
