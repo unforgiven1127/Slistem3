@@ -1251,7 +1251,7 @@ class CSl_candidateEx extends CSl_candidate
       if(getValue('preview'))
       {
         $sHTML.= $this->_oDisplay->getBloc('', '
-          <a href="javascript:;" class="candi-pop-link" onclick="goPopup.removeAll(true); view_candi(\''.$sViewURL.'\');">close <b>all</b> popops & view in page<img src="/component/sl_candidate/resources/pictures/goto_16.png" /></a>
+          <a href="javascript:;" class="candi-pop-link" onclick="goPopup.removeAll(true); view_candi(\''.$sViewURL.'\');">close <b>all</b> popops & view in page.<img src="/component/sl_candidate/resources/pictures/goto_16.png" /></a>
           ', array('class' => 'close_preview'));
       }
 
