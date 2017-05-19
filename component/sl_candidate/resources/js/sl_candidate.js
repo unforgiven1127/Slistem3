@@ -12,7 +12,7 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
         //remove selected links adn select current clicked one
 
         //document.getElementById('tabLink2').getAttribute('onclick') = "";
-        var newOnclick = "toggleCandiTab(this,'candiTab2','',"+candidate_id+"false";
+        var newOnclick = "toggleCandiTab(this,'candiTab2','',"+candidate_id+",false";
         document.getElementById('tabLink2').setAttribute( "onclick", newOnclick );
 
         //alert(onclickButton);
