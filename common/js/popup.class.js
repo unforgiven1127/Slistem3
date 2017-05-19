@@ -113,7 +113,7 @@ var CPopup = function()
 
   this.remove = function(pvPopup, pbForce)
   {
-    alert('test');
+    //alert('test');
     //console.log('try to remove ' + pvPopup);
 
     //if string ==> popupID, else the dialog object
@@ -135,6 +135,7 @@ var CPopup = function()
 
     if(pbForce === true || !$(pvPopup).dialog('option', 'persistent'))
     {
+      alert('force');
       $(pvPopup).dialog('destroy');
       delete this.caoPopup[sTag];
 
