@@ -11,7 +11,9 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
       {
         //remove selected links adn select current clicked one
 
-        var onclickButton = document.getElementById("a").onclick;
+        //var onclickButton = document.getElementById(this).onclick;
+        var onclickButton = $(this).attr("onclick");
+        //$("#id").attr("onclick","new_function_name()");
         alert(onclickButton);
 
         // company i olusturan kisiye mail atacagiz
