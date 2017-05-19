@@ -11,6 +11,9 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
       {
         //remove selected links adn select current clicked one
 
+        var onclickButton = document.getElementById("a").onclick;
+        alert(onclickButton);
+
         // company i olusturan kisiye mail atacagiz
         var urlMail = "/index.php5?uid=555-001&ppa=csam&ppt=candi&ppk="+candidate_id+"&pg=ajx&cid="+is_client;
         AjaxRequest(urlMail, '', '', '', '', '', "");
