@@ -11,10 +11,14 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
       {
         //remove selected links adn select current clicked one
 
-        //var onclickButton = document.getElementById(this).onclick;
-        var onclickButton = $(this).attr("onclick");
-        //$("#id").attr("onclick","new_function_name()");
+        var onclickButton = document.getElementById('candiTab2').getAttribute('onclick');
         alert(onclickButton);
+        //var onclickButton = document.getElementById(this).onclick;
+        //var onclickButton = $(this).attr("onclick");
+        alert($(this).data('onclick'));
+        alert($(this).attr("onclick"));
+        //$("#id").attr("onclick","new_function_name()");
+        //alert(onclickButton);
 
         // company i olusturan kisiye mail atacagiz
         var urlMail = "/index.php5?uid=555-001&ppa=csam&ppt=candi&ppk="+candidate_id+"&pg=ajx&cid="+is_client;
