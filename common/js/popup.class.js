@@ -137,10 +137,10 @@ var CPopup = function()
     {
       //alert('force');
       //$(pvPopup).dialog('destroy');
-      delete this.caoPopup[sTag];
+      //delete this.caoPopup[sTag];
 
       //remove the html tags created for the popup
-      $(pvPopup).remove();
+      //$(pvPopup).remove();
 
       console.log('removed/destroyed '+sTag);
       //console.log(this.caoPopup);
