@@ -113,6 +113,7 @@ var CPopup = function()
 
   this.remove = function(pvPopup, pbForce)
   {
+    alert('test');
     //console.log('try to remove ' + pvPopup);
 
     //if string ==> popupID, else the dialog object
@@ -128,7 +129,7 @@ var CPopup = function()
 
     var sTag = $(pvPopup).attr('id');
     $(pvPopup).dialog('close');
-    //$(pvPopup).closest('.ui-dialog').hide();
+    $(pvPopup).closest('.ui-dialog').hide();
     //console.log('close popup: [#'+sTag+' is a '+pvPopup+'] ');
 
 
