@@ -11,8 +11,11 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
       {
         //remove selected links adn select current clicked one
 
-        var onclickButton = document.getElementById('tabLink2').getAttribute('onclick');
-        alert(onclickButton);
+        //document.getElementById('tabLink2').getAttribute('onclick') = "";
+        var newOnclick = "toggleCandiTab(this,'candiTab2','',"+candidate_id+"false";
+        document.getElementById('tabLink2').setAttribute( "onclick", newOnclick );
+
+        //alert(onclickButton);
         //var onclickButton = document.getElementById(this).onclick;
         //var onclickButton = $(this).attr("onclick");
         //alert($(this).data('onclick'));
