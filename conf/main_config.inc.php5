@@ -194,6 +194,7 @@ switch(trim($_SERVER['SERVER_NAME']))
     case 'beta1.slate.co.jp':
     case 'beta2.slate.co.jp':
 
+    error_reporting(E_ERROR);
     //define('MONGO_USER', 'root');
     define('MONGO_USER', 'slistem');
     //define('MONGO_PASS', '123456');
