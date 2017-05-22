@@ -30,8 +30,8 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-if (CONST_DEV_SERVER)
-  Debugger::enable(Debugger::DEVELOPMENT);
+/*if (CONST_DEV_SERVER)
+  Debugger::enable(Debugger::DEVELOPMENT);*/
 
 //include here the list of all the tables/fields/controls/type. Used in model, but if included here it's loaded only once.
 require_once './common/lib/model.db_map.inc.php5';
