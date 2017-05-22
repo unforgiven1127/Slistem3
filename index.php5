@@ -33,7 +33,7 @@ require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 if (!CONST_DEV_SERVER)
 {
   ChromePhp::log('CONST_DEV_SERVER');
-  error_reporting(E_ALL & ~E_STRICT);
+  error_reporting(E_ERROR | E_PARSE);
 }
 
 /*if (CONST_DEV_SERVER)
