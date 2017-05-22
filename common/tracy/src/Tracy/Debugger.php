@@ -130,6 +130,7 @@ class Debugger
 	 */
 	public static function enable($mode = NULL, $logDirectory = NULL, $email = NULL)
 	{
+		ChromePhp::log('enable function');
 		self::$time = isset($_SERVER['REQUEST_TIME_FLOAT']) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime(TRUE);
 		error_reporting(E_ALL & ~E_STRICT);
 
