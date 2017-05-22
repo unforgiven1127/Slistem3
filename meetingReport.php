@@ -171,7 +171,7 @@ foreach ($meetingArray as $key => $value)
 	var_dump($value);
 	echo '<br><br>';
 }*/
-ChromePhp::log('meetingReport');
+
 /** Error reporting */
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
