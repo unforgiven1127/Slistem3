@@ -30,8 +30,11 @@ require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
 
-ChromePhp::log('INDEX');
-ChromePhp::log(CONST_DEV_SERVER);
+if (!CONST_DEV_SERVER)
+{
+  error_reporting(E_ERROR);
+}
+
 /*if (CONST_DEV_SERVER)
   Debugger::enable(Debugger::DEVELOPMENT);*/
 
