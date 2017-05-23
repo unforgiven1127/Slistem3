@@ -710,7 +710,7 @@ class CSl_positionEx extends CSl_position
         'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));
 
       $oForm->addField('textarea', 'description', array('label' => 'Job description<br>Responsibilities<br>Requirements',
-        'value' => $oDbResult->getFieldValue('description'), 'class' => 'public_important_field', 'allowTinymce' => 1'style' => 'min-height:100px !important;'));
+        'value' => $oDbResult->getFieldValue('description'), 'class' => 'public_important_field', 'allowTinymce' => 1'style' => 'min-height:100px !important;');
       /*$oForm->addField('textarea', 'responsabilities', array('label' => 'Responsibilities',
         'value' => $oDbResult->getFieldValue('responsabilities'), 'allowTinymce' => 1));
       $oForm->addField('textarea', 'requirements', array('label' => 'Requirements',
