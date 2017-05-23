@@ -130,9 +130,9 @@ class Debugger
 	 */
 	public static function enable($mode = NULL, $logDirectory = NULL, $email = NULL)
 	{
-		ChromePhp::log('enable function');
+		//ChromePhp::log('enable function');
 		self::$time = isset($_SERVER['REQUEST_TIME_FLOAT']) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime(TRUE);
-		//error_reporting(E_ALL & ~E_STRICT);
+		error_reporting(E_ALL & ~E_STRICT);
 
 		if ($mode !== NULL || self::$productionMode === NULL) {
 			self::$productionMode = is_bool($mode) ? $mode : !self::detectDebugMode($mode);
@@ -291,10 +291,10 @@ class Debugger
 	 */
 	public static function errorHandler($severity, $message, $file, $line, $context)
 	{
-		ChromePhp::log('errorHandler');
+		//ChromePhp::log('errorHandler');
 		if (self::$scream) {
-			ChromePhp::log('IF IN');
-			//error_reporting(E_ALL | E_STRICT);
+			//ChromePhp::log('IF IN');
+			error_reporting(E_ALL | E_STRICT);
 		}
 
 		if ($severity === E_RECOVERABLE_ERROR || $severity === E_USER_ERROR) {
