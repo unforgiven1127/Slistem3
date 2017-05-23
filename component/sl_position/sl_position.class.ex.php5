@@ -522,7 +522,7 @@ class CSl_positionEx extends CSl_position
       $oForm->addField('input', 'career_level', array('label' => 'career level',
         'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));
 
-      $oForm->addField('textarea', 'description', array('label' => 'Company/Job description.',
+      $oForm->addField('textarea', 'description', array('label' => 'Company/Job description',
         'value' => $oDbResult->getFieldValue('description'), 'class' => 'public_important_field', 'allowTinymce' => 1));
       $oForm->addField('textarea', 'responsabilities', array('label' => 'Responsibilities',
         'value' => $oDbResult->getFieldValue('responsabilities'), 'allowTinymce' => 1));
@@ -709,7 +709,7 @@ class CSl_positionEx extends CSl_position
       $oForm->addField('input', 'career_level', array('label' => 'career level',
         'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));
 
-      $oForm->addField('textarea', 'description', array('label' => 'Company/Job description',
+      $oForm->addField('textarea', 'description', array('label' => 'Company/Job description.',
         'value' => $oDbResult->getFieldValue('description'), 'class' => 'public_important_field', 'allowTinymce' => 1));
       $oForm->addField('textarea', 'responsabilities', array('label' => 'Responsibilities',
         'value' => $oDbResult->getFieldValue('responsabilities'), 'allowTinymce' => 1));
@@ -2402,7 +2402,7 @@ class CSl_positionEx extends CSl_position
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
           $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
-          $sDetail.= $this->_oDisplay->getBloc('', 'Company/Job description', array('style' => 'min-height:40px !important;','class' => 'label'));
+          $sDetail.= $this->_oDisplay->getBloc('', 'Company/Job description..', array('style' => 'min-height:40px !important;','class' => 'label'));
           $sDetail.= $this->_oDisplay->getBloc('', $asPosition['description'], array('class' => 'value'));
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
@@ -3001,7 +3001,7 @@ class CSl_positionEx extends CSl_position
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
           $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
-          $sDetail.= $this->_oDisplay->getBloc('', 'Company/Job description', array('class' => 'label'));
+          $sDetail.= $this->_oDisplay->getBloc('', 'Company/Job description...', array('class' => 'label'));
           $sDetail.= $this->_oDisplay->getBloc('', $asPosition['description'], array('class' => 'value'));
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
