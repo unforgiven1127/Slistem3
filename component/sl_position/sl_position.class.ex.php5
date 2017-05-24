@@ -2401,20 +2401,23 @@ class CSl_positionEx extends CSl_position
           $sDetail.= $this->_oDisplay->getBloc('', '#'.$asPosition['positionfk'].' - '.$asPosition['title'], array('class' => 'value'));
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
-          $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
-          $sDetail.= $this->_oDisplay->getBloc('', 'Company/Job description!', array('style' => 'min-height:40px !important;','class' => 'label'));
-          $sDetail.= $this->_oDisplay->getBloc('', $asPosition['description'], array('class' => 'value'));
-          $sDetail.= $this->_oDisplay->getBlocEnd();
+          $combinedPositionDesc = $asPosition['description'] + "<br>" + $asPosition['responsabilities'] + "<br>" + $asPosition['requirements'];
 
           $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
-          $sDetail.= $this->_oDisplay->getBloc('', 'Responsibilities', array('class' => 'label'));
-          $sDetail.= $this->_oDisplay->getBloc('', $asPosition['responsabilities'], array('class' => 'value'));
+          $sDetail.= $this->_oDisplay->getBloc('', 'Job description<br>Responsibilities<br>Requirements', array('style' => 'min-height:100px !important;','class' => 'label'));
+          //$sDetail.= $this->_oDisplay->getBloc('', $asPosition['description'], array('class' => 'value'));
+          $sDetail.= $this->_oDisplay->getBloc('', $combinedPositionDesc, array('class' => 'value'));
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
-          $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
+          //$sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
+          //$sDetail.= $this->_oDisplay->getBloc('', 'Responsibilities', array('class' => 'label'));
+          //$sDetail.= $this->_oDisplay->getBloc('', $asPosition['responsabilities'], array('class' => 'value'));
+          //$sDetail.= $this->_oDisplay->getBlocEnd();
+
+          /*$sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
           $sDetail.= $this->_oDisplay->getBloc('', 'Requiremensts', array('class' => 'label'));
           $sDetail.= $this->_oDisplay->getBloc('', $asPosition['requirements'], array('class' => 'value'));
-          $sDetail.= $this->_oDisplay->getBlocEnd();
+          $sDetail.= $this->_oDisplay->getBlocEnd();*/
 
           $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
           $sDetail.= $this->_oDisplay->getBloc('', 'Contact', array('class' => 'label'));
