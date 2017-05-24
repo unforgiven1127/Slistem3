@@ -709,7 +709,7 @@ class CSl_positionEx extends CSl_position
       $oForm->addField('input', 'career_level', array('label' => 'career level',
         'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));
 
-      $positionCombinedDesc = $oDbResult->getFieldValue('description')."<br>".$oDbResult->getFieldValue('responsabilities')."<br>".$oDbResult->getFieldValue('requirements');
+      $positionCombinedDesc = $oDbResult->getFieldValue('description')."\\n".$oDbResult->getFieldValue('responsabilities')."\\n".$oDbResult->getFieldValue('requirements');
 
       $oForm->addField('textarea', 'description', array('label' => 'Job description<br>Responsibilities<br>Requirements',
         'value' => $positionCombinedDesc, 'class' => 'public_important_field', 'allowTinymce' => 1, 'style' => 'min-height:200px !important;'));
