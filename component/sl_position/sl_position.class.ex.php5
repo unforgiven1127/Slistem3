@@ -519,6 +519,7 @@ class CSl_positionEx extends CSl_position
       //specific for each language
       $oForm->addField('input', 'title', array('label' => 'Title', 'value' => $oDbResult->getFieldValue('title'),
         'class' => 'public_important_field'));
+
       /*$oForm->addField('input', 'career_level', array('label' => 'career level',
         'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));*/
 
