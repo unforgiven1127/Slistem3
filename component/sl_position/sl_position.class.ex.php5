@@ -2401,7 +2401,7 @@ class CSl_positionEx extends CSl_position
           $sDetail.= $this->_oDisplay->getBloc('', '#'.$asPosition['positionfk'].' - '.$asPosition['title'], array('class' => 'value'));
           $sDetail.= $this->_oDisplay->getBlocEnd();
 
-          $combinedPositionDesc = $asPosition['description'] + "<br>" + $asPosition['responsabilities'] + "<br>" + $asPosition['requirements'];
+          $combinedPositionDesc = $asPosition['description']."<br>".$asPosition['responsabilities']."<br>".$asPosition['requirements'];
 
           $sDetail.= $this->_oDisplay->getBlocStart('pos_detail_'.$asPosition['language'], array('class' => 'position_detail_row'));
           $sDetail.= $this->_oDisplay->getBloc('', 'Job description<br>Responsibilities<br>Requirements', array('style' => 'min-height:100px !important;','class' => 'label'));
