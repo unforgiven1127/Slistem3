@@ -520,15 +520,17 @@ class CSl_positionEx extends CSl_position
       $oForm->addField('input', 'title', array('label' => 'Title', 'value' => $oDbResult->getFieldValue('title'),
         'class' => 'public_important_field'));
 
-      $oForm->addField('input', 'career_level', array('label' => 'career level',
-        'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));
+      /*$oForm->addField('input', 'career_level', array('label' => 'career level',
+        'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));*/
 
-      $oForm->addField('textarea', 'description', array('label' => 'Company/Job description',
-        'value' => $oDbResult->getFieldValue('description'), 'class' => 'public_important_field', 'allowTinymce' => 1));
-      $oForm->addField('textarea', 'responsabilities', array('label' => 'Responsibilities',
+      $combinedPositionDesc = $oDbResult->getFieldValue('description')." ".$oDbResult->getFieldValue('responsabilities')." ".$oDbResult->getFieldValue('requirements');
+
+      $oForm->addField('textarea', 'description', array('label' => 'Job description<br>Responsibilities<br>Requirements',
+        'value' => $combinedPositionDesc, 'class' => 'public_important_field', 'allowTinymce' => 1));
+      /*$oForm->addField('textarea', 'responsabilities', array('label' => 'Responsibilities',
         'value' => $oDbResult->getFieldValue('responsabilities'), 'allowTinymce' => 1));
       $oForm->addField('textarea', 'requirements', array('label' => 'Requirements',
-        'value' => $oDbResult->getFieldValue('requirements'), 'class' => 'public_important_field', 'allowTinymce' => 1));
+        'value' => $oDbResult->getFieldValue('requirements'), 'class' => 'public_important_field', 'allowTinymce' => 1));*/
 
 
       return $oForm->getDisplay();
@@ -708,8 +710,8 @@ class CSl_positionEx extends CSl_position
       $oForm->addField('input', 'title', array('label' => 'Title', 'value' => $oDbResult->getFieldValue('title'),
         'class' => 'public_important_field'));
 
-      $oForm->addField('input', 'career_level', array('label' => 'career level',
-        'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));//career level
+      /*$oForm->addField('input', 'career_level', array('label' => 'career level',
+        'value' => $oDbResult->getFieldValue('career_level'), 'class' => 'public_important_field'));*/
 
       $positionCombinedDesc = $oDbResult->getFieldValue('description')." ".$oDbResult->getFieldValue('responsabilities')." ".$oDbResult->getFieldValue('requirements');
 
