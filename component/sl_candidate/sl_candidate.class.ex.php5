@@ -3596,7 +3596,7 @@ class CSl_candidateEx extends CSl_candidate
             $sCompanyW = '9%';//14
             $sTitleW = '9%';//10
             $sDeptW = '9%';
-            $sPhoneW = '8%';
+            $sPhoneW = '7%';
 
             $firstname_class = 'column_10'; $lastname_class = 'column_10'; $company_class = 'column_14';
             $title_class = 'column_10'; $dept_class = 'column_9';
@@ -3606,7 +3606,7 @@ class CSl_candidateEx extends CSl_candidate
             $sFistnameW = '13%';
             $sLastnameW = '13%';
             $sCompanyW = '10%';//18
-            $sPhoneW = '8%';
+            $sPhoneW = '7%';
             $sTitleW = '11%'; $sDeptW = '10%';
 
             $firstname_class = 'column_13'; $lastname_class = 'column_13'; $company_class = 'column_18';
@@ -3633,6 +3633,13 @@ class CSl_candidateEx extends CSl_candidate
 
           $oConf->addColumn('Company', 'company_name', array('id' => '', 'width' => $sCompanyW, 'class' => $company_class,
             'sortable'=> array($sSortJs => 'text', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
+
+          //add work phone to candidate list
+          if(in_array('phone', $this->casSettings['candi_list_field']))
+          {
+            $oConf->addColumn('Work P.', 'phone', array('id' => '', 'width' => $sPhoneW,
+              'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
+          }
 
 
           if($bDisplayPositionField)
@@ -3666,10 +3673,6 @@ class CSl_candidateEx extends CSl_candidate
             $oConf->addColumn('Salary', 'salary', array('id' => '', 'width' => '42', 'class' => 'column_static_42',
               'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
-          //add work phone to candidate list
-          if(in_array('phone', $this->casSettings['candi_list_field']))
-            $oConf->addColumn('Work P.', 'phone', array('id' => '', 'width' => $sPhoneW,
-              'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
           if(in_array('manager', $this->casSettings['candi_list_field']))
             $oConf->addColumn('Managed by', 'manager', array('id' => '', 'width' => '105', 'class' => 'column_static_105',)); //108px
