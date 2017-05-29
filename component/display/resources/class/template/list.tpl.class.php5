@@ -111,12 +111,16 @@ class CTemplateList extends CTemplate
         $sHeader = $oDisplay->getListItemStart('', array('class' => 'tplListRowContainer tplListHeaderContainer '.$asRender['header']));
         $sHeader.= $oDisplay->getBlocStart('', array('class' => 'tplListRow'));
 
+ChromePhp::log($sHeader);
+
         $nCount = 0;
         $nListWidth = 0;
         $nNbCustomWidth = 0;
         $nExactWidth = 0;
 
         $asFields = array();
+
+ChromePhp::log($asHeader);
 
         foreach($asHeader as $nHeaderPos => $asColumnData)
         {
