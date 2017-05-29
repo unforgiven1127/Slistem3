@@ -3660,7 +3660,7 @@ ChromePhp::log($sQuery);
               'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
           //add work phone to candidate list
           if(in_array('phone', $this->casSettings['candi_list_field']))
-            $oConf->addColumn('Work Phone', 'phone', array('id' => '', 'width' => '42', 'class' => 'column_static_42',
+            $oConf->addColumn('Work Phone', 'phone', array('id' => '', 'width' => '42',
               'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
           if(in_array('manager', $this->casSettings['candi_list_field']))
