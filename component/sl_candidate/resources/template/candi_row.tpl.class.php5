@@ -226,8 +226,8 @@ class CCandi_row extends CTemplate
         $asOption['class'].= ' tplCandi_status'.$blurClass;
         $nWeighted = ($lastStatusClean-50);
         $asOption['class'].= ' tplCandi_status_50'.$blurClass;
-        $sValue = $opac1.' CCM '.$opac2;
-        $asOption['title'] = $sValue;
+        $sValue = $opac1.' CCM '.$nWeighted.$opac2;
+        $asOption['title'] = ' CCM '.$nWeighted;
         $nValue = $nWeighted+5;
       }
       else if($lastStatusClean == 100)
