@@ -736,7 +736,7 @@ class CCandi_row extends CTemplate
         }
         else if(!$levelFlag)
         {
-          $latestWorkPhone = "<p style='color:red; font-weight: bold; font-size: 14px;' >C L I E N T</p>";
+          $latestWorkPhone = "<p style='color:red; font-weight: bold; font-size: 14px; letter-spacing: 1px;' >CLIENT</p>";
         }
         else
         {
