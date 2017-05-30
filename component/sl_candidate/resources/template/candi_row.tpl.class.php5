@@ -718,6 +718,10 @@ class CCandi_row extends CTemplate
       //phone
       if(isset($pasHeader['phone']))
       {
+        $company_id = $pasData['sl_companypk'];
+        $company_information = getCompanyInformation($company_id);
+        $level = $company_information['level'];
+
         $latestWorkPhone = getCandidateLatestWorkPhone($candidate_id);
         if(isset($latestWorkPhone['value']))
         {
