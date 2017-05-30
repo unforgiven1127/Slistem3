@@ -918,12 +918,10 @@ div.list_action_container > div > div:first-child
   padding-top: 5px;
 }
 
-
-
-.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac:not(.noOpacity) { opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac:not(.noOpacity){ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac:not(.noOpacity){ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;}
-.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac:not(.noOpacity){ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac:not(.noOpacity) { /*opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; */}
+.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac:not(.noOpacity){ /*opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px;*/ }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac:not(.noOpacity){ /*opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;*/}
+.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac:not(.noOpacity){ /*opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px;*/ }
 
 
 .tplListRowContainer div.tplListRow > div.tplCandi_status_50 { background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
