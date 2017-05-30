@@ -3591,22 +3591,15 @@ class CSl_candidateEx extends CSl_candidate
           //if we need to display play data, we shrink other columns
           if($bDisplayPositionField)
           {
-            $sFistnameW = '9%';//10
-            $sLastnameW = '9%';//10
-            $sCompanyW = '9%';//14
-            $sTitleW = '9%';//10
-            $sDeptW = '9%';
-            $sPhoneW = '7%';
+            $sFistnameW = '10%'; $sLastnameW = '10%'; $sCompanyW = '14%';
+            $sTitleW = '10%'; $sDeptW = '9%';
 
             $firstname_class = 'column_10'; $lastname_class = 'column_10'; $company_class = 'column_14';
             $title_class = 'column_10'; $dept_class = 'column_9';
           }
           else
           {
-            $sFistnameW = '13%';
-            $sLastnameW = '13%';
-            $sCompanyW = '10%';//18
-            $sPhoneW = '7%';
+            $sFistnameW = '13%'; $sLastnameW = '13%'; $sCompanyW = '18%';
             $sTitleW = '11%'; $sDeptW = '10%';
 
             $firstname_class = 'column_13'; $lastname_class = 'column_13'; $company_class = 'column_18';
@@ -3668,7 +3661,7 @@ class CSl_candidateEx extends CSl_candidate
 
           //add work phone to candidate list
           if(in_array('phone', $this->casSettings['candi_list_field']))
-            $oConf->addColumn('Work P.', 'phone', array('id' => '', 'width' => '42',
+            $oConf->addColumn('Work Phone', 'phone', array('id' => '', 'width' => '45',
               'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
           if(in_array('manager', $this->casSettings['candi_list_field']))
