@@ -113,7 +113,6 @@ var CPopup = function()
 
   this.remove = function(pvPopup, pbForce)
   {
-    //alert('test');
     //console.log('try to remove ' + pvPopup);
 
     //if string ==> popupID, else the dialog object
