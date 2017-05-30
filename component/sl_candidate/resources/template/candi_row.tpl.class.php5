@@ -722,10 +722,21 @@ class CCandi_row extends CTemplate
         $company_information = getCompanyInformation($company_id);
         $level = $company_information['level'];
 
+        $levelFlag = true;
+
+        if($level == 1 || $level == 2 || $level == 3)
+        {
+          $levelFlag = false;
+        }
+
         $latestWorkPhone = getCandidateLatestWorkPhone($candidate_id);
-        if(isset($latestWorkPhone['value']))
+        if(isset($latestWorkPhone['value']) && $levelFlag)
         {
           $latestWorkPhone = $latestWorkPhone['value'];
+        }
+        else if(!$levelFlag)
+        {
+          $latestWorkPhone = 'CLIENT';
         }
         else
         {
