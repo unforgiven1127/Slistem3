@@ -152,7 +152,12 @@ $(function () {
         plotOptions: {
             series: {
                 stacking: 'normal'
+            },
+            bar: {
+            dataLabels: {
+                enabled: true
             }
+        }
         },
         series: [ {
                 name: ' ',
