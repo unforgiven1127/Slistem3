@@ -140,7 +140,7 @@ class CSl_eventEx extends CSl_event
       }
     }
 
-    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+    uasort($asNotes, sort_multi_array_by_value('date_display', 'reverse'));
 
     foreach ($asNotes as $key => $note)
     {
