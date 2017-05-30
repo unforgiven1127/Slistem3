@@ -3162,6 +3162,19 @@ var_dump($query);*/
     return $result;
   }
 
+  function getCandidateLatestWorkPhone($candidate_id)
+  {
+    $sQuery = "SELECT slc.* FROM sl_contact slc
+    WHERE slc.itemfk = ".$candidate_id." AND slc.type = 2 ORDER BY slc.sl_contactpk DESC LIMIT 1";
+
+    $db_result = $oDB->executeQuery($sQuery);
+    $read = $db_result->readFirst();
+
+    $result = $db_result->getData();
+
+    return $result;
+  }
+
   function getCandidateContactInfo($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
