@@ -3644,7 +3644,7 @@ class CSl_candidateEx extends CSl_candidate
           }
 
           if(in_array('department', $this->casSettings['candi_list_field']))
-            $oConf->addColumn('Department', 'department', array('id' => '', 'width' => $sDeptW, 'class' => $dept_class, 'style' => 'margin-left:3px; margin-right:3px;',
+            $oConf->addColumn('Department', 'department', array('id' => '', 'width' => $sDeptW, 'class' => $dept_class, 'style' => 'width:72px;',
               'sortable'=> array($sSortJs => 'text', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
           if(in_array('note', $this->casSettings['candi_list_field']))
