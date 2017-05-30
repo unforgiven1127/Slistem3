@@ -135,12 +135,11 @@ var CPopup = function()
 
     if(pbForce === true || !$(pvPopup).dialog('option', 'persistent'))
     {
-      //alert('force');
-      //$(pvPopup).dialog('destroy');
-      //delete this.caoPopup[sTag];
+      $(pvPopup).dialog('destroy');
+      delete this.caoPopup[sTag];
 
       //remove the html tags created for the popup
-      //$(pvPopup).remove();
+      $(pvPopup).remove();
 
       console.log('removed/destroyed '+sTag);
       //console.log(this.caoPopup);
