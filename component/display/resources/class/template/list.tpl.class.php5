@@ -124,7 +124,7 @@ class CTemplateList extends CTemplate
 
         foreach($asHeader as $nHeaderPos => $asColumnData)
         {
-          ChromePhp::log($asColumnData['label']);
+          //ChromePhp::log($asColumnData['label']);
           if($asColumnData['label'] == "ID" || $asColumnData['label'] == "Salary")
           {
             $type = 'integer';

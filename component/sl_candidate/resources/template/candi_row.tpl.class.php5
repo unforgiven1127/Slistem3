@@ -708,14 +708,14 @@ class CCandi_row extends CTemplate
       }
 
       //phone
-      /*if(isset($pasHeader['phone']))
+      if(isset($pasHeader['phone']))
       {
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag'].' alignCenter');
         $sHTML.= $oDisplay->getBloc('', "7785552525", $asOption);
 
         $nColNumber++;
-      }*/
+      }
 
       //creator/person in charge
       if(isset($pasHeader['manager']))
