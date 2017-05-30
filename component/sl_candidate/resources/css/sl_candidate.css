@@ -904,7 +904,7 @@ div.list_action_container > div > div:first-child
   text-align: center;
   font-size: 10px;
   line-height: 15px;
-  /*opacity: 0.3;*/
+  opacity: 0.3;
 }
 .innerOpac
 {
