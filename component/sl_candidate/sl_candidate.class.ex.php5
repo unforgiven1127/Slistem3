@@ -3592,7 +3592,7 @@ class CSl_candidateEx extends CSl_candidate
           if($bDisplayPositionField)
           {
             $sFistnameW = '10%'; $sLastnameW = '10%'; $sCompanyW = '14%';
-            $sTitleW = '10%'; /*$sDeptW = '9%';*/ $sDeptW ='100px';
+            $sTitleW = '10%'; /*$sDeptW = '9%';*/ $sDeptW ='100';
 
             $firstname_class = 'column_10'; $lastname_class = 'column_10'; $company_class = 'column_14';
             $title_class = 'column_10'; /*$dept_class = 'column_9';*/ $dept_class = '';
@@ -3600,7 +3600,7 @@ class CSl_candidateEx extends CSl_candidate
           else
           {
             $sFistnameW = '13%'; $sLastnameW = '13%'; $sCompanyW = '18%';
-            $sTitleW = '11%'; /*$sDeptW = '10%';*/ $sDeptW ='100px';
+            $sTitleW = '11%'; /*$sDeptW = '10%';*/ $sDeptW ='100';
 
             $firstname_class = 'column_13'; $lastname_class = 'column_13'; $company_class = 'column_18';
             $title_class = 'column_11'; /*$dept_class = 'column_10';*/ $dept_class = '';
