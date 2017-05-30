@@ -719,6 +719,8 @@ class CCandi_row extends CTemplate
       if(isset($pasHeader['phone']))
       {
         $latestWorkPhone = getCandidateLatestWorkPhone($candidate_id);
+        $latestWorkPhone = $latestWorkPhone['value'];
+
         set_array($pasColumnParam[$nColNumber]['tag'], '');
         $asOption = array('class' => $pasColumnParam[$nColNumber]['tag'].' alignCenter');
         $sHTML.= $oDisplay->getBloc('', $latestWorkPhone, $asOption);
