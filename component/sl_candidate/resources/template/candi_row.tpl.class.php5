@@ -152,7 +152,6 @@ class CCandi_row extends CTemplate
     }
     $sHTML.= $oDisplay->getBloc('', '', $asOption);
 
-    $sHTML.= $oDisplay->getBloc('', '', $asOption);
 
     set_array($pasColumnParam[3]['tag'], '');
     $asOption = array('class' => $pasColumnParam[3]['tag'].' tplCandiRow_continuous clickable');
@@ -260,35 +259,37 @@ class CCandi_row extends CTemplate
     {
       $nValue = 0;
     }
-    $sHTML.= $oDisplay->getBloc('', $sValue, $asOption);
+
     if($CandidatePlacementCount == 1)
     {
-      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2." '>
+          <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
+        </div>";
     }
     else if($CandidatePlacementCount == 2)
     {
-      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2." '>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
     }
     else if($CandidatePlacementCount == 3)
     {
-      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2." '>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div style='margin-top:5px; ".$blurClass2." '>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
     }
     else if($CandidatePlacementCount > 3)
     {
-      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2." '>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
-      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2." '>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
@@ -449,8 +450,7 @@ class CCandi_row extends CTemplate
 
     $asOption['onclick'] = 'view_candi(\''.$sViewURL.'\', \'#tabLink8\');';
     $asOption['sort_value'] = $nValue;
-    $sHTML.= $oDisplay->getBloc('', '', $asOption);
-    //$sHTML.= $oDisplay->getBloc('', $sValue, $asOption);
+    $sHTML.= $oDisplay->getBloc('', $sValue, $asOption);
 
 
     set_array($pasColumnParam[4]['tag'], '');
