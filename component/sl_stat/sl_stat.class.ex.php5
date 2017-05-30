@@ -4155,7 +4155,15 @@ class CSl_statEx extends CSl_stat
           foreach ($new_candidate_met as $key => $value)
           {
             $new_candidate_met_json.= $value['formatted'].";";
-            $new_candidate_count .=$value['count'].";";
+            if($value['count'] > 27)
+            {
+              $new_candidate_count .= "27;";
+            }
+            else
+            {
+              $new_candidate_count .=$value['count'].";";
+            }
+
           }
 
           $new_candidate_met_json = " ;".$new_candidate_met_json;
