@@ -899,7 +899,7 @@ div.list_action_container > div > div:first-child
 }
 .tplListRowContainer div.tplListRow > div.tplCandi_statusOpac:not(.noOpacity)
 {
-  background: transparent url('/component/sl_candidate/resources/pictures/status/status.jpg') no-repeat center 5px;
+  /*background: transparent url('/component/sl_candidate/resources/pictures/status/status.jpg') no-repeat center 5px;
   color: #fff;
   text-align: center;
   font-size: 10px;
