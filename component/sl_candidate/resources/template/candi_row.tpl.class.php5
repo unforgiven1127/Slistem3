@@ -262,18 +262,18 @@ class CCandi_row extends CTemplate
 
     if($CandidatePlacementCount == 1)
     {
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'><img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''></div>";
     }
     else if($CandidatePlacementCount == 2)
     {
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
     }
     else if($CandidatePlacementCount == 3)
     {
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
@@ -283,11 +283,11 @@ class CCandi_row extends CTemplate
     }
     else if($CandidatePlacementCount > 3)
     {
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";
-      $sValue.= "<div style='margin-top:5px; ".$blurClass2."'>
+      $sValue.= "<div class='noOpacity' style='margin-top:5px; ".$blurClass2."'>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
         <img src='/component/sl_candidate/resources/pictures/status/list_placed.png' alt=''>
       </div>";

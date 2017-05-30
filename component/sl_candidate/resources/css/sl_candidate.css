@@ -897,7 +897,7 @@ div.list_action_container > div > div:first-child
   font-size: 10px;
   line-height: 15px;
 }
-.tplListRowContainer div.tplListRow > div.tplCandi_statusOpac
+.tplListRowContainer div.tplListRow > div.tplCandi_statusOpac:not(.noOpacity)
 {
   background: transparent url('/component/sl_candidate/resources/pictures/status/status.jpg') no-repeat center 5px;
   color: #fff;
@@ -906,10 +906,10 @@ div.list_action_container > div > div:first-child
   line-height: 15px;
   opacity: 0.3 !important;
 }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac { opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;}
-.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac:not(.noOpacity) { opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac:not(.noOpacity){ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac:not(.noOpacity){ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;}
+.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac:not(.noOpacity){ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px; }
 
 
 .tplListRowContainer div.tplListRow > div.tplCandi_status_50 { background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
