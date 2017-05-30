@@ -204,7 +204,7 @@ class CCandi_row extends CTemplate
       if($lastStatusClean == 1)
       {
         $asOption['class'].= ' tplCandi_status'.$blurClass;
-        $sValue = ' ptchd';
+        $sValue = ' <div>ptchd</div>';
         $asOption['title'] = 'Pitched';
       }
       else if($lastStatusClean == 2)
