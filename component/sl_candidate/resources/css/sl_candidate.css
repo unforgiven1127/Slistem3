@@ -904,17 +904,12 @@ div.list_action_container > div > div:first-child
   text-align: center;
   font-size: 10px;
   line-height: 15px;
-
+  opacity: 0.3 !important;
 }
-.tplListRowContainer div.tplListRow > div.tplCandi_statusOpac > img
-{
-  opacity: 0.3;
-}
-
-.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac { opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac{ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px; }
-.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac{ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;}
-.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac{ opacity: 0.3; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_50Opac { opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_100Opac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_offer.jpg') no-repeat center 5px; }
+.tplListRowContainer div.tplListRow > div.tplCandi_status_151Opac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_expired.jpg') no-repeat center 5px;}
+.tplListRowContainer div.tplListRow > div.tplCandi_status_inactiveOpac{ opacity: 0.3 !important; background: transparent url('/component/sl_candidate/resources/pictures/status/status_inactive.jpg') no-repeat center 5px; }
 
 
 .tplListRowContainer div.tplListRow > div.tplCandi_status_50 { background: transparent url('/component/sl_candidate/resources/pictures/status/status_50.jpg') no-repeat center 5px; }
