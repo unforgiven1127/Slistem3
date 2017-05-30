@@ -3592,7 +3592,7 @@ class CSl_candidateEx extends CSl_candidate
           if($bDisplayPositionField)
           {
             $sFistnameW = '10%'; $sLastnameW = '10%'; $sCompanyW = '14%';
-            $sTitleW = '10%'; $sDeptW = '9%';
+            $sTitleW = '10%'; /*$sDeptW = '9%';*/ $sDeptW ='100px';
 
             $firstname_class = 'column_10'; $lastname_class = 'column_10'; $company_class = 'column_14';
             $title_class = 'column_10'; $dept_class = 'column_9';
