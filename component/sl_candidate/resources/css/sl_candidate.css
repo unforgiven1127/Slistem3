@@ -906,7 +906,7 @@ div.list_action_container > div > div:first-child
   line-height: 15px;
   /*opacity: 0.3;*/
 }
-.tplListRowContainer div.tplListRow > div.tplCandi_statusOpac.innerOpac
+.innerOpac
 {
   opacity: 0.3;
 }
