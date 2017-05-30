@@ -620,7 +620,7 @@ class CCandi_row extends CTemplate
       if(isset($pasHeader['department']))
       {
         set_array($pasColumnParam[$nColNumber]['tag'], '');
-        $asOption = array('class' => $pasColumnParam[$nColNumber]['tag'],'style'=>'width:100px !important;');
+        $asOption = array('style'=>'width:100px !important;');//'class' => $pasColumnParam[$nColNumber]['tag'],
         $sHTML.= $oDisplay->getBloc('', $pasData['department'], $asOption);
 
         $nColNumber++;
