@@ -621,9 +621,9 @@ class CCandi_row extends CTemplate
       {
         //set_array($pasColumnParam[$nColNumber]['tag'], '');
         $asOption = array('style'=>'width:73px !important;');//'class' => $pasColumnParam[$nColNumber]['tag'],
-        if(strlen($pasData['department']) > 13)
+        if(strlen($pasData['department']) > 12)
         {
-          $newString = substr($pasData['department'],0,13)."..";
+          $newString = substr($pasData['department'],0,12)."..";
         }
         else
         {
