@@ -1610,7 +1610,7 @@ class CLoginEx extends CLogin
     $oForm->setFieldControl('position', array('jsFieldNotEmpty' => '','jsFieldMinSize' => 2));*/
 
     $oForm->addField('select', 'position', array('label'=> 'Position'));
-    $oForm->addOption('status', array('value'=> 'Consultant', 'label' => 'Consultant', 'selected' => 'selected'));
+    $oForm->addOption('position', array('value'=> 'Consultant', 'label' => 'Consultant', 'selected' => 'selected'));
 
     $sURL = $oPage->getAjaxUrl('555-001', CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_COMP);
     $oForm->addField('selector', 'companyfk', array('label' => 'Company', 'url' => $sURL));
