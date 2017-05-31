@@ -4190,7 +4190,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      $array = array('a'=>1,3=>array('subArrayStuff'=>'value'));
+      $array = array();
 
       $iterator = new ArrayObject($array);
 
@@ -4273,7 +4273,7 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      $array = array('a'=>1,3=>array('subArrayStuff'=>'value'));
+      $array = array();
 
       $iterator = new ArrayObject($array);
 
