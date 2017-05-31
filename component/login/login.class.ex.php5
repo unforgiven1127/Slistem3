@@ -1609,6 +1609,9 @@ class CLoginEx extends CLogin
     /*$oForm->addField('input', 'position', array('label'=> 'Position', 'value' => $oResult->getFieldValue('position')));
     $oForm->setFieldControl('position', array('jsFieldNotEmpty' => '','jsFieldMinSize' => 2));*/
 
+    $userPosition = $oResult->getFieldValue('position');
+    ChromePhp::log($userPosition);
+
     $oForm->addField('select', 'position', array('label'=> 'Position'));
     $oForm->addOption('position', array('value'=> 'Consultant', 'label' => 'Consultant', 'selected' => 'selected'));
 
