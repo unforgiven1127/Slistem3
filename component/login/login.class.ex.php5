@@ -1616,13 +1616,13 @@ class CLoginEx extends CLogin
     $selectedAdministrator = array('value'=> 'Consultant', 'label' => 'Administrator');
     if(isset($userPosition) && !empty($userPosition))
     {
-      //if($userPosition == 'Consultant') $selectedConsultant['selected'] = 'selected';
-      //else if($userPosition == 'Researcher') $selectedResearcher['selected'] = 'selected';
-      //else if($userPosition == 'Administrator') $selectedAdministrator['selected'] = 'selected';
+      if($userPosition == 'Consultant') $selectedConsultant['selected'] = 'selected';
+      else if($userPosition == 'Researcher') $selectedResearcher['selected'] = 'selected';
+      else if($userPosition == 'Administrator') $selectedAdministrator['selected'] = 'selected';
     }
 
     $oForm->addField('select', 'position', array('label'=> 'Position'));
-    $oForm->addOption('position', $selectedConsultan);
+    $oForm->addOption('position', $selectedConsultant);
     $oForm->addOption('position', $selectedResearcher);
     $oForm->addOption('position', $selectedAdministrator);
 
