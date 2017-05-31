@@ -4190,8 +4190,11 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      $array = array('key1'=>'value1', 'value2', 'value3', 'value4');
-      return $array;
+      $array = array('a'=>1,2=>new stdClass,3=>array('subArrayStuff'=>'value'));
+
+      $iterator = new ArrayObject($array);
+
+      return $iterator;
 
     //die('MONGO ERROR : ' . $e->getMessage());
 
@@ -4270,8 +4273,11 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
-      $array = array();
-      return $array;
+      $array = array('a'=>1,2=>new stdClass,3=>array('subArrayStuff'=>'value'));
+
+      $iterator = new ArrayObject($array);
+
+      return $iterator;
 
       //die('MONGO ERROR : ' . $e->getMessage());
 
