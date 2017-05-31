@@ -4190,6 +4190,9 @@ var_dump($query);*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
+      $error = 'MONGO ERROR : ' . $e->getMessage();
+      ChromePhp::log($error);
+
       $array = array();
 
       $iterator = new ArrayObject($array);
@@ -4272,6 +4275,9 @@ var_dump($query);*/
         ));
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
+
+      $error = 'MONGO ERROR : ' . $e->getMessage();
+      ChromePhp::log($error);
 
       $array = array();
 
