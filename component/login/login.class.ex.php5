@@ -1062,6 +1062,7 @@ class CLoginEx extends CLogin
 
   private function _saveUser($pnLoginPk = 0)
   {
+    ChromePhp::log('_saveUser');
     $oHTML = CDependency::getCpHtml();
 
     $oRight = CDependency::getComponentByName('right');
@@ -1138,6 +1139,8 @@ class CLoginEx extends CLogin
     $asUpdate['phone'] = getValue('phone');
     $asUpdate['phone_ext'] = getValue('phone_ext');
     $asUpdate['position'] = getValue('position');
+
+    ChromePhp::log($asUpdate['position']);
 // eski value ile karsilastir researcher to consultant ise tarihi update et
 
     if($clientFlag)
