@@ -1610,10 +1610,21 @@ class CLoginEx extends CLogin
     $oForm->setFieldControl('position', array('jsFieldNotEmpty' => '','jsFieldMinSize' => 2));*/
 
     $userPosition = $oResult->getFieldValue('position');
-    ChromePhp::log($userPosition);
+    //ChromePhp::log($userPosition);
+    $selectedConsultant = array('value'=> 'Consultant', 'label' => 'Consultant');
+    $selectedResearcher = array('value'=> 'Consultant', 'label' => 'Researcher');
+    $selectedAdministrator = array('value'=> 'Consultant', 'label' => 'Administrator');
+    if(isset($userPosition) && !empty($userPosition))
+    {
+      if($userPosition == 'Consultant') $selectedConsultant['selected'] = 'selected';
+      else if($userPosition == 'Researcher') $selectedResearcher['selected'] = 'selected';
+      else if($userPosition == 'Administrator') $selectedAdministrator['selected'] = 'selected';
+    }
 
     $oForm->addField('select', 'position', array('label'=> 'Position'));
-    $oForm->addOption('position', array('value'=> 'Consultant', 'label' => 'Consultant', 'selected' => 'selected'));
+    $oForm->addOption('position', $selectedConsultan);
+    $oForm->addOption('position', $selectedResearcher);
+    $oForm->addOption('position', $selectedAdministrator);
 
     $sURL = $oPage->getAjaxUrl('555-001', CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_COMP);
     $oForm->addField('selector', 'companyfk', array('label' => 'Company', 'url' => $sURL));
