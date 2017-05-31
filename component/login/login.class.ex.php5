@@ -1615,8 +1615,8 @@ class CLoginEx extends CLogin
     $userPosition = $oResult->getFieldValue('position');
     //ChromePhp::log($userPosition);
     $selectedConsultant = array('value'=> 'Consultant', 'label' => 'Consultant');
-    $selectedResearcher = array('value'=> 'Consultant', 'label' => 'Researcher');
-    $selectedAdministrator = array('value'=> 'Consultant', 'label' => 'Administrator');
+    $selectedResearcher = array('value'=> 'Researcher', 'label' => 'Researcher');
+    $selectedAdministrator = array('value'=> 'Administrator', 'label' => 'Administrator');
     if(isset($userPosition) && !empty($userPosition))
     {
       if($userPosition == 'Consultant') $selectedConsultant['selected'] = 'selected';
