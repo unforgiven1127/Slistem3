@@ -2220,7 +2220,7 @@ exit;
   {
     if($user_type == 'consultant')
     {
-      $query = "SELECT * FROM sl_meeting slm WHERE slm.attendeefk in ".$user_list;
+      $query = "SELECT * FROM sl_meeting slm WHERE slm.date_meeting > '".$start_date."' AND slm.date_meeting < '".$end_date."' AND slm.attendeefk in ".$user_list;
 
       ChromePhp::log($query);
     }
