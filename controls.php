@@ -71,6 +71,7 @@ if(function_exists($_GET['f'])) {
 
 function get_new_kpi_set()
 {
+	echo '<br><br><br>';
 	echo 'test';
 }
 //echo phpinfo();

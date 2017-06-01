@@ -4619,6 +4619,9 @@ class CSl_statEx extends CSl_stat
 
       if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
+
+        $stats_data = newKPIcounts();
+        /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
         $stats_data = array();
         $consultant_skip_id = array(389, 315, 354, 186);
@@ -5257,7 +5260,7 @@ class CSl_statEx extends CSl_stat
              $stats_data['researcher'][$id]['met_meeting_info'] = array();
           }*/
 
-          if (!empty($temp_ccm[$id]['ccm1']))
+          /*if (!empty($temp_ccm[$id]['ccm1']))
           {
 
             $stats_data['researcher'][$id]['ccm1'] = $temp_ccm[$id]['ccm1'];
@@ -5308,7 +5311,7 @@ class CSl_statEx extends CSl_stat
               array_push($finalArray,$addArray);
             }
 
-            $stats_data['researcher'][$id]['placedRevenue_info'] = $finalArray;
+            $stats_data['researcher'][$id]['placedRevenue_info'] = $finalArray;*/
             //var_dump($stats_data['researcher'][$id]['placedRevenue_info']);
             //exit;
 
@@ -5327,7 +5330,7 @@ class CSl_statEx extends CSl_stat
             echo "<br><br>";
             var_dump($stats_data['researcher'][$id]['placedRevenue_info']);
             exit;*/
-          }
+          /*}
           else
           {
             $stats_data['researcher'][$id]['placedRevenue'] = 0;
@@ -5340,7 +5343,7 @@ class CSl_statEx extends CSl_stat
             $count = count($temp_in_play[$id]['new_candidates']);
             $stats_data['researcher'][$id]['new_candidates'] = $count;
             $stats_data['researcher'][$id]['new_candidate_info'] = $temp_in_play[$id]['new_candidates'];
-
+            */
             /*if($id == '480')
             {
               echo '<br><br><br>';
@@ -5356,7 +5359,7 @@ class CSl_statEx extends CSl_stat
                 echo '<br><br>';
               }
             }*/
-          }
+        /*  }
           else
           {
             $stats_data['researcher'][$id]['new_candidates'] = 0;
@@ -5420,11 +5423,11 @@ class CSl_statEx extends CSl_stat
         uasort($stats_data['researcher'], sort_multi_array_by_value('name'));
         uasort($stats_data['consultant'], sort_multi_array_by_value('name'));
 
-        $allCanidatesArray = array();
+        $allCanidatesArray = array();*/
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
-        foreach ($consultant_ids as $key => $id)
+        /*foreach ($consultant_ids as $key => $id)
         {
           if(isset($stats_data['consultant'][$id]))
           {
@@ -5662,7 +5665,7 @@ class CSl_statEx extends CSl_stat
           }
 
 
-        }
+        }*/
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
         // -- CONSULTANT CANDIDATE LINKS IN ORDER--
@@ -5677,7 +5680,7 @@ class CSl_statEx extends CSl_stat
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
-        foreach ($researcher_ids as $key => $id)
+        /*foreach ($researcher_ids as $key => $id)
         {
           if(isset($stats_data['researcher'][$id]))
           {
@@ -5853,17 +5856,17 @@ class CSl_statEx extends CSl_stat
                 echo '<br><br>';
                 var_dump($candidate);
               }*/
-              if(isset($candidate['candidatefk']))
+              /*if(isset($candidate['candidatefk']))
               {
                 /*if($id == '480')
                 {
                   echo '<br><br>HERE HERE HERE';
                 }*/
-                $candidate_id = $candidate['candidatefk']; // new candidate in play
+                /*$candidate_id = $candidate['candidatefk']; // new candidate in play
 
                 $allCanidatesArray['researcher'][$id][$candidate_id]['newCandiPlayFlag'] = '1';
               }
-            }
+            }*/
 
             /*if($id == '480')
             {
@@ -5878,7 +5881,7 @@ class CSl_statEx extends CSl_stat
               }
             }*/
 
-            foreach ($stats_data['researcher'][$id]['new_position_info'] as $key => $candidate)
+            /*foreach ($stats_data['researcher'][$id]['new_position_info'] as $key => $candidate)
             {
               //var_dump($candidate);
               //echo "<br><br>";
@@ -5925,7 +5928,7 @@ class CSl_statEx extends CSl_stat
               }
             }
           }
-        }
+        }*/
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
         // -- RESEARCHER CANDIDATE LINKS IN ORDER--
@@ -5945,7 +5948,7 @@ class CSl_statEx extends CSl_stat
 
 
 
-        $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
+        /*$this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
         $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
 
         $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
@@ -5972,7 +5975,7 @@ class CSl_statEx extends CSl_stat
           //$jsonDataCandi = json_encode($allCanidatesArray);
           $serializedData = serialize($allCanidatesArray);
           $added = insertGeneratedKpi($serializedData,$created_by_id,'candi');
-        }
+        }*/
       }
       else
       {
@@ -6093,5 +6096,10 @@ class CSl_statEx extends CSl_stat
         return 'obj-bad';
 
       return 'obj-average';
+    }
+
+    public function newKPIcounts()
+    {
+      return array();
     }
 }
