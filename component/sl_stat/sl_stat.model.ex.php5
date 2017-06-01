@@ -2215,4 +2215,18 @@ exit;
 
     return $call_log_data;
   }
+
+  public function newKPIsetInfo($user_type = 'consultant', $start_date, $end_date, $user_list)
+  {
+    if($user_type == 'consultant')
+    {
+      $query = "SELECT * FROM sl_meeting slm WHERE slm.attendeefk in ".$user_list;
+
+      ChromePhp::log($query);
+    }
+    else
+    {
+      $query = "";
+    }
+  }
 }

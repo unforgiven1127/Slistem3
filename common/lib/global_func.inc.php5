@@ -1725,6 +1725,18 @@ var_dump($query);*/
 
     return $result;
   }
+  function get_active_researchers()
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT * from login l where l.status = '1' AND l.kpi_flag = 'a' AND l.position = 'Researcher' ";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
 
   function get_ccm1_count($user_id, $start_date)
   {

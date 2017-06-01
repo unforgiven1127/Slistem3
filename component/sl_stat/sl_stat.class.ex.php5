@@ -4620,7 +4620,11 @@ class CSl_statEx extends CSl_stat
       if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
 
-        $stats_data = $this->newKPIcounts();
+        $active_users = $this->createUserList();
+        $user_list_cons = $active_users['user_list_cons'];
+        $user_list_res = $active_users['user_list_res'];
+
+        $stats_data = $this->newKPIcounts($start_date,$end_date, $user_list_cons);
         /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
         $stats_data = array();
@@ -6098,8 +6102,42 @@ class CSl_statEx extends CSl_stat
       return 'obj-average';
     }
 
-    public function newKPIcounts()
+    public function createUserList()
     {
+      //CONSULTANT RESEARCHER LIST CREATE
+      $activeConsultantList = get_active_consultants();
+      $activeResearcherList = get_active_researchers();
+
+      $user_list_cons = "(";
+      $user_list_res = "(";
+
+      foreach ($activeConsultantList as $key => $value)
+      {
+        $user_list_cons.= $value['loginpk'].",";
+      }
+      rtrim($user_list_cons,",");
+      $user_list_cons.= ")";
+
+      foreach ($activeResearcherList as $key => $value)
+      {
+        $user_list_res.= $value['loginpk'].",";
+      }
+      rtrim($user_list_res,",");
+      $user_list_res.= ")";
+
+      $returnArray = array();
+      $returnArray['user_list_cons'] = $user_list_cons;
+      $returnArray['user_list_res'] = $user_list_res;
+
+      return $returnArray;
+      //CONSULTANT RESEARCHER LIST CREATE
+    }
+
+    public function newKPIcounts($start_date, $end_date, $user_list)
+    {
+
+      $newKPIsetInfo = newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
+
       return array();
     }
 }
