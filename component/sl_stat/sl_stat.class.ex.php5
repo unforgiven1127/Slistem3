@@ -6136,7 +6136,7 @@ class CSl_statEx extends CSl_stat
     public function newKPIcounts($start_date, $end_date, $user_list)
     {
 
-      $newKPIsetInfo = newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
+      $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
       return array();
     }
