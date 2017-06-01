@@ -5845,3 +5845,4 @@ function currency_html_code($currency)
   }
   return $currency_code;
 }
+

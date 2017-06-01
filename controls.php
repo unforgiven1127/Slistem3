@@ -64,6 +64,11 @@ echo '<br><br>';
 echo 'Memory usage: '.$memory_usage.'%';
 echo '<br>';
 echo 'CPU usage: '.$load.'%';
+
+function get_new_kpi_set()
+{
+	echo 'test';
+}
 //echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
