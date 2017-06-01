@@ -6004,7 +6004,7 @@ class CSl_statEx extends CSl_stat
       $data['nextloop'] = $nextloop;
 
       $data['allCanidatesArray'] = array();
-      $data['allCanidatesArray'] = $allCanidatesArray;
+      //$data['allCanidatesArray'] = $allCanidatesArray;
       header_remove('Set-Cookie');
 
       $html = $this->_oDisplay->render('totals_chart_ordered', $data);
