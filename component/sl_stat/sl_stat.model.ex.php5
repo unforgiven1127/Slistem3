@@ -2221,7 +2221,7 @@ exit;
     if($user_type == 'consultant')
     {
       $query = "SELECT l.loginpk as user_id, slm.count FROM sl_meeting slm
-      LEFT JOIN login l ON l.loginpk slm.attendeefk AND l.loginpk in ".$user_list."
+      LEFT JOIN login l ON l.loginpk = slm.attendeefk AND l.loginpk in ".$user_list."
       WHERE slm.date_meeting > '".$start_date."' AND slm.date_meeting < '".$end_date."' AND slm.attendeefk in ".$user_list;
 
       ChromePhp::log($query);
