@@ -4620,7 +4620,7 @@ class CSl_statEx extends CSl_stat
       if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
 
-        $stats_data = newKPIcounts();
+        $stats_data = $this->newKPIcounts();
         /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
         $stats_data = array();
