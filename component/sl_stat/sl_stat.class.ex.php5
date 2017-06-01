@@ -6115,14 +6115,14 @@ class CSl_statEx extends CSl_stat
       {
         $user_list_cons.= $value['loginpk'].",";
       }
-      rtrim($user_list_cons,",");
+      $user_list_cons = rtrim($user_list_cons,",");
       $user_list_cons.= ")";
 
       foreach ($activeResearcherList as $key => $value)
       {
         $user_list_res.= $value['loginpk'].",";
       }
-      rtrim($user_list_res,",");
+      $user_list_res = rtrim($user_list_res,",");
       $user_list_res.= ")";
 
       $returnArray = array();
