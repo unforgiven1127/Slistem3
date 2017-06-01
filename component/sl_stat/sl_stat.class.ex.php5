@@ -6003,7 +6003,7 @@ class CSl_statEx extends CSl_stat
 
       $data['nextloop'] = $nextloop;
 
-
+      $data['allCanidatesArray'] = array();
       $data['allCanidatesArray'] = $allCanidatesArray;
       header_remove('Set-Cookie');
 
