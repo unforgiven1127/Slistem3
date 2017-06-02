@@ -4647,9 +4647,14 @@ ChromePhp::log($active_users);
           $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
 
-        $this->newKPIcounts($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData);
+
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
+
+        var_dump($stats_data);
+        exit;
         //$newKPIsetInfo = $stats_data['newKPIsetInfo'];
 
         /*
@@ -6164,9 +6169,8 @@ ChromePhp::log($active_users);
       //CONSULTANT RESEARCHER LIST CREATE
     }
 
-    public function newKPIcounts($start_date, $end_date, $user_list, &$consultantStatData)
+    public function newKPIcounts_set($start_date, $end_date, $user_list, &$consultantStatData)
     {
-      $returnArray = array();
       $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIsetInfo as $key => $value)
@@ -6183,8 +6187,10 @@ ChromePhp::log($active_users);
         }
       }
 
-      //$returnArray['newKPIsetInfo'] = $newKPIsetInfo;
+    }
 
-      //return $returnArray;
+    public function newKPIcounts_met($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+
     }
 }
