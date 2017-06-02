@@ -4655,10 +4655,9 @@ ChromePhp::log($active_users);
 
         foreach ($stats_data as $key => $sd1)
         {
-          echo 'user id: ';
           foreach ($sd1 as $key2 => $sd2)
           {
-            echo $key2.'<br>';
+            echo 'user id: '.$key2.'<br>';
             var_dump($sd2);
             echo '<br><br><br>';
           }
