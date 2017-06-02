@@ -4643,28 +4643,9 @@ ChromePhp::log($active_users);
           $researcherStatData[$user_id] = array();
         }
 
-        $stats_data = $this->newKPIcounts($start_date,$end_date, $user_list_cons);
-
-        $newKPIsetInfo = $stats_data['newKPIsetInfo'];
-        foreach ($newKPIsetInfo as $key => $value)
-        {
-          /*if(!isset($consultantStatData[$value['user_id']]))
-          {
-            $consultantStatData[$value['user_id']] = array();
-          }*/
-          $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
-          $candidatesArray = explode(',',$value['candidates']);
-          foreach ($candidatesArray as $key => $candidate)
-          {
-            if(!isset($consultantStatData[$value['user_id']]['set_candidates']))
-            {
-              $consultantStatData[$value['user_id']]['set_candidates'] = array();
-            }
-            $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
-          }
-        }
-
-ChromePhp::log($consultantStatData);
+        $this->newKPIcounts($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $stats_data['consultantStatData'] = $consultantStatData;
+        //$newKPIsetInfo = $stats_data['newKPIsetInfo'];
 
         /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
@@ -6178,13 +6159,29 @@ ChromePhp::log($consultantStatData);
       //CONSULTANT RESEARCHER LIST CREATE
     }
 
-    public function newKPIcounts($start_date, $end_date, $user_list)
+    public function newKPIcounts($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $returnArray = array();
       $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
-      $returnArray['newKPIsetInfo'] = $newKPIsetInfo;
+      foreach ($newKPIsetInfo as $key => $value)
+      {
+        $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['set_candidates']))
+          {
+            $consultantStatData[$value['user_id']]['set_candidates'] = array();
+          }
+          $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
+        }
+      }
 
-      return $returnArray;
+ChromePhp::log($consultantStatData);
+
+      //$returnArray['newKPIsetInfo'] = $newKPIsetInfo;
+
+      //return $returnArray;
     }
 }
