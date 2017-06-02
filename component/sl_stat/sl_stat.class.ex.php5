@@ -6153,7 +6153,7 @@ ChromePhp::log($consultantStatData);
 
       $returnArray = array();
 
-      $returnArray['activeResearcherList'] = $activeConsultantList;
+      $returnArray['activeConsultantList'] = $activeConsultantList;
       $returnArray['activeResearcherList'] = $activeResearcherList;
 
       $user_list_cons = "(";
