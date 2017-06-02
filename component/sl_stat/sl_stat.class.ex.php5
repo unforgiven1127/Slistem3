@@ -4663,6 +4663,7 @@ ChromePhp::log($active_users);
           }
         }
 
+        exit;
         /*echo '<br><br>';
         var_dump($stats_data);
         exit;*/
