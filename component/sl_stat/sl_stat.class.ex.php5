@@ -4636,11 +4636,15 @@ ChromePhp::log($active_users);
         {
           $user_id = $value['loginpk'];
           $consultantStatData[$user_id] = array();
+          $consultantStatData[$user_id]['user_firstname'] = $value['firstname'];
+          $consultantStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
         foreach ($activeResearcherList as $key => $value)
         {
           $user_id = $value['loginpk'];
           $researcherStatData[$user_id] = array();
+          $researcherStatData[$user_id]['user_firstname'] = $value['firstname'];
+          $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
 
         $this->newKPIcounts($start_date,$end_date, $user_list_cons, $consultantStatData);
