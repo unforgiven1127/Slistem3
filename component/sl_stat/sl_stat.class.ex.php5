@@ -4627,6 +4627,8 @@ class CSl_statEx extends CSl_stat
         $activeConsultantList = $active_users['activeConsultantList'];
         $activeResearcherList = $active_users['activeResearcherList'];
 
+        ChromePhp::log($activeConsultantList);
+
         $consultantStatData = array();
         $researcherStatData = array();
 
