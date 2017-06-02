@@ -2225,6 +2225,28 @@ exit;
       LEFT JOIN login l ON l.loginpk = slm.attendeefk
       WHERE slm.date_meeting > '".$start_date."' AND slm.date_meeting < '".$end_date."' AND slm.attendeefk in ".$user_list. " GROUP BY slm.attendeefk ";
 
+//ChromePhp::log($query);
+    }
+    else
+    {
+      $query = "";
+    }
+
+    $db_result = $this->oDB->executeQuery($query);
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
+  public function newKPImetInfo($user_type = 'consultant', $start_date, $end_date, $user_list)
+  {
+    if($user_type == 'consultant')
+    {
+      $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as set_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
+      FROM sl_meeting slm
+      LEFT JOIN login l ON l.loginpk = slm.attendeefk
+      WHERE slm.date_met > '".$start_date."' AND slm.date_met < '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done = '1' GROUP BY slm.attendeefk ";
+
       ChromePhp::log($query);
     }
     else

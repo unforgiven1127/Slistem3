@@ -6203,6 +6203,20 @@ ChromePhp::log($active_users);
 
     public function newKPIcounts_met($start_date, $end_date, $user_list, &$consultantStatData)
     {
+      $newKPImetInfo = $this->_getModel()->newKPImetInfo('consultant', $start_date, $end_date, $user_list);
 
+      foreach ($newKPImetInfo as $key => $value)
+      {
+        $consultantStatData[$value['user_id']]['met_count'] = $value['met_count'];
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['met_candidates']))
+          {
+            $consultantStatData[$value['user_id']]['met_candidates'] = array();
+          }
+          $consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
+        }
+      }
     }
 }
