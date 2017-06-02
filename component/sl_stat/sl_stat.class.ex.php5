@@ -4644,6 +4644,7 @@ ChromePhp::log($active_users);
         }
 
         $this->newKPIcounts($start_date,$end_date, $user_list_cons, $consultantStatData);
+        ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
         //$newKPIsetInfo = $stats_data['newKPIsetInfo'];
 
@@ -6177,8 +6178,6 @@ ChromePhp::log($active_users);
           $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
       }
-
-ChromePhp::log($consultantStatData);
 
       //$returnArray['newKPIsetInfo'] = $newKPIsetInfo;
 
