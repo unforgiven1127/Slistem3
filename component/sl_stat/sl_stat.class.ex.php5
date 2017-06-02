@@ -4624,7 +4624,46 @@ class CSl_statEx extends CSl_stat
         $user_list_cons = $active_users['user_list_cons'];
         $user_list_res = $active_users['user_list_res'];
 
+        $activeConsultantList = $active_users['activeConsultantList'];
+        $activeResearcherList = $active_users['activeResearcherList'];
+
+        $consultantStatData = array();
+        $researcherStatData = array();
+
+        foreach ($activeConsultantList as $key => $value)
+        {
+          $user_id = $value['loginpk'];
+          $consultantStatData[$user_id] = array();
+        }
+        foreach ($activeResearcherList as $key => $value)
+        {
+          $user_id = $value['loginpk'];
+          $researcherStatData[$user_id] = array();
+        }
+
         $stats_data = $this->newKPIcounts($start_date,$end_date, $user_list_cons);
+
+        $newKPIsetInfo = $stats_data['newKPIsetInfo'];
+        foreach ($newKPIsetInfo as $key => $value)
+        {
+          if(!isset($consultantStatData[$value['user_id']]))
+          {
+            $consultantStatData[$value['user_id']] = array();
+          }
+          $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
+          $candidatesArray = explode(',',$value['candidates']);
+          foreach ($candidatesArray as $key => $value)
+          {
+            if(!isset($consultantStatData[$value['user_id']]['set_candidates']))
+            {
+              $consultantStatData[$value['user_id']]['set_candidates'] = array();
+            }
+            $consultantStatData[$value['user_id']]['set_candidates'][$value] = $value;
+          }
+        }
+
+        ChromePhp::log($consultantStatData);
+
         /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
         $stats_data = array();
@@ -6108,6 +6147,11 @@ class CSl_statEx extends CSl_stat
       $activeConsultantList = get_active_consultants();
       $activeResearcherList = get_active_researchers();
 
+      $returnArray = array();
+
+      $returnArray['activeResearcherList'] = $activeConsultantList;
+      $returnArray['activeResearcherList'] = $activeResearcherList;
+
       $user_list_cons = "(";
       $user_list_res = "(";
 
@@ -6125,7 +6169,6 @@ class CSl_statEx extends CSl_stat
       $user_list_res = rtrim($user_list_res,",");
       $user_list_res.= ")";
 
-      $returnArray = array();
       $returnArray['user_list_cons'] = $user_list_cons;
       $returnArray['user_list_res'] = $user_list_res;
 
@@ -6135,9 +6178,11 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts($start_date, $end_date, $user_list)
     {
-
+      $returnArray = array();
       $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
-      return array();
+      $returnArray['newKPIsetInfo'] = $newKPIsetInfo;
+
+      return $returnArray;
     }
 }
