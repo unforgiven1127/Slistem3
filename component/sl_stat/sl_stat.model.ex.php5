@@ -2242,7 +2242,7 @@ exit;
   {
     if($user_type == 'consultant')
     {
-      $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as set_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
+      $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as met_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
       FROM sl_meeting slm
       LEFT JOIN login l ON l.loginpk = slm.attendeefk
       WHERE slm.date_met > '".$start_date."' AND slm.date_met < '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done = '1' GROUP BY slm.attendeefk ";
