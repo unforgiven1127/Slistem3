@@ -4629,8 +4629,6 @@ ChromePhp::log($active_users);
         $activeConsultantList = $active_users['activeConsultantList'];
         $activeResearcherList = $active_users['activeResearcherList'];
 
-ChromePhp::log($activeConsultantList);
-
         $consultantStatData = array();
         $researcherStatData = array();
 
@@ -4650,10 +4648,10 @@ ChromePhp::log($activeConsultantList);
         $newKPIsetInfo = $stats_data['newKPIsetInfo'];
         foreach ($newKPIsetInfo as $key => $value)
         {
-          if(!isset($consultantStatData[$value['user_id']]))
+          /*if(!isset($consultantStatData[$value['user_id']]))
           {
             $consultantStatData[$value['user_id']] = array();
-          }
+          }*/
           $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
           $candidatesArray = explode(',',$value['candidates']);
           foreach ($candidatesArray as $key => $candidate)
