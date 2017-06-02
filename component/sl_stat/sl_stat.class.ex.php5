@@ -4621,13 +4621,15 @@ class CSl_statEx extends CSl_stat
       {
 
         $active_users = $this->createUserList();
+ChromePhp::log($active_users);
+
         $user_list_cons = $active_users['user_list_cons'];
         $user_list_res = $active_users['user_list_res'];
 
         $activeConsultantList = $active_users['activeConsultantList'];
         $activeResearcherList = $active_users['activeResearcherList'];
 
-        ChromePhp::log($activeConsultantList);
+ChromePhp::log($activeConsultantList);
 
         $consultantStatData = array();
         $researcherStatData = array();
@@ -4664,7 +4666,7 @@ class CSl_statEx extends CSl_stat
           }
         }
 
-        ChromePhp::log($consultantStatData);
+ChromePhp::log($consultantStatData);
 
         /*
         $all_ids = $promoted_ids = $promote_dates = $consultant_names = $consultant_ids = $researcher_names = $researcher_ids = array();
