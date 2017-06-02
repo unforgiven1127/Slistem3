@@ -4659,8 +4659,9 @@ ChromePhp::log($active_users);
           {
             echo 'user id: '.$key2.'<br>';
             var_dump($sd2);
-            echo '<br><br><br>';
+            echo '<br><br><br><br>';
           }
+          echo '<br><br>';
         }
 
         exit;
