@@ -4655,10 +4655,10 @@ ChromePhp::log($active_users);
 
         foreach ($stats_data as $key => $sd1)
         {
-          echo $sd1.'<br>';
+          echo $sd1.'<br><br>';
           foreach ($sd1 as $key2 => $sd2)
-         {
-            echo $key2.'<br>';
+          {
+            echo $key2.'<br><br>';
           }
         }
 
