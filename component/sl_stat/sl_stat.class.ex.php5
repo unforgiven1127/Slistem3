@@ -4657,12 +4657,11 @@ ChromePhp::log($active_users);
         {
           foreach ($sd1 as $key2 => $sd2)
           {
-            echo 'user id: '.$key2.$sd2['user_firstname'].' '.$sd2['user_lastname'].'<br>';
-            echo 'set count: '.$sd2['set_count'].'    ';
-            echo 'met count: '.$sd2['met_count'];
-            echo '<br><br><br><br>';
+            echo 'user id: '.$key2.' '.$sd2['user_firstname'].' '.$sd2['user_lastname'].'<br>';
+            echo 'set count: '.$sd2['set_count'].' | ';
+            echo 'met count: '.$sd2['met_count'].' | ';
+            echo '<br><br>';
           }
-          echo '<br><br>';
         }
 
         exit;
