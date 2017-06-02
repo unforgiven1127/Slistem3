@@ -4653,6 +4653,16 @@ ChromePhp::log($active_users);
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
 
+        foreach ($stats_data as $key => $sd1)
+        {
+          echo $sd1.'<br>';
+          foreach ($sd1 as $key2 => $sd2)
+         {
+            echo $key2.'<br>';
+          }
+        }
+
+        echo '<br><br>';
         var_dump($stats_data);
         exit;
         //$newKPIsetInfo = $stats_data['newKPIsetInfo'];
