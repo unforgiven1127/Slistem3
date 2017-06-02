@@ -4655,7 +4655,7 @@ ChromePhp::log($active_users);
 
         foreach ($stats_data as $key => $sd1)
         {
-          echo 'user id: '.$key.' '.$sd1['user_firstname'].' '.$sd1['user_lastname'].'<br><br>';
+          echo 'user id: ';
           foreach ($sd1 as $key2 => $sd2)
           {
             echo $key2.'<br>';
@@ -4664,9 +4664,9 @@ ChromePhp::log($active_users);
           }
         }
 
-        echo '<br><br>';
+        /*echo '<br><br>';
         var_dump($stats_data);
-        exit;
+        exit;*/
         //$newKPIsetInfo = $stats_data['newKPIsetInfo'];
 
         /*
