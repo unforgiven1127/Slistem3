@@ -4656,13 +4656,13 @@ ChromePhp::log($activeConsultantList);
           }
           $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
           $candidatesArray = explode(',',$value['candidates']);
-          foreach ($candidatesArray as $key => $value)
+          foreach ($candidatesArray as $key => $candidate)
           {
             if(!isset($consultantStatData[$value['user_id']]['set_candidates']))
             {
               $consultantStatData[$value['user_id']]['set_candidates'] = array();
             }
-            $consultantStatData[$value['user_id']]['set_candidates'][$value] = $value;
+            $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
           }
         }
 
