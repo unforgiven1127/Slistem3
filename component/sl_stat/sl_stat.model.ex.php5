@@ -2231,5 +2231,10 @@ exit;
     {
       $query = "";
     }
+
+    $db_result = $this->oDB->executeQuery($query);
+    $result = $db_result->getAll();
+
+    return $result;
   }
 }
