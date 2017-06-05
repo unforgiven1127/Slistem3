@@ -6229,15 +6229,26 @@ ChromePhp::log($active_users);
 
       foreach ($newKPIresumeSentInfo as $key => $value)
       {
-        $consultantStatData[$value['user_id']]['resumeSent_count'] = $value['resumeSent_count'];
+        if(!isset($consultantStatData[$value['user_id']]['resumeSent_count']))
+        {
+          $consultantStatData[$value['user_id']]['resumeSent_count'] = $value['resumeSent_count'];
+        }
+        else
+        {
+          $consultantStatData[$value['user_id']]['resumeSent_count'] += $value['resumeSent_count'];
+        }
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
           if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
           {
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
+            $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] = $candidate;
           }
-          $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] = $candidate;
+          else
+          {
+            $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] .= ','.$candidate;
+          }
         }
       }
     }
