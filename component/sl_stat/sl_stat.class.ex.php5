@@ -6461,7 +6461,7 @@ ChromePhp::log($active_users);
 
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData)
     {
-      $newKPInewCandiMetInfo = get_new_candidate_met($user_list, $start_date, $end_date);
+      $newKPInewCandiMetInfo = $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
       ChromePhp::log($newKPInewCandiMetInfo);
     }
 }
