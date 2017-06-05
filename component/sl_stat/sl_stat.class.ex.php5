@@ -6242,12 +6242,42 @@ ChromePhp::log($active_users);
         {
           if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
           {
-            $consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
+            //$consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] = $candidate;
           }
           else
           {
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] .= ','.$candidate;
+          }
+        }
+      }
+    }
+
+    public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('consultant', $start_date, $end_date, $user_list);
+
+      foreach ($newKPIccm1setInfo as $key => $value)
+      {
+        if(!isset($consultantStatData[$value['user_id']]['ccm1set_count']))
+        {
+          $consultantStatData[$value['user_id']]['ccm1set_count'] = $value['ccm1set_count'];
+        }
+        else
+        {
+          $consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
+        }
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['ccm1set_candidates']))
+          {
+            //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
+            $consultantStatData[$value['user_id']]['ccm1set_candidates'] = $candidate;
+          }
+          else
+          {
+            $consultantStatData[$value['user_id']]['ccm1set_candidates'] .= ','.$candidate;
           }
         }
       }
