@@ -4656,6 +4656,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_ccm2done($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
