@@ -4652,6 +4652,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -4676,6 +4677,9 @@ ChromePhp::log($active_users);
 
             if(isset($sd2['ccm1done_count']))echo 'ccm1 done count: '.$sd2['ccm1done_count'].' | ';
             else echo 'ccm1 done count: 0 | ';
+
+            if(isset($sd2['ccm2set_count']))echo 'ccm2 set count: '.$sd2['ccm2set_count'].' | ';
+            else echo 'ccm2 set count: 0 | ';
 
             echo '<br><br>';
           }
