@@ -4660,10 +4660,19 @@ ChromePhp::log($active_users);
           foreach ($sd1 as $key2 => $sd2)
           {
             echo 'user id: '.$key2.' '.$sd2['user_firstname'].' '.$sd2['user_lastname'].'<br>';
-            echo 'set count: '.$sd2['set_count'].' | ';
-            echo 'met count: '.$sd2['met_count'].' | ';
-            echo 'resume sent count: '.$sd2['resumeSent_count'].' | ';
-            echo 'ccm1 set count: '.$sd2['ccm1set_count'].' | ';
+
+            if(isset($sd2['set_count']))echo 'set count: '.$sd2['set_count'].' | ';
+            else echo 'set count: 0 | ';
+
+            if(isset($sd2['met_count']))echo 'met count: '.$sd2['met_count'].' | ';
+            else echo 'met count: '.$sd2['met_count'].' | ';
+
+            if(isset($sd2['resumeSent_count']))echo 'resume sent count: '.$sd2['resumeSent_count'].' | ';
+            else echo 'resume sent count: 0 | ';
+
+            if(isset($sd2['ccm1set_count']))echo 'ccm1 set count: '.$sd2['ccm1set_count'].' | ';
+            else echo 'ccm1 set count: 0 | ';
+            
             echo '<br><br>';
           }
         }
