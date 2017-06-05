@@ -6243,11 +6243,11 @@ ChromePhp::log($active_users);
           if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
           {
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
-            $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] = $candidate;
+            $consultantStatData[$value['user_id']]['resumeSent_candidates'] = $candidate;
           }
           else
           {
-            $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] .= ','.$candidate;
+            $consultantStatData[$value['user_id']]['resumeSent_candidates'] .= ','.$candidate;
           }
         }
       }
