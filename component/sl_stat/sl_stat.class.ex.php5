@@ -4661,6 +4661,7 @@ ChromePhp::log($active_users);
             echo 'user id: '.$key2.' '.$sd2['user_firstname'].' '.$sd2['user_lastname'].'<br>';
             echo 'set count: '.$sd2['set_count'].' | ';
             echo 'met count: '.$sd2['met_count'].' | ';
+            echo 'resume sent count: '.$sd2['resumeSent_count'].' | ';
             echo '<br><br>';
           }
         }
