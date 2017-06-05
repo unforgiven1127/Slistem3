@@ -4686,8 +4686,8 @@ ChromePhp::log($active_users);
             if(isset($sd2['ccm2done_count']))echo 'ccm2 done count: '.$sd2['ccm2done_count'].' | ';
             else echo 'ccm2 done count: 0 | ';
 
-            if(isset($sd2['mccmdone_count']))echo 'mccm done count: '.$sd2['mccmdone_count'].' | ';
-            else echo 'mccm done count: 0 | ';
+            if(isset($sd2['mccmset_count']))echo 'mccm set count: '.$sd2['mccmset_count'].' | ';
+            else echo 'mccm set count: 0 | ';
 
             echo '<br><br>';
           }
