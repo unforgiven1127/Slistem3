@@ -4649,6 +4649,7 @@ ChromePhp::log($active_users);
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -6217,6 +6218,25 @@ ChromePhp::log($active_users);
             $consultantStatData[$value['user_id']]['met_candidates'] = array();
           }
           $consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
+        }
+      }
+    }
+
+    public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPIresumeSentInfo = $this->_getModel()->newKPIresumeSentInfo('consultant', $start_date, $end_date, $user_list);
+
+      foreach ($newKPIresumeSentInfo as $key => $value)
+      {
+        $consultantStatData[$value['user_id']]['resumeSent_count'] = $value['resumeSent_count'];
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
+          {
+            $consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
+          }
+          $consultantStatData[$value['user_id']]['resumeSent_candidates'][$candidate] = $candidate;
         }
       }
     }
