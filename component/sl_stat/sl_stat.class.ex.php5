@@ -6261,18 +6261,13 @@ ChromePhp::log($active_users);
 
       foreach ($newKPIccm1setInfo as $key => $value)
       {
-        if(!isset($value['ccm1set_count']))
-        {
-          $newKPIccm1setInfo[$key]['ccm1set_count'] = 0;
-        }
         if(!isset($consultantStatData[$value['user_id']]['ccm1set_count']))
         {
-          $consultantStatData[$value['user_id']]['ccm1set_count'] = $value['ccm1set_count'];
+          $consultantStatData[$value['user_id']]['ccm1set_count'] = 0;
         }
-        else
-        {
-          $consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
-        }
+
+        $consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
+
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
