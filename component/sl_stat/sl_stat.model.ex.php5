@@ -2223,7 +2223,7 @@ exit;
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as set_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
       FROM sl_meeting slm
       LEFT JOIN login l ON l.loginpk = slm.attendeefk
-      WHERE slm.date_created > '".$start_date."' AND slm.date_created < '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done <> '-1' GROUP BY slm.attendeefk ";
+      WHERE slm.date_created >= '".$start_date."' AND slm.date_created <= '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done <> '-1' GROUP BY slm.attendeefk ";
 
 //ChromePhp::log($query);
     }
@@ -2245,7 +2245,7 @@ exit;
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as met_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
       FROM sl_meeting slm
       LEFT JOIN login l ON l.loginpk = slm.attendeefk
-      WHERE slm.date_met > '".$start_date."' AND slm.date_met < '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done = '1' GROUP BY slm.attendeefk ";
+      WHERE slm.date_met >= '".$start_date."' AND slm.date_met <= '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done = '1' GROUP BY slm.attendeefk ";
 
 //ChromePhp::log($query);
     }
@@ -2266,10 +2266,10 @@ exit;
     {
 
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname,slpl.positionfk, GROUP_CONCAT(slpl.candidatefk SEPARATOR ', ') as candidates,
-      CONCAT(slpl.candidatefk,'_',slpl.positionfk) as seperator, count(DISTINCT(seperator)) as resumeSent_count
+      count(DISTINCT(CONCAT(slpl.candidatefk,'_',slpl.positionfk))) as resumeSent_count
       FROM sl_position_link slpl
       LEFT JOIN login l ON l.loginpk = slpl.created_by
-      WHERE slpl.date_created > '".$start_date."' AND slpl.date_created < '".$end_date."' AND (slpl.status = 2 OR slpl.status = 51) AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND (slpl.status = 2 OR slpl.status = 51) AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
 
       /*$query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as met_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
       FROM sl_meeting slm
