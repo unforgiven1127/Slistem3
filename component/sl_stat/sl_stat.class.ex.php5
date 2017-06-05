@@ -4655,6 +4655,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_ccm2done($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -4688,6 +4689,9 @@ ChromePhp::log($active_users);
 
             if(isset($sd2['mccmset_count']))echo 'mccm set count: '.$sd2['mccmset_count'].' | ';
             else echo 'mccm set count: 0 | ';
+
+            if(isset($sd2['mccmdone_count']))echo 'mccm done count: '.$sd2['mccmdone_count'].' | ';
+            else echo 'mccm done count: 0 | ';
 
             echo '<br><br>';
           }
@@ -6420,6 +6424,35 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['mccmset_candidates'] .= ','.$candidate;
+          }
+        }
+      }
+    }
+
+    public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPImccmdoneInfo = $this->_getModel()->newKPImccmdoneInfo('consultant', $start_date, $end_date, $user_list);
+
+      foreach ($newKPImccmdoneInfo as $key => $value)
+      {
+        if(!isset($consultantStatData[$value['user_id']]['mccmdone_count']))
+        {
+          $consultantStatData[$value['user_id']]['mccmdone_count'] = 0;
+        }
+
+        $consultantStatData[$value['user_id']]['mccmdone_count'] += $value['mccmdone_count'];
+
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['mccmdone_candidates']))
+          {
+            //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
+            $consultantStatData[$value['user_id']]['mccmdone_candidates'] = $candidate;
+          }
+          else
+          {
+            $consultantStatData[$value['user_id']]['mccmdone_candidates'] .= ','.$candidate;
           }
         }
       }
