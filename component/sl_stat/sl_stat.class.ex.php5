@@ -4650,6 +4650,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -4662,6 +4663,7 @@ ChromePhp::log($active_users);
             echo 'set count: '.$sd2['set_count'].' | ';
             echo 'met count: '.$sd2['met_count'].' | ';
             echo 'resume sent count: '.$sd2['resumeSent_count'].' | ';
+            echo 'ccm1 set count: '.$sd2['ccm1set_count'].' | ';
             echo '<br><br>';
           }
         }
