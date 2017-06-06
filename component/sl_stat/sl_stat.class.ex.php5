@@ -4659,7 +4659,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData);
 
-        ChromePhp::log($consultantStatData);
+//ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
 
         foreach ($stats_data as $key => $sd1)
@@ -6472,8 +6472,4 @@ ChromePhp::log($active_users);
       ChromePhp::log($newKPInewCandiMetInfo);
     }
 
-    public function newKPIcounts_newPositionInPlay($start_date, $end_date, $user_list, &$consultantStatData)
-    {
-      
-    }
 }
