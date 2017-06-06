@@ -4657,6 +4657,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData);
 
         ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -6461,7 +6462,18 @@ ChromePhp::log($active_users);
 
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData)
     {
-      $newKPInewCandiMetInfo = $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
+      $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
+      //ChromePhp::log($newKPInewCandiMetInfo);
+    }
+
+    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPInewCandiMetInfo= $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date);
       ChromePhp::log($newKPInewCandiMetInfo);
+    }
+
+    public function newKPIcounts_newPositionInPlay($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      
     }
 }
