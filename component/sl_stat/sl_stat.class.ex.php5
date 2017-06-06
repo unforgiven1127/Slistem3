@@ -6108,7 +6108,6 @@ ChromePhp::log($active_users);
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
 
       $data['nextloop'] = $nextloop;
-      $stats_data['consultantStatData'] = $consultantStatData;
 
       $data['allCanidatesArray'] = array();
       //$data['allCanidatesArray'] = $allCanidatesArray;
@@ -6120,6 +6119,7 @@ ChromePhp::log($active_users);
       }
       else
       {
+        $data['consultantStatData'] = $consultantStatData;
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
