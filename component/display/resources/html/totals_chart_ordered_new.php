@@ -55,7 +55,7 @@
 </script>
 
 <style>
-.table-striped > tbody > tr:nth-child(2n+1):not(.hdi) > td, .table-striped > tbody > tr:nth-child(2n+1):not(.hdi) > th {
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: #E3E9EF;
 }
 </style>
@@ -78,7 +78,7 @@
 	</div>
 </form>
 
-<table id='totals_table_id' class='totals_table table-striped'>
+<table id='totals_table_id' class='totals_table '>
 	<tr>
 		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>
@@ -108,6 +108,7 @@ $total_npip = 0;
 $total_o = 0;
 $total_p = 0;
 
+$row_number_rank = 1;
 foreach ($consultantStatData as $key => $sd1)
 {
 	$total_ncm += $sd1['newCandiMet_count'];
@@ -119,7 +120,13 @@ foreach ($consultantStatData as $key => $sd1)
 	$test = "-";
 	$user_name = substr($sd1['user_firstname'],0,1).'. '.($sd1['user_lastname']);
 
-	echo "<tr class='hover_row'>";
+	if ($row_number_rank % 2 === 0)
+		$even = ' colored_row';
+	else
+		$even = '';
+	$row_number_rank++;
+
+	echo "<tr class='hover_row "$even"'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
 		echo "<td><div class='stat_holder revenueSize2'>".$sd1['set_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2'>".$sd1['met_count']."</div></td>";
@@ -141,20 +148,20 @@ foreach ($consultantStatData as $key => $sd1)
 	{
 		echo "<tr class='hdi' id='".$key."'>";
 			echo "<td class='name_column revenueSize'></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2''>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2''>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' revenueSize2'>-</div></td>";
 		echo "</tr>";
 	}
 
