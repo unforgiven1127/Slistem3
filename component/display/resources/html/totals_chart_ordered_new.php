@@ -126,7 +126,7 @@ foreach ($consultantStatData as $key => $sd1)
 		$even = '';
 	$row_number_rank++;
 
-	echo "<tr class='hover_row "$even"'>";
+	echo "<tr class='hover_row ".$even."'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
 		echo "<td><div class='stat_holder revenueSize2'>".$sd1['set_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2'>".$sd1['met_count']."</div></td>";
