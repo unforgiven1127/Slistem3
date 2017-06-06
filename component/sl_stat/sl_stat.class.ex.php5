@@ -4664,7 +4664,10 @@ ChromePhp::log($active_users);
 //ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
 
-        foreach ($stats_data as $key => $sd1)
+        $html = '-';
+
+        //FOR KPI TEST
+        /*foreach ($stats_data as $key => $sd1)
         {
           foreach ($sd1 as $key2 => $sd2)
           {
@@ -4711,9 +4714,15 @@ ChromePhp::log($active_users);
 
             echo '<br><br>';
           }
-        }
+        }*/
+        //FOR KPI TEST
 
-        exit;
+        $this->_oPage->addJsFile(CONST_PATH_JS_JQUERYUI);
+        $this->_oPage->addCSSFile(CONST_PATH_CSS_JQUERYUI);
+
+        $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
+
+        //exit;
         /*echo '<br><br>';
         var_dump($stats_data);
         exit;*/
@@ -6105,7 +6114,14 @@ ChromePhp::log($active_users);
       //$data['allCanidatesArray'] = $allCanidatesArray;
       header_remove('Set-Cookie');
 
-      $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+      if(empty($html))
+      {
+        $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+      }
+      else
+      {
+        $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+      }
 
       return $html;
     }
