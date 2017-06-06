@@ -4675,6 +4675,8 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_offer($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
         $this->newKPIplaced_offer($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
 
+        uasort($consultantStatData, sort_multi_array_by_value('user_firstname') );
+
 //ChromePhp::log($consultantStatData);
 
         $html = '-';
