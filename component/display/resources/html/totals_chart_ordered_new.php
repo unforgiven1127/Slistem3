@@ -56,7 +56,7 @@
 
 <style>
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #F9F9F9;
+   background-color: #E3E9EF;
 }
 </style>
 
