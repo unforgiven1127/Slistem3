@@ -6471,7 +6471,7 @@ ChromePhp::log($active_users);
 
     public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
-      $newKPInewCandiMetInfo= $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date);
+      $newKPInewCandiMetInfo= $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date,'consultant');
 
       foreach ($activeConsultantList as $key => $value)
       {
