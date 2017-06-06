@@ -4657,7 +4657,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData);
-        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData);
+        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
 
 //ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -4694,6 +4694,9 @@ ChromePhp::log($active_users);
 
             if(isset($sd2['mccmdone_count']))echo 'mccm done count: '.$sd2['mccmdone_count'].' | ';
             else echo 'mccm done count: 0 | ';
+
+            if(isset($sd2['newCandiInPlay_count']))echo 'new candi count: '.$sd2['newCandiInPlay_count'].' | ';
+            else echo 'new candi count: 0 | ';
 
             echo '<br><br>';
           }
@@ -6466,10 +6469,22 @@ ChromePhp::log($active_users);
       //ChromePhp::log($newKPInewCandiMetInfo);
     }
 
-    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData)
+    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date);
-      ChromePhp::log($newKPInewCandiMetInfo);
+
+      foreach ($activeConsultantList as $key => $value)
+      {
+        $user_id = $value['loginpk'];
+        $new_candidates_count = 0;
+        if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_candidates']);
+        }
+        $consultantStatData[$user_id]['newCandiInPlay_count'] = $new_candidates_count;
+      }
+
+      //ChromePhp::log($newKPInewCandiMetInfo);
     }
 
 }
