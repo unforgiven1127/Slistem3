@@ -146,7 +146,8 @@ foreach ($consultantStatData as $key => $sd1)
 
 	foreach ($sd1 as $key2 => $value)
 	{
-		echo "<tr style='display: none;' class='hdi' id='".$key."_hidden'>";
+		$classHDI = $key.'_hidden';
+		echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 			echo "<td class='name_column revenueSize'></td>";
 			echo "<td><div class=' rs2'>-</div></td>";
 			echo "<td><div class=' rs2'>-</div></td>";
