@@ -6504,7 +6504,18 @@ ChromePhp::log($active_users);
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
-      //ChromePhp::log($newKPInewCandiMetInfo);
+      ChromePhp::log($newKPInewCandiMetInfo);
+
+      /*foreach ($activeConsultantList as $key => $value)
+      {
+        $user_id = $value['loginpk'];
+        $new_candidates_count = 0;
+        if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_candidates']);
+        }
+        $consultantStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
+      }*/
     }
 
     public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
