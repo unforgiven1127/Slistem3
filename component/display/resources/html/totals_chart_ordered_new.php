@@ -72,9 +72,31 @@
 	</div>
 </form>
 
+<table id='totals_table_id' class='totals_table'>
+	<tr>
+		<th class='revenueSize0' colspan='15'><?php echo ucfirst($key); ?> totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
+	</tr>
+	<tr id='head'>
+		<th class='name_column revenueSize0'>Name</th>
+		<th class='revenueSize'>Set</th>
+		<th class='revenueSize'>Met</th>
+		<th class='revenueSize'>Resumes sent</th>
+		<th class='revenueSize'>CCM1 set</th>
+		<th class='revenueSize'>CCM1 done</th>
+		<th class='revenueSize'>CCM2 set</th>
+		<th class='revenueSize'>CCM2 done</th>
+		<th class='revenueSize'>MCCM set</th>
+		<th class='revenueSize'>MCCM done</th>
+		<th class='revenueSize'>New candidates met</th>
+		<th class='revenueSize'>New candidates<br>in play</th>
+		<th class='revenueSize'>New positions<br>in play</th>
+		<th class='revenueSize'>Offer</th>
+		<th class='revenueSize'>Placement</th>
+	</tr>
+
 <?php
 
-foreach ($variable as $key => $value)
+foreach ($consultantStatData as $key => $value)
 {
 	$total_ncm = 0;
 	$total_ncip = 0;
@@ -82,35 +104,12 @@ foreach ($variable as $key => $value)
 	$total_o = 0;
 	$total_p = 0;
 
-	echo "<table id='totals_table_id' class='totals_table'>";
-		echo "<tr>";
-			echo "<th class='revenueSize0' colspan='15'>Consultant totals - May 2017</th>";
-		echo "</tr>";
-		echo "<tr id='head'>
-				<th class='name_column revenueSize0'>Name</th>
-				<th class='revenueSize'>Set</th>
-				<th class='revenueSize'>Met</th>
-				<th class='revenueSize'>Resumes sent</th>
-				<th class='revenueSize'>CCM1 set</th>
-				<th class='revenueSize'>CCM1 done</th>
-				<th class='revenueSize'>CCM2 set</th>
-				<th class='revenueSize'>CCM2 done</th>
-				<th class='revenueSize'>MCCM set</th>
-				<th class='revenueSize'>MCCM done</th>
-				<th class='revenueSize'>New candidates met</th>
-				<th class='revenueSize'>New candidates<br>in play</th>
-				<th class='revenueSize'>New positions<br>in play</th>
-				<th class='revenueSize'>Offer</th>
-				<th class='revenueSize'>Placement</th>
-			</tr>";
-
-	echo "</table>";
-
 
 }
 
 ?>
 
+</table>
 <script>
 	$(function() {
 		$("#start_date, #end_date").datepicker({
