@@ -6529,4 +6529,33 @@ ChromePhp::log($active_users);
       }
     }
 
+    public function newKPIplaced_offer($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPIplacedInfo = $this->_getModel()->newKPIplacedInfo('consultant', $start_date, $end_date, $user_list);
+
+      foreach ($newKPIplacedInfo as $key => $value)
+      {
+        if(!isset($consultantStatData[$value['user_id']]['placed_count']))
+        {
+          $consultantStatData[$value['user_id']]['placed_count'] = 0;
+        }
+
+        $consultantStatData[$value['user_id']]['placed_count'] += $value['placed_count'];
+
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['placed_candidates']))
+          {
+            //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
+            $consultantStatData[$value['user_id']]['placed_candidates'] = $candidate;
+          }
+          else
+          {
+            $consultantStatData[$value['user_id']]['placed_candidates'] .= ','.$candidate;
+          }
+        }
+      }
+    }
+
 }
