@@ -105,20 +105,20 @@ foreach ($consultantStatData as $key => $sd1)
 	$total_o = 0;
 	$total_p = 0;
 
-	//$user_name = "-";
+	$test = "-";
 	$user_name = strtoupper(substr($sd1['user_firstname'],0,1)).' '.strtoupper($sd1['user_lastname']);
 
 	echo "<tr class='hover_row'>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
-		echo "<td>".$user_name."</td>";
+		echo "<td class='name_column revenueSize'>".$user_name."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
+		echo "<td>".$test."</td>";
 	echo "</tr>";
 
 }
