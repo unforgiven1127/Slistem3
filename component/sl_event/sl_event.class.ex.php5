@@ -870,6 +870,8 @@ class CSl_eventEx extends CSl_event
           }
         }
 
+        $asCurrency = $this->getVars()->getCurrencies();
+        $data['currency_list'] = $asCurrency;
         $data['skillArray'] = $skillArray;
 
         /*$addHtml = "
