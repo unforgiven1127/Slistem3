@@ -4658,6 +4658,7 @@ ChromePhp::log($active_users);
         $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData);
         $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
+        $this->newKPIcounts_offer($start_date,$end_date, $user_list_cons, $consultantStatData);
 
 //ChromePhp::log($consultantStatData);
         $stats_data['consultantStatData'] = $consultantStatData;
@@ -4700,6 +4701,9 @@ ChromePhp::log($active_users);
 
             if(isset($sd2['newPositionInPlay_count']))echo 'new position count: '.$sd2['newPositionInPlay_count'].' | ';
             else echo 'new position count: 0 | ';
+
+            if(isset($sd2['offer_count']))echo 'offer count: '.$sd2['offer_count'].' | ';
+            else echo 'offer count: 0 | ';
 
             echo '<br><br>';
           }
