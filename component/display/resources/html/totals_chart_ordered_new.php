@@ -55,7 +55,7 @@
 </script>
 
 <style>
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+.table-striped > tbody > tr:nth-child(2n+1):not(.hdi) > td, .table-striped > tbody > tr:nth-child(2n+1):not(.hdi) > th {
    background-color: #E3E9EF;
 }
 </style>
@@ -121,40 +121,40 @@ foreach ($consultantStatData as $key => $sd1)
 
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['met_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['resumeSent_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm1set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm1done_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm2set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm2done_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmset_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmdone_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newCandiMet_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newCandiInPlay_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newPositionInPlay_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['offer_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['placed_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['met_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['resumeSent_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm1set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm1done_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm2set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm2done_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['mccmset_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['mccmdone_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newCandiMet_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newCandiInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newPositionInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['offer_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
-	foreach ($sd1 as $key => $value)
+	foreach ($sd1 as $key2 => $value)
 	{
-		echo "<tr class='stat_candi_info 528'>";
+		echo "<tr class='hdi' id='".$key."'>";
 			echo "<td class='name_column revenueSize'></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
-			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2''>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2'>-</div></td>";
 		echo "</tr>";
 	}
 
