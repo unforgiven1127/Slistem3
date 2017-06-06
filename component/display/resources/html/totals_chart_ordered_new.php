@@ -112,7 +112,7 @@ foreach ($consultantStatData as $key => $sd1)
 	$total_p = 0;
 
 	$test = "-";
-	$user_name = strtoupper(substr($sd1['user_firstname'],0,1)).' '.strtoupper($sd1['user_lastname']);
+	$user_name = strtoupper(substr($sd1['user_firstname'],0,1)).' '.($sd1['user_lastname']);
 
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
