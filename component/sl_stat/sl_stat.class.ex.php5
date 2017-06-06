@@ -6484,7 +6484,7 @@ ChromePhp::log($active_users);
         $consultantStatData[$user_id]['newCandiInPlay_count'] = $new_candidates_count;
       }
 
-      //ChromePhp::log($newKPInewCandiMetInfo);
+ChromePhp::log($newKPInewCandiMetInfo);
     }
 
 }
