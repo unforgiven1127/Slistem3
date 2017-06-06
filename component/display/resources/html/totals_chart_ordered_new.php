@@ -80,7 +80,7 @@
 
 <table id='totals_table_id' class='totals_table table-striped'>
 	<tr>
-		<th class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
+		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>
 	<tr id='head'>
 		<th class='name_column revenueSize0'>Name</th>
@@ -116,7 +116,7 @@ foreach ($consultantStatData as $key => $sd1)
 
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['set_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
