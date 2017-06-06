@@ -4638,6 +4638,20 @@ ChromePhp::log($active_users);
           $consultantStatData[$user_id] = array();
           $consultantStatData[$user_id]['user_firstname'] = $value['firstname'];
           $consultantStatData[$user_id]['user_lastname'] = $value['lastname'];
+          $consultantStatData[$user_id]['set_count'] = 0;
+          $consultantStatData[$user_id]['met_count'] = 0;
+          $consultantStatData[$user_id]['resumeSent_count'] = 0;
+          $consultantStatData[$user_id]['ccm1set_count'] = 0;
+          $consultantStatData[$user_id]['ccm1done_count'] = 0;
+          $consultantStatData[$user_id]['ccm2set_count'] = 0;
+          $consultantStatData[$user_id]['ccm2done_count'] = 0;
+          $consultantStatData[$user_id]['mccmset_count'] = 0;
+          $consultantStatData[$user_id]['mccmdone_count'] = 0;
+          $consultantStatData[$user_id]['newCandiInMet_count'] = 0;
+          $consultantStatData[$user_id]['newCandiInPlay_count'] = 0;
+          $consultantStatData[$user_id]['newPositionInPlay_count'] = 0;
+          $consultantStatData[$user_id]['offer_count'] = 0;
+          $consultantStatData[$user_id]['placed_count'] = 0;
         }
         foreach ($activeResearcherList as $key => $value)
         {
@@ -6248,63 +6262,40 @@ ChromePhp::log($active_users);
       //CONSULTANT RESEARCHER LIST CREATE
     }
 
-    public function newKPIcounts_set($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_set($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
-      foreach ($activeConsultantList as $key => $value)
+      foreach ($newKPIsetInfo as $key => $value)
       {
-        $user_id = $value['loginpk'];
-        $newCandiInPlay_count = 0;
-        $consultantStatData[$user_id]['set_candidates'] = array();
-        if(isset($newKPIsetInfo[$user_id]['set_count']))
-        {
-          $newCandiInPlay_count = $newKPIsetInfo[$user_id]['set_count'];
-          $candidatesArray = explode(',',$newKPIsetInfo[$user_id]['candidates']);
-          foreach ($candidatesArray as $key => $candidate)
-          {
-            $consultantStatData[$user_id]['set_candidates'][$candidate] = $candidate;
-          }
-        }
-        $consultantStatData[$user_id]['set_count'] = $newCandiInPlay_count;
-      }
-
-      /*foreach ($newKPIsetInfo as $key => $value)
-      {
+        $consultantStatData[$value['user_id']]['set_candidates'] = array();
         $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['set_candidates']))
-          {
-            $consultantStatData[$value['user_id']]['set_candidates'] = array();
-          }
           $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
-      }*/
+      }
 
     }
 
-    public function newKPIcounts_met($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_met($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPImetInfo = $this->_getModel()->newKPImetInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPImetInfo as $key => $value)
       {
+        $consultantStatData[$value['user_id']]['met_candidates'] = array();
         $consultantStatData[$value['user_id']]['met_count'] = $value['met_count'];
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['met_candidates']))
-          {
-            $consultantStatData[$value['user_id']]['met_candidates'] = array();
-          }
           $consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
         }
       }
     }
 
-    public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIresumeSentInfo = $this->_getModel()->newKPIresumeSentInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6334,7 +6325,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6363,7 +6354,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_ccm1done($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_ccm1done($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIccm1doneInfo = $this->_getModel()->newKPIccm1doneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6392,7 +6383,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_ccm2set($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_ccm2set($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIccm2setInfo = $this->_getModel()->newKPIccm2setInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6421,7 +6412,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_ccm2done($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_ccm2done($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIccm2doneInfo = $this->_getModel()->newKPIccm2doneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6450,7 +6441,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_mccmset($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_mccmset($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPImccmsetInfo = $this->_getModel()->newKPImccmsetInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6479,7 +6470,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPImccmdoneInfo = $this->_getModel()->newKPImccmdoneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6538,7 +6529,7 @@ ChromePhp::log($active_users);
 //ChromePhp::log($newKPInewCandiMetInfo);
     }
 
-    public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6567,7 +6558,7 @@ ChromePhp::log($active_users);
       }
     }
 
-    public function newKPIplaced_offer($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
+    public function newKPIplaced_offer($start_date, $end_date, $user_list, &$consultantStatData)
     {
       $newKPIplacedInfo = $this->_getModel()->newKPIplacedInfo('consultant', $start_date, $end_date, $user_list);
 
