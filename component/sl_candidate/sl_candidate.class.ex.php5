@@ -4804,6 +4804,8 @@ class CSl_candidateEx extends CSl_candidate
           }
         }
 
+        $asCurrency = $this->getVars()->getCurrencies();
+        $data['currency_list'] = $asCurrency;
         $data['skillArray'] = $skillArray;
 
         /*$addHtml = "
