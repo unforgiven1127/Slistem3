@@ -139,7 +139,7 @@ foreach ($consultantStatData as $key => $sd1)
 
 	foreach ($sd1 as $key => $value)
 	{
-		echo "<tr stat_candi_info 528>";
+		echo "<tr class='stat_candi_info 528'>";
 			echo "<td class='name_column revenueSize'></td>";
 			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
 			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
