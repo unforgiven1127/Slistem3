@@ -137,6 +137,27 @@ foreach ($consultantStatData as $key => $sd1)
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
+	foreach ($sd1 as $key => $value)
+	{
+		echo "<tr class='stat_candi_info'>";
+			echo "<td class='name_column revenueSize'></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+			echo "<td><div class='stat_holder revenueSize2' id='528'>-</div></td>";
+		echo "</tr>";
+	}
+
 }
 
 echo "<tr class='totals_table_footer'>
