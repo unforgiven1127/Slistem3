@@ -6493,7 +6493,36 @@ ChromePhp::log($active_users);
         $consultantStatData[$user_id]['newPositionInPlay_count'] = $new_candidates_count;
       }
 
-ChromePhp::log($newKPInewCandiMetInfo);
+//ChromePhp::log($newKPInewCandiMetInfo);
+    }
+
+    public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData)
+    {
+      $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('consultant', $start_date, $end_date, $user_list);
+
+      foreach ($newKPIofferInfo as $key => $value)
+      {
+        if(!isset($consultantStatData[$value['user_id']]['offer_count']))
+        {
+          $consultantStatData[$value['user_id']]['offer_count'] = 0;
+        }
+
+        $consultantStatData[$value['user_id']]['offer_count'] += $value['offer_count'];
+
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          if(!isset($consultantStatData[$value['user_id']]['offer_candidates']))
+          {
+            //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
+            $consultantStatData[$value['user_id']]['offer_candidates'] = $candidate;
+          }
+          else
+          {
+            $consultantStatData[$value['user_id']]['offer_candidates'] .= ','.$candidate;
+          }
+        }
+      }
     }
 
 }
