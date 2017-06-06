@@ -110,15 +110,20 @@ foreach ($consultantStatData as $key => $sd1)
 
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
-		echo "<td>".$test."</td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
 	echo "</tr>";
 
 }
