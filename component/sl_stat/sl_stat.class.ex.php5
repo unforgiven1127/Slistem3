@@ -4698,6 +4698,9 @@ ChromePhp::log($active_users);
             if(isset($sd2['newCandiInPlay_count']))echo 'new candi count: '.$sd2['newCandiInPlay_count'].' | ';
             else echo 'new candi count: 0 | ';
 
+            if(isset($sd2['newPositionInPlay_count']))echo 'new position count: '.$sd2['newPositionInPlay_count'].' | ';
+            else echo 'new position count: 0 | ';
+
             echo '<br><br>';
           }
         }
@@ -6482,6 +6485,12 @@ ChromePhp::log($active_users);
           $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_candidates']);
         }
         $consultantStatData[$user_id]['newCandiInPlay_count'] = $new_candidates_count;
+
+        if(isset($newKPInewCandiMetInfo[$user_id]['new_positions']))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_positions']);
+        }
+        $consultantStatData[$user_id]['newPositionInPlay_count'] = $new_candidates_count;
       }
 
 ChromePhp::log($newKPInewCandiMetInfo);
