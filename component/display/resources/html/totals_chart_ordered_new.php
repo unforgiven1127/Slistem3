@@ -25,7 +25,7 @@
 			for(i=0; i<cols.length; i++) {
 			    cols[i].setAttribute("style","font-size:180% !important;");
 			}
-			var cols = document.getElementsByClassName('revenueSize2');
+			var cols = document.getElementsByClassName('rs2');
 			for(i=0; i<cols.length; i++) {
 			    cols[i].setAttribute("style","font-size:150% !important;");
 			}
@@ -128,40 +128,40 @@ foreach ($consultantStatData as $key => $sd1)
 
 	echo "<tr class='hover_row ".$even."'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['met_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['resumeSent_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm1set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm1done_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm2set_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['ccm2done_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['mccmset_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['mccmdone_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newCandiMet_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newCandiInPlay_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['newPositionInPlay_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['offer_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2'>".$sd1['placed_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['set_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['met_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['resumeSent_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['ccm1set_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['ccm1done_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['ccm2set_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['ccm2done_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['mccmset_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['mccmdone_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['newCandiMet_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['newCandiInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['newPositionInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['offer_count']."</div></td>";
+		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
 	foreach ($sd1 as $key2 => $value)
 	{
-		echo "<tr class='hdi' id='".$key."'>";
+		echo "<tr class='hdi' id='".$key."_hidden'>";
 			echo "<td class='name_column revenueSize'></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2''>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
-			echo "<td><div class=' revenueSize2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2''>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
+			echo "<td><div class=' rs2'>-</div></td>";
 		echo "</tr>";
 	}
 
@@ -191,10 +191,12 @@ echo "<tr class='totals_table_footer'>
 
 		$('.stat_holder').click(function() {
 			var newClass = $(this).attr("id");
+			newClass = newClass + '_hidden';
+			$('.'+newClass).toggle();
 			//alert(newClass);
 			//$('.'+newClass).toggle(500,"linear");
-			var options = {};
-			$('.'+newClass).toggle( 'blind', options, 500 );
+			//var options = {};
+			//$('.'+newClass).toggle( 'blind', options, 500 );
 			//var sibling_obj_size = $($(this).siblings().get(0)).children().length;
 
 			//if (sibling_obj_size > 0)
