@@ -106,7 +106,10 @@ foreach ($consultantStatData as $key => $sd1)
 		$total_o = 0;
 		$total_p = 0;
 
-		$user_name = strtoupper(substr($sd2['user_firstname'],0,1)).' '.strtoupper($sd2['user_lastname']);
+		var_dump($sd2);
+
+		$user_name = "-";
+		//$user_name = strtoupper(substr($sd2['user_firstname'],0,1)).' '.strtoupper($sd2['user_lastname']);
 
 		echo "<tr class='hover_row'>";
 			echo "<td>".$user_name."</td>";
