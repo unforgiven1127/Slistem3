@@ -6104,7 +6104,7 @@ ChromePhp::log($active_users);
         $this->_oPage->addCssFile($this->getResourcePath().'/css/totals_chart.css');
       }
 
-      $data = array('stats_data' => $stats_data, 'start_date_original' => $start_date_original,
+      $data = array('start_date_original' => $start_date_original,
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
 
       $data['nextloop'] = $nextloop;
@@ -6115,6 +6115,7 @@ ChromePhp::log($active_users);
 
       if(empty($html))
       {
+        $data['stats_data'] = $stats_data;
         $html = $this->_oDisplay->render('totals_chart_ordered', $data);
       }
       else
