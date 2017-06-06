@@ -125,7 +125,7 @@ foreach ($consultantStatData as $key => $sd1)
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm2done_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmset_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmdone_count']."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newCandiMet_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newCandiInPlay_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newPositionInPlay_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['offer_count']."</div></td>";

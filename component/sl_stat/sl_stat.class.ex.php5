@@ -4647,7 +4647,7 @@ ChromePhp::log($active_users);
           $consultantStatData[$user_id]['ccm2done_count'] = 0;
           $consultantStatData[$user_id]['mccmset_count'] = 0;
           $consultantStatData[$user_id]['mccmdone_count'] = 0;
-          $consultantStatData[$user_id]['newCandiInMet_count'] = 0;
+          $consultantStatData[$user_id]['newCandiMet_count'] = 0;
           $consultantStatData[$user_id]['newCandiInPlay_count'] = 0;
           $consultantStatData[$user_id]['newPositionInPlay_count'] = 0;
           $consultantStatData[$user_id]['offer_count'] = 0;
@@ -6506,16 +6506,16 @@ ChromePhp::log($active_users);
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
       ChromePhp::log($newKPInewCandiMetInfo);
 
-      /*foreach ($activeConsultantList as $key => $value)
+      foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
         $new_candidates_count = 0;
-        if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
+        if(isset($newKPInewCandiMetInfo[$user_id]))
         {
-          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_candidates']);
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]);
         }
         $consultantStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
-      }*/
+      }
     }
 
     public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
