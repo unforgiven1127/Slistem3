@@ -195,7 +195,7 @@ echo "<tr class='totals_table_footer'>
 			newClass = newClass + '_hidden';
 			//$('.'+newClass).toggle();
 			alert(newClass);
-			$("#"+newClass).toggle(500,"linear");
+			$("."+newClass).toggle(500,"linear");
 			//var options = {};
 			//$('.'+newClass).toggle( 'blind', options, 500 );
 			//var sibling_obj_size = $($(this).siblings().get(0)).children().length;
