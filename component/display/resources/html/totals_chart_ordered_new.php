@@ -117,19 +117,19 @@ foreach ($consultantStatData as $key => $sd1)
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['met_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['resumeSent_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm1set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm1done_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm2set_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['ccm2done_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmset_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['mccmdone_count']."</div></td>";
 		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
-		echo "<td><div class='stat_holder revenueSize2' id='528'>".$test."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newCandiInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['newPositionInPlay_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['offer_count']."</div></td>";
+		echo "<td><div class='stat_holder revenueSize2' id='528'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
 }
