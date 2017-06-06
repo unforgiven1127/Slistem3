@@ -102,17 +102,22 @@
 
 <?php
 
+$total_ncm = 0;
+$total_ncip = 0;
+$total_npip = 0;
+$total_o = 0;
+$total_p = 0;
+
 foreach ($consultantStatData as $key => $sd1)
 {
-
-	$total_ncm = 0;
-	$total_ncip = 0;
-	$total_npip = 0;
-	$total_o = 0;
-	$total_p = 0;
+	$total_ncm += $sd1['newCandiMet_count'];
+	$total_ncip += $sd1['newCandiInPlay_count'];
+	$total_npip += $sd1['newPositionInPlay_count'];
+	$total_o += $sd1['offer_count'];
+	$total_p += $sd1['placed_count'];
 
 	$test = "-";
-	$user_name = strtoupper(substr($sd1['user_firstname'],0,1)).' '.($sd1['user_lastname']);
+	$user_name = substr($sd1['user_firstname'],0,1).'. '.($sd1['user_lastname']);
 
 	echo "<tr class='hover_row'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
