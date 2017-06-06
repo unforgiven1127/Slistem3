@@ -4662,7 +4662,6 @@ ChromePhp::log($active_users);
         $this->newKPIplaced_offer($start_date,$end_date, $user_list_cons, $consultantStatData);
 
 //ChromePhp::log($consultantStatData);
-        $stats_data['consultantStatData'] = $consultantStatData;
 
         $html = '-';
 
@@ -6087,7 +6086,7 @@ ChromePhp::log($active_users);
       else
       {
         //get kpi from database
-        ChromePhp::log('get kpi from database');
+        //ChromePhp::log('get kpi from database');
         $json_from_db = $generatedKPIs[0]['json_data'];
 //ChromePhp::log($json_from_db);
         $stats_data = array();
@@ -6109,6 +6108,7 @@ ChromePhp::log($active_users);
         'end_date_original' => $end_date_original, 'start_date' => $start_date,'page_obj' => $this->_oPage);
 
       $data['nextloop'] = $nextloop;
+      $stats_data['consultantStatData'] = $consultantStatData;
 
       $data['allCanidatesArray'] = array();
       //$data['allCanidatesArray'] = $allCanidatesArray;
