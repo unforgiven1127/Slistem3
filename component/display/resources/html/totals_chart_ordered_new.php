@@ -134,6 +134,17 @@ foreach ($consultantStatData as $key => $sd1)
 
 }
 
+echo "<tr class='totals_table_footer'>
+		<td class='revenueSize3' colspan='10' class='text_right'>
+			Total :
+		</td>
+		<td class='revenueSize3'>".$total_ncm."</td>
+		<td class='revenueSize3'>".$total_ncip."</td>
+		<td class='revenueSize3'>".$total_npip."</td>
+		<td class='revenueSize3'>".$total_o."</td>
+		<td class='revenueSize3'>".$total_p."</td>
+	</tr>";
+
 ?>
 
 </table>
