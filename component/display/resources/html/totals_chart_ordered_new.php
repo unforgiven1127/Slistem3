@@ -98,6 +98,7 @@
 
 foreach ($consultantStatData as $key => $sd1)
 {
+	var_dump($sd1);
 	foreach ($sd1 as $key2 => $sd2)
 	{
 		$total_ncm = 0;
@@ -105,8 +106,6 @@ foreach ($consultantStatData as $key => $sd1)
 		$total_npip = 0;
 		$total_o = 0;
 		$total_p = 0;
-
-		var_dump($sd2);
 
 		$user_name = "-";
 		//$user_name = strtoupper(substr($sd2['user_firstname'],0,1)).' '.strtoupper($sd2['user_lastname']);
