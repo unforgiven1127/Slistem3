@@ -65,8 +65,11 @@ echo 'Memory usage: '.$memory_usage.'%';
 echo '<br>';
 echo 'CPU usage: '.$load.'%';
 
-if(function_exists($_GET['f'])) {
-   $_GET['f']();
+if(isset($_GET['f']))
+{
+  if(function_exists($_GET['f'])) {
+     $_GET['f']();
+  }
 }
 
 function get_new_kpi_set()
@@ -74,7 +77,8 @@ function get_new_kpi_set()
 	echo '<br><br><br>';
 	echo 'test';
 }
-//echo phpinfo();
+echo '<br><br>';
+echo phpinfo();
 
 /*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
