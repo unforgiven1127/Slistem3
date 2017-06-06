@@ -54,6 +54,12 @@
 
 </script>
 
+<style>
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #F9F9F9;
+}
+</style>
+
 <form id="getKpiForm" action="" method="post">
 	<div id="closeThis" class="general_form_row" style="font-size: 16px;">
 		<div class="general_form_column">Start date: </div>
@@ -72,7 +78,7 @@
 	</div>
 </form>
 
-<table id='totals_table_id' class='totals_table'>
+<table id='totals_table_id' class='totals_table table-striped'>
 	<tr>
 		<th class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>
