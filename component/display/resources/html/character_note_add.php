@@ -506,23 +506,27 @@
 						foreach ($list as $key => $value)
 						{
 							$currency = $value;
-							$rate = $currency_list[$value];
-
-							if ($currency == $currencyCode)
+							if(isset($currency_list[$value]))
 							{
-								$selected = ' selected ';
-							}
-							else
-							{
-								$selected = '';
+								$rate = $currency_list[$value];
+
+								if ($currency == $currencyCode)
+								{
+									$selected = ' selected ';
+								}
+								else
+								{
+									$selected = '';
+								}
+
+								$rateNew = 1/$rate;
+								echo "<option value='".$currency."' ";
+								echo $selected;
+								echo "title='Rate: 1 ".$currency." = ".$rateNew." &yen'>";
+								echo $currency;
+								echo "</option>";
 							}
 
-							$rateNew = 1/$rate;
-							echo "<option value='".$currency."' ";
-							echo $selected;
-							echo "title='Rate: 1 ".$currency." = ".$rateNew." &yen'>";
-							echo $currency;
-							echo "</option>";
 						} ?>
 						</select>
 					</div>
