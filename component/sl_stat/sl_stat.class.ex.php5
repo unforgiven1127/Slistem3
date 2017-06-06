@@ -6120,7 +6120,7 @@ ChromePhp::log($active_users);
       }
       else
       {
-        $html = $this->_oDisplay->render('totals_chart_ordered', $data);
+        $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
       return $html;
