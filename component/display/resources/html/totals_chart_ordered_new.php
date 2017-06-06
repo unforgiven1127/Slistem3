@@ -98,31 +98,29 @@
 
 foreach ($consultantStatData as $key => $sd1)
 {
-	var_dump($sd1);
-	foreach ($sd1 as $key2 => $sd2)
-	{
-		$total_ncm = 0;
-		$total_ncip = 0;
-		$total_npip = 0;
-		$total_o = 0;
-		$total_p = 0;
 
-		$user_name = "-";
-		//$user_name = strtoupper(substr($sd2['user_firstname'],0,1)).' '.strtoupper($sd2['user_lastname']);
+	$total_ncm = 0;
+	$total_ncip = 0;
+	$total_npip = 0;
+	$total_o = 0;
+	$total_p = 0;
 
-		echo "<tr class='hover_row'>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-			echo "<td>".$user_name."</td>";
-		echo "</tr>";
-	}
+	//$user_name = "-";
+	$user_name = strtoupper(substr($sd1['user_firstname'],0,1)).' '.strtoupper($sd1['user_lastname']);
+
+	echo "<tr class='hover_row'>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+		echo "<td>".$user_name."</td>";
+	echo "</tr>";
+
 }
 
 ?>
