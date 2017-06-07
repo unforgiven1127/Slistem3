@@ -61,7 +61,8 @@
 
 .hover_row
 {
-	font-size: 8pt;
+	font-size: 10pt;
+	background-color: #F9E3B3;
 }
 </style>
 
