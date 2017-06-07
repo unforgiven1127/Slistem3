@@ -62,6 +62,7 @@
 .hover_row
 {
 	font-size: 10pt;
+	text-align: center;
 }
 .hover_row > a
 {
