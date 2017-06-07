@@ -6533,7 +6533,7 @@ class CSl_statEx extends CSl_stat
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
-ChromePhp::log($newKPInewCandiMetInfo);
+//ChromePhp::log($newKPInewCandiMetInfo);
 
       foreach ($activeConsultantList as $key => $value)
       {
@@ -6561,7 +6561,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
     public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
       $newKPInewCandiMetInfo = $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date,'consultant');
-ChromePhp::log($newKPInewCandiMetInfo);
+//ChromePhp::log($newKPInewCandiMetInfo);
       foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
@@ -6581,13 +6581,14 @@ ChromePhp::log($newKPInewCandiMetInfo);
 
       foreach ($newKPInewCandiMetInfo as $key => $value1)
       {
-        foreach ($value1['new_candidates'] as $key2 => $value2)
+        ChromePhp::log($value1);
+        /*foreach ($value1['new_candidates'] as $key2 => $value2)
         {
           $candidate = $value2['candidatefk'];
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
           if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
           $allCandidates[$key][$candidate]['newcandi_met'] = $candidate;
-        }
+        }*/
       }
 
 //ChromePhp::log($newKPInewCandiMetInfo);
