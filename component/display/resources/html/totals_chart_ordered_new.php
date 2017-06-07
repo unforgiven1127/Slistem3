@@ -67,7 +67,7 @@
 .hover_row > a
 {
 	color: #2A6991;
-	font-weight: normal !important;
+	/*font-weight: normal !important;*/
 }
 </style>
 
@@ -159,7 +159,7 @@ foreach ($consultantStatData as $key => $sd1)
 	{
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
-			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '-';
+			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];}
 			$classHDI = $key.'_hidden';
