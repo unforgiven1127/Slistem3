@@ -6581,14 +6581,16 @@ class CSl_statEx extends CSl_stat
 
       foreach ($newKPInewCandiMetInfo as $key => $value1)
       {
-        ChromePhp::log($value1);
-        /*foreach ($value1['new_candidates'] as $key2 => $value2)
+        if(isset($value1['new_candidates']))
         {
-          $candidate = $value2['candidatefk'];
-          if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
-          if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
-          $allCandidates[$key][$candidate]['newcandi_met'] = $candidate;
-        }*/
+          foreach ($value1['new_candidates'] as $key2 => $value2)
+          {
+            $candidate = $value2['candidatefk'];
+            if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+            if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+            $allCandidates[$key][$candidate]['newcandi_met'] = $candidate;
+          }
+        }
       }
 
 //ChromePhp::log($newKPInewCandiMetInfo);
