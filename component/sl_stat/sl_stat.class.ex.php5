@@ -6139,6 +6139,7 @@ class CSl_statEx extends CSl_stat
       else
       {
         $data['consultantStatData'] = $consultantStatData;
+        $data['allCandidates'] = $allCandidates;
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
