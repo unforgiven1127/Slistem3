@@ -6581,7 +6581,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
 
       foreach ($newKPInewCandiMetInfo as $key => $value1)
       {
-        foreach ($value1 as $key2 => $value2)
+        foreach ($value1['new_candidates'] as $key2 => $value2)
         {
           $candidate = $value2['candidatefk'];
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
