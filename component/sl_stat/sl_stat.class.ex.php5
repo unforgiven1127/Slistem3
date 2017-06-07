@@ -6285,7 +6285,7 @@ class CSl_statEx extends CSl_stat
           //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
       }
-
+ChromePhp::log($allCandidates);
     }
 
     public function newKPIcounts_met($start_date, $end_date, $user_list, &$consultantStatData)
