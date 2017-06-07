@@ -6279,6 +6279,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['set']))
@@ -6304,6 +6305,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['met']))
@@ -6334,6 +6336,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['resume_sent']))
@@ -6371,6 +6374,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['ccm1_set']))
@@ -6408,6 +6412,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['ccm1_done']))
@@ -6445,6 +6450,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['ccm2_set']))
@@ -6482,6 +6488,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['ccm2_done']))
@@ -6519,6 +6526,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['mccm_set']))
@@ -6556,6 +6564,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['mccm_done']))
@@ -6684,6 +6693,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['offer_candidates']))
@@ -6721,6 +6731,7 @@ ChromePhp::log($allCandidates);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $candidate = int(trim($candidate));
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['placed_candidates']))
