@@ -6280,6 +6280,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['set']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['set'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['set'][] = $candidate;
           //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
@@ -6301,6 +6305,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['met']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['met'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['met'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['met'][] = $candidate;
           //$consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
@@ -6327,6 +6335,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['resume_sent']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['resume_sent'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['resume_sent'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
@@ -6360,6 +6372,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['ccm1_set']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['ccm1_set'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['ccm1_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm1_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm1set_candidates']))
@@ -6393,6 +6409,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['ccm1_done']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['ccm1_done'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['ccm1_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm1_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm1done_candidates']))
@@ -6426,6 +6446,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['ccm2_set']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['ccm2_set'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['ccm2_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm2_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm2set_candidates']))
@@ -6459,6 +6483,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['ccm2_done']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['ccm2_done'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['ccm2_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm2_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm2done_candidates']))
@@ -6492,6 +6520,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['mccm_set']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['mccm_set'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['mccm_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['mccm_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['mccmset_candidates']))
@@ -6525,6 +6557,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['mccm_done']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['mccm_done'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['mccm_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['mccm_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['mccmdone_candidates']))
@@ -6563,6 +6599,10 @@ class CSl_statEx extends CSl_stat
           $candidate = $value2['candidatefk'];
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
           if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+          if(!isset($allCandidates[$key][$candidate]['newcandi_met']))
+          {
+            $allCandidates[$key][$candidate]['newcandi_met'] = array();
+          }
           array_push($allCandidates[$key][$candidate]['newcandi_met'],$candidate);
           //$this->$allCandidates[$key][$candidate]['newcandi_met'][] = $candidate;
         }
@@ -6599,6 +6639,10 @@ class CSl_statEx extends CSl_stat
             $candidate = $value2['candidatefk'];
             if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
             if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+            if(!isset($allCandidates[$key][$candidate]['newcandi_play']))
+            {
+              $allCandidates[$key][$candidate]['newcandi_play'] = array();
+            }
             array_push($allCandidates[$key][$candidate]['newcandi_play'],$candidate);
             //$this->$allCandidates[$key][$candidate]['newcandi_play'][] = $candidate;
           }
@@ -6610,6 +6654,10 @@ class CSl_statEx extends CSl_stat
             $candidate = $value2['candidatefk'];
             if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
             if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+            if(!isset($allCandidates[$key][$candidate]['newposition_play']))
+            {
+              $allCandidates[$key][$candidate]['newposition_play'] = array();
+            }
             array_push($allCandidates[$key][$candidate]['newposition_play'],$candidate);
             //$this->$allCandidates[$key][$candidate]['newposition_play'][] = $candidate;
           }
@@ -6637,6 +6685,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['offer_candidates']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['offer_candidates'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['offer_candidates'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['offer_candidates'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['offer_candidates']))
@@ -6670,6 +6722,10 @@ class CSl_statEx extends CSl_stat
         {
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate]['placed_candidates']))
+          {
+            $allCandidates[$value['user_id']][$candidate]['placed_candidates'] = array();
+          }
           array_push($allCandidates[$value['user_id']][$candidate]['placed_candidates'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['placed_candidates'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['placed_candidates']))
