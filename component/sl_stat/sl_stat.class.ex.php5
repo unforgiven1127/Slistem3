@@ -4621,7 +4621,7 @@ class CSl_statEx extends CSl_stat
       {
 
         $active_users = $this->createUserList();
-ChromePhp::log($active_users);
+//ChromePhp::log($active_users);
 
         $user_list_cons = $active_users['user_list_cons'];
         $user_list_res = $active_users['user_list_res'];
@@ -4660,6 +4660,8 @@ ChromePhp::log($active_users);
           $researcherStatData[$user_id]['user_firstname'] = $value['firstname'];
           $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
+
+        $allCandidates = array();
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
@@ -6270,12 +6272,14 @@ ChromePhp::log($active_users);
 
       foreach ($newKPIsetInfo as $key => $value)
       {
-        $consultantStatData[$value['user_id']]['set_candidates'] = array();
+        //$consultantStatData[$value['user_id']]['set_candidates'] = array();
         $consultantStatData[$value['user_id']]['set_count'] = $value['set_count'];
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          $consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['set'] = $candidate;
+          //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
       }
 
@@ -6287,12 +6291,14 @@ ChromePhp::log($active_users);
 
       foreach ($newKPImetInfo as $key => $value)
       {
-        $consultantStatData[$value['user_id']]['met_candidates'] = array();
+        //$consultantStatData[$value['user_id']]['met_candidates'] = array();
         $consultantStatData[$value['user_id']]['met_count'] = $value['met_count'];
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          $consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['met'] = $candidate;
+          //$consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
         }
       }
     }
@@ -6314,7 +6320,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['resume_sent'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
           {
             //$consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] = $candidate;
@@ -6322,7 +6330,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['resumeSent_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6343,7 +6351,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['ccm1set_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['ccm1_set'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['ccm1set_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['ccm1set_candidates'] = $candidate;
@@ -6351,7 +6361,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['ccm1set_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6372,7 +6382,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['ccm1done_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['ccm1_done'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['ccm1done_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['ccm1done_candidates'] = $candidate;
@@ -6380,7 +6392,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['ccm1done_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6401,7 +6413,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['ccm2set_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['ccm2_set'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['ccm2set_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['ccm2set_candidates'] = $candidate;
@@ -6409,7 +6423,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['ccm2set_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6430,7 +6444,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['ccm2done_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['ccm2_done'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['ccm2done_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['ccm2done_candidates'] = $candidate;
@@ -6438,7 +6454,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['ccm2done_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6459,7 +6475,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['mccmset_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['mccm_set'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['mccmset_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['mccmset_candidates'] = $candidate;
@@ -6467,7 +6485,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['mccmset_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6488,7 +6506,9 @@ ChromePhp::log($active_users);
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($consultantStatData[$value['user_id']]['mccmdone_candidates']))
+          if(!isset($allCandidates[$candidate])){$allCandidates[$candidate] = array();}
+          $allCandidates[$value['user_id']][$candidate]['mccm_done'] = $candidate;
+          /*if(!isset($consultantStatData[$value['user_id']]['mccmdone_candidates']))
           {
             //$consultantStatData[$value['user_id']]['ccm1set_candidates'] = array();
             $consultantStatData[$value['user_id']]['mccmdone_candidates'] = $candidate;
@@ -6496,7 +6516,7 @@ ChromePhp::log($active_users);
           else
           {
             $consultantStatData[$value['user_id']]['mccmdone_candidates'] .= ','.$candidate;
-          }
+          }*/
         }
       }
     }
@@ -6504,7 +6524,7 @@ ChromePhp::log($active_users);
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList)
     {
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
-      ChromePhp::log($newKPInewCandiMetInfo);
+ChromePhp::log($newKPInewCandiMetInfo);
 
       foreach ($activeConsultantList as $key => $value)
       {
@@ -6515,6 +6535,11 @@ ChromePhp::log($active_users);
           $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]);
         }
         $consultantStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
+      }
+
+      foreach ($newKPInewCandiMetInfo as $key => $value)
+      {
+        # code...
       }
     }
 
