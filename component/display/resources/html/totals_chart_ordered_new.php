@@ -62,6 +62,9 @@
 .hover_row
 {
 	font-size: 10pt;
+}
+.hover_row > a
+{
 	color: #2A6991;
 }
 </style>
