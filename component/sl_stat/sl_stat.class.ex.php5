@@ -6139,7 +6139,7 @@ class CSl_statEx extends CSl_stat
       {
         $data['consultantStatData'] = $consultantStatData;
         $data['allCandidates'] = $allCandidates;
-        //ChromePhp::log($this->$allCandidates);
+ChromePhp::log($allCandidates);
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
