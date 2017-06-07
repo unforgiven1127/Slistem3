@@ -6553,7 +6553,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
           $candidate = $value2['candidatefk'];
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
           if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
-          $allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+          $allCandidates[$key][$candidate]['newcandi_met'] = $candidate;
         }
       }
     }
@@ -6586,7 +6586,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
           $candidate = $value2['candidatefk'];
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
           if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
-          $allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+          $allCandidates[$key][$candidate]['newcandi_met'] = $candidate;
         }
       }
 
