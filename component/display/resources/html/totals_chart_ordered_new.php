@@ -66,6 +66,7 @@
 .hover_row > a
 {
 	color: #2A6991;
+	font-weight: normal !important;
 }
 </style>
 
