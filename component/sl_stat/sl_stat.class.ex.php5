@@ -6591,7 +6591,7 @@ class CSl_statEx extends CSl_stat
             $allCandidates[$key][$candidate]['newcandi_play'][] = $candidate;
           }
         }
-        if(isset($value1['new_candidates']))
+        if(isset($value1['new_positions']))
         {
           foreach ($value1['new_positions'] as $key2 => $value2)
           {
