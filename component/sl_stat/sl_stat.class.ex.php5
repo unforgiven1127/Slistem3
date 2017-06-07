@@ -6548,10 +6548,13 @@ ChromePhp::log($newKPInewCandiMetInfo);
 
       foreach ($newKPInewCandiMetInfo as $key => $value)
       {
-        //$candidate = $value['candidatefk'];
-        //if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
-        //if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
-        //$allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+        foreach ($value1 as $key2 => $value2)
+        {
+          $candidate = $value2['candidatefk'];
+          if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+          if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+          $allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+        }
       }
     }
 
@@ -6576,12 +6579,15 @@ ChromePhp::log($newKPInewCandiMetInfo);
         $consultantStatData[$user_id]['newPositionInPlay_count'] = $new_candidates_count;
       }
 
-      foreach ($newKPInewCandiMetInfo as $key => $value)
+      foreach ($newKPInewCandiMetInfo as $key1 => $value1)
       {
-        //$candidate = $value['candidatefk'];
-        //if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
-        //if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
-        //$allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+        foreach ($value1 as $key2 => $value2)
+        {
+          $candidate = $value2['candidatefk'];
+          if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+          if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+          $allCandidates[$key][$candidate]['newcandi_met'] = $value['candidatefk'];
+        }
       }
 
 //ChromePhp::log($newKPInewCandiMetInfo);
