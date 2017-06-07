@@ -6138,8 +6138,8 @@ class CSl_statEx extends CSl_stat
       else
       {
         $data['consultantStatData'] = $consultantStatData;
-        $data['allCandidates'] = $this->$allCandidates;
-        ChromePhp::log($this->$allCandidates);
+        $data['allCandidates'] = $allCandidates;
+        //ChromePhp::log($this->$allCandidates);
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
@@ -6278,9 +6278,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['set'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['set'][] = $candidate;
           //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
@@ -6299,9 +6299,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['met'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['met'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['met'][] = $candidate;
           //$consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
         }
@@ -6325,9 +6325,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['resume_sent'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
           {
@@ -6358,9 +6358,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['ccm1_set'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['ccm1_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm1_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm1set_candidates']))
           {
@@ -6391,9 +6391,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['ccm1_done'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['ccm1_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm1_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm1done_candidates']))
           {
@@ -6424,9 +6424,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['ccm2_set'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['ccm2_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm2_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm2set_candidates']))
           {
@@ -6457,9 +6457,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['ccm2_done'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['ccm2_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['ccm2_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['ccm2done_candidates']))
           {
@@ -6490,9 +6490,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['mccm_set'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['mccm_set'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['mccm_set'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['mccmset_candidates']))
           {
@@ -6523,9 +6523,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['mccm_done'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['mccm_done'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['mccm_done'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['mccmdone_candidates']))
           {
@@ -6561,9 +6561,9 @@ class CSl_statEx extends CSl_stat
         foreach ($value1 as $key2 => $value2)
         {
           $candidate = $value2['candidatefk'];
-          if(!isset($this->$allCandidates[$key])){$this->$allCandidates[$key] = array();}
-          if(!isset($this->$allCandidates[$key][$candidate])){$this->$allCandidates[$key][$candidate] = array();}
-          array_push($this->$allCandidates[$key][$candidate]['newcandi_met'],$candidate);
+          if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+          if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+          array_push($allCandidates[$key][$candidate]['newcandi_met'],$candidate);
           //$this->$allCandidates[$key][$candidate]['newcandi_met'][] = $candidate;
         }
       }
@@ -6597,9 +6597,9 @@ class CSl_statEx extends CSl_stat
           foreach ($value1['new_candidates'] as $key2 => $value2)
           {
             $candidate = $value2['candidatefk'];
-            if(!isset($this->$allCandidates[$key])){$this->$allCandidates[$key] = array();}
-            if(!isset($this->$allCandidates[$key][$candidate])){$this->$allCandidates[$key][$candidate] = array();}
-            array_push($this->$allCandidates[$key][$candidate]['newcandi_play'],$candidate);
+            if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+            if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+            array_push($allCandidates[$key][$candidate]['newcandi_play'],$candidate);
             //$this->$allCandidates[$key][$candidate]['newcandi_play'][] = $candidate;
           }
         }
@@ -6608,9 +6608,9 @@ class CSl_statEx extends CSl_stat
           foreach ($value1['new_positions'] as $key2 => $value2)
           {
             $candidate = $value2['candidatefk'];
-            if(!isset($this->$allCandidates[$key])){$this->$allCandidates[$key] = array();}
-            if(!isset($this->$allCandidates[$key][$candidate])){$this->$allCandidates[$key][$candidate] = array();}
-            array_push($this->$allCandidates[$key][$candidate]['newposition_play'],$candidate);
+            if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
+            if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
+            array_push($allCandidates[$key][$candidate]['newposition_play'],$candidate);
             //$this->$allCandidates[$key][$candidate]['newposition_play'][] = $candidate;
           }
         }
@@ -6635,9 +6635,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['offer_candidates'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['offer_candidates'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['offer_candidates'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['offer_candidates']))
           {
@@ -6668,9 +6668,9 @@ class CSl_statEx extends CSl_stat
         $candidatesArray = explode(',',$value['candidates']);
         foreach ($candidatesArray as $key => $candidate)
         {
-          if(!isset($this->$allCandidates[$value['user_id']])){$this->$allCandidates[$value['user_id']] = array();}
-          if(!isset($this->$allCandidates[$value['user_id']][$candidate])){$this->$allCandidates[$value['user_id']][$candidate] = array();}
-          array_push($this->$allCandidates[$value['user_id']][$candidate]['placed_candidates'],$candidate);
+          if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
+          if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
+          array_push($allCandidates[$value['user_id']][$candidate]['placed_candidates'],$candidate);
           //$this->$allCandidates[$value['user_id']][$candidate]['placed_candidates'][] = $candidate;
           /*if(!isset($consultantStatData[$value['user_id']]['placed_candidates']))
           {
