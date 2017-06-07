@@ -4662,8 +4662,6 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
 
-        $allCandidates = array();
-
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList);
