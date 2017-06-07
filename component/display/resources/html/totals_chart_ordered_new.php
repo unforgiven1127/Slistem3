@@ -61,7 +61,7 @@
 
 .hover_row
 {
-	font-size: 10pt;
+	font-size: 11pt;
 	/*text-align: center;*/
 }
 .hover_row > a
@@ -162,6 +162,12 @@ foreach ($consultantStatData as $key => $sd1)
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];}
+			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];}
+			if(isset($value2['ccm1_done'][0])){$ccm1DoneC = $value2['ccm1_done'][0];}
+			if(isset($value2['ccm2_set'][0])){$ccm2SetC = $value2['ccm2_set'][0];}
+			if(isset($value2['ccm2_done'][0])){$ccm2DoneC = $value2['ccm2_done'][0];}
+			if(isset($value2['mccm_set'][0])){$mccmSet = $value2['mccm_set'][0];}
+			if(isset($value2['mccm_done'][0])){$mccmDone = $value2['mccm_done'][0];}
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
