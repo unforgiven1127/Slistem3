@@ -70,6 +70,7 @@ class CSl_statEx extends CSl_stat
 
   public function __construct()
   {
+    $allCandidates = array();
     $this->_oPage = CDependency::getCpPage();
     $this->_oDisplay = CDependency::getCpHtml();
 
