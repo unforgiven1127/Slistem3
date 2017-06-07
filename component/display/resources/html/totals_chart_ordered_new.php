@@ -62,12 +62,12 @@
 .hover_row
 {
 	font-size: 10pt;
-	text-align: center;
+	/*text-align: center;*/
 }
 .hover_row > a
 {
 	color: #2A6991;
-	/*font-weight: normal !important;*/
+	font-weight: normal !important;
 }
 </style>
 
