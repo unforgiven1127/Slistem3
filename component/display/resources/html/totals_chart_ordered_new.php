@@ -154,20 +154,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class=' hover_row'>".$setC."</div></td>";
-				echo "<td><div class=' hover_row'>".$metC."</div></td>";
-				echo "<td><div class=' hover_row'>".$resentC."</div></td>";
-				echo "<td><div class=' hover_row'>".$ccm1SetC."</div></td>";
-				echo "<td><div class=' hover_row'>".$ccm1DoneC."</div></td>";
-				echo "<td><div class=' hover_row'>".$ccm2SetC."</div></td>";
-				echo "<td><div class=' hover_row'>".$ccm2DoneC."</div></td>";
-				echo "<td><div class=' hover_row'>".$mccmSet."</div></td>";
-				echo "<td><div class=' hover_row'>".$mccmDone."</div></td>";
-				echo "<td><div class=' hover_row'>".$newCmet."</div></td>";
-				echo "<td><div class=' hover_row'>".$newCinPlay."</div></td>";
-				echo "<td><div class=' hover_row'>".$newPosInPlay."</div></td>";
-				echo "<td><div class=' hover_row'>".$offerC."</div></td>";
-				echo "<td><div class=' hover_row'>".$placementC."</div></td>";
+				echo "<td><div class=' hover_row'><a>".$setC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$metC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$resentC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$ccm1SetC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$ccm1DoneC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$ccm2SetC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$ccm2DoneC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$mccmSet."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$mccmDone."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$newCmet."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$newCinPlay."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$newPosInPlay."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$offerC."</a></div></td>";
+				echo "<td><div class=' hover_row'><a>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
