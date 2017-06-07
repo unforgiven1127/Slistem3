@@ -58,6 +58,11 @@
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
    background-color: #E3E9EF;
 }
+
+.hover_row
+{
+	font-size: 8pt;
+}
 </style>
 
 <form id="getKpiForm" action="" method="post">
@@ -126,7 +131,7 @@ foreach ($consultantStatData as $key => $sd1)
 		$even = '';
 	$row_number_rank++;
 
-	echo "<tr class='hover_row ".$even."'>";
+	echo "<tr class=' ".$even."'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['set_count']."</div></td>";
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['met_count']."</div></td>";
@@ -154,20 +159,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class=' hover_row'><a>".$setC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$metC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$resentC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$mccmSet."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$mccmDone."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$newCmet."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$newCinPlay."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$offerC."</a></div></td>";
-				echo "<td><div class=' hover_row'><a>".$placementC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$setC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$metC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$resentC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$mccmSet."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$mccmDone."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$newCmet."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$offerC."</a></div></td>";
+				echo "<td><div class='hover_row'><a>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
