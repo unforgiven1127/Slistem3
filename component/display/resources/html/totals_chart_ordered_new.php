@@ -154,20 +154,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class=' rs2'>".$setC."</div></td>";
-				echo "<td><div class=' rs2'>".$metC."</div></td>";
-				echo "<td><div class=' rs2'>".$resentC."</div></td>";
-				echo "<td><div class=' rs2'>".$ccm1SetC."</div></td>";
-				echo "<td><div class=' rs2'>".$ccm1DoneC."</div></td>";
-				echo "<td><div class=' rs2'>".$ccm2SetC."</div></td>";
-				echo "<td><div class=' rs2'>".$ccm2DoneC."</div></td>";
-				echo "<td><div class=' rs2'>".$mccmSet."</div></td>";
-				echo "<td><div class=' rs2'>".$mccmDone."</div></td>";
-				echo "<td><div class=' rs2'>".$newCmet."</div></td>";
-				echo "<td><div class=' rs2'>".$newCinPlay."</div></td>";
-				echo "<td><div class=' rs2'>".$newPosInPlay."</div></td>";
-				echo "<td><div class=' rs2'>".$offerC."</div></td>";
-				echo "<td><div class=' rs2'>".$placementC."</div></td>";
+				echo "<td><div class=' hover_row'>".$setC."</div></td>";
+				echo "<td><div class=' hover_row'>".$metC."</div></td>";
+				echo "<td><div class=' hover_row'>".$resentC."</div></td>";
+				echo "<td><div class=' hover_row'>".$ccm1SetC."</div></td>";
+				echo "<td><div class=' hover_row'>".$ccm1DoneC."</div></td>";
+				echo "<td><div class=' hover_row'>".$ccm2SetC."</div></td>";
+				echo "<td><div class=' hover_row'>".$ccm2DoneC."</div></td>";
+				echo "<td><div class=' hover_row'>".$mccmSet."</div></td>";
+				echo "<td><div class=' hover_row'>".$mccmDone."</div></td>";
+				echo "<td><div class=' hover_row'>".$newCmet."</div></td>";
+				echo "<td><div class=' hover_row'>".$newCinPlay."</div></td>";
+				echo "<td><div class=' hover_row'>".$newPosInPlay."</div></td>";
+				echo "<td><div class=' hover_row'>".$offerC."</div></td>";
+				echo "<td><div class=' hover_row'>".$placementC."</div></td>";
 			echo "</tr>";
 		}
 	}
