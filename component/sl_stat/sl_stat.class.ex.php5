@@ -6546,7 +6546,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
         $consultantStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
       }
 
-      foreach ($newKPInewCandiMetInfo as $key => $value)
+      foreach ($newKPInewCandiMetInfo as $key => $value1)
       {
         foreach ($value1 as $key2 => $value2)
         {
@@ -6579,7 +6579,7 @@ ChromePhp::log($newKPInewCandiMetInfo);
         $consultantStatData[$user_id]['newPositionInPlay_count'] = $new_candidates_count;
       }
 
-      foreach ($newKPInewCandiMetInfo as $key1 => $value1)
+      foreach ($newKPInewCandiMetInfo as $key => $value1)
       {
         foreach ($value1 as $key2 => $value2)
         {
