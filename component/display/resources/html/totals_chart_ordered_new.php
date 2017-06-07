@@ -144,29 +144,41 @@ foreach ($consultantStatData as $key => $sd1)
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
-	foreach ($allCandidates as $key2 => $value2)
+	$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '-';
+
+	if(isset($allCandidates[$key]))
+	{
+		foreach ($allCandidates[$key] as $key2 => $value2)
+		{
+			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
+			if(isset($value2['met'][0])){$metC = $value2['met'][0];}
+			$classHDI = $key.'_hidden';
+			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
+				echo "<td class='name_column revenueSize'></td>";
+				echo "<td><div class=' rs2'>".$setC."</div></td>";
+				echo "<td><div class=' rs2'>".$metC."</div></td>";
+				echo "<td><div class=' rs2'>".$resentC."</div></td>";
+				echo "<td><div class=' rs2'>".$ccm1SetC."</div></td>";
+				echo "<td><div class=' rs2'>".$ccm1DoneC."</div></td>";
+				echo "<td><div class=' rs2'>".$ccm2SetC."</div></td>";
+				echo "<td><div class=' rs2'>".$ccm2DoneC."</div></td>";
+				echo "<td><div class=' rs2'>".$mccmSet."</div></td>";
+				echo "<td><div class=' rs2'>".$mccmDone."</div></td>";
+				echo "<td><div class=' rs2'>".$newCmet."</div></td>";
+				echo "<td><div class=' rs2'>".$newCinPlay."</div></td>";
+				echo "<td><div class=' rs2'>".$newPosInPlay."</div></td>";
+				echo "<td><div class=' rs2'>".$offerC."</div></td>";
+				echo "<td><div class=' rs2'>".$placementC."</div></td>";
+			echo "</tr>";
+		}
+	}
+
+
+	/*foreach ($allCandidates as $key2 => $value2)
 	{
 		$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '-';
 
-		$classHDI = $key.'_hidden';
-		echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
-			echo "<td class='name_column revenueSize'></td>";
-			echo "<td><div class=' rs2'>".$setC."</div></td>";
-			echo "<td><div class=' rs2'>".$metC."</div></td>";
-			echo "<td><div class=' rs2'>".$resentC."</div></td>";
-			echo "<td><div class=' rs2'>".$ccm1SetC."</div></td>";
-			echo "<td><div class=' rs2'>".$ccm1DoneC."</div></td>";
-			echo "<td><div class=' rs2'>".$ccm2SetC."</div></td>";
-			echo "<td><div class=' rs2'>".$ccm2DoneC."</div></td>";
-			echo "<td><div class=' rs2'>".$mccmSet."</div></td>";
-			echo "<td><div class=' rs2'>".$mccmDone."</div></td>";
-			echo "<td><div class=' rs2'>".$newCmet."</div></td>";
-			echo "<td><div class=' rs2'>".$newCinPlay."</div></td>";
-			echo "<td><div class=' rs2'>".$newPosInPlay."</div></td>";
-			echo "<td><div class=' rs2'>".$offerC."</div></td>";
-			echo "<td><div class=' rs2'>".$placementC."</div></td>";
-		echo "</tr>";
-	}
+	}*/
 
 }
 
