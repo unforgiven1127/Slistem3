@@ -138,7 +138,7 @@ foreach ($consultantStatData as $key => $sd1)
 		$even = '';
 	$row_number_rank++;
 
-	echo "<tr class=' ".$even."'>";
+	echo "<tr class=' ".$even."' id='".$key."_tr'>";
 		echo "<td class='name_column revenueSize'>".$user_name."</td>";
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['set_count']."</div></td>";
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['met_count']."</div></td>";
@@ -222,8 +222,11 @@ echo "<tr class='totals_table_footer'>
 
 		$('.stat_holder').click(function() {
 			var newClass = $(this).attr("id");
+			var mainTR = newClass+"_key";
+alert(mainTR);
 			newClass = newClass + '_hidden';
 
+			var mainTR = newClass+"_key";
 			$("."+newClass).toggle(500,"linear");
 
 		});
