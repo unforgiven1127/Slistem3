@@ -184,7 +184,7 @@ foreach ($consultantStatData as $key => $sd1)
 			if(isset($value2['resume_sent'][0]))
 			{
 				$resentC = $value2['resume_sent'][0];$iC++;
-				if(count($value2['resume_sent']) > 1){$rsT = "(".count($value2['resume_sent']).")";}
+				//if(count($value2['resume_sent']) > 1){$rsT = "(".count($value2['resume_sent']).")";}
 			}
 			if(isset($value2['ccm1_set'][0]))
 			{
