@@ -209,10 +209,8 @@ foreach ($consultantStatData as $key => $sd1)
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
 				echo "</tr>";
 			}
-
 		}
 	}
-
 }
 
 echo "<tr class='totals_table_footer'>
@@ -244,7 +242,9 @@ echo "<tr class='totals_table_footer'>
 			newClass = newClass + '_hidden';
 
 			var mainTR = newClass+"_key";
-			$("."+newClass).toggle(500,"linear");
+			var options = {};
+			//$("."+newClass).toggle(500,"linear");
+			$('.'+newClass).toggle( 'blind', options, 500 );
 
 		});
 	});
