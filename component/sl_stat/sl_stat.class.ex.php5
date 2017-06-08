@@ -6280,7 +6280,6 @@ ChromePhp::log($allCandidates);
         foreach ($candidatesArray as $key => $candidate)
         {
           $candidate = (int)trim($candidate);
-          $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate]['set']))

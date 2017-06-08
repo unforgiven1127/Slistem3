@@ -78,17 +78,13 @@ function get_new_kpi_set()
 	echo 'test';
 }
 echo '<br><br>';
-echo phpinfo();
+//echo phpinfo();
 
-/*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = " SELECT slc.sl_companypk as company_id, slc.name as company_name,slpd.sl_position_detailpk as position_detail_id
-FROM sl_company slc
-left JOIN sl_position slp on slp.companyfk = slc.sl_companypk
-left JOIN sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
-WHERE slc.level = '8' ";
+$slistemQuery = 'select el.cp_pk as candidateID, e.date_create as createDate, e.content as note from event e inner join event_link el on el.eventfk = e.eventpk where e.type = "cp_history" and date_create >= "2017-03-01 00:00:00"';
 $slistemQuery = mysql_query($slistemQuery);
 
 $allMeetings = array();
@@ -97,14 +93,10 @@ $count = 0;
 
 while($meetingData = mysql_fetch_assoc($slistemQuery))
 {
-  if($meetingData['position_detail_id'] == null)
-  {
-    //$company_id = $meetingData['company_id'];
-    //$update_quert = " UPDATE sl_company SET level = 0 WHERE sl_companypk = '".$company_id."'";
-    //echo $update_quert.'<br>';
-    //$query = mysql_query($update_quert);
-    $count++;
-  }
+  echo 'CandidateID: '.$meetingData['candidateID'];
+  echo ' CreateDate: '.$meetingData['createDate'];
+  echo ' Note: '.$meetingData['note'];
+  echo '<br>';
 }
 
-echo $count;*/
+
