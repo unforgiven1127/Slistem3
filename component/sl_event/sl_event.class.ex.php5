@@ -595,7 +595,7 @@ class CSl_eventEx extends CSl_event
 
     $asEvent = getEventTypeList(false, $sCp_Type, CDependency::getCpLogin()->isAdmin());
     $sEventType = $oDbResult->getFieldValue('type');
-
+ChromePhp::log($sEventType);
     /*if(empty($sEventType))
     {
       $sEventType = 'company';
