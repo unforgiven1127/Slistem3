@@ -165,7 +165,7 @@ foreach ($consultantStatData as $key => $sd1)
 			$iC = 0;
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 
-			$setT = $metT = $rsT = $ccm1sT = $ccm1dT = $ccm2sT = $ccm2dT = $mccmsT = $mccmdT = $offerT = $placedT '';
+			$setT = $metT = $rsT = $ccm1sT = $ccm1dT = $ccm2sT = $ccm2dT = $mccmsT = $mccmdT = $offerT = $placedT = '';
 
 			$setH = $metH = '';
 
