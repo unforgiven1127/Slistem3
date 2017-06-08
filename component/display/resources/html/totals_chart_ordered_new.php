@@ -70,6 +70,10 @@
 	font-weight: normal !important;
 	cursor: pointer;
 }
+.name_column2
+{
+	background-color: white !important;
+}
 
 </style>
 
@@ -189,7 +193,7 @@ foreach ($consultantStatData as $key => $sd1)
 
 			$classHDI = $key.'_hidden ';
 			echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
-				echo "<td class='name_column revenueSize'></td>";
+				echo "<td class='name_column2 revenueSize'></td>";
 				echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
 				echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
 				echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
