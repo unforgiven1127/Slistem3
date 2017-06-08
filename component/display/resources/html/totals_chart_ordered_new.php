@@ -164,9 +164,9 @@ foreach ($consultantStatData as $key => $sd1)
 	if(isset($allCandidates[$key]))
 	{
 		$counter = 0;
-		$iC = 0;
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
+			$iC = 0;
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];$iC++;}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
