@@ -165,14 +165,22 @@ foreach ($consultantStatData as $key => $sd1)
 			$iC = 0;
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 
-			$setH = '';
+			$setT = $metT = '';
+
+			$setH = $metH = '';
 
 			if(isset($value2['set'][0]))
 			{
 				$setC = $value2['set'][0];$iC++;
 				$setH = $value2['set_url'];
+				if(count($value2['set']) > 1){$setT = "(".$value2['set'].")"}
 			}
-			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
+			if(isset($value2['met'][0]))
+			{
+				$metC = $value2['met'][0];$iC++;
+				$metH = $value2['met_url'];
+				if(count($value2['met']) > 1){$metT = "(".$value2['met'].")"}
+			}
 			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
 			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];$iC++;}
 			if(isset($value2['ccm1_done'][0])){$ccm1DoneC = $value2['ccm1_done'][0];$iC++;}
@@ -201,8 +209,8 @@ foreach ($consultantStatData as $key => $sd1)
 				$classHDI = $key.'_hidden ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
-					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC."</a></div></td>";
-					echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC.$setT."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a ".$metH.">".$metC.$metT."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";

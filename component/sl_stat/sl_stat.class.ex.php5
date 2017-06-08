@@ -6285,14 +6285,18 @@ ChromePhp::log($allCandidates);
           if(!isset($allCandidates[$value['user_id']][$candidate]['set']))
           {
             $allCandidates[$value['user_id']][$candidate]['set'] = array();
+            $allCandidates[$value['user_id']][$candidate]['setTimes'] = 1;
           }
-          $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
-          //$sLink = 'javascript: view_candi(\''.$url.'\'); ';
+          else
+          {
+            $allCandidates[$value['user_id']][$candidate]['setTimes']++;
+          }
 
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $allCandidates[$value['user_id']][$candidate]['set_url'] = $sLink;
 
           array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
-          $allCandidates[$value['user_id']][$candidate]['set_url'] = $sLink;
+
           //$this->$allCandidates[$value['user_id']][$candidate]['set'][] = $candidate;
           //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }
@@ -6317,13 +6321,16 @@ ChromePhp::log($allCandidates);
           if(!isset($allCandidates[$value['user_id']][$candidate]['met']))
           {
             $allCandidates[$value['user_id']][$candidate]['met'] = array();
-            $allCandidates[$value['user_id']][$candidate]['met_url'] = array();
+            $allCandidates[$value['user_id']][$candidate]['metTimes'] = 1;
+          }
+          else
+          {
+            $allCandidates[$value['user_id']][$candidate]['metTimes']++;
           }
           $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
           array_push($allCandidates[$value['user_id']][$candidate]['met'],$candidate);
-          array_push($allCandidates[$value['user_id']][$candidate]['met_url'],$url);
-          //$this->$allCandidates[$value['user_id']][$candidate]['met'][] = $candidate;
-          //$consultantStatData[$value['user_id']]['met_candidates'][$candidate] = $candidate;
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $allCandidates[$value['user_id']][$candidate]['met_url'] = $sLink;
         }
       }
     }
@@ -6351,18 +6358,14 @@ ChromePhp::log($allCandidates);
           if(!isset($allCandidates[$value['user_id']][$candidate]['resume_sent']))
           {
             $allCandidates[$value['user_id']][$candidate]['resume_sent'] = array();
-          }
-          array_push($allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
-          //$this->$allCandidates[$value['user_id']][$candidate]['resume_sent'][] = $candidate;
-          /*if(!isset($consultantStatData[$value['user_id']]['resumeSent_candidates']))
-          {
-            //$consultantStatData[$value['user_id']]['resumeSent_candidates'] = array();
-            $consultantStatData[$value['user_id']]['resumeSent_candidates'] = $candidate;
+            $allCandidates[$value['user_id']][$candidate]['resume_sentTimes'] = 1;
           }
           else
           {
-            $consultantStatData[$value['user_id']]['resumeSent_candidates'] .= ','.$candidate;
-          }*/
+            $allCandidates[$value['user_id']][$candidate]['resume_sentTimes']++;
+          }
+          array_push($allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
+
         }
       }
     }
