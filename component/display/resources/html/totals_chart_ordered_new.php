@@ -170,7 +170,7 @@ foreach ($consultantStatData as $key => $sd1)
 			if(isset($value2['set'][0]))
 			{
 				$setC = $value2['set'][0];$iC++;
-				$setH = 'href="javascript: view_candi(\''.$value2["set_url"].'\')';
+				$setH = 'javascript: view_candi(\''.$value2['set_url'].'\'); ';
 			}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
 			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
@@ -201,7 +201,7 @@ foreach ($consultantStatData as $key => $sd1)
 				$classHDI = $key.'_hidden ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
-					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a href='".$setH."'>".$setC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
