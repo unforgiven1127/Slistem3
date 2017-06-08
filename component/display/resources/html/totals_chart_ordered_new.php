@@ -162,7 +162,7 @@ foreach ($consultantStatData as $key => $sd1)
 		$counter = 0;
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
-			if ($row_number_rank % 2 === 0)
+			if ($counter % 2 === 0)
 				$insideC = ' colored_row';
 			else
 				$insideC = '';
