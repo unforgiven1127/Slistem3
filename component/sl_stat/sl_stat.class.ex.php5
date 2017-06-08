@@ -6577,10 +6577,6 @@ ChromePhp::log($allCandidates);
       foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
-        if($user_id == 521)
-        {
-          ChromePhp::log($newKPInewCandiMetInfo[$user_id]);
-        }
         $new_candidates_count = 0;
         if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
         {
@@ -6588,6 +6584,7 @@ ChromePhp::log($allCandidates);
         }
         $consultantStatData[$user_id]['newCandiInPlay_count'] = $new_candidates_count;
 
+        $new_candidates_count = 0;
         if(isset($newKPInewCandiMetInfo[$user_id]['new_positions']))
         {
           $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_positions']);
