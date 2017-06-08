@@ -72,8 +72,7 @@
 }
 .tB
 {
-	border-style: solid;
-    border-top: thick double #ff0000;
+	border-top: solid black;
 }
 </style>
 
