@@ -595,7 +595,7 @@ class CSl_eventEx extends CSl_event
 
     $asEvent = getEventTypeList(false, $sCp_Type, CDependency::getCpLogin()->isAdmin());
     $sEventType = $oDbResult->getFieldValue('type');
-ChromePhp::log($sEventType);
+ChromePhp::log($asEvent);
     /*if(empty($sEventType))
     {
       $sEventType = 'company';
@@ -609,7 +609,6 @@ ChromePhp::log($sEventType);
 ChromePhp::log($sEventType);
     if(!empty($sEventType) && !isset($asEvent[$sEventType]))
     {
-      ChromePhp::log('ICERIDE');
       //a type that is not available for user selection
       //$oForm->addField('misc', '', array('type' => 'text', 'text' => $sEventType.' (can not be changed)', 'style' => 'position: absolute; right: 0;'));
 
