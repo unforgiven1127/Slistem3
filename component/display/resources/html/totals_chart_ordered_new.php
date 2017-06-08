@@ -171,8 +171,8 @@ foreach ($consultantStatData as $key => $sd1)
 			if(isset($value2['newcandi_met'][0])){$newCmet = $value2['newcandi_met'][0];}
 			if(isset($value2['newcandi_play'][0])){$newCinPlay = $value2['newcandi_play'][0];}
 			if(isset($value2['newposition_play'][0])){$newPosInPlay = $value2['newposition_play'][0];}
-			if(isset($value2['offer_candidates'][0])){$offerC = $value2['offer_candidates'][0];
-			if(isset($value2['placed_candidates'][0])){$placementC = $value2['placed_candidates'][0];
+			if(isset($value2['offer_candidates'][0])){$offerC = $value2['offer_candidates'][0];}
+			if(isset($value2['placed_candidates'][0])){$placementC = $value2['placed_candidates'][0];}
 
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
