@@ -173,13 +173,13 @@ foreach ($consultantStatData as $key => $sd1)
 			{
 				$setC = $value2['set'][0];$iC++;
 				$setH = $value2['set_url'];
-				if(count($value2['set']) > 1){$setT = "(".$value2['set'].")"}
+				if(count($value2['set']) > 1){$setT = "(".$value2['set'].")";}
 			}
 			if(isset($value2['met'][0]))
 			{
 				$metC = $value2['met'][0];$iC++;
 				$metH = $value2['met_url'];
-				if(count($value2['met']) > 1){$metT = "(".$value2['met'].")"}
+				if(count($value2['met']) > 1){$metT = "(".$value2['met'].")";}
 			}
 			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
 			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];$iC++;}
