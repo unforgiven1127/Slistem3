@@ -6286,12 +6286,11 @@ ChromePhp::log($allCandidates);
           if(!isset($allCandidates[$value['user_id']][$candidate]['set']))
           {
             $allCandidates[$value['user_id']][$candidate]['set'] = array();
-            $allCandidates[$value['user_id']][$candidate]['set_url'] = array();
           }
           $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
 
           array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
-          array_push($allCandidates[$value['user_id']][$candidate]['set_url'],$url);
+          $allCandidates[$value['user_id']][$candidate]['set_url'] = $url;
           //$this->$allCandidates[$value['user_id']][$candidate]['set'][] = $candidate;
           //$consultantStatData[$value['user_id']]['set_candidates'][$candidate] = $candidate;
         }

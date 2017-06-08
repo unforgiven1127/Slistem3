@@ -170,7 +170,7 @@ foreach ($consultantStatData as $key => $sd1)
 			if(isset($value2['set'][0]))
 			{
 				$setC = $value2['set'][0];$iC++;
-				$setH = "href='javascript: view_candi('".$url."')'";
+				$setH = "href='javascript: view_candi('".$value2['set_url']."')'";
 			}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
 			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
