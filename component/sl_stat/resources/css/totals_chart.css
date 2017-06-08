@@ -84,7 +84,7 @@
 }
 .colored_row2
 {
-	background-color: white;
+	background-color: white !important;
 	/*border-bottom: 1px solid grey;*/
 }
 .text_right

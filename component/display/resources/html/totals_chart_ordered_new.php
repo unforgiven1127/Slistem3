@@ -136,7 +136,7 @@ foreach ($consultantStatData as $key => $sd1)
 	if ($row_number_rank % 2 === 0)
 		$even = ' colored_row';
 	else
-		$even = '';
+		$even = ' colored_row2';
 	$row_number_rank++;
 
 	echo "<tr class=' ".$even."' id='".$key."_tr'>";
