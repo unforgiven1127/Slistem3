@@ -6286,8 +6286,8 @@ ChromePhp::log($allCandidates);
           {
             $allCandidates[$value['user_id']][$candidate]['set'] = array();
           }
-          $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
-          $sLink = 'javascript: view_candi(\''.$url.'\'); ';
+
+          $sLink = 'href="javascript: view_candi(\'https://slistem.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
 
           array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
           $allCandidates[$value['user_id']][$candidate]['set_url'] = $sLink;
