@@ -595,7 +595,7 @@ class CSl_eventEx extends CSl_event
 
     $asEvent = getEventTypeList(false, $sCp_Type, CDependency::getCpLogin()->isAdmin());
     $sEventType = $oDbResult->getFieldValue('type');
-ChromePhp::log($sEventType);
+//ChromePhp::log($sEventType);
     /*if(empty($sEventType))
     {
       $sEventType = 'company';
@@ -610,6 +610,7 @@ ChromePhp::log($sEventType);
     {
       //a type that is not available for user selection
       //$oForm->addField('misc', '', array('type' => 'text', 'text' => $sEventType.' (can not be changed)', 'style' => 'position: absolute; right: 0;'));
+ChromePhp::log($sEventType);
       $oForm->addField('input', '', array('label'=>'Note type', 'value' => $sEventType.'     (can\'t be changed)', 'readonly' => 'readonly', 'style' => 'width: 250px; background-color: #efefef; font-style: italic;'));
       $oForm->addField('hidden', 'event_type', array('value' => $sEventType));
       $oForm->addField('hidden', 'custom_type', array('value' => 1));
