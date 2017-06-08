@@ -70,6 +70,11 @@
 	font-weight: normal !important;
 	cursor: pointer;
 }
+.tB
+{
+	border-style: solid;
+    border-top: thick double #ff0000;
+}
 </style>
 
 <form id="getKpiForm" action="" method="post">
@@ -158,8 +163,15 @@ foreach ($consultantStatData as $key => $sd1)
 
 	if(isset($allCandidates[$key]))
 	{
+		$counter = 0;
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
+			$counter++;
+			$tB = '';
+			if($counter == 1)
+			{
+				$tB = 'topBorder';
+			}
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];}
@@ -178,20 +190,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class='hover_row'><a>".$setC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$metC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$resentC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$mccmSet."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$mccmDone."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newCmet."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$offerC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$placementC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$setC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$metC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$resentC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$ccm1SetC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$ccm1DoneC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$ccm2SetC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$ccm2DoneC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$mccmSet."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$mccmDone."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$newCmet."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$newCinPlay."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$newPosInPlay."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$offerC."</a></div></td>";
+				echo "<td><div class='".$tB."'><a>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
@@ -223,8 +235,6 @@ echo "<tr class='totals_table_footer'>
 		$('.stat_holder').click(function() {
 			var newClass = $(this).attr("id");
 			var mainTR = newClass;
-
-			$("#"+mainTR).css("border-bottom-color", 'solid 1px red');
 
 			newClass = newClass + '_hidden';
 
