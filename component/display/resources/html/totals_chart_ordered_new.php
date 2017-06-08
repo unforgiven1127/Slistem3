@@ -242,7 +242,7 @@ echo "<tr class='totals_table_footer'>
 			newClass = newClass + '_hidden';
 
 			var mainTR = newClass+"_key";
-			$("."+newClass).toggle(500,"blind");
+			$("."+newClass).toggle(500,"linear");
 
 		});
 	});
