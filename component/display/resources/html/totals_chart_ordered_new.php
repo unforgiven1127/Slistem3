@@ -222,8 +222,10 @@ echo "<tr class='totals_table_footer'>
 
 		$('.stat_holder').click(function() {
 			var newClass = $(this).attr("id");
-			var mainTR = newClass+"_key";
-alert(mainTR);
+			var mainTR = newClass;
+
+			$("#"+mainTR).css("border-bottom-color", 'solid 1px red');
+
 			newClass = newClass + '_hidden';
 
 			var mainTR = newClass+"_key";
