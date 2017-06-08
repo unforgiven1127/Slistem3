@@ -164,51 +164,56 @@ foreach ($consultantStatData as $key => $sd1)
 	if(isset($allCandidates[$key]))
 	{
 		$counter = 0;
+		$iC = 0;
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
-			if ($counter % 2 === 0)
-				$insideC = ' colored_row';
-			else
-				$insideC = '';
-			$counter++;
-			$tB = '';
-			if($counter == 1)
-			{
-				$tB = 'border-top: solid black;';
-			}
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
-			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
-			if(isset($value2['met'][0])){$metC = $value2['met'][0];}
-			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];}
-			if(isset($value2['ccm1_done'][0])){$ccm1DoneC = $value2['ccm1_done'][0];}
-			if(isset($value2['ccm2_set'][0])){$ccm2SetC = $value2['ccm2_set'][0];}
-			if(isset($value2['ccm2_done'][0])){$ccm2DoneC = $value2['ccm2_done'][0];}
-			if(isset($value2['mccm_set'][0])){$mccmSet = $value2['mccm_set'][0];}
-			if(isset($value2['mccm_done'][0])){$mccmDone = $value2['mccm_done'][0];}
-			if(isset($value2['newcandi_met'][0])){$newCmet = $value2['newcandi_met'][0];}
-			if(isset($value2['newcandi_play'][0])){$newCinPlay = $value2['newcandi_play'][0];}
-			if(isset($value2['newposition_play'][0])){$newPosInPlay = $value2['newposition_play'][0];}
-			if(isset($value2['offer_candidates'][0])){$offerC = $value2['offer_candidates'][0];}
-			if(isset($value2['placed_candidates'][0])){$placementC = $value2['placed_candidates'][0];}
+			if(isset($value2['set'][0])){$setC = $value2['set'][0];$iC++;}
+			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
+			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];$iC++;}
+			if(isset($value2['ccm1_done'][0])){$ccm1DoneC = $value2['ccm1_done'][0];$iC++;}
+			if(isset($value2['ccm2_set'][0])){$ccm2SetC = $value2['ccm2_set'][0];$iC++;}
+			if(isset($value2['ccm2_done'][0])){$ccm2DoneC = $value2['ccm2_done'][0];$iC++;}
+			if(isset($value2['mccm_set'][0])){$mccmSet = $value2['mccm_set'][0];$iC++;}
+			if(isset($value2['mccm_done'][0])){$mccmDone = $value2['mccm_done'][0];$iC++;}
+			if(isset($value2['newcandi_met'][0])){$newCmet = $value2['newcandi_met'][0];$iC++;}
+			if(isset($value2['newcandi_play'][0])){$newCinPlay = $value2['newcandi_play'][0];$iC++;}
+			if(isset($value2['newposition_play'][0])){$newPosInPlay = $value2['newposition_play'][0];$iC++;}
+			if(isset($value2['offer_candidates'][0])){$offerC = $value2['offer_candidates'][0];$iC++;}
+			if(isset($value2['placed_candidates'][0])){$placementC = $value2['placed_candidates'][0];$iC++;}
 
-			$classHDI = $key.'_hidden ';
-			echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
-				echo "<td class='name_column2 revenueSize'></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmSet."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmDone."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$newCmet."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$offerC."</a></div></td>";
-				echo "<td style='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
-			echo "</tr>";
+			if($iC > 0)
+			{
+				if ($counter % 2 === 0)
+					$insideC = ' colored_row';
+				else
+					$insideC = '';
+				$counter++;
+				$tB = '';
+				if($counter == 1)
+				{
+					$tB = 'border-top: solid black;';
+				}
+				$classHDI = $key.'_hidden ';
+				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
+					echo "<td class='name_column2 revenueSize'></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmSet."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmDone."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$newCmet."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$offerC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
+				echo "</tr>";
+			}
+
 		}
 	}
 
