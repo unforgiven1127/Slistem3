@@ -6607,7 +6607,7 @@ ChromePhp::log($allCandidates);
       {
         foreach ($value1 as $key2 => $value2)
         {
-          $candidate = $value2['candidatefk'];
+          $candidate = (int)trim($value2['candidatefk']);
           if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
           if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
           if(!isset($allCandidates[$key][$candidate]['newcandi_met']))
@@ -6647,7 +6647,7 @@ ChromePhp::log($allCandidates);
         {
           foreach ($value1['new_candidates'] as $key2 => $value2)
           {
-            $candidate = $value2['candidatefk'];
+            $candidate = (int)trim($value2['candidatefk']);
             if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
             if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
             if(!isset($allCandidates[$key][$candidate]['newcandi_play']))
@@ -6662,7 +6662,7 @@ ChromePhp::log($allCandidates);
         {
           foreach ($value1['new_positions'] as $key2 => $value2)
           {
-            $candidate = $value2['candidatefk'];
+            $candidate = (int)trim($value2['candidatefk']);
             if(!isset($allCandidates[$key])){$allCandidates[$key] = array();}
             if(!isset($allCandidates[$key][$candidate])){$allCandidates[$key][$candidate] = array();}
             if(!isset($allCandidates[$key][$candidate]['newposition_play']))
