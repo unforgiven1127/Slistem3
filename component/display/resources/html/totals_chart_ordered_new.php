@@ -162,6 +162,10 @@ foreach ($consultantStatData as $key => $sd1)
 		$counter = 0;
 		foreach ($allCandidates[$key] as $key2 => $value2)
 		{
+			if ($row_number_rank % 2 === 0)
+				$insideC = ' colored_row';
+			else
+				$insideC = '';
 			$counter++;
 			$tB = '';
 			if($counter == 1)
@@ -183,8 +187,8 @@ foreach ($consultantStatData as $key => $sd1)
 			if(isset($value2['offer_candidates'][0])){$offerC = $value2['offer_candidates'][0];}
 			if(isset($value2['placed_candidates'][0])){$placementC = $value2['placed_candidates'][0];}
 
-			$classHDI = $key.'_hidden';
-			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
+			$classHDI = $key.'_hidden ';
+			echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 				echo "<td class='name_column revenueSize'></td>";
 				echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
 				echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
