@@ -6564,7 +6564,7 @@ ChromePhp::log($allCandidates);
           }
           array_push($allCandidates[$key][$candidate]['newcandi_met'],$candidate);
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
-          $allCandidates[$value['user_id']][$candidate]['ncm_url'] = $sLink;
+          $allCandidates[$key][$candidate]['ncm_url'] = $sLink;
           //$this->$allCandidates[$key][$candidate]['newcandi_met'][] = $candidate;
         }
       }
@@ -6606,7 +6606,7 @@ ChromePhp::log($allCandidates);
             }
             array_push($allCandidates[$key][$candidate]['newcandi_play'],$candidate);
             $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
-          $allCandidates[$value['user_id']][$candidate]['ncp_url'] = $sLink;
+          $allCandidates[$key][$candidate]['ncp_url'] = $sLink;
           }
         }
         if(isset($value1['new_positions']))
@@ -6622,7 +6622,7 @@ ChromePhp::log($allCandidates);
             }
             array_push($allCandidates[$key][$candidate]['newposition_play'],$candidate);
             $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
-          $allCandidates[$value['user_id']][$candidate]['npp_url'] = $sLink;
+          $allCandidates[$key][$candidate]['npp_url'] = $sLink;
           }
         }
       }
