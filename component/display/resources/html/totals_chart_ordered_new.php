@@ -194,7 +194,7 @@ foreach ($consultantStatData as $key => $sd1)
 				$classHDI = $key.'_hidden ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
-					echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a href='javascript: view_candi('".$set_url."')'>".$setC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
