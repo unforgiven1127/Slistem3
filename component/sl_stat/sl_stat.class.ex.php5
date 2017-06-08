@@ -6577,6 +6577,10 @@ ChromePhp::log($allCandidates);
       foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
+        if($user_id == 521)
+        {
+          ChromePhp::log($newKPInewCandiMetInfo[$user_id]);
+        }
         $new_candidates_count = 0;
         if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
         {
@@ -6622,7 +6626,7 @@ ChromePhp::log($allCandidates);
             }
             array_push($allCandidates[$key][$candidate]['newposition_play'],$candidate);
             $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
-          $allCandidates[$key][$candidate]['npp_url'] = $sLink;
+            $allCandidates[$key][$candidate]['npp_url'] = $sLink;
           }
         }
       }
