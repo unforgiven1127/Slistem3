@@ -190,20 +190,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class='".$tB."'><a>".$setC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$metC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$resentC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$mccmSet."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$mccmDone."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$newCmet."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$newCinPlay."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$offerC."</a></div></td>";
-				echo "<td><div class='".$tB."'><a>".$placementC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$mccmSet."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$mccmDone."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$newCmet."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$offerC."</a></div></td>";
+				echo "<td class='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
