@@ -166,6 +166,7 @@ foreach ($consultantStatData as $key => $sd1)
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];$iC++;}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
+			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
 			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];$iC++;}
 			if(isset($value2['ccm1_done'][0])){$ccm1DoneC = $value2['ccm1_done'][0];$iC++;}
 			if(isset($value2['ccm2_set'][0])){$ccm2SetC = $value2['ccm2_set'][0];$iC++;}
