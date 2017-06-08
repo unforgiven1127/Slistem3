@@ -177,30 +177,23 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td><div class='hover_row'><a>".$setC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$metC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$resentC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$mccmSet."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$mccmDone."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newCmet."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$offerC."</a></div></td>";
-				echo "<td><div class='hover_row'><a>".$placementC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$setC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$metC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$resentC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$ccm1SetC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row' class='hover_row'>".$ccm1DoneC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$ccm2SetC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$ccm2DoneC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$mccmSet."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$mccmDone."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$newCmet."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$newCinPlay."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$newPosInPlay."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$offerC."</a></div></td>";
+				echo "<td><div class='hover_row'><a class='hover_row'>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
-
-
-	/*foreach ($allCandidates as $key2 => $value2)
-	{
-		$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '-';
-
-	}*/
 
 }
 
@@ -229,15 +222,9 @@ echo "<tr class='totals_table_footer'>
 		$('.stat_holder').click(function() {
 			var newClass = $(this).attr("id");
 			newClass = newClass + '_hidden';
-			//$('.'+newClass).toggle();
-			//alert(newClass);
-			$("."+newClass).toggle(500,"linear");
-			//var options = {};
-			//$('.'+newClass).toggle( 'blind', options, 500 );
-			//var sibling_obj_size = $($(this).siblings().get(0)).children().length;
 
-			//if (sibling_obj_size > 0)
-				//$(this).siblings().toggle();
+			$("."+newClass).toggle(500,"linear");
+
 		});
 	});
 </script>
