@@ -70,10 +70,7 @@
 	font-weight: normal !important;
 	cursor: pointer;
 }
-.tB
-{
-	border-top: solid black;
-}
+
 </style>
 
 <form id="getKpiForm" action="" method="post">
@@ -169,7 +166,7 @@ foreach ($consultantStatData as $key => $sd1)
 			$tB = '';
 			if($counter == 1)
 			{
-				$tB = 'topBorder';
+				$tB = 'border-top: solid black;';
 			}
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
 			if(isset($value2['set'][0])){$setC = $value2['set'][0];}
@@ -189,20 +186,20 @@ foreach ($consultantStatData as $key => $sd1)
 			$classHDI = $key.'_hidden';
 			echo "<tr style='display: none;' class='hdi ".$classHDI."'>";
 				echo "<td class='name_column revenueSize'></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$mccmSet."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$mccmDone."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$newCmet."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$offerC."</a></div></td>";
-				echo "<td class='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$setC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1DoneC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2SetC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm2DoneC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmSet."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$mccmDone."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$newCmet."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$newCinPlay."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$newPosInPlay."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$offerC."</a></div></td>";
+				echo "<td style='".$tB."'><div class='hover_row'><a>".$placementC."</a></div></td>";
 			echo "</tr>";
 		}
 	}
