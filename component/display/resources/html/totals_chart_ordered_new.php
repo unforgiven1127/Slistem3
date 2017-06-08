@@ -164,7 +164,14 @@ foreach ($consultantStatData as $key => $sd1)
 		{
 			$iC = 0;
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
-			if(isset($value2['set'][0])){$setC = $value2['set'][0];$iC++;}
+
+			$setH = '';
+
+			if(isset($value2['set'][0]))
+			{
+				$setC = $value2['set'][0];$iC++;
+				$setH = "href='javascript: view_candi('".$url."')'";
+			}
 			if(isset($value2['met'][0])){$metC = $value2['met'][0];$iC++;}
 			if(isset($value2['resume_sent'][0])){$resentC = $value2['resume_sent'][0];$iC++;}
 			if(isset($value2['ccm1_set'][0])){$ccm1SetC = $value2['ccm1_set'][0];$iC++;}
@@ -194,7 +201,7 @@ foreach ($consultantStatData as $key => $sd1)
 				$classHDI = $key.'_hidden ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
-					echo "<td style='".$tB."'><div class='hover_row'><a href='javascript: view_candi('".$value2['set_url'][0]."')'>".$setC."</a></div></td>";
+					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$metC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$resentC."</a></div></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a>".$ccm1SetC."</a></div></td>";
