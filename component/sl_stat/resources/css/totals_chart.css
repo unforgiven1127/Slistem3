@@ -79,7 +79,7 @@
 }
 .colored_row
 {
-	background-color: #E3E9EF;
+	background-color: #E3E9EF !important;
 	/*border-bottom: 1px solid grey;*/
 }
 .colored_row2
