@@ -103,15 +103,18 @@ $candidateArray = array();
 $candidateArray[0] = $allCandidates;
 $candidateArray[1] = $researcherCandidates;
 
+$user_position = array('Consultant','Researcher');
+
 foreach ($dataArray as $key => $value)
 {
 	$selectedStatData = $value;
 	$selectedCandidates = $candidateArray[$key];
+	$selected_position = $user_position[$key];
 
 
 echo "<table id='totals_table_id' class='totals_table '>
 	<tr>
-		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
+		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>".$selected_position." totals - ".date('M Y', strtotime($start_date))." </th>
 	</tr>
 	<tr id='head'>
 		<th class='name_column revenueSize0'>Name</th>
