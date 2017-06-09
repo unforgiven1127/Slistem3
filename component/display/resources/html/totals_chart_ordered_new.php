@@ -317,6 +317,9 @@ echo "<tr class='totals_table_footer'>
 		<td class='revenueSize3'>".$total_p."</td>
 	</tr></table>";
 
+if($key == 0)
+	{echo"<br>";}
+
 }
 ?>
 
