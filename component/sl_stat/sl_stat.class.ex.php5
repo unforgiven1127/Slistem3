@@ -4664,7 +4664,7 @@ class CSl_statEx extends CSl_stat
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
-        $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
@@ -6376,8 +6376,9 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIresumeSentInfo = $this->_getModel()->newKPIresumeSentInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIresumeSentInfo as $key => $value)
@@ -6404,6 +6405,37 @@ class CSl_statEx extends CSl_stat
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
           $allCandidates[$value['user_id']][$candidate]['rs_url'] = $sLink;
           array_push($allCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
+
+        }
+      }
+
+      //RESEARCHER
+      $newKPIresumeSentInfo = $this->_getModel()->newKPIresumeSentInfo('researcher', $start_date, $end_date, $user_list_res);
+
+      foreach ($newKPIresumeSentInfo as $key => $value)
+      {
+        if(!isset($researcherStatData[$value['user_id']]['resumeSent_count']))
+        {
+          $researcherStatData[$value['user_id']]['resumeSent_count'] = $value['resumeSent_count'];
+        }
+        else
+        {
+          $researcherStatData[$value['user_id']]['resumeSent_count'] += $value['resumeSent_count'];
+        }
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          $candidate = (int)trim($candidate);
+          if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate]['resume_sent']))
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['resume_sent'] = array();
+          }
+
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$value['user_id']][$candidate]['rs_url'] = $sLink;
+          array_push($researcherCandidates[$value['user_id']][$candidate]['resume_sent'],$candidate);
 
         }
       }
