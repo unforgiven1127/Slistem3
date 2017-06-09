@@ -4680,19 +4680,20 @@ class CSl_statEx extends CSl_stat
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
-        $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
-        $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
-        $this->newKPIcounts_ccm2done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
-        $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
-        $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_ccm2done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_mccmset($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
 
-        $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates);
-        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates);
+        $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
 
-        $this->newKPIcounts_offer($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
-        $this->newKPIcounts_placed($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_offer($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_placed($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
 
         uasort($consultantStatData, sort_multi_array_by_value('user_firstname') );
+        uasort($researcherStatData, sort_multi_array_by_value('user_firstname') );
 
 //ChromePhp::log($consultantStatData);
 
@@ -6485,7 +6486,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_ccm1done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_ccm1done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIccm1doneInfo = $this->_getModel()->newKPIccm1doneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6515,7 +6516,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_ccm2set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_ccm2set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIccm2setInfo = $this->_getModel()->newKPIccm2setInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6545,7 +6546,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_ccm2done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_ccm2done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIccm2doneInfo = $this->_getModel()->newKPIccm2doneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6575,7 +6576,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_mccmset($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_mccmset($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPImccmsetInfo = $this->_getModel()->newKPImccmsetInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6605,7 +6606,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPImccmdoneInfo = $this->_getModel()->newKPImccmdoneInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6635,7 +6636,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates)
+    public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
 //ChromePhp::log($newKPInewCandiMetInfo);
@@ -6670,7 +6671,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates)
+    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPInewCandiMetInfo = $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date,'consultant');
 //ChromePhp::log($newKPInewCandiMetInfo);
@@ -6731,7 +6732,7 @@ class CSl_statEx extends CSl_stat
 //ChromePhp::log($newKPInewCandiMetInfo);
     }
 
-    public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('consultant', $start_date, $end_date, $user_list);
 
@@ -6761,7 +6762,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_placed($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_placed($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIplacedInfo = $this->_getModel()->newKPIplacedInfo('consultant', $start_date, $end_date, $user_list);
 
