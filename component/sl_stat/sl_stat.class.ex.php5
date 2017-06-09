@@ -4675,13 +4675,6 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$user_id]['offer_count'] = 0;
           $researcherStatData[$user_id]['placed_count'] = 0;
         }
-        foreach ($activeResearcherList as $key => $value)
-        {
-          $user_id = $value['loginpk'];
-          $researcherStatData[$user_id] = array();
-          $researcherStatData[$user_id]['user_firstname'] = $value['firstname'];
-          $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
-        }
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
