@@ -4679,7 +4679,7 @@ class CSl_statEx extends CSl_stat
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
-        $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm2set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm2done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
@@ -6455,7 +6455,7 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
       $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('consultant', $start_date, $end_date, $user_list);
 

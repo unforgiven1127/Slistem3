@@ -319,7 +319,6 @@ echo "<tr class='totals_table_footer'>
 
 if($key_ == 0)
 	{echo'<div class="general_form_row" style="height: 20px;"></div>';}
-
 }
 ?>
 
