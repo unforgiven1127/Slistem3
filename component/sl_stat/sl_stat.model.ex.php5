@@ -2232,12 +2232,14 @@ exit;
       FROM sl_meeting slm
       LEFT JOIN login l ON l.loginpk = slm.attendeefk
       WHERE slm.date_created >= '".$start_date."' AND slm.date_created <= '".$end_date."' AND slm.attendeefk in ".$user_list. " AND meeting_done <> '-1' GROUP BY slm.attendeefk ";
-
 //ChromePhp::log($query);
     }
     else
     {
-      $query = "";
+      $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname, count(slm.sl_meetingpk) as set_count, GROUP_CONCAT(slm.candidatefk SEPARATOR ', ') as candidates
+      FROM sl_meeting slm
+      LEFT JOIN login l ON l.loginpk = slm.created_by
+      WHERE slm.date_created >= '".$start_date."' AND slm.date_created <= '".$end_date."' AND slm.created_by in ".$user_list. " AND meeting_done <> '-1' GROUP BY slm.created_by ";
     }
 
     $db_result = $this->oDB->executeQuery($query);

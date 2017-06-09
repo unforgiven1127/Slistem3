@@ -4620,6 +4620,7 @@ class CSl_statEx extends CSl_stat
       if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
         $allCandidates = array();
+        $researcherCandidates = array();
         $active_users = $this->createUserList();
 //ChromePhp::log($active_users);
 
@@ -4661,7 +4662,7 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
 
-        $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
@@ -6140,7 +6141,8 @@ class CSl_statEx extends CSl_stat
       {
         $data['consultantStatData'] = $consultantStatData;
         $data['allCandidates'] = $allCandidates;
-ChromePhp::log($allCandidates);
+        $data['researcherCandidates'] = $researcherCandidates;
+//ChromePhp::log($allCandidates);
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 
@@ -6268,8 +6270,9 @@ ChromePhp::log($allCandidates);
       //CONSULTANT RESEARCHER LIST CREATE
     }
 
-    public function newKPIcounts_set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates)
+    public function newKPIcounts_set($start_date, $end_date, $user_list, &$consultantStatData, &$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIsetInfo as $key => $value)
@@ -6291,6 +6294,31 @@ ChromePhp::log($allCandidates);
           $allCandidates[$value['user_id']][$candidate]['set_url'] = $sLink;
 
           array_push($allCandidates[$value['user_id']][$candidate]['set'],$candidate);
+        }
+      }
+
+      //RESEARCHER
+      $newKPIsetInfo = $this->_getModel()->newKPIsetInfo('researcher', $start_date, $end_date, $user_list_res);
+
+      foreach ($newKPIsetInfo as $key => $value)
+      {
+        $researcherStatData[$value['user_id']]['set_count'] = $value['set_count'];
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          $candidate = (int)trim($candidate);
+          if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate]['set']))
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['set'] = array();
+            $researcherCandidates[$value['user_id']][$candidate]['setTimes'] = 1;
+          }
+
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$value['user_id']][$candidate]['set_url'] = $sLink;
+
+          array_push($researcherCandidates[$value['user_id']][$candidate]['set'],$candidate);
         }
       }
     }

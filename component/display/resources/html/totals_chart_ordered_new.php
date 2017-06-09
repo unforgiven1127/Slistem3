@@ -91,7 +91,14 @@
 	</div>
 </form>
 
-<table id='totals_table_id' class='totals_table '>
+
+
+<?php
+
+$selectedStatData = $consultantStatData;
+$selectedCandidates = $allCandidates;
+
+echo "<table id='totals_table_id' class='totals_table '>
 	<tr>
 		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>Consultant totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>
@@ -111,9 +118,7 @@
 		<th class='revenueSize'>New positions<br>in play</th>
 		<th class='revenueSize'>Offer</th>
 		<th class='revenueSize'>Placement</th>
-	</tr>
-
-<?php
+	</tr>";
 
 $total_ncm = 0;
 $total_ncip = 0;
@@ -122,7 +127,7 @@ $total_o = 0;
 $total_p = 0;
 
 $row_number_rank = 1;
-foreach ($consultantStatData as $key => $sd1)
+foreach ($selectedStatData as $key => $sd1)
 {
 	$total_ncm += $sd1['newCandiMet_count'];
 	$total_ncip += $sd1['newCandiInPlay_count'];
@@ -157,10 +162,10 @@ foreach ($consultantStatData as $key => $sd1)
 		echo "<td><div class='stat_holder rs2' id='".$key."'>".$sd1['placed_count']."</div></td>";
 	echo "</tr>";
 
-	if(isset($allCandidates[$key]))
+	if(isset($selectedCandidates[$key]))
 	{
 		$counter = 0;
-		foreach ($allCandidates[$key] as $key2 => $value2)
+		foreach ($selectedCandidates[$key] as $key2 => $value2)
 		{
 			$iC = 0;
 			$setC = $metC = $resentC = $ccm1SetC = $ccm1DoneC = $ccm2SetC = $ccm2DoneC = $mccmSet = $mccmDone = $newCmet = $newCinPlay = $newPosInPlay = $offerC = $placementC = '<center>-</center>';
