@@ -95,8 +95,19 @@
 
 <?php
 
-$selectedStatData = $consultantStatData;
-$selectedCandidates = $allCandidates;
+$dataArray = array();
+$dataArray[0] = $consultantStatData;
+$dataArray[1] = $researcherStatData;
+
+$candidateArray = array();
+$candidateArray[0] = $allCandidates;
+$candidateArray[1] = $researcherCandidates;
+
+foreach ($dataArray as $key => $value)
+{
+	$selectedStatData = $value;
+	$selectedCandidates = $candidateArray[$key];
+
 
 echo "<table id='totals_table_id' class='totals_table '>
 	<tr>
@@ -301,11 +312,12 @@ echo "<tr class='totals_table_footer'>
 		<td class='revenueSize3'>".$total_npip."</td>
 		<td class='revenueSize3'>".$total_o."</td>
 		<td class='revenueSize3'>".$total_p."</td>
-	</tr>";
+	</tr></table>";
+
 
 ?>
+}
 
-</table>
 <script>
 	$(function() {
 		$("#start_date, #end_date").datepicker({
