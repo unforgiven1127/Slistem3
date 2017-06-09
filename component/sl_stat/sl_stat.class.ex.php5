@@ -4663,7 +4663,7 @@ class CSl_statEx extends CSl_stat
         }
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
-        $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
+        $this->newKPIcounts_met($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_resumeSent($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm1set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
         $this->newKPIcounts_ccm1done($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates);
