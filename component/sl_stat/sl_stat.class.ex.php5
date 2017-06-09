@@ -4660,6 +4660,27 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$user_id] = array();
           $researcherStatData[$user_id]['user_firstname'] = $value['firstname'];
           $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
+          $researcherStatData[$user_id]['set_count'] = 0;
+          $researcherStatData[$user_id]['met_count'] = 0;
+          $researcherStatData[$user_id]['resumeSent_count'] = 0;
+          $researcherStatData[$user_id]['ccm1set_count'] = 0;
+          $researcherStatData[$user_id]['ccm1done_count'] = 0;
+          $researcherStatData[$user_id]['ccm2set_count'] = 0;
+          $researcherStatData[$user_id]['ccm2done_count'] = 0;
+          $researcherStatData[$user_id]['mccmset_count'] = 0;
+          $researcherStatData[$user_id]['mccmdone_count'] = 0;
+          $researcherStatData[$user_id]['newCandiMet_count'] = 0;
+          $researcherStatData[$user_id]['newCandiInPlay_count'] = 0;
+          $researcherStatData[$user_id]['newPositionInPlay_count'] = 0;
+          $researcherStatData[$user_id]['offer_count'] = 0;
+          $researcherStatData[$user_id]['placed_count'] = 0;
+        }
+        foreach ($activeResearcherList as $key => $value)
+        {
+          $user_id = $value['loginpk'];
+          $researcherStatData[$user_id] = array();
+          $researcherStatData[$user_id]['user_firstname'] = $value['firstname'];
+          $researcherStatData[$user_id]['user_lastname'] = $value['lastname'];
         }
 
         $this->newKPIcounts_set($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
