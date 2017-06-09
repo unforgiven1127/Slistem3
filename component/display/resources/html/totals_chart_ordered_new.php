@@ -140,11 +140,11 @@ $total_p = 0;
 $row_number_rank = 1;
 foreach ($selectedStatData as $key => $sd1)
 {
-	$total_ncm += $sd1['newCandiMet_count'];
-	$total_ncip += $sd1['newCandiInPlay_count'];
-	$total_npip += $sd1['newPositionInPlay_count'];
-	$total_o += $sd1['offer_count'];
-	$total_p += $sd1['placed_count'];
+	if(isset($sd1['newCandiMet_count']))$total_ncm += $sd1['newCandiMet_count'];
+	if(isset($sd1['newCandiInPlay_count']))$total_ncip += $sd1['newCandiInPlay_count'];
+	if(isset($sd1['newPositionInPlay_count']))$total_npip += $sd1['newPositionInPlay_count'];
+	if(isset($sd1['offer_count']))$total_o += $sd1['offer_count'];
+	if(isset($sd1['placed_count']))$total_p += $sd1['placed_count'];
 
 	$test = "-";
 	$user_name = substr($sd1['user_firstname'],0,1).'. '.($sd1['user_lastname']);
