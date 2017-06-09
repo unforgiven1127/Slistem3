@@ -105,11 +105,11 @@ $candidateArray[1] = $researcherCandidates;
 
 $user_position = array('Consultant','Researcher');
 
-foreach ($dataArray as $key => $value)
+foreach ($dataArray as $key_ => $value)
 {
 	$selectedStatData = $value;
-	$selectedCandidates = $candidateArray[$key];
-	$selected_position = $user_position[$key];
+	$selectedCandidates = $candidateArray[$key_];
+	$selected_position = $user_position[$key_];
 
 
 echo "<table id='totals_table_id' class='totals_table '>
@@ -317,7 +317,7 @@ echo "<tr class='totals_table_footer'>
 		<td class='revenueSize3'>".$total_p."</td>
 	</tr></table>";
 
-if($key == 0)
+if($key_ == 0)
 	{echo'<div class="general_form_row" style="height: 20px;"></div>';}
 
 }
