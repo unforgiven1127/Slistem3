@@ -6932,6 +6932,7 @@ class CSl_statEx extends CSl_stat
       }
 
       //RESEARCHER
+      $newKPInewCandiMetInfo = $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date,'researcher');
       foreach ($activeResearcherList as $key => $value)
       {
         $user_id = $value['loginpk'];
