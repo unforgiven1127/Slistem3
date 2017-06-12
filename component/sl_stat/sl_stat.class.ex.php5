@@ -6711,6 +6711,33 @@ class CSl_statEx extends CSl_stat
           $allCandidates[$value['user_id']][$candidate]['mccms_url'] = $sLink;
         }
       }
+
+      $newKPImccmsetInfo = $this->_getModel()->newKPImccmsetInfo('researcher', $start_date, $end_date, $user_list_res);
+
+      foreach ($newKPImccmsetInfo as $key => $value)
+      {
+        if(!isset($researcherStatData[$value['user_id']]['mccmset_count']))
+        {
+          $researcherStatData[$value['user_id']]['mccmset_count'] = 0;
+        }
+
+        $researcherStatData[$value['user_id']]['mccmset_count'] += $value['mccmset_count'];
+
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          $candidate = (int)trim($candidate);
+          if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate]['mccm_set']))
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['mccm_set'] = array();
+          }
+          array_push($researcherCandidates[$value['user_id']][$candidate]['mccm_set'],$candidate);
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$value['user_id']][$candidate]['mccms_url'] = $sLink;
+        }
+      }
     }
 
     public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
