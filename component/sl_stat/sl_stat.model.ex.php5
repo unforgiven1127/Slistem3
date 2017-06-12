@@ -2459,6 +2459,7 @@ exit;
       LEFT JOIN sl_meeting slm ON slm.candidatefk = slpl.candidatefk
       LEFT JOIN login l ON l.loginpk = slm.created_by
       WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 100 AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+ChromePhp::log($query);
     }
 
     $db_result = $this->oDB->executeQuery($query);
@@ -2476,8 +2477,6 @@ exit;
       FROM sl_position_link slpl
       LEFT JOIN login l ON l.loginpk = slpl.created_by
       WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 101 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
-
-//ChromePhp::log($query);
     }
     else
     {
