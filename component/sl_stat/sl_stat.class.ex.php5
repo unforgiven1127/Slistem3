@@ -4687,7 +4687,7 @@ class CSl_statEx extends CSl_stat
         $this->newKPIcounts_mccmdone($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
 
         $this->newKPIcounts_newCandiMet($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates,$activeResearcherList);
-        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
+        $this->newKPIcounts_newInPlay($start_date,$end_date, $user_list_cons, $consultantStatData,$activeConsultantList,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates,$activeResearcherList);
 
         $this->newKPIcounts_offer($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
         $this->newKPIcounts_placed($start_date,$end_date, $user_list_cons, $consultantStatData,$allCandidates, $researcherStatData, $user_list_res,$researcherCandidates);
@@ -6873,10 +6873,10 @@ class CSl_statEx extends CSl_stat
       }
     }
 
-    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
+    public function newKPIcounts_newInPlay($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates,$activeResearcherList)
     {
+      //CONSULTANT
       $newKPInewCandiMetInfo = $this->_getModel()->get_new_in_play($user_list, $start_date, $end_date,'consultant');
-//ChromePhp::log($newKPInewCandiMetInfo);
       foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
@@ -6931,7 +6931,60 @@ class CSl_statEx extends CSl_stat
         }
       }
 
-//ChromePhp::log($newKPInewCandiMetInfo);
+      //RESEARCHER
+      foreach ($activeResearcherList as $key => $value)
+      {
+        $user_id = $value['loginpk'];
+        $new_candidates_count = 0;
+        if(isset($newKPInewCandiMetInfo[$user_id]['new_candidates']))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_candidates']);
+        }
+        $researcherStatData[$user_id]['newCandiInPlay_count'] = $new_candidates_count;
+
+        $new_candidates_count = 0;
+        if(isset($newKPInewCandiMetInfo[$user_id]['new_positions']))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]['new_positions']);
+        }
+        $researcherStatData[$user_id]['newPositionInPlay_count'] = $new_candidates_count;
+      }
+
+      foreach ($newKPInewCandiMetInfo as $key => $value1)
+      {
+        if(isset($value1['new_candidates']))
+        {
+          foreach ($value1['new_candidates'] as $key2 => $value2)
+          {
+            $candidate = (int)trim($value2['candidatefk']);
+            if(!isset($researcherCandidates[$key])){$researcherCandidates[$key] = array();}
+            if(!isset($researcherCandidates[$key][$candidate])){$researcherCandidates[$key][$candidate] = array();}
+            if(!isset($researcherCandidates[$key][$candidate]['newcandi_play']))
+            {
+              $researcherCandidates[$key][$candidate]['newcandi_play'] = array();
+            }
+            array_push($researcherCandidates[$key][$candidate]['newcandi_play'],$candidate);
+            $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$key][$candidate]['ncp_url'] = $sLink;
+          }
+        }
+        if(isset($value1['new_positions']))
+        {
+          foreach ($value1['new_positions'] as $key2 => $value2)
+          {
+            $candidate = (int)trim($value2['candidatefk']);
+            if(!isset($researcherCandidates[$key])){$researcherCandidates[$key] = array();}
+            if(!isset($researcherCandidates[$key][$candidate])){$researcherCandidates[$key][$candidate] = array();}
+            if(!isset($researcherCandidates[$key][$candidate]['newposition_play']))
+            {
+              $researcherCandidates[$key][$candidate]['newposition_play'] = array();
+            }
+            array_push($researcherCandidates[$key][$candidate]['newposition_play'],$candidate);
+            $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+            $researcherCandidates[$key][$candidate]['npp_url'] = $sLink;
+          }
+        }
+      }
     }
 
     public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
