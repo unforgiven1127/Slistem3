@@ -6990,6 +6990,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_offer($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIofferInfo as $key => $value)
@@ -7014,6 +7015,34 @@ class CSl_statEx extends CSl_stat
           array_push($allCandidates[$value['user_id']][$candidate]['offer_candidates'],$candidate);
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
           $allCandidates[$value['user_id']][$candidate]['offer_url'] = $sLink;
+        }
+      }
+
+      //RESEARCHER
+      $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('researcher', $start_date, $end_date, $user_list);
+
+      foreach ($newKPIofferInfo as $key => $value)
+      {
+        if(!isset($researcherStatData[$value['user_id']]['offer_count']))
+        {
+          $researcherStatData[$value['user_id']]['offer_count'] = 0;
+        }
+
+        $researcherStatData[$value['user_id']]['offer_count'] += $value['offer_count'];
+
+        $candidatesArray = explode(',',$value['candidates']);
+        foreach ($candidatesArray as $key => $candidate)
+        {
+          $candidate = (int)trim($candidate);
+          if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
+          if(!isset($researcherCandidates[$value['user_id']][$candidate]['offer_candidates']))
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['offer_candidates'] = array();
+          }
+          array_push($researcherCandidates[$value['user_id']][$candidate]['offer_candidates'],$candidate);
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$value['user_id']][$candidate]['offer_url'] = $sLink;
         }
       }
     }
