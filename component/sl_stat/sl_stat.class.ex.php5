@@ -6458,6 +6458,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_ccm1set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIccm1setInfo as $key => $value)
@@ -6485,6 +6486,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('researcher', $start_date, $end_date, $user_list_res);
       foreach ($newKPIccm1setInfo as $key => $value)
       {
@@ -6514,6 +6516,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_ccm1done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIccm1doneInfo = $this->_getModel()->newKPIccm1doneInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIccm1doneInfo as $key => $value)
@@ -6541,6 +6544,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPIccm1doneInfo = $this->_getModel()->newKPIccm1doneInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPIccm1doneInfo as $key => $value)
@@ -6571,6 +6575,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_ccm2set($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIccm2setInfo = $this->_getModel()->newKPIccm2setInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIccm2setInfo as $key => $value)
@@ -6598,6 +6603,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPIccm2setInfo = $this->_getModel()->newKPIccm2setInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPIccm2setInfo as $key => $value)
@@ -6628,6 +6634,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_ccm2done($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPIccm2doneInfo = $this->_getModel()->newKPIccm2doneInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPIccm2doneInfo as $key => $value)
@@ -6655,6 +6662,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPIccm2doneInfo = $this->_getModel()->newKPIccm2doneInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPIccm2doneInfo as $key => $value)
@@ -6685,6 +6693,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_mccmset($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPImccmsetInfo = $this->_getModel()->newKPImccmsetInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPImccmsetInfo as $key => $value)
@@ -6712,6 +6721,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPImccmsetInfo = $this->_getModel()->newKPImccmsetInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPImccmsetInfo as $key => $value)
@@ -6742,6 +6752,7 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_mccmdone($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPImccmdoneInfo = $this->_getModel()->newKPImccmdoneInfo('consultant', $start_date, $end_date, $user_list);
 
       foreach ($newKPImccmdoneInfo as $key => $value)
@@ -6769,6 +6780,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
+      //RESEARCHER
       $newKPImccmdoneInfo = $this->_getModel()->newKPImccmdoneInfo('reseacher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPImccmdoneInfo as $key => $value)
@@ -6799,9 +6811,8 @@ class CSl_statEx extends CSl_stat
 
     public function newKPIcounts_newCandiMet($start_date, $end_date, $user_list, &$consultantStatData,$activeConsultantList,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
     {
+      //CONSULTANT
       $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list, $start_date, $end_date);
-//ChromePhp::log($newKPInewCandiMetInfo);
-
       foreach ($activeConsultantList as $key => $value)
       {
         $user_id = $value['loginpk'];
@@ -6828,6 +6839,36 @@ class CSl_statEx extends CSl_stat
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
           $allCandidates[$key][$candidate]['ncm_url'] = $sLink;
           //$this->$allCandidates[$key][$candidate]['newcandi_met'][] = $candidate;
+        }
+      }
+
+      //RESEARCHER
+      $newKPInewCandiMetInfo= $this->_getModel()->get_new_candidate_met($user_list_res, $start_date, $end_date);
+      foreach ($activeResearcherList as $key => $value)
+      {
+        $user_id = $value['loginpk'];
+        $new_candidates_count = 0;
+        if(isset($newKPInewCandiMetInfo[$user_id]))
+        {
+          $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]);
+        }
+        $researcherStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
+      }
+
+      foreach ($newKPInewCandiMetInfo as $key => $value1)
+      {
+        foreach ($value1 as $key2 => $value2)
+        {
+          $candidate = (int)trim($value2['candidatefk']);
+          if(!isset($researcherCandidates[$key])){$researcherCandidates[$key] = array();}
+          if(!isset($researcherCandidates[$key][$candidate])){$researcherCandidates[$key][$candidate] = array();}
+          if(!isset($researcherCandidates[$key][$candidate]['newcandi_met']))
+          {
+            $researcherCandidates[$key][$candidate]['newcandi_met'] = array();
+          }
+          array_push($researcherCandidates[$key][$candidate]['newcandi_met'],$candidate);
+          $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
+          $researcherCandidates[$key][$candidate]['ncm_url'] = $sLink;
         }
       }
     }
