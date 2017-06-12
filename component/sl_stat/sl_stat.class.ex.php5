@@ -7078,7 +7078,7 @@ class CSl_statEx extends CSl_stat
       }
 
       //RESEARCHER
-      $newKPIplacedInfo = $this->_getModel()->newKPIplacedInfo('researcher', $start_date, $end_date, $user_list);
+      $newKPIplacedInfo = $this->_getModel()->newKPIplacedInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPIplacedInfo as $key => $value)
       {
