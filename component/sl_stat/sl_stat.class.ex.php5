@@ -7019,7 +7019,7 @@ class CSl_statEx extends CSl_stat
       }
 
       //RESEARCHER
-      $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('researcher', $start_date, $end_date, $user_list);
+      $newKPIofferInfo = $this->_getModel()->newKPIofferInfo('researcher', $start_date, $end_date, $user_list_res);
 
       foreach ($newKPIofferInfo as $key => $value)
       {
