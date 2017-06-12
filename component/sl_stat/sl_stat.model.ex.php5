@@ -2401,16 +2401,16 @@ exit;
     {
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname,slpl.positionfk, COUNT(slpl.sl_position_linkpk) as mccmset_count, GROUP_CONCAT(slpl.candidatefk SEPARATOR ', ') as candidates
       FROM sl_position_link slpl
-      LEFT JOIN sl_meeting slm ON slm.candidatefk = slpl.candidatefk
-      LEFT JOIN login l ON l.loginpk = slm.created_by
-      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status > 52 AND slpl.status < 70 AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+      LEFT JOIN login l ON l.loginpk = slpl.created_by
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status > 52 AND slpl.status < 70 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
     }
     else
     {
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname,slpl.positionfk, COUNT(slpl.sl_position_linkpk) as mccmset_count, GROUP_CONCAT(slpl.candidatefk SEPARATOR ', ') as candidates
       FROM sl_position_link slpl
-      LEFT JOIN login l ON l.loginpk = slpl.created_by
-      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status > 52 AND slpl.status < 70 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+      LEFT JOIN sl_meeting slm ON slm.candidatefk = slpl.candidatefk
+      LEFT JOIN login l ON l.loginpk = slm.created_by
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status > 52 AND slpl.status < 70 AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
     }
 
     $db_result = $this->oDB->executeQuery($query);
