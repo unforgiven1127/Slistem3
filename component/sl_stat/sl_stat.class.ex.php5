@@ -6485,7 +6485,7 @@ class CSl_statEx extends CSl_stat
         }
       }
 
-      $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('researcher', $start_date, $end_date, $user_list);
+      $newKPIccm1setInfo = $this->_getModel()->newKPIccm1setInfo('researcher', $start_date, $end_date, $user_list_res);
       foreach ($newKPIccm1setInfo as $key => $value)
       {
         if(!isset($researcherStatData[$value['user_id']]['ccm1set_count']))
