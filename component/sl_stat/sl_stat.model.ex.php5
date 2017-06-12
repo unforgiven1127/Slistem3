@@ -2351,17 +2351,18 @@ exit;
   {
     if($user_type == 'consultant')
     {
-
       $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname,slpl.positionfk, COUNT(slpl.sl_position_linkpk) as ccm2set_count, GROUP_CONCAT(slpl.candidatefk SEPARATOR ', ') as candidates
       FROM sl_position_link slpl
       LEFT JOIN login l ON l.loginpk = slpl.created_by
-      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 52 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
-
-//ChromePhp::log($query);
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 52 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk,slpl.positionfk";
     }
     else
     {
-      $query = "";
+      $query = "SELECT l.loginpk as user_id, l.firstname, l.lastname,slpl.positionfk, COUNT(slpl.sl_position_linkpk) as ccm2set_count, GROUP_CONCAT(slpl.candidatefk SEPARATOR ', ') as candidates
+      FROM sl_position_link slpl
+      LEFT JOIN sl_meeting slm ON slm.candidatefk = slpl.candidatefk
+      LEFT JOIN login l ON l.loginpk = slm.created_by
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 52 AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk,slpl.positionfk";
     }
 
     $db_result = $this->oDB->executeQuery($query);
