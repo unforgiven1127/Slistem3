@@ -44,15 +44,20 @@
   /*border: 1px solid #dedede;*/
   margin: 20px 0 0 0;
 }
-.componentMainContainer
-{
-  width: 1200px !important;
-}
+
 .componentMainContainer .candiTopSectRight
 {
  margin: 0 0 0 10px;
 }
 
+.componentMainContainer
+{
+  width: 1200px !important;
+}
+#componentContainerId
+{
+  width: 1200px !important;
+}
 .candiTopSectRow
 {
   border-bottom: 1px solid #dedede;
