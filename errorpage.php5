@@ -1,3 +1,3 @@
 <?php
 
-echo 'THIS IS A 324 ERROR PAGE';
+echo 'THIS IS A 500 ERROR PAGE';
