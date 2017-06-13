@@ -6482,6 +6482,7 @@ class CSl_statEx extends CSl_stat
         $consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
         if($value['user_id'] == '459')
         {
           ChromePhp::log($candidatesArray);
