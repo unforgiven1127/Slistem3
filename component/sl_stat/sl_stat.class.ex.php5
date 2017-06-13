@@ -6361,6 +6361,10 @@ class CSl_statEx extends CSl_stat
             $allCandidates[$value['user_id']][$candidate]['met'] = array();
             $allCandidates[$value['user_id']][$candidate]['metTimes'] = 1;
           }
+          else
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['metTimes']++;
+          }
           $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
           array_push($allCandidates[$value['user_id']][$candidate]['met'],$candidate);
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
@@ -6371,7 +6375,7 @@ class CSl_statEx extends CSl_stat
       //RESEARCHERS
       $newKPImetInfo = $this->_getModel()->newKPImetInfo('researcher', $start_date, $end_date, $user_list_res);
 
-      foreach ($newKPImetInfo as $key => $value)
+      /*foreach ($newKPImetInfo as $key => $value)
       {
         $researcherStatData[$value['user_id']]['met_count'] = $value['met_count'];
         $candidatesArray = explode(',',$value['candidates']);
@@ -6390,7 +6394,7 @@ class CSl_statEx extends CSl_stat
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
           $researcherCandidates[$value['user_id']][$candidate]['met_url'] = $sLink;
         }
-      }
+      }*/
     }
 
     public function newKPIcounts_resumeSent($start_date, $end_date, $user_list, &$consultantStatData,&$allCandidates, &$researcherStatData, $user_list_res, &$researcherCandidates)
@@ -6855,6 +6859,7 @@ class CSl_statEx extends CSl_stat
           $new_candidates_count = count($newKPInewCandiMetInfo[$user_id]);
         }
         $researcherStatData[$user_id]['newCandiMet_count'] = $new_candidates_count;
+        $researcherStatData[$user_id]['met_count'] = $new_candidates_count;// should be same for researcher
       }
 
       foreach ($newKPInewCandiMetInfo as $key => $value1)
@@ -6868,9 +6873,20 @@ class CSl_statEx extends CSl_stat
           {
             $researcherCandidates[$key][$candidate]['newcandi_met'] = array();
           }
+          if(!isset($researcherCandidates[$value['user_id']][$candidate]['met']))
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['met'] = array();
+            $researcherCandidates[$value['user_id']][$candidate]['metTimes'] = 1;
+          }
+          else
+          {
+            $researcherCandidates[$value['user_id']][$candidate]['metTimes']++;
+          }
           array_push($researcherCandidates[$key][$candidate]['newcandi_met'],$candidate);
+          array_push($researcherCandidates[$key][$candidate]['met'],$candidate);
           $sLink = 'href="javascript: view_candi(\'https://'.$_SERVER['SERVER_NAME'].'/index.php5?uid=555-001&ppa=ppav&ppt=candi&ppk='.$candidate.'&pg=ajx\')"';
           $researcherCandidates[$key][$candidate]['ncm_url'] = $sLink;
+          $researcherCandidates[$key][$candidate]['met_url'] = $sLink;
         }
       }
     }
