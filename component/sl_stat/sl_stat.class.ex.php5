@@ -6873,7 +6873,7 @@ class CSl_statEx extends CSl_stat
           {
             $researcherCandidates[$key][$candidate]['newcandi_met'] = array();
           }
-          if(!isset($researcherCandidates[$value['user_id']][$candidate]['met']))
+          if(!isset($researcherCandidates[$key][$candidate]['met']))
           {
             $researcherCandidates[$key][$candidate]['met'] = array();
             $researcherCandidates[$key][$candidate]['metTimes'] = 1;
