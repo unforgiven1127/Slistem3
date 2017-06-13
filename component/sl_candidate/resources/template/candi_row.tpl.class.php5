@@ -47,11 +47,6 @@ class CCandi_row extends CTemplate
       $lastStatusClean = $candidateLastStatus[0]['status'];
     }
 
-    if($candidate_id == 418815)
-    {
-      ChromePhp::log($lastStatusClean);
-    }
-
     $lastStatus_ = 0;
     if(isset($candidateLastStatus[0]))
     {
@@ -105,10 +100,7 @@ class CCandi_row extends CTemplate
         $newClass = " highClass ";
       }
     }
-    if($candidate_id == 154310)
-    {
-      ChromePhp::log($candidateActiveFlag);
-    }
+
     if($candidateActiveFlag)
     {
       $blurClass = "Opac ";
