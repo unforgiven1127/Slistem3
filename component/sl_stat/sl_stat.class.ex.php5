@@ -6359,6 +6359,9 @@ class CSl_statEx extends CSl_stat
           if(!isset($allCandidates[$value['user_id']][$candidate]['met']))
           {
             $allCandidates[$value['user_id']][$candidate]['met'] = array();
+          }
+          if(!isset($allCandidates[$value['user_id']][$candidate]['metTimes']))
+          {
             $allCandidates[$value['user_id']][$candidate]['metTimes'] = 1;
           }
           else
