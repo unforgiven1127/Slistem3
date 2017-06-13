@@ -52,11 +52,11 @@
 
 .componentMainContainer
 {
-  width: 1200px !important;
+  min-width: 1200px !important;
 }
 #componentContainerId
 {
-  width: 1200px !important;
+  min-width: 1200px !important;
 }
 .candiTopSectRow
 {
