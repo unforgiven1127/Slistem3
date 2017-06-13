@@ -4617,6 +4617,8 @@ class CSl_statEx extends CSl_stat
         $generatedKPIsCount = 0;
       }
 
+      $testFlag = true;
+
       if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
         $allCandidates = array();

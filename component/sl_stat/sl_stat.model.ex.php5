@@ -2279,7 +2279,7 @@ exit;
       count(DISTINCT(CONCAT(slpl.candidatefk,'_',slpl.positionfk))) as resumeSent_count
       FROM sl_position_link slpl
       LEFT JOIN login l ON l.loginpk = slpl.created_by
-      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND (slpl.status = 2 OR slpl.status = 51) AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 2 AND slpl.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
     }
     else
     {
@@ -2288,7 +2288,7 @@ exit;
       FROM sl_position_link slpl
       LEFT JOIN sl_meeting slm ON slm.candidatefk = slpl.candidatefk
       LEFT JOIN login l ON l.loginpk = slm.created_by
-      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND (slpl.status = 2 OR slpl.status = 51) AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
+      WHERE slpl.date_created >= '".$start_date."' AND slpl.date_created <= '".$end_date."' AND slpl.status = 2 AND slm.created_by in ".$user_list." GROUP BY slpl.candidatefk, slpl.positionfk";
     }
 
     $db_result = $this->oDB->executeQuery($query);
