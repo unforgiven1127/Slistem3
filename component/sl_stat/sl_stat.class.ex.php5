@@ -6366,7 +6366,7 @@ class CSl_statEx extends CSl_stat
           }
           else
           {
-            $researcherCandidates[$value['user_id']][$candidate]['metTimes']++;
+            $allCandidates[$value['user_id']][$candidate]['metTimes']++;
           }
           $url = $this->_oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, (int)$candidate);
           array_push($allCandidates[$value['user_id']][$candidate]['met'],$candidate);
