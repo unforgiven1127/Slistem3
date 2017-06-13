@@ -6482,6 +6482,7 @@ class CSl_statEx extends CSl_stat
         $consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
           $candidate = (int)trim($candidate);
