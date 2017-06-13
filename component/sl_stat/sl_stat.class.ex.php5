@@ -6875,12 +6875,12 @@ class CSl_statEx extends CSl_stat
           }
           if(!isset($researcherCandidates[$value['user_id']][$candidate]['met']))
           {
-            $researcherCandidates[$value['user_id']][$candidate]['met'] = array();
-            $researcherCandidates[$value['user_id']][$candidate]['metTimes'] = 1;
+            $researcherCandidates[$key][$candidate]['met'] = array();
+            $researcherCandidates[$key][$candidate]['metTimes'] = 1;
           }
           else
           {
-            $researcherCandidates[$value['user_id']][$candidate]['metTimes']++;
+            $researcherCandidates[$key][$candidate]['metTimes']++;
           }
           array_push($researcherCandidates[$key][$candidate]['newcandi_met'],$candidate);
           array_push($researcherCandidates[$key][$candidate]['met'],$candidate);
