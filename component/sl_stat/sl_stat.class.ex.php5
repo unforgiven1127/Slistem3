@@ -4619,7 +4619,7 @@ class CSl_statEx extends CSl_stat
 
       $testFlag = true;
 
-      if($submit_totals == 'Get totals' || $generatedKPIsCount == 0)
+      if($testFlag || $submit_totals == 'Get totals' || $generatedKPIsCount == 0)
       {
         $allCandidates = array();
         $researcherCandidates = array();
