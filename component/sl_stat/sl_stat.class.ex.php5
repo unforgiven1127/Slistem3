@@ -6478,7 +6478,6 @@ class CSl_statEx extends CSl_stat
         {
           $consultantStatData[$value['user_id']]['ccm1set_count'] = 0;
         }
-
         //$consultantStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
@@ -6511,11 +6510,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['ccm1set_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
+        //$researcherStatData[$value['user_id']]['ccm1set_count'] += $value['ccm1set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['ccm1set_count'] ++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
@@ -6542,11 +6544,14 @@ class CSl_statEx extends CSl_stat
           $consultantStatData[$value['user_id']]['ccm1done_count'] = 0;
         }
 
-        $consultantStatData[$value['user_id']]['ccm1done_count'] += $value['ccm1done_count'];
+        //$consultantStatData[$value['user_id']]['ccm1done_count'] += $value['ccm1done_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $consultantStatData[$value['user_id']]['ccm1done_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
@@ -6570,11 +6575,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['ccm1done_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['ccm1done_count'] += $value['ccm1done_count'];
+        //$researcherStatData[$value['user_id']]['ccm1done_count'] += $value['ccm1done_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['ccm1done_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
@@ -6601,11 +6609,14 @@ class CSl_statEx extends CSl_stat
           $consultantStatData[$value['user_id']]['ccm2set_count'] = 0;
         }
 
-        $consultantStatData[$value['user_id']]['ccm2set_count'] += $value['ccm2set_count'];
+        //$consultantStatData[$value['user_id']]['ccm2set_count'] += $value['ccm2set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $consultantStatData[$value['user_id']]['ccm2set_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
@@ -6629,11 +6640,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['ccm2set_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['ccm2set_count'] += $value['ccm2set_count'];
+        //$researcherStatData[$value['user_id']]['ccm2set_count'] += $value['ccm2set_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['ccm2set_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
@@ -6660,11 +6674,14 @@ class CSl_statEx extends CSl_stat
           $consultantStatData[$value['user_id']]['ccm2done_count'] = 0;
         }
 
-        $consultantStatData[$value['user_id']]['ccm2done_count'] += $value['ccm2done_count'];
+        //$consultantStatData[$value['user_id']]['ccm2done_count'] += $value['ccm2done_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $consultantStatData[$value['user_id']]['ccm2done_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
@@ -6688,11 +6705,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['ccm2done_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['ccm2done_count'] += $value['ccm2done_count'];
+        //$researcherStatData[$value['user_id']]['ccm2done_count'] += $value['ccm2done_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['ccm2done_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
@@ -6719,11 +6739,14 @@ class CSl_statEx extends CSl_stat
           $consultantStatData[$value['user_id']]['mccmset_count'] = 0;
         }
 
-        $consultantStatData[$value['user_id']]['mccmset_count'] += $value['mccmset_count'];
+        //$consultantStatData[$value['user_id']]['mccmset_count'] += $value['mccmset_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $consultantStatData[$value['user_id']]['mccmset_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
@@ -6747,11 +6770,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['mccmset_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['mccmset_count'] += $value['mccmset_count'];
+        //$researcherStatData[$value['user_id']]['mccmset_count'] += $value['mccmset_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['mccmset_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
@@ -6778,11 +6804,14 @@ class CSl_statEx extends CSl_stat
           $consultantStatData[$value['user_id']]['mccmdone_count'] = 0;
         }
 
-        $consultantStatData[$value['user_id']]['mccmdone_count'] += $value['mccmdone_count'];
+        //$consultantStatData[$value['user_id']]['mccmdone_count'] += $value['mccmdone_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $consultantStatData[$value['user_id']]['mccmdone_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($allCandidates[$value['user_id']])){$allCandidates[$value['user_id']] = array();}
           if(!isset($allCandidates[$value['user_id']][$candidate])){$allCandidates[$value['user_id']][$candidate] = array();}
@@ -6806,11 +6835,14 @@ class CSl_statEx extends CSl_stat
           $researcherStatData[$value['user_id']]['mccmdone_count'] = 0;
         }
 
-        $researcherStatData[$value['user_id']]['mccmdone_count'] += $value['mccmdone_count'];
+        //$researcherStatData[$value['user_id']]['mccmdone_count'] += $value['mccmdone_count'];
 
         $candidatesArray = explode(',',$value['candidates']);
+        $candidatesArray = array_map('trim', $candidatesArray);
+        $candidatesArray = array_unique($candidatesArray);
         foreach ($candidatesArray as $key => $candidate)
         {
+          $researcherStatData[$value['user_id']]['mccmdone_count']++;
           $candidate = (int)trim($candidate);
           if(!isset($researcherCandidates[$value['user_id']])){$researcherCandidates[$value['user_id']] = array();}
           if(!isset($researcherCandidates[$value['user_id']][$candidate])){$researcherCandidates[$value['user_id']][$candidate] = array();}
