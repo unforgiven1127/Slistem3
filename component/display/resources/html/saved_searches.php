@@ -26,7 +26,7 @@
 			$even = '';
 
 		$log_link = preg_replace('/\&/', '&replay_search='.$value['activity_id'].'&', $value['link'], 1);
-		$log_link = str_replace('pg=ajx','pg=ajx&theQuery='.$value['theQuery'],$log_link);
+		$log_link = str_replace('pg=ajx','pg=ajx&theQuery='.$value['query'],$log_link);
 		//ChromePhp::log($log_link);
 
 		if (CONST_DEV_SERVER)
