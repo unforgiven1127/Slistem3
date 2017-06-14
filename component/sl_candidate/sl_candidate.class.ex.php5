@@ -2958,7 +2958,7 @@ class CSl_candidateEx extends CSl_candidate
         $createQuery .= $decodedQuery;
       }
 
-ChromePhp::log($createQuery);
+//ChromePhp::log($createQuery);
 
 //ChromePhp::log($theQuery_);
       /*if(!empty($theQuery_))
@@ -3451,7 +3451,7 @@ ChromePhp::log($createQuery);
       }*/
 
       $theQuery = $sQuery;
-ChromePhp::log($theQuery);
+//ChromePhp::log($theQuery);
 
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
@@ -3762,6 +3762,9 @@ ChromePhp::log($theQuery);
         {
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
+
+          $unixTime = time();
+          ChromePhp::log($unixTime);
 
           $theQuery = base64_encode($theQuery);
 
