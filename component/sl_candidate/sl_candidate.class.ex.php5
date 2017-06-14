@@ -2949,12 +2949,12 @@ class CSl_candidateEx extends CSl_candidate
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
 ChromePhp::log($theQuery_);
-      $passedQuery = base64_decode($theQuery_,true);
+      $theQuery_ = str_rot13($theQuery_);
       if(!empty($theQuery_))
       {
         $nHistoryPk = null;
       }
-ChromePhp::log($passedQuery);
+ChromePhp::log($theQuery_);
 
 //BURADAN
       if($nHistoryPk > 0)
@@ -3750,7 +3750,8 @@ ChromePhp::log($passedQuery);
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
-          $theQuery = base64_encode($theQuery);
+          //$theQuery = base64_encode($theQuery);
+          $theQuery = str_rot13($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
           $sURL .= "&theQuery=".$theQuery;
