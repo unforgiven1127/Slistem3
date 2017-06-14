@@ -159,7 +159,7 @@ class CSettingsModelEx extends CSettingsModel
         $temp = $db_result->getData();
 
         $saved_searches[] = array('id' => $temp['id'], 'label' => $temp['search_label'],
-          'date' => $temp['date_create'], 'link' => $temp['log_link'], 'activity_id' => $temp['login_activitypk']);
+          'date' => $temp['date_create'], 'link' => $temp['log_link'], 'activity_id' => $temp['login_activitypk'], 'query' => $temp['query']);
 
         $read = $db_result->readNext();
       }
