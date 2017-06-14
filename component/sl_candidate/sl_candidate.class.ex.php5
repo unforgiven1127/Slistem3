@@ -3423,7 +3423,7 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 //ChromePhp::log($sQuery);
-      $GLOBALS['theQuery'] = $sQuery;
+      $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3816,6 +3816,9 @@ class CSl_candidateEx extends CSl_candidate
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
+
+        $theQuery = serialize($theQuery);
+        $sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
       return $sHTML;
     }
