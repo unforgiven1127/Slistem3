@@ -2949,15 +2949,16 @@ class CSl_candidateEx extends CSl_candidate
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
 
-ChromePhp::log($theQuery_);
-      $password = 'Slate';
-      $theQuery_ = openssl_decrypt($theQuery_, 'AES-128-CBC', $password);
-      //$theQuery_ = base64_decode($theQuery_);
-ChromePhp::log($theQuery_);
+      $test = explode(' ',$theQuery_);
+
+ChromePhp::log($test);
+      $theQuery_ = base64_decode($theQuery_);
+//ChromePhp::log($theQuery_);
       if(!empty($theQuery_))
       {
         $nHistoryPk = null;
       }
+//ChromePhp::log($theQuery_);
 
 //BURADAN
       if($nHistoryPk > 0)
@@ -3753,10 +3754,9 @@ ChromePhp::log($theQuery_);
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
-          //$theQuery = base64_encode($theQuery);
-          $password = 'Slate';
-          $theQuery = openssl_encrypt($theQuery, 'AES-128-CBC', $password);
-ChromePhp::log($theQuery);
+          $theQuery = base64_encode($theQuery);
+          //$theQuery = str_replace(' ','',$theQuery);
+//ChromePhp::log($theQuery);
           //$theQuery = str_rot13($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
