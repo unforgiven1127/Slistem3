@@ -2137,9 +2137,6 @@ class CSettingsEx extends CSettings
     $search_label = getValue('search_label', '');
     $activity_id = getValue('activity_id', 0);
 
-    $theQuery = getValue('theQuery', '');
-    ChromePhp::log($theQuery);
-
     switch ($action)
     {
       case 'save':
@@ -2154,6 +2151,8 @@ class CSettingsEx extends CSettings
           }
           else
           {
+            $theQuery = getValue('theQuery', '');
+            ChromePhp::log($theQuery);
 
             $reload = 0;
             $ajax_action = 'goPopup.removeLastByType(\'layer\');';
