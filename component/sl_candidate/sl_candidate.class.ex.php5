@@ -2948,14 +2948,20 @@ class CSl_candidateEx extends CSl_candidate
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
+      $queryArray = explode(" ",$theQuery_);
+      foreach ($queryArray as $key => $value)
+      {
+        ChromePhp::log($value);
+      }
+
       $theQuery_ = trim(str_replace(' ','',$theQuery_));
-ChromePhp::log($theQuery_);
+//ChromePhp::log($theQuery_);
       $theQuery_ = base64_decode($theQuery_);
       if(!empty($theQuery_))
       {
         $nHistoryPk = null;
       }
-ChromePhp::log($theQuery_);
+//ChromePhp::log($theQuery_);
 
 //BURADAN
       if($nHistoryPk > 0)
@@ -3752,8 +3758,8 @@ ChromePhp::log($theQuery_);
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
           $theQuery = base64_encode($theQuery);
-          $theQuery = str_replace(' ','',$theQuery);
-ChromePhp::log($theQuery);
+          //$theQuery = str_replace(' ','',$theQuery);
+//ChromePhp::log($theQuery);
           //$theQuery = str_rot13($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
