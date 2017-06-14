@@ -2164,10 +2164,8 @@ class CSettingsEx extends CSettings
               'login_activitypk' => $activity_id, 'date_create' => date('Y-m-d'));
 
             $theQuery = getValue('theQuery', '');
-            if(!empty($theQuery))
-            {
-              $values['theQuery'] = $theQuery;
-            }
+            $values['theQuery'] = $theQuery;
+
 
             $this->_getModel()->add($values, 'saved_search');
           }
