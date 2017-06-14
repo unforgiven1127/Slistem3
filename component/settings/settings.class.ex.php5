@@ -2138,11 +2138,11 @@ class CSettingsEx extends CSettings
     $activity_id = getValue('activity_id', 0);
 
     $theQuery = getValue('theQuery', '');
-    if(!empty($theQuery))
+    /*if(!empty($theQuery))
     {
       $theQuery = base64_decode($theQuery);
       ChromePhp::log($theQuery);
-    }
+    }*/
 
     switch ($action)
     {
@@ -2164,6 +2164,10 @@ class CSettingsEx extends CSettings
 
             $values = array('search_label' => $search_label, 'loginpk' => $current_user,
               'login_activitypk' => $activity_id, 'date_create' => date('Y-m-d'));
+            if(!empty($theQuery))
+            {
+              $values['query'] = $theQuery;
+            }
 
             $this->_getModel()->add($values, 'saved_search');
           }
