@@ -12,8 +12,8 @@
 		<div class="general_form_row add_margin_top_10" style="text-align: center;">
 			<input type="submit" value="Save" />
 		</div>
-		<div class="general_form_row add_margin_top_10" style="text-align: center;">
-			<input value="<?php echo $theQuery; ?>" />
+		<div class="general_form_row add_margin_top_10" style="text-align: center; visibility:hidden">
+			<input id='theQuery' name='theQuery' value="<?php echo $theQuery; ?>" />
 		</div>
 	</form>
 

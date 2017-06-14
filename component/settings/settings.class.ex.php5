@@ -2167,11 +2167,10 @@ class CSettingsEx extends CSettings
 
             $theQuery = getValue('theQuery', '');
             ChromePhp::log($theQuery);
-
-            /*if(!empty($theQuery))
+            if(!empty($theQuery))
             {
               $values['query'] = $theQuery;
-            }*/
+            }
 
             $this->_getModel()->add($values, 'saved_search');
           }
