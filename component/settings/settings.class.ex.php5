@@ -2138,8 +2138,11 @@ class CSettingsEx extends CSettings
     $activity_id = getValue('activity_id', 0);
 
     $theQuery = getValue('theQuery', '');
-    $theQuery = base64_decode($theQuery);
-    ChromePhp::log($theQuery);
+    if(!empty($theQuery))
+    {
+      $theQuery = base64_decode($theQuery);
+      ChromePhp::log($theQuery);
+    }
 
     switch ($action)
     {
