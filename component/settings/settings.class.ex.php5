@@ -2151,6 +2151,9 @@ class CSettingsEx extends CSettings
           }
           else
           {
+            $theQuery = $GLOBALS['theQuery'];
+            ChromePhp::log($theQuery);
+
             $reload = 0;
             $ajax_action = 'goPopup.removeLastByType(\'layer\');';
 

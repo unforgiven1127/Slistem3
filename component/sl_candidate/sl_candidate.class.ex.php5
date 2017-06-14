@@ -3423,6 +3423,7 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 ChromePhp::log($sQuery);
+      $GLOBALS['theQuery'] = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
