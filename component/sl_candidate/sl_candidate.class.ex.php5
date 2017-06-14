@@ -2959,12 +2959,12 @@ class CSl_candidateEx extends CSl_candidate
       }
 
 ChromePhp::log($createQuery);
-      $theQuery_ = $createQuery;
+
 //ChromePhp::log($theQuery_);
-      if(!empty($theQuery_))
+      /*if(!empty($theQuery_))
       {
         $nHistoryPk = null;
-      }
+      }*/
 //ChromePhp::log($theQuery_);
 
 //BURADAN
@@ -3444,14 +3444,15 @@ ChromePhp::log($createQuery);
         }
       }*/
 //ChromePhp::log($sQuery);
-      if(!empty($theQuery_))
+      /*if(!empty($theQuery_))
       {
         $sQuery = $theQuery_;
         ChromePhp::log('GIRMELI');
-      }
+      }*/
 
       $theQuery = $sQuery;
 ChromePhp::log($theQuery);
+
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
