@@ -2949,7 +2949,7 @@ class CSl_candidateEx extends CSl_candidate
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
 ChromePhp::log($theQuery_);
-      $theQuery_ = str_rot13($theQuery_);
+      $theQuery_ = str_rot13(trim($theQuery_));
       if(!empty($theQuery_))
       {
         $nHistoryPk = null;
