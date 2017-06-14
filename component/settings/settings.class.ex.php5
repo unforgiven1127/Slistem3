@@ -2164,10 +2164,14 @@ class CSettingsEx extends CSettings
 
             $values = array('search_label' => $search_label, 'loginpk' => $current_user,
               'login_activitypk' => $activity_id, 'date_create' => date('Y-m-d'));
-            if(!empty($theQuery))
+
+            $theQuery = getValue('theQuery', '');
+            ChromePhp::log($theQuery);
+
+            /*if(!empty($theQuery))
             {
               $values['query'] = $theQuery;
-            }
+            }*/
 
             $this->_getModel()->add($values, 'saved_search');
           }
