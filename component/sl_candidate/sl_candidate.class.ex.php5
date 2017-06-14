@@ -2947,25 +2947,12 @@ class CSl_candidateEx extends CSl_candidate
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $theQuery_ = getValue('theQuery','');
+      $passedSessionQueryID = getValue('theQuery','');
+      $savedQuery = $_SESSION[$passedSessionQueryID];
 
-      $createQuery = '';
+      ChromePhp::log($passedSessionQueryID);
+      ChromePhp::log($savedQuery);
 
-      $qArray = explode(' ',$theQuery_);
-      foreach ($qArray as $key => $q1)
-      {
-        $decodedQuery = base64_decode($q1);
-        $createQuery .= $decodedQuery;
-      }
-
-//ChromePhp::log($createQuery);
-
-//ChromePhp::log($theQuery_);
-      /*if(!empty($theQuery_))
-      {
-        $nHistoryPk = null;
-      }*/
-//ChromePhp::log($theQuery_);
 
 //BURADAN
       if($nHistoryPk > 0)
@@ -3764,11 +3751,12 @@ class CSl_candidateEx extends CSl_candidate
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
           $unixTime = time();
+          $uniqueSessionQueryID = 'query_'.$unixTime;
+          $_SESSION[$uniqueSessionQueryID] = $theQuery;
+
           ChromePhp::log($unixTime);
 
-          $theQuery = base64_encode($theQuery);
-
-          $sURL .= "&theQuery=".$theQuery;
+          $sURL .= "&theQuery=".$uniqueSessionQueryID;
 
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
