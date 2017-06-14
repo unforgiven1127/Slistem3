@@ -3755,6 +3755,8 @@ class CSl_candidateEx extends CSl_candidate
           $_SESSION[$uniqueSessionQueryID] = $theQuery;
 
           ChromePhp::log($unixTime);
+          ChromePhp::log($uniqueSessionQueryID);
+          ChromePhp::log($_SESSION[$uniqueSessionQueryID]);
 
           $sURL .= "&theQuery=".$uniqueSessionQueryID;
 
