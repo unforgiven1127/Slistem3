@@ -2947,11 +2947,12 @@ class CSl_candidateEx extends CSl_candidate
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $theQuery = getValue('theQuery','');
-      ChromePhp::log($theQuery);
+      $theQuery_ = getValue('theQuery','');
+      $theQuery_ = base64_decode($theQuery_);
+//ChromePhp::log($theQuery);
 
 //BURADAN
-      if($nHistoryPk > 0)
+      if($nHistoryPk > 0 && empty($theQuery_))
       {
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
@@ -3426,6 +3427,11 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 //ChromePhp::log($sQuery);
+      if(!empty($theQuery_))
+      {
+        $sQuery = $theQuery_;
+      }
+
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
