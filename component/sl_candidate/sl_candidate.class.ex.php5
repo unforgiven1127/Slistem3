@@ -3734,6 +3734,9 @@ class CSl_candidateEx extends CSl_candidate
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
+          $theQuery = base64_encode($theQuery);
+          $sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
+
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
 
@@ -3816,9 +3819,6 @@ class CSl_candidateEx extends CSl_candidate
 
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
-
-        $theQuery = base64_encode($theQuery);
-        $sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
       return $sHTML;
     }
