@@ -2196,6 +2196,7 @@ class CSettingsEx extends CSettings
         }
 
         $params = array('form_url' => $form_url, 'search_label' => $search_label);
+        $params['theQuery'] = $theQuery;
 
         $data = $display_obj->render('saved_search_edit', $params);
 

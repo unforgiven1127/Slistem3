@@ -12,6 +12,9 @@
 		<div class="general_form_row add_margin_top_10" style="text-align: center;">
 			<input type="submit" value="Save" />
 		</div>
+		<div class="general_form_row add_margin_top_10" style="text-align: center;">
+			<input value="<?php echo $theQuery; ?>" />
+		</div>
 	</form>
 
 	<script>
@@ -21,8 +24,7 @@
 			var url = $('form[name=save_search]').attr('action');
 			var form_id = $('form[name=save_search]').attr('id');
 			var target = 'save_search';
-			var theQuery = $('form[name=save_search]').attr('theQuery');
-			alert(theQuery);
+
 			setTimeout(" AjaxRequest('"+url+"', '.body.', '"+form_id+"', '"+target+"', '', '', 'setCoverScreen(false);  '); ", 350);
 
 			return false;
