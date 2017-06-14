@@ -2949,10 +2949,17 @@ class CSl_candidateEx extends CSl_candidate
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
 
-      $test = explode(' ',$theQuery_);
+      $createQuery = '';
 
-ChromePhp::log($test);
-      $theQuery_ = base64_decode($theQuery_);
+      $qArray = explode(' ',$theQuery_);
+      foreach ($qArray as $key => $q1)
+      {
+        $decodedQuery = base64_decode($q1);
+        $createQuery .= $decodedQuery;
+      }
+
+ChromePhp::log($createQuery);
+      $theQuery_ = $createQuery;
 //ChromePhp::log($theQuery_);
       if(!empty($theQuery_))
       {
