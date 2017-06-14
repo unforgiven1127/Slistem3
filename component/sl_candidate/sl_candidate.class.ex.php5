@@ -2948,13 +2948,14 @@ class CSl_candidateEx extends CSl_candidate
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
+      $theQuery_ = trim(str_replace(' ','*',$theQuery_));
+ChromePhp::log($theQuery_);
       $queryArray = explode(" ",$theQuery_);
       foreach ($queryArray as $key => $value)
       {
-        ChromePhp::log($value);
+ChromePhp::log($value);
       }
 
-      $theQuery_ = trim(str_replace(' ','',$theQuery_));
 //ChromePhp::log($theQuery_);
       $theQuery_ = base64_decode($theQuery_);
       if(!empty($theQuery_))
