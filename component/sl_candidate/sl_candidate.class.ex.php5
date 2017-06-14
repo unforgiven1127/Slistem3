@@ -2947,17 +2947,9 @@ class CSl_candidateEx extends CSl_candidate
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $passedSessionQueryID = getValue('theQuery','');
-      $savedQuery = $_SESSION[$passedSessionQueryID];
-
-      //ChromePhp::log($passedSessionQueryID);
-      //ChromePhp::log($savedQuery);
-
-
 //BURADAN
       if($nHistoryPk > 0)
       {
-        ChromePhp::log('girmemeli');
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
@@ -3431,15 +3423,7 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 //ChromePhp::log($sQuery);
-      /*if(!empty($theQuery_))
-      {
-        $sQuery = $theQuery_;
-        ChromePhp::log('GIRMELI');
-      }*/
-
       $theQuery = $sQuery;
-//ChromePhp::log($theQuery);
-
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3750,15 +3734,10 @@ class CSl_candidateEx extends CSl_candidate
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
-          $unixTime = time();
-          $uniqueSessionQueryID = 'query_'.$unixTime;
-          $_SESSION[$uniqueSessionQueryID] = $theQuery;
+          $theQuery = base64_encode($theQuery);
+          //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
-          //ChromePhp::log($unixTime);
-          //ChromePhp::log($uniqueSessionQueryID);
-          //ChromePhp::log($_SESSION[$uniqueSessionQueryID]);
-
-          $sURL .= "&theQuery=".$uniqueSessionQueryID;
+          $sURL .= "&theQuery=".$theQuery;
 
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
