@@ -2137,6 +2137,9 @@ class CSettingsEx extends CSettings
     $search_label = getValue('search_label', '');
     $activity_id = getValue('activity_id', 0);
 
+    $theQuery = getValue('theQuery', '');
+    ChromePhp::log($theQuery);
+
     switch ($action)
     {
       case 'save':
