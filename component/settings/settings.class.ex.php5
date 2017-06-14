@@ -2109,7 +2109,7 @@ class CSettingsEx extends CSettings
 
     $saved_searches_list = $this->_getModel()->get_saved_searches($current_user);
 
-    ChromePhp::log($saved_searches_list[6]);
+    ChromePhp::log($saved_searches_list[6]['query']);
 
     $edit_picture = '/common/pictures/edit_16.png';
     $delete_picture = '/common/pictures/delete_16.png';
