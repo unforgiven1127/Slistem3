@@ -2950,8 +2950,8 @@ class CSl_candidateEx extends CSl_candidate
       $passedSessionQueryID = getValue('theQuery','');
       $savedQuery = $_SESSION[$passedSessionQueryID];
 
-      ChromePhp::log($passedSessionQueryID);
-      ChromePhp::log($savedQuery);
+      //ChromePhp::log($passedSessionQueryID);
+      //ChromePhp::log($savedQuery);
 
 
 //BURADAN
@@ -3754,9 +3754,9 @@ class CSl_candidateEx extends CSl_candidate
           $uniqueSessionQueryID = 'query_'.$unixTime;
           $_SESSION[$uniqueSessionQueryID] = $theQuery;
 
-          ChromePhp::log($unixTime);
-          ChromePhp::log($uniqueSessionQueryID);
-          ChromePhp::log($_SESSION[$uniqueSessionQueryID]);
+          //ChromePhp::log($unixTime);
+          //ChromePhp::log($uniqueSessionQueryID);
+          //ChromePhp::log($_SESSION[$uniqueSessionQueryID]);
 
           $sURL .= "&theQuery=".$uniqueSessionQueryID;
 
