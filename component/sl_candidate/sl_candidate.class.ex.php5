@@ -3751,7 +3751,7 @@ ChromePhp::log($theQuery_);
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
           $theQuery = base64_encode($theQuery);
-          $theQuery = str_replace(' ','',$theQuery)
+          $theQuery = str_replace(' ','',$theQuery);
           //$theQuery = str_rot13($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
