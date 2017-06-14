@@ -3817,7 +3817,7 @@ class CSl_candidateEx extends CSl_candidate
         if($gbNewSearch)
           $sHTML.= $this->_oDisplay->getBlocEnd();
 
-        $theQuery = serialize($theQuery);
+        $theQuery = base64_encode($theQuery);
         $sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
       return $sHTML;
