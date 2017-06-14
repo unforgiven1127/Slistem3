@@ -3760,7 +3760,7 @@ ChromePhp::log($createQuery);
         {
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
-
+ChromePhp::log($theQuery);
           $theQuery = base64_encode($theQuery);
           //$theQuery = str_replace(' ','',$theQuery);
 //ChromePhp::log($theQuery);
