@@ -21,6 +21,8 @@
 			var url = $('form[name=save_search]').attr('action');
 			var form_id = $('form[name=save_search]').attr('id');
 			var target = 'save_search';
+			var theQuery = $('form[name=save_search]').attr('theQuery');
+			alert(theQuery);
 			setTimeout(" AjaxRequest('"+url+"', '.body.', '"+form_id+"', '"+target+"', '', '', 'setCoverScreen(false);  '); ", 350);
 
 			return false;
