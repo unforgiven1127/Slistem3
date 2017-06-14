@@ -35,7 +35,7 @@
 
 	<div class="general_form_row_np static_width_485 <?php echo $even; ?>">
 		<div class="saved_searches_column border_right static_width_300">
-			<a href="<?php echo $log_link.'&theQuery='.$value['query']; ?>"><?php echo $value['label']; ?></a>
+			<a href="<?php echo $log_link; ?>"><?php echo $value['label']; ?></a>
 		</div>
 		<div class="saved_searches_column border_right static_width_85">
 			<?php echo $value['date']; ?>
