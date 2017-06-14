@@ -27,7 +27,7 @@
 
 		$log_link = preg_replace('/\&/', '&replay_search='.$value['activity_id'].'&', $value['link'], 1);
 		$log_link = str_replace('pg=ajx','pg=ajx&='.$value['query'],$log_link);
-		ChromePhp::log($log_link);
+		//ChromePhp::log($log_link);
 
 		if (CONST_DEV_SERVER)
 			$log_link = str_replace('slistem.slate.co.jp', CONST_CRM_HOST, $log_link);
