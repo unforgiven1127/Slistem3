@@ -23,8 +23,6 @@ class CSl_candidateEx extends CSl_candidate
   private $csSearchId = '';
   private $passResume = '';
 
-  public $password = 'Slate';
-
 
   public function __construct()
   {
@@ -2952,6 +2950,7 @@ class CSl_candidateEx extends CSl_candidate
       $theQuery_ = getValue('theQuery','');
 
 ChromePhp::log($theQuery_);
+      $password = 'Slate';
       $theQuery_ = openssl_decrypt($theQuery_, 'AES-128-CBC', $password);
       //$theQuery_ = base64_decode($theQuery_);
 ChromePhp::log($theQuery_);
@@ -3755,6 +3754,7 @@ ChromePhp::log($theQuery_);
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
           //$theQuery = base64_encode($theQuery);
+          $password = 'Slate';
           $theQuery = openssl_encrypt($theQuery, 'AES-128-CBC', $password);
 ChromePhp::log($theQuery);
           //$theQuery = str_rot13($theQuery);
