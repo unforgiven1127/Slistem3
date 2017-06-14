@@ -2949,11 +2949,16 @@ class CSl_candidateEx extends CSl_candidate
       $nHistoryPk = (int)getValue('replay_search');
       $theQuery_ = getValue('theQuery','');
       $theQuery_ = base64_decode($theQuery_);
+      if(!empty($theQuery_))
+      {
+        $nHistoryPk = null;
+      }
 //ChromePhp::log($theQuery);
 
 //BURADAN
-      if($nHistoryPk > 0 && empty($theQuery_))
+      if($nHistoryPk > 0)
       {
+        ChromePhp::log('girmemeli');
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
@@ -3430,6 +3435,7 @@ class CSl_candidateEx extends CSl_candidate
       if(!empty($theQuery_))
       {
         $sQuery = $theQuery_;
+        ChromePhp::log('GIRMELI');
       }
 
       $theQuery = $sQuery;
