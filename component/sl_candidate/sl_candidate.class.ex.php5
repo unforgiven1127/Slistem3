@@ -3735,7 +3735,9 @@ class CSl_candidateEx extends CSl_candidate
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
           $theQuery = base64_encode($theQuery);
-          $sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
+          //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
+
+          $sURL .= "&theQuery=".$theQuery;
 
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
