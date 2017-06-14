@@ -26,7 +26,7 @@
 			$even = '';
 
 		$log_link = preg_replace('/\&/', '&replay_search='.$value['activity_id'].'&', $value['link'], 1);
-
+ChromePhp::log($log_link);
 		if (CONST_DEV_SERVER)
 			$log_link = str_replace('slistem.slate.co.jp', CONST_CRM_HOST, $log_link);
 		else
