@@ -3430,7 +3430,7 @@ class CSl_candidateEx extends CSl_candidate
 //ChromePhp::log($sQuery);
       if(!empty($savedSearch))
       {
-        $sQuery = $savedSearch;
+        $sQuery = base64_decode($savedSearch);
       }
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
