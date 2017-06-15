@@ -3014,7 +3014,13 @@ class CSl_candidateEx extends CSl_candidate
 
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
-ChromePhp::log($sSortField);
+
+      if(empty($sSortField))
+      {
+        $sSortField = $_SESSION['sortField_mail'];
+        $sSortOrder = $_SESSION['sortOrder_mail'];
+      }
+
       // =============================================================
       //TODO: to be moved when the search arrives
       $sNow = date('Y-m-d H:i:s');
