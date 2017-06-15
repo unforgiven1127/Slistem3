@@ -16,9 +16,9 @@ class CTemplateList extends CTemplate
     parent::__construct($poTplManager, $psUid, $pasParams, $pnTemplateNumber);
   }
 
-  public function getDisplay($pvData)
+  public function getDisplay($pvData,$test='')
   {
-    ChromePhp::log($pvData);
+    ChromePhp::log($test);
     $oDisplay = CDependency::getCpHtml();
 
     $oPage = CDependency::getCpPage();
