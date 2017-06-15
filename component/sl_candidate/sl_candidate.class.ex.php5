@@ -3020,12 +3020,14 @@ ChromePhp::log($gbNewSearch);
 
       if(empty($sSortField)&&isset($_SESSION['sortField_mail'])&&isset($_SESSION['sortOrder_mail']))
       {
+        ChromePhp::log('ILK IF');
         if($gbNewSearch == false)
         {
-
+          ChromePhp::log('ikinci if IF');
         }
         else
         {
+          ChromePhp::log('ELSE');
           $sSortField = $_SESSION['sortField_mail'];
           $sSortOrder = $_SESSION['sortOrder_mail'];
         }
