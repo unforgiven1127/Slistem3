@@ -2957,10 +2957,12 @@ ChromePhp::log($_oQB);
         $_pbInAjax = false;
         $_candidate_id = 0;
 
-        $savedQueryAll = unserialize(base64_decode($savedSearch));
+        $test = base64_decode($savedSearch);
+
+        //$savedQueryAll = unserialize(base64_decode($savedSearch));
         //$_oQB = $savedQueryAll;
         //$_oQB->setTitle('savedQuery');
-ChromePhp::log($savedQueryAll);
+ChromePhp::log($test);
 
         //return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);
       }
