@@ -1,4 +1,5 @@
 <?php
+
 require_once './common/tracy/src/tracy.php';
 use Tracy\Debugger;
 
@@ -23,6 +24,7 @@ ignore_user_abort(1);
 //prevent infinite loops if assert fires another assert (mailAssert) that is firing a new assert that ...
 $_SESSION['assert'] = 0;
 $_SESSION['mail_assert'] = 0;
+
 
 require_once './conf/main_config.inc.php5';
 require_once './common/lib/global_func.inc.php5';

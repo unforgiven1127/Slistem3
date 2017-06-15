@@ -267,7 +267,7 @@ class CSl_candidateEx extends CSl_candidate
               if(!empty($sError))
                 return json_encode(array('alert' => $sError));
             }
-
+            $GLOBALS['test'] = time();
             $candidateList = $this->_getCandidateList(true, $oQB);
 
             $return = $oPage->getAjaxExtraContent(array('data' => convertToUtf8($candidateList), 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); '));
@@ -2920,7 +2920,8 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '')
     {
-//ChromePhp::log($poQB);
+ChromePhp::log($GLOBALS['test']);
+
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
