@@ -37,7 +37,7 @@ if (CONST_DEV_SERVER)
 
 //include here the list of all the tables/fields/controls/type. Used in model, but if included here it's loaded only once.
 require_once './common/lib/model.db_map.inc.php5';
-$GLOBALS['newTime'] = time();
+
 CDependency::initialize();
 
 sanitizeUrl();
