@@ -268,7 +268,7 @@ class CSl_candidateEx extends CSl_candidate
                 return json_encode(array('alert' => $sError));
             }
 
-            $newSearchFlag = false;
+            /*$newSearchFlag = false;
             $newSearch = $_SERVER['REQUEST_URI'];
             if (strpos($newSearch, 'newSearch') !== false) {
                 $newSearchFlag = true;
@@ -282,9 +282,9 @@ class CSl_candidateEx extends CSl_candidate
             else
             {
               $nsTime = $tabVariables->getTime();
-            }
+            }*/
 
-            $candidateList = $this->_getCandidateList(true, $oQB,false,0,'','',$nsTime);
+            $candidateList = $this->_getCandidateList(true, $oQB,false,0,'','');
 
             $return = $oPage->getAjaxExtraContent(array('data' => convertToUtf8($candidateList), 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); '));
             return json_encode($return);
@@ -2936,7 +2936,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '',$nsTime = '')
     {
-ChromePhp::log($nsTime);
+ChromePhp::log($GLOBALS['newTime']);
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
@@ -3442,7 +3442,7 @@ ChromePhp::log($nsTime);
           $rmResult = $rmResultDB->getAll();
         }
       }*/
-ChromePhp::log($sQuery);
+//ChromePhp::log($sQuery);
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
