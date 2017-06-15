@@ -3014,7 +3014,11 @@ class CSl_candidateEx extends CSl_candidate
 
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
-
+      if($fromMail)
+      {
+        $sSortField = $sortField;
+        $sSortOrder = $sortOrder;
+      }
       // =============================================================
       //TODO: to be moved when the search arrives
       $sNow = date('Y-m-d H:i:s');
