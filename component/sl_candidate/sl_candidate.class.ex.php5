@@ -2950,7 +2950,26 @@ class CSl_candidateEx extends CSl_candidate
       $savedSearch = getValue('theQuery','');
       if(!empty($savedSearch))
       {
-        $nHistoryPk = null;
+        $_oQB = $this->_getModel()->getQueryBuilder();
+        $_sortField = '';
+        $_sortOrder = '';
+        $_pbInAjax = false;
+        $_candidate_id = 0;
+
+        $savedQueryAll = base64_decode($savedSearch);
+        $explodedQuery = explode('ORDER BY',$savedQueryAll);
+        $pureQuery = $explodedQuery[0];
+        $_oQB = $pureQuery;
+        if(isset($explodedQuery[1]))
+        {
+          $explode2 = explode('LIMIT',$explodedQuery[1]);
+          $orderAll = $explode2[0];
+          $orderExploded = explode(' ',$orderAll);
+          if(isset($orderExploded[0])){$_sortField = $orderExploded[0];}
+          if(isset($orderExploded[1])){$_sortOrder = $orderExploded[1];}
+        }
+
+        return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);
       }
 //BURADAN
       if($nHistoryPk > 0)
@@ -3366,13 +3385,6 @@ class CSl_candidateEx extends CSl_candidate
           $sQuery.= ' ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC ';
         }
 
-        if(!empty($savedSearch))
-        {
-          $sQuery = base64_decode($savedSearch);
-          $limit = null;
-          //ChromePhp::log($sQuery);
-        }
-
         if(!empty($limit))
           $sQuery.= " LIMIT ".$limit;
         else
@@ -3435,11 +3447,7 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 //ChromePhp::log($sQuery);
-      if(!empty($savedSearch))
-      {
-        $sQuery = base64_decode($savedSearch);
-        ChromePhp::log($sQuery);
-      }
+
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
