@@ -253,7 +253,7 @@ class CPagerEx extends CPager
       //----------------------
       $sPager.= '<div class="pagerNavigationBefore">&nbsp;';
 
-      $sPager.= '<div class="pager_pageLink pager_pageLinkPic '.$sClass.'">';
+      $sPager.= '<div class="pager_pageLink pager_pageLinkPic test3 '.$sClass.'">';
 
       $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/pager_first.png');
       if(CONST_WEBSITE !='bcm')
@@ -264,7 +264,7 @@ class CPagerEx extends CPager
       $sPager.= '</div>';
       //----------------------
 
-      $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+      $sPager.= '<div class="pager_pageLink pager_pageLinkPic test4 '.$sClass.'">';
       if($nNbPages > 10)
       {
           $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/pager_previous.png');
@@ -321,13 +321,13 @@ class CPagerEx extends CPager
 
       $sPager.= '<div class="pagerNavigationAfter">&nbsp;';
 
-      $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+      $sPager.= '<div class="pager_pageLink pager_pageLinkPic test5'.$sClass.'">';
         $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/pager_last.png');
         $sPager.= ' <div class="pager_pageLink">'.$oHTML->getLink($sPic, 'javascript:;', array('onclick' => $sJs, 'pagervalue' => $nNbPages)).'</div>';
       $sPager.= '</div>';
 
       //div in float right, so the last-icon is displayed before the next-icon
-      $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+      $sPager.= '<div class="pager_pageLink pager_pageLinkPic test6'.$sClass.'">';
         if($nNbPages > 10)
         {
           $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/pager_next.png');
@@ -469,14 +469,14 @@ class CPagerEx extends CPager
 
         $sPager.= '<div class="pagerCompactNavigation">';
 
-        $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+        $sPager.= '<div class="pager_pageLink pager_pageLinkPic test7'.$sClass.'">';
         $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/compact_first.png');
         $sPager.= $oHTML->getLink($sPic, $sUrl.'&pageoffset=1', $pasUrlOption);
         $sPager.= '</div>';
 
         if(($nPagerOffset-1) > 1)
         {
-          $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+          $sPager.= '<div class="pager_pageLink pager_pageLinkPic test8'.$sClass.'">';
           $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/compact_previous.png');
           $sPager.= $oHTML->getLink($sPic, $sUrl.'&pageoffset='.($nPagerOffset-1), $pasUrlOption);
           $sPager.= '</div>';
@@ -497,13 +497,13 @@ class CPagerEx extends CPager
 
         if(($nPagerOffset+1) < $nMax)
         {
-          $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+          $sPager.= '<div class="pager_pageLink pager_pageLinkPic test1'.$sClass.'">';
           $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/compact_next.png');
           $sPager.= $oHTML->getLink($sPic, $sUrl.'&pageoffset='.($nPagerOffset+1), $pasUrlOption);
           $sPager.= '</div>';
         }
 
-        $sPager.= '<div class="pager_pageLink pager_pageLinkPic'.$sClass.'">';
+        $sPager.= '<div class="pager_pageLink pager_pageLinkPic test2'.$sClass.'">';
         $sPic = $oHTML->getPicture($this->getResourcePath().'/pictures/compact_last.png');
         $sPager.= $oHTML->getLink($sPic, $sUrl.'&pageoffset='.$nNbPages, $pasUrlOption);
         $sPager.= '</div>';

@@ -2920,7 +2920,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '')
     {
-ChromePhp::log($poQB);
+//ChromePhp::log($poQB);
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
@@ -2935,7 +2935,7 @@ ChromePhp::log($poQB);
         $exploded = explode('_',$poQB->getTitle());
       }
       global $gbNewSearch;
-ChromePhp::log($gbNewSearch);
+//ChromePhp::log($gbNewSearch);
       $oDb = CDependency::getComponentByName('database');
       $this->_getModel()->loadQueryBuilderClass();
 
@@ -3017,21 +3017,6 @@ ChromePhp::log($gbNewSearch);
 
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
-
-      if(empty($sSortField)&&isset($_SESSION['sortField_mail'])&&isset($_SESSION['sortOrder_mail']))
-      {
-        ChromePhp::log('ILK IF');
-        if($gbNewSearch == false)
-        {
-          ChromePhp::log('ikinci if IF');
-        }
-        else
-        {
-          ChromePhp::log('ELSE');
-          $sSortField = $_SESSION['sortField_mail'];
-          $sSortOrder = $_SESSION['sortOrder_mail'];
-        }
-      }
 
       // =============================================================
       //TODO: to be moved when the search arrives
