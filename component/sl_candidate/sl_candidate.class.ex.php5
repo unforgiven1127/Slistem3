@@ -2960,6 +2960,7 @@ class CSl_candidateEx extends CSl_candidate
         $explodedQuery = explode('ORDER BY',$savedQueryAll);
         $pureQuery = $explodedQuery[0];
         $_oQB = $pureQuery;
+        $_oQB->setTitle('savedQuery');
         if(isset($explodedQuery[1]))
         {
           $explode2 = explode('LIMIT',$explodedQuery[1]);
