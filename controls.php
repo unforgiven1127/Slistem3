@@ -80,7 +80,7 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+/*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
@@ -97,6 +97,6 @@ while($meetingData = mysql_fetch_assoc($slistemQuery))
   echo ' CreateDate: '.$meetingData['createDate'];
   echo ' Note: '.$meetingData['note'];
   echo '<br>';
-}
+}*/
 
 
