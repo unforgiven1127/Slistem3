@@ -2951,14 +2951,14 @@ ChromePhp::log($poQB);
       if(!empty($savedSearch))
       {
         $_oQB = $this->_getModel()->getQueryBuilder();
-ChromePhp::log($_oQB);
+//ChromePhp::log($_oQB);
         $_sortField = '';
         $_sortOrder = '';
         $_pbInAjax = false;
         $_candidate_id = 0;
 
-        $savedQueryAll = base64_decode($savedSearch);
-ChromePhp::log($savedQueryAll);
+        //$savedQueryAll = base64_decode($savedSearch);
+//ChromePhp::log($savedQueryAll);
         /*$explodedQuery = explode('ORDER BY',$savedQueryAll);
         $pureQuery = $explodedQuery[0];
         $_oQB = $pureQuery;
@@ -2970,11 +2970,13 @@ ChromePhp::log($_oQB);
 //BURADAN
       if($nHistoryPk > 0)
       {
+ChromePhp::log('HERE');
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
         $asHistoryData = $oLogin->getUserActivityByPk($nHistoryPk);
         $poQB = $asHistoryData['data']['qb'];
+ChromePhp::log($poQB);
         if(!$poQB || !is_object($poQB))
         {
           //dump($poQB);
@@ -3171,7 +3173,7 @@ ChromePhp::log($_oQB);
       }
 
       $lastSearch = serialize($poQB);
-      $theQuery = $lastSearch;
+      //$theQuery = $lastSearch;
       //$_SESSION['lastSearch'] = serialize($poQB);
       storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
@@ -3760,7 +3762,7 @@ ChromePhp::log($_oQB);
           //ChromePhp::log($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
-          $sURL .= "&theQuery=".$theQuery;
+          //$sURL .= "&theQuery=".$theQuery;
 
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
