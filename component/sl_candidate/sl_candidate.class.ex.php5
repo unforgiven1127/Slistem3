@@ -7044,6 +7044,7 @@ ChromePhp::log($oQB);
           $lastSearchObject = getLastSearch($user_id);
           if(isset($lastSearchObject[0]))
           {
+ChromePhp::log(unserialize($lastSearchObject[0]['query']));
             $oQB = unserialize($lastSearchObject[0]['query']);
             $sortField = $lastSearchObject[0]['sort_field'];
             $sortOrder = $lastSearchObject[0]['sort_order'];
