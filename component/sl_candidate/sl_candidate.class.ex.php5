@@ -3033,6 +3033,11 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
+      $sSortField_ = getValue('sSortField','non'); // burasi
+      $sSortOrder_ = getValue('sSortField','non');
+      ChromePhp::log($sSortField_);
+      ChromePhp::log($sSortOrder_);
+
       // =============================================================
       //TODO: to be moved when the search arrives
       $sNow = date('Y-m-d H:i:s');
