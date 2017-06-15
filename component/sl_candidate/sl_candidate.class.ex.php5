@@ -2951,6 +2951,7 @@ ChromePhp::log($poQB);
       if(!empty($savedSearch))
       {
         $_oQB = $this->_getModel()->getQueryBuilder();
+ChromePhp::log($_oQB);
         $_sortField = '';
         $_sortOrder = '';
         $_pbInAjax = false;
@@ -7007,6 +7008,7 @@ ChromePhp::log($_oQB);
       //$candidate_list = $this->_getCandidateList();
 
       $oQB = $this->_getModel()->getQueryBuilder();
+ChromePhp::log($oQB);
       //$oQB->setTitle('QuickSearch: refId = '.$candidate_id);
 
       //$poQB = $this->_getModel()->getQueryBuilder();
@@ -7052,7 +7054,7 @@ ChromePhp::log($_oQB);
             $sortField = '';
             $sortOrder = '';
           }
-
+ChromePhp::log($oQB);
           //$lastSearch = unserialize($lastSearchObject['query']);
 
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
