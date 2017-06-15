@@ -2957,22 +2957,12 @@ ChromePhp::log($_oQB);
         $_pbInAjax = false;
         $_candidate_id = 0;
 
-        $savedQueryAll = base64_decode($savedSearch);
-        $explodedQuery = explode('ORDER BY',$savedQueryAll);
-        $pureQuery = $explodedQuery[0];
-        $_oQB = $pureQuery;
+        $savedQueryAll = unserialize(base64_decode($savedSearch));
+        //$_oQB = $savedQueryAll;
         //$_oQB->setTitle('savedQuery');
-ChromePhp::log($_oQB);
-        if(isset($explodedQuery[1]))
-        {
-          $explode2 = explode('LIMIT',$explodedQuery[1]);
-          $orderAll = $explode2[0];
-          $orderExploded = explode(' ',$orderAll);
-          if(isset($orderExploded[0])){$_sortField = $orderExploded[0];}
-          if(isset($orderExploded[1])){$_sortOrder = $orderExploded[1];}
-        }
+ChromePhp::log($savedQueryAll);
 
-        return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);
+        //return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);
       }
 //BURADAN
       if($nHistoryPk > 0)
@@ -3178,6 +3168,7 @@ ChromePhp::log($_oQB);
       }
 
       $lastSearch = serialize($poQB);
+      $theQuery = $lastSearch;
       //$_SESSION['lastSearch'] = serialize($poQB);
       storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
@@ -3451,7 +3442,7 @@ ChromePhp::log($_oQB);
       }*/
 //ChromePhp::log($sQuery);
 
-      $theQuery = $sQuery;
+      //$theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
