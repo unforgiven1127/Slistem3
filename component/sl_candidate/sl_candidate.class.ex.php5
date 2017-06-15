@@ -3366,6 +3366,13 @@ class CSl_candidateEx extends CSl_candidate
           $sQuery.= ' ORDER BY TRIM(scan.lastname) ASC, TRIM(scan.firstname) ASC ';
         }
 
+        if(!empty($savedSearch))
+        {
+          $sQuery = base64_decode($savedSearch);
+          $limit = null;
+          //ChromePhp::log($sQuery);
+        }
+
         if(!empty($limit))
           $sQuery.= " LIMIT ".$limit;
         else
@@ -3431,6 +3438,7 @@ class CSl_candidateEx extends CSl_candidate
       if(!empty($savedSearch))
       {
         $sQuery = base64_decode($savedSearch);
+        ChromePhp::log($sQuery);
       }
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
