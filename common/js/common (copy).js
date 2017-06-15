@@ -736,6 +736,7 @@ function pagerGetPage(oCurrentElement,psUrl, pnIsAjax, psRefreshZone)
     nPageOffset = parseInt($(oCurrentElement).html());
 
   psUrl = psUrl+'&pageoffset='+nPageOffset;
+  psUrl = psUrl+'&pageoffsetNEW='+nPageOffset;
 
   if(pnIsAjax)
   {

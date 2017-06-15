@@ -7025,8 +7025,8 @@ ChromePhp::log($sQuery);
             $sortOrder = '';
           }
 
-          $_SESSION['sortField'] = $sortField;
-          $_SESSION['sortOrder'] = $sortOrder;
+          $_SESSION['sortField_mail'] = $sortField;
+          $_SESSION['sortField_mail'] = $sortOrder;
           //$lastSearch = unserialize($lastSearchObject['query']);
 
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
