@@ -2957,14 +2957,15 @@ ChromePhp::log($_oQB);
         $_pbInAjax = false;
         $_candidate_id = 0;
 
-        $test = base64_decode($savedSearch);
-
-        //$savedQueryAll = unserialize(base64_decode($savedSearch));
-        //$_oQB = $savedQueryAll;
+        $savedQueryAll = base64_decode($savedSearch);
+ChromePhp::log($savedQueryAll);
+        /*$explodedQuery = explode('ORDER BY',$savedQueryAll);
+        $pureQuery = $explodedQuery[0];
+        $_oQB = $pureQuery;
         //$_oQB->setTitle('savedQuery');
-ChromePhp::log($test);
+ChromePhp::log($_oQB);
 
-        //return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);
+        return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);*/
       }
 //BURADAN
       if($nHistoryPk > 0)
