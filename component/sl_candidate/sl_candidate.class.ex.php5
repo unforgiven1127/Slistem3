@@ -275,10 +275,16 @@ class CSl_candidateEx extends CSl_candidate
             }
             if($newSearchFlag)
             {
-              $GLOBALS['test'] = time();
+              $tabVariables = new tabVariables;
+              $nsTime = $tabVariables->setTime();
+              //$GLOBALS['test'] = time();
+            }
+            else
+            {
+              $nsTime = $tabVariables->getTime();
             }
 
-            $candidateList = $this->_getCandidateList(true, $oQB);
+            $candidateList = $this->_getCandidateList(true, $oQB,false,0,'','',$nsTime);
 
             $return = $oPage->getAjaxExtraContent(array('data' => convertToUtf8($candidateList), 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); '));
             return json_encode($return);
@@ -2928,9 +2934,9 @@ class CSl_candidateEx extends CSl_candidate
 
 
 
-    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '')
+    private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '',$nsTime = '')
     {
-ChromePhp::log($GLOBALS['test']);
+ChromePhp::log($nsTime);
 
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
