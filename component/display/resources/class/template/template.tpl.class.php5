@@ -126,6 +126,7 @@ class CTemplate
    */
   public function getDisplay($pvData1 = null, $pvData2 = null, $pvData3 = null, $pvData4 = null)
   {
+    ChromePhp::log($pvData4);
     return '';
 
     /*
