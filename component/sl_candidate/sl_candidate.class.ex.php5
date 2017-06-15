@@ -211,7 +211,6 @@ class CSl_candidateEx extends CSl_candidate
             break;
 
           case CONST_ACTION_LIST:
-            ChromePhp::log('TEST TEST TEST TEST TEST TEST');
             return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCandidateList(true)))));
             break;
 
@@ -268,7 +267,7 @@ class CSl_candidateEx extends CSl_candidate
               if(!empty($sError))
                 return json_encode(array('alert' => $sError));
             }
-
+ChromePhp::log('TEST TEST TEST TEST TEST TEST 1');
             $candidateList = $this->_getCandidateList(true, $oQB);
 
             $return = $oPage->getAjaxExtraContent(array('data' => convertToUtf8($candidateList), 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); '));
@@ -617,6 +616,7 @@ class CSl_candidateEx extends CSl_candidate
               <script>view_candi("'.$sURL.'");</script>';
             return addPageStructure($sHTML, 'candi');*/
             $_POST['candidate'] = $this->cnPk;
+ChromePhp::log('TEST TEST TEST TEST TEST TEST 2');
             return mb_convert_encoding($this->_getCandidateList(), 'utf8');
             break;
         }
@@ -1024,6 +1024,7 @@ class CSl_candidateEx extends CSl_candidate
         $sHTML.=  $this->_oDisplay->getListItemStart($sLiId);
 
           //$sHTML.= $this->_oDisplay->getBlocStart(uniqid(), array('class' => 'scrollingContainer'));
+ChromePhp::log('TEST TEST TEST TEST TEST TEST 3');
           $sHTML.= $this->_getCandidateList($pbInAjax);
           //$sHTML.= $this->_oDisplay->getBlocEnd();
 
