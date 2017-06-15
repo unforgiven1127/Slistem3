@@ -378,7 +378,7 @@ class CPagerEx extends CPager
    * $psUrl : called url when paging up down
    * $pasUrlOption : link options (to be able to manage ajax and callback function
   */
-  public function getCompactDisplay($pnResult, $psUrl, $pasUrlOption = array(),$sSortField='', $sSortOrder='')
+  public function getCompactDisplay($pnResult, $psUrl, $pasUrlOption = array(),$sSortField='non', $sSortOrder='non')
   {
     //ChromePhp::log(debug_backtrace());
     //ChromePhp::log($psUrl);
