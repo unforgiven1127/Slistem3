@@ -2918,7 +2918,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '')
     {
-
+ChromePhp::log($poQB);
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
@@ -2960,7 +2960,8 @@ class CSl_candidateEx extends CSl_candidate
         $explodedQuery = explode('ORDER BY',$savedQueryAll);
         $pureQuery = $explodedQuery[0];
         $_oQB = $pureQuery;
-        $_oQB->setTitle('savedQuery');
+        //$_oQB->setTitle('savedQuery');
+ChromePhp::log($_oQB);
         if(isset($explodedQuery[1]))
         {
           $explode2 = explode('LIMIT',$explodedQuery[1]);
