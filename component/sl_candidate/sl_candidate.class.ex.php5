@@ -2918,7 +2918,7 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '')
     {
-ChromePhp::log($poQB);
+
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
@@ -2947,36 +2947,14 @@ ChromePhp::log($poQB);
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $savedSearch = getValue('theQuery','');
-      if(!empty($savedSearch))
-      {
-        $_oQB = $this->_getModel()->getQueryBuilder();
-//ChromePhp::log($_oQB);
-        $_sortField = '';
-        $_sortOrder = '';
-        $_pbInAjax = false;
-        $_candidate_id = 0;
-
-        //$savedQueryAll = base64_decode($savedSearch);
-//ChromePhp::log($savedQueryAll);
-        /*$explodedQuery = explode('ORDER BY',$savedQueryAll);
-        $pureQuery = $explodedQuery[0];
-        $_oQB = $pureQuery;
-        //$_oQB->setTitle('savedQuery');
-ChromePhp::log($_oQB);
-
-        return $this->_getCandidateList($_pbInAjax,$_oQB,true,$_candidate_id,$_sortField,$_sortOrder);*/
-      }
 //BURADAN
       if($nHistoryPk > 0)
       {
-ChromePhp::log('HERE');
         $this->csSearchId = getValue('searchId');
         //$asListMsg[] = 'replay search '.$nHistoryPk.': reload qb saved in db...';
 
         $asHistoryData = $oLogin->getUserActivityByPk($nHistoryPk);
         $poQB = $asHistoryData['data']['qb'];
-ChromePhp::log($poQB);
         if(!$poQB || !is_object($poQB))
         {
           //dump($poQB);
@@ -3173,7 +3151,6 @@ ChromePhp::log($poQB);
       }
 
       $lastSearch = serialize($poQB);
-      //$theQuery = $lastSearch;
       //$_SESSION['lastSearch'] = serialize($poQB);
       storeLastSearch($lastSearch,$sSortField,$sSortOrder, $user_id);
 
@@ -3446,8 +3423,7 @@ ChromePhp::log($poQB);
         }
       }*/
 //ChromePhp::log($sQuery);
-
-      //$theQuery = $sQuery;
+      $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
 
@@ -3758,11 +3734,10 @@ ChromePhp::log($poQB);
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
-          //$theQuery = base64_encode(trim($theQuery));
-          //ChromePhp::log($theQuery);
+          $theQuery = base64_encode(trim($theQuery));
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
-          //$sURL .= "&theQuery=".$theQuery;
+          $sURL .= "&theQuery=".$theQuery;
 
           $sHTML.= '<div><a href="javascript:;" onclick="ajaxLayer(\''.$sURL.'\', 370, 150);">Save this search</a></div>';
         }
@@ -7004,7 +6979,6 @@ ChromePhp::log($poQB);
       //$candidate_list = $this->_getCandidateList();
 
       $oQB = $this->_getModel()->getQueryBuilder();
-ChromePhp::log($oQB);
       //$oQB->setTitle('QuickSearch: refId = '.$candidate_id);
 
       //$poQB = $this->_getModel()->getQueryBuilder();
@@ -7040,7 +7014,6 @@ ChromePhp::log($oQB);
           $lastSearchObject = getLastSearch($user_id);
           if(isset($lastSearchObject[0]))
           {
-ChromePhp::log(unserialize($lastSearchObject[0]['query']));
             $oQB = unserialize($lastSearchObject[0]['query']);
             $sortField = $lastSearchObject[0]['sort_field'];
             $sortOrder = $lastSearchObject[0]['sort_order'];
@@ -7051,7 +7024,7 @@ ChromePhp::log(unserialize($lastSearchObject[0]['query']));
             $sortField = '';
             $sortOrder = '';
           }
-ChromePhp::log($oQB);
+
           //$lastSearch = unserialize($lastSearchObject['query']);
 
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
