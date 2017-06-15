@@ -268,7 +268,7 @@ class CSl_candidateEx extends CSl_candidate
                 return json_encode(array('alert' => $sError));
             }
 
-            $newSearch = getValue('newSearch','');
+            $newSearch = $_GET['newSearch'];
             ChromePhp::log($newSearch);
             $GLOBALS['test'] = time();
             $candidateList = $this->_getCandidateList(true, $oQB);
