@@ -3015,7 +3015,7 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
-      if(empty($sSortField))
+      if(empty($sSortField) && isset($_SESSION['sortField_mail']))
       {
         $sSortField = $_SESSION['sortField_mail'];
         $sSortOrder = $_SESSION['sortOrder_mail'];
