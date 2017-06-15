@@ -211,6 +211,7 @@ class CSl_candidateEx extends CSl_candidate
             break;
 
           case CONST_ACTION_LIST:
+            ChromePhp::log('TEST TEST TEST TEST TEST TEST');
             return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($this->_getCandidateList(true)))));
             break;
 
@@ -3015,7 +3016,7 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
-      if(empty($sSortField) && isset($_SESSION['sortField_mail']) && isset($_SESSION['sortOrder_mail']))
+      if(empty($sSortField)&&isset($_SESSION['sortField_mail'])&&isset($_SESSION['sortOrder_mail']))
       {
         $sSortField = $_SESSION['sortField_mail'];
         $sSortOrder = $_SESSION['sortOrder_mail'];
