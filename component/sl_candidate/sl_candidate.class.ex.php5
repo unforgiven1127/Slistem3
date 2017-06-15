@@ -3734,7 +3734,8 @@ class CSl_candidateEx extends CSl_candidate
           $sURL = $this->_oPage->getAjaxUrl('settings', CONST_ACTION_SAVEEDIT, CONST_TYPE_SAVED_SEARCHES, 0,
             array('action' => 'add', 'activity_id' => $nHistoryPk));
 
-          $theQuery = base64_encode($theQuery);
+          $theQuery = base64_encode(trim($theQuery));
+          ChromePhp::log($theQuery);
           //$sHTML.= "<input id='theQuery' name='theQuery' value='".$theQuery."'></input>";
 
           $sURL .= "&theQuery=".$theQuery;
