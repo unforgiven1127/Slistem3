@@ -380,8 +380,9 @@ class CPagerEx extends CPager
   */
   public function getCompactDisplay($pnResult, $psUrl, $pasUrlOption = array())
   {
-    ChromePhp::log($psUrl);
-    ChromePhp::log($pasUrlOption);
+    ChromePhp::log(debug_backtrace());
+    //ChromePhp::log($psUrl);
+    //ChromePhp::log($pasUrlOption);
     if(!assert('is_integer($pnResult) && !empty($pnResult) && is_array($pasUrlOption)'))
       return '';
 
