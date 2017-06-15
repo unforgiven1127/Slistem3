@@ -2948,7 +2948,10 @@ class CSl_candidateEx extends CSl_candidate
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
       $savedSearch = getValue('theQuery','');
-      ChromePhp::log($savedSearch);
+      if(!empty($savedSearch))
+      {
+        $nHistoryPk = null;
+      }
 //BURADAN
       if($nHistoryPk > 0)
       {
@@ -3425,6 +3428,10 @@ class CSl_candidateEx extends CSl_candidate
         }
       }*/
 //ChromePhp::log($sQuery);
+      if(!empty($savedSearch))
+      {
+        $sQuery = $savedSearch;
+      }
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
