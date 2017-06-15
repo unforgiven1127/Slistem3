@@ -2947,7 +2947,7 @@ class CSl_candidateEx extends CSl_candidate
 
       //replay candoidate searches  (filters, sorting...)
       $nHistoryPk = (int)getValue('replay_search');
-      $savedSearch = (int)getValue('query','');
+      $savedSearch = (int)getValue('theQuery','');
       ChromePhp::log($savedSearch);
 //BURADAN
       if($nHistoryPk > 0)
