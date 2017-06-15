@@ -3018,11 +3018,18 @@ ChromePhp::log($gbNewSearch);
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
-      /*if(empty($sSortField)&&isset($_SESSION['sortField_mail'])&&isset($_SESSION['sortOrder_mail']))
+      if(empty($sSortField)&&isset($_SESSION['sortField_mail'])&&isset($_SESSION['sortOrder_mail']))
       {
-        $sSortField = $_SESSION['sortField_mail'];
-        $sSortOrder = $_SESSION['sortOrder_mail'];
-      }*/
+        if($gbNewSearch == false)
+        {
+
+        }
+        else
+        {
+          $sSortField = $_SESSION['sortField_mail'];
+          $sSortOrder = $_SESSION['sortOrder_mail'];
+        }
+      }
 
       // =============================================================
       //TODO: to be moved when the search arrives
