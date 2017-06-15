@@ -3015,7 +3015,7 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
-      if(empty($sSortField) && isset($_SESSION['sortField_mail']))
+      if(empty($sSortField) && isset($_SESSION['sortField_mail']) && isset($_SESSION['sortOrder_mail']))
       {
         $sSortField = $_SESSION['sortField_mail'];
         $sSortOrder = $_SESSION['sortOrder_mail'];
@@ -7032,7 +7032,7 @@ ChromePhp::log($sQuery);
           }
 
           $_SESSION['sortField_mail'] = $sortField;
-          $_SESSION['sortField_mail'] = $sortOrder;
+          $_SESSION['sortOrder_mail'] = $sortOrder;
           //$lastSearch = unserialize($lastSearchObject['query']);
 
           //$sHTML.= $this->_getCandidateList($pbInAjax,$oQB);
