@@ -3014,7 +3014,7 @@ class CSl_candidateEx extends CSl_candidate
 
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
-ChromePhp::log($fromMail);
+ChromePhp::log($sortField);
       /*if($fromMail)
       {
         $sSortField = $sortField;
