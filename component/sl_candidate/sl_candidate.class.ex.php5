@@ -2936,8 +2936,6 @@ class CSl_candidateEx extends CSl_candidate
 
     private function _getCandidateList($pbInAjax = false, &$poQB = null, $fromMail = false ,$candidate_id = 0,$sortField = '',$sortOrder = '',$nsTime = '')
     {
-ChromePhp::log($GLOBALS['newTime']);
-
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
 
