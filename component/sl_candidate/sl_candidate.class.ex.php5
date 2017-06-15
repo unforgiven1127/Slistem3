@@ -3033,6 +3033,8 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
+      ChromePhp::log($sSortField);
+
       $sSortField_ = getValue('sSortField','non'); // burasi
       $sSortOrder_ = getValue('sSortOrder','non');
       if($sSortField_ != 'non')
