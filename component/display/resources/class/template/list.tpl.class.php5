@@ -18,6 +18,7 @@ class CTemplateList extends CTemplate
 
   public function getDisplay($pvData)
   {
+    ChromePhp::log('getDisplay 22222222');
     $oDisplay = CDependency::getCpHtml();
 
     $oPage = CDependency::getCpPage();

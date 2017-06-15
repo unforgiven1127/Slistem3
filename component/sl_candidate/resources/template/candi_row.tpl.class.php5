@@ -25,6 +25,8 @@ class CCandi_row extends CTemplate
 
   public function getDisplay($pasData, $pasField, $pasColumnParam = array(), $pasHeader = array())
   {
+    ChromePhp::log('getDisplay');
+
     $oPage = CDependency::getCpPage();
     $oDisplay = CDependency::getCpHtml();
     $oLogin = CDependency::getCpLogin();
