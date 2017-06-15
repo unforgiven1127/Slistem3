@@ -273,8 +273,11 @@ class CSl_candidateEx extends CSl_candidate
             if (strpos($newSearch, 'newSearch') !== false) {
                 $newSearchFlag = true;
             }
-            ChromePhp::log($newSearchFlag);
-            $GLOBALS['test'] = time();
+            if($newSearchFlag)
+            {
+              $GLOBALS['test'] = time();
+            }
+
             $candidateList = $this->_getCandidateList(true, $oQB);
 
             $return = $oPage->getAjaxExtraContent(array('data' => convertToUtf8($candidateList), 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); '));
