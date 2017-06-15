@@ -3034,9 +3034,16 @@ class CSl_candidateEx extends CSl_candidate
       $sSortOrder = getValue('sortorder');
 
       $sSortField_ = getValue('sSortField','non'); // burasi
-      $sSortOrder_ = getValue('sSortField','non');
-      ChromePhp::log($sSortField_);
-      ChromePhp::log($sSortOrder_);
+      $sSortOrder_ = getValue('sSortOrder','non');
+      if($sSortField_ != 'non')
+      {
+        $sSortField = $sSortField_;
+      }
+      if($sSortOrder_ != 'non')
+      {
+        $sSortOrder = $sSortOrder_;
+      }
+
 
       // =============================================================
       //TODO: to be moved when the search arrives

@@ -18,8 +18,8 @@ class CTemplateList extends CTemplate
 
   public function getDisplay($pvData,$sSortField='', $sSortOrder='')
   {
-    ChromePhp::log($sSortField);
-    ChromePhp::log($sSortOrder);
+    //ChromePhp::log($sSortField);
+    //ChromePhp::log($sSortOrder);
     $oDisplay = CDependency::getCpHtml();
 
     $oPage = CDependency::getCpPage();
