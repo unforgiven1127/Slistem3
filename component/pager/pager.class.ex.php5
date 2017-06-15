@@ -378,9 +378,9 @@ class CPagerEx extends CPager
    * $psUrl : called url when paging up down
    * $pasUrlOption : link options (to be able to manage ajax and callback function
   */
-  public function getCompactDisplay($pnResult, $psUrl, $pasUrlOption = array())
+  public function getCompactDisplay($pnResult, $psUrl, $pasUrlOption = array(),$sSortField='', $sSortOrder='')
   {
-    ChromePhp::log(debug_backtrace());
+    //ChromePhp::log(debug_backtrace());
     //ChromePhp::log($psUrl);
     //ChromePhp::log($pasUrlOption);
     if(!assert('is_integer($pnResult) && !empty($pnResult) && is_array($pasUrlOption)'))
@@ -498,6 +498,8 @@ class CPagerEx extends CPager
         else
           $sClass = ' hidden ';
 
+        $sUrl.='&sSortField='.$sSortField;
+        $sUrl.='&sSortOrder='.$sSortOrder;
         if(($nPagerOffset+1) < $nMax)
         {
           $sPager.= '<div class="pager_pageLink pager_pageLinkPic test1'.$sClass.'">';

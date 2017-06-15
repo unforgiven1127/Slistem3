@@ -3799,7 +3799,7 @@ class CSl_candidateEx extends CSl_candidate
         }
 
         //Add the list template to the html
-        $sHTML.= $oTemplate->getDisplay($asData, 1, 5, 'safdassda');
+        $sHTML.= $oTemplate->getDisplay($asData, $sSortField, $sSortOrder, 'safdassda');
 
 
         //---------------------------------------------

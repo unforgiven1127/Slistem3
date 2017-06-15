@@ -16,9 +16,10 @@ class CTemplateList extends CTemplate
     parent::__construct($poTplManager, $psUid, $pasParams, $pnTemplateNumber);
   }
 
-  public function getDisplay($pvData,$test='')
+  public function getDisplay($pvData,$sSortField='', $sSortOrder='')
   {
-    ChromePhp::log($test);
+    ChromePhp::log($sSortField);
+    ChromePhp::log($sSortOrder);
     $oDisplay = CDependency::getCpHtml();
 
     $oPage = CDependency::getCpPage();
@@ -86,7 +87,7 @@ class CTemplateList extends CTemplate
         $asPagerTop['option']['ajaxTarget'] = $sListUid;
 
 
-      $sPagerTop = $oPager->getCompactDisplay($asPagerTop['nb_result'], $asPagerTop['url'], $asPagerTop['params']);
+      $sPagerTop = $oPager->getCompactDisplay($asPagerTop['nb_result'], $asPagerTop['url'], $asPagerTop['params'],$sSortField, $sSortOrder);
       if(!empty($sPagerTop))
       {
         $sHTML.= $oDisplay->getBlocStart('', array('class' => 'tplListPagerTop '.$sClass));
