@@ -425,6 +425,8 @@ class CPagerEx extends CPager
     //Get url and js ready for pager elements
     $asOption['nbresult'] = $this->cnPagerLimit;
     $sUrl = $oPage->addUrlParams($psUrl, $asOption);
+    $sUrl.='&sSortField='.$sSortField;
+    $sUrl.='&sSortOrder='.$sSortOrder;
     $sPager = '';
 
     if($pnResult > $nPagerLimit)
@@ -498,8 +500,6 @@ class CPagerEx extends CPager
         else
           $sClass = ' hidden ';
 
-        $sUrl.='&sSortField='.$sSortField;
-        $sUrl.='&sSortOrder='.$sSortOrder;
         if(($nPagerOffset+1) < $nMax)
         {
           $sPager.= '<div class="pager_pageLink pager_pageLinkPic test1'.$sClass.'">';
