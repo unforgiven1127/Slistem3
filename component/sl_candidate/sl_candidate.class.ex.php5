@@ -3033,7 +3033,7 @@ class CSl_candidateEx extends CSl_candidate
       $sSortField = getValue('sortfield'); // burasi
       $sSortOrder = getValue('sortorder');
 
-      ChromePhp::log($sSortField);
+      //ChromePhp::log($sSortField);
 
       $sSortField_ = getValue('sSortField','non'); // burasi
       $sSortOrder_ = getValue('sSortOrder','non');
@@ -3813,6 +3813,9 @@ class CSl_candidateEx extends CSl_candidate
         }
 
         //Add the list template to the html
+        ChromePhp::log($sSortField);
+        ChromePhp::log($sSortOrder);
+
         $sHTML.= $oTemplate->getDisplay($asData, $sSortField, $sSortOrder, 'safdassda');
 
 
