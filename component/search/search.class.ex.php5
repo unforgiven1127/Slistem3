@@ -1556,6 +1556,7 @@ class CSearchEx extends CSearch
             }
             else
             {
+              ChromePhp::log($sFieldName);
               //dump(' is NOT an array');
               if($sFieldName == 'candidate_met' && $vFieldValue == "0")
               {//candidate met secilirse where kismini yazalim
