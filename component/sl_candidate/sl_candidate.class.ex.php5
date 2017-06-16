@@ -3813,8 +3813,8 @@ class CSl_candidateEx extends CSl_candidate
         }
 
         //Add the list template to the html
-        ChromePhp::log($sSortField);
-        ChromePhp::log($sSortOrder);
+        //ChromePhp::log($sSortField);
+        //ChromePhp::log($sSortOrder);
 
         $sHTML.= $oTemplate->getDisplay($asData, $sSortField, $sSortOrder, 'safdassda');
 
