@@ -1579,7 +1579,9 @@ class CSearchEx extends CSearch
             }
             if($sFieldName == 'char_note')
             {
-              $sCondition.= ' OR sln.content '.$sFieldOperator.' '.$vFieldValue;
+              $test=$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
+              //$sCondition.= ' OR sln.content '.$sFieldOperator.' '.$vFieldValue;
+              ChromePhp::log($test);
             }
             ChromePhp::log($sCondition);
           }
