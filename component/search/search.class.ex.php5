@@ -1577,6 +1577,10 @@ class CSearchEx extends CSearch
                 //dump(' where => '.$sCondition);
               }
             }
+            if($sFieldName == 'char_note')
+            {
+              $sCondition.= ' OR sln.content '.$sFieldOperator.' '.$vFieldValue;
+            }
             ChromePhp::log($sCondition);
           }
 

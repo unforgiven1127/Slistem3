@@ -1421,7 +1421,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       ),
       'sql' => array
       (
-        'field' => array('even.content','sln.content'),
+        'field' => 'even.content',
          'join' => array(
              array('type' => 'inner', 'table' => 'event_link', 'alias' => 'elin',
              'clause' => 'elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ', 'select' => '', 'where' => ''),
