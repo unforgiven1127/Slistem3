@@ -1556,7 +1556,6 @@ class CSearchEx extends CSearch
             }
             else
             {
-              ChromePhp::log($sFieldName);
               //dump(' is NOT an array');
               if($sFieldName == 'candidate_met' && $vFieldValue == "0")
               {//candidate met secilirse where kismini yazalim
@@ -1578,6 +1577,7 @@ class CSearchEx extends CSearch
                 //dump(' where => '.$sCondition);
               }
             }
+            ChromePhp::log($sCondition);
           }
 
           if(!empty($sCondition))
