@@ -66,6 +66,8 @@ echo '<br>';
 echo 'CPU usage: '.$load.'%';
 
 echo '<br><br>';
+unset($_COOKIE['PHPSESSID']);
+unset($_COOKIE['login_userdata']);
 print_r($_COOKIE);
 
 
