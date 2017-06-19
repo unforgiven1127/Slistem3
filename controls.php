@@ -66,8 +66,11 @@ echo '<br>';
 echo 'CPU usage: '.$load.'%';
 
 echo '<br><br>';
-unset($_COOKIE['PHPSESSID']);
-unset($_COOKIE['login_userdata']);
+
+$sHash = sha1($_SESSION['userData']['pk'].'|@|'.uniqid('cook_', true).'|@|'.rand(1000000, 1000000000));
+@setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), time()-3600*3, '/');
+//unset($_COOKIE['PHPSESSID']);
+//unset($_COOKIE['login_userdata']);
 print_r($_COOKIE);
 
 
