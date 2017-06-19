@@ -6,7 +6,7 @@ foreach($_COOKIE as $name => $value) {
 
 $server = $_SERVER['SERVER_NAME'];
 
-echo $server;
+//echo $server;
 
-//header("Location: https://beta2.slate.co.jp");
-//die();
+header("Location: https://".$server);
+die();
