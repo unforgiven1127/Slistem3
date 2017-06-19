@@ -1460,7 +1460,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment'] = array(
       ),
       'sql' => array
       (
-        'field' => 'even.content',
+        'field' => 'sln.content',
          'join' => array(
              array('type' => 'inner', 'table' => 'sl_notes', 'alias' => 'sln',
              'clause' => 'sln.candidate_id = scan.sl_candidatepk ', 'select' => '', 'where' => ''),
