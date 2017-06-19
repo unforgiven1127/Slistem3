@@ -67,14 +67,14 @@ echo 'CPU usage: '.$load.'%';
 
 echo '<br><br>';
 
-foreach ($_COOKIE as $name => $value) {
+/*foreach($_COOKIE as $name => $value) {
     setcookie($name, '', 1);
-}
+}*/
 //$sHash = sha1($_SESSION['userData']['pk'].'|@|'.uniqid('cook_', true).'|@|'.rand(1000000, 1000000000));
 //@setcookie('login_userdata', serialize(array('pk' => $_SESSION['userData']['pk'], 'hash' => $sHash)), time()-360000*30000, '/');
 //unset($_COOKIE['PHPSESSID']);
 //unset($_COOKIE['login_userdata']);
-print_r($_COOKIE);
+//print_r($_COOKIE);
 
 
 if(isset($_GET['f']))
