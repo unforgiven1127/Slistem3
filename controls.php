@@ -71,10 +71,14 @@ if(isset($_SERVER["REDIRECT_STATUS"]))
 {
 	$error_url = $_SERVER["REDIRECT_STATUS"] . '/';
 	echo "The error status: ".$error_url;
+	echo '<br>';
+	echo 'Response code: '.http_response_code();
 }
 else
 {
 	echo "There is no error";
+	echo '<br>';
+	echo 'Response code: '.http_response_code();
 }
 
 
