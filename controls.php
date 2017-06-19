@@ -67,8 +67,16 @@ echo 'CPU usage: '.$load.'%';
 
 echo '<br><br>';
 
-$error_url = $_SERVER["REDIRECT_STATUS"] . '/';
-echo "The error status: ".$error_url;
+if(isset($_SERVER["REDIRECT_STATUS"]))
+{
+	$error_url = $_SERVER["REDIRECT_STATUS"] . '/';
+	echo "The error status: ".$error_url;
+}
+else
+{
+	echo "There is no error";
+}
+
 
 /*foreach($_COOKIE as $name => $value) {
     setcookie($name, '', 1);
