@@ -1433,10 +1433,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
     );
 
 
-
-
-
-$asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment'] = array(
+    $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment'] = array(
       'display' => array
       (
         'fts_type'=> null,
@@ -1469,11 +1466,6 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment'] = array(
         'unmanageable' => null
       )
     );
-
-
-
-
-
 
 
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['note'] = array(

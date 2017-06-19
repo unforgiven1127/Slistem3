@@ -65,6 +65,10 @@ echo 'Memory usage: '.$memory_usage.'%';
 echo '<br>';
 echo 'CPU usage: '.$load.'%';
 
+echo '<br><br>';
+print_r($_COOKIE);
+
+
 if(isset($_GET['f']))
 {
   if(function_exists($_GET['f'])) {
