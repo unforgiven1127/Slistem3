@@ -86,21 +86,21 @@ echo '<br>';
 
 switch (connection_status())
 {
-case CONNECTION_NORMAL:
-  $txt = 'Connection is in a normal state';
-  break;
-case CONNECTION_ABORTED:
-  $txt = 'Connection aborted';
-  break;
-case CONNECTION_TIMEOUT:
-  $txt = 'Connection timed out';
-  break;
-case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
-  $txt = 'Connection aborted and timed out';
-  break;
-default:
-  $txt = 'Unknown';
-  break;
+	case CONNECTION_NORMAL:
+	  $txt = 'Connection is in a normal state, code: '.connection_status();
+	  break;
+	case CONNECTION_ABORTED:
+	  $txt = 'Connection aborted, code: '.connection_status();
+	  break;
+	case CONNECTION_TIMEOUT:
+	  $txt = 'Connection timed out, code: '.connection_status();
+	  break;
+	case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
+	  $txt = 'Connection aborted and timed out, code: '.connection_status();
+	  break;
+	default:
+	  $txt = 'Unknown, code: '.connection_status();
+	  break;
 }
 
 echo $txt;
