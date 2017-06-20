@@ -1607,6 +1607,39 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+    $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment_created_on'] = array(
+      'display' => array
+      (
+        'fts_type'=> null,
+        'type' => array('input', 'date'),
+        'label' => 'Assessment created on',
+        'group' => 'note & resume',
+        'operator' => $oSearch->getFieldOperators('date'),
+        'default_operator' => 'superior',
+        'option' => array(),
+        'value' => array(),
+        'default_value' => array(),
+        'multiple' => 10,
+        'param' => array('range' => 1),
+        'js_control' => 'jsFieldTypeDate'
+      ),
+      'data' => array
+      (
+        'type' => 'date',
+        'control' => 'is_date'
+      ),
+      'sql' => array
+      (
+        'field' => 'sln.first_activity',
+         'join' => array(
+             array('type' => 'inner', 'table' => 'sl_notes', 'alias' => 'sln',
+             'clause' => 'sln.candidate_id = scan.sl_candidatepk ', 'select' => '', 'where' => ''),),
+        'fts' => false,
+        'unmanageable' => null
+      )
+    );
+
+
 
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['resume_all'] = array(
       'display' => array
