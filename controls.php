@@ -81,7 +81,9 @@ else
 	echo 'Response code: '.http_response_code();
 }
 echo '<br>';
-echo $_SERVER['HTTPS'];
+echo 'SSL: '.$_SERVER['HTTPS'];
+echo '<br>';
+echo 'Connection status: '.connection_status();
 
 
 /*foreach($_COOKIE as $name => $value) {
