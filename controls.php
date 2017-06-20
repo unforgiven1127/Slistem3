@@ -105,7 +105,7 @@ switch (connection_status())
 
 echo $txt;
 echo '<br>';
-print_r(openssl_get_cert_locations());
+
 
 
 /*foreach($_COOKIE as $name => $value) {
