@@ -105,7 +105,7 @@ switch (connection_status())
 
 echo $txt;
 echo '<br>';
-
+echo "Server port: ".$_SERVER['SERVER_PORT'];
 
 
 /*foreach($_COOKIE as $name => $value) {
