@@ -87,23 +87,25 @@ echo '<br>';
 switch (connection_status())
 {
 	case CONNECTION_NORMAL:
-	  $txt = 'Connection is in a normal state, code: '.connection_status();
+	  $txt = 'Connection is in a normal state, code: '.connection_status();//0
 	  break;
 	case CONNECTION_ABORTED:
-	  $txt = 'Connection aborted, code: '.connection_status();
+	  $txt = 'Connection aborted, code: '.connection_status();//1
 	  break;
 	case CONNECTION_TIMEOUT:
-	  $txt = 'Connection timed out, code: '.connection_status();
+	  $txt = 'Connection timed out, code: '.connection_status();//2
 	  break;
 	case (CONNECTION_ABORTED & CONNECTION_TIMEOUT):
-	  $txt = 'Connection aborted and timed out, code: '.connection_status();
+	  $txt = 'Connection aborted and timed out, code: '.connection_status();//3
 	  break;
 	default:
-	  $txt = 'Unknown, code: '.connection_status();
+	  $txt = 'Unknown, code: '.connection_status();//? unknown
 	  break;
 }
 
 echo $txt;
+echo '<br>';
+print_r(openssl_get_cert_locations());
 
 
 /*foreach($_COOKIE as $name => $value) {
