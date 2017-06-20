@@ -80,6 +80,8 @@ else
 	echo '<br>';
 	echo 'Response code: '.http_response_code();
 }
+echo '<br>';
+echo $_SERVER['HTTPS'];
 
 
 /*foreach($_COOKIE as $name => $value) {
