@@ -878,7 +878,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    $asFields[CONST_CANDIDATE_TYPE_CANDI]['resume'] = array(
+    /*$asFields[CONST_CANDIDATE_TYPE_CANDI]['resume'] = array(
       'display' => array
       (
         'fts_type'=> null,
@@ -914,7 +914,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'fts' => false,
         'unmanageable' => null
       )
-    );
+    );*/
 
 
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['candidatepk'] = array(
@@ -1607,7 +1607,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    /*$asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment_created_on'] = array(
+    $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment_created_on'] = array(
       'display' => array
       (
         'fts_type'=> null,
@@ -1637,7 +1637,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'fts' => false,
         'unmanageable' => null
       )
-    );*/
+    );
 
 
 
