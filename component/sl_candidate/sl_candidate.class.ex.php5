@@ -3266,6 +3266,7 @@ class CSl_candidateEx extends CSl_candidate
       //$nResult = (int)$oDbResult->getFieldValue('nCount');
       $sQuery = $poQB->getSql();
       //dump($sQuery);
+ChromePhp::log($sQuery);
 
 
       $searchTitle = explode(':',$poQB->getTitle());
