@@ -15,7 +15,6 @@ class CSettingsEx extends CSettings
       $this->casSettings = $_SESSION['settings'];
     else
     {
-              return 'asasdasd';
       $this->_loadSettings();
 
       if($bRefresh && isDevelopment())
@@ -429,7 +428,7 @@ class CSettingsEx extends CSettings
   private function _loadSettings($pvString = '')
   {
     $oDB = CDependency::getComponentByName('database');
-
+return 'asasdasd';
     if(empty($pvString))
       $sQuery = 'SELECT * FROM settings';
     elseif(is_string($pvString) && !empty($pvString))
