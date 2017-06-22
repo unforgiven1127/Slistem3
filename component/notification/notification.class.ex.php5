@@ -1826,17 +1826,17 @@ class CNotificationEx extends CNotification
       $endTime = strtotime("+1 minutes", strtotime($last_mail));
       $now = strtotime(date("Y-m-d H:i:s"));
 
-      ChromePhp::log($endTime);
-      ChromePhp::log($now);
+      //ChromePhp::log($endTime);
+      //ChromePhp::log($now);
 
       if($now > $endTime)
       {
-        ChromePhp::log('OK');
+        //ChromePhp::log('OK');
       }
       else
       {
-        ChromePhp::log('less than 1 min');
-        return array('notice' => 'mail did not send.', 'action' => 'alert(\'mail did not send\'); goPopup.removeLastByType(\'layer\');');
+        //ChromePhp::log('less than 1 min');
+        return array('notice' => 'mail did not send.', 'action' => 'alert(\'Slistem can not send more than one mail in one minute \'); goPopup.removeLastByType(\'layer\');');
 
       }
       $_SESSION['last_mail_dt'] = date("Y-m-d H:i:s");
