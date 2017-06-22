@@ -44,7 +44,7 @@ require_once './common/lib/model.db_map.inc.php5';
 CDependency::initialize();
 
 sanitizeUrl();
-/*
+
 $sUid = getValue(CONST_URL_UID);
 $sAction = getValue(CONST_URL_ACTION);
 $sType = getValue(CONST_URL_TYPE);
@@ -53,6 +53,7 @@ $sPg = getValue(CONST_URL_MODE, CONST_URL_PARAM_PAGE_NORMAL);
 
 $oPage = CDependency::getCpPage();
 echo $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
+/*
 //$nNewMemory = memory_get_usage();
 //echo 'size: '.round(($nNewMemory - $nMemory)/1024, 2).'KB';
 
