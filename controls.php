@@ -109,7 +109,7 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 
 echo '<br>';
 echo '<br>';
-print_r(error_get_last());
+echo "Latest error: ".error_get_last();
 ChromePhp::log('this is CONTROLS');
 
 //header("Location: https://".$server);
