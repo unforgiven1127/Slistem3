@@ -60,7 +60,8 @@ try
 catch(Exception $e) {
   echo 'Message: ' .$e->getMessage();
 }
-echo $test;
+
+echo '<br><br>'.$test;
 /*
 echo $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
 

@@ -212,7 +212,7 @@ class CPageEx extends CPage
 
   public function getPage($psUid = '', $psAction = '', $psType = '', $pnPK = 0, $psMode = 'pg')
   {
-    return 'test';
+
     if(!assert('is_string($psUid)'))
       return '';
     if(!assert('is_string($psAction)'))
@@ -258,7 +258,7 @@ class CPageEx extends CPage
 
     $this->csActionReturn = getValue(CONST_URL_ACTION_RETURN);
     $asPageParam = array('class' => $this->getDeviceType(), 'uid' => $this->csUid);
-
+return 'test';
     $sHTML = '';
 
     //Check login status, accessrights...
