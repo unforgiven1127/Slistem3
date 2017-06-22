@@ -110,12 +110,12 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 echo '<br>';
 echo '<br>';
 
-foreach($_COOKIE as $name => $value) {
+/*foreach($_COOKIE as $name => $value) {
     echo $name.': <br>';
     echo $value.'<br>';
 	var_dump(unserialize($value));
 	echo '<br><br>---------------------------------------------';
-}
+}*/
 
 
 
