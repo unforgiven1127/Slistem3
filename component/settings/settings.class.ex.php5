@@ -438,8 +438,9 @@ class CSettingsEx extends CSettings
       $asSettings = $pvString;
       $sQuery = 'SELECT * FROM settings WHERE `fieldname` IN ('.implode(',',$asSettings).')';
     }
-return 'asasdasd';
+
     $oDbResult = $oDB->executeQuery($sQuery);
+return 'asasdasd';
     $bRead = $oDbResult->readFirst();
     if($bRead)
     {
