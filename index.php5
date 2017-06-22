@@ -1,11 +1,5 @@
 <?php
 
-<script>
-
-
-</script>
-<?php
-
 require_once './common/tracy/src/tracy.php';
 use Tracy\Debugger;
 
