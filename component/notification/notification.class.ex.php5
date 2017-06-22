@@ -1836,7 +1836,7 @@ class CNotificationEx extends CNotification
       else
       {
         ChromePhp::log('less than 1 min');
-        return array('notice' => 'mail did not send.', 'action' => 'goPopup.removeLastByType(\'layer\');');
+        return array('notice' => 'mail did not send.', 'action' => 'alert(\'mail did not send\'); goPopup.removeLastByType(\'layer\');');
 
       }
       $_SESSION['last_mail_dt'] = date("Y-m-d H:i:s");
