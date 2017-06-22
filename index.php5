@@ -105,7 +105,8 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 
 echo '<br>';
 echo '<br>';
-echo "Latest error: ".error_get_last();
+$lastErrors = error_get_last();
+var_dump($lastErrors);
 ChromePhp::log('this is CONTROLS');
 
 echo '<br>';
