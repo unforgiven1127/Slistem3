@@ -178,14 +178,14 @@ class CDatabaseEx extends CDatabase
     $fark = $sDateEnd - $sDateStart;
 
     $user_id = 'NON';
-    try
+    /*try
     {
       $oLogin = CDependency::getCpLogin();
       $user_id = $oLogin->getUserPk();
     }
     catch(Exception $e) {
       echo 'Message: ' .$e->getMessage();
-    }
+    }*/
     //$oLogin = CDependency::getCpLogin();
     //$user_id = $oLogin->getUserPk();
 
