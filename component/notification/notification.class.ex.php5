@@ -1826,7 +1826,7 @@ class CNotificationEx extends CNotification
     }
     else
     {
-      $_SESSION['last_mail_dt'] = NOW();
+      $_SESSION['last_mail_dt'] = date("Y-m-d H:i:s");
     }
 ChromePhp::log('_getReminderSave');
 ChromePhp::log($_SESSION['last_mail_dt']);
