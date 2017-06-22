@@ -34,7 +34,7 @@ require_once './common/lib/global_func.inc.php5';
 require_once './component/dependency.inc.php5';
 
 require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
-/*
+
 if (CONST_DEV_SERVER)
   Debugger::enable(Debugger::DEVELOPMENT);
 
