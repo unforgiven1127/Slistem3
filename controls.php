@@ -110,6 +110,8 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 echo '<br>';
 echo '<br>';
 
+ChromePhp::log('this is CONTROLS');
+
 header("Location: https://".$server);
 die();
 
