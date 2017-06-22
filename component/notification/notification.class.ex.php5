@@ -1824,7 +1824,7 @@ class CNotificationEx extends CNotification
     {
       $last_mail = $_SESSION['last_mail_dt'];
       $endTime = strtotime("+1 minutes", strtotime($last_mail));
-      $now = date("Y-m-d H:i:s");
+      $now = strtotime(date("Y-m-d H:i:s"));
 
       ChromePhp::log($endTime);
       ChromePhp::log($now);
