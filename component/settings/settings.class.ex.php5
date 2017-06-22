@@ -15,6 +15,7 @@ class CSettingsEx extends CSettings
       $this->casSettings = $_SESSION['settings'];
     else
     {
+              return 'asasdasd';
       $this->_loadSettings();
 
       if($bRefresh && isDevelopment())
