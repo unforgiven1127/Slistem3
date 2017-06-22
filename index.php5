@@ -44,7 +44,7 @@ require_once './common/lib/model.db_map.inc.php5';
 CDependency::initialize();
 
 sanitizeUrl();
-
+/*
 $sUid = getValue(CONST_URL_UID);
 $sAction = getValue(CONST_URL_ACTION);
 $sType = getValue(CONST_URL_TYPE);
