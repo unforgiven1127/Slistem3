@@ -127,10 +127,6 @@ class CPagerEx extends CPager
   public function getDisplay($pnResult, $psUrl, $pasUrlOption = array(),$sSortField = 'non', $sSortOrder = 'non')
   {
 
-    ChromePhp::log(debug_backtrace());
-    //ChromePhp::log($pnResult);
-    //ChromePhp::log($psUrl);
-    //ChromePhp::log($pasUrlOption);
     if(!assert('is_integer($pnResult) && is_array($pasUrlOption)') || empty($pnResult))
       return '';
 
