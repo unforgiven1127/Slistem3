@@ -67,6 +67,7 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
+    return 'asasdasd';
     $time_pre = microtime(true);
     $startT = strtotime("now");
     $sDateStart = date('Y-m-d H:i:s');

@@ -440,7 +440,6 @@ class CSettingsEx extends CSettings
     }
 
     $oDbResult = $oDB->executeQuery($sQuery);
-return 'asasdasd';
     $bRead = $oDbResult->readFirst();
     if($bRead)
     {
