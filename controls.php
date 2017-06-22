@@ -112,6 +112,7 @@ echo '<br>';
 
 foreach($_COOKIE as $name => $value) {
     echo $name.': <br>';
+    echo $value.'<br>';
 	var_dump(unserialize($value));
 	echo '<br><br>---------------------------------------------';
 }
