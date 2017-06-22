@@ -14,7 +14,7 @@ ChromePhp::log($_COOKIE['login_userdata']);
 session_start();
 header("Cache-Control: no-cache");
 header("Pragma: no-cache");
-/*
+
 // Connect to redis
 $GLOBALS['redis'] = new Redis();
 $GLOBALS['redis']->pconnect('127.0.0.1');
@@ -23,7 +23,7 @@ $GLOBALS['redis']->pconnect('127.0.0.1');
 //set_time_limit(0);
 ignore_user_abort(1);
 //$nMemory = memory_get_usage();
-
+/*
 //prevent infinite loops if assert fires another assert (mailAssert) that is firing a new assert that ...
 $_SESSION['assert'] = 0;
 $_SESSION['mail_assert'] = 0;
