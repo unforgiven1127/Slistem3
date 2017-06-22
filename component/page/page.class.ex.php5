@@ -243,7 +243,7 @@ class CPageEx extends CPage
     $this->coRight = CDependency::getComponentByName('right');
     if(empty($this->coRight))
       exit('Could not load rights component. Sorry, you can not go further.');
-
+return 'test';
     //*****************************************************************
     //*****************************************************************
     //gather and initialize some parameters
@@ -258,7 +258,7 @@ class CPageEx extends CPage
 
     $this->csActionReturn = getValue(CONST_URL_ACTION_RETURN);
     $asPageParam = array('class' => $this->getDeviceType(), 'uid' => $this->csUid);
-return 'test';
+
     $sHTML = '';
 
     //Check login status, accessrights...
