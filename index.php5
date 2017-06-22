@@ -52,6 +52,7 @@ $nPk = (int)getValue(CONST_URL_PK, 0);
 $sPg = getValue(CONST_URL_MODE, CONST_URL_PARAM_PAGE_NORMAL);
 
 $oPage = CDependency::getCpPage();
+/*
 try
 {
   $test =  $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
@@ -59,7 +60,7 @@ try
 catch(Exception $e) {
   echo 'Message: ' .$e->getMessage();
 }
-/*
+
 echo $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
 
 //$nNewMemory = memory_get_usage();
