@@ -7,13 +7,14 @@ use Tracy\Debugger;
 require_once './common/lib/db_session.inc.php5';
 require_once './common/lib/ChromePhp.php';
 //require_once './common/lib/verticalSlider/js/jquery.totemticker.js';
+echo 'this is index';
 ChromePhp::log('this is index');
 ChromePhp::log($_COOKIE['login_userdata']);
 
-/*session_start();
+session_start();
 header("Cache-Control: no-cache");
 header("Pragma: no-cache");
-
+/*
 // Connect to redis
 $GLOBALS['redis'] = new Redis();
 $GLOBALS['redis']->pconnect('127.0.0.1');
