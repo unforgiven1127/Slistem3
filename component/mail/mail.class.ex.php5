@@ -521,7 +521,7 @@ class CMailEx extends CMail
       @imap_close($oMailBox);
     }
 
-
+    sleep(5);//5sn uyutalim bakalm
     return $bSent;
   }
 
