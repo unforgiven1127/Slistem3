@@ -1823,13 +1823,19 @@ class CNotificationEx extends CNotification
     if(isset($_SESSION['last_mail_dt']))
     {
       $last_mail = $_SESSION['last_mail_dt'];
+      $endTime = strtotime("+1 minutes", strtotime($last_mail));
+      $now = date("Y-m-d H:i:s");
+
+      ChromePhp::log($endTime);
+      ChromePhp::log($now);
+
     }
     else
     {
       $_SESSION['last_mail_dt'] = date("Y-m-d H:i:s");
     }
-ChromePhp::log('_getReminderSave');
-ChromePhp::log($_SESSION['last_mail_dt']);
+//ChromePhp::log('_getReminderSave');
+
     if(!assert('is_integer($pnReminderPk)'))
       return array('error' => 'Bad parameters.');
 
