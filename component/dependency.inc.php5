@@ -292,7 +292,7 @@ class CDependency
 
       case 'settings':
         require_once('component/settings/settings.class.ex.php5');
-        echo $sAction.' - '.$sType.' - '.$nPK.' - '.$sMode;
+        echo '<br><br>'.$sAction.' - '.$sType.' - '.$nPK.' - '.$sMode;
         return 'asasdasd';
         self::$asInstancies['settings'] = new CSettingsEx($sAction, $sType, $nPK, $sMode);
         break;
