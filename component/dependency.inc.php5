@@ -142,7 +142,7 @@ class CDependency
       assert('false; //Dependency error line '.__LINE__.': '.$psComponentName.' '.$psInterface);
       exit();
     }
-return 'test';
+
     //optimize compatibility
     $psComponentName = strtolower($psComponentName);
 
@@ -166,7 +166,7 @@ return 'test';
       $nPK = '';
       $sMode = '';
     }
-
+return 'test';
     switch($psComponentName)
     {
       case 'gb_user':
