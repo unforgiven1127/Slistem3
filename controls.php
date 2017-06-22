@@ -115,6 +115,8 @@ ChromePhp::log('this is CONTROLS');
 echo '<br>';
 echo '<br>';
 echo 'user data: '.$_COOKIE['login_userdata'];
+echo '<br>';
+echo 'sess id: '.$_COOKIE['PHPSESSID'];
 //header("Location: https://".$server);
 //die();
 
