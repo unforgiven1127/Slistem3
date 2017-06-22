@@ -168,7 +168,7 @@ class CDatabaseEx extends CDatabase
         return  false;
       }
     }
-return 'asasdasd';
+
     $time_post = microtime(true);
     $endT = strtotime("now");
     $exec_time = $endT - $startT;
@@ -179,7 +179,7 @@ return 'asasdasd';
 
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
-
+return 'asasdasd';
     $free = shell_exec('free');
     $free = (string)trim($free);
     $free_arr = explode("\n", $free);
