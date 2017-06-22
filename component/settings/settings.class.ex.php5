@@ -428,7 +428,7 @@ class CSettingsEx extends CSettings
   private function _loadSettings($pvString = '')
   {
     $oDB = CDependency::getComponentByName('database');
-return 'asasdasd';
+
     if(empty($pvString))
       $sQuery = 'SELECT * FROM settings';
     elseif(is_string($pvString) && !empty($pvString))
@@ -438,7 +438,7 @@ return 'asasdasd';
       $asSettings = $pvString;
       $sQuery = 'SELECT * FROM settings WHERE `fieldname` IN ('.implode(',',$asSettings).')';
     }
-
+return 'asasdasd';
     $oDbResult = $oDB->executeQuery($sQuery);
     $bRead = $oDbResult->readFirst();
     if($bRead)
