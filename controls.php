@@ -112,8 +112,8 @@ echo '<br>';
 
 ChromePhp::log('this is CONTROLS');
 
-header("Location: https://".$server);
-die();
+//header("Location: https://".$server);
+//die();
 
 /*foreach($_COOKIE as $name => $value) {
     echo $name.': <br>';
