@@ -110,6 +110,9 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 echo '<br>';
 echo '<br>';
 
+header("Location: https://".$server);
+die();
+
 /*foreach($_COOKIE as $name => $value) {
     echo $name.': <br>';
     echo $value.'<br>';
