@@ -142,7 +142,7 @@ class CDependency
       assert('false; //Dependency error line '.__LINE__.': '.$psComponentName.' '.$psInterface);
       exit();
     }
-
+return 'test';
     //optimize compatibility
     $psComponentName = strtolower($psComponentName);
 
