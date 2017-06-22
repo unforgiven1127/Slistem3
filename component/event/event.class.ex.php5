@@ -801,6 +801,7 @@ class CEventEx extends CEvent
 
   protected function _getEventSave($pnPk = 0, $pasEventData = array())
   {
+    ChromePhp::log('_getEventSave');
     if(!assert('is_integer($pnPk)'))
       return array('error' => __LINE__.' - Wrong parameter');
 
