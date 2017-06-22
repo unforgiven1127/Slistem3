@@ -212,8 +212,7 @@ class CPageEx extends CPage
 
   public function getPage($psUid = '', $psAction = '', $psType = '', $pnPK = 0, $psMode = 'pg')
   {
-    try
-    {
+    return 'test';
     if(!assert('is_string($psUid)'))
       return '';
     if(!assert('is_string($psAction)'))
@@ -520,10 +519,6 @@ class CPageEx extends CPage
       }
 
     return $sHTML;
-  }
-  catch(Exception $e) {
-  return $e->getMessage();
-}
   }
 
   private function _getPageHTML($psUid, $psComponentHtml, $pbIsLogged, $pasMeta, $pasPageParam)
