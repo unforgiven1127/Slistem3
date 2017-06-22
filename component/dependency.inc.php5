@@ -166,7 +166,7 @@ class CDependency
       $nPK = '';
       $sMode = '';
     }
-return 'test';
+
     switch($psComponentName)
     {
       case 'gb_user':
@@ -292,6 +292,7 @@ return 'test';
 
       case 'settings':
         require_once('component/settings/settings.class.ex.php5');
+        return 'test';
         self::$asInstancies['settings'] = new CSettingsEx($sAction, $sType, $nPK, $sMode);
         break;
 
