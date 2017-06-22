@@ -67,7 +67,6 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
-    return 'asasdasd';
     $time_pre = microtime(true);
     $startT = strtotime("now");
     $sDateStart = date('Y-m-d H:i:s');
@@ -77,7 +76,7 @@ class CDatabaseEx extends CDatabase
 
     if(!$this->dbConnect())
       exit('can\'t connect db in ExecuteQuery line '.__LINE__);
-
+return 'asasdasd';
     //doesn't accept UNION query for now
     $sQueryType = strtolower(substr(trim($psQuery), 0, 3));
     if($sQueryType == 'sel')
