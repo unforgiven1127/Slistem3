@@ -292,8 +292,8 @@ class CDependency
 
       case 'settings':
         require_once('component/settings/settings.class.ex.php5');
-        return 'test';
         self::$asInstancies['settings'] = new CSettingsEx($sAction, $sType, $nPK, $sMode);
+        return 'test';
         break;
 
       case 'portal':
