@@ -112,15 +112,18 @@ echo '<br>';
 echo "Latest error: ".error_get_last();
 ChromePhp::log('this is CONTROLS');
 
+echo '<br>';
+echo '<br>';
+echo 'user data: '.$_COOKIE['login_userdata'];
 //header("Location: https://".$server);
 //die();
 
-foreach($_COOKIE as $name => $value) {
+/*foreach($_COOKIE as $name => $value) {
     echo $name.': <br>';
     echo $value.'<br>';
 	var_dump(unserialize($value));
 	echo '<br><br>---------------------------------------------';
-}
+}*/
 
 
 
