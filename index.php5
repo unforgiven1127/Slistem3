@@ -52,6 +52,8 @@ $nPk = (int)getValue(CONST_URL_PK, 0);
 $sPg = getValue(CONST_URL_MODE, CONST_URL_PARAM_PAGE_NORMAL);
 
 $oPage = CDependency::getCpPage();
+
+$test =  $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
 /*
 echo $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
 
