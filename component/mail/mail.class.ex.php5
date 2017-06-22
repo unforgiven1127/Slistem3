@@ -542,7 +542,6 @@ class CMailEx extends CMail
       }
     }
 
-
     return implode(',', $asTo);
   }
 

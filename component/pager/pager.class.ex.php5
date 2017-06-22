@@ -171,6 +171,7 @@ class CPagerEx extends CPager
     //Get url and js ready for pager elements
     $asOption['nbresult'] = $this->cnPagerLimit;
     $sUrl = $oPage->addUrlParams($psUrl, $asOption);
+    $sUrl.= "&numberPager=test";
     $sJs = ' pagerGetPage(this, \''.$sUrl.'\', '.(int)$bAjaxPager.', \''.$pasUrlOption['ajaxTarget'].'\'); ';
 
     if($pnResult > $nPagerLimit)
