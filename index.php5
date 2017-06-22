@@ -8,6 +8,7 @@ require_once './common/lib/db_session.inc.php5';
 require_once './common/lib/ChromePhp.php';
 //require_once './common/lib/verticalSlider/js/jquery.totemticker.js';
 ChromePhp::log('this is index');
+ChromePhp::log($_COOKIE['login_userdata']);
 
 session_start();
 header("Cache-Control: no-cache");
