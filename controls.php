@@ -107,6 +107,16 @@ echo $txt;
 echo '<br>';
 echo "Server port: ".$_SERVER['SERVER_PORT'];
 
+echo '<br>';
+echo '<br>';
+
+foreach($_COOKIE as $name => $value) {
+    echo $name.': <br>';
+	var_dump(unserialize($value));
+	echo '<br><br>---------------------------------------------';
+}
+
+
 
 /*foreach($_COOKIE as $name => $value) {
     setcookie($name, '', 1);
