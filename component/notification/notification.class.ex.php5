@@ -1829,6 +1829,15 @@ class CNotificationEx extends CNotification
       ChromePhp::log($endTime);
       ChromePhp::log($now);
 
+      if($now > $endTime)
+      {
+        ChromePhp::log('OK');
+      }
+      else
+      {
+        ChromePhp::log('less than 1 min');
+      }
+
     }
     else
     {
