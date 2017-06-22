@@ -342,7 +342,7 @@ class CTemplateList extends CTemplate
       if(isset($asPagerBottom['params']['nb_result']))
         $oPager->setLimit($asPagerBottom['params']['nb_result']);
 
-      $sHTML.= $oPager->getDisplay($asPagerBottom['nb_result'], $asPagerBottom['url'], $asPagerBottom['params']);
+      $sHTML.= $oPager->getDisplay($asPagerBottom['nb_result'], $asPagerBottom['url'], $asPagerBottom['params'],$sSortField, $sSortOrder);
 
       $sHTML.= $oDisplay->getBlocEnd();
       $sHTML.= $oDisplay->getFloatHack();

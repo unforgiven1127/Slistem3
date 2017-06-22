@@ -124,7 +124,7 @@ class CPagerEx extends CPager
    * $psUrl : called url when paging up down
    * $pasUrlOption : link options (to be able to manage ajax and callback function
    */
-  public function getDisplay($pnResult, $psUrl, $pasUrlOption = array())
+  public function getDisplay($pnResult, $psUrl, $pasUrlOption = array(),$sSortField = 'non', $sSortOrder = 'non')
   {
 
     ChromePhp::log(debug_backtrace());
@@ -176,7 +176,8 @@ class CPagerEx extends CPager
     //Get url and js ready for pager elements
     $asOption['nbresult'] = $this->cnPagerLimit;
     $sUrl = $oPage->addUrlParams($psUrl, $asOption);
-    $sUrl.= "&numberPager=test";
+    $sUrl.='&sSortField='.$sSortField;
+    $sUrl.='&sSortOrder='.$sSortOrder;
     $sJs = ' pagerGetPage(this, \''.$sUrl.'\', '.(int)$bAjaxPager.', \''.$pasUrlOption['ajaxTarget'].'\'); ';
 
     if($pnResult > $nPagerLimit)
