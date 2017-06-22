@@ -181,6 +181,7 @@ class CDatabaseEx extends CDatabase
     try
     {
       $oLogin = CDependency::getCpLogin();
+      $user_id = $oLogin->getUserPk();
     }
     catch(Exception $e) {
       echo 'Message: ' .$e->getMessage();
