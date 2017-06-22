@@ -50,10 +50,10 @@ $sAction = getValue(CONST_URL_ACTION);
 $sType = getValue(CONST_URL_TYPE);
 $nPk = (int)getValue(CONST_URL_PK, 0);
 $sPg = getValue(CONST_URL_MODE, CONST_URL_PARAM_PAGE_NORMAL);
-
+/*
 $oPage = CDependency::getCpPage();
 echo $oPage->getPage($sUid, $sAction, $sType, $nPk, $sPg);
-/*
+
 //$nNewMemory = memory_get_usage();
 //echo 'size: '.round(($nNewMemory - $nMemory)/1024, 2).'KB';
 
