@@ -5850,6 +5850,7 @@ class CSl_candidateEx extends CSl_candidate
               return array('error' => __LINE__.' - All skill areas should have a value between 1 - 9');
             }
           }
+          $totalNote = "";
           foreach ($characterNoteArray as $key => $value)
           {
             if((isset($value) && !empty($value)))

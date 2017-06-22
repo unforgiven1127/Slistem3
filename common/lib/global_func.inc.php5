@@ -5157,12 +5157,15 @@ var_dump($query);*/
   {
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
+    $oEvent = CDependency::getComponentByName('sl_event');
 
     $candidate_id = $array['candidate_id'];
     $type = $array['type'];
     $content = $array['content'];
     $content = str_replace('\'','`',$content);
     $user_id = $array['user_id'];
+
+    $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);//for search
 
     $sQuery = "INSERT INTO `sl_notes` (`candidate_id`,`type`,`content`,`user_id`, `first_activity`, `last_activity`)
                VALUES('".$candidate_id."','".$type."','".$content."','".$user_id."','".$sDate."','".$sDate."')";
