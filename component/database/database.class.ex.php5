@@ -177,10 +177,9 @@ class CDatabaseEx extends CDatabase
 
     $fark = $sDateEnd - $sDateStart;
 
-    $oLogin = CDependency::getCpLogin();
-return 'asasdasd';
-    $user_id = $oLogin->getUserPk();
-
+    //$oLogin = CDependency::getCpLogin();
+    //$user_id = $oLogin->getUserPk();
+$user_id = 'NON';
     $free = shell_exec('free');
     $free = (string)trim($free);
     $free_arr = explode("\n", $free);
