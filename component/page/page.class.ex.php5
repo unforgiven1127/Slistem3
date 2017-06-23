@@ -235,7 +235,6 @@ class CPageEx extends CPage
     if(empty($this->csMode))
       $this->csMode = $psMode;
 
-//return 'test';
     $this->coSettings = CDependency::getComponentByName('settings');
 
     if(empty($this->coSettings))

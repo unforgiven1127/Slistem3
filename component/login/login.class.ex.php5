@@ -1441,7 +1441,8 @@ class CLoginEx extends CLogin
 
     signature_save($user_id, $signature);
 
-    header("Location: https://beta2.slate.co.jp/");
+    $server = $_SERVER['SERVER_NAME'];
+    header("Location: https://".$server);
     die();
   }
 
