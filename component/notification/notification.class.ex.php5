@@ -750,7 +750,7 @@ class CNotificationEx extends CNotification
         }
 
       }
-
+ChromePhp::log($message_info);
       //We manage the replyTo above, so we don't add the sender automatically
       $poMail->setFrom(CONST_PHPMAILER_EMAIL, CONST_PHPMAILER_DEFAULT_FROM, false);
       $poMail->addRecipient($sEmail, $sRecipient);
