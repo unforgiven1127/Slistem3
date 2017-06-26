@@ -768,9 +768,8 @@ class CNotificationEx extends CNotification
           $bcc = $cc = '';
           $uploaded_files = array();
           $templateFlag = true;
-          $returnValue = mail_send($message_info['mailTo'],$cc,$bcc, $from, $message_info['title'], $message_info['message'], $uploaded_files, $templateFlag, $replyTo);
+          $returnValue = mail_send($message_info['mailTo'],$cc,$bcc, $from, $sSubject, $message_info['message'], $uploaded_files, $templateFlag, $replyTo);
           $nSent = 1;
-          return true;
       }
       else
       {
