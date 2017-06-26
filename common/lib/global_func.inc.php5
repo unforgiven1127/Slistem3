@@ -4680,7 +4680,7 @@ var_dump($query);*/
     return $db_result;
   }
 
-  function mail_send($to,$cc,$bcc, $from, $subject, $message, $files)
+  function mail_send($to,$cc,$bcc, $from, $subject, $message, $files, $templateFlag = false)
   {
     $oMail = CDependency::getComponentByName('mail');
 
@@ -4711,7 +4711,8 @@ var_dump($query);*/
 
     $emptyArray = array();
     //$GLOBALS['redis']->set('emailTepmlate', false);
-    $oResult = $oMail->send($subject, $message,'',$files,'',$emptyArray,false);//, '', $attachment
+    $oResult = $oMail->send($subject, $message,'',$files,'',$emptyArray,$templateFlag);
+    //, '', $attachment
     //$GLOBALS['redis']->set('emailTepmlate', true);
     return $oResult;
   }
