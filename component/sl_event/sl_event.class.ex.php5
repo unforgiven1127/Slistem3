@@ -112,7 +112,7 @@ class CSl_eventEx extends CSl_event
     if(!assert('is_key($pnItemPk) && !empty($psItemType)'))
       return array();
 
-ChromePhp::log($psNoteType);
+//ChromePhp::log($psNoteType);
 
     if($psNoteType != 'character')
     {

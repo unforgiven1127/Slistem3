@@ -1497,7 +1497,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
              array('type' => 'inner', 'table' => 'event_link', 'alias' => 'elin',
              'clause' => 'elin.cp_pk = scan.sl_candidatepk AND elin.cp_uid = "555-001" AND elin.cp_type = "candi" AND elin.cp_action = "ppav" ', 'select' => '', 'where' => ''),
              array('type' => 'inner', 'table' => 'event', 'alias' => 'even',
-             'clause' => 'even.eventpk = elin.eventfk AND even.type <> "character" ', 'select' => '', 'where' => '')),
+             'clause' => 'even.eventpk = elin.eventfk AND even.type NOT IN ("character","past_note","compensation_note","move_note","education_note","personality_note","career_note") ', 'select' => '', 'where' => '')),
         'fts' => false,
         'unmanageable' => null
       )
