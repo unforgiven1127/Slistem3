@@ -8904,6 +8904,7 @@ $bonusManual = getValue('bonus');
           }
           elseif(!empty($pnCandidatePk))
           {
+            ChromePhp::log('HERE?');
             $oNote = CDependency::getComponentByName('sl_event');
             $asNote = $oNote->getNotes($pnCandidatePk, CONST_CANDIDATE_TYPE_CANDI, 'character');
             $newCharacterNotes = getSlNotes($pnCandidatePk);
