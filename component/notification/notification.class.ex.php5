@@ -779,6 +779,7 @@ class CNotificationEx extends CNotification
 
       if($nSent)//1 geliyor
       {
+        ChromePhp::log($nSent);
         foreach ($user_messages as $message_info)
         {
           $sNagDate = $this->_getNextNagDate($message_info);
@@ -814,6 +815,8 @@ class CNotificationEx extends CNotification
             $this->_getModel()->ExecuteQuery($sUpdate);
           }
         }
+
+        ChromePhp::log('END');
       }
       else
       {
