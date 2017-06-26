@@ -4682,6 +4682,7 @@ var_dump($query);*/
 
   function mail_send($to,$cc,$bcc, $from, $subject, $message, $files, $templateFlag = false, $replyTo = array())
   {
+    ChromePhp::log('mail_send');
     $oMail = CDependency::getComponentByName('mail');
 
     $oMail->createNewEmail();
