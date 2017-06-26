@@ -723,6 +723,9 @@ class CNotificationEx extends CNotification
 
       }
       $sMessage.= '</div>';
+      if (strpos($message_info['title'], 'DBA request') !== false) {
+          ChromePhp::log('INCLUDE DBA REQUEST');
+      }
 ChromePhp::log($message_info);
       //-------------------------------
       //send the email
