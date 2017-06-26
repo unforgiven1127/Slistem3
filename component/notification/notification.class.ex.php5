@@ -759,11 +759,11 @@ class CNotificationEx extends CNotification
       {
         // redirect to new mail system,...
           $replyTo = explode(',',$message_info['mailTo']);
-          /*if(($key = array_search($message_info['email'], $replyTo)) !== false) {
+          if(($key = array_search($message_info['email'], $replyTo)) !== false) {
               unset($replyTo[$key]);
           }
           $sReplyAdd = $pasUsers[$message_info['creatorfk']]['email'];
-          array_push($replyTo,$sReplyAdd);*/
+          array_push($replyTo,$sReplyAdd);
 
           $bcc = $cc = '';
           $uploaded_files = array();
