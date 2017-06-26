@@ -4708,6 +4708,13 @@ var_dump($query);*/
         $oMail->addBCCRecipient(trim($value));
       }
     }
+    if(!empty($replyTo))
+    {
+      foreach ($replyTo as $key => $value)
+      {
+        $oMail->setReplyTo(trim($value));
+      }
+    }
 
     $emptyArray = array();
     //$GLOBALS['redis']->set('emailTepmlate', false);
