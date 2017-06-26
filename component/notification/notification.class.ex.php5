@@ -635,20 +635,12 @@ class CNotificationEx extends CNotification
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
         // build the message
-        ChromePhp::log($candidate_info);
-        ChromePhp::log($candidate_info);
+        //
         if(isset($message_info['type']) && $message_info['type'] == 'email')
         {
           // $sSubject = CONST_APP_NAME;
-          if(strpos($message_info['title'], 'DBA request') !== false && $message_info['naggy'] == 0)
-          {
-            $sUser = $this->coLogin->getUserLink((int)$message_info['creatorfk']);
 
-            $sDate = date('l jS F', strtotime($message_info['date_notification']));
-            $sTime = date('H:i', strtotime($message_info['date_notification']));
-            $sMessage.= $sUser.' has sent you a request on '.$sDate.' at '.$sTime.'.<br /><br />';
-          }
-          else if($message_info['creatorfk'] != $message_info['loginfk'])
+          if($message_info['creatorfk'] != $message_info['loginfk'])
           {
             $sUser = $this->coLogin->getUserLink((int)$message_info['creatorfk']);
 
