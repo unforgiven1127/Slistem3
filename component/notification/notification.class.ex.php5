@@ -723,6 +723,7 @@ class CNotificationEx extends CNotification
 
       }
       $sMessage.= '</div>';
+ChromePhp::log($message_info);
       //-------------------------------
       //send the email
       $poMail->createNewEmail();
@@ -732,8 +733,6 @@ class CNotificationEx extends CNotification
       {
         if(!empty($sendCCString))
         {
-          ChromePhp::log('here if');
-          ChromePhp::log($message_info);
           foreach ($sendCC as $key => $value)
           {
             $poMail->setReplyTo($value);
@@ -743,14 +742,12 @@ class CNotificationEx extends CNotification
         }
         else
         {
-          ChromePhp::log('here else');
-          ChromePhp::log($message_info);
           $sReply = $pasUsers[$message_info['creatorfk']]['email'];
           $poMail->setReplyTo($sReply, $this->coLogin->getUserNameFromData($pasUsers[$message_info['creatorfk']], false, true));
         }
 
       }
-ChromePhp::log($message_info);
+
       //We manage the replyTo above, so we don't add the sender automatically
       $poMail->setFrom(CONST_PHPMAILER_EMAIL, CONST_PHPMAILER_DEFAULT_FROM, false);
       $poMail->addRecipient($sEmail, $sRecipient);
