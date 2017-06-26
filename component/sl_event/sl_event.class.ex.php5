@@ -114,6 +114,13 @@ class CSl_eventEx extends CSl_event
 
 ChromePhp::log($psNoteType);
 
+    if($psNoteType != 'character')
+    {
+      $addExcludeArray = array('past_note','compensation_note','move_note','education_note','personality_note','career_note');
+
+      $pasExcludeType = array_merge($pasExcludeType,$addExcludeArray);
+    }
+
     $asNotes = array();
     $asNotes = $this->getNotes($pnItemPk, $psItemType, $psNoteType, $pasExcludeType);
 
