@@ -723,11 +723,13 @@ class CNotificationEx extends CNotification
 
       }
       $sMessage.= '</div>';
+
       if (strpos($message_info['title'], 'DBA request') !== false && $message_info['naggy'] == 0)
       {
+        // redirect to new mail system,...
           ChromePhp::log('INCLUDE DBA REQUEST and NO NAGGY');
       }
-ChromePhp::log($message_info);
+
       //-------------------------------
       //send the email
       $poMail->createNewEmail();
@@ -759,8 +761,16 @@ ChromePhp::log($message_info);
 
       $sSubject .= '__'.$sendCCString;//  Sl[i]stem daily reminders __ burada ekleniyor
 
-      $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
-
+      //if (strpos($message_info['title'], 'DBA request') !== false && $message_info['naggy'] == 0)
+      //{
+        // redirect to new mail system,...
+      //    ChromePhp::log('INCLUDE DBA REQUEST and NO NAGGY');
+      //}
+      //else
+      //{
+        $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
+      //}
+ChromePhp::log($nSent);
       add_remainder_log($message_info['notificationpk'],$sEmail);
 
       if($nSent)

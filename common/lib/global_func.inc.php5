@@ -4680,7 +4680,7 @@ var_dump($query);*/
     return $db_result;
   }
 
-  function mail_send($to,$cc,$bcc, $from, $subject, $message, $files, $templateFlag = false)
+  function mail_send($to,$cc,$bcc, $from, $subject, $message, $files, $templateFlag = false, $replyTo = array())
   {
     $oMail = CDependency::getComponentByName('mail');
 
