@@ -568,6 +568,7 @@ class CNotificationEx extends CNotification
 
   private function _executeAction($pasAction, $poMail, $pasUsers)
   {
+    ChromePhp::log($pasAction);
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
@@ -641,7 +642,7 @@ class CNotificationEx extends CNotification
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
         // build the message
-ChromePhp::log($message_info);
+
         if(isset($message_info['title']) && strpos($message_info['title'], 'DBA request') !== false)
         {
 //ChromePhp::log('INSIDE???');
