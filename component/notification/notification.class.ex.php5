@@ -635,8 +635,10 @@ class CNotificationEx extends CNotification
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
         // build the message
+ChromePhp::log($message_info);
         if(isset($message_info['title']) && strpos($message_info['title'], 'DBA request') !== false)
         {
+ChromePhp::log('INSIDE???');
           $sUser = $this->coLogin->getUserLink((int)$message_info['creatorfk']);
 
           $sDate = date('l jS F', strtotime($message_info['date_notification']));
