@@ -500,6 +500,7 @@ class CNotificationEx extends CNotification
     $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
 
     $bRead = $oDbResult->readFirst();
+ChromePhp::log($bRead);
     if(!$bRead)
     {
       if($pbManual)
@@ -568,7 +569,7 @@ class CNotificationEx extends CNotification
 
   private function _executeAction($pasAction, $poMail, $pasUsers)
   {
-    ChromePhp::log($pasAction);
+
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
