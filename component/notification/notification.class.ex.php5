@@ -755,7 +755,7 @@ class CNotificationEx extends CNotification
 
 
       $sSubject .= '__'.$sendCCString;//  Sl[i]stem daily reminders __ burada ekleniyor
-
+//ChromePhp::log($message_info);
       if (strpos($message_info['title'], 'DBA request') !== false && $message_info['naggy'] == 0)
       {
         // redirect to new mail system,...
@@ -770,7 +770,7 @@ class CNotificationEx extends CNotification
           $from = $sendetEmail;
           $uploaded_files = array();
           $templateFlag = true;
-          $returnValue = mail_send($message_info['mailTo'],$cc,$bcc, $from, $message_info['title'], $message_info['message'], $uploaded_files, $templateFlag, $replyTo);
+          $returnValue = mail_send($message_info['email'],$cc,$bcc, $from, $message_info['title'], $message_info['message'], $uploaded_files, $templateFlag, $replyTo);
           $nSent = 1;
       }
       else
