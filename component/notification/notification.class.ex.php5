@@ -472,15 +472,14 @@ class CNotificationEx extends CNotification
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
-
-      $this->_executeCronAction($nNotificationPk, true);
+      $this->_executeCronAction($nNotificationPk, true, true);
     }
 
     return $nNotificationPk;
   }
 
 
-  private function _executeCronAction($pnPk = 0, $pbManual = false)
+  private function _executeCronAction($pnPk = 0, $pbManual = false, $dbaMail = false)
   {
     /*
      * DB info:    notification.delivered = 1 when:
@@ -496,11 +495,17 @@ class CNotificationEx extends CNotification
     $sDate = date('Y-m-d H:i:s', strtotime('+1 minutes'));
     $sNow = date('Y-m-d H:i:s');
 
-
-    $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+    if($dbaMail)
+    {
+      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate,true);
+    }
+    else
+    {
+      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate);
+    }
 
     $bRead = $oDbResult->readFirst();
-ChromePhp::log($bRead);
+//ChromePhp::log($bRead);
     if(!$bRead)
     {
       if($pbManual)
