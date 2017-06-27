@@ -774,7 +774,7 @@ class CNotificationEx extends CNotification
           }
           $sReplyAdd = $pasUsers[$message_info['creatorfk']]['email'];
           array_push($replyTo,$sReplyAdd);
-
+ChromePhp::log($sMessage);
           $bcc = $cc = '';
           $from = $sendetEmail;
           $uploaded_files = array();
