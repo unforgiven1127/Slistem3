@@ -398,9 +398,11 @@ class CNotificationEx extends CNotification
     $asAdd = array('date_created' => date('Y-m-d H:i:s'), 'creatorfk' => $this->coLogin->getUserPk(), 'date_notification' => $psDate,
         'content' => $this->casInitId[$psId]['user_msg'], 'message' => $psMessage, 'title' => $psTitle, 'message_format' => 'html', 'type' => 'reminder', 'delivered' => 0);
 
+    $dbaMail = false;
     if(isset($psTitle) && strpos($psTitle, 'DBA request') !== false)
     {//DBA i bu sekilde gondermiyoruz artik
       $asAdd['delivered'] = 1;
+      $dbaMail = true;
     }
 
     if(!empty($this->casSetting[$psId]))
@@ -472,7 +474,7 @@ class CNotificationEx extends CNotification
     //if the reminder is schedule in the next half hour, we don't wait for the cron and laucnh it now'
     if($psDate < date('Y-m-d H:i:s', strtotime('+ 30 minutes')))
     {
-      $this->_executeCronAction($nNotificationPk, true, true);
+      $this->_executeCronAction($nNotificationPk, true, $dbaMail);
     }
 
     return $nNotificationPk;
