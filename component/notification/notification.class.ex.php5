@@ -498,8 +498,8 @@ class CNotificationEx extends CNotification
     $sNow = date('Y-m-d H:i:s');
 
     if($dbaMail)
-    {
-      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate,true);
+    {//here delivered = 1 thats why we need to send true
+      $oDbResult = $this->_getModel()->getNotificationDetails($pnPk, $sDate, true);
     }
     else
     {
@@ -1881,7 +1881,7 @@ class CNotificationEx extends CNotification
       //ChromePhp::log($endTime);
       //ChromePhp::log($now);
 
-      if($now > $endTime)
+      /*if($now > $endTime)
       {
         //ChromePhp::log('OK');
       }
@@ -1890,7 +1890,7 @@ class CNotificationEx extends CNotification
         //ChromePhp::log('less than 1 min');
         return array('notice' => 'mail did not send.', 'action' => 'alert(\'Slistem can not send more than one mail in one minute \'); goPopup.removeLastByType(\'layer\');');
 
-      }
+      }*/
       $_SESSION['last_mail_dt'] = date("Y-m-d H:i:s");
 
     }
