@@ -644,6 +644,9 @@ class CNotificationEx extends CNotification
           $sDate = date('l jS F', strtotime($message_info['date_notification']));
           $sTime = date('H:i', strtotime($message_info['date_notification']));
           $sMessage.= $sUser.' has sent you a request on '.$sDate.' at '.$sTime.'.<br /><br />';
+
+          $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
+          $sMessage.= $message_info['message'].'</div>';
         }
         else if(isset($message_info['type']) && $message_info['type'] == 'email')
         {
