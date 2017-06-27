@@ -635,7 +635,7 @@ class CNotificationEx extends CNotification
         $sMessage.= '<div style="margin-top: 10px;">';
         //-------------------------------
         // build the message
-        //
+ChromePhp::log($message_info);
         if(isset($message_info['type']) && $message_info['type'] == 'email')
         {
           // $sSubject = CONST_APP_NAME;
