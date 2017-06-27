@@ -345,6 +345,7 @@ class CNotificationEx extends CNotification
    */
   public function addReminder($psId, $pvRecipientfk, $psMessage, $psTitle = '', $psDate = null, $pnNaggy = 0, $psNagFreq = null, $pbIsHtml = false)
   {
+    ChromePhp::log($psTitle);
     if(!isset($this->casInitId[$psId]) || empty($this->casInitId[$psId]))
     {
       assert('false; // no reminder ID... ');
@@ -643,7 +644,7 @@ class CNotificationEx extends CNotification
 
           $sDate = date('l jS F', strtotime($message_info['date_notification']));
           $sTime = date('H:i', strtotime($message_info['date_notification']));
-          $sMessage.= $sUser.' has sent you a request on '.$sDate.' at '.$sTime.'.<br /><br />';
+          $sMessage.= $sUser.' has sent you a DBA request on '.$sDate.' at '.$sTime.'.<br /><br />';
 
           $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
           $sMessage.= $message_info['message'].'</div>';
@@ -777,7 +778,7 @@ class CNotificationEx extends CNotification
           }
           $sReplyAdd = $pasUsers[$message_info['creatorfk']]['email'];
           array_push($replyTo,$sReplyAdd);
-ChromePhp::log($sMessage);
+//ChromePhp::log($sMessage);
           $bcc = $cc = '';
           $from = $sendetEmail;
           $uploaded_files = array();
@@ -794,7 +795,7 @@ ChromePhp::log($sMessage);
 
       if($nSent)//1 geliyor
       {
-        ChromePhp::log($nSent);
+        //ChromePhp::log($nSent);
         foreach ($user_messages as $message_info)
         {
           $sNagDate = $this->_getNextNagDate($message_info);
@@ -831,7 +832,7 @@ ChromePhp::log($sMessage);
           }
         }
 
-        ChromePhp::log('END');
+        //ChromePhp::log('END');
       }
       else
       {
