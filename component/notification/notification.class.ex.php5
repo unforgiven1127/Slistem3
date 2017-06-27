@@ -345,7 +345,7 @@ class CNotificationEx extends CNotification
    */
   public function addReminder($psId, $pvRecipientfk, $psMessage, $psTitle = '', $psDate = null, $pnNaggy = 0, $psNagFreq = null, $pbIsHtml = false)
   {
-    ChromePhp::log($psTitle);
+    //ChromePhp::log($psTitle);
     if(!isset($this->casInitId[$psId]) || empty($this->casInitId[$psId]))
     {
       assert('false; // no reminder ID... ');
@@ -397,6 +397,11 @@ class CNotificationEx extends CNotification
 
     $asAdd = array('date_created' => date('Y-m-d H:i:s'), 'creatorfk' => $this->coLogin->getUserPk(), 'date_notification' => $psDate,
         'content' => $this->casInitId[$psId]['user_msg'], 'message' => $psMessage, 'title' => $psTitle, 'message_format' => 'html', 'type' => 'reminder', 'delivered' => 0);
+
+    if(isset($psTitle) && strpos($psTitle, 'DBA request') !== false)
+    {//DBA i bu sekilde gondermiyoruz artik
+      $asAdd['delivered'] = 1;
+    }
 
     if(!empty($this->casSetting[$psId]))
     {
