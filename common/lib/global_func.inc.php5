@@ -4682,7 +4682,7 @@ var_dump($query);*/
 
   function mail_send($to,$cc,$bcc, $from, $subject, $message, $files, $templateFlag = false, $replyTo = array())
   {
-    ChromePhp::log('mail_send');
+    //ChromePhp::log('mail_send');
     $oMail = CDependency::getComponentByName('mail');
 
     $oMail->createNewEmail();
@@ -4691,7 +4691,7 @@ var_dump($query);*/
     $oMail->addRecipient($to);
 
     if(!$templateFlag)
-    {
+    {//DBA should not keep from bcc
       $oMail->addBCCRecipient($from);
     }
 
