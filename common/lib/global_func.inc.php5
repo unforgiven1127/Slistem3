@@ -4690,7 +4690,11 @@ var_dump($query);*/
 
     $oMail->addRecipient($to);
 
-    $oMail->addBCCRecipient($from);
+    if(!$templateFlag)
+    {
+      $oMail->addBCCRecipient($from);
+    }
+
     $oMail->addBCCRecipient('slistem@slate.co.jp');
 
     if(!empty($cc))
