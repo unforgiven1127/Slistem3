@@ -159,10 +159,14 @@ class CPortalSlistemEx extends CPortalEx
           {
             $asData = $oDbResult->getData();
 
-            //$candidate_id = $asData['cp_pk'];
+            $candidate_id = 0;
+            if(isset($asData['cp_pk']))
+            {
+              $candidate_id = $asData['cp_pk'];
+            }
             $sURL = $oPage->getAjaxUrl('notification', CONST_ACTION_LIST, CONST_NOTIFY_TYPE_NOTIFICATION, (int)$asData['notificationpk'], array('filter_date' => substr($asData['date_notification'], 0, 10)));
 
-            //$sURL.='&candidateID='.$candidate_id;
+            $sURL.='&candidateID='.$candidate_id;
 
             $sText = $asData['title'];
             if(!empty($sText))
@@ -184,6 +188,8 @@ class CPortalSlistemEx extends CPortalEx
               $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText);
             else
               $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText, 'class' => 'home_naggy');
+
+            $asReminder['candidate_id'] = $candidate_id;
 
             $bRead = $oDbResult->readNext();
 
@@ -433,6 +439,10 @@ Reminder linked to item', '2013-10-05 08:00:00');
       else
       {
         $cp_pk = 0;
+        if(isset($asActivity['candidate_id']))
+        {
+          $cp_pk = $asActivity['candidate_id'];
+        }
         if(isset($asActivity['cp_pk']))
         {
           $cp_pk = (int)$asActivity['cp_pk'];
