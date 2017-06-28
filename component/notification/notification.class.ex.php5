@@ -807,7 +807,6 @@ class CNotificationEx extends CNotification
         $reminderFlag = true;
         if($reminderFlag)
         {
-          sleep(10);
           $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
           add_remainder_log($message_info['notificationpk'],$sEmail);// sadece gonderince ekleyelim
@@ -869,6 +868,10 @@ class CNotificationEx extends CNotification
         assert('false; /* could not sent a email to ['.$sRecipient.', '.$sEmail.'] '.$poMail->getErrors(true).' */');
       }
 
+    }
+    if(isset($reminderFlag))
+    {
+      sleep(10);
     }
   }
 
