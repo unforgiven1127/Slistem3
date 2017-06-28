@@ -158,7 +158,11 @@ class CPortalSlistemEx extends CPortalEx
           while($bRead)
           {
             $asData = $oDbResult->getData();
-            ChromePhp::log($asData);
+            foreach ($asData as $key => $value)
+            {
+              ChromePhp::log($value);
+            }
+            //ChromePhp::log($asData);
             $sURL = $oPage->getAjaxUrl('notification', CONST_ACTION_LIST, CONST_NOTIFY_TYPE_NOTIFICATION, (int)$asData['notificationpk'], array('filter_date' => substr($asData['date_notification'], 0, 10)));
 
             $sText = $asData['title'];
