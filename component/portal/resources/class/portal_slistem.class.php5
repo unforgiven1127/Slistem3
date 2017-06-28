@@ -159,10 +159,10 @@ class CPortalSlistemEx extends CPortalEx
           {
             $asData = $oDbResult->getData();
 
-            $candidate_id = $asData['cp_pk'];
+            //$candidate_id = $asData['cp_pk'];
             $sURL = $oPage->getAjaxUrl('notification', CONST_ACTION_LIST, CONST_NOTIFY_TYPE_NOTIFICATION, (int)$asData['notificationpk'], array('filter_date' => substr($asData['date_notification'], 0, 10)));
 
-            $sURL.='&candidateID='.$candidate_id;
+            //$sURL.='&candidateID='.$candidate_id;
 
             $sText = $asData['title'];
             if(!empty($sText))
@@ -408,7 +408,7 @@ Reminder linked to item', '2013-10-05 08:00:00');
 
     foreach($mainPageShortcuts as $asActivity)
     {
-
+ChromePhp::log($asActivity);
       if($asActivity['text'] = strip_tags($asActivity['text']))
         $asActivity['text'] = mb_strimwidth($asActivity['text'], 0, 60, '...');
 
