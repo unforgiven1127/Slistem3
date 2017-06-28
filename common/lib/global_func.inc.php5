@@ -3094,7 +3094,7 @@ var_dump($query);*/
     $sDate = date('Y-m-d H:i:s');
   }
 
-  function add_remainder_log($notification_id,$mail,$location = 'createFunction')
+  function add_remainder_log($notification_id,$mail,$location = 'createFunctionn')
   {
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
