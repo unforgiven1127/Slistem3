@@ -4729,6 +4729,26 @@ var_dump($query);*/
     return $oResult;
   }
 
+  function chechReminderDelivered($notification_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT * FROM remainder_log lg WHERE lg.notification_id = '".$notification_id."' ";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    if(isset($result[0]['id']))
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+
   function securityCheckContactView($user_id)
   {
 
