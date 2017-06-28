@@ -871,7 +871,7 @@ class CNotificationEx extends CNotification
     }
     if(isset($reminderFlag))
     {
-      sleep(10);
+      sleep(20);
     }
   }
 
