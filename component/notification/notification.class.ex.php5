@@ -1740,6 +1740,7 @@ class CNotificationEx extends CNotification
       }
       else
       {
+        $thisIsReminder = true;
         $sTitle = 'Create a new reminder';
         $sBtnLabel = 'Save reminder';
       }
@@ -1835,7 +1836,7 @@ class CNotificationEx extends CNotification
     $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
 
 
-
+// ADVANCED START
     $oForm->sectionStart('', array('folded' => 1), 'Advanced options');
 
       $oForm->addField('misc', '', array('type' => 'text', 'label' => '&nbsp;', 'text'=> '<span style="font-size: 11px; colro: #666;">
@@ -1861,6 +1862,7 @@ class CNotificationEx extends CNotification
       //$oForm->addField('checkbox', 'notify_recipient', array('legend' => '&nbsp;', 'label' => 'Send a copy to the recipient when saved'));
 
     $oForm->sectionEnd();
+//ADVANCED END
 
     $returnHtml = $oForm->getDisplay();
     $returnHtml .= "<script>  $('#formSubmitButton').click(function(e){
