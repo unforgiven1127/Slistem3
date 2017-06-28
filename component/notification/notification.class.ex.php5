@@ -576,7 +576,6 @@ class CNotificationEx extends CNotification
 
   private function _executeAction($pasAction, $poMail, $pasUsers)
   {
-
     $sNow = date('Y-m-d H:i:s');
 
     $oPage = CDependency::getCpPage();
