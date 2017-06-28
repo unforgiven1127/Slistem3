@@ -3096,7 +3096,7 @@ var_dump($query);*/
 
   function add_remainder_log($notification_id,$mail,$location = 'createFunction')
   {
-    $location.=$_SERVER['SERVER_NAME'];
+    $location.='_'.$_SERVER['SERVER_NAME'];
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
 
