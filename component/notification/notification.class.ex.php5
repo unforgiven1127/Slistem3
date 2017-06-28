@@ -712,7 +712,7 @@ class CNotificationEx extends CNotification
           $sMessage.= '<br /><span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
 
           $newDate = date('Y-m-d H:i:s');
-          $sMessage.= " ".$newDate;
+          //$sMessage.= " ".$newDate;
           $sMessage.= '<br /><br />';
           $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
 
