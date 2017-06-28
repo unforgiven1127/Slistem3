@@ -4730,11 +4730,11 @@ var_dump($query);*/
     return $oResult;
   }
 
-  function chechReminderDelivered($notification_id)
+  function chechReminderDelivered($notification_id,$email)
   {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM remainder_log lg WHERE lg.notification_id = '".$notification_id."' ";
+    $sQuery = "SELECT * FROM remainder_log lg WHERE lg.notification_id = '".$notification_id."' AND lg.mailTo = '".$email."'";
 
     $db_result = $oDB->executeQuery($sQuery);
 

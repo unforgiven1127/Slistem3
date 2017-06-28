@@ -802,9 +802,9 @@ class CNotificationEx extends CNotification
       else
       {
         //check reminder delivered or not...
-        //$reminderFlag = chechReminderDelivered($message_info['notificationpk']);
+        $reminderFlag = chechReminderDelivered($message_info['notificationpk'],$message_info['email']);
         //farkli kisilere gidecekse ayni notification id yi kullaniyor. sadece sleep ile deneyelim...
-        $reminderFlag = true;
+        //$reminderFlag = true;
         if($reminderFlag)
         {
           $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
