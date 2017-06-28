@@ -185,11 +185,9 @@ class CPortalSlistemEx extends CPortalEx
               goPopup.setLayerFromAjax(oConf, \''.$sURL.'\'); ';
 
             if( (int)$asData['naggy'] == 0)
-              $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText);
+              $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText, 'candidate_id' => $candidate_id);
             else
-              $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText, 'class' => 'home_naggy');
-
-            $asReminder['candidate_id'] = $candidate_id;
+              $asReminder[] = array('log_link' => 'javascript:;" onclick="'.$sJavascript.';', 'log_date' => $asData['date_notification'], 'text' => $sText, 'class' => 'home_naggy', 'candidate_id' => $candidate_id);
 
             $bRead = $oDbResult->readNext();
 
