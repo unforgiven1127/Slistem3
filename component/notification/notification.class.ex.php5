@@ -801,13 +801,14 @@ class CNotificationEx extends CNotification
       }
       else
       {
-        //chech reminder delivered or not...
+        //check reminder delivered or not...
         $reminderFlag = chechReminderDelivered($message_info['notificationpk']);
         if($reminderFlag)
         {
           $nSent = $poMail->send($sSubject, $sMessage, strip_tags(str_ireplace(array('<br>', '<br/>', '<br />'), "\n", $sMessage)));
 
           add_remainder_log($message_info['notificationpk'],$sEmail);// sadece gonderince ekleyelim
+          sleep(10);
         }
       }
 
