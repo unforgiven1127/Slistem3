@@ -802,6 +802,7 @@ class CNotificationEx extends CNotification
       else
       {
         //check reminder delivered or not...
+        sleep(20);
         $reminderFlag = chechReminderDelivered($message_info['notificationpk'],$sEmail);
         //farkli kisilere gidecekse ayni notification id yi kullaniyor. sadece sleep ile deneyelim...
         //$reminderFlag = true;
@@ -869,10 +870,7 @@ class CNotificationEx extends CNotification
       }
 
     }
-    if(isset($reminderFlag))
-    {
-      sleep(20);
-    }
+
   }
 
   /**
