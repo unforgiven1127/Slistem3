@@ -4750,7 +4750,7 @@ ChromePhp::log($pnPk);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $candidateDoneMeetings = getCandidateCompletedMeetings($pnCandiPk);
-      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
 
       $characterNoteControlFlag = false;
 ChromePhp::log($candidateActiveMeetingsLength);
