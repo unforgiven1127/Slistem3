@@ -695,39 +695,17 @@ class CSl_eventEx extends CSl_event
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
+ChromePhp::log($candidateActiveMeetingsLength);
+      if($candidateActiveMeetingsLength > 0)
       {
         $characterNoteControlFlag = true;
       }
-
-      $continueFlag = true;
-      if($validCharacterNotesLength > 0)
+      //$characterNoteControlFlag = false;
+      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
       {
         $characterNoteControlFlag = true;
-        //direk buraya $characterNoteControlFlag = true; koyabiliriz zaten assessment girilmis
-        /*foreach ($validCharacterNotes as $key => $value)
-        {
-          if($continueFlag)
-          {
-            $noteDate = strtotime($key);
-            $todaysDate = strtotime(date('Y-m-d H:i:s'));
-
-            $sub = $todaysDate - $noteDate;
-            $days = $sub / 86400;
-
-            if($days > 365)
-            {// bu kisimi kaldiralim mi
-              $characterNoteControlFlag = false;
-            }
-            else
-            {
-              $characterNoteControlFlag = true;
-              $continueFlag = false;
-            }
-          }
-        }*/
-
       }
+ChromePhp::log($characterNoteControlFlag);
       /*if(isset($pnPk) && $pnPk > 0)
       {
         $characterNoteControlFlag = true;
