@@ -4746,11 +4746,22 @@ ChromePhp::log($pnPk);
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
+      $candidateActiveMeetings = getCandidateActiveMeetings($pnCandiPk);
+      $candidateActiveMeetingsLength = count($candidateActiveMeetings);
+
+ChromePhp::log($candidateActiveMeetingsLength);
       $characterNoteControlFlag = false;
-      if($validCharacterNotesLength > 0)
+      if($candidateActiveMeetingsLength > 0)
       {
         $characterNoteControlFlag = true;
       }
+      //$characterNoteControlFlag = false;
+      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
+      {
+        $characterNoteControlFlag = true;
+      }
+ChromePhp::log($characterNoteControlFlag);
+
       if($characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));
