@@ -688,7 +688,6 @@ class CSl_eventEx extends CSl_event
 
     if($sEventType == 'character')
     {// eklenmis 10 lu varsa eskisi gibi sadece tek alan gosterilecek
-
       $validCharacterNotes = getSlNotes($nCp_Pk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
@@ -696,15 +695,48 @@ class CSl_eventEx extends CSl_event
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
-      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
+      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-ChromePhp::log($candidateActiveMeetingsLength);
-ChromePhp::log($candidateDoneMeetingsLength);
-      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
+      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
       {
         $characterNoteControlFlag = true;
       }
+
+      $continueFlag = true;
+      if($validCharacterNotesLength > 0)
+      {//direk buraya $characterNoteControlFlag = true; koyabiliriz
+        foreach ($validCharacterNotes as $key => $value)
+        {
+          if($continueFlag)
+          {
+            $noteDate = strtotime($key);
+            $todaysDate = strtotime(date('Y-m-d H:i:s'));
+
+            $sub = $todaysDate - $noteDate;
+            $days = $sub / 86400;
+
+            if($days > 365)
+            {// bu kisimi kaldiralim mi
+              $characterNoteControlFlag = false;
+            }
+            else
+            {
+              $characterNoteControlFlag = true;
+              $continueFlag = false;
+            }
+          }
+        }
+
+      }
+      /*if(isset($pnPk) && $pnPk > 0)
+      {
+        $characterNoteControlFlag = true;
+      }*/
+      /*if($validCharacterNotesLength > 0)
+      {
+        $characterNoteControlFlag = true;
+      }*/
       $adminEdit = false;
       $data['ControlAllAreas'] = 'false';
       if(isset($combinedIDs) && !empty($combinedIDs))
@@ -725,14 +757,15 @@ ChromePhp::log($candidateDoneMeetingsLength);
         }
         $data['EditTheNotes'] = rtrim($data['EditTheNotes'], "-");
       }
-ChromePhp::log($characterNoteControlFlag);
-      if(!$characterNoteControlFlag && !$adminEdit)
+
+      if($characterNoteControlFlag && !$adminEdit)
       {
         $oForm->addField('textarea', 'character', array('style'=>'height:350px','label'=>'Character note', 'value' => $oDbResult->getFieldValue('content'), 'isTinymce' => 1));
         $oForm->setFieldControl('character', array('jsFieldMinSize' => '2','jsFieldMaxSize' => 9000));
       }
       else
       {
+
         if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
         {
           $characterNoteControlFlag = true;

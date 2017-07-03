@@ -4746,33 +4746,12 @@ ChromePhp::log($pnPk);
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
-      $candidateActiveMeetings = getCandidateActiveMeetings($pnCandiPk);
-      $candidateActiveMeetingsLength = count($candidateActiveMeetings);
-
-      $candidateDoneMeetings = getCandidateCompletedMeetings($pnCandiPk);
-      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
-
       $characterNoteControlFlag = false;
-ChromePhp::log($candidateActiveMeetingsLength);
-ChromePhp::log($candidateDoneMeetingsLength);
-      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
+      if($validCharacterNotesLength > 0)
       {
         $characterNoteControlFlag = true;
       }
-      /*if($candidateActiveMeetingsLength == 0)
-      {// herhangi bir meeting ayarlanmamis ise tek character note
-        $characterNoteControlFlag = true;
-      }
-      if($candidateDoneMeetingsLength > 0)
-      {// previously met
-        $characterNoteControlFlag = true;
-      }*/
-      /*if($validCharacterNotesLength > 0)
-      {
-        $characterNoteControlFlag = true;
-      }*/
-ChromePhp::log($characterNoteControlFlag);
-      if(!$characterNoteControlFlag)
+      if($characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));
       }
@@ -5664,13 +5643,13 @@ ChromePhp::log($characterNoteControlFlag);
       $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
-      $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
-      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
-
       $characterNoteControlFlag = false;
-ChromePhp::log($candidateActiveMeetingsLength);
-ChromePhp::log($candidateDoneMeetingsLength);
-      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
+      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
+      {
+        $characterNoteControlFlag = true;
+      }
+      $characterNoteControlFlag = false;
+      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
       {
         $characterNoteControlFlag = true;
       }
@@ -5768,8 +5747,8 @@ ChromePhp::log($candidateDoneMeetingsLength);
     }
 
     //SALARY CONTROL
-ChromePhp::log($characterNoteControlFlag);
-      if($characterNoteControlFlag)
+
+      if(!$characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
         {
