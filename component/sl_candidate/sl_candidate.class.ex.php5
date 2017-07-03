@@ -4743,24 +4743,31 @@ ChromePhp::log($pnPk);
 
       //$oForm->addField('textarea', 'meeting_note', array('label' => 'add a character note'));
 
+      $characterNoteControlFlag = false;
+
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
       $candidateActiveMeetings = getCandidateActiveMeetings($pnCandiPk);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
-ChromePhp::log($candidateActiveMeetingsLength);
+      $candidateDoneMeetings = getCandidateCompletedMeetings($pnCandiPk);
+      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength > 0)
+      if($candidateActiveMeetingsLength == 0)
+      {// herhangi bir meeting ayarlanmamis ise tek character note
+        $characterNoteControlFlag = true;
+      }
+      if($candidateDoneMeetingsLength == 0)
+      {// previously met
+        $characterNoteControlFlag = true;
+      }
+      $continueFlag = true;
+      if($validCharacterNotesLength > 0)
       {
         $characterNoteControlFlag = true;
       }
-      //$characterNoteControlFlag = false;
-      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
-      {
-        $characterNoteControlFlag = true;
-      }
-ChromePhp::log($characterNoteControlFlag);
 
       if($characterNoteControlFlag)
       {
@@ -4768,6 +4775,7 @@ ChromePhp::log($characterNoteControlFlag);
       }
       else
       {
+
         $skillArray = array();
         $skillArray['skill_ag'] = '0';
         $skillArray['skill_ap'] = '0';
@@ -5612,7 +5620,6 @@ ChromePhp::log($characterNoteControlFlag);
      */
     private function _updateMeetingDone($pnMeetingPk)
     {
-      ChromePhp::log('_updateMeetingDone');
       if(!assert('is_key($pnMeetingPk)'))
         return array('error' => 'Could not find the meeting');
 
@@ -5648,24 +5655,32 @@ ChromePhp::log($characterNoteControlFlag);
       $candidate_id = $nCandidatefk;
       $hiddenCharacter = getValue('hiddenCharacter'); //newForm olunca yeni form...
 
+            $characterNoteControlFlag = false;
+
       $validCharacterNotes = getSlNotes($candidate_id);
       $validCharacterNotesLength = count($validCharacterNotes);
 
       $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
-ChromePhp::log($candidateActiveMeetingsLength);
+      $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
+      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+
       $characterNoteControlFlag = false;
       if($candidateActiveMeetingsLength == 0)
+      {// herhangi bir meeting ayarlanmamis ise tek character note
+        $characterNoteControlFlag = true;
+      }
+      if($candidateDoneMeetingsLength == 0)
+      {// previously met
+        $characterNoteControlFlag = true;
+      }
+      $continueFlag = true;
+      if($validCharacterNotesLength > 0)
       {
         $characterNoteControlFlag = true;
       }
-      //$characterNoteControlFlag = false;
-      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
-      {
-        $characterNoteControlFlag = true;
-      }
-ChromePhp::log($characterNoteControlFlag);
+
       //character notunu burada eklemek istedik...
       $characterNoteArray = array();
       $addedFlag = true;

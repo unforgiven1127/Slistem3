@@ -1470,11 +1470,24 @@ function _live_dump($pvTrace, $psTitle = null)
     return $result;
   }
 
-  function getCandidateActiveMeetings($candidate_id)
-  {//Rossana asked we will consider old meetings...
+  function getCandidateCompletedMeetings($candidate_id)
+  {
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
+    $sQuery = "SELECT * FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done = '1'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
+  function getCandidateActiveMeetings($candidate_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT * FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done = '0'";
 
     $db_result = $oDB->executeQuery($sQuery);
 

@@ -694,18 +694,23 @@ class CSl_eventEx extends CSl_event
       $candidateActiveMeetings = getCandidateActiveMeetings($nCp_Pk);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
-      $characterNoteControlFlag = false;
-ChromePhp::log($candidateActiveMeetingsLength);
-      if($candidateActiveMeetingsLength > 0)
-      {
-        $characterNoteControlFlag = true;
-      }
-      //$characterNoteControlFlag = false;
-      if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
-      {
-        $characterNoteControlFlag = true;
-      }
+      $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
+      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
+      $characterNoteControlFlag = false;
+      if($candidateActiveMeetingsLength == 0)
+      {// herhangi bir meeting ayarlanmamis ise tek character note
+        $characterNoteControlFlag = true;
+      }
+      if($candidateDoneMeetingsLength == 0)
+      {// previously met
+        $characterNoteControlFlag = true;
+      }
+      $continueFlag = true;
+      if($validCharacterNotesLength > 0)
+      {
+        $characterNoteControlFlag = true;
+      }
       /*if(isset($pnPk) && $pnPk > 0)
       {
         $characterNoteControlFlag = true;
@@ -734,8 +739,7 @@ ChromePhp::log($candidateActiveMeetingsLength);
         }
         $data['EditTheNotes'] = rtrim($data['EditTheNotes'], "-");
       }
-ChromePhp::log($characterNoteControlFlag);
-ChromePhp::log($adminEdit);
+
       if($characterNoteControlFlag && !$adminEdit)
       {
         $oForm->addField('textarea', 'character', array('style'=>'height:350px','label'=>'Character note', 'value' => $oDbResult->getFieldValue('content'), 'isTinymce' => 1));
@@ -744,8 +748,8 @@ ChromePhp::log($adminEdit);
       else
       {
 
-        if($candidateActiveMeetingsLength == 0)
-        {// herhangi bir meeting ayarlanmamis ise tek character note
+        if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
+        {
           $characterNoteControlFlag = true;
         }
         //$data['EditTheNotes'] = 'false';
