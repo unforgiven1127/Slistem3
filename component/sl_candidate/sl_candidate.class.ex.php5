@@ -5643,7 +5643,7 @@ ChromePhp::log($pnPk);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
+      if($candidateActiveMeetingsLength > 0)
       {
         $characterNoteControlFlag = true;
       }
