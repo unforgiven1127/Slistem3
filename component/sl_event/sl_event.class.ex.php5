@@ -696,7 +696,7 @@ class CSl_eventEx extends CSl_event
 
       $characterNoteControlFlag = false;
 ChromePhp::log($candidateActiveMeetingsLength);
-      if($candidateActiveMeetingsLength > 0)
+      if($candidateActiveMeetingsLength == 0)
       {
         $characterNoteControlFlag = true;
       }
