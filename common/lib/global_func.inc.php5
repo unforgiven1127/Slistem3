@@ -1470,6 +1470,32 @@ function _live_dump($pvTrace, $psTitle = null)
     return $result;
   }
 
+  function control6box($candidate_id)
+  {
+    $validCharacterNotes = getSlNotes($nCp_Pk);
+    $validCharacterNotesLength = count($validCharacterNotes);
+
+    $candidateActiveMeetings = getCandidateActiveMeetings($nCp_Pk);
+    $candidateActiveMeetingsLength = count($candidateActiveMeetings);
+
+    $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
+    $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+
+    $controlFlag = false;//dont show 6 box
+
+    /*if($validCharacterNotesLength == 0)
+    {
+      $controlFlag = true;// will show 6 box
+    }*/
+    if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0 && $validCharacterNotesLength == 0)
+    {// there is active meeting and no past meeting
+      $controlFlag = true;// will show 6 box
+    }
+
+    return $controlFlag;
+
+  }
+
   function getCandidateCompletedMeetings($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');

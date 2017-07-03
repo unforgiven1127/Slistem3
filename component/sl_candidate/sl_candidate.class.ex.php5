@@ -4746,11 +4746,8 @@ ChromePhp::log($pnPk);
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
-      $characterNoteControlFlag = false;
-      if($validCharacterNotesLength > 0)
-      {
-        $characterNoteControlFlag = true;
-      }
+      $characterNoteControlFlag = control6box($candidate_id);
+
       if($characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));

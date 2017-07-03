@@ -697,46 +697,8 @@ class CSl_eventEx extends CSl_event
       $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
       $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
-      $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
-      {
-        $characterNoteControlFlag = true;
-      }
+      $characterNoteControlFlag = control6box($candidate_id);
 
-      $continueFlag = true;
-      if($validCharacterNotesLength > 0)
-      {//direk buraya $characterNoteControlFlag = true; koyabiliriz
-        foreach ($validCharacterNotes as $key => $value)
-        {
-          if($continueFlag)
-          {
-            $noteDate = strtotime($key);
-            $todaysDate = strtotime(date('Y-m-d H:i:s'));
-
-            $sub = $todaysDate - $noteDate;
-            $days = $sub / 86400;
-
-            if($days > 365)
-            {// bu kisimi kaldiralim mi
-              $characterNoteControlFlag = false;
-            }
-            else
-            {
-              $characterNoteControlFlag = true;
-              $continueFlag = false;
-            }
-          }
-        }
-
-      }
-      /*if(isset($pnPk) && $pnPk > 0)
-      {
-        $characterNoteControlFlag = true;
-      }*/
-      /*if($validCharacterNotesLength > 0)
-      {
-        $characterNoteControlFlag = true;
-      }*/
       $adminEdit = false;
       $data['ControlAllAreas'] = 'false';
       if(isset($combinedIDs) && !empty($combinedIDs))
