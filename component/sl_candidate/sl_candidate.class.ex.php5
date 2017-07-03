@@ -5647,7 +5647,7 @@ ChromePhp::log($pnPk);
       {
         $characterNoteControlFlag = true;
       }
-      $characterNoteControlFlag = false;
+      //$characterNoteControlFlag = false;
       if($validCharacterNotesLength > 0) // ilgili bolumleri iceriyor mu bakmamiz gerekiyor.
       {
         $characterNoteControlFlag = true;
