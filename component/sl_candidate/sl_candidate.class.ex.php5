@@ -4743,8 +4743,6 @@ ChromePhp::log($pnPk);
 
       //$oForm->addField('textarea', 'meeting_note', array('label' => 'add a character note'));
 
-      $characterNoteControlFlag = false;
-
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
@@ -4755,20 +4753,24 @@ ChromePhp::log($pnPk);
       $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0)
+      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
+      {
+        $characterNoteControlFlag = true;
+      }
+      /*if($candidateActiveMeetingsLength == 0)
       {// herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
       if($candidateDoneMeetingsLength > 0)
       {// previously met
         $characterNoteControlFlag = true;
-      }
-      if($validCharacterNotesLength > 0)
+      }*/
+      /*if($validCharacterNotesLength > 0)
       {
         $characterNoteControlFlag = true;
-      }
+      }*/
 
-      if($characterNoteControlFlag)
+      if(!$characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));
       }
