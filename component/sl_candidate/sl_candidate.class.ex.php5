@@ -4759,7 +4759,7 @@ ChromePhp::log($pnPk);
       {// herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
-      if($candidateDoneMeetingsLength == 0)
+      if($candidateDoneMeetingsLength > 0)
       {// previously met
         $characterNoteControlFlag = true;
       }
@@ -5671,7 +5671,7 @@ ChromePhp::log($pnPk);
       {// herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
-      if($candidateDoneMeetingsLength == 0)
+      if($candidateDoneMeetingsLength > 0)
       {// previously met
         $characterNoteControlFlag = true;
       }
