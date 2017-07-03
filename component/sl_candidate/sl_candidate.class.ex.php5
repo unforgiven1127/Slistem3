@@ -5658,8 +5658,6 @@ ChromePhp::log($characterNoteControlFlag);
       $candidate_id = $nCandidatefk;
       $hiddenCharacter = getValue('hiddenCharacter'); //newForm olunca yeni form...
 
-            $characterNoteControlFlag = false;
-
       $validCharacterNotes = getSlNotes($candidate_id);
       $validCharacterNotesLength = count($validCharacterNotes);
 
@@ -5667,19 +5665,12 @@ ChromePhp::log($characterNoteControlFlag);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
-      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0)
-      {// herhangi bir meeting ayarlanmamis ise tek character note
-        $characterNoteControlFlag = true;
-      }
-      if($candidateDoneMeetingsLength > 0)
-      {// previously met
-        $characterNoteControlFlag = true;
-      }
-      $continueFlag = true;
-      if($validCharacterNotesLength > 0)
+ChromePhp::log($candidateActiveMeetingsLength);
+ChromePhp::log($candidateDoneMeetingsLength);
+      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
       {
         $characterNoteControlFlag = true;
       }

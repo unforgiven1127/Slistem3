@@ -688,6 +688,7 @@ class CSl_eventEx extends CSl_event
 
     if($sEventType == 'character')
     {// eklenmis 10 lu varsa eskisi gibi sadece tek alan gosterilecek
+
       $validCharacterNotes = getSlNotes($nCp_Pk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
@@ -695,30 +696,15 @@ class CSl_eventEx extends CSl_event
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
-      $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+      $candidateDoneMeetingsLength = count($candidateDoneMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0)
-      {// herhangi bir meeting ayarlanmamis ise tek character note
-        $characterNoteControlFlag = true;
-      }
-      if($candidateDoneMeetingsLength > 0)
-      {// previously met
-        $characterNoteControlFlag = true;
-      }
-      $continueFlag = true;
-      if($validCharacterNotesLength > 0)
+ChromePhp::log($candidateActiveMeetingsLength);
+ChromePhp::log($candidateDoneMeetingsLength);
+      if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
       {
         $characterNoteControlFlag = true;
       }
-      /*if(isset($pnPk) && $pnPk > 0)
-      {
-        $characterNoteControlFlag = true;
-      }*/
-      /*if($validCharacterNotesLength > 0)
-      {
-        $characterNoteControlFlag = true;
-      }*/
       $adminEdit = false;
       $data['ControlAllAreas'] = 'false';
       if(isset($combinedIDs) && !empty($combinedIDs))
