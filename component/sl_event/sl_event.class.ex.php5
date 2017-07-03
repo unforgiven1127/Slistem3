@@ -739,7 +739,7 @@ class CSl_eventEx extends CSl_event
         }
         $data['EditTheNotes'] = rtrim($data['EditTheNotes'], "-");
       }
-
+ChromePhp::log($characterNoteControlFlag);
       if($characterNoteControlFlag && !$adminEdit)
       {
         $oForm->addField('textarea', 'character', array('style'=>'height:350px','label'=>'Character note', 'value' => $oDbResult->getFieldValue('content'), 'isTinymce' => 1));
