@@ -2,6 +2,7 @@
 
     require_once('component/jobboard/jobboard.class.php5');
     require_once('component/taaggregator/resources/lib/encoding_converter.class.php5');
+    require_once('./common/lib/global_func.inc.php5');
 
     define('DB_NAME_SLISTEM','slistem');
     define('DB_SERVER_SLISTEM', '127.0.0.1');
