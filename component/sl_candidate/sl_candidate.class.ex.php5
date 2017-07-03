@@ -4769,7 +4769,7 @@ ChromePhp::log($pnPk);
       {
         $characterNoteControlFlag = true;
       }*/
-
+ChromePhp::log($characterNoteControlFlag);
       if(!$characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));
