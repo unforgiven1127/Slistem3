@@ -11,7 +11,7 @@
     mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
     mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
-    $oEvent = CDependency::getComponentByName('sl_event');
+    //$oEvent = CDependency::getComponentByName('sl_event');
 
     $slistemQuery = " SELECT * FROM sl_notes ";
     $slistemQuery = mysql_query($slistemQuery);
@@ -21,14 +21,16 @@
 
     $count = 0;
 
-    while($meetingData = mysql_fetch_assoc($slistemQuery))
+    updateTest();
+
+    /*while($meetingData = mysql_fetch_assoc($slistemQuery))
     {
         $candidate_id = $meetingData['candidate_id'];
         $type = $meetingData['type'];
         $content = $meetingData['content'];
 
         $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
-    }
+    }*/
 
     /*foreach ($allMeetings as $key => $meeting)
     {

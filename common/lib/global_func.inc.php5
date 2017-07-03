@@ -1438,6 +1438,11 @@ function _live_dump($pvTrace, $psTitle = null)
     return $workingDays;
   }
 
+  function updateTest()
+  {
+    echo 'TEST';
+  }
+
   function getCharacterNotes($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
