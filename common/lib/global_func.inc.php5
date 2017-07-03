@@ -5201,14 +5201,14 @@ ChromePhp::log('updateOldCharacterAssessment');
 
     $result = $db_result->getAll();
 
-    foreach ($result as $key => $value)
+    /*foreach ($result as $key => $value)
     {
       $candidate_id = $value['candidate_id'];
       $type = $value['type'];
       $content = $value['content'];
 
       $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
-    }
+    }*/
     //ChromePhp::log($content);
   }
 
