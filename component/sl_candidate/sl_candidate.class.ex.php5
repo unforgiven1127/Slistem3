@@ -5768,7 +5768,7 @@ ChromePhp::log($candidateDoneMeetingsLength);
     }
 
     //SALARY CONTROL
-
+ChromePhp::log($characterNoteControlFlag);
       if($characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
