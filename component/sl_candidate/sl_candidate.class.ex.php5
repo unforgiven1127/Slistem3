@@ -5601,6 +5601,7 @@ ChromePhp::log($pnPk);
      */
     private function _updateMeetingDone($pnMeetingPk)
     {
+      ChromePhp::log('_updateMeetingDone');
       if(!assert('is_key($pnMeetingPk)'))
         return array('error' => 'Could not find the meeting');
 
