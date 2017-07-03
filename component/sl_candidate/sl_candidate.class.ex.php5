@@ -5642,6 +5642,7 @@ ChromePhp::log($pnPk);
       $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
+ChromePhp::log($candidateActiveMeetingsLength);
       $characterNoteControlFlag = false;
       if($candidateActiveMeetingsLength > 0)
       {
@@ -5652,7 +5653,7 @@ ChromePhp::log($pnPk);
       {
         $characterNoteControlFlag = true;
       }
-
+ChromePhp::log($characterNoteControlFlag);
       //character notunu burada eklemek istedik...
       $characterNoteArray = array();
       $addedFlag = true;
