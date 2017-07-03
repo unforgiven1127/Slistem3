@@ -1440,7 +1440,23 @@ function _live_dump($pvTrace, $psTitle = null)
 
   function updateTest()
   {
-    echo 'TEST';
+    $oDB = CDependency::getComponentByName('database');
+    $oEvent = CDependency::getComponentByName('sl_event');
+
+    $sQuery = "SELECT * FROM sl_notes";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    foreach ($variable as $key => $value)
+    {
+      $candidate_id = $value['candidate_id'];
+      $type = $value['type'];
+      $content = $value['content'];
+
+      $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
+    }
   }
 
   function getCharacterNotes($candidate_id)
