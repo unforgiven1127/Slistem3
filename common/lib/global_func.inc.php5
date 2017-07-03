@@ -5195,7 +5195,7 @@ var_dump($query);*/
 
 ChromePhp::log('updateOldCharacterAssessment');
 
-    $sQuery = "SELECT * FROM sl_notes sln where sln.id > 10000 and sln.id <= 12000";
+    $sQuery = "SELECT * FROM sl_notes sln where sln.id > 12000 ";
 
     $db_result = $oDB->executeQuery($sQuery);
 
