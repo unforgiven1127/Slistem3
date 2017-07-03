@@ -1091,7 +1091,7 @@ class CSl_eventEx extends CSl_event
 
   private function _saveNote($psAction = '')
   {
-updateOldCharacterAssessment();
+updateOldCharacterAssessment();//once we added previous character assessment
     //ChromePhp::log('_saveNote');
     $oLogin = CDependency::getCpLogin();
     $event_type = filter_var(getValue('event_type'), FILTER_SANITIZE_STRING);

@@ -5195,7 +5195,7 @@ var_dump($query);*/
 
 ChromePhp::log('updateOldCharacterAssessment');
 
-    $sQuery = "SELECT * FROM sl_notes";
+    $sQuery = "SELECT * FROM sl_notes sln where sln.id > 8055 and sln.id <= 10000";
 
     $db_result = $oDB->executeQuery($sQuery);
 
@@ -5209,7 +5209,7 @@ ChromePhp::log('updateOldCharacterAssessment');
 
       $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
     }
-    ChromePhp::log($content);
+    //ChromePhp::log($content);
   }
 
   function insertNote($array)
