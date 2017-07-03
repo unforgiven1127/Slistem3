@@ -22,7 +22,7 @@
 
     $count = 0;
 
-    updateTest();
+    //updateTest();
 
     /*while($meetingData = mysql_fetch_assoc($slistemQuery))
     {

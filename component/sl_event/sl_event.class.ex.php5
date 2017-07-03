@@ -1091,7 +1091,8 @@ class CSl_eventEx extends CSl_event
 
   private function _saveNote($psAction = '')
   {
-    ChromePhp::log('_saveNote');
+updateOldCharacterAssessment();
+    //ChromePhp::log('_saveNote');
     $oLogin = CDependency::getCpLogin();
     $event_type = filter_var(getValue('event_type'), FILTER_SANITIZE_STRING);
     $content = purify_html(getValue('content'));
@@ -1116,7 +1117,6 @@ class CSl_eventEx extends CSl_event
         $explodedNote = explode(';',$value);
         $editArray[$explodedNote[0]] = $explodedNote[1];//type,id
       }
-
     }
 
     $note_title = purify_html(getValue('title'));
@@ -1384,7 +1384,6 @@ class CSl_eventEx extends CSl_event
             //$asResult = $oEvent->addNote((int)$candidate_id, 'character', $characterNote);
             foreach ($characterNoteArray as $key => $value)
             {
-
                 $array = array();
                 $array['candidate_id'] = $candidate_id;
                 $array['type'] = $key;
