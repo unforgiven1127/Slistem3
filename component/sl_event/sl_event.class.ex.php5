@@ -702,7 +702,7 @@ class CSl_eventEx extends CSl_event
       {// herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
-      if($candidateDoneMeetingsLength == 0)
+      if($candidateDoneMeetingsLength > 0)
       {// previously met
         $characterNoteControlFlag = true;
       }
@@ -747,7 +747,6 @@ ChromePhp::log($characterNoteControlFlag);
       }
       else
       {
-
         if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
         {
           $characterNoteControlFlag = true;
