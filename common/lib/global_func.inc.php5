@@ -5190,9 +5190,10 @@ var_dump($query);*/
 
   function updateOldCharacterAssessment()
   {
-    ChromePhp::log('updateOldCharacterAssessment');
     $oDB = CDependency::getComponentByName('database');
     $oEvent = CDependency::getComponentByName('sl_event');
+
+ChromePhp::log('updateOldCharacterAssessment');
 
     $sQuery = "SELECT * FROM sl_notes";
 
@@ -5206,8 +5207,9 @@ var_dump($query);*/
       $type = $value['type'];
       $content = $value['content'];
 
-      $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
+      //$asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
     }
+    ChromePhp::log($content);
   }
 
   function insertNote($array)
