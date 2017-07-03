@@ -698,16 +698,16 @@ class CSl_eventEx extends CSl_event
       $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0)
+      if($candidateActiveMeetingsLength > 0)
       {// herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
-      if($candidateDoneMeetingsLength > 0)
+      if($candidateDoneMeetingsLength == 0)
       {// previously met
         $characterNoteControlFlag = true;
       }
       $continueFlag = true;
-      if($validCharacterNotesLength > 0)
+      if($validCharacterNotesLength == 0)
       {
         $characterNoteControlFlag = true;
       }
