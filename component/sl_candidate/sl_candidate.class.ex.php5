@@ -4757,7 +4757,6 @@ ChromePhp::log($pnPk);
       }
       else
       {
-
         $skillArray = array();
         $skillArray['skill_ag'] = '0';
         $skillArray['skill_ap'] = '0';
