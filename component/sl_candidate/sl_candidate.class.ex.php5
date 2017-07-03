@@ -4753,6 +4753,8 @@ ChromePhp::log($pnPk);
       $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
+ChromePhp::log($candidateActiveMeetingsLength);
+ChromePhp::log($candidateDoneMeetingsLength);
       if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0)
       {
         $characterNoteControlFlag = true;
