@@ -1471,10 +1471,10 @@ function _live_dump($pvTrace, $psTitle = null)
   }
 
   function getCandidateActiveMeetings($candidate_id)
-  {
+  {//Rossana asked we will consider old meetings...
     $oDB = CDependency::getComponentByName('database');
 
-    $sQuery = "SELECT * FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done = '0'";
+    $sQuery = "SELECT * FROM sl_meeting l WHERE l.candidatefk = '".$candidate_id."' AND l.meeting_done <> '-1'";
 
     $db_result = $oDB->executeQuery($sQuery);
 

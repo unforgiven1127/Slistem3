@@ -702,8 +702,10 @@ class CSl_eventEx extends CSl_event
 
       $continueFlag = true;
       if($validCharacterNotesLength > 0)
-      {//direk buraya $characterNoteControlFlag = true; koyabiliriz
-        foreach ($validCharacterNotes as $key => $value)
+      {
+        $characterNoteControlFlag = true;
+        //direk buraya $characterNoteControlFlag = true; koyabiliriz zaten assessment girilmis
+        /*foreach ($validCharacterNotes as $key => $value)
         {
           if($continueFlag)
           {
@@ -723,7 +725,7 @@ class CSl_eventEx extends CSl_event
               $continueFlag = false;
             }
           }
-        }
+        }*/
 
       }
       /*if(isset($pnPk) && $pnPk > 0)
