@@ -1479,6 +1479,7 @@ function _live_dump($pvTrace, $psTitle = null)
     $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
     $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
+ChromePhp::log($candidateDoneMeetings);
     $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
     $controlFlag = false;//dont show 6 box
