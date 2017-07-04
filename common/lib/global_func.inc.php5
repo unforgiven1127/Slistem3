@@ -1482,7 +1482,7 @@ ChromePhp::log($candidateActiveMeetings);
 
     $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
 ChromePhp::log($candidateDoneMeetings);
-    $candidateDoneMeetingsLength = sizeof($candidateActiveMeetings);
+    $candidateDoneMeetingsLength = sizeof($candidateDoneMeetings);
 
     $controlFlag = false;//dont show 6 box
 
