@@ -4746,7 +4746,7 @@ ChromePhp::log($pnPk);
       $validCharacterNotes = getSlNotes($pnCandiPk);
       $validCharacterNotesLength = count($validCharacterNotes);
 
-      $characterNoteControlFlag = control6box($candidate_id);
+      $characterNoteControlFlag = control6box($pnCandiPk);
 
       if(!$characterNoteControlFlag)
       {
