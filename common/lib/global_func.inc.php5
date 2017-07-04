@@ -1486,10 +1486,10 @@ ChromePhp::log($candidateDoneMeetings);
 
     $controlFlag = false;//dont show 6 box
 
-
+ChromePhp::log($validCharacterNotesLength);
 ChromePhp::log($candidateActiveMeetingsLength);
 ChromePhp::log($candidateDoneMeetingsLength);
-ChromePhp::log($validCharacterNotesLength);
+
 
     if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0 && $validCharacterNotesLength == 0)
     {// there is active meeting and no past meeting
