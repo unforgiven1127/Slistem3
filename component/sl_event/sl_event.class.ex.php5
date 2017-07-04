@@ -697,7 +697,7 @@ class CSl_eventEx extends CSl_event
       $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
       $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
-      $characterNoteControlFlag = control6box($candidate_id);
+      $characterNoteControlFlag = control6box($nCp_Pk);
 
       $adminEdit = false;
       $data['ControlAllAreas'] = 'false';
