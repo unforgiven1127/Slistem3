@@ -4748,7 +4748,7 @@ ChromePhp::log($pnPk);
 
       $characterNoteControlFlag = control6box($candidate_id);
 
-      if($characterNoteControlFlag)
+      if(!$characterNoteControlFlag)
       {
         $oForm->addField('textarea', 'meeting_note', array('label' => 'Add a note'));
       }
