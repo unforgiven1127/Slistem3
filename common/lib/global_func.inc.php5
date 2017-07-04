@@ -1474,15 +1474,15 @@ function _live_dump($pvTrace, $psTitle = null)
   {
     $validCharacterNotes = getSlNotes($candidate_id);
 ChromePhp::log($validCharacterNotes);
-    $validCharacterNotesLength = count($validCharacterNotes);
+    $validCharacterNotesLength = sizeof($validCharacterNotes);
 
     $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
 ChromePhp::log($candidateActiveMeetings);
-    $candidateActiveMeetingsLength = count($candidateActiveMeetings);
+    $candidateActiveMeetingsLength = sizeof($candidateActiveMeetings);
 
     $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
 ChromePhp::log($candidateDoneMeetings);
-    $candidateDoneMeetingsLength = count($candidateActiveMeetings);
+    $candidateDoneMeetingsLength = sizeof($candidateActiveMeetings);
 
     $controlFlag = false;//dont show 6 box
 
