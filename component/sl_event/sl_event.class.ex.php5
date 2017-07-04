@@ -720,7 +720,7 @@ class CSl_eventEx extends CSl_event
         $data['EditTheNotes'] = rtrim($data['EditTheNotes'], "-");
       }
 
-      if($characterNoteControlFlag && !$adminEdit)
+      if(!$characterNoteControlFlag && !$adminEdit)
       {
         $oForm->addField('textarea', 'character', array('style'=>'height:350px','label'=>'Character note', 'value' => $oDbResult->getFieldValue('content'), 'isTinymce' => 1));
         $oForm->setFieldControl('character', array('jsFieldMinSize' => '2','jsFieldMaxSize' => 9000));
