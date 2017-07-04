@@ -1472,13 +1472,13 @@ function _live_dump($pvTrace, $psTitle = null)
 
   function control6box($candidate_id)
   {
-    $validCharacterNotes = getSlNotes($nCp_Pk);
+    $validCharacterNotes = getSlNotes($candidate_id);
     $validCharacterNotesLength = count($validCharacterNotes);
 
-    $candidateActiveMeetings = getCandidateActiveMeetings($nCp_Pk);
+    $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
     $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
-    $candidateDoneMeetings = getCandidateCompletedMeetings($nCp_Pk);
+    $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
     $candidateDoneMeetingsLength = count($candidateActiveMeetings);
 
     $controlFlag = false;//dont show 6 box
