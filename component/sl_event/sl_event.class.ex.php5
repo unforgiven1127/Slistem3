@@ -727,8 +727,8 @@ class CSl_eventEx extends CSl_event
       }
       else
       {
-
-        if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
+        $data['ControlAllAreas'] = 'true';
+        /*if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
         {
           $characterNoteControlFlag = true;
         }
@@ -743,7 +743,7 @@ class CSl_eventEx extends CSl_event
             {
               $data[$value['type']] = $value['content'];
             }*/
-          }
+          /*}
         }
         else
         {
@@ -754,9 +754,9 @@ class CSl_eventEx extends CSl_event
             {
               $data[$value['type']] = $value['content'];
             }*/
-          }
+          /*}
           $data['ControlAllAreas'] = 'true';
-        }
+        }*/
         $skillArray = array();
         $skillArray['skill_ag'] = '0';
         $skillArray['skill_ap'] = '0';
