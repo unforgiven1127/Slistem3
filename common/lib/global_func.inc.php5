@@ -1473,23 +1473,15 @@ function _live_dump($pvTrace, $psTitle = null)
   function control6box($candidate_id)
   {
     $validCharacterNotes = getSlNotes($candidate_id);
-ChromePhp::log($validCharacterNotes);
     $validCharacterNotesLength = sizeof($validCharacterNotes);
 
     $candidateActiveMeetings = getCandidateActiveMeetings($candidate_id);
-ChromePhp::log($candidateActiveMeetings);
     $candidateActiveMeetingsLength = sizeof($candidateActiveMeetings);
 
     $candidateDoneMeetings = getCandidateCompletedMeetings($candidate_id);
-ChromePhp::log($candidateDoneMeetings);
     $candidateDoneMeetingsLength = sizeof($candidateDoneMeetings);
 
     $controlFlag = false;//dont show 6 box
-
-ChromePhp::log($validCharacterNotesLength);
-ChromePhp::log($candidateActiveMeetingsLength);
-ChromePhp::log($candidateDoneMeetingsLength);
-
 
     if($candidateActiveMeetingsLength > 0 && $candidateDoneMeetingsLength == 0 && $validCharacterNotesLength == 0)
     {// there is active meeting and no past meeting

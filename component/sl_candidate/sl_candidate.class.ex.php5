@@ -3047,7 +3047,7 @@ ChromePhp::log($pnPk);
         $sSortOrder = $sSortOrder_;
       }
 
-
+ChromePhp::log($sSortField);
       // =============================================================
       //TODO: to be moved when the search arrives
       $sNow = date('Y-m-d H:i:s');
@@ -3080,7 +3080,6 @@ ChromePhp::log($pnPk);
           $poQB->addSelect('IFNULL(slpl.status,0) + (IFNULL(slpl.active,0) * 1000) + (IFNULL(slpl3.active,0)*10000) as statusSort');
         }
 
-        //ChromePhp::log($sSortField);
       }
       else if(isset($sSortField) && !empty($sSortField) && $sSortField == "date_birth")
       {
