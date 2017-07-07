@@ -3311,7 +3311,7 @@ ChromePhp::log($sSortField);
         $limit = $limit[1];
 
         $sQuery = $sQuery[0];
-
+ChromePhp::log($sQuery);
         if(!empty($sSortField) && !empty($sSortOrder) && $sSortField != null && $sSortOrder != null)
         {
           if($sSortField == "sl_candidatepk")
