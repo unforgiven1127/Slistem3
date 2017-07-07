@@ -7395,7 +7395,10 @@ ChromePhp::log($sSortField);
         foreach($asAttribute['candi_occu'] as $sValue => $sLabel)
         {
           $alt_temp_array[] = '{id: "'.$sValue.'", name: "'.$sLabel.'"}';
-          $alt_occupation_token = '['.implode(',', $alt_occupation_array).']';
+          if(isset($alt_occupation_array) && !empty($alt_occupation_array))
+          {
+            $alt_occupation_token = '['.implode(',', $alt_occupation_array).']';
+          }
 
           $alt_temp_array = '';
         }
