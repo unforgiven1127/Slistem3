@@ -3062,6 +3062,8 @@ ChromePhp::log($sSortField);
       $poQB->addJoin('left', 'sl_company', 'scom', 'scom.sl_companypk = scpr.companyfk');
       $poQB->addJoin('left', 'sl_industry', 'sind', 'sind.sl_industrypk = scpr.industryfk');
       $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
+      $poQB->addJoin('left', 'sl_contact', 'slcon', 'slcon.itemfk = scan.sl_candidatepk and slcon.type = 2');
+      $poQB->addJoin('left', 'sl_contact', 'slcon2', 'slcon2.sl_contactpk = (select max(slcon.sl_contactpk))');
       //$poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
       //
       if(isset($sSortField) && !empty($sSortField) && $sSortField == '_in_play')
@@ -3109,7 +3111,7 @@ ChromePhp::log($sSortField);
         }
       }
 
-      $poQB->addSelect('scan.*,
+      $poQB->addSelect('scan.*,slcon2.value as workPhone,
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
           (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
           scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
