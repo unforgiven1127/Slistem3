@@ -3215,7 +3215,7 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT slc.* FROM sl_contact slc
-    WHERE slc.itemfk = ".$candidate_id." AND slc.type = 2 ORDER BY slc.sl_contactpk DESC LIMIT 1";
+    WHERE slc.itemfk = ".$candidate_id." AND slc.type = 2 ORDER BY slc.date_create DESC LIMIT 1";
 
     $db_result = $oDB->executeQuery($sQuery);
     $read = $db_result->readFirst();
