@@ -3382,7 +3382,7 @@ ChromePhp::log($sSortField);
           }
           else if ($sSortField == "phone")
           {
-            $sQuery.= ' ORDER BY lastWorkPhone '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
+            $sQuery.= ' ORDER BY lastWorkPhone '.$sSortOrder." ";
           }
         }
         else if(strpos($oldQ,"ratio DESC, ratio_rev DESC") !== false)
