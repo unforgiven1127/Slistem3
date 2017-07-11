@@ -3062,6 +3062,8 @@ ChromePhp::log($sSortField);
       $poQB->addJoin('left', 'sl_company', 'scom', 'scom.sl_companypk = scpr.companyfk');
       $poQB->addJoin('left', 'sl_industry', 'sind', 'sind.sl_industrypk = scpr.industryfk');
       $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
+
+      $poQB->addJoin('left', 'sl_contact', 'slcon', 'slcon.itemfk = scan.sl_candidatepk');
       //$poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
       //
       if(isset($sSortField) && !empty($sSortField) && $sSortField == '_in_play')
