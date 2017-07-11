@@ -3111,7 +3111,7 @@ ChromePhp::log($sSortField);
         }
       }
 
-      $poQB->addSelect('scan.*,
+      $poQB->addSelect('scan.*, slcon.value as lastWorkPhone,
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
           (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
           scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
