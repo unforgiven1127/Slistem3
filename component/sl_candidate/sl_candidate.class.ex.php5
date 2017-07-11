@@ -3047,7 +3047,7 @@ ChromePhp::log($pnPk);
         $sSortOrder = $sSortOrder_;
       }
 
-ChromePhp::log($sSortField);
+//ChromePhp::log($sSortField);
 //LEFT JOIN sl_contact as slcon ON slcon.itemfk = scan.sl_candidatepk and slcon.type = 2
 //LEFT JOIN sl_contact as slcon2 ON slcon2.itemfk = scan.sl_candidatepk and slcon2.sl_contactpk = (select max(slcon.sl_contactpk))
 //bunu ekleyelim contact work phone
