@@ -738,7 +738,7 @@ class CCandi_row extends CTemplate
         {
           //$latestWorkPhone = $latestWorkPhone['value'];
         }
-        else if(!$levelFlag)
+        else if(!$levelFlag && !empty($latestWorkPhone))
         {
           $latestWorkPhone = "<p style='color:red; font-weight: bold; font-size: 14px; letter-spacing: 1px;' >CLIENT</p>";
         }
