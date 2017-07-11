@@ -732,10 +732,11 @@ class CCandi_row extends CTemplate
           $levelFlag = false;
         }
 
-        $latestWorkPhone = getCandidateLatestWorkPhone($candidate_id);
-        if(isset($latestWorkPhone['value']) && $levelFlag)
+        $latestWorkPhone = $pasData['lastWorkPhone'];
+        //$latestWorkPhone = getCandidateLatestWorkPhone($candidate_id);
+        if($levelFlag)//isset($latestWorkPhone['value']) &&
         {
-          $latestWorkPhone = $latestWorkPhone['value'];
+          //$latestWorkPhone = $latestWorkPhone['value'];
         }
         else if(!$levelFlag)
         {
