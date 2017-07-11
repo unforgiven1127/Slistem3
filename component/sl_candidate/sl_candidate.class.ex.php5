@@ -3317,7 +3317,7 @@ ChromePhp::log($sSortField);
         $limit = $limit[1];
 
         $sQuery = $sQuery[0];
-ChromePhp::log($sQuery);
+
         if(!empty($sSortField) && !empty($sSortOrder) && $sSortField != null && $sSortOrder != null)
         {
           if($sSortField == "sl_candidatepk")
@@ -3465,7 +3465,7 @@ ChromePhp::log($sQuery);
           $rmResult = $rmResultDB->getAll();
         }
       }*/
-//ChromePhp::log($sQuery);
+ChromePhp::log($sQuery);
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
