@@ -3380,6 +3380,10 @@ ChromePhp::log($sQuery);
             $sQuery.= ' ORDER BY salarySort '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
             //$sQuery.= ' ORDER BY full_salary '.$sSortOrder." ";
           }
+          else if ($sSortField == "phone")
+          {
+            $sQuery.= ' ORDER BY lastWorkPhone '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
+          }
         }
         else if(strpos($oldQ,"ratio DESC, ratio_rev DESC") !== false)
         {
