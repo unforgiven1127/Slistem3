@@ -5754,7 +5754,7 @@ ChromePhp::log($sQuery);
 
     //SALARY CONTROL
 
-      if(!$characterNoteControlFlag)
+      if($characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
         {
@@ -5839,10 +5839,10 @@ ChromePhp::log($sQuery);
               return array('error' => __LINE__.' - Please fill all required areas.');
             }
           }
-          /*else if(!$characterNoteControlFlag)
+          else
           {
             return array('error' => __LINE__.' - The candidate must have 5 character notes. Please fill all required areas.');
-          }*/
+          }
         }
         if(!empty($errorArray))
         {
