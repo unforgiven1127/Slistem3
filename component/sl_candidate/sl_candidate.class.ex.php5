@@ -5839,10 +5839,10 @@ ChromePhp::log($sQuery);
               return array('error' => __LINE__.' - Please fill all required areas.');
             }
           }
-          else
+          /*else if(!$characterNoteControlFlag)
           {
             return array('error' => __LINE__.' - The candidate must have 5 character notes. Please fill all required areas.');
-          }
+          }*/
         }
         if(!empty($errorArray))
         {
