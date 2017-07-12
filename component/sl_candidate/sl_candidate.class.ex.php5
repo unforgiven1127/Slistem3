@@ -5650,8 +5650,8 @@ ChromePhp::log($sQuery);
       $candidateActiveMeetingsLength = count($candidateActiveMeetings);
 
       $characterNoteControlFlag = false;
-      if($candidateActiveMeetingsLength == 0) // herhangi bir meeting ayarlanmamis ise tek character note
-      {
+      if($candidateActiveMeetingsLength == 0)
+      { // herhangi bir meeting ayarlanmamis ise tek character note
         $characterNoteControlFlag = true;
       }
       $characterNoteControlFlag = false;
@@ -5660,6 +5660,7 @@ ChromePhp::log($sQuery);
         $characterNoteControlFlag = true;
       }
 
+      $characterNoteControlFlag = control6box($candidate_id);
       //character notunu burada eklemek istedik...
       $characterNoteArray = array();
       $addedFlag = true;
@@ -5753,7 +5754,7 @@ ChromePhp::log($sQuery);
     }
 
     //SALARY CONTROL
-
+ChromePhp::log($characterNoteControlFlag);
       if($characterNoteControlFlag)
       {
         foreach ($characterNoteArray as $key => $value)
