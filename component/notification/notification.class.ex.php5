@@ -1866,6 +1866,8 @@ class CNotificationEx extends CNotification
     $returnHtml = $oForm->getDisplay();
     $returnHtml .= "<script>  $('#formSubmitButton').click(function(e){
                       var test= $('.autoSearch p').text();
+                      var nameOf = $('#formSubmitButton').attr('name');
+                      alert(nameOf);
                       if(!test.trim())
                       {
                         alert('Related to could not be empty.');
