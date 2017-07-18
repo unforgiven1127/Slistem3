@@ -5932,7 +5932,7 @@ ChromePhp::log($array);
       }
       if(!empty($simpleCharacterNote))
       {
-        $asResult = $oEvent->addNote((int)$candidate_id, 'meeting_note', $simpleCharacterNote);
+        //$asResult = $oEvent->addNote((int)$candidate_id, 'meeting_note', $simpleCharacterNote);
 
         $addedFlag = false;
         $characterNoteControlFlag = true;
