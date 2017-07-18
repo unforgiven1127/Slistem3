@@ -1867,8 +1867,7 @@ class CNotificationEx extends CNotification
     $returnHtml .= "<script>  $('#formSubmitButton').click(function(e){
                       var test= $('.autoSearch p').text();
                       var nameOf = $('#formSubmitButton').attr('name');
-                      alert(nameOf);
-                      if(!test.trim())
+                      if(!test.trim() && nameOf != 'Save_reminder')
                       {
                         alert('Related to could not be empty.');
                         e.preventDefault();
