@@ -470,7 +470,7 @@ Reminder linked to item', '2013-10-05 08:00:00');
       if($asActivity['log_date'] > $sNow)
       {
         //future notifications
-
+        // changec it to show all under incoming
         //if($asActivity['log_date'] > $sTomorrow)
         //{
           $asSortedActivity['Incoming'][] = '<span>'.date('Y-m-d h:i a', strtotime($asActivity['log_date'])).'</span> '.$Activity;

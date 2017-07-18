@@ -5867,6 +5867,8 @@ ChromePhp::log($sQuery);
               $array['type'] = $key;
               $array['content'] = $value;
               $array['user_id'] = $user_id;
+ChromePhp::log('HERE 1');
+ChromePhp::log($array);
               insertNote($array);
             }
           }

@@ -1370,6 +1370,8 @@ class CSl_eventEx extends CSl_event
                 else
                 {
                   insertNote($array);
+ChromePhp::log('HERE 2');
+ChromePhp::log($array);
                 }
                 /*if(isset($_GET['editCharacterNote']) || $EditTheNotes != false || $EditTheNotes != 'false')
                 {
