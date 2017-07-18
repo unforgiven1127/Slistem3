@@ -471,16 +471,16 @@ Reminder linked to item', '2013-10-05 08:00:00');
       {
         //future notifications
 
-        if($asActivity['log_date'] > $sTomorrow)
-        {
-          $asSortedActivity['Incoming'][] = '<span>'.date('Y-m-d', strtotime($asActivity['log_date'])).'</span> '.$Activity;
-        }
-        elseif($asActivity['log_date'] > $sToday)
+        //if($asActivity['log_date'] > $sTomorrow)
+        //{
+          $asSortedActivity['Incoming'][] = '<span>'.date('Y-m-d h:i a', strtotime($asActivity['log_date'])).'</span> '.$Activity;
+        //}
+        /*elseif($asActivity['log_date'] > $sToday)
         {
           $asSortedActivity['Tomorrow'][] = '<span>'.date('h:i a', strtotime($asActivity['log_date'])).'</span> '.$Activity;
         }
         else
-          $asSortedActivity['Today'][] = '<span>'.date('h:i a', strtotime($asActivity['log_date'])).'</span> '.$Activity;
+          $asSortedActivity['Today'][] = '<span>'.date('h:i a', strtotime($asActivity['log_date'])).'</span> '.$Activity;*/
       }
       else
       {
