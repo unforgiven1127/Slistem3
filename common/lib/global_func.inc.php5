@@ -5248,6 +5248,7 @@ ChromePhp::log('updateOldCharacterAssessment');
 
   function insertNote($array)
   {
+ChromePhp::log('ARE YOU HERE?');
     $sDate = date('Y-m-d H:i:s');
     $oDB = CDependency::getComponentByName('database');
     $oEvent = CDependency::getComponentByName('sl_event');
