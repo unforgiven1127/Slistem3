@@ -6,7 +6,7 @@
   </head>
   <body>
    <?php foreach($users as $key => $user){echo $user['Country'];} ?>
-  	<div ng-init="names = <?php echo $users ?>">
+  	<div ng-init="names = <?php echo $outp ?>">
 
 		<table>
 		  <tr>
@@ -14,8 +14,8 @@
 		  	<th>Country</th>
 		  </tr>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.Name }}</td>
-		    <td>{{ x.Country }}</td>
+		    <td>{{ x.CompanyName }}</td>
+		    <td>{{ x.PositionName }}</td>
 		  </tr>
 		</table>
 	</div>

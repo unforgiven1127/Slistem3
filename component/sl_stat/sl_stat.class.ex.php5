@@ -4528,8 +4528,12 @@ class CSl_statEx extends CSl_stat
 
       $data['server_name'] = $_SERVER['SERVER_NAME'];
       $data['positions'] = array();
+      $outp = "";
       foreach ($userPosition as $key => $value)
       {
+        $outp .= '{"CompanyName":"'  . $value["company_name"] . '",';
+        $outp .= '"PositionName":"'   . $value["title"]        . '",';
+
         if(!isset($data['positions'][$value['created_by']]))
         {
           $data['positions'][$value['created_by']] = array();
@@ -4577,15 +4581,7 @@ class CSl_statEx extends CSl_stat
 
       }*/
 //ChromePhp::log($data);
-      $data['users'] = array();
-      $data['users']['Country'] = array();
-      $data['users']['Name'] = array();
-
-      $data['users']['Country'][] = 'Canada';
-      $data['users']['Country'][] = 'Japan';
-
-      $data['users']['Name'][] = 'Munir';
-      $data['users']['Name'][] = 'Ken';
+      $data['outp'] = $outp;
 
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
