@@ -19,9 +19,10 @@
 		</table>
 	</div>
 
-	<script>
+	<script type="text/javascript">
 	var app = angular.module('myApp', []);
-	names = <?php echo $positions ?>;
+	var names = <?php echo $positions ?>;
+	//names = <?php echo $positions ?>;
 	/*app.controller('customersCtrl', function($scope, $http) {
 	   $http.get("customers_mysql.php")
 	   .then(function (response) {$scope.names = response.data.records;});
