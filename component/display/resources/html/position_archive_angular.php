@@ -12,7 +12,7 @@
 		  	<th>Position Name</th>
 		  	<th>Company Name</th>
 		  </tr>
-		  <tr ng-repeat="x in names">
+		  <tr ng-repeat="x in <?php $positions ?>">
 		    <td>{{ x.position_name }}</td>
 		    <td>{{ x.company_name }}</td>
 		  </tr>
@@ -21,7 +21,7 @@
 
 	<script type="text/javascript">
 	var app = angular.module('myApp', []);
-	var names = <?php echo $positions ?>;
+	//var names = <?php echo $positions ?>;
 	//names = <?php echo $positions ?>;
 	/*app.controller('customersCtrl', function($scope, $http) {
 	   $http.get("customers_mysql.php")
