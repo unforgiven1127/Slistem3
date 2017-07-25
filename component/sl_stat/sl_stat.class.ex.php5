@@ -4576,7 +4576,7 @@ class CSl_statEx extends CSl_stat
         $i ++;
 
       }*/
-ChromePhp::log($data);
+//ChromePhp::log($data);
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
 
