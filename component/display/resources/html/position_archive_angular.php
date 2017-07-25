@@ -6,27 +6,11 @@
   </head>
   <body>
 
-  	<div ng-init="names = <?php echo $test ?>">
+  	<ul ng-init="positions = <?php echo $test; ?>">
+	    <li ng-repeat="position in positions | filter:query">
+	       <p>{{position.country}}</p>
+	    </li>
+	</ul>
 
-		<table>
-		  <tr>
-		  	<th>Name</th>
-		  	<th>Country</th>
-		  </tr>
-		  <tr ng-repeat="x in names">
-		    <td>{{ x.country }}</td>
-		    <td>{{ x.position }}</td>
-		  </tr>
-		</table>
-	</div>
-
-	<script>
-	//var app = angular.module('myApp', []);
-	//$scope.names = $positions;
-	/*app.controller('customersCtrl', function($scope, $http) {
-	   $http.get("customers_mysql.php")
-	   .then(function (response) {$scope.names = response.data.records;});
-	});*/
-	</script>
   </body>
 </html>
