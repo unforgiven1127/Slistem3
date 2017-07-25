@@ -8,6 +8,10 @@
   	<div ng-app="myApp" ng-controller="customersCtrl">
 
 		<table>
+		  <tr>
+		  	<th>Position Name</th>
+		  	<th>Company Name</th>
+		  </tr>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.position_name }}</td>
 		    <td>{{ x.company_name }}</td>
