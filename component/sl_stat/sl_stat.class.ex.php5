@@ -4532,7 +4532,7 @@ class CSl_statEx extends CSl_stat
       foreach ($userPosition as $key => $value)
       {
         $outp .= '{"CompanyName":"'  . $value["company_name"] . '",';
-        $outp .= '"PositionName":"'   . $value["title"]        . '",';
+        $outp .= '"PositionName":"'   . $value["title"]        . '"}';
 
         if(!isset($data['positions'][$value['created_by']]))
         {

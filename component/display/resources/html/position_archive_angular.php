@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   </head>
   <body>
-   <?php foreach($users as $key => $user){echo $user['Country'];} ?>
+
   	<div ng-init="names = <?php echo $outp ?>">
 
 		<table>
