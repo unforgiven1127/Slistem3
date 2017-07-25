@@ -6,7 +6,7 @@
   </head>
   <body>
 
-  	<ul ng-init="personeller=[
+  	<div ng-init="personeller=[
 { isim: 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
 { isim: 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
 { isim: 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
@@ -14,10 +14,18 @@
 { isim: 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
 { isim: 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
 ]">
-	    <li ng-repeat="position in personeller | filter:query">
-	       <p>{{position.isim}}</p>
-	    </li>
-	</ul>
+
+		<table>
+		  <tr>
+		  	<th>Name</th>
+		  	<th>Last name</th>
+		  </tr>
+		  <tr ng-repeat="x in personeller">
+		    <td>{{ x.isim }}</td>
+		    <td>{{ x.soyisim }}</td>
+		  </tr>
+		</table>
+	</div>
 
   </body>
 </html>
