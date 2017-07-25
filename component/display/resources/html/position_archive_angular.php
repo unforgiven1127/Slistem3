@@ -6,23 +6,16 @@
   </head>
   <body>
 
-  	<div ng-init="personeller=[
-{ isim: 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
-{ isim: 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
-{ isim: 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
-{ isim: 'Çağar', soyisim: 'Alkan', cinsiyet: 'Kız', maas: '1883' },
-{ isim: 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
-{ isim: 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
-]">
+  	<div ng-init="names = <?php echo $test ?>">
 
 		<table>
 		  <tr>
 		  	<th>Name</th>
-		  	<th>Last name</th>
+		  	<th>Country</th>
 		  </tr>
-		  <tr ng-repeat="x in personeller">
-		    <td>{{ x.isim }}</td>
-		    <td>{{ x.soyisim }}</td>
+		  <tr ng-repeat="x in names">
+		    <td>{{ x.country }}</td>
+		    <td>{{ x.position }}</td>
 		  </tr>
 		</table>
 	</div>
