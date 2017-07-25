@@ -21,7 +21,7 @@
 
 	<script>
 	var app = angular.module('myApp', []);
-	$scope.names = $positions;
+	names = $positions;
 	/*app.controller('customersCtrl', function($scope, $http) {
 	   $http.get("customers_mysql.php")
 	   .then(function (response) {$scope.names = response.data.records;});
