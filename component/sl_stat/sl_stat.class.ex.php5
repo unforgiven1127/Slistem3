@@ -4577,6 +4577,16 @@ class CSl_statEx extends CSl_stat
 
       }*/
 //ChromePhp::log($data);
+      $data['users'] = array();
+      $data['users']['Country'] = array();
+      $data['users']['Name'] = array();
+
+      $data['users']['Country'][] = 'Canada';
+      $data['users']['Country'][] = 'Japan';
+
+      $data['users']['Name'][] = 'Munir';
+      $data['users']['Name'][] = 'Ken';
+
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
 
