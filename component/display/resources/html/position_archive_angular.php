@@ -6,7 +6,7 @@
   </head>
   <body>
 
-  	<div ng-init="names = <?php echo $test ?>">
+  	<div ng-init="names = <?php echo $test2 ?>">
 
 		<table>
 		  <tr>
@@ -14,8 +14,8 @@
 		  	<th>Country</th>
 		  </tr>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.country }}</td>
-		    <td>{{ x.position }}</td>
+		    <td>{{ x.isim }}</td>
+		    <td>{{ x.soyisim }}</td>
 		  </tr>
 		</table>
 	</div>

@@ -4591,6 +4591,17 @@ class CSl_statEx extends CSl_stat
       $data['test'] = $test;
       ChromePhp::log($data['test']);
 
+      $test2 = "[
+{ isim: 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
+{ isim: 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
+{ isim: 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
+{ isim: 'Çağar', soyisim: 'Alkan', cinsiyet: 'Kız', maas: '1883' },
+{ isim: 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
+{ isim: 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
+]";
+
+      $data['test2'] = $test2;
+
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
 
