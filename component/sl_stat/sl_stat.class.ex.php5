@@ -4602,6 +4602,11 @@ class CSl_statEx extends CSl_stat
 
       $data['test2'] = $test2;
 
+      $data['test3'] = '[
+        {"country":"canada","position":"test 1"},
+        {"country":"tr","position":"test 2"}
+      ]';
+
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
 

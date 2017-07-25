@@ -6,7 +6,7 @@
   </head>
   <body>
 
-  	<div ng-init="names = <?php echo $test ?>">
+  	<div ng-init="names = <?php echo $test3 ?>">
 
 		<table>
 		  <tr>
