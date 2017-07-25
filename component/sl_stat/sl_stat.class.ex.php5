@@ -4592,12 +4592,12 @@ class CSl_statEx extends CSl_stat
       ChromePhp::log($data['test']);
 
       $test2 = "[
-{ isim: 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
-{ isim: 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
-{ isim: 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
-{ isim: 'Çağar', soyisim: 'Alkan', cinsiyet: 'Kız', maas: '1883' },
-{ isim: 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
-{ isim: 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
+{ 'isim': 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
+{ 'isim': 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
+{ 'isim': 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
+{ 'isim': 'Çağar', soyisim: 'Alkan', cinsiyet: 'Kız', maas: '1883' },
+{ 'isim': 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
+{ 'isim': 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
 ]";
 
       $data['test2'] = $test2;
