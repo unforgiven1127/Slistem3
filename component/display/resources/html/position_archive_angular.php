@@ -8,6 +8,10 @@
   	<div ng-init="names = <?php echo $users ?>">
 
 		<table>
+		  <tr>
+		  	<th>Name</th>
+		  	<th>Country</th>
+		  </tr>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.Name }}</td>
 		    <td>{{ x.Country }}</td>
@@ -16,8 +20,8 @@
 	</div>
 
 	<script>
-	var app = angular.module('myApp', []);
-	$scope.names = $positions;
+	//var app = angular.module('myApp', []);
+	//$scope.names = $positions;
 	/*app.controller('customersCtrl', function($scope, $http) {
 	   $http.get("customers_mysql.php")
 	   .then(function (response) {$scope.names = response.data.records;});
