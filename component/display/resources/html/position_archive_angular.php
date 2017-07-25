@@ -5,14 +5,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   </head>
   <body>
-  	<div ng-app="myApp" ng-controller="customersCtrl">
+  	<div ng-init="positions = <?php echo $positions; ?>">
 
 		<table>
 		  <tr>
 		  	<th>Position Name</th>
 		  	<th>Company Name</th>
 		  </tr>
-		  <tr ng-repeat="x in <?php $positions ?>">
+		  <tr ng-repeat="x in positions">
 		    <td>{{ x.position_name }}</td>
 		    <td>{{ x.company_name }}</td>
 		  </tr>
@@ -20,7 +20,7 @@
 	</div>
 
 	<script type="text/javascript">
-	var app = angular.module('myApp', []);
+	//var app = angular.module('myApp', []);
 	//var names = <?php echo $positions ?>;
 	//names = <?php echo $positions ?>;
 	/*app.controller('customersCtrl', function($scope, $http) {
