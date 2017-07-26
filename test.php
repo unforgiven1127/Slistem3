@@ -52,16 +52,11 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 
-$test = '"batter":
-				[
-					{ "id": "1001", "type": "Regular" },
-					{ "id": "1002", "type": "Chocolate" },
-					{ "id": "1003", "type": "Blueberry" },
-					{ "id": "1004", "type": "Devils Food" }
-				]';
+$myObj->name = "John";
+$myObj->age = 30;
+$myObj->city = "New York";
 
-//$return = json_encode($lastCandidates);
-//ChromePhp::log($return);
-//ChromePhp::log('TEST PHP');
-echo $test;
+$myJSON = json_encode($myObj);
+
+echo $myJSON;
 
