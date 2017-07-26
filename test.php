@@ -34,7 +34,7 @@ define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 
 
 
-mysqli_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+/*mysqli_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
@@ -48,7 +48,7 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 {
   $add = array('firstname' => $lastCandidate['firstname'],'lastname' => $lastCandidate['lastname']);
   $lastCandidates[] = $lastCandidate;
-}
+}*/
 
 header('Content-Type: application/json');
 
@@ -57,8 +57,8 @@ $test = "[
 	{ 'firstname': 'Elfiye', lastname: 'Şencin', cinsiyet: 'Erkek', maas: '4143' }
 ]";
 
-$return = json_encode($lastCandidates);
+//$return = json_encode($lastCandidates);
 //ChromePhp::log($return);
-ChromePhp::log('TEST PHP');
-echo $lastCandidates;
+//ChromePhp::log('TEST PHP');
+echo $test;
 
