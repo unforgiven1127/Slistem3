@@ -4529,12 +4529,17 @@ class CSl_statEx extends CSl_stat
       $data['server_name'] = $_SERVER['SERVER_NAME'];
       $data['positions'] = array();
       $test = array();
+      $i = 0;
 
       foreach ($userPosition as $key => $value)
       {
+        $i++;
+        if($i < 11)
+        {
+          $add1 = array('position' => $value['title'],'id' => $value['sl_positionpk']);
+          $test[] = $add1;
+        }
 
-        $add1 = array('position' => $value['title'],'id' => $value['sl_positionpk']);
-        $test[] = $add1;
         if(!isset($data['positions'][$value['created_by']]))
         {
           $data['positions'][$value['created_by']] = array();
