@@ -57,8 +57,8 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
   $lastCandidates[] = $add;
 }
 
-$records = htmlspecialchars(json_encode($lastCandidates));
+$return = htmlspecialchars(json_encode($lastCandidates));
 
-$data['records'] = $records;
-echo $data;
+$outp ='{"records":['.$return.']}';
+echo($outp);
 
