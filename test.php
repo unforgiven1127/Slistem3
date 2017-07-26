@@ -52,7 +52,7 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 
-$test = '{"name":"John", "age":30, "city":"New York"}';
+$test = '{"name":"John", "age":30, "city":"New York"},{"name":"John", "age":30, "city":"New York"}';
 
 //$return = json_encode($lastCandidates);
 //ChromePhp::log($return);

@@ -42,10 +42,10 @@
         	console.log(response.data);
             $scope.names = response.data;
         },
-            function(error)
-            {
-            	console.log(error);
-            }
+        function(error)
+        {
+        	console.log(error);
+        }
        );
     });
     </script>
