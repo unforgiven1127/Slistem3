@@ -1,5 +1,5 @@
 <?php
-
+require_once './common/lib/ChromePhp.php';
 if(isset($_GET['f']))
 {
   if(function_exists($_GET['f'])) {
