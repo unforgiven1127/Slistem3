@@ -20,13 +20,13 @@
 		</table>
 	</div>
 
-	<div ng-controller="myCtrl">
+	<div >
 		<table>
 		  <tr>
 		  	<th>Name</th>
 		  	<th>Age</th>
 		  </tr>
-		  <tr ng-repeat="x in names">
+		  <tr ng-controller="myCtrl" ng-repeat="x in names">
 		    <td>{{ x.name }}</td>
 		    <td>{{ x.age }}</td>
 		  </tr>
