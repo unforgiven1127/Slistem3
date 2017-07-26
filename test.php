@@ -51,7 +51,7 @@ $lastCandidates = array();
 while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 {
   $add = array('firstname' => $lastCandidate['firstname'],'lastname' => $lastCandidate['lastname']);
-  $lastCandidates[] = $add;
+  $lastCandidates[] = $lastCandidate;
 }
 
 header('Content-Type: application/json');
@@ -61,7 +61,8 @@ $test = "[
 	{ 'firstname': 'Elfiye', lastname: 'Şencin', cinsiyet: 'Erkek', maas: '4143' }
 ]";
 
+$data['lastCandidates'] = $lastCandidates;
 $return = json_encode($lastCandidates);
-//ChromePhp::log($return);
-echo $test;
+ChromePhp::log($return);
+echo $data;
 

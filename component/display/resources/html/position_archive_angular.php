@@ -33,8 +33,8 @@
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
 		    $http.get('test.php')
-		    .success(function(data) {
-		        $scope.names = data;
+		    .success(function(response) {
+		        $scope.names = response.data;
 		    });
 		}]);
 	</script>
