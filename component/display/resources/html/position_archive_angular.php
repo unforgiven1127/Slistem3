@@ -37,7 +37,7 @@
             angular.fromJson(response);
             console.log(JSON.sringify(response));
             $scope.names = response.data.records;},
-            function(error) {console.log(JSON.sringify(error));}
+            function(error) {console.log(error);}
        );
     });
     </script>
