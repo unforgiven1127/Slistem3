@@ -33,11 +33,17 @@
 	var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
        $http.get("test.php")
-       .then(function (response) {
+       .then(function (response)
+        {
             angular.fromJson(response);
             console.log(JSON.sringify(response));
-            $scope.names = response.data.records;},
-            function(error) {console.log(error);}
+            $scope.names = response.data.records;
+        },
+            function(error)
+            {
+            	alert(error);
+            	console.log(error);
+            }
        );
     });
     </script>
