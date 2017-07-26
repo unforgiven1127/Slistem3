@@ -52,11 +52,10 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 
-$test = '"cars": [
-        { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
-        { "name":"BMW", "models":[ "320", "X3", "X5" ] },
-        { "name":"Fiat", "models":[ "500", "Panda" ] }
-    ]';
+$test = "[
+	{ 'isim': 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
+	{ 'isim': 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' }
+]";
 
 //$return = json_encode($lastCandidates);
 //ChromePhp::log($return);

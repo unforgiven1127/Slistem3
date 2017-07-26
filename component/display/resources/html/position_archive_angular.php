@@ -27,7 +27,7 @@
 		  	<th>Age</th>
 		  </tr>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.name }}</td>
+		    <td>{{ x.isim }}</td>
 		  </tr>
 		</table>
 	</div>
@@ -39,7 +39,7 @@
        .then(function (response)
         {
         	console.log(response.data);
-            $scope.names = response.data.cars;
+            $scope.names = response.data;
         },
         function(error)
         {
