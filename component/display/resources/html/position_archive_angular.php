@@ -26,9 +26,9 @@
 		  	<th>Name</th>
 		  	<th>Age</th>
 		  </tr>
-		  <tr ng-controller="myCtrl" ng-repeat="x in names">
-		    <td>{{ x.name }}</td>
-		    <td>{{ x.age }}</td>
+		  <tr ng-controller="myCtrl" ng-repeat="y in names">
+		    <td>{{ y.name }}</td>
+		    <td>{{ y.age }}</td>
 		  </tr>
 		</table>
 	</div>
