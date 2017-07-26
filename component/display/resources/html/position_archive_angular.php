@@ -64,6 +64,12 @@
 	    <td>{{ x.Name }}</td>
 	    <td>{{ x.Country }}</td>
 	  </tr>
+	  <tr>
+	  	<td>
+	  		<button ng-click="myFunc()">OK</button>
+    		<p>The button has been clicked {{count}} times.</p>
+	  	</td>
+	  </tr>
 	</table>
 </div>
 
@@ -73,7 +79,14 @@
 	   $http.get("test.php?f=test1")
 	   .then(function (response) {$scope.names = response.data.records;});
 	});
+	app.controller('customersCtrl', function($scope, $http) {
+	   $scope.count = 0;
+	    $scope.myFunc = function() {
+		        $scope.count++;
+		};
+	});
 
+	/*Send data ajax style*/
     app.controller('PostController', ['$scope', '$http', function($scope, $http) {
             this.postForm = function() {
                 var encodedString = 'username=' +
