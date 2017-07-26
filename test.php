@@ -7,6 +7,11 @@ if(isset($_GET['f']))
   }
 }
 
+function loginTest()
+{
+	ChromePhp::log($candidate_info);
+}
+
 function test1()
 {
 	header("Access-Control-Allow-Origin: *");
