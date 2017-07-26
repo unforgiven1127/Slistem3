@@ -6,19 +6,36 @@
   </head>
   <body>
 
-  	<div ng-init="names = <?php echo htmlspecialchars(json_encode($test)); ?>">
-
+    <!-- Angular with json data htmlspecialchars part can be done at controller -->
+  	<div ng-init="positions = <?php echo htmlspecialchars(json_encode($test)); ?>">
 		<table>
 		  <tr>
 		  	<th>ID</th>
 		  	<th>Position</th>
 		  </tr>
-		  <tr ng-repeat="x in names">
+		  <tr ng-repeat="x in positions">
 		    <td>{{ x.id }}</td>
 		    <td>{{ x.position }}</td>
 		  </tr>
 		</table>
 	</div>
+
+	<div ng-app="myApp" ng-controller="customersCtrl">
+		<table>
+		  <tr ng-repeat="x in names">
+		    <td>{{ x.firstname }}</td>
+		    <td>{{ x.lastname }}</td>
+		  </tr>
+		</table>
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('customersCtrl', function($scope, $http) {
+		    $http.get("test.php")
+		    .then(function (response) {$scope.names = response.data.records;});
+		});
+	</script>
 
   </body>
 </html>
