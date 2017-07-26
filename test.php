@@ -9,7 +9,8 @@ if(isset($_GET['f']))
 
 function loginTest()
 {
-	ChromePhp::log($candidate_info);
+	$login = $_POST['login'];
+	ChromePhp::log($login);
 }
 
 function test1()

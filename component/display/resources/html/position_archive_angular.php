@@ -84,7 +84,7 @@
                 $http({
                     method: 'POST',
                     url: 'test.php?f=loginTest',
-                    data: encodedString,
+                    data: {'login':encodedString},
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 })
 
