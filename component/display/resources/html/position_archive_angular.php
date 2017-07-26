@@ -35,7 +35,7 @@
        $http.get("test.php")
        .then(function (response)
         {
-            angular.fromJson(response);
+        	console.log(response);
             $scope.names = response;
         },
             function(error)
