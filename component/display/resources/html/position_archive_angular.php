@@ -7,18 +7,7 @@
   <body>
 
     <!-- Angular with json data htmlspecialchars part can be done at controller -->
-  	<div ng-init="positions = <?php echo htmlspecialchars(json_encode($test)); ?>">
-		<table>
-		  <tr>
-		  	<th>ID</th>
-		  	<th>Position</th>
-		  </tr>
-		  <tr ng-repeat="x in positions">
-		    <td>{{ x.id }}</td>
-		    <td>{{ x.position }}</td>
-		  </tr>
-		</table>
-	</div>
+  	
 
 	<div ng-controller="myCtrl">
 		<table>
