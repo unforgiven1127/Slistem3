@@ -2,7 +2,7 @@
 <html >
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body>
+<body ng-app="myApp">
 
 
 <!-- Angular with json data htmlspecialchars part can be done at controller -->
@@ -19,7 +19,7 @@
 	</table>
 </div>
 
-<div ng-app="myApp" ng-controller="customersCtrl">
+<div  ng-controller="customersCtrl">
 
 <table>
   <tr ng-repeat="x in names">
