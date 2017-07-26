@@ -86,9 +86,7 @@
                     url: 'test.php?f=loginTest',
                     data: {'login':encodedString},
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                })
-
-                .success(function(data) {
+                }).success(function(data) {
                         //console.log(data);
                         if ( data.trim() === 'correct') {
                             window.location.href = 'welcome.php';
