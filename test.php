@@ -1,7 +1,3 @@
-<script>
-
-
-</script>
 <?php
 
 require_once './common/tracy/src/tracy.php';
@@ -61,9 +57,8 @@ $test = "[
 	{ 'firstname': 'Elfiye', lastname: 'Şencin', cinsiyet: 'Erkek', maas: '4143' }
 ]";
 
-$data['lastCandidates'] = $lastCandidates;
 $return = json_encode($lastCandidates);
 //ChromePhp::log($return);
 ChromePhp::log('TEST PHP');
-echo $data;
+//echo $lastCandidates;
 
