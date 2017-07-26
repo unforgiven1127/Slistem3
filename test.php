@@ -11,7 +11,9 @@ function loginTest()
 {
 	ChromePhp::log('test 1 2 3 4');
 	$login = $_POST['username'];
+	$pass = $_POST['password'];
 	ChromePhp::log($login);
+	ChromePhp::log($pass);
 }
 
 function test1()
