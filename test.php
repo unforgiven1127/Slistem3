@@ -58,5 +58,7 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 }
 
 $return = htmlspecialchars(json_encode($lastCandidates));
-echo $return;
+
+$data['return'] = $return;
+echo $data;
 
