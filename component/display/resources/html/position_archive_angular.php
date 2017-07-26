@@ -21,7 +21,11 @@
 
 <div  ng-controller="customersCtrl">
 
-<table>
+<table style="margin-top: 10px;">
+  <tr>
+  	<th>Name</th>
+  	<th>Country</th>
+  </tr>
   <tr ng-repeat="x in names">
     <td>{{ x.Name }}</td>
     <td>{{ x.Country }}</td>
