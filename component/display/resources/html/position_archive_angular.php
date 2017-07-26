@@ -20,7 +20,7 @@
 		</table>
 	</div>
 
-	<div ng-app="myApp" ng-controller="customersCtrl">
+	<div ng-app="myApp" ng-controller="myCtrl">
 		<table>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.firstname }}</td>
@@ -31,9 +31,9 @@
 
 	<script>
 		var app = angular.module('myApp', []);
-		app.controller('customersCtrl', function($scope, $http) {
+		app.controller('myCtrl', function($scope, $http) {
 		    $http.get("test.php")
-		    .then(function (response) {$scope.names = response.data.records;});
+		    .then(function (response) {$scope.names = response.data;});
 		});
 	</script>
 
