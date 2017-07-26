@@ -36,12 +36,10 @@
        .then(function (response)
         {
             angular.fromJson(response);
-            console.log(JSON.sringify(response));
-            $scope.names = response.data.records;
+            $scope.names = response;
         },
             function(error)
             {
-            	alert(error);
             	console.log(error);
             }
        );
