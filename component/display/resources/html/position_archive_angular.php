@@ -28,7 +28,6 @@
 		  </tr>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.name }}</td>
-		    <td>{{ x.age }}</td>
 		  </tr>
 		</table>
 	</div>
@@ -40,7 +39,7 @@
        .then(function (response)
         {
         	console.log(response.data);
-            $scope.names = response.data;
+            $scope.names = response.data.cars;
         },
         function(error)
         {

@@ -52,7 +52,11 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 
-$test = '{"name":"John", "age":30, "city":"New York"},{"name":"John", "age":30, "city":"New York"}';
+$test = '"cars": [
+        { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+        { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+        { "name":"Fiat", "models":[ "500", "Panda" ] }
+    ]';
 
 //$return = json_encode($lastCandidates);
 //ChromePhp::log($return);
