@@ -53,7 +53,8 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 header('Content-Type: application/json');
 
 $test = '{
-"employee":{ "name":"John", "age":30, "city":"New York" }
+"employee":{ "name":"John", "age":30, "city":"New York" },
+		   { "name":"Ken", "age":33, "city":"Rupert" }
 }';
 
 //$return = json_encode($lastCandidates);

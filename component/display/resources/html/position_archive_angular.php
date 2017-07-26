@@ -22,6 +22,10 @@
 
 	<div ng-controller="myCtrl">
 		<table>
+		  <tr>
+		  	<th>Name</th>
+		  	<th>Age</th>
+		  </tr>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.name }}</td>
 		    <td>{{ x.age }}</td>
@@ -35,7 +39,7 @@
        $http.get("test.php")
        .then(function (response)
         {
-        	console.log(response);
+        	console.log(response.data.employee);
             $scope.names = response.data.employee;
         },
             function(error)
