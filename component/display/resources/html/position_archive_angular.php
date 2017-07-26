@@ -1,45 +1,18 @@
-<!doctype html>
-<html ng-app="myApp">
-  <head>
-    <title>Angular Position List</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  </head>
-  <body>
+<div ng-app="myApp" ng-controller="customersCtrl">
 
-    <!-- Angular with json data htmlspecialchars part can be done at controller -->
-  	
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.name }}</td>
+    <td>{{ x.age }}</td>
+  </tr>
+</table>
 
-	<div ng-controller="myCtrl">
-		<table>
-		  <tr>
-		  	<th>Name</th>
-		  	<th>Age</th>
-		  </tr>
-		  <tr ng-repeat="y in names">
-		    <td>{{ y.name }}</td>
-		    <td>{{ y.age }}</td>
-		  </tr>
-		</table>
-	</div>
+</div>
 
-	<script>
-	var app = angular.module('myApp', []);
-    app.controller('myCtrl', function($scope, $http) {
-       $http.get("test.php")
-       .then(function (response)
-        {
-        	console.log(response.data);
-            $scope.names = response.data;
-        },
-        function(error)
-        {
-        	console.log(error);
-        }
-       );
-    });
-    </script>
-
-
-
-  </body>
-</html>
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("test.php")
+    .then(function (response) {$scope.names = response.data;});
+});
+</script>
