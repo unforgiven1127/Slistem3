@@ -86,14 +86,15 @@
                     url: 'test.php?f=loginTest',
                     data: {'login':encodedString},
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }).success(function(data) {
-                        //console.log(data);
-                        if ( data.trim() === 'correct') {
-                            window.location.href = 'welcome.php';
-                        } else {
-                            $scope.errorMsg = "Username and password do not match.";
-                        }
-                })
+                }).then(function (response)
+			        {
+			        	console.log('success');
+			        },
+			        function(error)
+			        {
+			        	console.log(error);
+			        }
+			       );
             }
     }]);
 
