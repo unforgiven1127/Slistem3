@@ -10,7 +10,7 @@ if(isset($_GET['f']))
 function loginTest()
 {
 	ChromePhp::log('test 1 2 3 4');
-	$login = $_POST['login'];
+	$login = $_POST['username'];
 	ChromePhp::log($login);
 }
 
