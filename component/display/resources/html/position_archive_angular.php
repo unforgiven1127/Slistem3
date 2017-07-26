@@ -10,11 +10,11 @@
 
 		<table>
 		  <tr>
-		  	<th>Name</th>
-		  	<th>Country</th>
+		  	<th>ID</th>
+		  	<th>Position</th>
 		  </tr>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.country }}</td>
+		    <td>{{ x.id }}</td>
 		    <td>{{ x.position }}</td>
 		  </tr>
 		</table>

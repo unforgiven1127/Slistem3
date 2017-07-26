@@ -4528,9 +4528,13 @@ class CSl_statEx extends CSl_stat
 
       $data['server_name'] = $_SERVER['SERVER_NAME'];
       $data['positions'] = array();
+      $test = array();
 
       foreach ($userPosition as $key => $value)
       {
+
+        $add1 = array('position' => $value['title'],'id' => $value['sl_positionpk']);
+        $test[] = $add1;
         if(!isset($data['positions'][$value['created_by']]))
         {
           $data['positions'][$value['created_by']] = array();
@@ -4578,34 +4582,10 @@ class CSl_statEx extends CSl_stat
 
       }*/
 //ChromePhp::log($data);
-//
-      $test = array();
-      $add1 = array('country' => 'canada','position' => 'test 1');
-      $add2 = array('country' => 'tr','position' => 'test 2');
-
-      $test[] = $add1;
-      $test[] = $add2;
 
       //$test = json_encode($test);
 
       $data['test'] = $test;
-      ChromePhp::log($data['test']);
-
-      $test2 = "[
-{ 'isim': 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
-{ 'isim': 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' },
-{ 'isim': 'Teberhun',soyisim: 'Karadağ sazak',cinsiyet: 'Kız', maas: '2337' },
-{ 'isim': 'Çağar', soyisim: 'Alkan', cinsiyet: 'Kız', maas: '1883' },
-{ 'isim': 'Mükafi', soyisim: 'Düşer', cinsiyet: 'Kız', maas: '3869' },
-{ 'isim': 'Süreha',soyisim: 'Karakaya',cinsiyet: 'Erkek',maas: '1796' }
-]";
-
-      $data['test2'] = $test2;
-
-      $data['test3'] = "[
-  {'country':'canada','position':'test 1'},
-  {'country':'tr','position':'test 2'}
-]";
 
       //$html = $this->_oDisplay->render('archive_main_page',$data);
       $html = $this->_oDisplay->render('position_archive_angular',$data);
