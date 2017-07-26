@@ -88,7 +88,7 @@
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function (response)
 			        {
-			        	console.log('success');
+			        	console.log(response);
 			        },
 			        function(error)
 			        {
