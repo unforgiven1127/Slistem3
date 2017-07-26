@@ -78,6 +78,8 @@
 	app.controller('customersCtrl', function($scope, $http) {
 	   $http.get("test.php?f=test1")
 	   .then(function (response) {$scope.names = response.data.records;});
+
+	   /*Button click function*/
 	    $scope.count = 0;
 	    $scope.myFunc = function() {
 		        $scope.count++;
