@@ -56,6 +56,6 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 $return = json_encode($lastCandidates);
-ChromePhp::log($return);
+//ChromePhp::log($return);
 echo $return;
 
