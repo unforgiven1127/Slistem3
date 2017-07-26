@@ -37,7 +37,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-   $http.post("test.php/test1")
+   $http.get("test.php?f=test1")
    .then(function (response) {$scope.names = response.data.records;});
 });
 </script>
