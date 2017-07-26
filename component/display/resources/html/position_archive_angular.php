@@ -27,7 +27,7 @@
 		  	<th>Age</th>
 		  </tr>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.isim }}</td>
+		    <td>{{ x.type }}</td>
 		  </tr>
 		</table>
 	</div>
@@ -39,7 +39,7 @@
        .then(function (response)
         {
         	console.log(response.data);
-            $scope.names = response.data;
+            $scope.names = response.data.batter;
         },
         function(error)
         {

@@ -52,10 +52,13 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 
 header('Content-Type: application/json');
 
-$test = "[
-	{ 'isim': 'Yezden', soyisim: 'Erdurak', cinsiyet: 'Erkek', maas: '3569' },
-	{ 'isim': 'Elfiye', soyisim: 'Şencin', cinsiyet: 'Erkek', maas: '4143' }
-]";
+$test = '"batter":
+				[
+					{ "id": "1001", "type": "Regular" },
+					{ "id": "1002", "type": "Chocolate" },
+					{ "id": "1003", "type": "Blueberry" },
+					{ "id": "1004", "type": "Devils Food" }
+				]';
 
 //$return = json_encode($lastCandidates);
 //ChromePhp::log($return);
