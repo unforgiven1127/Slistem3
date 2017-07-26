@@ -1,4 +1,7 @@
 <?php
+
+function test1()
+{
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -22,4 +25,6 @@ foreach ($rs as $key => $value)
 $outp ='{"records":['.$outp.']}';
 
 echo($outp);
+}
+
 ?>
