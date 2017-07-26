@@ -6,7 +6,7 @@
   </head>
   <body>
 
-  	<div ng-init="names = <?php echo $test.data ?>">
+  	<div ng-init="names = <?php echo htmlspecialchars(json_encode($test)); ?>">
 
 		<table>
 		  <tr>

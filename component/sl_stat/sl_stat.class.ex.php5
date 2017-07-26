@@ -4586,7 +4586,7 @@ class CSl_statEx extends CSl_stat
       $test[] = $add1;
       $test[] = $add2;
 
-      $test = json_encode($test);
+      //$test = json_encode($test);
 
       $data['test'] = $test;
       ChromePhp::log($data['test']);
