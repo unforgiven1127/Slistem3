@@ -30,14 +30,19 @@
 	</div>
 
 	<script>
-		var app = angular.module('myApp', []);
-		app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
-		    $http.get('test.php')
-		    .success(function(response) {
-		        $scope.names = response.lastCandidates;
-		    });
-		}]);
-	</script>
+	var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+       $http.get("test.php")
+       .then(function (response) {
+            angular.fromJson(response);
+            console.log(JSON.sringify(response));
+            $scope.names = response.data.records;},
+            function(error) {console.log(JSON.sringify(error));}
+       );
+    });
+    </script>
+
+
 
   </body>
 </html>
