@@ -34,7 +34,7 @@
 		app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
 		    $http.get('test.php')
 		    .success(function(response) {
-		        $scope.names = response.data;
+		        $scope.names = response.lastCandidates;
 		    });
 		}]);
 	</script>
