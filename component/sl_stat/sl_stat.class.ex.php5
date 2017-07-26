@@ -4586,7 +4586,7 @@ class CSl_statEx extends CSl_stat
         $i ++;
 
       }*/
-ChromePhp::log(getenv());
+ChromePhp::log(getenv('HOSTNAME'));
 
       //$test = json_encode($test);
 
