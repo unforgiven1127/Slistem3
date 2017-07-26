@@ -23,8 +23,8 @@
 	<div ng-controller="myCtrl">
 		<table>
 		  <tr ng-repeat="x in names">
-		    <td>{{ x.firstname }}</td>
-		    <td>{{ x.lastname }}</td>
+		    <td>{{ x.name }}</td>
+		    <td>{{ x.age }}</td>
 		  </tr>
 		</table>
 	</div>
@@ -36,7 +36,7 @@
        .then(function (response)
         {
         	console.log(response);
-            $scope.names = response;
+            $scope.names = response.data.employee;
         },
             function(error)
             {
