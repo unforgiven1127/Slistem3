@@ -39,8 +39,8 @@
        $http.get("test.php")
        .then(function (response)
         {
-        	console.log(response.data.employee);
-            $scope.names = response.data.employee;
+        	console.log(response.data);
+            $scope.names = response.data;
         },
             function(error)
             {
