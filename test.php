@@ -57,7 +57,7 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
   $lastCandidates[] = $add;
 }
 
-$return = htmlspecialchars(json_encode($lastCandidates));
+$return = json_encode($lastCandidates);
 ChromePhp::log($return);
 echo $return;
 
