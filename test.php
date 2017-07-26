@@ -58,7 +58,6 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
 }
 
 $return = htmlspecialchars(json_encode($lastCandidates));
-
-$outp ='{"records":['.$return.']}';
-echo($outp);
+ChromePhp::log($return);
+echo $return;
 
