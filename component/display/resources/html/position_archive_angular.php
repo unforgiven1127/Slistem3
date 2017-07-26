@@ -33,7 +33,7 @@
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function($scope, $http) {
 		    $http.get("test.php")
-		    .then(function (response) {$scope.names = response.data.records;});
+		    .then(function (response) {$scope.names = response.data;});
 		});
 	</script>
 
