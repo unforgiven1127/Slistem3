@@ -1,5 +1,12 @@
 <?php
 
+if(isset($_GET['f']))
+{
+  if(function_exists($_GET['f'])) {
+     $_GET['f']();
+  }
+}
+
 function test1()
 {
 header("Access-Control-Allow-Origin: *");
