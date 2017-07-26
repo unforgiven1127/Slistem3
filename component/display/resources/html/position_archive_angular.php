@@ -84,7 +84,9 @@
                 $http({
                     method: 'POST',
                     url: 'test.php?f=loginTest',
-                    data: {'login':encodedString},
+                    data : {
+					    login : 'value123' // will be accessible in $_POST['data1']
+					  },
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function (response)
 			        {
