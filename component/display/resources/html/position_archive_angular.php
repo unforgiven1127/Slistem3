@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="">
+<html ng-app="myApp">
   <head>
     <title>Angular Position List</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -7,7 +7,7 @@
   <body>
 
     <!-- Angular with json data htmlspecialchars part can be done at controller -->
-  	<div ng-app="firstApp" ng-init="positions = <?php echo htmlspecialchars(json_encode($test)); ?>">
+  	<div ng-init="positions = <?php echo htmlspecialchars(json_encode($test)); ?>">
 		<table>
 		  <tr>
 		  	<th>ID</th>
@@ -20,7 +20,7 @@
 		</table>
 	</div>
 
-	<div ng-app="myApp" ng-controller="myCtrl">
+	<div ng-controller="myCtrl">
 		<table>
 		  <tr ng-repeat="x in names">
 		    <td>{{ x.firstname }}</td>
