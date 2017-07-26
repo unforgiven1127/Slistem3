@@ -31,10 +31,12 @@
 
 	<script>
 		var app = angular.module('myApp', []);
-		app.controller('myCtrl', function($scope, $http) {
-		    $http.get("test.php")
-		    .then(function (response) {alert(response);$scope.names = response;});
-		});
+		app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
+		    $http.get('test.php')
+		    .success(function(data) {
+		        $scope.names = data;
+		    });
+		}]);
 	</script>
 
   </body>

@@ -3,8 +3,7 @@
 
 </script>
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+
 require_once './common/tracy/src/tracy.php';
 use Tracy\Debugger;
 
@@ -14,8 +13,6 @@ require_once './common/lib/ChromePhp.php';
 //require_once './common/lib/verticalSlider/js/jquery.totemticker.js';
 
 session_start();
-header("Cache-Control: no-cache");
-header("Pragma: no-cache");
 
 // Connect to redis
 $GLOBALS['redis'] = new Redis();
@@ -57,6 +54,7 @@ while($lastCandidate = mysql_fetch_assoc($slistemQuery))
   $lastCandidates[] = $add;
 }
 
+header('Content-Type: application/json');
 $return = json_encode($lastCandidates);
 ChromePhp::log($return);
 echo $return;
