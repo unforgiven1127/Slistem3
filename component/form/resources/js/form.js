@@ -95,7 +95,8 @@ function beforeCompanyAdd()
 
           //console.log(oJsonData);
           var data = oJsonData.data;
-          alert(parsedData);
+          alert(oJsonData);
+          alert(oJsonData.data);
           var parsedData = jQuery.parseJSON(data);
           alert(parsedData);
           if(parsedData != "none")
