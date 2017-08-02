@@ -5215,6 +5215,7 @@ var_dump($query);*/
     $eplodedList = Array();
     foreach ($result as $key => $value)
     {
+      ChromePhp::log($value['first_activity']);
       $eplodedList[$value['first_activity']][] = $value;
     }
 

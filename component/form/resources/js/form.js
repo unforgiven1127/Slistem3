@@ -99,7 +99,7 @@ function beforeCompanyAdd()
           if (!$.trim(oJsonData.data)){
               dataFlag = false;
           }
-          alert(dataFlag);
+          //alert(dataFlag);
           if(dataFlag)
           {
             alert('IF');
@@ -129,13 +129,13 @@ function beforeCompanyAdd()
             }
             else
             {
-              alert('ELSE 1');
+              //alert('ELSE 1');
               $('#addcompanyId').submit();
             }
           }
           else
           {
-            alert('ELSE 2');
+            //alert('ELSE 2');
             $('#addcompanyId').submit();
           }
 
