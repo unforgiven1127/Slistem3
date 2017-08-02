@@ -96,6 +96,7 @@ function beforeCompanyAdd()
           //console.log(oJsonData);
           var data = oJsonData.data;
           alert(oJsonData);
+          alert(oJsonData.data.lenght);
           alert(oJsonData.data);
           var parsedData = jQuery.parseJSON(data);
           alert(parsedData);
