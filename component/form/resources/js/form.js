@@ -96,12 +96,13 @@ function beforeCompanyAdd()
           //console.log(oJsonData);
           var data = oJsonData.data;
           var dataFlag = true;
-          alert(oJsonData);
           if (!$.trim(oJsonData.data)){
               dataFlag = false;
           }
+          alert(dataFlag);
           if(dataFlag)
           {
+            alert('IF');
             var parsedData = jQuery.parseJSON(data);
             if(parsedData != "none")
             {
@@ -128,11 +129,13 @@ function beforeCompanyAdd()
             }
             else
             {
+              alert('ELSE 1');
               $('#addcompanyId').submit();
             }
           }
           else
           {
+            alert('ELSE 2');
             $('#addcompanyId').submit();
           }
 
