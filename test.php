@@ -31,7 +31,7 @@ function test1()
 	$rs[] = $add3;
 
 	$outp = "";
-	foreach ($rs as $key => $value)
+	foreach ($rs as $key => $value)//$array as $key => $value
 	{
 	    if ($outp != "") {$outp .= ",";}
 	    $outp .= '{"Name":"'  . $value["CompanyName"] . '",';
