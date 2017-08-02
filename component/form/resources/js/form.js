@@ -95,35 +95,41 @@ function beforeCompanyAdd()
 
           //console.log(oJsonData);
           var data = oJsonData.data;
+          var dataFlag = true;
           alert(oJsonData);
           if (!$.trim(oJsonData.data)){
-              alert("What follows is blank: ");
+              dataFlag = false;
           }
-          alert(oJsonData.data);
-          var parsedData = jQuery.parseJSON(data);
-          alert(parsedData);
-          if(parsedData != "none")
+          if(dataFlag)
           {
-            ShowDialogBox('Warning',parsedData,'Yes','No', 'GoToAssetList',null);
-            /*var newUrl = form.action+'&mailFlg=no';
-            $('#addcompanyId').attr('action',newUrl);*/// mail gondermesi icin alan ekledik
-            /*var msg = "There are possible duplicates: "+parsedData+" do you still want to add a new company?";
-            if(ShowDialogBox(msg))
+            var parsedData = jQuery.parseJSON(data);
+            if(parsedData != "none")
             {
-                //alert('yes');
-                //event.preventDefault();
-                var newUrl = form.action+'&mailFlg=yes';
-                $('#addcompanyId').attr('action',newUrl);// mail gondermesi icin alan ekledik
-                //$('#addcompanyId').submit();
-                return true;
+              ShowDialogBox('Warning',parsedData,'Yes','No', 'GoToAssetList',null);
+              /*var newUrl = form.action+'&mailFlg=no';
+              $('#addcompanyId').attr('action',newUrl);*/// mail gondermesi icin alan ekledik
+              /*var msg = "There are possible duplicates: "+parsedData+" do you still want to add a new company?";
+              if(ShowDialogBox(msg))
+              {
+                  //alert('yes');
+                  //event.preventDefault();
+                  var newUrl = form.action+'&mailFlg=yes';
+                  $('#addcompanyId').attr('action',newUrl);// mail gondermesi icin alan ekledik
+                  //$('#addcompanyId').submit();
+                  return true;
+              }
+              else
+              {
+                  //alert('no');
+                  var newUrl = form.action+'&mailFlg=no';
+                  $('#addcompanyId').attr('action',newUrl);// mail gondermesi icin alan ekledik
+                  return false;
+              }*/
             }
             else
             {
-                //alert('no');
-                var newUrl = form.action+'&mailFlg=no';
-                $('#addcompanyId').attr('action',newUrl);// mail gondermesi icin alan ekledik
-                return false;
-            }*/
+              $('#addcompanyId').submit();
+            }
           }
           else
           {
