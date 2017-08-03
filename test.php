@@ -52,7 +52,7 @@
 	textarea
 	{ width: 700px !important; }
 	.label
-	{ padding-left: 5px; }
+	{ padding-right: 5px; }
 </style>
 </head>
 
