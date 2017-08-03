@@ -3,6 +3,9 @@
 	{
 		public $randomString = '';
 		public $randomStringArray = array();
+		public $text1 = 0;
+		public $text2 = 0;
+		public $text3 = 0;
 
 		private function generateRandomString($length = 1024)
 		{
@@ -37,7 +40,7 @@
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
     		$newRandom = new RandomString();
-    		$texts = array($text1,$text2,$text3);
+    		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = explode(" ",$text);
@@ -45,12 +48,24 @@
 	    		{
 	    			if($textArray[0] == $value)
 	    			{
-
+	    				for($i = 1; $i < $textArray.count(); $i++)
+	    				{
+	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
+	    					{
+	    						if($i == $textArray.count()-1)
+	    						{
+	    							$newRandom->$key1++;
+	    						}
+	    					}
+	    				}
 	    			}
 	    		}
 	    	}
 
 	    	$data['random'] = $newRandom->randomString;
+	    	$data['t1c'] = $newRandom->text1;
+	    	$data['t2c'] = $newRandom->text2;
+	    	$data['t3c'] = $newRandom->text3;
 	    	//$data['random'] = 'asdasda';
 
 	        //$data[] = 'You entered:' . $_POST['name'];
@@ -81,9 +96,9 @@
             .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
-                //alert(data.text1);
-                //alert(data.text2);
-                //alert(data.text3);
+                alert(data.t1c);
+                alert(data.t2c);
+                alert(data.t3c);
             })
         });
 
