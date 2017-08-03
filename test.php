@@ -44,7 +44,12 @@
 <style>
 	table
 	{
-	    margin-left: 2cm;
+	    margin-left: 50px;
+	    margin-top: 50px;
+	}
+	td
+	{
+		margin-top: 10px;
 	}
 </style>
 </head>
