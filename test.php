@@ -70,7 +70,7 @@ require_once './common/lib/ChromePhp.php';
 	    					$nextKey = $key2 + $i;
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $i)
 	    					{
-	    						ChromePhp::log('HERE I AM');
+	    						$newRandom->$key1++;
 	    					}
 	    				}
 	    			}
