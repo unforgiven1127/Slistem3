@@ -44,7 +44,7 @@ require_once './common/lib/ChromePhp.php';
     		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
-	    		$textArray = explode(" ",$text);
+	    		$textArray = explode("",$text);
 	    		foreach ($newRandom->randomStringArray as $key2 => $value)
 	    		{
 	    			if($textArray[0] == $value)
