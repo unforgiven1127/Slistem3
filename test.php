@@ -68,7 +68,7 @@ require_once './common/lib/ChromePhp.php';
 	    				for($i = 1; $i < count($textArray); $i++)
 	    				{
 	    					$nextKey = $key2 + $i;
-	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray)-1 == $i)
+	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $i)
 	    					{
 	    						ChromePhp::log('HERE I AM');
 	    					}
