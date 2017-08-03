@@ -65,19 +65,19 @@ ChromePhp::log(count($textArray));
 	    			if($textArray[0] == $value)
 	    			{
 	    				//ChromePhp::log('HERE 1');
-	    				/*for($i = 1; $i < count($textArray); $i++)
+	    				for($i = 1; $i < count($textArray); $i++)
 	    				{
 	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
 	    					{
-	    						ChromePhp::log('HERE 2');
+	    						//ChromePhp::log('HERE 2');
 	    						if($i == $textArray.count()-1)
 	    						{
-	    							ChromePhp::log('HERE 3');
-	    							ChromePhp::log($key1);
+	    							//ChromePhp::log('HERE 3');
+	    							//ChromePhp::log($key1);
 	    							$newRandom->$key1++;
 	    						}
 	    					}
-	    				}*/
+	    				}
 	    			}
 	    		}
 	    	}
