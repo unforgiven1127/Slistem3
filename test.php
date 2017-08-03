@@ -49,7 +49,7 @@
 	}
 	td
 	{
-		margin-top: 10px;
+		padding-top: 10px;
 	}
 </style>
 </head>
