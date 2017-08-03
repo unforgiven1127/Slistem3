@@ -4,31 +4,52 @@
 	    $chars = 'abcdefghijklmnopqrstuvwxyz';
 	    $charsLength = strlen($chars);
 	    $randomString = '';
+	    $randomStringArray = array();
 	    for ($i = 0; $i < $length; $i++)
 	    {
-	        $randomString .= $chars[rand(0, $charsLength - 1)];
+	    	$randomChar = $chars[rand(0, $charsLength - 1)];
+	        $randomString .= $randomChar;
+	        $randomStringArray[] = $randomChar;
 	    }
 	    return $randomString;
 	}
 
     $data = array();
+    $texts = array();
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
     	$text1 = $_POST['text1'];
     	$text2 = $_POST['text2'];
     	$text3 = $_POST['text3'];
-    	$random = generateRandomString();
-    	$data['random'] = $random;
-    	$data['text1'] = $text1;
-    	$data['text2'] = $text2;
-    	$data['text3'] = $text3;
-        //$data[] = 'You entered:' . $_POST['name'];
-        exit(json_encode($data));
+
+    	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
+    	{
+    		$texts[] = $_POST['text1'];
+	    	$texts[] = $_POST['text2'];
+	    	$texts[] = $_POST['text3'];
+	    	foreach ($texts as $key => $value)
+	    	{
+	    		foreach ($variable as $key => $value)
+	    		{
+	    			# code...
+	    		}
+	    	}
+
+	    	$random = generateRandomString();
+	    	$data['random'] = $random;
+
+	    	$data['text1'] = $text1;
+	    	$data['text2'] = $text2;
+	    	$data['text3'] = $text3;
+	        //$data[] = 'You entered:' . $_POST['name'];
+    	}
+		else
+	    {
+	    	$data['random'] = $data['error'] = "Please match the format requested; The string should be less than 8 characters and lowercase";
+	    }
+	    exit(json_encode($data));
     }
-    else
-    {
-    	$data['random'] = "Please enter all of the texts";
-    }
+
 ?>
 
 <head>
