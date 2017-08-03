@@ -15,7 +15,7 @@
     $data = array();
     if(isset($_POST['text1']))
     {
-    	$data[] = 'Random string is: '.$random;
+    	$data['random'] = 'Random string is: '.$random;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
     }
@@ -36,6 +36,8 @@
                 encode      : true
             })
             .done(function(data) {
+            	alert(data);
+            	alert(data.random);
                 $('#result').html(data);
             })
         });
