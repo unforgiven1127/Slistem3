@@ -51,8 +51,9 @@
 	{ padding-top: 10px; }
 	textarea
 	{ width: 700px !important; }
-	.label
-	{ margin-right: 5px; }
+	input
+	{ margin-left: 50px; }
+
 </style>
 </head>
 
@@ -60,15 +61,15 @@
     <form>
     	<table>
     		<tr>
-    			<td class:'label'>Text 1: </td>
+    			<td>Text 1: </td>
     			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td class:'label'>Text 2: </td>
+    			<td>Text 2: </td>
     			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td class:'label'>Text 3: </td>
+    			<td>Text 3: </td>
     			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
     		</tr>
     		<tr>
