@@ -1,4 +1,5 @@
 <?php
+require_once './common/lib/ChromePhp.php';
 	class RandomString
 	{
 		public $randomString = '';
@@ -54,6 +55,7 @@
 	    					{
 	    						if($i == $textArray.count()-1)
 	    						{
+	    							ChromePhp::log($key1);
 	    							$newRandom->$key1++;
 	    						}
 	    					}
