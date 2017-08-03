@@ -99,7 +99,13 @@ require_once './common/lib/ChromePhp.php';
     	{
 	    	$newMacth = new StringMatch($text1,$text2,$text3);
 	    	$data['random'] = $newMacth->random;
-	    	$data['match1'] = $newMacth->match1;
+
+
+
+	    	$data['matches'] = "$text1 matches ".$newMacth->match1." times";
+	    	$data['matches'] .= "$text2 matches ".$newMacth->match2." times";
+	    	$data['matches'] .= "$text3 matches ".$newMacth->match3." times";
+
 	    	exit(json_encode($data));
     	}
 		else
@@ -127,7 +133,8 @@ require_once './common/lib/ChromePhp.php';
             .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
-                alert(data.match1);
+                $('#matches').html(data.matches);
+                //alert(data.match1);
                 //alert(data.t2c);
                 //alert(data.t3c);
             })
