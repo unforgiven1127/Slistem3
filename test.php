@@ -37,16 +37,14 @@
             })
             .done(function(data) {
                 $('#result').html(data.random);
+                $('#resultTable').show();
             })
         });
     });
 </script>
 <style>
 	table
-	{
-	    margin-left: 50px;
-	    margin-top: 50px;
-	}
+	{ margin-left: 50px; margin-top: 50px; }
 	td
 	{ padding-top: 10px; }
 	textarea
@@ -55,6 +53,8 @@
 	{ margin-left: 10px; width: 200px !important; }
 	button
 	{ float: right; width: 100px; }
+	#resultTable
+	{ display:none }
 
 </style>
 </head>
@@ -78,7 +78,7 @@
     			<td colspan="2"><button type="submit" class="btn btn-primary">Check</button></td>
     		</tr>
     	</table>
-    	<table style="display:none">
+    	<table id='resultTable'>
     		<tr>
     			<td><h4>Random Text:</h4></td>
     		</tr>
