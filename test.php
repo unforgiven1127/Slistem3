@@ -51,6 +51,10 @@
 	{
 		padding-top: 10px;
 	}
+	textarea
+	{
+		width: 100px;
+	}
 </style>
 </head>
 
@@ -70,7 +74,7 @@
     			<td><button type="submit" class="btn btn-default">Submit</button></td>
     		</tr>
     		<tr>
-    			<td><textarea class="form-control" rows="5" id="result"></textarea></td>
+    			<td><textarea class="form-control" rows="10" id="result"></textarea></td>
     		</tr>
     	</table>
     </form>
