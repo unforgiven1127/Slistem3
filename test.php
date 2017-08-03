@@ -21,7 +21,8 @@
 ?>
 
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(function() {
         $('form').submit(function(e) {
@@ -43,8 +44,20 @@
 
 <body>
     <form>
-        <input type="text" name="name">
-        <input type="submit" value="Submit">
+    	<table>
+    		<tr>
+    			<td><input type="text" class="form-control" name='text1' id="text1"></td>
+    		</tr>
+    		<tr>
+    			<td><input type="text" class="form-control" name='text2' id="text2"></td>
+    		</tr>
+    		<tr>
+    			<td><input type="text" class="form-control" name='text3' id="text3"></td>
+    		</tr>
+    		<tr>
+    			<td><button type="submit" class="btn btn-default">Submit</button></td>
+    		</tr>
+    	</table>
     </form>
     <div id="result"></div>
 </body>
