@@ -74,7 +74,7 @@ ChromePhp::log(count($textArray));
 	    						{
 	    							//ChromePhp::log('HERE 3');
 	    							//ChromePhp::log($key1);
-	    							$newRandom->$key1++;
+	    							$newRandom->text1++;
 	    						}
 	    					}
 	    				}
