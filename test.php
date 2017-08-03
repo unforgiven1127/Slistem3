@@ -11,13 +11,17 @@
 	    return $randomString;
 	}
 
-	$random = generateRandomString();
     $data = array();
-    if(isset($_POST['text1']))
+    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
+    	$random = generateRandomString();
     	$data['random'] = $random;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
+    }
+    else
+    {
+    	$data['random'] = "Please enter all of the texts";
     }
 ?>
 
