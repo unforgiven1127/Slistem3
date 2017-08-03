@@ -61,10 +61,8 @@ require_once './common/lib/ChromePhp.php';
 	    					$nextKey = $key2 + $i;
 	    					$control = $i + 1;
 
-	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey])
+	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == count($textArray))
 	    					{
-	    						ChromePhp::log($control);
-	    						ChromePhp::log(count($textArray));
 	    						$this->match1++;
 	    					}
 	    				}
