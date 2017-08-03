@@ -52,6 +52,7 @@ require_once './common/lib/ChromePhp.php';
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = $newRandom->returnStringArray($text);
+	    		ChromePhp::log(count($textArray));
 	    		foreach ($rsa as $key2 => $value)
 	    		{
 	    			if($textArray[0] == $value)
@@ -63,8 +64,8 @@ require_once './common/lib/ChromePhp.php';
 
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey])
 	    					{
-	    						ChromePhp::log($control);
-	    						ChromePhp::log(count($textArray));
+	    						//ChromePhp::log($control);
+	    						//ChromePhp::log(count($textArray));
 	    						$this->match1++;
 	    					}
 	    				}
