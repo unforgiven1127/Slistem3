@@ -8,11 +8,13 @@
 	    {
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
-
+	    return $randomString;
 	}
+
+	$random = generateRandomString();
     $data = array();
     if(isset($_POST['name'])) {
-    	$data[] = 'Random string is: '.$randomString;
+    	$data[] = 'Random string is: '.$random;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
     }
