@@ -43,6 +43,7 @@
 
         $("#reset").click(function(){
 		    $('input[type="text"]').val('');
+		    $('textarea').val('');
 		});
     });
 </script>
