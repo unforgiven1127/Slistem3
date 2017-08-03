@@ -50,8 +50,7 @@
 	    		}
 	    	}*/
 
-	    	$random = generateRandomString();
-	    	$data['random'] = $random;
+	    	$data['random'] = 'asdad';
 
 	        //$data[] = 'You entered:' . $_POST['name'];
     	}
