@@ -23,7 +23,6 @@ require_once './common/lib/ChromePhp.php';
 
 		static function returnStringArray($string = '')
 		{
-			ChromePhp::log($string);
 			$returnArray = array();
 			$stringLen = strlen($string);
 			for($i = 0; $i < $stringLen; $i++)
@@ -59,10 +58,9 @@ require_once './common/lib/ChromePhp.php';
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = RandomString::returnStringArray($text);
-	    		ChromePhp::log($textArray);
-	    		//$rsa = $newRandom->randomStringArray;
+	    		$rsa = $newRandom->randomStringArray;
 	    		//ChromePhp::log($rsa);
-	    		/*foreach ($rsa as $key2 => $value)
+	    		foreach ($rsa as $key2 => $value)
 	    		{
 	    			ChromePhp::log('HERE 0');
 	    			if($textArray[0] == $value)
@@ -82,7 +80,7 @@ require_once './common/lib/ChromePhp.php';
 	    					}
 	    				}
 	    			}
-	    		}*/
+	    		}
 	    	}
 
 	    	$data['random'] = $newRandom->randomString;
