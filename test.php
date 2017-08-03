@@ -30,7 +30,7 @@
     $(function() {
         $('form').submit(function(e) {
             e.preventDefault();
-            alert($(this).serialize());
+            //alert($(this).serialize());
             $.ajax({
                 type        : 'POST',
                 url         : 'test.php',
