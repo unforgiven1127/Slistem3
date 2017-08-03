@@ -110,7 +110,6 @@ require_once './common/lib/ChromePhp.php';
 	    {
 	    	$data['random'] = $data['error'] = "Please match the format requested; The string should be less than 8 characters and lowercase";
 	    }
-	    exit(json_encode($data));
     }
 
 ?>
