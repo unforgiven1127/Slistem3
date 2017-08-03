@@ -5,7 +5,7 @@ require_once './common/lib/ChromePhp.php';
 		public $randomString = '';
 		public $randomStringArray = array();
 
-		private function generateRandomString($length = 1024)
+		private function generateRandomString($length = 300)
 		{
 		    $chars = 'abcdefghijklmnopqrstuvwxyz';
 		    $charsLength = strlen($chars);
@@ -63,6 +63,12 @@ require_once './common/lib/ChromePhp.php';
 	    				{
 	    					$nextKey = $key2 + $i;
 	    					$control = $i - 1;
+	    					ChromePhp::log($rsa[$nextKey]);
+	    					ChromePhp::log($textArray[$i]);
+	    					ChromePhp::log($control);
+	    					ChromePhp::log(count($textArray));
+	    					ChromePhp::log("----------------------------");
+
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $control)
 	    					{
 	    						$this->match1++;
