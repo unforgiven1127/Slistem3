@@ -14,8 +14,14 @@
     $data = array();
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
+    	$text1 = $_POST['text1'];
+    	$text2 = $_POST['text2'];
+    	$text3 = $_POST['text3'];
     	$random = generateRandomString();
     	$data['random'] = $random;
+    	$data['text1'] = $text1;
+    	$data['text2'] = $text2;
+    	$data['text3'] = $text3;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
     }
@@ -42,6 +48,9 @@
             .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
+                alert(data.text1);
+                alert(data.text2);
+                alert(data.text3);
             })
         });
 
