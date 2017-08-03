@@ -29,6 +29,7 @@ require_once './common/lib/ChromePhp.php';
 
 	function returnStringArray($string = '')
 	{
+		ChromePhp::log($string);
 		$returnArray = array();
 		$stringLen = strlen($string);
 		for($i = 0; $i < $stringLen; $i++)
