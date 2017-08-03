@@ -14,7 +14,7 @@
     $data = array();
     $postData = $_POST['data'];
 
-    echo $postData;
+    //echo $postData;
 
 	$random = generateRandomString();
 	$data['random'] = $random;
@@ -34,7 +34,9 @@
             $.ajax({
                 type        : 'POST',
                 url         : 'test.php',
-                data        :  {data : $(this).serialize()},
+                data : {
+				    data1 : 'value'
+				  },
                 dataType    : 'json',
                 encode      : true
             })
