@@ -59,12 +59,12 @@ require_once './common/lib/ChromePhp.php';
     				$textArray = $newRandom->returnStringArray($text);
 	    			if($textArray[0] == $value)
 	    			{
-	    				for($i = 1; $i < count($textArray); $i++)
+	    				for($i = 1; $i < strlen($text); $i++)
 	    				{
 	    					$nextKey = $key1 + $i;
 	    					$control = $i + 1;
 
-	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == count($textArray))
+	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == strlen($text))
 	    					{
 	    						if($key2 == 'text1'){$this->match1++;}
 	    						if($key2 == 'text2'){$this->match2++;}
