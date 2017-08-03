@@ -75,7 +75,10 @@
     			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td colspan="2"><button type="submit" class="btn btn-primary">Check</button></td>
+    			<td colspan="2">
+    				<button type="submit" class="btn btn-primary">Check</button>
+    				<button type="button" class="btn btn-warning">Reset</button>
+    			</td>
     		</tr>
     	</table>
     	<table id='resultTable'>
@@ -84,6 +87,12 @@
     		</tr>
     		<tr>
     			<td><textarea class="form-control" rows="11" id="result"></textarea></td>
+    		</tr>
+    		<tr>
+    			<td><h4>Matches:</h4></td>
+    		</tr>
+    		<tr>
+    			<td id='matches'></td>
     		</tr>
     	</table>
     </form>
