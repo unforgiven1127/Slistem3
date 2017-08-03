@@ -12,7 +12,7 @@
 	}
 
     $data = array();
-    $postData = $_POST['data'];
+    $postData = $_POST['data1'];
 
     //echo $postData;
 
