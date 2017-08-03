@@ -47,8 +47,11 @@ require_once './common/lib/ChromePhp.php';
 	    	{
 	    		$textArray = explode("",$text);
 	    		ChromePhp::log($text);
-	    		foreach ($newRandom->randomStringArray as $key2 => $value)
+	    		$rsa = $newRandom->randomStringArray;
+	    		ChromePhp::log($rsa);
+	    		foreach ($rsa as $key2 => $value)
 	    		{
+	    			ChromePhp::log('HERE 0');
 	    			if($textArray[0] == $value)
 	    			{
 	    				ChromePhp::log('HERE 1');
