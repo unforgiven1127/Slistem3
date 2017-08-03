@@ -52,7 +52,7 @@
 	textarea
 	{ width: 700px !important; }
 	input
-	{ margin-left: 10px; }
+	{ margin-left: 10px; width: 100px; }
 	button
 	{ float: right; width: 100px; }
 
