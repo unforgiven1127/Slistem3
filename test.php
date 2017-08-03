@@ -50,7 +50,7 @@
 	    		}
 	    	}*/
 
-	    	$data['random'] = $newRandom->$randomString;
+	    	$data['random'] = $newRandom->randomString;
 
 	        //$data[] = 'You entered:' . $_POST['name'];
     	}
