@@ -22,6 +22,10 @@
     	$text2 = $_POST['text2'];
     	$text3 = $_POST['text3'];
 
+    	$data['text1'] = $text1;
+    	$data['text2'] = $text2;
+    	$data['text3'] = $text3;
+
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
     		$texts[] = $_POST['text1'];
@@ -38,9 +42,6 @@
 	    	$random = generateRandomString();
 	    	$data['random'] = $random;
 
-	    	$data['text1'] = $text1;
-	    	$data['text2'] = $text2;
-	    	$data['text3'] = $text3;
 	        //$data[] = 'You entered:' . $_POST['name'];
     	}
 		else
