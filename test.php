@@ -59,20 +59,29 @@ require_once './common/lib/ChromePhp.php';
     				$textArray = $newRandom->returnStringArray($text);
 	    			if($textArray[0] == $value)
 	    			{
-	    				//for($i = 1; $i < strlen($text); $i++)
-	    				$i = 1;
-	    				while( $i < strlen($text))
+	    				if(strlen($text) == 1)
 	    				{
-	    					$nextKey = $key1 + $i;
-	    					$control = $i + 1;
-
-	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == strlen($text))
+	    					if($key2 == 'text1'){$this->match1++;}
+    						if($key2 == 'text2'){$this->match2++;}
+    						if($key2 == 'text3'){$this->match3++;}
+	    				}
+	    				else
+	    				{
+	    					for($i = 1; $i < strlen($text); $i++)
 	    					{
-	    						if($key2 == 'text1'){$this->match1++;}
-	    						if($key2 == 'text2'){$this->match2++;}
-	    						if($key2 == 'text3'){$this->match3++;}
+	    						$nextKey = $key1 + $i;
+		    					$control = $i + 1;
+
+		    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == strlen($text))
+		    					{
+		    						ChromePhp::log($textArray[$i]);
+		    						ChromePhp::log($rsa[$nextKey]);
+		    						ChromePhp::log('------------');
+		    						if($key2 == 'text1'){$this->match1++;}
+		    						if($key2 == 'text2'){$this->match2++;}
+		    						if($key2 == 'text3'){$this->match3++;}
+		    					}
 	    					}
-	    					$i++;
 	    				}
 	    			}
     			}
