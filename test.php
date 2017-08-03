@@ -40,6 +40,10 @@
                 $('#resultTable').show();
             })
         });
+
+        $("#reset").click(function(){
+		    alert("The paragraph was clicked.");
+		});
     });
 </script>
 <style>
@@ -77,7 +81,7 @@
     		<tr>
     			<td colspan="2">
     				<button type="submit" class="btn btn-primary">Check</button>
-    				<button type="button" class="btn btn-warning">Reset</button>
+    				<button id='reset' type="button" class="btn btn-warning">Reset</button>
     			</td>
     		</tr>
     	</table>
