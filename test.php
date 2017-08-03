@@ -142,6 +142,7 @@ require_once './common/lib/ChromePhp.php';
         $("#reset").click(function(){
 		    $('input[type="text"]').val('');
 		    $('#result').html('');
+		    $('#matches').html('');
 		});
     });
 </script>
