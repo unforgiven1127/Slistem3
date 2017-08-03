@@ -53,7 +53,7 @@
 	}
 	textarea
 	{
-		width: 500px;
+		width: 700px !important;
 	}
 </style>
 </head>
