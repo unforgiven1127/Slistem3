@@ -12,20 +12,15 @@
 	}
 
     $data = array();
-    $text1 = $_POST['text1'];
-    $text2 = $_POST['text2'];
-    $text3 = $_POST['text3'];
-    if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
-    {
-    	$random = generateRandomString();
-    	$data['random'] = $random;
-        //$data[] = 'You entered:' . $_POST['name'];
-        exit(json_encode($data));
-    }
-    else
-    {
-    	$data['random'] = "Please enter all of the texts";
-    }
+    $postData = $_POST['data'];
+
+    echo $postData;
+
+	$random = generateRandomString();
+	$data['random'] = $random;
+    //$data[] = 'You entered:' . $_POST['name'];
+    exit(json_encode($data));
+
 ?>
 
 <head>
@@ -39,7 +34,7 @@
             $.ajax({
                 type        : 'POST',
                 url         : 'test.php',
-                data        : $(this).serialize(),
+                data        :  {data : $(this).serialize()},
                 dataType    : 'json',
                 encode      : true
             })
