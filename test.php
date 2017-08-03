@@ -31,13 +31,13 @@
     		$texts[] = $_POST['text1'];
 	    	$texts[] = $_POST['text2'];
 	    	$texts[] = $_POST['text3'];
-	    	foreach ($texts as $key => $value)
+	    	/*foreach ($texts as $key => $value)
 	    	{
 	    		foreach ($variable as $key => $value)
 	    		{
 	    			# code...
 	    		}
-	    	}
+	    	}*/
 
 	    	$random = generateRandomString();
 	    	$data['random'] = $random;
