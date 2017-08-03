@@ -53,7 +53,7 @@
 	}
 	textarea
 	{
-		width: 100px;
+		width: 500px;
 	}
 </style>
 </head>
@@ -73,6 +73,8 @@
     		<tr>
     			<td><button type="submit" class="btn btn-default">Submit</button></td>
     		</tr>
+    	</table>
+    	<table>
     		<tr>
     			<td><textarea class="form-control" rows="10" id="result"></textarea></td>
     		</tr>
