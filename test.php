@@ -42,7 +42,7 @@
         });
 
         $("#reset").click(function(){
-		    alert("The paragraph was clicked.");
+		    $('input[type="text"]').val('');
 		});
     });
 </script>
