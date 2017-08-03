@@ -41,6 +41,12 @@
         });
     });
 </script>
+<style>
+	table
+	{
+	    margin-left: 2cm;
+	}
+</style>
 </head>
 
 <body>
