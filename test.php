@@ -45,7 +45,7 @@
                 dataType    : 'json',
                 encode      : true
             })
-            .success(function(data) {
+            .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
                 alert(data.text1);
