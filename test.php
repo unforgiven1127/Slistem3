@@ -42,6 +42,8 @@ require_once './common/lib/ChromePhp.php';
 		public $text3 = "";
 		public $random = "";
 
+		public $match1 = 0;
+
 		public function match()
 		{
 			$newRandom = new RandomString();
@@ -60,11 +62,10 @@ require_once './common/lib/ChromePhp.php';
 	    				for($i = 1; $i < count($textArray); $i++)
 	    				{
 	    					$nextKey = $key2 + $i;
-	    					ChromePhp::log($i);
-	    					ChromePhp::log(count($textArray));
-	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $i)
+	    					$control = $i - 1;
+	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $control)
 	    					{
-
+	    						$this->match1++;
 	    					}
 	    				}
 	    			}
@@ -92,12 +93,11 @@ require_once './common/lib/ChromePhp.php';
     	$text2 = $_POST['text2'];
     	$text3 = $_POST['text3'];
 
-
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
 	    	$newMacth = new StringMatch($text1,$text2,$text3);
 	    	$data['random'] = $newMacth->random;
-	    	ChromePhp::log($data);
+	    	$data['match1'] = $newMacth->match1;
 	    	exit(json_encode($data));
     	}
 		else
@@ -125,9 +125,9 @@ require_once './common/lib/ChromePhp.php';
             .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
-                alert(data.t1c);
-                alert(data.t2c);
-                alert(data.t3c);
+                alert(data.match1);
+                //alert(data.t2c);
+                //alert(data.t3c);
             })
         });
 
