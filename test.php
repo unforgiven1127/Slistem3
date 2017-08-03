@@ -18,7 +18,7 @@ require_once './common/lib/ChromePhp.php';
 		    }
 		}
 
-		public function returnStringArray($string = '')
+		static function returnStringArray($string = '')
 		{
 			$returnArray = array();
 			$stringLen = strlen($string);
@@ -56,7 +56,8 @@ require_once './common/lib/ChromePhp.php';
     		{
     			foreach ($texts as $key2 => $text)
     			{
-    				$textArray = $newRandom->returnStringArray($text);
+    				$textArray = RandomString::returnStringArray($text);
+
 	    			if($textArray[0] == $value)
 	    			{
 	    				if(strlen($text) == 1)
@@ -67,24 +68,23 @@ require_once './common/lib/ChromePhp.php';
 	    				}
 	    				else
 	    				{
+	    					$controlString = $textArray[0];
 	    					for($i = 1; $i < strlen($text); $i++)
 	    					{
-	    						$nextKey = $key1 + $i;
-		    					$control = $i + 1;
-
-		    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == strlen($text))
-		    					{
-		    						ChromePhp::log($textArray[$i]);
-		    						ChromePhp::log($rsa[$nextKey]);
-		    						ChromePhp::log($control);
-		    						ChromePhp::log(strlen($text));
-		    						ChromePhp::log('------------');
-		    						if($key2 == 'text1'){$this->match1++;}
-		    						if($key2 == 'text2'){$this->match2++;}
-		    						if($key2 == 'text3'){$this->match3++;}
-		    					}
+	    						$newKey = $key1 + $i;
+	    						if(isset($rsa[$newKey]))
+	    						{
+	    							$controlString .= $rsa[$newKey];
+	    						}
+	    					}
+	    					if($controlString == $text)
+	    					{
+	    						if($key2 == 'text1'){$this->match1++;}
+	    						if($key2 == 'text2'){$this->match2++;}
+	    						if($key2 == 'text3'){$this->match3++;}
 	    					}
 	    				}
+
 	    			}
     			}
     		}
