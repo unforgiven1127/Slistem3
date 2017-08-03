@@ -43,6 +43,8 @@ require_once './common/lib/ChromePhp.php';
 		public $random = "";
 
 		public $match1 = 0;
+		public $match2 = 0;
+		public $match3 = 0;
 
 		public function match()
 		{
@@ -63,7 +65,9 @@ require_once './common/lib/ChromePhp.php';
 
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == count($textArray))
 	    					{
-	    						$this->match1++;
+	    						if($key1 == 'text1'){$this->match1++;}
+	    						if($key1 == 'text2'){$this->match2++;}
+	    						if($key1 == 'text3'){$this->match3++;}
 	    					}
 	    				}
 	    			}
