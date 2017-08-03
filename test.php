@@ -69,7 +69,9 @@
     		<tr>
     			<td><button type="submit" class="btn btn-default">Submit</button></td>
     		</tr>
+    		<tr>
+    			<td><div id="result"></div></td>
+    		</tr>
     	</table>
     </form>
-    <div id="result"></div>
 </body>
