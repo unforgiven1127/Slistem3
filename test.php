@@ -70,7 +70,7 @@
     			<td><button type="submit" class="btn btn-default">Submit</button></td>
     		</tr>
     		<tr>
-    			<td><div id="result"></div></td>
+    			<td><textarea class="form-control" rows="5" id="result"></textarea></td>
     		</tr>
     	</table>
     </form>
