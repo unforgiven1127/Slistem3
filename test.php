@@ -1,50 +1,36 @@
- <?php
-  if(isset($_POST['sweets']))
-  {
-    echo $_POST['sweets'];
-    exit;
-  }
-  ?>
+<?php
+    $data = array();
+    if(isset($_POST['name'])) {
+        $data[] = 'You entered:' . $_POST['name'];
+        exit(json_encode($data));
+    }
+?>
 
-    <script>
-        $(function(){
-          $("select[name='sweets']").change(function () {
-          var str = "";
-          $("select[name='sweets'] option:selected").each(function () {
-                str += $(this).text() + " ";
-
-              });
-
-                jQuery.ajax({
-                type: "POST",
-                data:  $("form#a").serialize(),
-
-                success: function(data){
-                    jQuery(".res").html(data);
-
-                    $('#test').html(data);
-
-
-                }
-                });
-                var str = $("form").serialize();
-                $(".res").text(str);
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(function() {
+        $('form').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type        : 'POST',
+                url         : 'index.php',
+                data        : $(this).serialize(),
+                dataType    : 'json',
+                encode      : true
+            })
+            .done(function(data) {
+                $('#result').html(data);
+            })
         });
-        });
-        </script>
+    });
+</script>
+</head>
 
-
- <div id="test">
-
-  </div>
-
-<form id="a" action="" method="post">
-  <select name="sweets" >
-   <option>Chocolate</option>
-   <option selected="selected">Candy</option>
-   <option>Taffy</option>
-   <option>Caramel</option>
-   <option>Fudge</option>
-  <option>Cookie</option>
-</select>
-</form>
+<body>
+    <form>
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="result"></div>
+</body>
