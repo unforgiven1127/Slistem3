@@ -69,15 +69,15 @@
     	<table>
     		<tr>
     			<td>Text 1: </td>
-    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7" pattern="[a-z]{2,7}" title="The string should be less than 8 characters and lowercase"></td>
+    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7" pattern="[a-z]{2,3}$" title="The string should be less than 8 characters and lowercase"></td>
     		</tr>
     		<tr>
     			<td>Text 2: </td>
-    			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7" pattern="[a-z]{2,7}" title="The string should be less than 8 characters and lowercase"></td>
+    			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7" pattern="[a-z]{2,3}$" title="The string should be less than 8 characters and lowercase"></td>
     		</tr>
     		<tr>
     			<td>Text 3: </td>
-    			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7" pattern="[a-z]{2,7}" title="The string should be less than 8 characters and lowercase"></td>
+    			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7" pattern="[a-z]{2,3}$" title="The string should be less than 8 characters and lowercase"></td>
     		</tr>
     		<tr>
     			<td colspan="2">
