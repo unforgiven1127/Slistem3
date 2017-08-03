@@ -45,7 +45,7 @@ require_once './common/lib/ChromePhp.php';
 		public function match()
 		{
 			$newRandom = new RandomString();
-    		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
+    		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = RandomString::returnStringArray($text);
