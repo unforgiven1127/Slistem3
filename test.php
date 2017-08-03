@@ -62,7 +62,7 @@
     <form>
     	<table>
     		<tr>
-    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7"></td>
+    			<td>Text1:<input type="text" class="form-control" name='text1' id="text1" maxlength="7"></td>
     		</tr>
     		<tr>
     			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7"></td>
@@ -71,7 +71,7 @@
     			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td><button type="submit" class="btn btn-default">Submit</button></td>
+    			<td><button type="submit" class="btn btn-primary">Check</button></td>
     		</tr>
     	</table>
     	<table>
@@ -79,7 +79,7 @@
     			<td><h4>Random Text:</h4></td>
     		</tr>
     		<tr>
-    			<td><textarea class="form-control" rows="10" id="result"></textarea></td>
+    			<td><textarea class="form-control" rows="11" id="result"></textarea></td>
     		</tr>
     	</table>
     </form>
