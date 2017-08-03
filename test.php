@@ -46,7 +46,7 @@
     <form>
     	<table>
     		<tr>
-    			<td><input type="text" class="form-control" name='text1' id="text1"></td>
+    			<td><input type="text" class="form-control" name='name' id="name"></td>
     		</tr>
     		<tr>
     			<td><input type="text" class="form-control" name='text2' id="text2"></td>
