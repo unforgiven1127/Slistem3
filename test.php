@@ -50,6 +50,7 @@ require_once './common/lib/ChromePhp.php';
 		{
 			$newRandom = new RandomString();
 			$rsa = $newRandom->randomStringArray;
+			$this->random = $newRandom->randomString;
     		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
 
     		foreach ($rsa as $key1 => $value)
@@ -88,9 +89,6 @@ require_once './common/lib/ChromePhp.php';
 	    			}
     			}
     		}
-
-	    	$this->random = $newRandom->randomString;
-
 		}
 
 		public function __construct($t1,$t2,$t3)
