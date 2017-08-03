@@ -57,7 +57,7 @@ require_once './common/lib/ChromePhp.php';
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = RandomString::returnStringArray($text);
-ChromePhp::log($textArray.count());
+ChromePhp::log(count($textArray));
 	    		$rsa = $newRandom->randomStringArray;
 	    		foreach ($rsa as $key2 => $value)
 	    		{
@@ -65,7 +65,7 @@ ChromePhp::log($textArray.count());
 	    			if($textArray[0] == $value)
 	    			{
 	    				//ChromePhp::log('HERE 1');
-	    				/*for($i = 1; $i < $textArray.count(); $i++)
+	    				/*for($i = 1; $i < count($textArray); $i++)
 	    				{
 	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
 	    					{
