@@ -76,6 +76,8 @@ require_once './common/lib/ChromePhp.php';
 		    					{
 		    						ChromePhp::log($textArray[$i]);
 		    						ChromePhp::log($rsa[$nextKey]);
+		    						ChromePhp::log($control);
+		    						ChromePhp::log(strlen($text));
 		    						ChromePhp::log('------------');
 		    						if($key2 == 'text1'){$this->match1++;}
 		    						if($key2 == 'text2'){$this->match2++;}
