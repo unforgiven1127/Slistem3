@@ -15,7 +15,7 @@
     $data = array();
     if(isset($_POST['text1']))
     {
-    	$data['random'] = 'Random string is: '.$random;
+    	$data['random'] = $random;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
     }
@@ -75,6 +75,9 @@
     		</tr>
     	</table>
     	<table>
+    		<tr>
+    			<td><h4>Random Text:</h4></td>
+    		</tr>
     		<tr>
     			<td><textarea class="form-control" rows="10" id="result"></textarea></td>
     		</tr>
