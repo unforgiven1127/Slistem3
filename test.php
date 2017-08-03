@@ -52,7 +52,7 @@
 	textarea
 	{ width: 700px !important; }
 	input
-	{ margin-left: 50px; }
+	{ margin-left: 10px; }
 
 </style>
 </head>
