@@ -48,7 +48,7 @@ require_once './common/lib/ChromePhp.php';
 	    		$textArray = explode("",$text);
 	    		ChromePhp::log($textArray);
 	    		$rsa = $newRandom->randomStringArray;
-	    		ChromePhp::log($rsa);
+	    		//ChromePhp::log($rsa);
 	    		/*foreach ($rsa as $key2 => $value)
 	    		{
 	    			ChromePhp::log('HERE 0');
