@@ -38,21 +38,15 @@ require_once './common/lib/ChromePhp.php';
 		}
 	}
 
+	class StringMatch
+	{
+		public $text1 = '';
+		public $text2 = '';
+		public $text3 = '';
 
-    $data = array();
-    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
-    {
-    	$text1 = $_POST['text1'];
-    	$text2 = $_POST['text2'];
-    	$text3 = $_POST['text3'];
-
-    	//$data['text1'] = $text1;
-    	//$data['text2'] = $text2;
-    	//$data['text3'] = $text3;
-
-    	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
-    	{
-    		$newRandom = new RandomString();
+		public function match()
+		{
+			$newRandom = new RandomString();
     		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
@@ -86,9 +80,31 @@ require_once './common/lib/ChromePhp.php';
 	    	$data['t1c'] = $newRandom->text1;
 	    	$data['t2c'] = $newRandom->text2;
 	    	$data['t3c'] = $newRandom->text3;
-	    	//$data['random'] = 'asdasda';
 
-	        //$data[] = 'You entered:' . $_POST['name'];
+	    	exit(json_encode($data));
+		}
+
+		public function __construct($t1,$t2,$t3)
+		{
+			$text1 = $t1;
+			$text2 = $t2;
+			$text3 = $t3;
+			$this->match();
+		}
+	}
+
+
+    $data = array();
+    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
+    {
+    	$text1 = $_POST['text1'];
+    	$text2 = $_POST['text2'];
+    	$text3 = $_POST['text3'];
+
+
+    	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
+    	{
+	    	$newMacth = new StringMatch($text1,$text2,$text3);
     	}
 		else
 	    {
