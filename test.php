@@ -72,9 +72,9 @@ ChromePhp::log(count($textArray));
 	    						//ChromePhp::log('HERE 2');
 	    						if($i == $textArray.count()-1)
 	    						{
-	    							//ChromePhp::log('HERE 3');
-	    							//ChromePhp::log($key1);
+	    							ChromePhp::log('HERE 3');
 	    							$newRandom->text1++;
+	    							ChromePhp::log($newRandom->text1);
 	    						}
 	    					}
 	    				}
