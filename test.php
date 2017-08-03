@@ -47,12 +47,11 @@ require_once './common/lib/ChromePhp.php';
 		public function match()
 		{
 			$newRandom = new RandomString();
+			$rsa = $newRandom->randomStringArray;
     		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = $newRandom->returnStringArray($text);
-ChromePhp::log(count($textArray));
-	    		$rsa = $newRandom->randomStringArray;
 	    		foreach ($rsa as $key2 => $value)
 	    		{
 	    			//ChromePhp::log('HERE 0');
@@ -62,18 +61,7 @@ ChromePhp::log(count($textArray));
 	    				for($i = 1; $i < count($textArray); $i++)
 	    				{
 	    					$nextKey = $key2 + $i;
-	    					$control = $i + 1;
-	    					if($key1 = "text1")
-	    					{
-	    						if(isset($rsa[$nextKey]))
-	    						{
-	    							//ChromePhp::log($rsa[$nextKey]);
-	    						}
-		    					//ChromePhp::log($textArray[$i]);
-		    					//ChromePhp::log($control);
-		    					//ChromePhp::log(count($textArray));
-		    					//ChromePhp::log("----------------------------");
-	    					}
+	    					$control = $i;
 
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $control)
 	    					{
