@@ -4,9 +4,6 @@ require_once './common/lib/ChromePhp.php';
 	{
 		public $randomString = '';
 		public $randomStringArray = array();
-		public $text1 = 0;
-		public $text2 = 0;
-		public $text3 = 0;
 
 		private function generateRandomString($length = 1024)
 		{
@@ -40,9 +37,10 @@ require_once './common/lib/ChromePhp.php';
 
 	class StringMatch
 	{
-		public $text1 = '';
-		public $text2 = '';
-		public $text3 = '';
+		public $text1 = "";
+		public $text2 = "";
+		public $text3 = "";
+		public $random = "";
 
 		public function match()
 		{
@@ -66,22 +64,15 @@ require_once './common/lib/ChromePhp.php';
 	    					ChromePhp::log(count($textArray));
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && count($textArray) == $i)
 	    					{
-	    						ChromePhp::log($key1);
-	    						if($key1 == 'text1'){$newRandom->text1++;}
-	    						if($key1 == 'text2'){$newRandom->text2++;}
-	    						if($key1 == 'text3'){$newRandom->text3++;}
+
 	    					}
 	    				}
 	    			}
 	    		}
 	    	}
 
-	    	$data['random'] = $newRandom->randomString;
-	    	$data['t1c'] = $newRandom->text1;
-	    	$data['t2c'] = $newRandom->text2;
-	    	$data['t3c'] = $newRandom->text3;
+	    	$this->random = $newRandom->randomString;
 
-	    	exit(json_encode($data));
 		}
 
 		public function __construct($t1,$t2,$t3)
@@ -89,7 +80,6 @@ require_once './common/lib/ChromePhp.php';
 			$this->text1 = $t1;
 			$this->text2 = $t2;
 			$this->text3 = $t3;
-			ChromePhp::log($this->text1);
 			$this->match();
 		}
 	}
@@ -106,6 +96,9 @@ require_once './common/lib/ChromePhp.php';
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
 	    	$newMacth = new StringMatch($text1,$text2,$text3);
+	    	$data['random'] = $newMacth->random;
+	    	ChromePhp::log($data);
+	    	exit(json_encode($data));
     	}
 		else
 	    {
