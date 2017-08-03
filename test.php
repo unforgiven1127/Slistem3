@@ -1,7 +1,19 @@
 <?php
+	function generateRandomString($length = 1024)
+	{
+	    $characters = 'abcdefghijklmnopqrstuvwxyz';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < $length; $i++)
+	    {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+
+	}
     $data = array();
     if(isset($_POST['name'])) {
-        $data[] = 'You entered:' . $_POST['name'];
+    	$data[] = 'Random string is: '.$randomString;
+        //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
     }
 ?>
