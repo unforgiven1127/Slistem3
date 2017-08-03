@@ -73,11 +73,11 @@
     		</tr>
     		<tr>
     			<td>Text 2: </td>
-    			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7"></td>
+    			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7" pattern="[a-z]{1,7}" title="The string should be less than 8 characters and lowercase"></td>
     		</tr>
     		<tr>
     			<td>Text 3: </td>
-    			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
+    			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7" pattern="[a-z]{1,7}" title="The string should be less than 8 characters and lowercase"></td>
     		</tr>
     		<tr>
     			<td colspan="2">
