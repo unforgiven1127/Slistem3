@@ -19,7 +19,7 @@
 
 		public function __construct()
 		{
-			generateRandomString();
+			$this->generateRandomString();
 		}
 	}
 
