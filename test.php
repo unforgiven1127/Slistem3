@@ -36,7 +36,7 @@
 
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
-    		$newRandom = new RandomString;
+    		$newRandom = new RandomString();
     		//$texts = array($text1,$text2,$text3);
 	    	/*foreach ($texts as $key1 => $text)
 	    	{
@@ -50,7 +50,8 @@
 	    		}
 	    	}*/
 
-	    	$data['random'] = 'asdasda';
+	    	$data['random'] = $newRandom->randomString;
+	    	//$data['random'] = 'asdasda';
 
 	        //$data[] = 'You entered:' . $_POST['name'];
     	}
