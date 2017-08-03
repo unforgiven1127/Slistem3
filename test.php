@@ -13,7 +13,8 @@
 
 	$random = generateRandomString();
     $data = array();
-    if(isset($_POST['name'])) {
+    if(isset($_POST['text1']))
+    {
     	$data[] = 'Random string is: '.$random;
         //$data[] = 'You entered:' . $_POST['name'];
         exit(json_encode($data));
@@ -46,13 +47,13 @@
     <form>
     	<table>
     		<tr>
-    			<td><input type="text" class="form-control" name='name' id="name"></td>
+    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td><input type="text" class="form-control" name='text2' id="text2"></td>
+    			<td><input type="text" class="form-control" name='text2' id="text2" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td><input type="text" class="form-control" name='text3' id="text3"></td>
+    			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
     		</tr>
     		<tr>
     			<td><button type="submit" class="btn btn-default">Submit</button></td>
