@@ -48,7 +48,7 @@ require_once './common/lib/ChromePhp.php';
 		{
 			$newRandom = new RandomString();
 			$rsa = $newRandom->randomStringArray;
-    		$texts = array('text1' => $this->text1);
+    		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = $newRandom->returnStringArray($text);
