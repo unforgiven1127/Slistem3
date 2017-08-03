@@ -1,18 +1,18 @@
 <?php
 	function generateRandomString($length = 1024)
 	{
-	    $characters = 'abcdefghijklmnopqrstuvwxyz';
-	    $charactersLength = strlen($characters);
+	    $chars = 'abcdefghijklmnopqrstuvwxyz';
+	    $charsLength = strlen($chars);
 	    $randomString = '';
 	    for ($i = 0; $i < $length; $i++)
 	    {
-	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	        $randomString .= $chars[rand(0, $charsLength - 1)];
 	    }
 	    return $randomString;
 	}
 
     $data = array();
-    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
+    if(strlen($_POST['text1']) > 0 && strlen($_POST['text2']) > 0 && strlen($_POST['text3']) > 0)
     {
     	$random = generateRandomString();
     	$data['random'] = $random;
