@@ -65,7 +65,10 @@ require_once './common/lib/ChromePhp.php';
 	    					$control = $i - 1;
 	    					if($key1 = "text1")
 	    					{
-	    						ChromePhp::log($rsa[$nextKey]);
+	    						if(isset($rsa[$nextKey]))
+	    						{
+	    							ChromePhp::log($rsa[$nextKey]);
+	    						}
 		    					ChromePhp::log($textArray[$i]);
 		    					ChromePhp::log($control);
 		    					ChromePhp::log(count($textArray));
