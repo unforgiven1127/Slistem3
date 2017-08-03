@@ -69,7 +69,7 @@
     	<table>
     		<tr>
     			<td>Text 1: </td>
-    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7"></td>
+    			<td><input type="text" class="form-control" name='text1' id="text1" maxlength="7" pattern="[a-z]{7}" title="The string should be less than 8 characters and lovercase"></td>
     		</tr>
     		<tr>
     			<td>Text 2: </td>
