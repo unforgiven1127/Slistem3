@@ -89,6 +89,7 @@ require_once './common/lib/ChromePhp.php';
 			$this->text1 = $t1;
 			$this->text2 = $t2;
 			$this->text3 = $t3;
+			ChromePhp::log($this->text1);
 			$this->match();
 		}
 	}
