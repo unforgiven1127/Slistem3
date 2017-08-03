@@ -53,6 +53,8 @@
 	{ width: 700px !important; }
 	input
 	{ margin-left: 10px; }
+	button
+	{ float: right; }
 
 </style>
 </head>
