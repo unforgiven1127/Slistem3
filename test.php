@@ -12,7 +12,10 @@
 	}
 
     $data = array();
-    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
+    $text1 = $_POST['text1'];
+    $text2 = $_POST['text2'];
+    $text3 = $_POST['text3'];
+    if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     {
     	$random = generateRandomString();
     	$data['random'] = $random;
