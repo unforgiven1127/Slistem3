@@ -102,9 +102,9 @@ require_once './common/lib/ChromePhp.php';
 
 
 
-	    	$data['matches'] = "$text1 matches ".$newMacth->match1." times";
-	    	$data['matches'] .= "$text2 matches ".$newMacth->match2." times";
-	    	$data['matches'] .= "$text3 matches ".$newMacth->match3." times";
+	    	$data['matches'] = "<b>$text1</b> matches <b>".$newMacth->match1."</b> times";
+	    	$data['matches'] .= " <b>$text2</b> matches <b>".$newMacth->match2."</b> times";
+	    	$data['matches'] .= " <b>$text3</b> matches <b>".$newMacth->match3."</b> times";
 
 	    	exit(json_encode($data));
     	}
@@ -134,9 +134,7 @@ require_once './common/lib/ChromePhp.php';
                 $('#result').html(data.random);
                 $('#resultTable').show();
                 $('#matches').html(data.matches);
-                //alert(data.match1);
-                //alert(data.t2c);
-                //alert(data.t3c);
+
             })
         });
 
