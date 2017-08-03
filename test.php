@@ -14,7 +14,7 @@
             e.preventDefault();
             $.ajax({
                 type        : 'POST',
-                url         : 'index.php',
+                url         : 'test.php',
                 data        : $(this).serialize(),
                 dataType    : 'json',
                 encode      : true
