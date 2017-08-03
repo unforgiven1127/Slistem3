@@ -51,28 +51,29 @@ require_once './common/lib/ChromePhp.php';
 			$newRandom = new RandomString();
 			$rsa = $newRandom->randomStringArray;
     		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
-	    	foreach ($texts as $key1 => $text)
-	    	{
-	    		$textArray = $newRandom->returnStringArray($text);
-	    		foreach ($rsa as $key2 => $value)
-	    		{
+
+    		foreach ($rsa as $key1 => $value)
+    		{
+    			foreach ($texts as $key2 => $text)
+    			{
+    				$textArray = $newRandom->returnStringArray($text);
 	    			if($textArray[0] == $value)
 	    			{
 	    				for($i = 1; $i < count($textArray); $i++)
 	    				{
-	    					$nextKey = $key2 + $i;
+	    					$nextKey = $key1 + $i;
 	    					$control = $i + 1;
 
 	    					if(isset($rsa[$nextKey]) && $textArray[$i] == $rsa[$nextKey] && $control == count($textArray))
 	    					{
-	    						if($key1 == 'text1'){$this->match1++;}
-	    						if($key1 == 'text2'){$this->match2++;}
-	    						if($key1 == 'text3'){$this->match3++;}
+	    						if($key2 == 'text1'){$this->match1++;}
+	    						if($key2 == 'text2'){$this->match2++;}
+	    						if($key2 == 'text3'){$this->match3++;}
 	    					}
 	    				}
 	    			}
-	    		}
-	    	}
+    			}
+    		}
 
 	    	$this->random = $newRandom->randomString;
 
