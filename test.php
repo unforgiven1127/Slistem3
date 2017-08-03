@@ -74,7 +74,7 @@
     			<td><input type="text" class="form-control" name='text3' id="text3" maxlength="7"></td>
     		</tr>
     		<tr>
-    			<td><button type="submit" class="btn btn-primary">Check</button></td>
+    			<td colspan="2"><button type="submit" class="btn btn-primary">Check</button></td>
     		</tr>
     	</table>
     	<table>
