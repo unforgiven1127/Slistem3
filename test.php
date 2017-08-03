@@ -38,17 +38,17 @@
     	{
     		$newRandom = new RandomString();
     		$texts = array($text1,$text2,$text3);
-	    	/*foreach ($texts as $key1 => $text)
+	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = explode(" ",$text);
-	    		foreach ($newRandom->$randomStringArray as $key2 => $value)
+	    		foreach ($newRandom->randomStringArray as $key2 => $value)
 	    		{
 	    			if($textArray[0] == $value)
 	    			{
 
 	    			}
 	    		}
-	    	}*/
+	    	}
 
 	    	$data['random'] = $newRandom->randomString;
 	    	//$data['random'] = 'asdasda';
