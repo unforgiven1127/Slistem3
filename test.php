@@ -27,6 +27,17 @@ require_once './common/lib/ChromePhp.php';
 		}
 	}
 
+	function returnStringArray($string = '')
+	{
+		$returnArray = array();
+		$stringLen = strlen($string);
+		for($i = 0; $i < $stringLen; $i++)
+		{
+			$returnArray[] = $string[$i];
+		}
+		return $returnArray;
+	}
+
     $data = array();
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
@@ -45,8 +56,8 @@ require_once './common/lib/ChromePhp.php';
     		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
-	    		//$textArray = explode("",$text);
-	    		ChromePhp::log($text[0]);
+	    		$textArray = $this->returnStringArray($text);
+	    		ChromePhp::log($textArray);
 	    		$rsa = $newRandom->randomStringArray;
 	    		//ChromePhp::log($rsa);
 	    		/*foreach ($rsa as $key2 => $value)
