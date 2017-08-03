@@ -103,9 +103,9 @@ require_once './common/lib/ChromePhp.php';
 	}
 
 
-    $data = array();
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
+    	$data = array();
     	$text1 = $_POST['text1'];
     	$text2 = $_POST['text2'];
     	$text3 = $_POST['text3'];
@@ -114,8 +114,6 @@ require_once './common/lib/ChromePhp.php';
     	{
 	    	$newMacth = new StringMatch($text1,$text2,$text3);
 	    	$data['random'] = $newMacth->random;
-
-
 
 	    	$data['matches'] = "<b>$text1</b> matches <b>".$newMacth->match1."</b> times,";
 	    	$data['matches'] .= " <b>$text2</b> matches <b>".$newMacth->match2."</b> times,";
