@@ -5,7 +5,7 @@ require_once './common/lib/ChromePhp.php';
 		public $randomString = '';
 		public $randomStringArray = array();
 
-		private function generateRandomString($length = 300)
+		private function generateRandomString($length = 1024)
 		{
 		    $chars = 'abcdefghijklmnopqrstuvwxyz';
 		    $charsLength = strlen($chars);
