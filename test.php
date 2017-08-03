@@ -12,15 +12,17 @@
 	}
 
     $data = array();
-    $postData = $_POST['data1'];
-
-    //echo $postData;
-
-	$random = generateRandomString();
-	$data['random'] = $random;
-    //$data[] = 'You entered:' . $_POST['name'];
-    exit(json_encode($data));
-
+    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
+    {
+    	$random = generateRandomString();
+    	$data['random'] = $random;
+        //$data[] = 'You entered:' . $_POST['name'];
+        exit(json_encode($data));
+    }
+    else
+    {
+    	$data['random'] = "Please enter all of the texts";
+    }
 ?>
 
 <head>
@@ -30,13 +32,10 @@
     $(function() {
         $('form').submit(function(e) {
             e.preventDefault();
-            //alert($(this).serialize());
             $.ajax({
                 type        : 'POST',
                 url         : 'test.php',
-                data : {
-				    data1 : 'value'
-				  },
+                data        : $(this).serialize(),
                 dataType    : 'json',
                 encode      : true
             })
