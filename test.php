@@ -70,11 +70,11 @@ require_once './common/lib/ChromePhp.php';
 	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
 	    					{
 	    						ChromePhp::log('HERE 2');
-	    						if($i == $textArray.count()-1)
+	    						if($i == count($textArray)-1)
 	    						{
 	    							ChromePhp::log('HERE 3');
 	    							$newRandom->text1++;
-	    							ChromePhp::log($newRandom->text1);
+	    							//ChromePhp::log($newRandom->text1);
 	    						}
 	    					}
 	    				}
