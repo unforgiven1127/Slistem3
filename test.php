@@ -52,7 +52,7 @@
 	input
 	{ margin-left: 10px; width: 300px !important; }
 	button
-	{ float: right; width: 100px; }
+	{ float: right; width: 100px; margin-right: 10px; }
 	#resultTable
 	{ display:none }
 
