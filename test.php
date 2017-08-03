@@ -61,31 +61,21 @@ require_once './common/lib/ChromePhp.php';
 
 	    			if($textArray[0] == $value)
 	    			{
-	    				if(strlen($text) == 1)
-	    				{
-	    					if($key2 == 'text1'){$this->match1++;}
+    					$controlString = $textArray[0];
+    					for($i = 1; $i < strlen($text); $i++)
+    					{
+    						$newKey = $key1 + $i;
+    						if(isset($rsa[$newKey]))
+    						{
+    							$controlString .= $rsa[$newKey];
+    						}
+    					}
+    					if($controlString == $text)
+    					{
+    						if($key2 == 'text1'){$this->match1++;}
     						if($key2 == 'text2'){$this->match2++;}
     						if($key2 == 'text3'){$this->match3++;}
-	    				}
-	    				else
-	    				{
-	    					$controlString = $textArray[0];
-	    					for($i = 1; $i < strlen($text); $i++)
-	    					{
-	    						$newKey = $key1 + $i;
-	    						if(isset($rsa[$newKey]))
-	    						{
-	    							$controlString .= $rsa[$newKey];
-	    						}
-	    					}
-	    					if($controlString == $text)
-	    					{
-	    						if($key2 == 'text1'){$this->match1++;}
-	    						if($key2 == 'text2'){$this->match2++;}
-	    						if($key2 == 'text3'){$this->match3++;}
-	    					}
-	    				}
-
+    					}
 	    			}
     			}
     		}
