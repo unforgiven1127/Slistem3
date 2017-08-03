@@ -54,7 +54,7 @@
 	input
 	{ margin-left: 10px; }
 	button
-	{ float: right; }
+	{ float: right; margin-right: 0px !important; }
 
 </style>
 </head>
