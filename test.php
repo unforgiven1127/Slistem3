@@ -1,43 +1,54 @@
 <?php
-	function generateRandomString($length = 1024)
+	class RandomString
 	{
-	    $chars = 'abcdefghijklmnopqrstuvwxyz';
-	    $charsLength = strlen($chars);
-	    $randomString = '';
-	    $randomStringArray = array();
-	    for ($i = 0; $i < $length; $i++)
-	    {
-	    	$randomChar = $chars[rand(0, $charsLength - 1)];
-	        $randomString .= $randomChar;
-	        $randomStringArray[] = $randomChar;
-	    }
-	    return $randomString;
+		public $randomString = '';
+		public $randomStringArray = array();
+
+		private function generateRandomString($length = 1024)
+		{
+		    $chars = 'abcdefghijklmnopqrstuvwxyz';
+		    $charsLength = strlen($chars);
+
+		    for ($i = 0; $i < $length; $i++)
+		    {
+		    	$randomChar = $chars[rand(0, $charsLength - 1)];
+		        $randomString .= $randomChar;
+		        $randomStringArray[] = $randomChar;
+		    }
+		}
+
+		public function __construct()
+		{
+			generateRandomString();
+		}
 	}
 
     $data = array();
-    $texts = array();
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
     	$text1 = $_POST['text1'];
     	$text2 = $_POST['text2'];
     	$text3 = $_POST['text3'];
 
-    	$data['text1'] = $text1;
-    	$data['text2'] = $text2;
-    	$data['text3'] = $text3;
+    	//$data['text1'] = $text1;
+    	//$data['text2'] = $text2;
+    	//$data['text3'] = $text3;
 
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
-    		$texts[] = $_POST['text1'];
-	    	$texts[] = $_POST['text2'];
-	    	$texts[] = $_POST['text3'];
-	    	/*foreach ($texts as $key => $value)
+    		$newRandom = new RandomString;
+    		$texts = array($text1,$text2,$text3);
+	    	foreach ($texts as $key1 => $text)
 	    	{
-	    		foreach ($variable as $key => $value)
+	    		$textArray = explode(" ",$text);
+	    		foreach ($newRandom->$randomStringArray as $key2 => $value)
 	    		{
-	    			# code...
+	    			if($textArray[0] == $value)
+	    			{
+
+	    			}
 	    		}
-	    	}*/
+	    	}
 
 	    	$random = generateRandomString();
 	    	$data['random'] = $random;
@@ -70,9 +81,9 @@
             .done(function(data) {
                 $('#result').html(data.random);
                 $('#resultTable').show();
-                alert(data.text1);
-                alert(data.text2);
-                alert(data.text3);
+                //alert(data.text1);
+                //alert(data.text2);
+                //alert(data.text3);
             })
         });
 
