@@ -12,8 +12,8 @@
 		    for ($i = 0; $i < $length; $i++)
 		    {
 		    	$randomChar = $chars[rand(0, $charsLength - 1)];
-		        $randomString .= $randomChar;
-		        $randomStringArray[] = $randomChar;
+		        $this->randomString .= $randomChar;
+		        $this->randomStringArray[] = $randomChar;
 		    }
 		}
 
