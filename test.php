@@ -159,6 +159,8 @@ require_once './common/lib/ChromePhp.php';
 	{ float: right; width: 100px; margin-left: 10px; }
 	#resultTable
 	{ display:none }
+	h4
+	{ font-weight: bold; }
 
 </style>
 </head>
