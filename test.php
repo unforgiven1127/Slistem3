@@ -78,7 +78,7 @@
     			<td colspan="2"><button type="submit" class="btn btn-primary">Check</button></td>
     		</tr>
     	</table>
-    	<table>
+    	<table style="display:none">
     		<tr>
     			<td><h4>Random Text:</h4></td>
     		</tr>
