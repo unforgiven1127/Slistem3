@@ -66,9 +66,9 @@ require_once './common/lib/ChromePhp.php';
 	    			if($textArray[0] == $value)
 	    			{
 	    				ChromePhp::log('HERE 1');
-	    				for($i = 1; $i < $textArray.count(); $i++)
+	    				/*for($i = 1; $i < $textArray.count(); $i++)
 	    				{
-	    					/*if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
+	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
 	    					{
 	    						ChromePhp::log('HERE 2');
 	    						if($i == $textArray.count()-1)
@@ -77,8 +77,8 @@ require_once './common/lib/ChromePhp.php';
 	    							ChromePhp::log($key1);
 	    							$newRandom->$key1++;
 	    						}
-	    					}*/
-	    				}
+	    					}
+	    				}*/
 	    			}
 	    		}
 	    	}
