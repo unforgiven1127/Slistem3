@@ -51,14 +51,14 @@ require_once './common/lib/ChromePhp.php';
 
     	if(strlen($text1) > 0 && strlen($text2) > 0 && strlen($text3) > 0)
     	{
-    		ChromePhp::log('HERE');
+    		//ChromePhp::log('HERE');
     		$newRandom = new RandomString();
     		$texts = array('text1' => $text1,'text2' => $text2,'text3' => $text3);
 	    	foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = $this->returnStringArray($text);
 	    		ChromePhp::log($textArray);
-	    		$rsa = $newRandom->randomStringArray;
+	    		//$rsa = $newRandom->randomStringArray;
 	    		//ChromePhp::log($rsa);
 	    		/*foreach ($rsa as $key2 => $value)
 	    		{
