@@ -36,9 +36,7 @@
                 encode      : true
             })
             .done(function(data) {
-            	alert(data);
-            	alert(data.random);
-                $('#result').html(data);
+                $('#result').html(data.random);
             })
         });
     });
