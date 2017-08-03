@@ -38,7 +38,7 @@
     	{
     		$newRandom = new RandomString;
     		$texts = array($text1,$text2,$text3);
-	    	foreach ($texts as $key1 => $text)
+	    	/*foreach ($texts as $key1 => $text)
 	    	{
 	    		$textArray = explode(" ",$text);
 	    		foreach ($newRandom->$randomStringArray as $key2 => $value)
@@ -48,7 +48,7 @@
 
 	    			}
 	    		}
-	    	}
+	    	}*/
 
 	    	$random = generateRandomString();
 	    	$data['random'] = $random;
