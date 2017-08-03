@@ -86,9 +86,9 @@ require_once './common/lib/ChromePhp.php';
 
 		public function __construct($t1,$t2,$t3)
 		{
-			$text1 = $t1;
-			$text2 = $t2;
-			$text3 = $t3;
+			$this->text1 = $t1;
+			$this->text2 = $t2;
+			$this->text3 = $t3;
 			$this->match();
 		}
 	}
