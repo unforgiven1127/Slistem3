@@ -70,6 +70,8 @@ require_once './common/lib/ChromePhp.php';
 	    					if(isset($text[$key2 + $i]) && $text[$key2 + $i] == $textArray[$i])
 	    					{
 	    						ChromePhp::log('HERE 2');
+	    						ChromePhp::log($i);
+	    						ChromePhp::log(count($textArray));
 	    						if($i == count($textArray)+1)
 	    						{
 	    							ChromePhp::log('HERE 3');
