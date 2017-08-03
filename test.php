@@ -59,7 +59,9 @@ require_once './common/lib/ChromePhp.php';
     				$textArray = $newRandom->returnStringArray($text);
 	    			if($textArray[0] == $value)
 	    			{
-	    				for($i = 1; $i < strlen($text); $i++)
+	    				//for($i = 1; $i < strlen($text); $i++)
+	    				$i = 1;
+	    				while( $i < strlen($text))
 	    				{
 	    					$nextKey = $key1 + $i;
 	    					$control = $i + 1;
@@ -70,6 +72,7 @@ require_once './common/lib/ChromePhp.php';
 	    						if($key2 == 'text2'){$this->match2++;}
 	    						if($key2 == 'text3'){$this->match3++;}
 	    					}
+	    					$i++;
 	    				}
 	    			}
     			}
@@ -103,8 +106,8 @@ require_once './common/lib/ChromePhp.php';
 
 
 
-	    	$data['matches'] = "<b>$text1</b> matches <b>".$newMacth->match1."</b> times";
-	    	$data['matches'] .= " <b>$text2</b> matches <b>".$newMacth->match2."</b> times";
+	    	$data['matches'] = "<b>$text1</b> matches <b>".$newMacth->match1."</b> times,";
+	    	$data['matches'] .= " <b>$text2</b> matches <b>".$newMacth->match2."</b> times,";
 	    	$data['matches'] .= " <b>$text3</b> matches <b>".$newMacth->match3."</b> times";
 
 	    	exit(json_encode($data));
