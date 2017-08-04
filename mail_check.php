@@ -1,10 +1,13 @@
 <?php
-require_once './common/lib/ChromePhp.php';
 
-    if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
-    {
+$response = Unirest\Request::get("https://privatix-temp-mail-v1.p.mashape.com/request/delete/id/jisa%40binnary.com/",
+  array(
+    "X-Mashape-Key" => "OhHgw1CQBUmshJSITKjAoL1vY7qDp1rnYJWjsnF2rMg3A90AE8",
+    "Accept" => "application/json"
+  )
+);
 
-    }
+var_dump($response);
 
 ?>
 
