@@ -17,13 +17,11 @@
 $email = "asd asd kegad@binnary.com asdas d a sas d";
     curl_close($c);
 
-     $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-     //$email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
-
-     preg_match($regex, $email, $matches);
-
-
-    var_dump($matches);
+    $string = "bla bla pickachu@domain.com MIME-Version: balbasur@domain.com bla bla bla";
+    $matches = array();
+    $pattern = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+    preg_match_all($pattern,$string,$matches);
+    print_r($matches);
 
 ?>
 
