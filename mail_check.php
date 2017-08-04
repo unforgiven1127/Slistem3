@@ -21,10 +21,10 @@ var_dump($response);
         $("#check").click(function(){
 		    $.ajax({
                 type        : 'GET',
-                url         : 'https://privatix-temp-mail-v1.p.mashape.com/request/delete/id/jisa%40binnary.com/',
+                url         : 'https://privatix-temp-mail-v1.p.mashape.com/request/mail/id/514ccb46774bdbf6f07607a14d784c4c/',
             })
             .done(function(data) {
-                alert(data);
+                //alert(data);
                 console.log(data);
             })
 		});
