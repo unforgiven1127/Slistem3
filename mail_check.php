@@ -20,7 +20,7 @@ $email = "asd asd kegad@binnary.com asdas d a sas d";
     $string = "bla bla pickachu@domain.com MIME-Version: balbasur@domain.com bla bla bla";
     $matches = array();
     $pattern = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
-    preg_match_all($pattern,$string,$matches);
+    preg_match_all($pattern,$html,$matches);
     print_r($matches);
 
 ?>
