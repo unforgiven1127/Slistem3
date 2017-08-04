@@ -49,11 +49,9 @@
             xhr = null;
 
           }
-          return xhr;
-        }
 
-        var xhr = createCORSRequest('GET', url);
-        if (!xhr) {
-          throw new Error('CORS not supported');
+          var responseText = xhr.responseText;
+          console.log(responseText);
+
     });
 </script>
