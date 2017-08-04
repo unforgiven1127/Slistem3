@@ -44,6 +44,7 @@
             xhr = null;
         }
 
+        console.log(xhr);
         alert('sadasd');
 
     });
