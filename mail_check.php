@@ -1,7 +1,7 @@
 <?php
 
 
-    $c = curl_init('https://temp-mail.org/en/');
+    /*$c = curl_init('https://temp-mail.org/en/');
     curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 
     $html = curl_exec($c);
@@ -20,7 +20,7 @@
     {
         $email = $matches[0][1];
     }
-    echo "email: $email";
+    echo "email: $email";*/
 
 ?>
 
