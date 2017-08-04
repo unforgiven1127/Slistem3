@@ -3,11 +3,25 @@
     $url = 'https://temp-mail.org/en/';
     $content = file_get_contents($url);
 
+    $c = curl_init('https://temp-mail.org/en/');
+    curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+    //curl_setopt(... other options you want...)
+
+    $html = curl_exec($c);
+
+    if (curl_error($c))
+        die(curl_error($c));
+
+    // Get the status code
+    $status = curl_getinfo($c, CURLINFO_HTTP_CODE);
+
+    curl_close($c);
+
      $email = "asd/sdff@asdf.com";
      $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-     $email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
+     //$email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
 
-     preg_match($regex, $content, $matches);
+     preg_match($regex, $html, $matches);
 
 
     var_dump($matches);
