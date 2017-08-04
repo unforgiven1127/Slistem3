@@ -8,7 +8,7 @@
     //curl_setopt(... other options you want...)
 
     $html = curl_exec($c);
-
+var_dump($html);
     if (curl_error($c))
         die(curl_error($c));
 
@@ -17,7 +17,6 @@
 
     curl_close($c);
 
-     $email = "asd/sdff@asdf.com";
      $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
      //$email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
 
