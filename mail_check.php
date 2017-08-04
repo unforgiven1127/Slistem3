@@ -1,23 +1,15 @@
 <?php
 
-    //$url = 'https://temp-mail.org/en/';
-    //$content = file_get_contents($url);
-
     $c = curl_init('https://temp-mail.org/en/');
     curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
-    //curl_setopt(... other options you want...)
 
     $html = curl_exec($c);
-//var_dump($html);
+
     if (curl_error($c))
         die(curl_error($c));
 
-    // Get the status code
-    $status = curl_getinfo($c, CURLINFO_HTTP_CODE);
-$email = "asd asd kegad@binnary.com asdas d a sas d";
     curl_close($c);
 
-    $string = "bla bla pickachu@domain.com MIME-Version: balbasur@domain.com bla bla bla";
     $matches = array();
     $pattern = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
     preg_match_all($pattern,$html,$matches);
