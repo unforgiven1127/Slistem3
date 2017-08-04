@@ -1,6 +1,7 @@
 <?php
 
-
+$url = 'https://temp-mail.org/en/';
+    echo file_get_contents($url);
 
 ?>
 
@@ -9,11 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
-    $(function() {
-
-        $("#links").load("https://temp-mail.org/en/");
-
-    });
+    
 </script>
 <style>
 	table
