@@ -3,8 +3,9 @@
     $url = 'https://temp-mail.org/en/';
     $content = file_get_contents($url);
 
-    $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-    $email = preg_match($regex, $content);
+     $email = "asd/sdff@asdf.com";
+     $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+     $email = (preg_match($regex, $email))?$email:"invalid email";
 
     var_dump($email);
 
