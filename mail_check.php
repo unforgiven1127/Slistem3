@@ -30,19 +30,9 @@
         var method = 'GET';
         var url = 'https://temp-mail.org/en/';
         var xhr = new XMLHttpRequest();
-        if ("withCredentials" in xhr)
-        {
-            xhr.open(method, url, true);
-        }
-        else if (typeof XDomainRequest != "undefined")
-        {
-            xhr = new XDomainRequest();
-            xhr.open(method, url);
-        }
-        else
-        {
-            xhr = null;
-        }
+
+        xhr.open(method, url, true);
+
 
         console.log(xhr);
         alert('sadasd');
