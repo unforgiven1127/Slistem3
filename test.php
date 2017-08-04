@@ -135,7 +135,6 @@ require_once './common/lib/ChromePhp.php';
                 $('#result').html(data.random);
                 $('#resultTable').show();
                 $('#matches').html(data.matches);
-
             })
         });
 
@@ -161,7 +160,6 @@ require_once './common/lib/ChromePhp.php';
 	{ display:none }
 	h4
 	{ font-weight: bold; }
-
 </style>
 </head>
 
