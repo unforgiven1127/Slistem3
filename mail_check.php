@@ -4,10 +4,13 @@
     $content = file_get_contents($url);
 
      $email = "asd/sdff@asdf.com";
-     $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+     $regex = "/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i";
      $email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
 
-    var_dump($output);
+     preg_match($regex, $content, $matches);
+
+     print_r($matches[0]);
+
 
 ?>
 
