@@ -15,6 +15,7 @@
 
     $email = '';
     preg_match_all($pattern,$html,$matches);
+    var_dump($matches);
     if(isset($matches[1]))
     {
         $email = $matches[1];
