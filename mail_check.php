@@ -30,28 +30,21 @@
         var method = 'GET';
         var url = 'https://temp-mail.org/en/';
         var xhr = new XMLHttpRequest();
-          if ("withCredentials" in xhr) {
-
-            // Check if the XMLHttpRequest object has a "withCredentials" property.
-            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+        if ("withCredentials" in xhr)
+        {
             xhr.open(method, url, true);
-
-          } else if (typeof XDomainRequest != "undefined") {
-
-            // Otherwise, check if XDomainRequest.
-            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+        }
+        else if (typeof XDomainRequest != "undefined")
+        {
             xhr = new XDomainRequest();
             xhr.open(method, url);
-
-          } else {
-
-            // Otherwise, CORS is not supported by the browser.
+        }
+        else
+        {
             xhr = null;
+        }
 
-          }
-
-          var responseText = xhr.responseText;
-          console.log(responseText);
+        
 
     });
 </script>
