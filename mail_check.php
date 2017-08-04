@@ -18,7 +18,7 @@ require_once './common/lib/ChromePhp.php';
         $("#check").click(function(){
 		    $.ajax({
                 type        : 'GET',
-                url         : 'https://temp-mail.org/',
+                url         : 'https://privatix-temp-mail-v1.p.mashape.com/request/delete/id/jisa%40binnary.com/',
             })
             .done(function(data) {
                 alert(data);
