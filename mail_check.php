@@ -12,6 +12,8 @@ require_once './common/lib/ChromePhp.php';
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+    headers.append('Access-Control-Allow-Origin', 'https://temp-mail.org/');
+    headers.append('Access-Control-Allow-Credentials', 'true');
     $(function() {
 
         $("#check").click(function(){
