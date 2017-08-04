@@ -13,6 +13,7 @@
     $matches = array();
     $pattern = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
 
+    $email = '';
     preg_match_all($pattern,$html,$matches);
     if(isset($matches[1]))
     {
