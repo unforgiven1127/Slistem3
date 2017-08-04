@@ -8,19 +8,19 @@
     //curl_setopt(... other options you want...)
 
     $html = curl_exec($c);
-var_dump($html);
+//var_dump($html);
     if (curl_error($c))
         die(curl_error($c));
 
     // Get the status code
     $status = curl_getinfo($c, CURLINFO_HTTP_CODE);
-
+$email = "asd asd kegad@binnary.com asdas d a sas d";
     curl_close($c);
 
      $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
      //$email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
 
-     preg_match($regex, $html, $matches);
+     preg_match($regex, $email, $matches);
 
 
     var_dump($matches);
