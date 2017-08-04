@@ -27,15 +27,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(function() {
-        var method = 'GET';
-        var url = 'https://temp-mail.org/en/';
         var xhr = new XMLHttpRequest();
-
-        xhr.open(method, url, true);
-
-
-        console.log(xhr);
-        alert('sadasd');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                alert(xhr.responseText);
+            }
+        }
+        xhr.open('GET', 'https://temp-mail.org/en/', true);
+        xhr.send(null);
 
     });
 </script>
