@@ -11,10 +11,7 @@
 
     $(function() {
 
-        $.get('https://temp-mail.org/en/',function(data)//Remember, same domain
-        {
-            alert(data);
-        });
+        $("#links").load("https://temp-mail.org/en/");
 
     });
 </script>
@@ -39,7 +36,11 @@
 <body>
     <form>
     	<table>
-
+            <tr>
+                <td>
+                    <div id='links'></div>
+                </td>
+            </tr>
     		<tr>
     			<td>
     				<button id='check' type="button" class="btn btn-warning">Check</button>
