@@ -1,7 +1,7 @@
 <?php
 
-    $url = 'https://temp-mail.org/en/';
-    $content = file_get_contents($url);
+    //$url = 'https://temp-mail.org/en/';
+    //$content = file_get_contents($url);
 
     $c = curl_init('https://temp-mail.org/en/');
     curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
