@@ -5,9 +5,9 @@
 
      $email = "asd/sdff@asdf.com";
      $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-     $email = (preg_match($regex, $email))?$email:"invalid email";
+     $email = (preg_match_all($regex, $email,$output, PREG_PATTERN_ORDER));
 
-    var_dump($email);
+    var_dump($output);
 
 ?>
 
