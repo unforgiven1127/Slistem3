@@ -5,11 +5,11 @@
 
      $email = "asd/sdff@asdf.com";
      $regex = "/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i";
-     $email = (preg_match_all($regex, $content,$output, PREG_PATTERN_ORDER));
 
      preg_match($regex, $content, $matches);
 
-     print_r($matches[0]);
+     var_dump($matches);
+     //print_r($matches[0]);
 
 
 ?>
