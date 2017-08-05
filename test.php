@@ -63,7 +63,14 @@ require_once './common/lib/ChromePhp.php';
 				$this->internalCheckFlag = true;
 				$check1Array = RandomString::returnStringArray($check1);
 				$check2Array = RandomString::returnStringArray($check2);
-				if(strlen($check1) > strlen($check2))
+				if(strlen($check1) == strlen($check2))
+				{
+					if($check1 == $check2)
+					{
+						$this->errorFlag = true;
+					}
+				}
+				else if(strlen($check1) > strlen($check2))
 				{
 					$rsa = $check1Array;
 					$texts = array('text1'=>$check2);
@@ -81,6 +88,7 @@ require_once './common/lib/ChromePhp.php';
 
     		foreach ($rsa as $key1 => $value)
     		{
+    			if($this->errorFlag){break;}
     			foreach ($texts as $key2 => $text)
     			{
     				$textArray = RandomString::returnStringArray($text);
