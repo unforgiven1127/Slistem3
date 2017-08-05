@@ -188,13 +188,13 @@
                 $('#resultTable').show();
                 $('#matches').html(data.matches);
                 if(data.error.length > 0)
-                {
+                {//if there is an error/violation
                 	alert(data.error);
                 }
             })
         });
 
-        $("#reset").click(function(){
+        $("#reset").click(function(){//reset button
 		    $('input[type="text"]').val('');
 		    $('#result').html('');
 		    $('#matches').html('');
