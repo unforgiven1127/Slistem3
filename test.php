@@ -112,9 +112,9 @@ require_once './common/lib/ChromePhp.php';
 			$this->text1 = $t1;
 			$this->text2 = $t2;
 			$this->text3 = $t3;
-			$this->match($t1,$t2);// first check the text with eachother
-			$this->match($t1,$t3);// first check the text with eachother
-			$this->match($t2,$t3);// first check the text with eachother
+			//$this->match($t1,$t2);// first check the text with eachother
+			//$this->match($t1,$t3);// first check the text with eachother
+			//$this->match($t2,$t3);// first check the text with eachother
 			if(!$this->error)
 			{//if three words not in eachother then proceed
 				$this->match();
