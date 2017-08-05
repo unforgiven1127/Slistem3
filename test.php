@@ -73,6 +73,10 @@ require_once './common/lib/ChromePhp.php';
 					$rsa = $check2Array;
 					$texts = array('text1'=>$check1);
 				}
+
+				ChromePhp::log($rsa);
+    			ChromePhp::log($texts);
+    			ChromePhp::log('==================');
 			}
 
     		foreach ($rsa as $key1 => $value)
