@@ -222,7 +222,7 @@
 <body>
     <form>
     	<div class="alert alert-success">
-		  <strong>Programming Skills Assessment Test Munir ANAMERIC</strong>
+		  <strong>Programming Skills Assessment Test, Munir ANAMERIC</strong>
 		</div>
     	<table>
     		<tr>
