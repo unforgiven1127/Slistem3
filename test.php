@@ -56,6 +56,7 @@ require_once './common/lib/ChromePhp.php';
 			{// to check 3 text with random generated text
 				$rsa = $newRandom->randomStringArray;
 				$this->random = $newRandom->randomString;
+				$this->internalCheckFlag = false;
     			$texts = array('text1'=>$this->text1,'text2' => $this->text2,'text3' => $this->text3);
 			}
 			else
@@ -83,10 +84,6 @@ require_once './common/lib/ChromePhp.php';
 					$rsa = $check2Array;
 					$texts = array('text1'=>$check1);
 				}
-
-				ChromePhp::log($rsa);
-    			ChromePhp::log($texts);
-    			ChromePhp::log('==================');
 			}
 
     		foreach ($rsa as $key1 => $value)
@@ -110,8 +107,7 @@ require_once './common/lib/ChromePhp.php';
     					{
     						if($this->internalCheckFlag)
     						{
-    							ChromePhp::log($controlString);
-    							ChromePhp::log($text);
+    							ChromePhp::log('HERE');
     							$this->errorFlag = true;
     						}
     						else
