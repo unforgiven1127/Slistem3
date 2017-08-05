@@ -5,7 +5,7 @@
 		public $randomStringArray = array();
 
 		private function generateRandomString($length = 1024)
-		{//generates random string
+		{//generates random string with 1024 chars
 		    $chars = 'abcdefghijklmnopqrstuvwxyz';
 		    $charsLength = strlen($chars);
 
