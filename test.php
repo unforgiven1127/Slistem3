@@ -1,5 +1,4 @@
 <?php
-require_once './common/lib/ChromePhp.php';
 	class RandomString
 	{
 		public $randomString = '';
@@ -50,7 +49,7 @@ require_once './common/lib/ChromePhp.php';
 		public $errorFlag = false;
 
 		public function match($check1 = '', $check2 = '')
-		{// our primary function which compares both texts with eachother and with the random
+		{// our primary function which compares both texts within eachother and with the random
 			$newRandom = new RandomString();
 			if($check1 == '' || $check2 == '')
 			{// to check 3 text with random generated text
@@ -60,7 +59,7 @@ require_once './common/lib/ChromePhp.php';
     			$texts = array('text1'=>$this->text1,'text2' => $this->text2,'text3' => $this->text3);
 			}
 			else
-			{// to check 3 text with eachother
+			{// to check 3 text within eachother
 				$this->internalCheckFlag = true;
 				$check1Array = RandomString::returnStringArray($check1);
 				$check2Array = RandomString::returnStringArray($check2);
@@ -121,7 +120,7 @@ require_once './common/lib/ChromePhp.php';
 		}
 
 		public function __construct($t1,$t2,$t3)
-		{
+		{//constructor
 			$this->text1 = $t1;
 			$this->text2 = $t2;
 			$this->text3 = $t3;
@@ -166,7 +165,6 @@ require_once './common/lib/ChromePhp.php';
 	    }
 	    exit(json_encode($data));
     }
-
 ?>
 
 <head>
@@ -223,6 +221,9 @@ require_once './common/lib/ChromePhp.php';
 
 <body>
     <form>
+    	<div class="alert alert-success">
+		  <strong>Linux Magic Programming Skills Assessment Test</strong>
+		</div>
     	<table>
     		<tr>
     			<td>Text 1: </td>
