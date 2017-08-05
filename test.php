@@ -90,7 +90,6 @@ require_once './common/lib/ChromePhp.php';
 
     		foreach ($rsa as $key1 => $value)
     		{
-    			if($this->errorFlag){break;}
     			foreach ($texts as $key2 => $text)
     			{
     				$textArray = RandomString::returnStringArray($text);
