@@ -151,8 +151,7 @@ require_once './common/lib/ChromePhp.php';
 	    	$data['error'] = '';
 	    	if($newMacth->errorFlag)
 	    	{
-	    		$data['error'] = 'Sub string error! Please enter unique texts!';
-	    		$data['random'] = 'Sub string error! Please enter unique texts!';
+	    		$data['matches'] = $data['random'] = $data['error'] = 'Sub string error! Please enter unique texts!';
 	    	}
 
 	    	$data['matches'] = "<b>$text1</b> appears <b>".$newMacth->match1."</b> times,";
