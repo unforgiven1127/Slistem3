@@ -222,7 +222,7 @@
 <body>
     <form>
     	<div class="alert alert-success">
-		  <strong>Linux Magic Programming Skills Assessment Test</strong>
+		  <strong>Programming Skills Assessment Test Munir ANAMERIC</strong>
 		</div>
     	<table>
     		<tr>
