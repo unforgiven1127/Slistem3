@@ -65,12 +65,12 @@ require_once './common/lib/ChromePhp.php';
 				$check2Array = RandomString::returnStringArray($check2);
 				if(strlen($check1) > strlen($check2))
 				{
-					$rsa = $check1;
+					$rsa = $check1Array;
 					$texts = array('text1'=>$check2);
 				}
 				else
 				{
-					$rsa = $check2;
+					$rsa = $check2Array;
 					$texts = array('text1'=>$check1);
 				}
 			}
