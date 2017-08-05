@@ -46,12 +46,19 @@ require_once './common/lib/ChromePhp.php';
 		public $match2 = 0;
 		public $match3 = 0;
 
-		public function match()
+		public function match($check1 = '', $check2 = '')
 		{
 			$newRandom = new RandomString();
 			$rsa = $newRandom->randomStringArray;
-			$this->random = $newRandom->randomString;
-    		$texts = array('text1' => $this->text1,'text2' => $this->text2,'text3' => $this->text3);
+			if($check1 == '' || $check2 == '')
+			{
+				$this->random = $newRandom->randomString;
+    			$texts = array('text1'=>$this->text1,'text2' => $this->text2,'text3' => $this->text3);
+			}
+			else
+			{
+				
+			}
 
     		foreach ($rsa as $key1 => $value)
     		{
