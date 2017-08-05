@@ -138,7 +138,6 @@ require_once './common/lib/ChromePhp.php';
 
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
-    	ChromePhp::log('HERE');
     	$data = array();
     	$text1 = $_POST['text1'];
     	$text2 = $_POST['text2'];
@@ -160,12 +159,12 @@ require_once './common/lib/ChromePhp.php';
 	    	$data['matches'] .= " <b>$text2</b> appears <b>".$newMacth->match2."</b> times,";
 	    	$data['matches'] .= " <b>$text3</b> appears <b>".$newMacth->match3."</b> times";
 
-	    	exit(json_encode($data));
     	}
 		else
 	    {
-	    	$data['random'] = $data['error'] = "Please match the format requested; The string should be less than 8 characters and lowercase";
+	    	$data['matches'] = $data['random'] = $data['error'] = "Please match the format requested; The string should be less than 8 characters and lowercase";
 	    }
+	    exit(json_encode($data));
     }
 
 ?>
