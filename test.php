@@ -99,7 +99,7 @@ require_once './common/lib/ChromePhp.php';
     						if($key2 == 'text3'){$this->match3++;}
     						if($this->internalCheckFlag)
     						{
-    							$this->errorFlag = false;
+    							$this->errorFlag = true;
     						}
     					}
 	    			}
