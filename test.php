@@ -68,7 +68,6 @@ require_once './common/lib/ChromePhp.php';
 				{
 					if($check1 == $check2)
 					{
-						ChromePhp::log('HERE???');
 						$this->errorFlag = true;
 					}
 					$rsa = $check1Array;
@@ -107,7 +106,6 @@ require_once './common/lib/ChromePhp.php';
     					{
     						if($this->internalCheckFlag)
     						{
-    							ChromePhp::log('HERE');
     							$this->errorFlag = true;
     						}
     						else
@@ -140,6 +138,7 @@ require_once './common/lib/ChromePhp.php';
 
     if(isset($_POST['text1']) && isset($_POST['text2']) && isset($_POST['text3']))
     {
+    	ChromePhp::log('HERE');
     	$data = array();
     	$text1 = $_POST['text1'];
     	$text2 = $_POST['text2'];
