@@ -153,10 +153,12 @@ require_once './common/lib/ChromePhp.php';
 	    	{
 	    		$data['matches'] = $data['random'] = $data['error'] = 'Sub string error! Please enter unique texts!';
 	    	}
-
-	    	$data['matches'] = "<b>$text1</b> appears <b>".$newMacth->match1."</b> times,";
-	    	$data['matches'] .= " <b>$text2</b> appears <b>".$newMacth->match2."</b> times,";
-	    	$data['matches'] .= " <b>$text3</b> appears <b>".$newMacth->match3."</b> times";
+	    	else
+	    	{
+	    		$data['matches'] = "<b>$text1</b> appears <b>".$newMacth->match1."</b> times,";
+		    	$data['matches'] .= " <b>$text2</b> appears <b>".$newMacth->match2."</b> times,";
+		    	$data['matches'] .= " <b>$text3</b> appears <b>".$newMacth->match3."</b> times";
+	    	}
 
     	}
 		else
