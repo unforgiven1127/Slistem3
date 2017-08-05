@@ -96,6 +96,8 @@ require_once './common/lib/ChromePhp.php';
     					{
     						if($this->internalCheckFlag)
     						{
+    							ChromePhp::log($controlString);
+    							ChromePhp::log($text);
     							$this->errorFlag = true;
     						}
     						else
