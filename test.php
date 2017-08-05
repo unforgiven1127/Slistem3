@@ -46,18 +46,33 @@ require_once './common/lib/ChromePhp.php';
 		public $match2 = 0;
 		public $match3 = 0;
 
+		public $internalCheckFlag = false;
+		public $errorFlag = false;
+
 		public function match($check1 = '', $check2 = '')
 		{
 			$newRandom = new RandomString();
-			$rsa = $newRandom->randomStringArray;
-			if($check1 == '' || $check2 == '')
-			{
+			if($check1 != '' || $check2 != '')
+			{// to check 3 text with random generated text
+				$rsa = $newRandom->randomStringArray;
 				$this->random = $newRandom->randomString;
     			$texts = array('text1'=>$this->text1,'text2' => $this->text2,'text3' => $this->text3);
 			}
 			else
-			{
-				
+			{// to check 3 text with eachother
+				$this->internalCheckFlag = true;
+				$check1Array = RandomString::returnStringArray($check1);
+				$check2Array = RandomString::returnStringArray($check2);
+				if(strlen($check1) > strlen($check2))
+				{
+					$rsa = $check1;
+					$texts = array('text1'=>$check2);
+				}
+				else
+				{
+					$rsa = $check2;
+					$texts = array('text1'=>$check1);
+				}
 			}
 
     		foreach ($rsa as $key1 => $value)
@@ -82,6 +97,10 @@ require_once './common/lib/ChromePhp.php';
     						if($key2 == 'text1'){$this->match1++;}
     						if($key2 == 'text2'){$this->match2++;}
     						if($key2 == 'text3'){$this->match3++;}
+    						if($this->internalCheckFlag)
+    						{
+    							$this->errorFlag = false;
+    						}
     					}
 	    			}
     			}
@@ -93,7 +112,13 @@ require_once './common/lib/ChromePhp.php';
 			$this->text1 = $t1;
 			$this->text2 = $t2;
 			$this->text3 = $t3;
-			$this->match();
+			$this->match($t1,$t2);// first check the text with eachother
+			$this->match($t1,$t3);// first check the text with eachother
+			$this->match($t2,$t3);// first check the text with eachother
+			if(!$this->error)
+			{//if three words not in eachother then proceed
+				$this->match();
+			}
 		}
 	}
 
@@ -110,9 +135,15 @@ require_once './common/lib/ChromePhp.php';
 	    	$newMacth = new StringMatch($text1,$text2,$text3);
 	    	$data['random'] = $newMacth->random;
 
-	    	$data['matches'] = "<b>$text1</b> matches <b>".$newMacth->match1."</b> times,";
-	    	$data['matches'] .= " <b>$text2</b> matches <b>".$newMacth->match2."</b> times,";
-	    	$data['matches'] .= " <b>$text3</b> matches <b>".$newMacth->match3."</b> times";
+	    	$data['error'] = '';
+	    	if($newMacth->errorFlag)
+	    	{
+	    		$data['error'] = 'Sub string error!';
+	    	}
+
+	    	$data['matches'] = "<b>$text1</b> appears <b>".$newMacth->match1."</b> times,";
+	    	$data['matches'] .= " <b>$text2</b> appears <b>".$newMacth->match2."</b> times,";
+	    	$data['matches'] .= " <b>$text3</b> appears <b>".$newMacth->match3."</b> times";
 
 	    	exit(json_encode($data));
     	}
