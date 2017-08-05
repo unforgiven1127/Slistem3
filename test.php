@@ -94,12 +94,15 @@ require_once './common/lib/ChromePhp.php';
     					}
     					if($controlString == $text)
     					{
-    						if($key2 == 'text1'){$this->match1++;}
-    						if($key2 == 'text2'){$this->match2++;}
-    						if($key2 == 'text3'){$this->match3++;}
     						if($this->internalCheckFlag)
     						{
     							$this->errorFlag = true;
+    						}
+    						else
+    						{
+    							if($key2 == 'text1'){$this->match1++;}
+	    						if($key2 == 'text2'){$this->match2++;}
+	    						if($key2 == 'text3'){$this->match3++;}
     						}
     					}
 	    			}
@@ -138,7 +141,8 @@ require_once './common/lib/ChromePhp.php';
 	    	$data['error'] = '';
 	    	if($newMacth->errorFlag)
 	    	{
-	    		$data['error'] = 'Sub string error!';
+	    		$data['error'] = 'Sub string error! Please enter unique texts!';
+	    		$data['random'] = 'Sub string error! Please enter unique texts!';
 	    	}
 
 	    	$data['matches'] = "<b>$text1</b> appears <b>".$newMacth->match1."</b> times,";
