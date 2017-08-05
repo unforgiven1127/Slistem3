@@ -52,7 +52,7 @@ require_once './common/lib/ChromePhp.php';
 		public function match($check1 = '', $check2 = '')
 		{
 			$newRandom = new RandomString();
-			if($check1 != '' || $check2 != '')
+			if($check1 == '' || $check2 == '')
 			{// to check 3 text with random generated text
 				$rsa = $newRandom->randomStringArray;
 				$this->random = $newRandom->randomString;
