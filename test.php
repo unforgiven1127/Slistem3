@@ -67,6 +67,7 @@ require_once './common/lib/ChromePhp.php';
 				{
 					if($check1 == $check2)
 					{
+						ChromePhp::log('HERE???');
 						$this->errorFlag = true;
 						$rsa = $check1Array;
 						$texts = array('text1'=>$check2);
