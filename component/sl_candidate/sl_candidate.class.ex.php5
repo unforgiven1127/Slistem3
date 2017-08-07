@@ -7422,8 +7422,10 @@ ChromePhp::log($array);
         foreach($asAttribute['candi_indus'] as $sValue => $sLabel)
         {
           $alt_temp_array[] = '{id: "'.$sValue.'", name: "'.$sLabel.'"}';
-          ChromePhp::log($alt_occupation_array);
-          $alt_industry_token = '['.implode(',', $alt_occupation_array).']';
+          if(isset($alt_occupation_array) && !empty($alt_occupation_array))
+          {
+            $alt_industry_token = '['.implode(',', $alt_occupation_array).']';
+          }
         }
       }
 
