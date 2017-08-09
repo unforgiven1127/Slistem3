@@ -24,8 +24,10 @@ var DEFAULT_SETTINGS = {
   // Display settings
     //hintText: "Type in a search term",
     hintText: null,
-    noResultsText: "No results found. ",
-    searchingText: "Searching...",
+    //noResultsText: "No results found. ",
+    noResultsText: null,
+    //searchingText: "Searching...",
+    searchingText: null,
     deleteText: "&times;",
     animateDropdown: true,
 
