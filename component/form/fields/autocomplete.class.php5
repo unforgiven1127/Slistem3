@@ -102,7 +102,7 @@ class CAutocomplete extends CField
          {
            //alert("noo resultt");
            //return [{id: "token_clear", name: "no result found"}]
-          return [{id: "token_clear"}]
+          return [{id: "token_clear", name: null}]
          }
 
          var oLast = $(oResult).last();
