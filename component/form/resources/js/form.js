@@ -102,7 +102,7 @@ function beforeCompanyAdd()
           //alert(dataFlag);
           if(dataFlag)
           {
-            alert('IF');
+            //alert('IF');
             var parsedData = jQuery.parseJSON(data);
             if(parsedData != "none")
             {
