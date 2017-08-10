@@ -833,7 +833,7 @@ class CSl_candidateEx extends CSl_candidate
       {
         if($i == true)
         {
-          ChromePhp::log($value['data']);
+          ChromePhp::log($value['display']);
           $i = false;
         }
       }
