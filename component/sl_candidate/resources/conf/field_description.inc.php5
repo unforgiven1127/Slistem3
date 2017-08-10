@@ -424,7 +424,8 @@
     );
 
 
-
+  $operators = $oSearch->getFieldOperators('date');
+  unset($operators['different']);
   //describes how to display the field
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['birth_date'] = array(
       'display' => array
@@ -433,7 +434,7 @@
         'type' => array('input', 'date'),
         'label' => 'Birth date',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('date'),
+        'operator' => $operators,
         'default_operator' => 'superior',
         'option' => array(),
         'value' => array(),
