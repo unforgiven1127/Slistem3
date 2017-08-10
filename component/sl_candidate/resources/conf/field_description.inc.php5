@@ -562,7 +562,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
     );
 
 
-
+  $operators = $oSearch->getFieldOperators('date');
+  unset($operators['values']['different']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['date_created'] = array(
       'display' => array
       (
@@ -570,7 +571,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', 'date'),
         'label' => 'Date created',
         'group' => 'misc',
-        'operator' => $oSearch->getFieldOperators('date'),
+        'operator' => $operators,
         'default_operator' => 'superior',
         'option' => array(),
         'value' => array(),
