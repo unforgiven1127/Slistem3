@@ -125,6 +125,9 @@
       )
     );
 
+
+  $operators = $oSearch->getFieldOperators('autocomplete+');
+  unset($operators['notin']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['all_occupation'] = array(
       'display' => array
       (
@@ -132,7 +135,7 @@
         'type' => array('selector', $sOccupationURL),
         'label' => 'Occupation [main & secondary]',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('autocomplete+'),
+        'operator' => $operators,
         'default_operator' => 'contains',
         'option' => array($this->_getTreeData('occupation')),
         'value' => array(),
