@@ -1658,7 +1658,10 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
     );
 
 
-
+    $operators = $oSearch->getFieldOperators('string');
+    unset($operators['start']);
+    unset($operators['end']);
+    unset($operators['equal']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['resume_all'] = array(
       'display' => array
       (
@@ -1666,7 +1669,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', ''),
         'label' => 'Resume (all text documents)',
         'group' => 'note & resume',
-        'operator' => $oSearch->getFieldOperators('string'),
+        'operator' => $operators,
         'default_operator' => 'contain',
         'option' => array(),
         'value' => array(),
