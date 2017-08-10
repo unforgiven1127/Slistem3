@@ -828,6 +828,16 @@ class CSl_candidateEx extends CSl_candidate
 
       $complex_search_counts = getAILogsCount("complex_search",$user_id);
 
+      $i = true;
+      foreach ($asFields[CONST_CANDIDATE_TYPE_CANDI] as $key => $value)
+      {
+        if($i == true)
+        {
+          ChromePhp::log($value);
+          $i = false;
+        }
+      }
+
       if(isset($complex_search_counts) && !empty($complex_search_counts))
       {
         foreach ($complex_search_counts as $key => $value)
