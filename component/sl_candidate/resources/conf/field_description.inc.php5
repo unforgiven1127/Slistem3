@@ -52,6 +52,8 @@
 
 
   $sIndustryURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_INDUSTRY);
+  $operators = $oSearch->getFieldOperators('autocomplete');
+  unset($operators['notin']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['industry'] = array(
       'display' => array
       (
@@ -59,7 +61,7 @@
         'type' => array('selector', $sIndustryURL),
         'label' => 'Industry (list)',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('autocomplete'),
+        'operator' => $operators,
         'default_operator' => 'contains',
         'option' => array($this->_getTreeData('industry')),
         'value' => array(),
@@ -2709,7 +2711,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
    $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_INDUSTRY);
    $operators = $oSearch->getFieldOperators('select');
-   unset($operators['notin']);
+   //unset($operators['notin']);
    $asFields[CONST_CANDIDATE_TYPE_COMP]['industry'] = array(
       'display' => array
       (
