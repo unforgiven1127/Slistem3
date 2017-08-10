@@ -52,8 +52,10 @@
 
 
   $sIndustryURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_INDUSTRY);
+
   $operators = $oSearch->getFieldOperators('autocomplete');
   unset($operators['notin']);
+
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['industry'] = array(
       'display' => array
       (
@@ -88,6 +90,10 @@
 
 
   $sOccupationURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_OCCUPATION);
+
+  $operators = $oSearch->getFieldOperators('autocomplete');
+  unset($operators['notin']);
+
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['occupation'] = array(
       'display' => array
       (
@@ -95,7 +101,7 @@
         'type' => array('selector', $sOccupationURL),
         'label' => 'Occupation',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('autocomplete'),
+        'operator' => $operators,
         'default_operator' => 'contains',
         'option' => array($this->_getTreeData('occupation')),
         'value' => array(),
