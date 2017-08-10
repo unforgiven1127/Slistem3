@@ -829,7 +829,7 @@ class CSl_candidateEx extends CSl_candidate
       $complex_search_counts = getAILogsCount("complex_search",$user_id);
 
       $i = true;
-      foreach ($asFields[CONST_CANDIDATE_TYPE_CANDI] as $key => $value)
+      foreach ($asFields[CONST_CANDIDATE_TYPE_CANDI]['display'] as $key => $value)
       {
         if($i == true)
         {
