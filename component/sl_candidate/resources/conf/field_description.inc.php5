@@ -2708,6 +2708,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
 
    $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_INDUSTRY);
+   $operators = $oSearch->getFieldOperators('select');
+   unset($operators['notin']);
    $asFields[CONST_CANDIDATE_TYPE_COMP]['industry'] = array(
       'display' => array
       (
@@ -2715,7 +2717,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('selector', $sURL),
         'label' => 'Industry (list)',
         'group' => 'company_data',
-        'operator' => $oSearch->getFieldOperators('select'),
+        'operator' => $operators,
         'default_operator' => 'in',
         'option' => array($this->_getTreeData('industry')),
         'value' => array(),
