@@ -2718,7 +2718,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('selector', $sURL),
         'label' => 'Industry (list)',
         'group' => 'company_data',
-        'operator' => $operators,
+        
         'default_operator' => 'in',
         'option' => array($this->_getTreeData('industry')),
         'value' => array(),
