@@ -840,6 +840,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+  $operators = $oSearch->getFieldOperators('text');
+  unset($operators['different']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['department'] = array(
       'display' => array
       (
@@ -847,7 +849,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', ''),
         'label' => 'Department',
         'group' => 'Company',
-        'operator' => $oSearch->getFieldOperators('text'),
+        'operator' => $operators,
         'default_operator' => 'contains',
         'option' => array(),
         'value' => array(),
