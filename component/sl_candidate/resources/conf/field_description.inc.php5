@@ -201,7 +201,6 @@
 
    $oPosition = CDependency::getComponentByName('sl_position');
    $asList = $oPosition->getStatusList(false, true);
-
    $asFields[CONST_CANDIDATE_TYPE_CANDI]['play_status'] = array(
       'display' => array
       (
@@ -236,6 +235,8 @@
     );
 
 
+   $operators = $oSearch->getFieldOperators('select');
+   unset($operators['notin']);
    $asFields[CONST_CANDIDATE_TYPE_CANDI]['location'] = array(
       'display' => array
       (
@@ -243,7 +244,7 @@
         'type' => array('select', ''),
         'label' => 'Location',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('select'),
+        'operator' => $operators,
         'default_operator' => 'in',
         'option' => $oSlateVars->getLocationItem(),
         'value' => array(),
