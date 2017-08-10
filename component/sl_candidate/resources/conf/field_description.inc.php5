@@ -2708,9 +2708,9 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
 
    $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_INDUSTRY);
-   $operators = $oSearch->getFieldOperators('select');
-   unset($operators['notin']);
-   ChromePhp::log($operators);
+   $operators = $oSearch->getFieldOperators('status');
+   //unset($operators['notin']);
+   //ChromePhp::log($operators);
    $asFields[CONST_CANDIDATE_TYPE_COMP]['industry'] = array(
       'display' => array
       (
