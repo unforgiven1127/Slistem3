@@ -325,6 +325,9 @@
       )
     );
 
+
+  $operators = $oSearch->getFieldOperators('egality');
+  unset($operators['different']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['sex'] = array(
       'display' => array
       (
@@ -332,7 +335,7 @@
         'type' => array('select', ''),
         'label' => 'sex',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('egality'),
+        'operator' => $operators,
         'default_operator' => '=',
         'option' =>  array(array('label' => 'Female', 'value' => 2), array('label' => 'Male', 'value' => 1)),
         'value' => array(),
