@@ -792,6 +792,9 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
     );
 
     $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_COMP);
+    $operators = $oSearch->getFieldOperators('select');
+    unset($operators['start']);
+    unset($operators['end']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['company_prev'] = array(
       'display' => array
       (
