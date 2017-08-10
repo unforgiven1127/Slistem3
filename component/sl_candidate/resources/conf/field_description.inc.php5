@@ -425,6 +425,7 @@
 
 
   $operators = $oSearch->getFieldOperators('date');
+  ChromePhp::log($operators);
   unset($operators['different']);
   //describes how to display the field
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['birth_date'] = array(
