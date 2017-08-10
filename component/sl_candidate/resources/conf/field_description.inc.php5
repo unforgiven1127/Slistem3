@@ -974,6 +974,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+  $operators = $oSearch->getFieldOperators('egality');
+  unset($operators['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
       (
@@ -981,7 +983,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('select', ''),
         'label' => 'is client',
         'group' => 'status',
-        'operator' => $oSearch->getFieldOperators('egality'),
+        'operator' => $operators,
         'default_operator' => '=',
         'option' => $asYesNo,
         'value' => array(),
