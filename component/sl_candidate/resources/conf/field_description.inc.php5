@@ -974,8 +974,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-  $operators = $oSearch->getFieldOperators('egality');
-  unset($operators['different']);
+    $operators = $oSearch->getFieldOperators('egality');
+    unset($operators['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
       (
