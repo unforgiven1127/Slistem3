@@ -6682,12 +6682,12 @@ ChromePhp::log($array);
           {
             $candidateInfo = getCandidateInformation($asData['itemfk']);
             $workPhone = $candidateInfo['lastWorkPhone'];
-            ChromePhp::log($workPhone);
 
             if(!isset($asPrevious[$asData['sl_contactpk']]))
               return array('error' => 'Error: Editing a contact detail that doesn\'t exist anymore.');
 
             $asOldData = $asPrevious[$asData['sl_contactpk']];
+            ChromePhp::log($asOldData);
 
             if($asOldData['value'] != $asData['value'] || $asOldData['description'] != $asData['description']
             || $asOldData['visibility'] != $asData['visibility'] || $asOldData['loginfk'] != $asData['userfk']
