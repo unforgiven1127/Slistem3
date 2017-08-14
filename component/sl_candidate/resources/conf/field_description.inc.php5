@@ -1605,6 +1605,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+    $operators = $oSearch->getFieldOperators('date');
+    unset($operators['values']['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['note_created_on'] = array(
       'display' => array
       (
@@ -1612,7 +1614,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', 'date'),
         'label' => 'Note created on',
         'group' => 'note & resume',
-        'operator' => $oSearch->getFieldOperators('date'),
+        'operator' => $operators,
         'default_operator' => 'superior',
         'option' => array(),
         'value' => array(),
@@ -1639,6 +1641,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+    $operators = $oSearch->getFieldOperators('date');
+    unset($operators['values']['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['assessment_created_on'] = array(
       'display' => array
       (
@@ -1646,7 +1650,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', 'date'),
         'label' => 'Assessment created on',
         'group' => 'note & resume',
-        'operator' => $oSearch->getFieldOperators('date'),
+        'operator' => $operators,
         'default_operator' => 'superior',
         'option' => array(),
         'value' => array(),
