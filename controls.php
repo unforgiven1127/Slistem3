@@ -158,7 +158,8 @@ mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(m
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = "SELECT * FROM sl_contact slc WHERE slc.type = 2 and slc.sl_contactpk > '709575' GROUP BY slc.itemfk ORDER BY slc.sl_contactpk DESC";
+$slistemQuery = "SELECT slc.* FROM sl_contact slc WHERE slc.sl_contactpk = (SELECT MAX(slc2.sl_contactpk) FROM sl_contact slc WHERE slc2.itemfk = slc.itemfk AND slc2.type = 2) WHERE slc.sl_contactpk > 709572";
+
 $slistemQuery = mysql_query($slistemQuery);
 
 $count = 0;
