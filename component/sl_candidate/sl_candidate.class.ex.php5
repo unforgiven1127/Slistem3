@@ -6680,6 +6680,10 @@ ChromePhp::log($array);
 
           foreach($asContact['update'] as $asData)
           {
+            $candidateInfo = getCandidateInformation($asData['itemfk']);
+            $workPhone = $candidateInfo['lastWorkPhone'];
+            ChromePhp::log($workPhone);
+
             if(!isset($asPrevious[$asData['sl_contactpk']]))
               return array('error' => 'Error: Editing a contact detail that doesn\'t exist anymore.');
 
