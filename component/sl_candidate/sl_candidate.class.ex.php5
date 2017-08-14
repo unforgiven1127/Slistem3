@@ -6756,7 +6756,16 @@ ChromePhp::log($array);
           {
             //ChromePhp::log($asData);
             $contactInfo = getSelectedContact($asData);
-            ChromePhp::log($contactInfo);
+            $contactInfo = $contactInfo[0];
+            $candidateInfo = getCandidateInformation($contactInfo['itemfk']);
+            $workPhone = $candidateInfo['lastWorkPhone'];
+            $deletedValue = $contactInfo['value'];
+            $deletedType = $contactInfo['type'];
+            if($deletedType == 2 && $workPhone == $deletedValue)
+            {
+              updateLastWorkPhone($asData['itemfk']);
+            }
+            //ChromePhp::log($contactInfo);
             //$candidateInfo = getCandidateInformation($asData['itemfk']);
             //ChromePhp::log($candidateInfo);
             //$workPhone = $candidateInfo['lastWorkPhone'];
