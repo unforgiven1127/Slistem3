@@ -3225,6 +3225,20 @@ var_dump($query);*/
     return $result;
   }
 
+  function getSelectedContact($contact_id)
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT slc.* FROM sl_contact slc
+    WHERE slc.sl_contactpk = ".$contact_id;
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getCandidateContactInfo($candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');
