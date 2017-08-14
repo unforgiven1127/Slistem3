@@ -2598,6 +2598,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
+   $operators = $oSearch->getFieldOperators('date');
+   unset($operators['values']['different']);
    $asFields[CONST_CANDIDATE_TYPE_CANDI]['play_expires'] = array(
       'display' => array
       (
@@ -2605,7 +2607,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', 'date'),
         'label' => 'Active - expire date',
         'group' => 'Pipeline activity',
-        'operator' => $oSearch->getFieldOperators('date'),
+        'operator' => $operators,
         'default_operator' => 'superior',
         'option' => $asList,
         'value' => array(),
