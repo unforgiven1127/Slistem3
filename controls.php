@@ -154,23 +154,20 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-/*mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = 'select el.cp_pk as candidateID, e.date_create as createDate, e.content as note from event e inner join event_link el on el.eventfk = e.eventpk where e.type = "cp_history" and date_create >= "2017-01-01 00:00:00" order by date_create asc';
+$slistemQuery = "SELECT * FROM sl_candidate WHERE sl_candidatepk = '426445'";
 $slistemQuery = mysql_query($slistemQuery);
-
-$allMeetings = array();
 
 $count = 0;
 
-while($meetingData = mysql_fetch_assoc($slistemQuery))
+echo '<br><br><br>';
+while($data = mysql_fetch_assoc($slistemQuery))
 {
-  echo 'CandidateID: '.$meetingData['candidateID'];
-  echo ' CreateDate: '.$meetingData['createDate'];
-  echo ' Note: '.$meetingData['note'];
+  var_dump($data);
   echo '<br>';
-}*/
+}
 
 

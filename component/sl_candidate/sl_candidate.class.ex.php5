@@ -6754,7 +6754,6 @@ ChromePhp::log($array);
         {
           foreach($asContact['delete'] as $asData)
           {
-            //ChromePhp::log($asData);
             $contactInfo = getSelectedContact($asData);
             $contactInfo = $contactInfo[0];
             $candidateInfo = getCandidateInformation($contactInfo['itemfk']);
@@ -6763,17 +6762,9 @@ ChromePhp::log($array);
             $deletedType = $contactInfo['type'];
             if($deletedType == 2 && $workPhone == $deletedValue)
             {
-              ChromePhp::log('HERE??');
               updateLastWorkPhone($contactInfo['itemfk']);
             }
-            //ChromePhp::log($contactInfo);
-            //$candidateInfo = getCandidateInformation($asData['itemfk']);
-            //ChromePhp::log($candidateInfo);
-            //$workPhone = $candidateInfo['lastWorkPhone'];
-            /*if($asData['value'] == $workPhone)
-            {
-              updateLastWorkPhone($asData['itemfk']);
-            }*/
+
           }
 
           $this->_getModel()->deleteByWhere('sl_contact', 'sl_contactpk IN('.implode(',', $asContact['delete']).') ');
