@@ -6755,11 +6755,12 @@ ChromePhp::log($array);
           foreach($asContact['delete'] as $asData)
           {
             $candidateInfo = getCandidateInformation($asData['itemfk']);
-            $workPhone = $candidateInfo['lastWorkPhone'];
-            if($asData['value'] == $workPhone)
+            ChromePhp::log($candidateInfo);
+            //$workPhone = $candidateInfo['lastWorkPhone'];
+            /*if($asData['value'] == $workPhone)
             {
               updateLastWorkPhone($asData['itemfk']);
-            }
+            }*/
           }
 
           $this->_getModel()->deleteByWhere('sl_contact', 'sl_contactpk IN('.implode(',', $asContact['delete']).') ');
