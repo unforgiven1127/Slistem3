@@ -6691,7 +6691,7 @@ ChromePhp::log($array);
             {
               if($asOldData['value'] == $workPhone)
               {
-                ChromePhp::log($asOldData);
+                updateLastWorkPhone($asData['itemfk'],$asData['value']);
               }
             }
 
