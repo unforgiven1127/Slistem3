@@ -6752,6 +6752,13 @@ ChromePhp::log($array);
 
         if(!empty($asContact['delete']))
         {
+          if($asOldData['value'] != $asData['value'])//find the updated one
+            {
+              if($asOldData['value'] == $workPhone)
+              {
+                updateLastWorkPhone($asData['itemfk'],null);
+              }
+            }
           $this->_getModel()->deleteByWhere('sl_contact', 'sl_contactpk IN('.implode(',', $asContact['delete']).') ');
           $this->_getModel()->deleteByWhere('sl_contact_visibility', 'sl_contactfk IN('.implode(',', $asContact['delete']).') ');
         }
