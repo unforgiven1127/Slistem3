@@ -6754,8 +6754,9 @@ ChromePhp::log($array);
         {
           foreach($asContact['delete'] as $asData)
           {
+            ChromePhp::log($asData);
             $candidateInfo = getCandidateInformation($asData['itemfk']);
-            ChromePhp::log($candidateInfo);
+            //ChromePhp::log($candidateInfo);
             //$workPhone = $candidateInfo['lastWorkPhone'];
             /*if($asData['value'] == $workPhone)
             {
