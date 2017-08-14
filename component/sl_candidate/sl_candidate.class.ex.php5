@@ -6758,7 +6758,7 @@ ChromePhp::log($array);
             $workPhone = $candidateInfo['lastWorkPhone'];
             if($asData['value'] == $workPhone)
             {
-              updateLastWorkPhone($asData['itemfk'],null);
+              updateLastWorkPhone($asData['itemfk']);
             }
           }
 

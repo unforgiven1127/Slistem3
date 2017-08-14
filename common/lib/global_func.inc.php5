@@ -3318,7 +3318,7 @@ var_dump($query);*/
   }
 
 
-  function updateLastWorkPhone($candidate_id,$phone)
+  function updateLastWorkPhone($candidate_id,$phone = '')
   {
     $oDB = CDependency::getComponentByName('database');
     $sDate = date('Y-m-d H:i:s');
