@@ -3317,6 +3317,16 @@ var_dump($query);*/
     return $result;
   }
 
+  function updateLastWorkPhone($candidate_id,$phone)
+  {
+    $oDB = CDependency::getComponentByName('database');
+    $sDate = date('Y-m-d H:i:s');
+
+    $sQuery = "UPDATE sl_candidate set lastWorkPhone = '".$phone."' WHERE sl_candidatepk = '".$candidate_id."'";
+
+    $db_result = $oDB->executeQuery($sQuery);
+  }
+
   function mergeCharacterAssassments($candidate_id, $target_candidate_id)
   {
     $oDB = CDependency::getComponentByName('database');

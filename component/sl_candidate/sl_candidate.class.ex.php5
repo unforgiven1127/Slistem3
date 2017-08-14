@@ -6556,7 +6556,9 @@ ChromePhp::log($array);
                 {
                   $sPhone = preg_replace('/[^0-9]/', '', $_POST['contact_value'][$nRow]);
                   if(strlen($sPhone) < 8)
+                  {
                     $asError[$sErrorType][] = 'Contact row #'.($nRow+1).': phone number ['.$_POST['contact_value'][$nRow].']  too short.';
+                  }
                 }
 
                 break;
@@ -6729,6 +6731,13 @@ ChromePhp::log($array);
         foreach($asContact['insert'] as $asData)
         {
           $this->_getModel()->add($asData, 'sl_contact');
+
+          if($asData['type'] == 2)// first enter write the lastWorkPhone
+          {
+            $candidate_id = $asData['itemfk'];
+            $phone = $asData['value'];
+            updateLastWorkPhone($candidate_id,$phone);
+          }
         }
 
         if(!empty($asContact['delete']))
