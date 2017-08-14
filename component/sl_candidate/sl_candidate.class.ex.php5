@@ -6763,7 +6763,8 @@ ChromePhp::log($array);
             $deletedType = $contactInfo['type'];
             if($deletedType == 2 && $workPhone == $deletedValue)
             {
-              updateLastWorkPhone($asData['itemfk']);
+              ChromePhp::log('HERE??');
+              updateLastWorkPhone($contactInfo['itemfk']);
             }
             //ChromePhp::log($contactInfo);
             //$candidateInfo = getCandidateInformation($asData['itemfk']);
