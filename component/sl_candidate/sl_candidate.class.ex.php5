@@ -6752,14 +6752,16 @@ ChromePhp::log($array);
 
         if(!empty($asContact['delete']))
         {
-          ChromePhp::log($asContact);
-          /*if($asOldData['value'] != $asData['value'])//find the updated one
+          foreach($asContact['delete'] as $asData)
           {
-            if($asOldData['value'] == $workPhone)
+            $candidateInfo = getCandidateInformation($asData['itemfk']);
+            $workPhone = $candidateInfo['lastWorkPhone'];
+            if($asData['value'] == $workPhone)
             {
-              updateLastWorkPhone($asData['itemfk'],$asData['value']);
+              updateLastWorkPhone($asData['itemfk'],null);
             }
-          }*/
+          }
+
           $this->_getModel()->deleteByWhere('sl_contact', 'sl_contactpk IN('.implode(',', $asContact['delete']).') ');
           $this->_getModel()->deleteByWhere('sl_contact_visibility', 'sl_contactfk IN('.implode(',', $asContact['delete']).') ');
         }
