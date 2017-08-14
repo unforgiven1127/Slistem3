@@ -158,7 +158,7 @@ mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(m
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = "SELECT * FROM sl_candidate WHERE sl_candidatepk = '426445'";
+$slistemQuery = "SELECT * FROM sl_contact slc WHERE slc.type = 2 and slc.sl_contactpk > '709575' GROUP BY slc.itemfk ORDER BY slc.sl_contactpk";
 $slistemQuery = mysql_query($slistemQuery);
 
 $count = 0;
@@ -166,8 +166,11 @@ $count = 0;
 echo '<br><br><br>';
 while($data = mysql_fetch_assoc($slistemQuery))
 {
-  var_dump($data);
-  echo '<br>';
+	$candidate_id = $data['itemfk'];
+  	$phone = $data['value'];
+  	echo $candidate_id.'<br>';
+  	echo $phone.'<br>';
+  	echo '<br><br>';
 }
 
 
