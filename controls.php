@@ -160,7 +160,7 @@ mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 $slistemQuery = "SELECT slc.* FROM sl_contact slc WHERE slc.sl_contactpk = (SELECT MAX(slc2.sl_contactpk) FROM sl_contact slc2 WHERE slc2.itemfk = slc.itemfk AND slc2.type = 2) and slc.sl_contactpk > 709572";//belirli sayida aliyor dikkat
 
-$slistemQuery = mysql_query($slistemQuery);
+$slistemQuery = mysqli_query($slistemQuery);
 
 $count = 0;
 
