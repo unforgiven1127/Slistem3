@@ -169,8 +169,8 @@ while($data = mysql_fetch_assoc($slistemQuery))
 	$count++;
 	$candidate_id = $data['itemfk'];
   	$phone = $data['value'];
-  	echo $candidate_id.'<br>';
-  	echo $phone.'<br><br>';
+  	//echo $candidate_id.'<br>';
+  	//echo $phone.'<br><br>';
 }
 echo "Count: ".$count;
 
