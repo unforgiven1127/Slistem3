@@ -788,10 +788,11 @@ class CSl_candidateEx extends CSl_candidate
         'value' => 'lastname'
     );
 
+// 'Last note' => 'note',
     $asPrefs[] = array(
         'fieldname' => 'candi_list_field',
         'fieldtype' => 'select_multi',
-        'options' => array('Age' => 'date_birth', 'Salary' => 'salary', 'Managed by' => 'manager', 'Last note' => 'note', 'Title' => 'title', 'Department' => 'department','Work phone' => 'phone'),
+        'options' => array('Age' => 'date_birth', 'Salary' => 'salary', 'Managed by' => 'manager', 'Title' => 'title', 'Department' => 'department','Work phone' => 'phone'),
         'label' => 'Field to display in the list',
         'description' => 'Select the fields you want tosee in the candidate list',
         'value' => '',
