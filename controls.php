@@ -169,8 +169,8 @@ while($data = mysql_fetch_assoc($slistemQuery))
 	$count++;
 	$candidate_id = $data['itemfk'];
   	$phone = $data['value'];
-  	//echo $candidate_id.'<br>';
-  	//echo $phone.'<br><br>';
+  	$sQuery = "UPDATE sl_candidate set lastWorkPhone = '".$phone."' WHERE sl_candidatepk = '".$candidate_id."'";
+  	mysql_query($sQuery);
 }
 echo "Count: ".$count;
 
