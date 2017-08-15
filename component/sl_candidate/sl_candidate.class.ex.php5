@@ -3061,7 +3061,7 @@ ChromePhp::log($pnPk);
       $poQB->addJoin('left', 'sl_candidate_profile', 'scpr', 'scpr.candidatefk = scan.sl_candidatepk');
       $poQB->addJoin('left', 'sl_company', 'scom', 'scom.sl_companypk = scpr.companyfk');
       $poQB->addJoin('left', 'sl_industry', 'sind', 'sind.sl_industrypk = scpr.industryfk');
-      $poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
+      //$poQB->addJoin('left', 'sl_occupation', 'socc', 'socc.sl_occupationpk = scpr.occupationfk');
 
       //$poQB->addJoin('left', 'sl_contact', 'slcon', 'slcon.itemfk = scan.sl_candidatepk AND slcon.type = 2 AND slcon.date_create =(SELECT MAX(slcon2.date_create) FROM sl_contact slcon2 where slcon2.itemfk = scan.sl_candidatepk AND slcon2.type = 2)');
       //$poQB->addJoin('left', 'sl_candidate_old_companies', 'slcoc', 'slcoc.candidate_id = scan.sl_candidatepk');
@@ -3112,10 +3112,11 @@ ChromePhp::log($pnPk);
       }
 
       //slcon.value as lastWorkPhone,
+      //industry den sonra , socc.label as occupation vardi kaldirdik
       $poQB->addSelect('scan.*,
           scom.name as company_name, scom.sl_companypk, scom.is_client as cp_client,
           (scpr.salary + scpr.bonus) as full_salary, scpr.grade, scpr.title, scpr._has_doc, scpr._in_play,
-          scpr._pos_status, scpr.department, sind.label as industry, socc.label as occupation,
+          scpr._pos_status, scpr.department, sind.label as industry,
           TIMESTAMPDIFF(YEAR, scan.date_birth, "'.$sNow.'") AS age, scom.level as level,
           scan.sl_candidatepk as PK');
 
