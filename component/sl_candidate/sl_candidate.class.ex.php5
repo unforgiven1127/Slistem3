@@ -788,7 +788,7 @@ class CSl_candidateEx extends CSl_candidate
         'value' => 'lastname'
     );
 
-// 'Last note' => 'note',
+// 'Last note' => 'note',// manager den sonra cikarttik
     $asPrefs[] = array(
         'fieldname' => 'candi_list_field',
         'fieldtype' => 'select_multi',

@@ -636,7 +636,7 @@ class CCandi_row extends CTemplate
         $nColNumber++;
       }
 
-      if(isset($pasHeader['lastNote']))
+      /*if(isset($pasHeader['lastNote']))
       {
         //paste character note if exists else last note.
         $candidateLastNote = getSelectedNote($pasData['lastNote']);
@@ -682,7 +682,7 @@ class CCandi_row extends CTemplate
 
         $sHTML.= $oDisplay->getBloc('', '', $asOption);
         $nColNumber++;
-      }
+      }*/
 
       if(isset($pasHeader['date_birth']))
       {
