@@ -11768,7 +11768,7 @@ $bonusManual = getValue('bonus');
             $asWords[0] = trim($asWords[0]);
 
             $this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.lastname))) AS lastname_lev ');
-            $this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.firstname))) AS firstname_lev ');
+            //$this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.firstname))) AS firstname_lev ');
 
             $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sFirstField.'))*100/LENGTH(scan.'.$sFirstField.')) AS ratio ');
 
