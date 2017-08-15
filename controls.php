@@ -154,7 +154,7 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-@mysql_connect( DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
@@ -162,16 +162,13 @@ $slistemQuery = "SELECT slc.* FROM sl_contact slc WHERE slc.sl_contactpk = (SELE
 
 $slistemQuery = mysql_query($slistemQuery);
 
-$count = 0;
-
 echo '<br><br><br>';
 while($data = mysql_fetch_assoc($slistemQuery))
 {
 	$candidate_id = $data['itemfk'];
   	$phone = $data['value'];
   	echo $candidate_id.'<br>';
-  	echo $phone.'<br>';
-  	echo '<br><br>';
+  	echo $phone.'<br><br>';
 }
 
 
