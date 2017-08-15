@@ -3122,10 +3122,10 @@ ChromePhp::log($pnPk);
 
       $poQB->addCountSelect('count(DISTINCT scan.sl_candidatepk) as nCount');
 
-      $poQB->addJoin('left', 'event_link', 'elin', '(elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)');
+      //$poQB->addJoin('left', 'event_link', 'elin', '(elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)');
       //$poQB->addSelect('count(elin.eventfk) as nb_note');
       //$poQB->addSelect('MAX(elin.eventfk) as lastNote');
-      $poQB->addSelect('MAX(elin.event_linkpk) as lastNote');
+      //$poQB->addSelect('MAX(elin.event_linkpk) as lastNote');
 
       if(!$oLogin->isAdmin())
       {
@@ -3368,10 +3368,10 @@ ChromePhp::log($pnPk);
           {
             $sQuery.= ' ORDER BY TRIM(scpr.department) '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
           }
-          else if($sSortField == "lastNote")
+          /*else if($sSortField == "lastNote")
           {
             $sQuery.= ' ORDER BY lastNote '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
-          }
+          }*/
           else if($sSortField == "date_birth")
           {
             $sQuery.= ' ORDER BY ageSort '.$sSortOrder." "." ,scan.sl_candidatepk ".$sSortOrder.' ';
@@ -3693,9 +3693,9 @@ ChromePhp::log($sQuery);
             $oConf->addColumn('Department', 'department', array('id' => '', 'width' => $sDeptW, 'class' => $dept_class, 'style' => 'width:73px;',
               'sortable'=> array($sSortJs => 'text', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
 
-          if(in_array('note', $this->casSettings['candi_list_field']))
+          /*if(in_array('note', $this->casSettings['candi_list_field']))
             $oConf->addColumn('Note', 'lastNote', array('id' => '', 'width' => '35', 'class' => 'column_static_35',
-              'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));
+              'sortable'=> array($sSortJs => 'value_integer', 'ajax' => $nAjax, 'url' => $sURL, 'ajax_target' => $this->csSearchId)));*/
 
           if(in_array('date_birth', $this->casSettings['candi_list_field']))
             $oConf->addColumn('Age', 'date_birth', array('id' => '', 'width' => '30', 'class' => 'column_static_30',
