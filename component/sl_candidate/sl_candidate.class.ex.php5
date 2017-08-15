@@ -10482,7 +10482,7 @@ $bonusManual = getValue('bonus');
           $poQB->addSelect('scan.* ');
           $poQB->addWhere('scan.lastname LIKE '.$this->_getModel()->dbEscapeString($asWords[0].'%'));
           //$poQB->addOrder('lastname_lev ASC, scan.firstname ASC');
-          $poQB->addOrder('lastname_lev ASC, scan.firstname ASC');
+          //$poQB->addOrder('lastname_lev ASC, scan.firstname ASC');
         }
         else
         {
@@ -11767,7 +11767,7 @@ $bonusManual = getValue('bonus');
           {
             $asWords[0] = trim($asWords[0]);
 
-            $this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.lastname))) AS lastname_lev ');
+            //$this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.lastname))) AS lastname_lev ');
             //$this->coQb->addSelect(' levenshtein("'.$asWords[0].'",TRIM(LOWER(scan.firstname))) AS firstname_lev ');
 
             $this->coQb->addSelect(' 100-(levenshtein("'.($asWords[0]).'", LOWER(scan.'.$sFirstField.'))*100/LENGTH(scan.'.$sFirstField.')) AS ratio ');
