@@ -3122,7 +3122,7 @@ ChromePhp::log($pnPk);
       $poQB->addCountSelect('count(DISTINCT scan.sl_candidatepk) as nCount');
 
       $poQB->addJoin('left', 'event_link', 'elin', '(elin.cp_uid = "555-001" AND elin.cp_action = "ppav" AND elin.cp_type="candi" AND elin.cp_pk = scan.sl_candidatepk)');
-      $poQB->addSelect('count(elin.eventfk) as nb_note');
+      //$poQB->addSelect('count(elin.eventfk) as nb_note');
       //$poQB->addSelect('MAX(elin.eventfk) as lastNote');
       $poQB->addSelect('MAX(elin.event_linkpk) as lastNote');
 
