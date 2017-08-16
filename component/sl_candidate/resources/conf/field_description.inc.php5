@@ -3052,7 +3052,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    if($oLogin->isAdmin())
+    /*if($oLogin->isAdmin())
     {
       $asFields[CONST_CANDIDATE_TYPE_CANDI]['dba_delete'] = array(
         'display' => array
@@ -3083,4 +3083,4 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
           'unmanageable' => null
         )
       );
-    }
+    }*/
