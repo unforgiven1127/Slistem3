@@ -999,7 +999,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       ),
       'sql' => array
       (
-        'field' => 'scan.is_client',
+        'field' => 'scom.is_client',
         'join' => null,
         'fts' => false,
         'unmanageable' => null
