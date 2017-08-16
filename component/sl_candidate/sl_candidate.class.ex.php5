@@ -885,8 +885,6 @@ class CSl_candidateEx extends CSl_candidate
     return $asResult;
   }
 
-
-
   //notification_item => 1 function
 
   /**
@@ -970,12 +968,9 @@ class CSl_candidateEx extends CSl_candidate
         while($bRead)
         {
           $nPk = (int)$oDbResult->getFieldValue('sl_companypk');
-
           $asItem[$nPk]['label'] = '#'.$nPk.' - '.$oDbResult->getFieldValue('name');
-
           $asItem[$nPk]['description'] = $oDbResult->getFieldValue('description');
           $asItem[$nPk]['description'].= '<br />Created on the '.$oDbResult->getFieldValue('date_created').' by '.$oLogin->getUserLink((int)$oDbResult->getFieldValue('created_by'));
-
 
           $asItem[$nPk]['url'] = $this->_oPage->getUrl($this->csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, $nPk);
           $asItem[$nPk]['link'] = $this->_oDisplay->getLink($asItem[$nPk]['label'], $asItem[$nPk]['url']);

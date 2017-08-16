@@ -201,7 +201,7 @@ class CDatabaseEx extends CDatabase
     $myfile = fopen("sqlTrack.txt", "a");
     $txt = $psQuery."\n user id: ".$user_id." memory usage: ".$memory_usage."% time interval: ".$exec_time."sec - start: ".$sDateStart." / end: ".$sDateEnd."\n----------------------------------------------------------------------------------\n\n";
     //file_put_contents("sqlTrack.txt", $txt);
-    if($exec_time >= 3) //if sql takes longer than 5sec.
+    if($exec_time >= 5) //if sql takes longer than 5sec.
     {
       $ret = file_put_contents('sqlTrack.txt', $txt, FILE_APPEND | LOCK_EX);
     }
