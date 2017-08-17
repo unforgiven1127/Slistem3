@@ -312,14 +312,14 @@ class CSl_menuEx extends CSl_menu
 
     //322. satirda bulunan if(asValue.length == 2) return true; nun altindan cikarttik
     /*asWords = asValue[0].split(\' \');
-                            if(asWords.length > 1)
-                            {
-                              sValue = asWords[0]+\', \';
-                              delete(asWords[0]);
+    if(asWords.length > 1)
+    {
+      sValue = asWords[0]+\', \';
+      delete(asWords[0]);
 
-                              sValue+= asWords.join(\' \');
-                              $(this).val(sValue);
-                            }*/
+      sValue+= asWords.join(\' \');
+      $(this).val(sValue);
+    }*/
 
     $sHTML.= '<table style="width:105%; margin-left:-5px;">
                 <tr class="closeTR">
@@ -420,7 +420,6 @@ class CSl_menuEx extends CSl_menu
       </div></div>
 
       <div class="hidden option" style="margin-top: 15px;"><a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'td\').find(\'> div:not(.option_link)\').toggle(0); $(\'.closeTR\').toggle(0);">&nbsp;apply&nbsp;</a></div>
-
 
     <div class="qs_action_row">
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'td\').find(\'> div:not(.option_link)\').toggle(0); $(\'.closeTR\').toggle(0);">&nbsp;<img src="'.self::getResourcePath().'/pictures/qs_option.png"/>&nbsp;</a>

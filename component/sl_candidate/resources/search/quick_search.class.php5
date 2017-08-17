@@ -433,6 +433,8 @@ class CQuickSearch
     $sCompany = strtolower(trim(getValue('company')));
     $sIndustry = trim(getValue('industry'));
     $sContact = trim(getValue('contact'));
+    $sOwner = trim(getValue('owner'));
+    ChromePhp::log($sOwner);
 
     if($sCompany == 'Company')
       $sCompany = '';
