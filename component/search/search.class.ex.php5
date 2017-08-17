@@ -1530,6 +1530,7 @@ class CSearchEx extends CSearch
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
+                ChromePhp::log($sFieldName);
                 if(!empty($vValue))
                 {
                   if($sFieldName == 'company_prev')
@@ -1544,7 +1545,7 @@ class CSearchEx extends CSearch
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ';
 
                   }
-                  if($sFieldName == 'is_client')
+                  else if($sFieldName == 'is_client')
                   {
                     if($vFieldValue == "1")
                     {
