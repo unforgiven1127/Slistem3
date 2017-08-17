@@ -435,6 +435,7 @@ class CQuickSearch
     $sContact = trim(getValue('contact'));
     $sOwner = trim(getValue('owner'));
     ChromePhp::log($sOwner);
+    ChromePhp::log($sCompany);
 
     if($sOwner == "Owner")
     {
