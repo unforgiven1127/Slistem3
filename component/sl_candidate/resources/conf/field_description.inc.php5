@@ -977,7 +977,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
     //$operators = $oSearch->getFieldOperators('egality');
     $operators = $oSearch->getFieldOperators('autocomplete');
-    unset($operators['different']);
+    unset($operators['notin']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
       (
@@ -985,7 +985,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('select', ''),
         'label' => 'is client',
         'group' => 'status',
-        'operator' => 'In',
+        'operator' => $operators,
         'default_operator' => 'In',
         'option' => $yesNoClient,
         'value' => array(),
