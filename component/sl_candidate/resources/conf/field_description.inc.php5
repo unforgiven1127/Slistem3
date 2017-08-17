@@ -994,11 +994,6 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'param' => null,
         'js_control' => 'jsFieldIntegerPositive'
       ),
-      'data' => array
-      (
-        'type' => 'int',
-        'control' => 'is_integer'
-      ),
       'sql' => array
       (
         'field' => 'scom.level',
@@ -1007,6 +1002,11 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'unmanageable' => null
       )
     );
+    /*'data' => array
+      (
+        'type' => 'int',
+        'control' => 'is_integer'
+      ),*/
 
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_collaborator'] = array(
       'display' => array
