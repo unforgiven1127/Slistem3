@@ -347,7 +347,10 @@ class CSl_candidateEx extends CSl_candidate
               return json_encode(array('alert' => $sError));
 
             $asHTML = $this->_getCompanyList($oQB);
-            ChromePhp::log($asHTML);
+            if(!empty($asHTML['error']))
+            {
+              return json_encode(array('alert' => $asHTML['error']));
+            }
 
             return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($asHTML['data']),
                 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); ')));
