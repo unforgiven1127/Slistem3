@@ -347,6 +347,7 @@ class CSl_candidateEx extends CSl_candidate
               return json_encode(array('alert' => $sError));
 
             $asHTML = $this->_getCompanyList($oQB);
+            ChromePhp::log($asHTML);
 
             return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($asHTML['data']),
                 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); ')));
@@ -8138,8 +8139,9 @@ ChromePhp::log($array);
     {
       global $gbNewSearch;
 
-
-      return 'You need to input a refId, a name, a contact detail, a company or a keyword.';
+      $errorArray = array();
+      $errorArray[] ='You need to input a refId, a name, a contact detail, a company or a keyword.';
+      return $errorArray;
 
 
       $oLogin = CDependency::getCpLogin();
