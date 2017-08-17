@@ -8140,7 +8140,7 @@ ChromePhp::log($array);
       global $gbNewSearch;
 
       $errorArray = array();
-      $errorArray[] ='You need to input a refId, a name, a contact detail, a company or a keyword.';
+      $errorArray['error'] ='You need to input a refId, a name, a contact detail, a company or a keyword.';
       return $errorArray;
 
 
