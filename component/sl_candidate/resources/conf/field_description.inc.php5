@@ -11,6 +11,7 @@
 
   $oSearch = CDependency::getComponentByName('search');
   $asYesNo = array(array('label' => 'Yes', 'value' => 1), array('label' => 'No', 'value' => 0));
+  $yesNoClient = array(array('label' => 'Yes', 'value' => "(1,2,3)"), array('label' => 'No', 'value' => "(0,8)"));
 
 
   $sURLAllUser = $this->_oPage->getAjaxUrl('login', CONST_ACTION_SEARCH, CONST_LOGIN_TYPE_USER, 0, array('all_users' => 1));
@@ -974,7 +975,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    $operators = $oSearch->getFieldOperators('egality');
+    //$operators = $oSearch->getFieldOperators('egality');
+    $operators = $oSearch->getFieldOperators('autocomplete');
     unset($operators['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
@@ -984,8 +986,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'label' => 'is client',
         'group' => 'status',
         'operator' => $operators,
-        'default_operator' => '=',
-        'option' => $asYesNo,
+        'default_operator' => 'In',
+        'option' => $yesNoClient,
         'value' => array(),
         'default_value' => array(),
         'multiple' => null,
