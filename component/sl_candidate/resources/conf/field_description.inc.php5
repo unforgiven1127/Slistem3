@@ -978,6 +978,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
     //$operators = $oSearch->getFieldOperators('egality');
     $operators = $oSearch->getFieldOperators('autocomplete');
     unset($operators['notin']);
+    ChromePhp::log($operators);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
       (
