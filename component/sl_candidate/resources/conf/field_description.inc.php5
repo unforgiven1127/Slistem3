@@ -1006,7 +1006,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_collaborator'] = array(
+    /*$asFields[CONST_CANDIDATE_TYPE_CANDI]['is_collaborator'] = array(
       'display' => array
       (
         'fts_type'=> null,
@@ -1034,7 +1034,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'fts' => false,
         'unmanageable' => null
       )
-    );
+    );*/
 
 
   //---------------------------------------------------
