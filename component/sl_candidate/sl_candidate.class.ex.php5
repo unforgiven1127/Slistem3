@@ -8142,10 +8142,17 @@ ChromePhp::log($array);
     {
       global $gbNewSearch;
 
-      $errorArray = array();
-      $errorArray['error'] ='You need to input a refId, a name, a contact detail, a company or a keyword.';
-      return $errorArray;
+      $sCompany = strtolower(trim(getValue('company')));
+      $sIndustry = trim(getValue('industry'));
+      $sContact = trim(getValue('contact'));
+      $sOwner = trim(getValue('owner'));
 
+      if(empty($sCompany) && empty($sIndustry) && empty($sContact) && empty($sOwner))
+      {
+        $errorArray = array();
+        $errorArray['error'] ='You need to input an ID, a name, a contact detail, an industry or an owner';
+        return $errorArray;
+      }
 
       $oLogin = CDependency::getCpLogin();
 
