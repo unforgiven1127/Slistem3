@@ -1583,6 +1583,7 @@ class CSearchEx extends CSearch
               $sCondition.= ' OR sln.content '.$condi;
               //ChromePhp::log($test);
             }*/
+            ChromePhp::log($sCondition);
             if($sFieldName == 'is_client')
             {
               if($vFieldValue == "1")
