@@ -8138,6 +8138,10 @@ ChromePhp::log($array);
     {
       global $gbNewSearch;
 
+
+      return 'You need to input a refId, a name, a contact detail, a company or a keyword.';
+
+
       $oLogin = CDependency::getCpLogin();
 
       $asListMsg = array();

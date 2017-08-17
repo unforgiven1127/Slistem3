@@ -435,9 +435,6 @@ class CQuickSearch
     $sContact = trim(getValue('contact'));
     $sOwner = trim(getValue('owner'));
     //ChromePhp::log($sOwner);
-    ChromePhp::log($sCompany);
-    ChromePhp::log($sIndustry);
-    ChromePhp::log($sContact);
 
     if($sOwner == "Owner")
     {
@@ -520,7 +517,7 @@ class CQuickSearch
     }
 
     $sIndustry = trim(getValue('industry'));
-    if($sIndustry == 'industry')
+    if($sIndustry == 'industry' || $sIndustry == 'Industry')
       $sIndustry = '';
 
     if(!empty($sIndustry))
