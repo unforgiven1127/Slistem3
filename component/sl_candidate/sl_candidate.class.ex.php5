@@ -8147,6 +8147,15 @@ ChromePhp::log($array);
       $sContact = trim(getValue('contact'));
       $sOwner = trim(getValue('owner'));
 
+      if($sOwner == "Owner")
+        $sOwner = '';
+      if($sIndustry == 'industry' || $sIndustry == 'Industry')
+        $sIndustry = '';
+      if($sContact == 'Contact')
+        $sContact = '';
+      if($sCompany == 'Company' || $sCompany == 'company name or id')
+        $sCompany = '';
+
       if(empty($sCompany) && empty($sIndustry) && empty($sContact) && empty($sOwner))
       {
         $errorArray = array();
