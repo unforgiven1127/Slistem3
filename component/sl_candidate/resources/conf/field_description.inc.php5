@@ -11,7 +11,6 @@
 
   $oSearch = CDependency::getComponentByName('search');
   $asYesNo = array(array('label' => 'Yes', 'value' => 1), array('label' => 'No', 'value' => 0));
-  $yesNoClient = array(array('label' => 'Yes', 'value' => "(1,2,3)"), array('label' => 'No', 'value' => "(0,8)"));
 
 
   $sURLAllUser = $this->_oPage->getAjaxUrl('login', CONST_ACTION_SEARCH, CONST_LOGIN_TYPE_USER, 0, array('all_users' => 1));
@@ -975,10 +974,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-    //$operators = $oSearch->getFieldOperators('egality');
-    $operators = $oSearch->getFieldOperators('autocomplete');
-    unset($operators['notin']);
-    ChromePhp::log($operators);
+    $operators = $oSearch->getFieldOperators('egality');
+    unset($operators['different']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_client'] = array(
       'display' => array
       (
@@ -987,27 +984,27 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'label' => 'is client',
         'group' => 'status',
         'operator' => $operators,
-        'default_operator' => 'In',
-        'option' => $yesNoClient,
+        'default_operator' => '=',
+        'option' => $asYesNo,
         'value' => array(),
         'default_value' => array(),
         'multiple' => null,
         'param' => null,
         'js_control' => 'jsFieldIntegerPositive'
       ),
+      'data' => array
+      (
+        'type' => 'int',
+        'control' => 'is_integer'
+      ),
       'sql' => array
       (
-        'field' => 'scom.level',
+        'field' => 'scan.is_client',
         'join' => null,
         'fts' => false,
         'unmanageable' => null
       )
     );
-    /*'data' => array
-      (
-        'type' => 'int',
-        'control' => 'is_integer'
-      ),*/
 
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['is_collaborator'] = array(
       'display' => array
