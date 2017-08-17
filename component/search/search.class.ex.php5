@@ -1390,6 +1390,19 @@ class CSearchEx extends CSearch
 
           }
         }
+        else if($sFieldName == 'is_client')
+        {
+          if($vFieldValue == "1")
+          {
+            $oQB->addWhere(" (scom.level IN ('1','2','3')) ");
+            //$asArrayCondition[] = "scom.level IN ('1','2','3')";
+          }
+          else
+          {
+            $oQB->addWhere(" (scom.level IN ('0','8')) ");
+            //$asArrayCondition[] = "scom.level IN ('0','8')";
+          }
+        }
         else
         {
 
@@ -1413,6 +1426,7 @@ class CSearchEx extends CSearch
             $oQB->setNote($psNote);
             //$oQB->addJoin('left','sl_candidate_old_companies','slcoc',"slcoc.company_id = '".$vFieldValue[0]."'");
           }
+
 
           if(!empty($asFieldData['sql']['join']))
           {
@@ -1530,7 +1544,7 @@ class CSearchEx extends CSearch
               $asArrayCondition = array();
               foreach($vFieldValue as $vValue)
               {
-                ChromePhp::log($sFieldName);
+                //ChromePhp::log($sFieldName);
                 if(!empty($vValue))
                 {
                   if($sFieldName == 'company_prev')
@@ -1544,17 +1558,6 @@ class CSearchEx extends CSearch
 
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ';
 
-                  }
-                  else if($sFieldName == 'is_client')
-                  {
-                    if($vFieldValue == "1")
-                    {
-                      $asArrayCondition[] = "scom.level IN ('1','2','3')";
-                    }
-                    else
-                    {
-                      $asArrayCondition[] = "scom.level IN ('0','8')";
-                    }
                   }
                   else
                   {
