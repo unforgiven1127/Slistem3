@@ -8243,9 +8243,13 @@ ChromePhp::log($array);
       $sSortField = getValue('sortfield');
       $sSortOrder = getValue('sortorder', 'DESC');
 
+      if(!$this->_oLogin->isAdmin())
+      {
+        $oQb->addWhere('scom.merged_company_id = 0');
+      }
 
       if(!empty($sSortField))
-      {// calismiyor gibi...
+      {
         if ($sSortField == 'industry_list')
         {
           $oQb->addOrder("sind.label $sSortOrder");
