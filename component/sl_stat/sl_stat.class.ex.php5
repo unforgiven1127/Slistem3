@@ -4586,7 +4586,7 @@ class CSl_statEx extends CSl_stat
         $i ++;
 
       }*/
-$localip = getenv('REMOTE_ADDR');
+//$localip = getenv('REMOTE_ADDR');
 //ChromePhp::log($_SERVER ['HTTP_USER_AGENT']);
 
       //$test = json_encode($test);

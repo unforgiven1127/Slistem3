@@ -3826,7 +3826,6 @@ var_dump($query);*/
     $result = $db_result->getAll();
 
     return $result;
-
   }
 
   function reduceOwners()
