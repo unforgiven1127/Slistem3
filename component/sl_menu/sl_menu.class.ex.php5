@@ -476,7 +476,7 @@ class CSl_menuEx extends CSl_menu
     $options = "<option value=''></option>";
     foreach ($activeUsers as $key => $value)
     {
-      $username = $value['firstname'].$value['lastname'];
+      $username = $value['firstname'].' '.$value['lastname'];
       $userID = $value['loginpk'];
       $options .= "<option value='".$userID."'>".$username."</option>";
     }

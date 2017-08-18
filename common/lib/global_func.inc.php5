@@ -3819,7 +3819,7 @@ var_dump($query);*/
     $oDB = CDependency::getComponentByName('database');
 
     $sQuery = "SELECT l.* FROM login l
-    WHERE l.status = 1 and l.kpi_flag = 'a'";
+    WHERE l.status = 1 and l.kpi_flag = 'a' ORDER BY l.firstname";
 
     $db_result = $oDB->executeQuery($sQuery);
 
