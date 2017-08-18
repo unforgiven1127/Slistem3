@@ -471,6 +471,16 @@ class CSl_menuEx extends CSl_menu
     $sHTML.= '<form id="quickSearchFormCp" class="quickSearchForm" onsubmit="$(\'#alt_submit\', this).click(); return false;">';
     $sHTML.= '<input type="hidden" name="data_type" value="comp"/>';
 
+    $activeUsers = getActiveUsers();
+    //<option value="101_0">Administrator </option>
+    $options = "<option value=''></option>";
+    foreach ($activeUsers as $key => $value)
+    {
+      $username = $value['firstname'].$value['lastname'];
+      $userID = $value['loginpk'];
+      $options .= "<option value='".$userID."'>".$username."</option>";
+    }
+
 //<input type="text" name="owner"'.$sOwnerField.' /></div>
     $sHTML.= '<div><div class="label '.$sLabelClass.'">company</div><div class="field">
       <input type="text" name="company" class="defaultText" '.$sNameField.'/>
@@ -486,40 +496,7 @@ class CSl_menuEx extends CSl_menu
 
       <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
         <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc;" name="owner" label="Owner" inajax="" id="owner">
-           <option value="0"></option>
-           <option value="101_0">Administrator </option>
-           <option value="300_0">Asaf Rinestine</option>
-           <option value="315_0">Slate Trial</option>
-           <option value="443_0">Jonas Kovaliovas</option>
-           <option value="431_0">Kismet Kapur</option>
-           <option value="388_0">Larry Fry</option>
-           <option value="309_0">Nicholas Adams</option>
-           <option value="374_0">Philip Miles Harry</option>
-           <option value="276_0">Pam Thai</option>
-           <option value="459_0">Ray Pedersen</option>
-           <option value="186_0">Ryan Marshall</option>
-           <option value="493_0">Odis Rondos</option>
-           <option value="130_0">Viktoria Maslyuk</option>
-           <option value="199_0">Yuko Kuwabara</option>
-           <option value="347_0">Yonoshin Takagi</option>
-           <option value="480_0">Pierre Greeff</option>
-           <option value="481_0">Cecilia Chen</option>
-           <option value="494_0">Munir Anameric</option>
-           <option value="498_0">Kyoko Ono</option>
-           <option value="514_0">Takuya Tanigawa</option>
-           <option value="515_0">Auto Update</option>
-           <option value="518_0">munir new mail</option>
-           <option value="516_0">Anubha Mishra</option>
-           <option value="517_0">Test Support</option>
-           <option value="521_0">Sathish D.V.</option>
-           <option value="522_0">Daniel Kadyrbekov</option>
-           <option value="524_0">Yoshinobu Kubota</option>
-           <option value="529_0">Tamara Gelyuta</option>
-           <option value="531_0">Mark Takano</option>
-           <option value="532_0">Saki Ishikawa</option>
-           <option value="530_0">Sujit Jha</option>
-           <option value="533_0">Sharmonie Pedersen</option>
-           <option value="528_0">Ajay Nagotkar</option>
+           '.$options.'
         </select>
       </div></div>
 
