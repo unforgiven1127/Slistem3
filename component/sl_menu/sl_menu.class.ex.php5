@@ -521,7 +521,7 @@ class CSl_menuEx extends CSl_menu
            <option value="533_0">Sharmonie Pedersen</option>
            <option value="528_0">Ajay Nagotkar</option>
         </select>
-      </div>
+      </div></div>
 
     <div><br />
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'form\').find(\'input:visible\').val(\'\').blur();">&nbsp;<img src="/component/form/resources/pictures/tree_clear.png" title="Clear quick search form" onclick="tp(this);"/>&nbsp;</a>';
