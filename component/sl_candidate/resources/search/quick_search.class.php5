@@ -434,7 +434,19 @@ class CQuickSearch
     $sIndustry = trim(getValue('industry'));
     $sContact = trim(getValue('contact'));
     $sOwner = trim(getValue('owner'));
+    $sCreator = trim(getValue('creator'));
     //ChromePhp::log($sOwner);
+
+    if($sCreator == "Creator")
+    {
+      $sCreator = '';
+    }
+    if(!empty($sCreator))
+    {
+      $this->coQb->addWhere('scom.created_by = '.$sCreator);
+      $asTitle[] = ' Created by = '.$sCreator;
+    }
+
 
     if($sOwner == "Owner")
     {
