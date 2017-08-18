@@ -473,7 +473,7 @@ class CSl_menuEx extends CSl_menu
 
     $activeUsers = getActiveUsers();
     //<option value="101_0">Administrator </option>
-    $options = "<option disabled selected value=''>Owner</option>";
+    $options = "<option value=''>Owner</option>";
     foreach ($activeUsers as $key => $value)
     {
       $username = $value['firstname'].' '.$value['lastname'];
