@@ -506,7 +506,7 @@ class CSl_menuEx extends CSl_menu
         </select>
       </div></div>
 
-    <div><br />
+    <div><br /><br />
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'form\').find(\'input:visible\').val(\'\').blur();">&nbsp;<img src="/component/form/resources/pictures/tree_clear.png" title="Clear quick search form" onclick="tp(this);"/>&nbsp;</a>';
 
     if(!$pbInline)
