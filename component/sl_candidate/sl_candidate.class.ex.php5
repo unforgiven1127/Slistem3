@@ -8146,7 +8146,10 @@ ChromePhp::log($array);
       $sIndustry = trim(getValue('industry'));
       $sContact = trim(getValue('contact'));
       $sOwner = trim(getValue('owner'));
+      $sCreator = trim(getValue('creator'));
 
+      if($sCreator == "Creator")
+        $sCreator = '';
       if($sOwner == "Owner")
         $sOwner = '';
       if($sIndustry == 'industry' || $sIndustry == 'Industry')
@@ -8156,7 +8159,7 @@ ChromePhp::log($array);
       if($sCompany == 'Company' || $sCompany == 'company name or id')
         $sCompany = '';
 
-      if(empty($sCompany) && empty($sIndustry) && empty($sContact) && empty($sOwner))
+      if(empty($sCompany) && empty($sIndustry) && empty($sContact) && empty($sOwner) && empty($sCreator))
       {
         $errorArray = array();
         $errorArray['error'] ='You need to input an ID, a name, a contact detail, an industry or an owner';
