@@ -495,7 +495,7 @@ class CSl_menuEx extends CSl_menu
       <input type="text" name="contact" '.$sContactField.'/></div></div>
 
       <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
-        <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:11px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner">
+        <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner">
            '.$options.'
         </select>
       </div></div>
