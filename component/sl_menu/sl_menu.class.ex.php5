@@ -501,12 +501,12 @@ class CSl_menuEx extends CSl_menu
       </div>
 
       <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
-        <select style="margin-top:5px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
+        <select style="margin-top:5px;margin-bottom:5px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
            '.$options.'
         </select>
       </div></div>
 
-    <div><br /><br>
+    <div><br />
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'form\').find(\'input:visible\').val(\'\').blur();">&nbsp;<img src="/component/form/resources/pictures/tree_clear.png" title="Clear quick search form" onclick="tp(this);"/>&nbsp;</a>';
 
     if(!$pbInline)
