@@ -474,11 +474,13 @@ class CSl_menuEx extends CSl_menu
     $activeUsers = getActiveUsers();
     //<option value="101_0">Administrator </option>
     $options = "<option value=''>Owner</option>";
+    $optionsCreator = "<option value=''>Creator</option>";
     foreach ($activeUsers as $key => $value)
     {
       $username = $value['firstname'].' '.$value['lastname'];
       $userID = $value['loginpk'];
       $options .= "<option value='".$userID."'>".$username."</option>";
+      $optionsCreator .= "<option value='".$userID."'>".$username."</option>";
     }
 
 //<input type="text" name="owner"'.$sOwnerField.' /></div>
@@ -494,15 +496,15 @@ class CSl_menuEx extends CSl_menu
       <div><div class="label '.$sLabelClass.'">contact</div><div class="field">
       <input type="text" name="contact" '.$sContactField.'/></div></div>
 
-      <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
+      <div><div class="label '.$sLabelClass.'">owner</div><div class="field">
         <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
            '.$options.'
         </select>
       </div>
 
-      <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
-        <select style="margin-top:5px;margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
-           '.$options.'
+      <div><div class="label '.$sLabelClass.'">creator</div><div class="field">
+        <select style="margin-top:5px;margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="creator" label="Creator" inajax="" id="creator" >
+           '.$optionsCreator.'
         </select>
       </div></div>
 
