@@ -478,7 +478,7 @@ class CSl_menuEx extends CSl_menu
     {
       $username = $value['firstname'].' '.$value['lastname'];
       $userID = $value['loginpk'];
-      $options .= "<option value='".$userID."'>".$username."</option>";
+      $options .= "<option style='color:gray;font-size:6px;' value='".$userID."'>".$username."</option>";
     }
 
 //<input type="text" name="owner"'.$sOwnerField.' /></div>
