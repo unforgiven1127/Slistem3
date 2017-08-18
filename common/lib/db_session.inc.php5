@@ -7,7 +7,7 @@ class CDbSessionHandler
   {
     if(trim($_SERVER['SERVER_NAME']) == "slistemlocal.com")
     {
-      if ($this->coSessDb = mysqli_connect('localhost', 'slistem', '7088762')) // MCA ADDED FOR LOCAL VERSION !!!!!
+      if ($this->coSessDb = mysqli_connect('localhost', 'slistem', '********'))
       {
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
       }
@@ -18,8 +18,7 @@ class CDbSessionHandler
     else
     {
       if($this->coSessDb = mysqli_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
-      //if($this->coSessDb = mysqli_connect('172.31.29.60', 'slistem', 'smwXN2RTDm6Zz3hR'))
-      {
+      {//smwXN2RTDm6Zz3hR
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
       }
 

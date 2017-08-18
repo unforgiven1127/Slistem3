@@ -444,7 +444,6 @@ class CQuickSearch
     if(!empty($sOwner))
     {
       $sOwner = '101';
-      ChromePhp::log('HERE I AM');
       $this->coQb->addJoin('inner', 'client_owner_list', 'col', 'col.company_id = scom.sl_companypk');
       $this->coQb->addWhere('col.user_id = '.$sOwner);
       $asTitle[] = ' Owner = '.$sOwner;
