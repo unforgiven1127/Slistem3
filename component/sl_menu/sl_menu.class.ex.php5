@@ -450,7 +450,7 @@ class CSl_menuEx extends CSl_menu
     //Inline => always displayed, need to be compacted
     if($pbInline)
     {//quickSearchContainerCp height changes here
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:170px;','class' => 'qs_inline hidden'));
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:300px !important;','class' => 'qs_inline hidden'));
       $sLabelClass = ' hidden';
 
       $sFieldJs = ' onfocus="if($(this).val() == $(this).attr(\'data-default\')){ $(this).val(\'\'); $(this).removeClass(\'defaultText\'); }"
