@@ -503,7 +503,7 @@ class CSl_menuEx extends CSl_menu
       </div></div>
 
       <div><div class="label '.$sLabelClass.'">creator</div><div class="field">
-        <select style="margin-top:5px;margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="creator" label="Creator" inajax="" id="creator" >
+        <select style="margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="creator" label="Creator" inajax="" id="creator" >
            '.$optionsCreator.'
         </select>
       </div></div>
