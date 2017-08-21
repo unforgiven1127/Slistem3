@@ -468,7 +468,7 @@ class CSl_menuEx extends CSl_menu
       $sLabelClass = $sNameField = $sIndustryField = $sContactField = $sOwnerField = $sLabelClass = '';
     }
 
-    $sHTML.= '<form id="quickSearchFormCp" style="height:300px !important;" class="quickSearchForm" onsubmit="$(\'#alt_submit\', this).click(); return false;">';
+    $sHTML.= '<form id="quickSearchFormCp" class="quickSearchForm" onsubmit="$(\'#alt_submit\', this).click(); return false;">';
     $sHTML.= '<input type="hidden" name="data_type" value="comp"/>';
 
     $activeUsers = getStatusActiveUsers();
