@@ -489,13 +489,13 @@ class CQuickSearch
         $cNameArray = explode(' ',$clean_code);
         $cNameArray = array_filter($cNameArray, function($var){return !empty($var);} );
         //ChromePhp::log($cNameArray);
-        $addLast = '';
+        $addLast = '( ';
         foreach ($cNameArray as $key => $value)
         {
           $value = trim($value);
           $addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
         }
-        $addLast .= ' scom.name LIKE "%'.$sCompany.'%" ';
+        $addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
         $this->coQb->addWhere($addLast);
 
         $this->coQb->addOrder(' ratio DESC ');
