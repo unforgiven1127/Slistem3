@@ -482,13 +482,21 @@ class CQuickSearch
 
         $this->coQb->addSelect('*, 100-(levenshtein("'.$sCompany.'", LOWER(scom.name))*100/LENGTH(scom.name)) AS ratio');
 
-        $this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
+        //$this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
 
         $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
-        ChromePhp::log($clean_code);
-        $explodedCompanyName = explode(' ',$clean_code);
-        $explodedCompanyName = array_filter($explodedCompanyName, function($var){return !empty($var);} );
-        ChromePhp::log($explodedCompanyName);
+        //ChromePhp::log($clean_code);
+        $cNameArray = explode(' ',$clean_code);
+        $cNameArray = array_filter($cNameArray, function($var){return !empty($var);} );
+        //ChromePhp::log($cNameArray);
+        $addLast = '';
+        foreach ($cNameArray as $key => $value)
+        {
+          $value = trim($value);
+          $addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
+        }
+        $addLast .= ' scom.name LIKE "%'.$sCompany.'%" ';
+        $this->coQb->addWhere($addLast);
 
         $this->coQb->addOrder(' ratio DESC ');
 
