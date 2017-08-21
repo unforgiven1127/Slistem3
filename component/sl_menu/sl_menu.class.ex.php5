@@ -471,7 +471,7 @@ class CSl_menuEx extends CSl_menu
     $sHTML.= '<form id="quickSearchFormCp" class="quickSearchForm" onsubmit="$(\'#alt_submit\', this).click(); return false;">';
     $sHTML.= '<input type="hidden" name="data_type" value="comp"/>';
 
-    $activeUsers = getActiveUsers();
+    $activeUsers = getStatusActiveUsers();
     //<option value="101_0">Administrator </option>
     $options = "<option value=''>Owner</option>";
     $optionsCreator = "<option value=''>Creator</option>";

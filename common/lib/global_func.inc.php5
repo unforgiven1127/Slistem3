@@ -3814,6 +3814,20 @@ var_dump($query);*/
     return $result;
   }
 
+  function getStatusActiveUsers()
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT l.* FROM login l
+    WHERE l.status = 1 ORDER BY l.firstname";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getActiveUsers()
   {
     $oDB = CDependency::getComponentByName('database');
