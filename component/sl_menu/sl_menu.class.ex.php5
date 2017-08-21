@@ -450,7 +450,7 @@ class CSl_menuEx extends CSl_menu
     //Inline => always displayed, need to be compacted
     if($pbInline)
     {//quickSearchContainerCp height changes here
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:300px !important;','class' => 'qs_inline hidden'));
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px !important;','class' => 'qs_inline hidden'));
       $sLabelClass = ' hidden';
 
       $sFieldJs = ' onfocus="if($(this).val() == $(this).attr(\'data-default\')){ $(this).val(\'\'); $(this).removeClass(\'defaultText\'); }"
@@ -464,13 +464,8 @@ class CSl_menuEx extends CSl_menu
     }
     else
     {
-      ChromePhp::log($heightFlag);
-      $addClass = '';
-      if($heightFlag)
-      {
-        $addClass = ' heightRise ';
-      }
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px;','class' => 'hidden'.$addClass, 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
+
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px;','class' => 'hidden heightRise', 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
       $sLabelClass = $sNameField = $sIndustryField = $sContactField = $sOwnerField = $sLabelClass = '';
     }
 
@@ -536,12 +531,9 @@ class CSl_menuEx extends CSl_menu
   {
     $oPage = CDependency::getComponentByName('page');
     $sURL = $oPage->getAjaxUrl('sl_position', CONST_ACTION_SEARCH, CONST_POSITION_TYPE_JD, 0, array('qs' => 1));
-
-    $heightFlag = true;
     //Inline => always displayed, need to be compacted
     if($pbInline)
     {
-      $heightFlag = false;
       $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerJd', array( 'class' => 'qs_inline hidden'));
       $sLabelClass = ' hidden';
 
