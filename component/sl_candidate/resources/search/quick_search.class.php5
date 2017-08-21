@@ -496,32 +496,7 @@ class CQuickSearch
           $addLast .= " scom.name RLIKE '[[:<:]]".$value."[[:>:]]' OR ";
           //$addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
         }
-        if(count($cNameArray) == 3)
-        {
-          $search1 = $cNameArray[0].' '.$cNameArray[1].' '.$cNameArray[2];
-          $addLast .= ' scom.name LIKE "%'.$search1.'%" OR )';
-          $search2 = $cNameArray[0].' '.$cNameArray[2].' '.$cNameArray[1];
-          $addLast .= ' scom.name LIKE "%'.$search2.'%" OR )';
-          $search3 = $cNameArray[1].' '.$cNameArray[0].' '.$cNameArray[2];
-          $addLast .= ' scom.name LIKE "%'.$search3.'%" OR )';
-          $search4 = $cNameArray[1].' '.$cNameArray[2].' '.$cNameArray[0];
-          $addLast .= ' scom.name LIKE "%'.$search4.'%" OR )';
-          $search5 = $cNameArray[2].' '.$cNameArray[1].' '.$cNameArray[0];
-          $addLast .= ' scom.name LIKE "%'.$search5.'%" OR )';
-          $search6 = $cNameArray[2].' '.$cNameArray[0].' '.$cNameArray[1];
-          $addLast .= ' scom.name LIKE "%'.$search6.'%" )';
-        }
-        else if(count($cNameArray) == 2)
-        {
-          $search1 = $cNameArray[0].' '.$cNameArray[1];
-          $addLast .= ' scom.name LIKE "%'.$search1.'%" OR )';
-          $search2 = $cNameArray[1].' '.$cNameArray[0];
-          $addLast .= ' scom.name LIKE "%'.$search2.'%" )';
-        }
-        else
-        {
-          $addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
-        }
+        $addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
         $this->coQb->addWhere($addLast);
 
         $this->coQb->addOrder(' ratio DESC ');
