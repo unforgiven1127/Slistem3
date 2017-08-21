@@ -6698,13 +6698,13 @@ ChromePhp::log($array);
                 updateLastWorkPhone($asData['itemfk'],$asData['value']);
               }
             }
-            /*if($asOldData['value'] == $workPhone)
+            if($asOldData['sl_contactpk'] == $asData['sl_contactpk'])
             {
-              if($asOldData['type'] != $asData['value'])
+              if($asOldData['value'] == $asData['value'] && $asOldData['type'] != $asData['type'])
               {
-
+                updateLastWorkPhone($asData['itemfk']);
               }
-            }*/
+            }
 
             if($asOldData['value'] != $asData['value'] || $asOldData['description'] != $asData['description']
             || $asOldData['visibility'] != $asData['visibility'] || $asOldData['loginfk'] != $asData['userfk']
