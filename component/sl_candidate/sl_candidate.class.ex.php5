@@ -8290,6 +8290,7 @@ ChromePhp::log($array);
       // multi industries --> we need to group by companypk --> number result = numrows
       //$oDbResult = $this->_getModel()->executeQuery($oQb->getCountSql());
 ChromePhp::log($sql);
+exit;
       $oDbResult = $this->_getModel()->executeQuery($sql);
       $bRead = $oDbResult->readFirst();
       if(!$bRead)
