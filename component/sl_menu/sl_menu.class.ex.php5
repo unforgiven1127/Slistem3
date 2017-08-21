@@ -465,7 +465,7 @@ class CSl_menuEx extends CSl_menu
     else
     {
 
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:170px;','class' => 'hidden heightRise', 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:300px;','class' => 'hidden heightRise', 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
       $sLabelClass = $sNameField = $sIndustryField = $sContactField = $sOwnerField = $sLabelClass = '';
     }
 
