@@ -484,7 +484,7 @@ class CQuickSearch
 
         $this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
 
-        $clean_code = preg_replace('/[^a-zA-Z0-9]/', '', $sCompany);
+        $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
         ChromePhp::log($clean_code);
         //$explodedCompanyName = explode(' ',$sCompany);
 
