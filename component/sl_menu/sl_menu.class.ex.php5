@@ -496,17 +496,7 @@ class CSl_menuEx extends CSl_menu
       <div><div class="label '.$sLabelClass.'">contact</div><div class="field">
       <input type="text" name="contact" '.$sContactField.'/></div></div>
 
-      <div><div class="label '.$sLabelClass.'">owner</div><div class="field">
-        <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
-           '.$options.'
-        </select>
-      </div>
-
-      <div><div class="label '.$sLabelClass.'">creator</div><div class="field">
-        <select style="margin-top:5px;margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="creator" label="Creator" inajax="" id="creator" >
-           '.$optionsCreator.'
-        </select>
-      </div></div>
+      
 
     <div><br />
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'form\').find(\'input:visible\').val(\'\').blur();">&nbsp;<img src="/component/form/resources/pictures/tree_clear.png" title="Clear quick search form" onclick="tp(this);"/>&nbsp;</a>';
