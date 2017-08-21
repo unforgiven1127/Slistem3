@@ -464,6 +464,7 @@ class CSl_menuEx extends CSl_menu
     }
     else
     {
+      ChromePhp::log($heightFlag);
       $addClass = '';
       if($heightFlag)
       {
