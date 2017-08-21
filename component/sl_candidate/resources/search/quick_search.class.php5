@@ -493,7 +493,7 @@ class CQuickSearch
         foreach ($cNameArray as $key => $value)
         {
           $value = trim($value);
-          $addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
+          $addLast .= ' scom.name LIKE "'.$value.'" OR ';
         }
         $addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
         $this->coQb->addWhere($addLast);
