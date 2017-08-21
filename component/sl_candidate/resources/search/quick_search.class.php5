@@ -486,7 +486,8 @@ class CQuickSearch
 
         $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
         ChromePhp::log($clean_code);
-        //$explodedCompanyName = explode(' ',$sCompany);
+        $explodedCompanyName = explode(' ',$sCompany);
+        ChromePhp::log($explodedCompanyName);
 
         $this->coQb->addOrder(' ratio DESC ');
 
