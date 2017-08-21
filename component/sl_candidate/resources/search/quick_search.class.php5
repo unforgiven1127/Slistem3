@@ -485,7 +485,7 @@ class CQuickSearch
         //$this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
 
         $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
-        //ChromePhp::log($clean_code);
+        ChromePhp::log($clean_code);
         $addLater = '(';
         $explodedCompanyName = explode(' ',$clean_code);
         foreach ($explodedCompanyName as $key => $value)
@@ -493,6 +493,7 @@ class CQuickSearch
           $searchExploded = trim($value);
           $addLater .=' scom.name LIKE "%'.$searchExploded.'%" OR ';
         }
+        ChromePhp::log($addLater);
         $addLater .= ' scom.name LIKE "%'.$sCompany.'%" )';
         $this->coQb->addWhere($addLater);
         $this->coQb->addOrder(' ratio DESC ');
