@@ -6689,6 +6689,8 @@ ChromePhp::log($array);
               return array('error' => 'Error: Editing a contact detail that doesn\'t exist anymore.');
 
             $asOldData = $asPrevious[$asData['sl_contactpk']];
+            ChromePhp::log($asOldData);
+            ChromePhp::log($asData);
             if($asOldData['value'] != $asData['value'])//find the updated one
             {
               if($asOldData['value'] == $workPhone)
@@ -6696,6 +6698,13 @@ ChromePhp::log($array);
                 updateLastWorkPhone($asData['itemfk'],$asData['value']);
               }
             }
+            /*if($asOldData['value'] == $workPhone)
+            {
+              if($asOldData['type'] != $asData['value'])
+              {
+
+              }
+            }*/
 
             if($asOldData['value'] != $asData['value'] || $asOldData['description'] != $asData['description']
             || $asOldData['visibility'] != $asData['visibility'] || $asOldData['loginfk'] != $asData['userfk']
