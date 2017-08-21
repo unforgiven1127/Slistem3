@@ -481,21 +481,13 @@ class CQuickSearch
         $no_spaces_company = str_replace(' ', '', $sCompany);
 
         $this->coQb->addSelect('*, 100-(levenshtein("'.$sCompany.'", LOWER(scom.name))*100/LENGTH(scom.name)) AS ratio');
-        ChromePhp::log('HERE HERE HERE');
-        //$this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
+
+        $this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
 
         $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
         ChromePhp::log($clean_code);
-        $addLater = '(';
-        $explodedCompanyName = explode(' ',$clean_code);
-        foreach ($explodedCompanyName as $key => $value)
-        {
-          $searchExploded = trim($value);
-          $addLater .=' scom.name LIKE "%'.$searchExploded.'%" OR ';
-        }
-        ChromePhp::log($addLater);
-        $addLater .= ' scom.name LIKE "%'.$sCompany.'%" )';
-        $this->coQb->addWhere($addLater);
+        //$explodedCompanyName = explode(' ',$sCompany);
+
         $this->coQb->addOrder(' ratio DESC ');
 
         $asTitle[] = ' company name = '.$sCompany;
