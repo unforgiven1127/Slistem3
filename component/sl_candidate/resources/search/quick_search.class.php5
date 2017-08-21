@@ -494,7 +494,7 @@ class CQuickSearch
           $addLater .=' scom.name LIKE "%'.$searchExploded.'%" OR ';
         }
         $addLater .= ' scom.name LIKE "%'.$sCompany.'%" )';
-
+        $this->coQb->addWhere($addLater);
         $this->coQb->addOrder(' ratio DESC ');
 
         $asTitle[] = ' company name = '.$sCompany;
