@@ -496,7 +496,7 @@ class CQuickSearch
           $addLast .= " scom.name RLIKE '[[:<:]]".$value."[[:>:]]' AND ";
           //$addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
         }
-        $addLast = rtrim($addLast,'AND');
+        $addLast = rtrim($addLast,'AND ');
         $addLast .= ')';
         //$addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
         $this->coQb->addWhere($addLast);
