@@ -3369,7 +3369,7 @@ ChromePhp::log($nGroupFk);
       $aUserList = $this->getUserByTeam($nGroupFk);
       if($nGroupFk == 0)
         $sTitle = 'Users with no group';
-      elseif()
+      elseif($nGroupFk == 116)
       {
         $sTitle = 'Active Users';
         $aUserList = getStatusActiveUsers();
