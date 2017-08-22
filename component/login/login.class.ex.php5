@@ -3384,7 +3384,7 @@ class CLoginEx extends CLogin
     {
       $sTitle = 'All Users';
       $aUserList = getStatusActiveUsers();
-      ChromePhp::log($aUserList);
+      //ChromePhp::log($aUserList);
       //$aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
     }
 
@@ -3439,7 +3439,7 @@ class CLoginEx extends CLogin
     $nInactive = 0;
     foreach($aUserList as $aUser)
     {
-      if($aUser['contact_flag'] == 'a')
+      if($nGroupFk == 999 || $aUser['contact_flag'] == 'a')
       {
         $aRow = array();
 
