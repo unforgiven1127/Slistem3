@@ -145,6 +145,10 @@ function beforeCompanyAdd()
           //console.log(data);
         //$(psToPrepend).append(oJsonData.data);
       },
+      done:function(oJsonData)
+      {
+        alert('done')
+      },
       async: false,
       dataType: "JSON"
     });
