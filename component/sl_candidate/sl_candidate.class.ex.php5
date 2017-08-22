@@ -7571,18 +7571,15 @@ ChromePhp::log($array);
 
       $untouchedCompanyNameCount = strlen($company_name);
 
-      if($nameCount == 1)
+      /*if($nameCount == 1)
       {
         $stringCount = strlen($company_name);
         $stringCount = $stringCount;
-        /*$sQuery = "SELECT levenshtein('".$company_name."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
-                 FROM sl_company slc
-                 WHERE levenshtein('".$company_name."', TRIM(LOWER(slc.name))) < 2
-                 OR slc.name = '".$company_name."'";*/
+
         $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name LIKE '%".$company_name."%' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
 
-      }
-      else if($nameCount > 1)
+      }*/
+      /*else if($nameCount > 1)
       {
         foreach ($explodedCompanyName as $key => $value)
         {
@@ -7596,11 +7593,7 @@ ChromePhp::log($array);
         {
           $stringCount = strlen($explodedCompanyName[0]);
           $stringCount = $stringCount;
-          /*$sQuery = "SELECT levenshtein('".$explodedCompanyName[0]."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
-                 FROM sl_company slc
-                 WHERE levenshtein('".$explodedCompanyName[0]."', TRIM(LOWER(slc.name))) < 2
-                 OR slc.name = '".$explodedCompanyName[0]."' ";*/
-          //$sQuery = "SELECT * FROM sl_company slc WHERE slc.name LIKE '%".$explodedCompanyName[0]."%'";
+
           $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$explodedCompanyName[0]."', 1, 0) as exact_name2, slc.* FROM sl_company slc WHERE slc.name LIKE '%".$explodedCompanyName[0]."%' AND slc.merged_company_id = 0 ORDER BY  slc.name ASC";
         }
         else
@@ -7608,15 +7601,13 @@ ChromePhp::log($array);
           $implodedName = implode(' ',$explodedCompanyName);
           $stringCount = strlen($implodedName);
           $stringCount = $stringCount;
-          /*$sQuery = "SELECT levenshtein('".$company_name."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
-                 FROM sl_company slc
-                 WHERE ";*/
+
           $sQuery = "SELECT IF(LEFT(slc.name , '".$untouchedCompanyNameCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE ( ";
           $addWhere = '';
           foreach ($explodedCompanyName as $key => $value)
           {
             $addWhere .= " slc.name LIKE '%".$value."%' OR ";
-            //$addWhere = " levenshtein('".$value."', TRIM(LOWER(slc.name))) < 2 OR slc.name == '".$value."' OR";
+
           }
           $sQuery .= $addWhere;
           $sQuery = trim($sQuery, "OR ");
@@ -7626,8 +7617,20 @@ ChromePhp::log($array);
 
         $sQuery = trim($sQuery, "OR ");
 
-        //$sQuery .= " OR slc.name LIKE '%".$company_name."%'";
+      }*/
+      if($nameCount >= 1)
+      {
+        $addLast = '( ';
+        foreach ($explodedCompanyName as $key => $value)
+        {
+          $value = trim($value);
+          $addLast .= " scom.name RLIKE '[[:<:]]".$value."[[:>:]]' AND ";
+          //$addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
+        }
+        $addLast = rtrim($addLast,'AND ');
+        $addLast .= ')';
 
+        $sQuery = "SELECT scom.* FROM sl_company as scom WHERE ".$addLast." GROUP BY scom.sl_companypk ORDER BY scom.name ASC ";
       }
       else
       {
