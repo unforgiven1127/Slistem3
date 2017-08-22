@@ -3369,6 +3369,11 @@ ChromePhp::log($nGroupFk);
       $aUserList = $this->getUserByTeam($nGroupFk);
       if($nGroupFk == 0)
         $sTitle = 'Users with no group';
+      elseif()
+      {
+        $sTitle = 'Active Users';
+        $aUserList = getStatusActiveUsers();
+      }
       else
       {
         $aUserGroups = $this->_getModel()->getUserGroup(0, true, true);
@@ -3378,7 +3383,8 @@ ChromePhp::log($nGroupFk);
     else
     {
       $sTitle = 'All Users';
-      $aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
+      $aUserList = getStatusActiveUsers();
+      //$aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
     }
 
     //Full list container
