@@ -77,7 +77,7 @@ function beforeCompanyAdd()
     //$('.ui-dialog').addClass("loadClass");
 
     //alert(companyName);
-    //loading();
+    loading();
     psUrl = 'index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx';
 
     console.log(psUrl);
@@ -89,9 +89,9 @@ function beforeCompanyAdd()
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       success: function(oJsonData)
       {
-          //$('.ui-dialog').removeClass("loadClass");
+          $('.ui-dialog').removeClass("loadClass");
           //alert('Success');
-          //$('#slLoadingScreen').remove();
+          $('#slLoadingScreen').remove();
 
           //console.log(oJsonData);
           var data = oJsonData.data;
