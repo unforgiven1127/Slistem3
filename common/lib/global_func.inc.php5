@@ -3828,6 +3828,20 @@ var_dump($query);*/
     return $result;
   }
 
+  function getAllUsers()
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT l.* FROM login l
+    ORDER BY l.firstname";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getActiveUsers()
   {
     $oDB = CDependency::getComponentByName('database');
