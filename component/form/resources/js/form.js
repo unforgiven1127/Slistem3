@@ -142,12 +142,12 @@ function beforeCompanyAdd()
           //alert(parsedData);
           //var data = oJsonData.data;
           //alert(data);
-          //console.log(data);
+          //console.log(data);;
         //$(psToPrepend).append(oJsonData.data);
       },
       done:function(oJsonData)
       {
-        alert('done')
+        alert('done');
       },
       async: false,
       dataType: "JSON"
