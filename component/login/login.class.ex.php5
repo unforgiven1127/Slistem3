@@ -3356,6 +3356,8 @@ class CLoginEx extends CLogin
     $oPage->addCssFile(array($this->getResourcePath().'css/login.form.css'));
     $nGroupFk = (int)getValue('login_groupfk', CONST_LOGIN_DEFAULT_LIST_GRP);
 
+    ChromePhp::log('_displayList');
+
     $oRight = CDependency::getComponentByName('right');
     if($oRight->canAccess($this->csUid, CONST_ACTION_MANAGE, CONST_LOGIN_TYPE_USER))
       $bAdmin = true;
