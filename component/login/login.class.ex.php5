@@ -3363,7 +3363,7 @@ class CLoginEx extends CLogin
     else
       $bAdmin = false;
 
-ChromePhp::log($nGroupFk);
+//ChromePhp::log($nGroupFk);
     if($nGroupFk >= 0 && $nGroupFk < 999)
     {
       $aUserList = $this->getUserByTeam($nGroupFk);
@@ -3384,6 +3384,7 @@ ChromePhp::log($nGroupFk);
     {
       $sTitle = 'All Users';
       $aUserList = getStatusActiveUsers();
+      ChromePhp::log($aUserList);
       //$aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
     }
 
