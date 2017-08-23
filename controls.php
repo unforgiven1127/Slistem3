@@ -180,6 +180,7 @@ while($data = mysql_fetch_assoc($slistemQuery))
 	echo "<tr>";
 		echo "<td>".$data['candidate_id']."</td>";
 		echo "<td>".$data['firstname']." ".$data['firstname']."</td>";
+		echo "<td>".$data['title']."</td>";
 		echo "<td>".$data['industry']."</td>";
 		echo "<td>".$data['occupation']."</td>";
 		echo "<td>".$data['company']."</td>";
