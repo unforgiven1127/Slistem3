@@ -67,6 +67,7 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
+    ChromePhp::log(CONST_CRM_DOMAIN);
     $time_pre = microtime(true);
     $startT = strtotime("now");
     $sDateStart = date('Y-m-d H:i:s');
