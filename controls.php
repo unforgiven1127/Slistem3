@@ -174,6 +174,14 @@ $count = 0;
 echo '<br><br><br>';
 
 echo "<table>";
+echo "<tr>
+<td>ID</td>
+<td>NAME</td>
+<td>TITLE</td>
+<td>INDUSTRY</td>
+<td>OCCUPATION</td>
+<td>COMPANY</td>
+</tr>";
 while($data = mysql_fetch_assoc($slistemQuery))
 {
 	$count++;
