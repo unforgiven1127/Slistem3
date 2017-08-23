@@ -472,7 +472,7 @@ class CSl_menuEx extends CSl_menu
     $sHTML.= '<input type="hidden" name="data_type" value="comp"/>';
 
     $activeUsers = getStatusActiveUsers();
-    $allUsers = getCreators();
+    $creatorUsers = getCreators();
     $eliminateArray = array('442','477','241','300','515','240','407','448','406','518','309','478','482','530','517','215','2','498');
     //<option value="101_0">Administrator </option>
     $options = "<option value=''>Owner</option>";
@@ -488,7 +488,7 @@ class CSl_menuEx extends CSl_menu
       }
     }
 
-    foreach ($allUsers as $key => $value)
+    foreach ($creatorUsers as $key => $value)
     {
       $username = $value['firstname'].' '.$value['lastname'];
       $userID = $value['loginpk'];
