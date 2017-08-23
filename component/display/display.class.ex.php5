@@ -141,7 +141,6 @@ class CDisplayEx extends CDisplay
    */
   public function getLink($psLabel, $psUrl='', $pasOptions = array())
   {
-
     if(!assert('!empty($psLabel) && is_array($pasOptions)'))
       return '';
 

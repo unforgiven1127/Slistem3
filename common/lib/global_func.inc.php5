@@ -3828,6 +3828,20 @@ var_dump($query);*/
     return $result;
   }
 
+  function getCreators()
+  {
+    $oDB = CDependency::getComponentByName('database');
+
+    $sQuery = "SELECT l.* FROM login l
+    WHERE l.status = 1 and l.creator_flag = 'a' ORDER BY l.firstname";
+
+    $db_result = $oDB->executeQuery($sQuery);
+
+    $result = $db_result->getAll();
+
+    return $result;
+  }
+
   function getAllUsers()
   {
     $oDB = CDependency::getComponentByName('database');
