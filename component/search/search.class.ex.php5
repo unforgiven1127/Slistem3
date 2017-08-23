@@ -1258,8 +1258,8 @@ class CSearchEx extends CSearch
         $vFieldValue = trim($vFieldValue);
         $allSalesFlag = false;
 
-        if($sFieldName == 'occupation' && $vFieldValue == '196')// occupation en ustteki Sales secilirse...
-        {
+        if($sFieldName == 'occupation' && $vFieldValue == '196')
+        {// occupation en ustteki Sales secilirse...
           $allSalesFlag = true;
         }
         if(in_array($vFieldValue,$asStatusFlag))
