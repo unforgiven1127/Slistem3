@@ -141,11 +141,9 @@ class CDisplayEx extends CDisplay
    */
   public function getLink($psLabel, $psUrl='', $pasOptions = array())
   {
-    ChromePhp::log($psLabel);
-    ChromePhp::log($pasOptions);
 
-    //if(!assert('!empty($psLabel) && is_array($pasOptions)'))
-      //return '';
+    if(!assert('!empty($psLabel) && is_array($pasOptions)'))
+      return '';
 
    /*
     * TODO: finish the popup and manage the mouseover
