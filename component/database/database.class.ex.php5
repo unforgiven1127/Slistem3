@@ -69,6 +69,7 @@ class CDatabaseEx extends CDatabase
   {
     //ChromePhp::log(CONST_CRM_DOMAIN);
     if(CONST_CRM_DOMAIN != 'https://beta1.slate.co.jp' || CONST_CRM_DOMAIN != 'https://slistem.slate.co.jp')
+      exit();
     $time_pre = microtime(true);
     $startT = strtotime("now");
     $sDateStart = date('Y-m-d H:i:s');
