@@ -1255,6 +1255,7 @@ class CSearchEx extends CSearch
       {
         insertAILog("complex_search",$sFieldName,$user_id);
         $vFieldValue = @$_POST[$sFieldName][$nGroup][$nRowNumber];
+        $vFieldValue = trim($vFieldValue);
         $allSalesFlag = false;
 
         if($sFieldName == 'occupation' && $vFieldValue == '196')// occupation en ustteki Sales secilirse...
