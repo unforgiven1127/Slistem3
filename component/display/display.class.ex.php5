@@ -144,8 +144,8 @@ class CDisplayEx extends CDisplay
     ChromePhp::log($psLabel);
     ChromePhp::log($pasOptions);
 
-    if(!assert('!empty($psLabel) && is_array($pasOptions)'))
-      return '';
+    //if(!assert('!empty($psLabel) && is_array($pasOptions)'))
+      //return '';
 
    /*
     * TODO: finish the popup and manage the mouseover
