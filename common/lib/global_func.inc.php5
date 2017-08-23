@@ -4305,7 +4305,7 @@ var_dump($query);*/
     } catch(MongoConnectionException $e) {
 
       $error = 'MONGO ERROR : ' . $e->getMessage();
-      echo $e->getMessage();
+      echo $e->getMessage();//MONGO ERROR
       ChromePhp::log($error);
 
       $array = array();
