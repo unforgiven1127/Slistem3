@@ -154,24 +154,39 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-/*@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = "SELECT slc.* FROM sl_contact slc WHERE slc.sl_contactpk = (SELECT MAX(slc2.sl_contactpk) FROM sl_contact slc2 WHERE slc2.itemfk = slc.itemfk AND slc2.type = 2)";//belirli sayida aliyor dikkat
+$slistemQuery = "SELECT slc.sl_candidatepk as candidate_id,slc.firstname as firstname, slc.lastname as lastname, slcp.title as title,
+sli.label as industry, slo.label as occupation, slco.name as company
+FROM login_activity la
+left join sl_candidate slc on slc.sl_candidatepk = la.cp_pk
+LEFT join sl_candidate_profile slcp on slcp.candidatefk = slc.sl_candidatepk
+left join sl_industry sli on sli.sl_industrypk = slcp.industryfk
+left join sl_occupation slo on slo.sl_occupationpk = slcp.occupationfk
+left join sl_company slco on slco.sl_companypk = slcp.companyfk
+WHERE la.loginfk = '528' and la.cp_action = 'ppav' and la.log_date >= '2017-08-01 00:00:00'";//belirli sayida aliyor dikkat
 
 $slistemQuery = mysql_query($slistemQuery);
 
 $count = 0;
 echo '<br><br><br>';
+
+echo "<table>";
 while($data = mysql_fetch_assoc($slistemQuery))
 {
 	$count++;
-	$candidate_id = $data['itemfk'];
-  	$phone = $data['value'];
-  	$sQuery = "UPDATE sl_candidate set lastWorkPhone = '".$phone."' WHERE sl_candidatepk = '".$candidate_id."'";
-  	mysql_query($sQuery);
+	echo "<tr>";
+		echo "<td>".$data['candidate_id']."</td>";
+		echo "<td>".$data['firstname']." ".$data['firstname']."</td>";
+		echo "<td>".$data['industry']."</td>";
+		echo "<td>".$data['occupation']."</td>";
+		echo "<td>".$data['company']."</td>";
+	echo "</tr>";
 }
-echo "Count: ".$count;*/
+echo "</table>";
+echo '<br><br>';
+echo "Count: ".$count;
 
 
