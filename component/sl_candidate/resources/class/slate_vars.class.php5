@@ -161,7 +161,20 @@ class CSlateVars
     return $asOccupation;
   }
 
+  public function getLocations()
+  {
+    if(isset($_SESSION['locationList']))
+      return $_SESSION['locationList'];
 
+    $oDb = CDependency::getComponentByName('database');
+    $sQuery = 'SELECT * FROM sl_location WHERE flag = "a" ORDER BY location';
+    $oDbResult = $oDb->executeQuery($sQuery);
+
+    $result = $oDbResult->getAll();
+    $_SESSION['locationList'] = $asLocation;
+
+    return $result;
+  }
 
   public function getLocationList()
   {
@@ -186,8 +199,9 @@ class CSlateVars
   public function getLocationOption($psValue = '')
   {
     $asList = $this->getLocationList();
+    $asList2 = $this->getLocations();
 
-    ChromePhp::log($asList);
+    ChromePhp::log($asList2);
 
     $sOption = '<option value=""> - </option>';
     foreach($asList as $sValue => $sLabel)
