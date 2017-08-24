@@ -203,14 +203,14 @@ class CSlateVars
 
     $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
     $childLocations = array_filter($asList2,function($val){return $val['parentfk'] > 0;});
-    ChromePhp::log($parentLocations);
+    //ChromePhp::log($parentLocations);
 
     $sOption = '<option value=""> - </option>';
     foreach ($parentLocations as $key1 => $value1)
     {
       $parent_id = $value1['sl_locationpk'];
       $parent_title = $value1['location'];
-      $sOption .= '<option disabled value="">'.$parent_title.'</option>';
+      $sOption .= '<option style="font-weight: bold;" disabled value="">'.$parent_title.'</option>';
       foreach ($childLocations as $key2 => $value2)
       {
         if($value2['parentfk'] == $parent_id)
