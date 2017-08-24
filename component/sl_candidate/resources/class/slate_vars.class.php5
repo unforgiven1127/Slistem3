@@ -196,12 +196,19 @@ class CSlateVars
     $_SESSION['sl_location_list'] = $asLocation;
     return $asLocation;
   }
+
+  public function sort_by_id($a, $b)
+  {
+    return $a['sl_locationpk'] - $b['sl_locationpk'];
+  }
+
   public function getLocationOption($psValue = '')
   {
     $asList = $this->getLocationList();
     $asList2 = $this->getLocations();
 
     $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
+    $parentLocations = uasort($parentLocations, 'sort_by_id');
     $childLocations = array_filter($asList2,function($val){return $val['parentfk'] > 0;});
     //ChromePhp::log($parentLocations);
 
