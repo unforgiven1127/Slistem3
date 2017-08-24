@@ -72,6 +72,11 @@
 					</div>
 				</div>
 				<div class="general_form_row">
+					<div class="general_form_label add_margin_left_30">Location</div>
+					<div class="general_form_column" style="width: 183px;">
+					<?php echo $occupation_tree; ?>
+					</div>
+
 					<div class="general_form_label">Language</div>
 					<div class="general_form_column">
 						<select name="language">
@@ -83,10 +88,6 @@
 						<select name="nationality">
 						<?php echo $nationality; ?>
 						</select>
-					</div>
-					<div class="general_form_label add_margin_left_30">Location</div>
-					<div class="general_form_column" style="width: 183px;">
-					<?php echo $occupation_tree; ?>
 					</div>
 					<!--<div class="general_form_label add_margin_left_30">Location</div>
 					<div class="general_form_column">
