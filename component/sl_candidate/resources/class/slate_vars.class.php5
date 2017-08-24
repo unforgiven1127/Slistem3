@@ -208,7 +208,7 @@ class CSlateVars
     $asList2 = $this->getLocations();
 
     $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
-    $parentLocations = usort($parentLocations, 'sort_by_id');
+    uasort($parentLocations, sort_multi_array_by_value('sl_locationpk'));
     $childLocations = array_filter($asList2,function($val){return $val['parentfk'] > 0;});
     //ChromePhp::log($parentLocations);
 
