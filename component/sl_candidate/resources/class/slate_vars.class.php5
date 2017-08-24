@@ -171,7 +171,7 @@ class CSlateVars
     $oDbResult = $oDb->executeQuery($sQuery);
 
     $result = $oDbResult->getAll();
-    $_SESSION['locationList'] = $asLocation;
+    $_SESSION['locationList'] = $result;
 
     return $result;
   }
