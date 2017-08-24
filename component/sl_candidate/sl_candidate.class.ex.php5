@@ -7218,6 +7218,9 @@ ChromePhp::log($array);
           foreach($asToKeep as $sField => $vValue)
             $oDbResult->setFieldValue($sField, $vValue);
 
+$result = $oDbResult->readFirst();
+ChromePhp::log($result);
+
           $oDbResult->readFirst();
         }
       }
