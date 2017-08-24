@@ -199,26 +199,39 @@ class CSlateVars
   public function getLocationOption($psValue = '')
   {
     $asList = $this->getLocationList();
-    $asList2 = $asList3 = $this->getLocations();
+    $asList2 = $this->getLocations();
 
     $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
+    $childLocations = array_filter($asList2,function($val){return $val['parentfk'] > 0;});
     ChromePhp::log($parentLocations);
-    foreach ($parentLocations as $key => $value)
-    {
-      $parent_id = $value['sl_locationpk'];
-      $childLocations = array_filter($asList3,function($val,$parent_id){return $val['parentfk'] == $parent_id;});
-      ChromePhp::log($parent_id);
-    }
-
 
     $sOption = '<option value=""> - </option>';
-    foreach($asList as $sValue => $sLabel)
+    foreach ($parentLocations as $key1 => $value1)
+    {
+      $parent_id = $value1['sl_locationpk'];
+      $parent_title = $value1['location'];
+      $sOption .= '<option disabled value="">'.$parent_title.'</option>';
+      foreach ($childLocations as $key2 => $value2)
+      {
+        if($value2['parentfk'] == $parent_id)
+        {
+          $child_id = $value2['sl_locationpk'];
+          $child_title = $value2['location'];
+
+          if($child_id == $psValue)
+            $sOption.= '<option value="'.$child_id.'" selected="selected">'.$child_title.'</option>';
+          else
+            $sOption.= '<option value="'.$child_id.'">'.$child_title.'</option>';
+        }
+      }
+    }
+    /*foreach($asList as $sValue => $sLabel)
     {
       if($sValue == $psValue)
         $sOption.= '<option value="'.$sValue.'" selected="selected">'.$sLabel.'</option>';
       else
         $sOption.= '<option value="'.$sValue.'">'.$sLabel.'</option>';
-    }
+    }*/
 
     return $sOption;
   }
