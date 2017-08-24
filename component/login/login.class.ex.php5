@@ -3419,7 +3419,7 @@ class CLoginEx extends CLogin
       foreach($aUserGroups as $aGroup)
         $aActions[] = array('label' => $aGroup['title'], 'url' => $sURL.'&login_groupfk='.$aGroup['login_grouppk']);
 
-      $aActions[] = array('label' => 'No Group',  'url' => $sURL.'&login_groupfk=0');
+      //$aActions[] = array('label' => 'No Group',  'url' => $sURL.'&login_groupfk=0');
     }
     else
     {
@@ -3428,7 +3428,7 @@ class CLoginEx extends CLogin
       foreach($aUserGroups as $aGroup)
         $aActions[] = array('label' => $aGroup['title'], 'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk='.$aGroup['login_grouppk'].'\', \'body\', false, \'area_users\'); ');
 
-      $aActions[] = array('label' => 'No Group',  'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk=0\', \'body\', false, \'area_users\')' );
+      //$aActions[] = array('label' => 'No Group',  'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk=0\', \'body\', false, \'area_users\')' );
     }
 
     $sHTML.= $oHTML->getActionButtons($aActions, 1, $sTitle, array('width' => 225, 'id' => 'displayUsers'));
