@@ -10016,6 +10016,9 @@ $bonusManual = getValue('bonus');
         $asItemList = $this->getVars()->getOccupationList(true, true);
       elseif($psType == 'location')
       {
+        $psType = 'occupation';
+        $sTable = 'sl_'.$psType;
+        $sKey = 'sl_'.$psType.'pk';
         $asItemList = $this->getVars()->getOccupationList(true, true);
       }
       else
