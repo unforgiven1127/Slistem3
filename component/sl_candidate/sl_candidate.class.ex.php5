@@ -10024,6 +10024,7 @@ $bonusManual = getValue('bonus');
       else
         $asItemList = $this->getVars()->getIndustryList(true, true);
 
+ChromePhp::log($asItemList);
       //$oDbResult = $this->_getModel()->getByWhere($sTable);
 
       $sQuery = 'SELECT main.* FROM '.$sTable.' as main
