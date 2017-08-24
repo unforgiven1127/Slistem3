@@ -10011,11 +10011,13 @@ $bonusManual = getValue('bonus');
 
       $sTable = 'sl_'.$psType;
       $sKey = 'sl_'.$psType.'pk';
+      $testFlag = false;
 
       if($psType == 'occupation')
         $asItemList = $this->getVars()->getOccupationList(true, true);
       elseif($psType == 'location')
       {
+        $testFlag = true;
         $psType = 'occupation';
         $sTable = 'sl_'.$psType;
         $sKey = 'sl_'.$psType.'pk';
@@ -10024,13 +10026,20 @@ $bonusManual = getValue('bonus');
       else
         $asItemList = $this->getVars()->getIndustryList(true, true);
 
-ChromePhp::log($asItemList);
+//ChromePhp::log($asItemList);
       //$oDbResult = $this->_getModel()->getByWhere($sTable);
 
       $sQuery = 'SELECT main.* FROM '.$sTable.' as main
         LEFT JOIN '.$sTable.' as parent ON (parent.'.$sKey.' = main.parentfk)
         ORDER BY parent.label, main.label ';
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
+
+      if($testFlag)
+      {
+        ChromePhp::log($sQuery);
+        $result = $oDbResult->getAll();
+        ChromePhp::log($result);
+      }
 
       $bRead = $oDbResult->readFirst();
       if(!$bRead)
