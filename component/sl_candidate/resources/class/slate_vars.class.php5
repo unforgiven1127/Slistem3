@@ -199,14 +199,14 @@ class CSlateVars
   public function getLocationOption($psValue = '')
   {
     $asList = $this->getLocationList();
-    $asList2 = $this->getLocations();
+    $asList2 = $asList3 = $this->getLocations();
 
     $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
     ChromePhp::log($parentLocations);
     foreach ($parentLocations as $key => $value)
     {
       $parent_id = $value['sl_locationpk'];
-      //$childLocations = array_filter($asList2,function($val){return $val['parentfk'] == $parent_id;});
+      $childLocations = array_filter($asList3,function($val){return $val['parentfk'] == $parent_id;});
       ChromePhp::log($parent_id);
     }
 
