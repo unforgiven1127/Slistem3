@@ -10006,7 +10006,7 @@ $bonusManual = getValue('bonus');
 
     public function _getTreeData($psType)
     {
-      if(!assert('$psType == \'occupation\' || $psType == \'industry\' '))
+      if(!assert('$psType == \'location\' || $psType == \'occupation\' || $psType == \'industry\' '))
         return array();
 
       $sTable = 'sl_'.$psType;
