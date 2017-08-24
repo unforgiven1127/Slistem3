@@ -3437,6 +3437,10 @@ class CLoginEx extends CLogin
     //create list rows
     $aData = array();
     $nInactive = 0;
+    if(!$bAdmin)
+    {
+      $aUserList = array_filter($aUserList,function($val){return $val['phone_ext'] > 0;});
+    }
     foreach($aUserList as $aUser)
     {
       if($nGroupFk == 999 || $aUser['contact_flag'] == 'a')
