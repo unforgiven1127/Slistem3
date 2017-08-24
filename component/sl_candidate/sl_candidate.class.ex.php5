@@ -7298,9 +7298,9 @@ ChromePhp::log($array);
       $industry_tree->addOption($this->_getTreeData('industry'));
 
 
-      $location_tree = $oForm->getField('paged_tree', 'locationpk', array('text' => '-- Location --',
-        'label' => '', 'value' => $oDbResult->getFieldValue('locationfk'), 'style' => 'width: 165px; min-width: 145px;'));
-      $occupation_tree->addOption($this->_getTreeData('location'));
+      $location_tree = $oForm->getField('paged_tree', 'occupationpk', array('text' => '-- Location --',
+        'label' => '', 'value' => $oDbResult->getFieldValue('occupationfk'), 'style' => 'width: 165px; min-width: 145px;'));
+      $location_tree->addOption($this->_getTreeData('location'));
 
 
 
