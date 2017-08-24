@@ -7297,6 +7297,13 @@ ChromePhp::log($array);
         'label' => '', 'value' => $oDbResult->getFieldValue('industryfk'), 'style' => 'width: 165px; min-width: 145px;'));
       $industry_tree->addOption($this->_getTreeData('industry'));
 
+
+      $location_tree = $oForm->getField('paged_tree', 'locationpk', array('text' => '-- Location --',
+        'label' => '', 'value' => $oDbResult->getFieldValue('locationfk'), 'style' => 'width: 165px; min-width: 145px;'));
+      $occupation_tree->addOption($this->_getTreeData('location'));
+
+
+
       $candidate_salary = formatNumber(round($oDbResult->getFieldValue('salary')), $this->casSettings['candi_salary_format']);
       $candidate_salary_bonus = formatNumber(round($oDbResult->getFieldValue('bonus')), $this->casSettings['candi_salary_format']);
 
@@ -7521,7 +7528,7 @@ ChromePhp::log($array);
         'department' => $oDbResult->getFieldValue('department'), 'company_token_url' => $company_token_url,
         'company' => $oDbResult->getFieldValue('companyfk'), 'occupation_tree' => $occupation_tree->getDisplay(),
         'industry_tree' => $industry_tree->getDisplay(), 'candidate_salary' => $candidate_salary,
-        'money_unit' => $this->casSettings['candi_salary_format'], 'currency_code' => $currency_code,
+        'money_unit' => $this->casSettings['candi_salary_format'], 'currency_code' => $currency_code,'location_tree' => $location_tree->getDisplay(),
         'currency_list' => $asCurrency, 'candidate_salary_bonus' => $candidate_salary_bonus, 'target_low' => $target_low,
         'target_high' => $target_high, 'candidate_id' => $pnCandidatePk, 'status_options' => $asStatus,
         'is_client' => $is_client, 'grade' => $this->getVars()->getCandidateGradeOption($oDbResult->getFieldValue('grade')),
@@ -10007,6 +10014,10 @@ $bonusManual = getValue('bonus');
 
       if($psType == 'occupation')
         $asItemList = $this->getVars()->getOccupationList(true, true);
+      elseif($psType == 'location')
+      {
+        $asItemList = $this->getVars()->getOccupationList(true, true);
+      }
       else
         $asItemList = $this->getVars()->getIndustryList(true, true);
 
