@@ -187,6 +187,8 @@ class CSlateVars
   {
     $asList = $this->getLocationList();
 
+    ChromePhp::log($asList);
+
     $sOption = '<option value=""> - </option>';
     foreach($asList as $sValue => $sLabel)
     {
