@@ -201,7 +201,15 @@ class CSlateVars
     $asList = $this->getLocationList();
     $asList2 = $this->getLocations();
 
-    ChromePhp::log($asList2);
+    $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
+    ChromePhp::log($parentLocations);
+    foreach ($parentLocations as $key => $value)
+    {
+      $parent_id = $value['sl_locationpk'];
+      $childLocations = array_filter($asList2,function($val){return $val['parentfk'] == $parent_id;});
+      ChromePhp::log($childLocations);
+    }
+
 
     $sOption = '<option value=""> - </option>';
     foreach($asList as $sValue => $sLabel)
