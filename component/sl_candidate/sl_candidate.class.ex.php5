@@ -7218,8 +7218,7 @@ ChromePhp::log($array);
           foreach($asToKeep as $sField => $vValue)
             $oDbResult->setFieldValue($sField, $vValue);
 
-$result = $oDbResult->readFirst();
-ChromePhp::log($result);
+//$result = $oDbResult->getAll();
 
           $oDbResult->readFirst();
         }
@@ -7300,6 +7299,9 @@ ChromePhp::log($result);
         'label' => '', 'value' => $oDbResult->getFieldValue('industryfk'), 'style' => 'width: 165px; min-width: 145px;'));
       $industry_tree->addOption($this->_getTreeData('industry'));
 
+
+$resultA = $oDbResult->getAll();
+ChromePhp::log($resultA);
 
       $location_tree = $oForm->getField('paged_tree', 'occupationpk', array('text' => '-- Location --',
         'label' => '', 'value' => $oDbResult->getFieldValue('occupationfk'), 'style' => 'width: 165px; min-width: 145px;'));
@@ -10037,12 +10039,12 @@ $bonusManual = getValue('bonus');
         ORDER BY parent.label, main.label ';
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
 
-      if($testFlag)
+      /*if($testFlag)
       {
         ChromePhp::log($sQuery);
         $result = $oDbResult->getAll();
         ChromePhp::log($result);
-      }
+      }*/
 
       $bRead = $oDbResult->readFirst();
       if(!$bRead)
