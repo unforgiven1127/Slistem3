@@ -206,8 +206,8 @@ class CSlateVars
     foreach ($parentLocations as $key => $value)
     {
       $parent_id = $value['sl_locationpk'];
-      $childLocations = array_filter($asList2,function($val){return $val['parentfk'] == $parent_id;});
-      ChromePhp::log($childLocations);
+      //$childLocations = array_filter($asList2,function($val){return $val['parentfk'] == $parent_id;});
+      ChromePhp::log($parent_id);
     }
 
 
