@@ -216,7 +216,7 @@ class CSlateVars
     {
       $parent_id = $value1['sl_locationpk'];
       $parent_title = $value1['location'];
-      $sOption .= '<option style="font-weight: bold;" disabled value="">'.$parent_title.'</option>';
+      $sOption .= '<option style="font-weight: bold;color:black;" disabled value="">'.$parent_title.'</option>';
       foreach ($childLocations as $key2 => $value2)
       {
         if($value2['parentfk'] == $parent_id)

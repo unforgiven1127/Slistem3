@@ -3513,7 +3513,7 @@ class CLoginEx extends CLogin
 
         $aData[] = $aRow;
       }
-      
+
    }
 
 
