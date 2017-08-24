@@ -77,7 +77,7 @@
 					<?php echo $occupation_tree; ?>
 					</div>
 
-					<div class="general_form_label">Language</div>
+					<div class="general_form_label add_margin_left_30">Language</div>
 					<div class="general_form_column">
 						<select name="language">
 						<?php echo $language; ?>
