@@ -1258,8 +1258,8 @@ class CSearchEx extends CSearch
         $vFieldValue = trim($vFieldValue);
         $allSalesFlag = false;
 
-        ChromePhp::log($sFieldName);
-        ChromePhp::log($vFieldValue);
+        //ChromePhp::log($sFieldName);
+        //ChromePhp::log($vFieldValue);
         if($sFieldName == 'company_name')
         {
           $test = 'test';
