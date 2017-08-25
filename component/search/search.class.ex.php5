@@ -1264,9 +1264,9 @@ class CSearchEx extends CSearch
         {
           $test = 'test';
           $test = $_POST['company_name'];
-          if(isset($test[0]))
+          if(isset($test[0][0]))
           {
-            $test = $test[0];
+            $test = $test[0][0];
             ChromePhp::log($test);
             ChromePhp::log('HERE');
             $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
