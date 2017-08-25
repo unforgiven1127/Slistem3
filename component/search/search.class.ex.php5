@@ -1261,7 +1261,7 @@ class CSearchEx extends CSearch
 
         //ChromePhp::log($sFieldName);
         //ChromePhp::log($vFieldValue);
-        if($sFieldName == 'company_name')
+        /*if($sFieldName == 'company_name')
         {
           $test = 'test';
           $test = $_POST['company_name'];
@@ -1273,7 +1273,7 @@ class CSearchEx extends CSearch
             $add = " scom.name RLIKE '[[:<:]]".$test."[[:>:]]' ";
             $oQB->addWhere($add);
           }
-        }
+        }*/
         if($sFieldName == 'occupation' && $vFieldValue == '196')
         {// occupation en ustteki Sales secilirse...
           $allSalesFlag = true;
