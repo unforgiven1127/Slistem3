@@ -1278,7 +1278,7 @@ class CSearchEx extends CSearch
           if (count($temp) > 1)
             $vFieldValue = $temp;
         }
-
+ChromePhp::log($sFieldName);
         //if(empty($vFieldValue)) // ===>>>   0 is a valid value
         if($vFieldValue == null || $vFieldValue == '' || (is_array($vFieldValue) && empty($vFieldValue)))
         {
