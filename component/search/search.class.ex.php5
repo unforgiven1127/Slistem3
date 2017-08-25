@@ -1260,8 +1260,11 @@ class CSearchEx extends CSearch
 
         ChromePhp::log($sFieldName);
         ChromePhp::log($vFieldValue);
-        if($sFieldName == 'company_name' && !empty($vFieldValue))
+        if($sFieldName == 'company_name')
         {
+          $test = 'test';
+          $test = $_POST['company_name'];
+          ChromePhp::log($test);
           ChromePhp::log('HERE');
           $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
           $oQB->addWhere($add);
