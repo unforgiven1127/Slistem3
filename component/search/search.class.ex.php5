@@ -1264,10 +1264,14 @@ class CSearchEx extends CSearch
         {
           $test = 'test';
           $test = $_POST['company_name'];
-          ChromePhp::log($test);
-          ChromePhp::log('HERE');
-          $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
-          $oQB->addWhere($add);
+          if(isset($test[0]))
+          {
+            $test = $test[0];
+            ChromePhp::log($test);
+            ChromePhp::log('HERE');
+            $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
+            $oQB->addWhere($add);
+          }
         }
         if($sFieldName == 'occupation' && $vFieldValue == '196')
         {// occupation en ustteki Sales secilirse...
