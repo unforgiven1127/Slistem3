@@ -1404,6 +1404,11 @@ class CSearchEx extends CSearch
             //$asArrayCondition[] = "scom.level IN ('0','8')";
           }
         }
+        else if($sFieldName == 'company_name')
+        {
+          $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
+          $oQB->addWhere($add);
+        }
         else
         {
 
