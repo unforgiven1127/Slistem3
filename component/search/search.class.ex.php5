@@ -1258,8 +1258,12 @@ class CSearchEx extends CSearch
         $vFieldValue = trim($vFieldValue);
         $allSalesFlag = false;
 
-ChromePhp::log($sFieldName);
-
+        if($sFieldName == 'company_name' && !empty($vFieldValue))
+        {
+          ChromePhp::log('HERE');
+          $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
+          $oQB->addWhere($add);
+        }
         if($sFieldName == 'occupation' && $vFieldValue == '196')
         {// occupation en ustteki Sales secilirse...
           $allSalesFlag = true;
@@ -1406,12 +1410,12 @@ ChromePhp::log($sFieldName);
             //$asArrayCondition[] = "scom.level IN ('0','8')";
           }
         }
-        else if($sFieldName == 'company_name')
+        /*else if($sFieldName == 'company_name')
         {
           ChromePhp::log('HERE');
           $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
           $oQB->addWhere($add);
-        }
+        }*/
         else
         {
 
