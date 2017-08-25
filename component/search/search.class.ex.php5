@@ -1406,6 +1406,7 @@ class CSearchEx extends CSearch
         }
         else if($sFieldName == 'company_name')
         {
+          ChromePhp::log('HERE');
           $add = " scom.name RLIKE '[[:<:]]".$vFieldValue."[[:>:]]' ";
           $oQB->addWhere($add);
         }
