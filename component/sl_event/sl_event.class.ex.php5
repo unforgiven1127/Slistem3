@@ -149,7 +149,7 @@ class CSl_eventEx extends CSl_event
       }
     }
 
-    uasort($asNotes, sort_multi_array_by_value('date_display', 'reverse'));
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
     foreach ($asNotes as $key => $note)
     {
@@ -1371,8 +1371,8 @@ class CSl_eventEx extends CSl_event
                 else
                 {
                   insertNote($array);
-ChromePhp::log('HERE 2');
-ChromePhp::log($array);
+//ChromePhp::log('HERE 2');
+//ChromePhp::log($array);
                 }
                 /*if(isset($_GET['editCharacterNote']) || $EditTheNotes != false || $EditTheNotes != 'false')
                 {

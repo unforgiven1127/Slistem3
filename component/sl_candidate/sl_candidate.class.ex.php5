@@ -1736,8 +1736,6 @@ ChromePhp::log($pnPk);
           else
             $sHTML.= '<li id="tabLink7" onclick="toggleCandiTab(this, \'candiTab7\',\'\','.$pasCandidateData['sl_candidatepk'].');" class="tab_empty tab_history" title="Displays the company history"></li>';
 
-ChromePhp::log($asNotes);
-
         $sHTML.= $this->_oDisplay->getListEnd();
 
 
