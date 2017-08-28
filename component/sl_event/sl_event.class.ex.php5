@@ -431,7 +431,6 @@ class CSl_eventEx extends CSl_event
       //$str = 'In My Cart : 11 12 items';
       //preg_match_all('!\d+!', $str, $matches);
 
-      // array gelmezse patliyo... duzelt... MCA
       foreach($asNotes as $asNote)
       {
         if (strpos($asNote['content'], 'for position #') !== false) {

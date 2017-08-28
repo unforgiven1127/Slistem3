@@ -4064,8 +4064,7 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-      //echo 'test'; // mca MCA
-      //exit;
+
       $revenueChartLoop = get_revenue_chart_loop();
       $nextloop = 0;
       if(isset($_GET['nextloop']))
@@ -4326,6 +4325,7 @@ class CSl_statEx extends CSl_stat
         else
         {
           $revenue_data = $this->_getModel()->get_revenue_data($year);
+          ChromePhp::log($revenue_data);
         }
 
 
