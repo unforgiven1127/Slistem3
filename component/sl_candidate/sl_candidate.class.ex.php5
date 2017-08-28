@@ -1653,8 +1653,6 @@ ChromePhp::log($pnPk);
 
       $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
 
-      ChromePhp::log($asNotes);
-
       if(empty($asNotes['nb_result']))
       {
         $sNoteSelected = '';
@@ -1737,6 +1735,8 @@ ChromePhp::log($pnPk);
             $sHTML.= '<li id="tabLink7" onclick="toggleCandiTab(this, \'candiTab7\',\'\','.$pasCandidateData['sl_candidatepk'].');" class="tab_history" title="Displays the company history"><span class="tab_number">'.$asCpHistory['nb_result'].'</span></li>';
           else
             $sHTML.= '<li id="tabLink7" onclick="toggleCandiTab(this, \'candiTab7\',\'\','.$pasCandidateData['sl_candidatepk'].');" class="tab_empty tab_history" title="Displays the company history"></li>';
+
+ChromePhp::log($asNotes);
 
         $sHTML.= $this->_oDisplay->getListEnd();
 
