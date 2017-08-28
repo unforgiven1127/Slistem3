@@ -103,7 +103,7 @@ class CSl_eventEx extends CSl_event
     $asParams[CONST_CP_TYPE] = $psItemType;
     $asParams[CONST_CP_PK] = $pnItemPk;
 
-    return $this->_getModel()->getFromCpValues($asParams, $psNoteType, 'even.date_create', $pasExcludeType);
+    return $this->_getModel()->getFromCpValues($asParams, $psNoteType, '', $pasExcludeType);
   }
 
 
@@ -1045,12 +1045,12 @@ class CSl_eventEx extends CSl_event
       $sQuery.= ' AND even.cp_type NOT IN ("'.implode('","', $pasExcludeType).'") ';
 
 
-    $sQuery.= ' GROUP BY elin.cp_uid, elin.cp_action, elin.cp_pk';*/
+    $sQuery.= ' GROUP BY elin.cp_uid, elin.cp_action, elin.cp_pk'; el.event_linkpk*/
     //dump($sQuery);
     $sQuery = "SELECT el.cp_pk,el.cp_type, e.* FROM event_link el
               INNER JOIN event e on e.eventpk = el.eventfk
               WHERE el.cp_pk = '".$panItem."' AND (e.type = 'character' OR e.type = 'note')
-              ORDER BY el.event_linkpk DESC";
+              ORDER BY e.date_display DESC";
 
     return $this->_getModel()->executeQuery($sQuery);
   }
