@@ -407,7 +407,7 @@ class CSl_eventEx extends CSl_event
     }
 //ChromePhp::log($asNotes);
     //uasort($asNotes, sort_multi_array_by_value('date_display', 'reverse'));
-    uasort($asNotes, sort_multi_array_by_value('eventpk', 'reverse'));
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
     if(empty($asNotes))
     {
