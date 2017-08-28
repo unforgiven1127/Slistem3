@@ -1001,7 +1001,7 @@ order by m.candidatefk
                 LEFT JOIN sl_position_link s ON s.created_by = l.loginpk  AND active = 0 AND date_completed BETWEEN '".$ccm1_start_date."' AND '".$ccm1_end_date."'
                 LEFT JOIN sl_nationality sln ON l.nationalityfk = sln.sl_nationalitypk
                 WHERE (l.position = 'Researcher' OR l.loginpk = '457' OR l.loginpk = '481' OR l.loginpk = '466') AND l.loginpk != '382'"; // saruul cici vs hem consultant hem researcher da gorunebilmesi icin...
-ChromePhp::log($query);
+//ChromePhp::log($query);
       $db_result = $this->oDB->executeQuery($query);
       $read = $db_result->readFirst();
 //var_dump($query);// 382
@@ -1098,7 +1098,7 @@ ChromePhp::log($query);
       $query .= 'LEFT JOIN login ON revenue_member.loginpk = login.loginpk ';
       $query .= 'LEFT JOIN sl_nationality ON login.nationalityfk = sl_nationality.sl_nationalitypk';
 
-ChromePhp::log($query);
+//ChromePhp::log($query);
 //exit;
 //var_dump($query);
 //exit;
