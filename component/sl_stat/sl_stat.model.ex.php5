@@ -1099,7 +1099,7 @@ order by m.candidatefk
       $query .= 'LEFT JOIN sl_nationality ON login.nationalityfk = sl_nationality.sl_nationalitypk';
 
 ChromePhp::log($query);
-
+exit;
 //var_dump($query);
 //exit;
       $db_result = $this->oDB->executeQuery($query);
