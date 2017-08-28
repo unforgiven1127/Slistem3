@@ -103,7 +103,7 @@ class CSl_eventEx extends CSl_event
     $asParams[CONST_CP_TYPE] = $psItemType;
     $asParams[CONST_CP_PK] = $pnItemPk;
 
-    return $this->_getModel()->getFromCpValues($asParams, $psNoteType, '', $pasExcludeType);
+    return $this->_getModel()->getFromCpValues($asParams, $psNoteType, 'even.date_create', $pasExcludeType);
   }
 
 
