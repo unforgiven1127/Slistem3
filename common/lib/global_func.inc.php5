@@ -4725,6 +4725,7 @@ var_dump($query);*/
 
       $user_information = getUserInformaiton($user_id);
       $username = $user_information['firstname']." ".$user_information['lastname'];
+      $phone_extension = $user_information['phone_ext'];
 
       //$to      = 'munir@slate-ghc.com';
       //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
@@ -4736,7 +4737,7 @@ var_dump($query);*/
           'X-Mailer: PHP/' . phpversion();*/
 
       $subject = "Slistem Activity Flag";
-      $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+      $message = "Slistem activity flag, user: ".$username." (#".$user_id.") (phone ext: ".$phone_extension.") date: ".$dNow." (Japan time)";
       $message .= "\r\n"."Action: Do more than 10 searches in 5 minutes.";
 
       $oMail = CDependency::getComponentByName('mail');
@@ -4962,11 +4963,12 @@ var_dump($query);*/
         $user_information = getUserInformaiton($user_id);
         $username = $user_information['firstname']." ".$user_information['lastname'];
         $user_email = $user_information['email'];
+        $phone_extension = $user_information['phone_ext'];
 
         //$to      = 'munir@slate-ghc.com';
         //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
-        $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+        $message = "Slistem activity flag, user: ".$username." (#".$user_id.") (phone ext: ".$phone_extension.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View 5 contact details but not any note entry.";
         /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .
@@ -5082,11 +5084,12 @@ var_dump($query);*/
 
         $user_information = getUserInformaiton($user_id);
         $username = $user_information['firstname']." ".$user_information['lastname'];
+        $phone_extension = $user_information['phone_ext'];
 
         //$to      = 'munir@slate-ghc.com';
         //$to      = 'ray@slate-ghc.com;mmoir@slate.co.jp;munir@slate-ghc.com;rkiyamu@slate.co.jp';
         $subject = 'Slistem Activity Flag';
-        $message = "Slistem activity flag, user: ".$username." (#".$user_id.") date: ".$dNow." (Japan time)";
+        $message = "Slistem activity flag, user: ".$username." (#".$user_id.") (phone ext: ".$phone_extension.") date: ".$dNow." (Japan time)";
         $message .= "\r\n"."Action: View more than 50 candidates on holiday.";
         /*$headers = 'From: slistem@slate.co.jp' . "\r\n" .
             'Reply-To: munir@slate-ghc.com' . "\r\n" .

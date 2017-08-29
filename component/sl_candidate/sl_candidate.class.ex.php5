@@ -1188,8 +1188,10 @@ class CSl_candidateEx extends CSl_candidate
           $candidate_name = $candidate_information['firstname']." ".$candidate_information['lastname'];
           $company_name = $company_information['name'];
 
+          $phone_extension = $user_information['phone_ext'];
+
           $subject = "Contact Information Access";
-          $message = $user_name." (#".$user_id.") has accessed the contact information of ".$candidate_name." (#".$candidate_id."), who works at ".$company_name." (#".$company_id.") Date: ".$sDate;
+          $message = $user_name." (#".$user_id.") (phone ext: ".$phone_extension.") has accessed the contact information of ".$candidate_name." (#".$candidate_id."), who works at ".$company_name." (#".$company_id.") Date: ".$sDate;
 
 
           $oMail = CDependency::getComponentByName('mail');
