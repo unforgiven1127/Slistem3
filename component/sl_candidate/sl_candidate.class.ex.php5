@@ -1247,7 +1247,7 @@ class CSl_candidateEx extends CSl_candidate
     private function _getCandidateView($pnPk, $pasRedirected = array())
     {
       //$searchID = $_GET['searchId'];
-ChromePhp::log($pnPk);
+//ChromePhp::log($pnPk);
       if(isset($_GET['searchId']))
       {
         $searchID = $_GET['searchId'];
@@ -4748,7 +4748,7 @@ ChromePhp::log($sQuery);
       $oForm->addField('select', 'meeting_type', array('label' => 'Meeting type'));
 
       $default_date = date('Y-m-d H:i');
-      $oForm->addField('input', 'date_met', array('id'=>'meetingDate','type' => 'datetime', 'label'=> 'Meeting date',
+      $oForm->addField('input', 'date_met', array('id'=>'meetingDate','type' => 'datetime', 'label'=> 'Meeting date.',
         'value' => $default_date, 'minDate' => '-4 day', 'maxDate' => 'now'));
 
       $oForm->addOption('meeting_type', array('label' => 'In person', 'value' => 1), ($nType === 1));
