@@ -4748,10 +4748,16 @@ ChromePhp::log($sQuery);
       $oForm->addField('select', 'meeting_type', array('label' => 'Meeting type'));
 
       $meeting_date = $oDbMeeting->getFieldValue('date_meeting');
+      if(isset($meeting_date))
+      {
+        $default_date = $meeting_date;
+      }
+      else
+      {
+        $default_date = date('Y-m-d H:i');
+      }
 
-ChromePhp::log($meeting_date);
-
-      $default_date = date('Y-m-d H:i');
+      //$default_date = date('Y-m-d H:i');
       $oForm->addField('input', 'date_met', array('id'=>'meetingDate','type' => 'datetime', 'label'=> 'Meeting date',
         'value' => $default_date, 'minDate' => '-4 day', 'maxDate' => 'now'));
 
