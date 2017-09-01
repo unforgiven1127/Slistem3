@@ -4747,8 +4747,9 @@ ChromePhp::log($sQuery);
       $nType = (int)$oDbMeeting->getFieldValue('type');
       $oForm->addField('select', 'meeting_type', array('label' => 'Meeting type'));
 
+      $meeting_date = $oDbMeeting->getFieldValue('date_meeting');
 
-ChromePhp::log($oDbMeeting->getAll());
+ChromePhp::log($meeting_date);
 
       $default_date = date('Y-m-d H:i');
       $oForm->addField('input', 'date_met', array('id'=>'meetingDate','type' => 'datetime', 'label'=> 'Meeting date',
