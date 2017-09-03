@@ -4749,11 +4749,11 @@ ChromePhp::log($sQuery);
 
       $meeting_date = $oDbMeeting->getFieldValue('date_meeting');
       if(isset($meeting_date))
-      {
+      {//if there is a meeting date is will be selected
         $default_date = $meeting_date;
       }
       else
-      {
+      {//else select the current date time
         $default_date = date('Y-m-d H:i');
       }
 
