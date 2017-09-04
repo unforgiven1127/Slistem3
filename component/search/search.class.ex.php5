@@ -1256,7 +1256,7 @@ class CSearchEx extends CSearch
         insertAILog("complex_search",$sFieldName,$user_id);
         $vFieldValue = @$_POST[$sFieldName][$nGroup][$nRowNumber];
         //ChromePhp::log($vFieldValue);
-        if(!is_array($sFieldName))
+        if(!is_array($vFieldValue))
         {
           $vFieldValue = trim($vFieldValue);
         }
