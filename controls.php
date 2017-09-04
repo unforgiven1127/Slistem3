@@ -110,7 +110,7 @@ echo "Server port: ".$_SERVER['SERVER_PORT'];
 echo '<br>';
 echo '<br>';
 echo "Latest error: ".error_get_last();
-ChromePhp::log('this is CONTROLS');
+//ChromePhp::log('this is CONTROLS');
 
 echo '<br>';
 echo '<br>';
