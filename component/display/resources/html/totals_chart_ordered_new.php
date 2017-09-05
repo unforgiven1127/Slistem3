@@ -1,3 +1,4 @@
+<script src="./common/lib/htmlToExcel/src/jquery.table2excel.js"></script>
 <script>
 	//localStorage.setItem("loginFlag", "loginPage");
 	var nextloop = <?php echo $nextloop; ?>;
