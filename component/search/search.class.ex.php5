@@ -1244,7 +1244,7 @@ class CSearchEx extends CSearch
     $oLogin = CDependency::getCpLogin();
     $user_id = $oLogin->getUserPk();
 
-    $allSalesArray = '(198,197,196,152,144,143,77,76,66)';// sales iceren tum occupationlar.
+    $allSalesArray = '(198,197,196,152,144,143,77,76,66)';// sales all occupations.
 
     foreach($_POST['group_operator'] as $nGroup => $sGroupOperator)
     {
