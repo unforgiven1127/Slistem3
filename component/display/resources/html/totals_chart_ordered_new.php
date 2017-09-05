@@ -54,7 +54,7 @@
 
 	$(function () {
 		$("#exportToExcel").click(function(){
-		  alert('test');
+		  alert('exportToExcel');
 		});
 	});
 </script>
