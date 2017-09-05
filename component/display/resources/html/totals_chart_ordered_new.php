@@ -103,7 +103,10 @@
 			<input type="submit" name="submit_totals" value="Get totals" />
 		</div>
 		<div class="general_form_column ">
-			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export to Excel" />
+			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
+		</div>
+		<div class="general_form_column ">
+			<input style="background-color: #FF8633 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Detailed" />
 		</div>
 	</div>
 </form>
