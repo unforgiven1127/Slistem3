@@ -55,7 +55,7 @@
 
 	$(function () {
 		$("#exportToExcel").click(function(){
-		  //alert('exportToExcel');
+		  alert('simple');
 		  $("#toExcel").table2excel({
 		  	exclude: ".noExl",
 		  	name: "Worksheet Name",
@@ -65,7 +65,7 @@
 		});
 
 		$("#exportDetail").click(function(){
-		  //alert('exportToExcel');
+		  alert('detailed');
 		  $("#toExcel").table2excel({
 		  	exclude: ".noExl23",
 		  	name: "Worksheet Name",
@@ -116,7 +116,7 @@
 			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
 		</div>
 		<div class="general_form_column ">
-			<input style="background-color: #336699 !important;" type="button" id='exportDetail' name="exportToExcel" value="Export Detailed" />
+			<input style="background-color: #336699 !important;" type="button" id='exportDetail' name="exportDetail" value="Export Detailed" />
 		</div>
 	</div>
 </form>
