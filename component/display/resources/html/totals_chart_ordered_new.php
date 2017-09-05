@@ -55,7 +55,7 @@
 
 	$(function () {
 		$("#exportToExcel").click(function(){
-		  alert('simple');
+		  //alert('simple');
 		  $("#toExcel").table2excel({
 		  	exclude: ".noExl",
 		  	name: "Worksheet Name",
@@ -65,7 +65,7 @@
 		});
 
 		$("#exportDetail").click(function(){
-		  alert('detailed');
+		  //alert('detailed');
 		  $("#toExcel").table2excel({
 		  	exclude: ".detailed",
 		  	name: "Worksheet Name",
