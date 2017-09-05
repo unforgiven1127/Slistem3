@@ -710,8 +710,7 @@ class CNotificationEx extends CNotification
           $sMessage.= '&nbsp;&nbsp;at&nbsp;&nbsp;<b>'.date('H:i a', $nNotif).'</b>.';
 
           $sDate = date('Y-m-d \a\t H:i', strtotime($message_info['date_created']));
-          $sMessage.= '<span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
-          //<br />
+          $sMessage.= '<br /><span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
 
           $newDate = date('Y-m-d H:i:s');
           //$sMessage.= " ".$newDate;
