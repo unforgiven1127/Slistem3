@@ -283,7 +283,8 @@ class CNotificationEx extends CNotification
     $this->casInitId[$psId]['user_msg'] = $psMessage;
 
     $sMessage = '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0 15px 0; line-height: 20px;" >';
-    $sMessage.= 'This concerns "'.$asItemData['link'].'"<br /><br />';
+    //<br /><br />
+    $sMessage.= 'This concerns "'.$asItemData['link'].'" / ';
 
     if(!empty($asItemData['description']))
     {
