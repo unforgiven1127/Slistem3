@@ -6180,6 +6180,7 @@ class CSl_statEx extends CSl_stat
 //ChromePhp::log($allCandidates);
         $exportFlag = 'false';
         $exportUserArray = array('101','343','494','480');
+        $oLogin = CDependency::getCpLogin();
         $login_id = $oLogin->getUserPk();
         if(in_array($login_id,$exportUserArray))
         {
