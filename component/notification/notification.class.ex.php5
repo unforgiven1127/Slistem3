@@ -2120,7 +2120,7 @@ class CNotificationEx extends CNotification
 
       }
 
-      $note .= "Message: ".$message;
+      $note .= "Message: ".$message;//<br>
 
       $target_candidate_id = $asItem['cp_pk'];
 
