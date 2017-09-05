@@ -112,7 +112,7 @@ foreach ($dataArray as $key_ => $value)
 	$selected_position = $user_position[$key_];
 
 
-echo "<table id='totals_table_id' class='totals_table '>
+echo "<table id='totals_table_id' class='totals_table toExcel_".$selected_position." '>
 	<tr>
 		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>".$selected_position." totals - ".date('M Y', strtotime($start_date))." </th>
 	</tr>
