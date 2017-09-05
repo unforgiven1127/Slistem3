@@ -106,7 +106,7 @@
 			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
 		</div>
 		<div class="general_form_column ">
-			<input style="background-color: #0066ff !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Detailed" />
+			<input style="background-color: #3333ff !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Detailed" />
 		</div>
 	</div>
 </form>
