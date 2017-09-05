@@ -59,7 +59,16 @@
 		  $("#toExcel").table2excel({
 		  	exclude: ".noExl",
 		  	name: "Worksheet Name",
-		  	filename: "KPIexport.xls"
+		  	filename: "KPIexportSimple.xls"
+		  });
+
+		});
+
+		$("#exportDetail").click(function(){
+		  //alert('exportToExcel');
+		  $("#toExcel").table2excel({
+		  	name: "Worksheet Name",
+		  	filename: "KPIexportDetailed.xls"
 		  });
 
 		});
@@ -106,7 +115,7 @@
 			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
 		</div>
 		<div class="general_form_column ">
-			<input style="background-color: #336699 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Detailed" />
+			<input style="background-color: #336699 !important;" type="button" id='exportDetail' name="exportToExcel" value="Export Detailed" />
 		</div>
 	</div>
 </form>
