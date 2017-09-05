@@ -88,6 +88,9 @@
 		<div class="general_form_column add_margin_left_10">
 			<input type="submit" name="submit_totals" value="Get totals" />
 		</div>
+		<div class="general_form_column add_margin_left_10">
+			<input type="submit" name="submit_totals" value="Get totals2" />
+		</div>
 	</div>
 </form>
 
