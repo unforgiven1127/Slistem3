@@ -55,7 +55,7 @@
 
 	$(function () {
 		$("#exportToExcel").click(function(){
-		  alert('exportToExcel');
+		  //alert('exportToExcel');
 		  $("#toExcel").table2excel({
 		  	exclude: ".noExl",
 		  	name: "Worksheet Name",
@@ -301,7 +301,7 @@ foreach ($selectedStatData as $key => $sd1)
 				{
 					$tB = 'border-top: solid black;';
 				}
-				$classHDI = $key.'_hidden ';
+				$classHDI = $key.'_hidden noExl ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC.$setT."</a></div></td>";
