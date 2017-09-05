@@ -6180,10 +6180,12 @@ class CSl_statEx extends CSl_stat
 //ChromePhp::log($allCandidates);
         $exportFlag = 'false';
         $exportUserArray = array('101','343','494','480');
-        if(in_array($user_id,$exportUserArray))
+        $login_id = $oLogin->getUserPk();
+        if(in_array($login_id,$exportUserArray))
         {
           $exportFlag = 'true';
         }
+        ChromePhp::log($exportFlag);
         $data['exportFlag'] = $exportFlag;
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
