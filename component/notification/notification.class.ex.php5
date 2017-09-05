@@ -641,7 +641,9 @@ class CNotificationEx extends CNotification
       //--------------------------------------------------------
       //start creating the mail content
 
-      $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
+      //$sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
+
+      $sMessage = '';
 
       foreach ($user_messages as $message_info)
       {
@@ -2118,7 +2120,7 @@ class CNotificationEx extends CNotification
 
       }
 
-      $note .= "<br>Message: ".$message;
+      $note .= "Message: ".$message;//<br>
 
       $target_candidate_id = $asItem['cp_pk'];
 
