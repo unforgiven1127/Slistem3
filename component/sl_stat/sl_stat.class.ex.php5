@@ -6178,6 +6178,13 @@ class CSl_statEx extends CSl_stat
         $data['researcherCandidates'] = $researcherCandidates;
         $data['researcherStatData'] = $researcherStatData;
 //ChromePhp::log($allCandidates);
+        $exportFlag = 'false';
+        $exportUserArray = array('101','343','494','480');
+        if(in_array($user_id,$exportUserArray))
+        {
+          $exportFlag = 'true';
+        }
+        $data['exportFlag'] = $exportFlag;
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 

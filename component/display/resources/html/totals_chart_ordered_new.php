@@ -67,7 +67,7 @@
 		$("#exportDetail").click(function(){
 		  alert('detailed');
 		  $("#toExcel").table2excel({
-		  	exclude: ".noExl23",
+		  	exclude: ".detailed",
 		  	name: "Worksheet Name",
 		  	filename: "KPIexportDetailed.xls"
 		  });
@@ -112,12 +112,14 @@
 		<div class="general_form_column add_margin_left_10">
 			<input type="submit" name="submit_totals" value="Get totals" />
 		</div>
+		<?php if($exportFlag == 'true'){ ?>
 		<div class="general_form_column ">
 			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
 		</div>
 		<div class="general_form_column ">
 			<input style="background-color: #336699 !important;" type="button" id='exportDetail' name="exportDetail" value="Export Detailed" />
 		</div>
+		<?php } ?>
 	</div>
 </form>
 
