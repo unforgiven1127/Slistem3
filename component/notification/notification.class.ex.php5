@@ -641,7 +641,9 @@ class CNotificationEx extends CNotification
       //--------------------------------------------------------
       //start creating the mail content
 
-      $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
+      //$sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
+
+      $sMessage = '';
 
       foreach ($user_messages as $message_info)
       {
@@ -710,7 +712,8 @@ class CNotificationEx extends CNotification
           $sMessage.= '&nbsp;&nbsp;at&nbsp;&nbsp;<b>'.date('H:i a', $nNotif).'</b>.';
 
           $sDate = date('Y-m-d \a\t H:i', strtotime($message_info['date_created']));
-          $sMessage.= '<br /><span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
+          $sMessage.= ' / <span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
+          //<br />
 
           $newDate = date('Y-m-d H:i:s');
           //$sMessage.= " ".$newDate;
@@ -2117,7 +2120,7 @@ class CNotificationEx extends CNotification
 
       }
 
-      $note .= "<br>Message: ".$message;
+      $note .= "Message: ".$message;
 
       $target_candidate_id = $asItem['cp_pk'];
 
