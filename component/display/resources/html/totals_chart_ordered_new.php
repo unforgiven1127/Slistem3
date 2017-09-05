@@ -56,6 +56,12 @@
 	$(function () {
 		$("#exportToExcel").click(function(){
 		  alert('exportToExcel');
+		  $("#toExcel").table2excel({
+		  	exclude: ".noExl",
+		  	name: "Worksheet Name",
+		  	filename: "SomeFile"
+		  });
+
 		});
 	});
 </script>
