@@ -95,7 +95,7 @@
 		<div class="general_form_column add_margin_left_10">
 			<input type="submit" name="submit_totals" value="Get totals" />
 		</div>
-		<div class="general_form_column add_margin_left_10">
+		<div class="general_form_column ">
 			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export to Excel" />
 		</div>
 	</div>
