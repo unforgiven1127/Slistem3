@@ -105,6 +105,7 @@ $candidateArray[1] = $researcherCandidates;
 
 $user_position = array('Consultant','Researcher');
 
+echo "<div id='toExcel'>";
 foreach ($dataArray as $key_ => $value)
 {
 	$selectedStatData = $value;
@@ -320,6 +321,7 @@ echo "<tr class='totals_table_footer'>
 if($key_ == 0)
 	{echo'<div class="general_form_row" style="height: 20px;"></div>';}
 }
+echo "</div>";
 ?>
 
 
