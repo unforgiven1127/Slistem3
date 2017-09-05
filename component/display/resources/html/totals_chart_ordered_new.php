@@ -67,6 +67,7 @@
 		$("#exportDetail").click(function(){
 		  //alert('exportToExcel');
 		  $("#toExcel").table2excel({
+		  	exclude: ".noExl23",
 		  	name: "Worksheet Name",
 		  	filename: "KPIexportDetailed.xls"
 		  });
