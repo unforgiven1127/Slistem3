@@ -641,7 +641,7 @@ class CNotificationEx extends CNotification
       //--------------------------------------------------------
       //start creating the mail content
 
-      $sMessage = '<div style="font-family: verdana; font-size: 12px;"><br />';
+      $sMessage = '<div style="font-family: verdana; font-size: 12px;">';
 
       foreach ($user_messages as $message_info)
       {
@@ -714,7 +714,7 @@ class CNotificationEx extends CNotification
 
           $newDate = date('Y-m-d H:i:s');
           //$sMessage.= " ".$newDate;
-          $sMessage.= '<br /><br />';
+          $sMessage.= '<br />';//<br />
           $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
 
 

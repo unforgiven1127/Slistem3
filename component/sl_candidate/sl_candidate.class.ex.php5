@@ -951,7 +951,7 @@ class CSl_candidateEx extends CSl_candidate
           }
 
           $asDesc[3] = 'Created on the '.$asData['date_added'].' by '.$oLogin->getUserLink((int)$asData['created_by']);
-          $asItem[$nPk]['description'] = implode('<br />', $asDesc);
+          $asItem[$nPk]['description'] = implode(' / ', $asDesc);
         }
 
         break;
