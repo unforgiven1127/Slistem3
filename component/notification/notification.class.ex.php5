@@ -2054,7 +2054,7 @@ class CNotificationEx extends CNotification
 
     $asReminder['message'] = getValue('message');
     if(empty($asReminder['message']))
-      $asReminder['message'] = '<br /><em> -- no message -- </em>';
+      $asReminder['message'] = '<em> -- no message -- </em>';
 
     $asReminder['naggy'] = (int)getValue('naggy', 0);
     $asReminder['naggy_frequency'] = getValue('naggy_frequency');
