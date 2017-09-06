@@ -293,22 +293,21 @@ class CNotificationEx extends CNotification
 
     $sMessage.= '</div>';
 
-
     //add a separator
     $sMessage.= '<div style="height: 5px; background-color: #ffffff;">&nbsp;</div>';
 
     if(!empty($psMessage))
     {
-      $sMessage.= '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0; line-height: 20px;" >';
+      //$sMessage.= '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0; line-height: 20px;" >';
       $sMessage.= '<b>Message</b>: '.$psMessage;//<br/>
-      $sMessage.= '</div>';
+      //$sMessage.= '</div>';
     }
 
     if(empty($asItemData['description']) && empty($psMessage))
     {
-      $sMessage.= '<div style="border-left: 1px solid #888888; padding: 5px 10px; margin: 5px 0;" >';
+      //$sMessage.= '<div style="border-left: 1px solid #888888; padding: 5px 10px; margin: 5px 0;" >';
       $sMessage.= '<am>No message<em>';//<br/>
-      $sMessage.= '</div>';
+      //$sMessage.= '</div>';
     }
 
     $nNotificationPk = $this->addReminder($psId, $pvRecipientfk, $sMessage, $psTitle, $psDate, $pnNaggy, $psNagFreq);
