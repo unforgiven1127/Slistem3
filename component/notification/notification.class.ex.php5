@@ -304,7 +304,7 @@ class CNotificationEx extends CNotification
     if(empty($asItemData['description']) && empty($psMessage))
     {
       //$sMessage.= '<div style="border-left: 1px solid #888888; padding: 5px 10px; margin: 5px 0;" >';
-      $sMessage.= ' / No message<em>';//<br/>
+      //$sMessage.= ' / No message<em>';//<br/>
       //$sMessage.= '</div>';
     }
     $sMessage.= '</div>';
