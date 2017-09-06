@@ -1833,7 +1833,7 @@ class CNotificationEx extends CNotification
 
 
     $oForm->addField('textarea', 'message', array('label'=> 'Your message', 'class' => 'msgField', 'value' => $oDbMeeting->getFieldValue('description')));
-    $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
+    $oForm->setFieldDisplayParams('message', array('style' => 'margin: 5px 0;'));
 
 
 // ADVANCED START
