@@ -291,7 +291,6 @@ class CNotificationEx extends CNotification
       $sMessage.= $asItemData['description'];
     }
 
-    $sMessage.= '</div>';
 
     //add a separator
     //$sMessage.= '<div style="height: 5px; background-color: #ffffff;">&nbsp;</div>';
@@ -309,7 +308,7 @@ class CNotificationEx extends CNotification
       $sMessage.= '<am> / No message<em>';//<br/>
       //$sMessage.= '</div>';
     }
-
+    $sMessage.= '</div>';
     $nNotificationPk = $this->addReminder($psId, $pvRecipientfk, $sMessage, $psTitle, $psDate, $pnNaggy, $psNagFreq);
     if(!assert('!empty($nNotificationPk)'))
     {
