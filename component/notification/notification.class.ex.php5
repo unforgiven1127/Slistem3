@@ -715,7 +715,7 @@ class CNotificationEx extends CNotification
           $newDate = date('Y-m-d H:i:s');
           //$sMessage.= " ".$newDate;
           //$sMessage.= '<br />';//<br />
-          $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
+          $sMessage.= '<div style="padding: 1px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
 
 
           //sending the message in html, so if its not a html format i convert it
