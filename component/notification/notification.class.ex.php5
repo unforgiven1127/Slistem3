@@ -295,7 +295,7 @@ class CNotificationEx extends CNotification
 
 
     //add a separator
-    $sMessage.= '<div style="height: 12px; background-color: #ffffff;">&nbsp;</div>';
+    $sMessage.= '<div style="height: 5px; background-color: #ffffff;">&nbsp;</div>';
 
     if(!empty($psMessage))
     {
