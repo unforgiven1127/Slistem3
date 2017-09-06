@@ -1986,6 +1986,11 @@ $asSql = $oQB->getSqlArray();
         return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';
       }
 
+      if($psOperator == 'different')
+      {
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
+      }
+
       //strictly equal
       if($psOperator == 'fts_equal' || $psOperator == 'equal')
       {
