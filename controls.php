@@ -204,8 +204,8 @@ while($data = mysql_fetch_assoc($slistemQuery))
 		echo "<td>".$data['company']."</td>";
 		echo "<td>".$data['industry']."</td>";
 		echo "<td>".$data['language']."</td>";
-		echo "<td>".$data['salary_from']." ".$data['salary_to']."</td>";
-		echo "<td>".$data['age_from']." ".$data['age_to']."</td>";
+		echo "<td>".$data['salary_from']." - ".$data['salary_to']."</td>";
+		echo "<td>".$data['age_from']." - ".$data['age_to']."</td>";
 		echo "<td>".$status."</td>";
 	echo "</tr>";
 }
