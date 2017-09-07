@@ -1992,7 +1992,7 @@ $asSql = $oQB->getSqlArray();
       {
         ChromePhp::log('SHOULD BE HERE');
         ChromePhp::log($psOperator);
-        $returnCondition = "dfil.original NOT LIKE '%".$pvValue."%'";
+        $returnCondition = " NOT LIKE '%".$pvValue."%' ";
         return $returnCondition;
         //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
