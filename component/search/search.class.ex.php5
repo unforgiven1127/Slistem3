@@ -1991,7 +1991,8 @@ $asSql = $oQB->getSqlArray();
       if($psOperator == 'different')
       {
         ChromePhp::log('SHOULD BE HERE');
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
+        ChromePhp::log($psOperator);
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
 
       //strictly equal
