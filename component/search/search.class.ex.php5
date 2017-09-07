@@ -1980,6 +1980,7 @@ $asSql = $oQB->getSqlArray();
 
     if($pasFieldType['type'] == 'fts')
     {
+      ChromePhp::log($pvValue);
       if(strlen(trim($pvValue)) < 1)
       {
         $this->_addError('line '.__LINE__.' - text field, value is less than 1 characters ['.$pvValue.']');
