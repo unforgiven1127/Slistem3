@@ -179,7 +179,10 @@ echo "<table>";
 echo "<tr>
 <td>CANDIDATE ID</td>
 <td>CANDIDATE NAME</td>
+<td>POSITION ID</td>
 <td>POSITION TITLE</td>
+<td>COMPANY ID</td>
+<td>COMPANY TITLE</td>
 <td>SALARY</td>
 <td>CONSULTANT</td>
 </tr>";
