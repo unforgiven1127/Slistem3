@@ -193,7 +193,7 @@ while($data = mysql_fetch_assoc($slistemQuery))
 		echo "<td>".$data['position_id']."</td>";
 		echo "<td>".$data['position_title']."</td>";
 		echo "<td>".$data['company_id']."</td>";
-		echo "<td>".$data['compan_title']."</td>";
+		echo "<td>".$data['company_title']."</td>";
 		echo "<td>".$data['salary']."</td>";
 		echo "<td>".$data['consultant_fname']." ".$data['consultant_lname']."</td>";
 	echo "</tr>";
