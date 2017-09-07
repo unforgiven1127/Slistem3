@@ -154,19 +154,20 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-/*@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = "SELECT slp.sl_positionpk, l.firstname, l.lastname, slpd.title, slc.name as company, sli.label as industry, slpd.language
-, slp.salary_from, slp.salary_to, slp.age_from, slp.age_to, slpl.status
-FROM sl_position slp
-inner join login l on l.loginpk = slp.created_by
+$slistemQuery = "select slc.sl_candidatepk as candidate_id, slc.firstname, slc.lastname, slpd.title as position_title
+, slcp.salary, l.firstname as consultant_fname, l.lastname as consultant_lname
+from sl_candidate slc
+inner join sl_candidate_profile slcp on slcp.candidatefk = slc.sl_candidatepk
+inner join sl_position_link slpl on slpl.candidatefk = slc.sl_candidatepk
+inner join sl_position slp on slp.sl_positionpk = slpl.positionfk
 inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
-inner join sl_company slc on slc.sl_companypk = slp.companyfk
-inner join sl_industry sli on sli.sl_industrypk = slp.industryfk
-left join sl_position_link slpl on slpl.positionfk = slp.sl_positionpk and slpl.sl_position_linkpk = (select max(slpl2.sl_position_linkpk) from sl_position_link slpl2 where slpl2.positionfk = slpl.positionfk)
-WHERE slp.date_created >= '2016-04-01 00:00:00'";//belirli sayida aliyor dikkat
+inner join login l on l.loginpk = slpl.created_by
+where slpl.date_created >= '2016-04-01 00:00:00' and slpl.date_created < '2017-04-01 00:00:00'
+and slpl.status = '2'";//belirli sayida aliyor dikkat
 
 $slistemQuery = mysql_query($slistemQuery);
 
@@ -175,40 +176,24 @@ echo '<br><br><br>';
 
 echo "<table>";
 echo "<tr>
-<td>ID</td>
-<td>CREATED BY</td>
-<td>TITLE</td>
-<td>COMPANY</td>
-<td>INDUSTRY</td>
-<td>LANGUAGE</td>
+<td>CANDIDATE ID</td>
+<td>CANDIDATE NAME</td>
+<td>POSITION TITLE</td>
 <td>SALARY</td>
-<td>AGE</td>
-<td>STATUS</td>
+<td>CONSULTANT</td>
 </tr>";
 while($data = mysql_fetch_assoc($slistemQuery))
 {
 	//$count++;
-	$status = ' NO ACTIVITY ';
-	if($data['status'] > 0 && $data['status'] < 100)
-	{
-		$status = ' IN PLAY ';
-	}
-	else if($data['status'] > 100 && $data['status'] < 300)
-	{
-		$status = ' PLAYED ';
-	}
+
 	echo "<tr>";
-		echo "<td>".$data['sl_positionpk']."</td>";
+		echo "<td>".$data['candidate_id']."</td>";
 		echo "<td>".$data['firstname']." ".$data['lastname']."</td>";
-		echo "<td>".$data['title']."</td>";
-		echo "<td>".$data['company']."</td>";
-		echo "<td>".$data['industry']."</td>";
-		echo "<td>".$data['language']."</td>";
-		echo "<td>".$data['salary_from']." - ".$data['salary_to']."</td>";
-		echo "<td>".$data['age_from']." - ".$data['age_to']."</td>";
-		echo "<td>".$status."</td>";
+		echo "<td>".$data['position_title']."</td>";
+		echo "<td>".$data['salary']."</td>";
+		echo "<td>".$data['consultant_fname']." ".$data['consultant_lname']."</td>";
 	echo "</tr>";
 }
 echo "</table>";
 echo '<br><br>';
-//echo "Count: ".$count;*/
+//echo "Count: ".$count;
