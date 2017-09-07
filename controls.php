@@ -154,11 +154,11 @@ function get_new_kpi_set()
 echo '<br><br>';
 //echo phpinfo();
 
-/*@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-$slistemQuery = "select slc.sl_candidatepk as candidate_id, slc.firstname, slc.lastname,slp.sl_positionpk as position_id, slpd.title as position_title
+$slistemQuery = "select slc.sl_candidatepk as candidate_id, slc.firstname, slc.lastname,slp.sl_positionpk as position_id, slpd.title as position_title, slpl.date_created as send_date
 , slcp.salary, l.firstname as consultant_fname, l.lastname as consultant_lname,slco.sl_companypk as company_id, slco.name as company_title
 from sl_candidate slc
 inner join sl_candidate_profile slcp on slcp.candidatefk = slc.sl_candidatepk
@@ -181,6 +181,7 @@ echo "<tr>
 <td>CANDIDATE NAME</td>
 <td>POSITION ID</td>
 <td>POSITION TITLE</td>
+<td>SEND DATE</td>
 <td>COMPANY ID</td>
 <td>COMPANY TITLE</td>
 <td>SALARY</td>
@@ -195,6 +196,7 @@ while($data = mysql_fetch_assoc($slistemQuery))
 		echo "<td>".$data['firstname']." ".$data['lastname']."</td>";
 		echo "<td>".$data['position_id']."</td>";
 		echo "<td>".$data['position_title']."</td>";
+		echo "<td>".$data['send_date']."</td>";
 		echo "<td>".$data['company_id']."</td>";
 		echo "<td>".$data['company_title']."</td>";
 		echo "<td>".$data['salary']."</td>";
@@ -203,4 +205,4 @@ while($data = mysql_fetch_assoc($slistemQuery))
 }
 echo "</table>";
 echo '<br><br>';
-//echo "Count: ".$count;*/
+//echo "Count: ".$count;
