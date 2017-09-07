@@ -1983,12 +1983,14 @@ $asSql = $oQB->getSqlArray();
       ChromePhp::log($pvValue);
       if(strlen(trim($pvValue)) < 1)
       {
+        ChromePhp::log('HERE ???????????');
         $this->_addError('line '.__LINE__.' - text field, value is less than 1 characters ['.$pvValue.']');
         return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';
       }
 
       if($psOperator == 'different')
       {
+        ChromePhp::log('SHOULD BE HERE');
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
       }
 
