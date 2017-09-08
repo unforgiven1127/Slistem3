@@ -167,7 +167,7 @@ inner join sl_position slp on slp.sl_positionpk = slpl.positionfk
 inner join sl_position_detail slpd on slpd.positionfk = slp.sl_positionpk
 inner join login l on l.loginpk = slpl.created_by
 inner join sl_company slco on slco.sl_companypk = slp.companyfk
-where slpl.date_created >= '2016-04-01 00:00:00' and slpl.date_created < '2017-04-01 00:00:00'
+where slpl.date_created >= '2017-04-01 00:00:00'
 and slpl.status = '2'";//belirli sayida aliyor dikkat
 
 $slistemQuery = mysql_query($slistemQuery);
@@ -190,7 +190,6 @@ echo "<tr>
 while($data = mysql_fetch_assoc($slistemQuery))
 {
 	//$count++;
-
 	echo "<tr>";
 		echo "<td>".$data['candidate_id']."</td>";
 		echo "<td>".$data['firstname']." ".$data['lastname']."</td>";
