@@ -5070,7 +5070,7 @@ var_dump($query);*/
 
       $logCount = $logs->count();
 
-      ChromePhp::log($sQuery);
+      //ChromePhp::log($sQuery);
       $db_result = $oDB->executeQuery($sQuery);
 
       $result = $db_result->getAll();
