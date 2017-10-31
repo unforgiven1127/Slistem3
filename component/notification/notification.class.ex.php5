@@ -2121,8 +2121,8 @@ class CNotificationEx extends CNotification
       $csUid = "555-001";
       $csAction = "ppav";
       $csType= "candi";
-
-      //$addLog = insertLog($user_id, $target_candidate_id, $note);
+ChromePhp::log('_INSERT???');
+      $addLog1 = insertLog($user_id, $target_candidate_id, $note);
       $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
 
       //$sViewURL = $oPage->getAjaxUrl($csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, $user_id);
