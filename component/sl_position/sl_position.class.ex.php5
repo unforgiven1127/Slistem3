@@ -3664,7 +3664,7 @@ class CSl_positionEx extends CSl_position
       {
         $statusTite = getStatusTitle($asPosition['status']);
         $note = "Status ".$statusTite." (#".$pnLinkPk.") deleted";
-        //$addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        $addLog1 = insertLog($user_id, $asPosition['candidatefk'], $note);
         $addLog = insertMongoLog($user_id, $asPosition['candidatefk'], $note);
       }
 

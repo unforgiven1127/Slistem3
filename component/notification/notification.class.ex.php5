@@ -2121,7 +2121,7 @@ class CNotificationEx extends CNotification
       $csUid = "555-001";
       $csAction = "ppav";
       $csType= "candi";
-ChromePhp::log('_INSERT???');
+
       $addLog1 = insertLog($user_id, $target_candidate_id, $note);
       $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
 
