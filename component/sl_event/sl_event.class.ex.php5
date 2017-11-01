@@ -1126,7 +1126,7 @@ class CSl_eventEx extends CSl_event
       $note = $userName." edited note #".$this->cnPk;
     }
 
-    //insertLog($user_id, $candidate_id, $note);
+    insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note) && !empty($candidate_id))
     {
       insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
