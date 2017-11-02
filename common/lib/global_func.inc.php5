@@ -4295,12 +4295,12 @@ var_dump($query);*/
     {
         //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
         //$slistemMongo = $mongo->selectDB('slistem');
-
-        $mongo = new MongoClient('mongodb://localhost', array(
+$mongo = new MongoClient("mongodb://127.0.0.1", array("username" => $username, "password" => $password,'db' => 'slistem'));
+        /*$mongo = new MongoClient('mongodb://localhost', array(
             'username' => $username,
             'password' => $password,
             'db'       => 'slistem'
-        ));
+        ));*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
@@ -4383,11 +4383,14 @@ var_dump($query);*/
         //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
         //$slistemMongo = $mongo->selectDB('slistem');
 
-        $mongo = new MongoClient('mongodb://localhost', array(
+        $mongo = new MongoClient("mongodb://127.0.0.1", array("username" => $username, "password" => $password,'db' => 'slistem'));
+
+
+        /*$mongo = new MongoClient('mongodb://localhost', array(
             'username' => $username,
             'password' => $password,
             'db'       => 'slistem'
-        ));
+        ));*/
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
