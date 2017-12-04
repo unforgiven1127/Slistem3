@@ -435,7 +435,7 @@ class CMenuEx extends CMenu
     }
 
     $sHTML = $this->_oDisplay->getListStart('',array('class' => 'menuNavList'));
-
+ChromePhp::log($pbVertical);
       //add a first link to expand/reduce the menu
       if($pbVertical)
       {
