@@ -387,6 +387,7 @@ class CMenuEx extends CMenu
 
   private function _displayMenuNav($pnMenuNumber, $psPosition, $pbVertical = false)
   {
+    ChromePhp::log('_displayMenuNav');
     $sUid = $this->_oPage->getUid();
     $bIsLogged = $this->_oLogin->isLogged();
 
@@ -603,7 +604,7 @@ class CMenuEx extends CMenu
             if($pbVertical)
             {
               $asOption['class'].= ' menu_open_label';
-ChromePhp::log($asMenuItems['name']);
+
               if($bHasChilds)
                 $sItem.= '<div class="menu_item_label expendable" onclick="toggleSubmenu(this);">'.$asMenuItems['name'].'</div> ';
               else
