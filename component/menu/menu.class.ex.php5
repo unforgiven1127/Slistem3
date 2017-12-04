@@ -607,7 +607,7 @@ class CMenuEx extends CMenu
               if($bHasChilds)
                 $sItem.= '<div class="menu_item_label expendable" onclick="toggleSubmenu(this);">'.$asMenuItems['name'].'</div> ';
               else
-                $sItem.= '<div class="menu_item_label">'.$sTextItem.'</div> ';
+                $sItem.= '<div class="menu_item_label">'.'asdasd'.'</div> ';
             }
 
             $sHTML.= $this->_oDisplay->getListItemStart();
