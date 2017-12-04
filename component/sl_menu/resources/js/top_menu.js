@@ -1,5 +1,5 @@
 var element = $(window).width();
-var half = element/2;
+var half = (element/3)*2;
 //ert($element);
 function checkForChanges()
 {
