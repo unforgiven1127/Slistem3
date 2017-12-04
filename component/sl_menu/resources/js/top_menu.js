@@ -2,7 +2,6 @@ var $element = $(window).width();
 alert($element);
 function checkForChanges()
 {
-	alert($element);
 	var lastHeight = $(window).width();
     if ($element != lastHeight)
     {
@@ -11,3 +10,5 @@ function checkForChanges()
 
     setTimeout(checkForChanges, 500);
 }
+
+checkForChanges();
