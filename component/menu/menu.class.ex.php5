@@ -588,6 +588,8 @@ class CMenuEx extends CMenu
                 $sTextItem = $sItem;
               }
 
+$sTextItem = '';
+
               if(isset($asMenuItems['legend']) && !empty($asMenuItems['legend']))
               {
                 $sItem.= $this->_oDisplay->getCR();
@@ -607,7 +609,7 @@ class CMenuEx extends CMenu
               if($bHasChilds)
                 $sItem.= '<div class="menu_item_label expendable" onclick="toggleSubmenu(this);">'.$asMenuItems['name'].'</div> ';
               else
-                $sItem.= '<div class="menu_item_label">'.'asdasd'.'</div> ';
+                $sItem.= '<div class="menu_item_label">'.$sTextItem.'</div> ';
             }
 
             $sHTML.= $this->_oDisplay->getListItemStart();
