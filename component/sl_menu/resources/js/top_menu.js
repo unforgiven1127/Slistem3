@@ -1,9 +1,10 @@
-var $element = $(window).width();
-alert($element);
+var element = $(window).width();
+var half = element/2;
+//ert($element);
 function checkForChanges()
 {
 	var lastHeight = $(window).width();
-    if ($element != lastHeight)
+    if (lastHeight < half)
     {
         alert('xxx');
     }
