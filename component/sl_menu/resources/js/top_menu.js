@@ -6,7 +6,7 @@ function checkForChanges()
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
-        alert('xxx');
+        //alert('xxx');
     }
 
     setTimeout(checkForChanges, 500);
