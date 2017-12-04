@@ -1,5 +1,5 @@
 var $element = $(window).width();
-
+alert($element);
 function checkForChanges()
 {
 	alert($element);
