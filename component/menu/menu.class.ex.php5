@@ -387,7 +387,7 @@ class CMenuEx extends CMenu
 
   private function _displayMenuNav($pnMenuNumber, $psPosition, $pbVertical = false)
   {
-    ChromePhp::log('_displayMenuNav');
+    //ChromePhp::log('_displayMenuNav');
     $sUid = $this->_oPage->getUid();
     $bIsLogged = $this->_oLogin->isLogged();
 
@@ -440,7 +440,7 @@ class CMenuEx extends CMenu
       if($pbVertical)
       {
         $this->_oPage->addJsFile($this->getResourcePath().'js/menu.js');
-
+ChromePhp::log($this->getResourcePath().'js/menu.js');
         $sPic = $this->_oDisplay->getPicture($this->getResourcePath().'pictures/toggle_menu_48.png');
         $sHTML.= $this->_oDisplay->getListItemStart();
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'menuNavIcon menu_open_label'));
