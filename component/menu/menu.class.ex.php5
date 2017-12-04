@@ -436,11 +436,11 @@ class CMenuEx extends CMenu
 
     $sHTML = $this->_oDisplay->getListStart('',array('class' => 'menuNavList'));
 ChromePhp::log($pbVertical);
+ChromePhp::log($this->getResourcePath().'js/menu.js');
       //add a first link to expand/reduce the menu
       if($pbVertical)
       {
         $this->_oPage->addJsFile($this->getResourcePath().'js/menu.js');
-ChromePhp::log($this->getResourcePath().'js/menu.js');
         $sPic = $this->_oDisplay->getPicture($this->getResourcePath().'pictures/toggle_menu_48.png');
         $sHTML.= $this->_oDisplay->getListItemStart();
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'menuNavIcon menu_open_label'));
