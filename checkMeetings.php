@@ -24,6 +24,7 @@
         array_push($allMeetings,$meetingData);
     }
 
+    $myfile = fopen("updateMeetingLog.txt", "a");
     foreach ($allMeetings as $key => $meeting)
     {
         $create_date = $meeting['date_meeting']; //gorusmenin yapilacagi tarihi aldik o nedenle update e bakmamiza gerek yok
@@ -42,11 +43,14 @@
             //echo '<br>';
         if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($effectiveDate) )
         {
-            echo $meeting['sl_meetingpk'].' --- ';
-            echo $today.' ---- ';
-            echo $create_date.' ---- ';
-            echo date("Y-m-t", strtotime($effectiveDate));
-            echo '<br>';
+            $myfile = fopen("updateMeetingLog.txt", "a");
+            $txt = '';
+            $txt.= $meeting['sl_meetingpk'].' --- ';
+            $txt.= $today.' ---- ';
+            $txt.= $create_date.' ---- ';
+            $txt.= date("Y-m-t", strtotime($effectiveDate));
+            //echo '<br>';
+            $ret = file_put_contents('updateMeetingLog.txt', $txt, FILE_APPEND | LOCK_EX);
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
             $meeting_id = $meeting['sl_meetingpk'];
             $slistemQueryUpdate = "UPDATE sl_meeting SET meeting_done = '-1', date_updated = '".$today."' WHERE sl_meetingpk = '".$meeting_id."' ";
