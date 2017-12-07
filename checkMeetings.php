@@ -43,7 +43,8 @@
         if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($effectiveDate) )
         {
             echo $create_date.' ---- ';
-            echo date("Y-m-t", strtotime($control_date));
+            echo date("Y-m-t", strtotime($effectiveDate));
+            echo '<br>';
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
             $meeting_id = $meeting['sl_meetingpk'];
             $slistemQueryUpdate = "UPDATE sl_meeting SET meeting_done = '-1', date_updated = '".$today."' WHERE sl_meetingpk = '".$meeting_id."' ";
