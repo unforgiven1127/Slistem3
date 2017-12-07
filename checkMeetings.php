@@ -29,7 +29,7 @@
         $create_date = $meeting['date_meeting']; //gorusmenin yapilacagi tarihi aldik o nedenle update e bakmamiza gerek yok
         $month = date("m",strtotime($create_date));
         //$year = date("Y",strtotime($create_date));
-        $year = '2017';
+        $year = '2018';
 
         $effectiveDate = date('Y-m-d', strtotime("+1 month", strtotime($create_date)));
 
@@ -40,6 +40,8 @@
 
         if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($control_date ) )
         {
+            echo $create_date.' ---- ';
+            echo date("Y-m-t", strtotime($control_date));
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
             $meeting_id = $meeting['sl_meetingpk'];
             $slistemQueryUpdate = "UPDATE sl_meeting SET meeting_done = '-1', date_updated = '".$today."' WHERE sl_meetingpk = '".$meeting_id."' ";
