@@ -43,6 +43,7 @@
         if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($effectiveDate) )
         {
             echo $meeting['sl_meetingpk'].' --- ';
+            echo $today.' ---- ';
             echo $create_date.' ---- ';
             echo date("Y-m-t", strtotime($effectiveDate));
             echo '<br>';
