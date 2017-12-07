@@ -36,11 +36,9 @@
         $new_month = date("m",strtotime($effectiveDate));
         $control_date = $year.'-'.$new_month.'-'.'06 00:00:00';
 
-        $final = date("Y-m-d", strtotime("+1 month", $create_date));
-
         $today = date("Y-m-d H:i:s");
             echo $create_date.' ---- ';
-            echo date("Y-m-t", strtotime($final));
+            echo date("Y-m-t", strtotime($effectiveDate));
             echo '<br>';
         if($meeting['meeting_done'] == 0 && strtotime($today) >= strtotime($control_date ) )
         {
