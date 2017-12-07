@@ -12,7 +12,7 @@
     mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 
-    $slistemQuery = " SELECT * FROM sl_meeting ";
+    $slistemQuery = " SELECT * FROM sl_meeting where meeting_done = 0";
     $slistemQuery = mysql_query($slistemQuery);
 
     $allMeetings = array();
