@@ -49,6 +49,7 @@
             $txt.= $today.' ---- ';
             $txt.= $create_date.' ---- ';
             $txt.= date("Y-m-t", strtotime($effectiveDate));
+            $txt.= "\n";
             //echo '<br>';
             $ret = file_put_contents('updateMeetingLog.txt', $txt, FILE_APPEND | LOCK_EX);
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
