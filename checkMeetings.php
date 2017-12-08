@@ -55,7 +55,7 @@
             //echo "Meeting ID: ".$meeting['sl_meetingpk']." - SHOULD BE CANCELLED !! - Today: ".$today." ControlDate: ".$control_date."<br>";
             $meeting_id = $meeting['sl_meetingpk'];
             $slistemQueryUpdate = "UPDATE sl_meeting SET meeting_done = '-1', date_updated = '".$today."' WHERE sl_meetingpk = '".$meeting_id."' ";
-            //$slistemQueryUpdate = mysql_query($slistemQueryUpdate);
+            $slistemQueryUpdate = mysql_query($slistemQueryUpdate);
             $count++;
         }
     }
