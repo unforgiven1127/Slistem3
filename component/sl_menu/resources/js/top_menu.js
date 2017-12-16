@@ -22,7 +22,7 @@ function checkForChanges()
 		  $(this).text("");
 		});
     }
-    else
+    else if($('#messaging').text() == '')
     {
     	$('#messaging').text(messaging);
     	$('#scheduler').text(scheduler);
