@@ -23,18 +23,20 @@ function checkForChanges()
 		contact_sheet = document.getElementById('contact_sheet').innerHTML;
 		tools = document.getElementById('tools').innerHTML;
 		count = 1;
-		alert(messaging);
 	}
 
     if (lastHeight < half)
     {
     	change_flag = 1;
-    	var scheduler1 = document.getElementById('scheduler').innerHTML.replace(" Scheduler", "|");
-    	document.getElementById('scheduler').innerHTML = scheduler1;
-    }
+    	document.getElementById('messaging').innerHTML = document.getElementById('messaging').innerHTML.replace(" Messaging", "");
+    	document.getElementById('scheduler').innerHTML = document.getElementById('scheduler').innerHTML.replace(" Scheduler", "");
+    	document.getElementById('add').innerHTML = document.getElementById('add').innerHTML.replace(" Add", "");
+    	document.getElementById('view').innerHTML = document.getElementById('view').innerHTML.replace(" View", "");
+    	document.getElementById('reports').innerHTML = document.getElementById('reports').innerHTML.replace(" Reports", "");
+    	document.getElementById('contact_sheet').innerHTML = document.getElementById('contact_sheet').innerHTML.replace(" Contact sheet", "");
+    	document.getElementById('tools').innerHTML = document.getElementById('tools').innerHTML.replace(" Tools", "");    }
     else if(count == 1 && change_flag == 1)
     {
-    	alert(messaging);
     	change_flag = 0;
     	document.getElementById('messaging').innerHTML = messaging;
     	document.getElementById('scheduler').innerHTML = scheduler;
