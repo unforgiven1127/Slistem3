@@ -19,18 +19,18 @@ function checkForChanges()
     	menu_items.each(function() {
     		var text = $(this).text();
     		//alert(text);
-		  $(this).text("");
+		  $(this).html("");
 		});
     }
     else if($('#messaging').text() == '')
     {
-    	$('#messaging').text(messaging);
-    	$('#scheduler').text(scheduler);
-    	$('#add').text(add);
-    	$('#view').text(view);
-    	$('#reports').text(reports);
-    	$('#contact_sheet').text(contact_sheet);
-    	$('#tools').text(tools);
+    	$('#messaging').html(messaging);
+    	$('#scheduler').html(scheduler);
+    	$('#add').html(add);
+    	$('#view').html(view);
+    	$('#reports').html(reports);
+    	$('#contact_sheet').html(contact_sheet);
+    	$('#tools').html(tools);
     }
 
     setTimeout(checkForChanges, 500);
