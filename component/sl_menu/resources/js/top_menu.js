@@ -3,6 +3,9 @@ var half = (element/3)*2;
 //ert($element);
 function checkForChanges()
 {
+	var messaging = 'Messaging';
+	var scheduler = 'Scheduler';
+	var 
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
