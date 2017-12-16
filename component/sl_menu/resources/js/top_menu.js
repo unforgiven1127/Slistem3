@@ -24,6 +24,7 @@ function checkForChanges()
 		contact_sheet = document.getElementById('contact_sheet').innerHTML;
 		tools = document.getElementById('tools').innerHTML;
 		count = 1;
+		alert(messaging);
 	}
 
     if (lastHeight < half)
@@ -34,7 +35,8 @@ function checkForChanges()
     }
     else if(count == 1 && change_flag == 1)
     {
-    	//alert('here1');
+    	alert(messaging);
+    	change_flag = 0;
     	document.getElementById('messaging').innerHTML = messaging;
     	document.getElementById('scheduler').innerHTML = scheduler;
     	document.getElementById('add').innerHTML = add;
