@@ -11,7 +11,7 @@ function checkForChanges()
 	var contact_sheet ='Contact sheet';
 	var tools = 'Tools';
 
-	var menu_items = $('#mainMenuItems');
+	var menu_items = $('.mainMenuItems');
 
 	var lastHeight = $(window).width();
     if (lastHeight < half)
