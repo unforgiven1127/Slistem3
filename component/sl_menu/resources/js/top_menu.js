@@ -17,7 +17,7 @@ function checkForChanges()
     if (lastHeight < half)
     {
     	alert(document.getElementById('scheduler').innerHTML.replace(" Scheduler", "S"));
-    	var scheduler1 = document.getElementById('scheduler').innerHTML.replace(" Scheduler", "S");
+    	var scheduler1 = document.getElementById('scheduler').innerHTML.replace(" Scheduler", "|");
     	document.getElementById('scheduler').innerHTML = scheduler1;
     }
     else if($('#messaging').text() == '')
