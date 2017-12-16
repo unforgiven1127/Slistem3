@@ -2,17 +2,16 @@ var element = $(window).width();
 var half = (element/3)*2;
 var count = 0;
 var change_flag = 0;
+var messaging = '';
+var scheduler = '';
+var add = '';
+var view = '';
+var reports = '';
+var tools = '';
+var contact_sheet = '';
 //ert($element);
 function checkForChanges()
 {
-	var messaging = '';
-	var scheduler = '';
-	var add = '';
-	var view = '';
-	var reports = '';
-	var tools = '';
-	var contact_sheet = '';
-
 	var lastHeight = $(window).width();
 	if(count == 0 && lastHeight > half)
 	{
