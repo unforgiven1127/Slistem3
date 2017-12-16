@@ -7,6 +7,7 @@ function checkForChanges()
 	var lastHeight = $(window).width();
 	if(count == 0 && lastHeight > half)
 	{
+		alert(count);
 		var messaging = document.getElementById('messaging').innerHTML;
 		var scheduler = document.getElementById('scheduler').innerHTML;
 		var add = document.getElementById('add').innerHTML;
