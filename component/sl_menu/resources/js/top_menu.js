@@ -16,11 +16,7 @@ function checkForChanges()
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
-    	menu_items.each(function() {
-    		var text = $(this).text();
-    		alert(text);
-		  $(this).text("-");
-		});
+    	 document.getElementById('scheduler').innerHTML = '';
     }
     else if($('#messaging').text() == '')
     {
