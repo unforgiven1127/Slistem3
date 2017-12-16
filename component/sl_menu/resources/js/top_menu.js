@@ -6,7 +6,12 @@ function checkForChanges()
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
-        //alert('xxx');
+    	//save titles in variables first
+        //than remove titles
+    }
+    else
+    {
+    	//add titles back if they were removed
     }
 
     setTimeout(checkForChanges, 500);

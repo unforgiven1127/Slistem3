@@ -5952,11 +5952,11 @@ function get_revenue_chart_loop()
   $loop = array();
   //$loop[0] = '2016-consultant_revenue_chart';//OK
   //$loop[1] = '2016-researcher_revenue_chart';//OK
-  $loop[2] = '2017-consultant_revenue_chart';//OK
-  $loop[3] = '2017-researcher_revenue_chart';//OK
-  $loop[4] = '2016-totals_chart_ordered';//OK
-  $loop[5] = '2016-candidates_met_bar_chart';//OK
-  $loop[6] = '2016-candidate_in_play_bar_chart';//OK
+  $loop[2] = '2018-consultant_revenue_chart';//
+  $loop[3] = '2018-researcher_revenue_chart';//
+  $loop[4] = '2018-totals_chart_ordered';//
+  $loop[5] = '2018-candidates_met_bar_chart';//
+  $loop[6] = '2018-candidate_in_play_bar_chart';//
   //$loop[7] = '2016-resume_bar_chart';//OK
 
   return $loop;
