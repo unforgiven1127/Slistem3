@@ -17,6 +17,8 @@ function checkForChanges()
     if (lastHeight < half)
     {
     	menu_items.each(function() {
+    		var text = $(this).text("");
+    		alert(text);
 		  $(this).text("");
 		});
     }
