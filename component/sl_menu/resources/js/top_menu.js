@@ -17,14 +17,20 @@ function checkForChanges()
     if (lastHeight < half)
     {
     	menu_items.each(function() {
-    		var text = $(this).text("");
-    		alert(text);
+    		var text = $(this).text();
+    		//alert(text);
 		  $(this).text("");
 		});
     }
     else
     {
-    	//add titles back if they were removed
+    	$('#messaging').text(messaging);
+    	$('#scheduler').text(scheduler);
+    	$('#add').text(add);
+    	$('#view').text(view);
+    	$('#reports').text(reports);
+    	$('#contact_sheet').text(contact_sheet);
+    	$('#tools').text(tools);
     }
 
     setTimeout(checkForChanges, 500);
