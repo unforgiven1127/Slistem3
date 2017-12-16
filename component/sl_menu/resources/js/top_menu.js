@@ -7,7 +7,7 @@ function checkForChanges()
 	var lastHeight = $(window).width();
 	if(count == 0 && lastHeight > half)
 	{
-		alert(count);
+		
 		var messaging = document.getElementById('messaging').innerHTML;
 		var scheduler = document.getElementById('scheduler').innerHTML;
 		var add = document.getElementById('add').innerHTML;
@@ -15,7 +15,7 @@ function checkForChanges()
 		var reports = document.getElementById('reports').innerHTML;
 		var contact_sheet = document.getElementById('contact_sheet').innerHTML;
 		var tools = document.getElementById('tools').innerHTML;
-
+alert(messaging);
 		count = 1;
 	}
 
@@ -29,13 +29,13 @@ function checkForChanges()
     else
     {
     	//alert('here1');
-    	document.getElementById('messaging').innerHTML = messaging;
-    	document.getElementById('scheduler').innerHTML = scheduler;
-    	document.getElementById('add').innerHTML = add;
-    	document.getElementById('view').innerHTML = view;
-    	document.getElementById('reports').innerHTML = reports;
-    	document.getElementById('contact_sheet').innerHTML = contact_sheet;
-    	document.getElementById('tools').innerHTML = tools;
+    	//document.getElementById('messaging').innerHTML = messaging;
+    	//document.getElementById('scheduler').innerHTML = scheduler;
+    	//document.getElementById('add').innerHTML = add;
+    	//document.getElementById('view').innerHTML = view;
+    	//document.getElementById('reports').innerHTML = reports;
+    	//document.getElementById('contact_sheet').innerHTML = contact_sheet;
+    	//document.getElementById('tools').innerHTML = tools;
     }
 
     setTimeout(checkForChanges, 500);
