@@ -16,7 +16,8 @@ function checkForChanges()
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
-    	 document.getElementById('scheduler').innerHTML = '';
+    	alert(document.getElementById('scheduler').innerHTML);
+    	document.getElementById('scheduler').innerHTML = '';
     }
     else if($('#messaging').text() == '')
     {
