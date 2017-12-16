@@ -19,7 +19,7 @@ function checkForChanges()
     	menu_items.each(function() {
     		var text = $(this).text();
     		alert(text);
-		  $(this).text("");
+		  $(this).text("-");
 		});
     }
     else if($('#messaging').text() == '')
