@@ -41,4 +41,8 @@ function checkForChanges()
     setTimeout(checkForChanges, 500);
 }
 
-checkForChanges();
+e ready() to make a function available after the document is loaded:
+
+$(document).ready(function(){
+    checkForChanges();
+});
