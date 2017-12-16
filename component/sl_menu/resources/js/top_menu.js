@@ -5,12 +5,20 @@ function checkForChanges()
 {
 	var messaging = 'Messaging';
 	var scheduler = 'Scheduler';
-	var 
+	var add = 'Add';
+	var view = 'View';
+	var reports = 'Reports';
+	var contact_sheet ='Contact sheet';
+	var tools = 'Tools';
+
+	var menu_items = $('#mainMenuItems');
+
 	var lastHeight = $(window).width();
     if (lastHeight < half)
     {
-    	//save titles in variables first
-        //than remove titles
+    	menu_items.each(function() {
+		  $(this).text("");
+		});
     }
     else
     {
