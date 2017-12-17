@@ -9,7 +9,7 @@ var view = '';
 var reports = '';
 var tools = '';
 var contact_sheet = '';
-//ert($element);
+
 function checkForChanges()
 {
 	var lastHeight = $(window).width();
@@ -34,7 +34,8 @@ function checkForChanges()
     	document.getElementById('view').innerHTML = document.getElementById('view').innerHTML.replace(" View", "");
     	document.getElementById('reports').innerHTML = document.getElementById('reports').innerHTML.replace("Reports", "");
     	document.getElementById('contact_sheet').innerHTML = document.getElementById('contact_sheet').innerHTML.replace(" Contact sheet", "");
-    	document.getElementById('tools').innerHTML = document.getElementById('tools').innerHTML.replace(" Tools", "");    }
+    	document.getElementById('tools').innerHTML = document.getElementById('tools').innerHTML.replace(" Tools", "");    
+    }
     else if(count == 1 && change_flag == 1)
     {
     	change_flag = 0;
