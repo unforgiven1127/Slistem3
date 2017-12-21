@@ -529,6 +529,11 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                 $sExtraClass.= ' menuNavText ';
               $id = str_replace (' ', '_', strtolower($asMenuItems['name']));
 
+              if(isset($onclickNew) && $onclickNew != '')
+              {
+                $asMenuItems['target'] = '#';
+              }
+
               $sItem = $this->_oDisplay->getLink($sPicture.$asMenuItems['name'], 'javascript:;', array('onclick' => $onclickNew, 'id'=>$id, 'class' => 'mainMenuPic mainMenuItems ', 'target' => $asMenuItems['target']));
               $sTextItem = $sItem;
 
