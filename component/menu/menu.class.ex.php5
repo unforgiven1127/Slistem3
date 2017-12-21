@@ -711,12 +711,6 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
     if(!isset($asChildren['target']))
         $asChildren['target'] = '';
 
-
-    if($asChildren['name'] == 'KPI - totals')
-    {
-      $asChildren['target'] = '#';
-    }
-
     if(!isset($asChildren['icon']) || empty($asChildren['icon']))
         $asChildren['icon'] = '';
     else
@@ -747,6 +741,10 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
         $sURL = 'javascript:;';
      }
 
+    if($asChildren['name'] == 'KPI - totals')
+    {
+      $url = '#';
+    }
 
      $asOption = array('target'=>$asChildren['target'], 'onclick' => $asChildren['onclick']);
 
