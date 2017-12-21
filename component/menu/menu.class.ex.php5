@@ -465,6 +465,10 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
           {
             $onclickNew = "var oConf = goPopup.getConfig();  oConf.width = '1070';  oConf.height = '725';  oConf.modal = true;  goPopup.setLayerFromAjax(oConf,  '".$mainPageUrl."/index.php5?uid=555-001&amp;ppa=ppaa&amp;ppt=candi&amp;ppk=0&amp;pg=ajx', '', false); ";
           }
+          else if($asMenuItems['name'] == 'Contact sheet')
+          {
+            ChromePhp::log($asMenuItems);
+          }
           /*else if($asMenuItems['name'] == 'KPI - totals')
           {
             $onclickNew = " localStorage.setItem('loginFlag', 'loginPage'); ";
