@@ -534,7 +534,7 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                 $asMenuItems['target'] = '#';
               }
 
-              $sItem = $this->_oDisplay->getLink($sPicture.$asMenuItems['name'], 'javascript:;', array('onclick' => $onclickNew, 'id'=>$id, 'class' => 'mainMenuPic mainMenuItems '));
+              $sItem = $this->_oDisplay->getLink($sPicture.$asMenuItems['name'], 'javascript:;', array('onclick' => $onclickNew, 'id'=>$id, 'class' => 'mainMenuPic mainMenuItems ', 'target' => $asMenuItems['target']));
               $sTextItem = $sItem;
 
             }
@@ -588,6 +588,11 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                 {
                   $sPic.= ' '.$asMenuItems['name'];
                   $sExtraClass.= ' menuNavText ';
+                }
+
+                if($asMenuItems['name'] == 'Contact sheet')
+                {
+                  $sLink = '#';
                 }
 
                 $id = str_replace (' ', '_', strtolower($asMenuItems['name']));
