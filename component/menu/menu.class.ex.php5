@@ -144,6 +144,7 @@ class CMenuEx extends CMenu
     $sEmbedUrl = $this->_oPage->getEmbedUrl();
     if(!empty($sEmbedUrl))
     {
+      ChromePhp::log('EMBEDED URL');
       $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'embedMenuLink'));
       $sHTML.= $this->_oDisplay->getLink('+ Open in new tab', $sEmbedUrl, array('target' => '_blank'));
       $sHTML.= $this->_oDisplay->getBlocEnd();
