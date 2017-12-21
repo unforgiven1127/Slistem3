@@ -762,9 +762,8 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
     $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
     if($asChildren['name'] == 'KPI - totals')
     {
-      //ChromePhp::log('HERE HERE HERE');
-      $link = $mainPageUrl.'/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0';
-      $sURL = 'href="'.$mainPageUrl.'" target="_blank"';
+      $sURL = '#';
+      $asOption['onclick'] = "window.open('".$mainPageUrl."/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0','_blank');";
       //$asChildren['onclick'] = '#';
     }
 
