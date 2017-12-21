@@ -759,11 +759,11 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
         $asOption['onclick'] = $this->_oDisplay->getAjaxPopupJS($sURL, 'body', '', 0, 0, $asPopupParam). ' '.$asOption['onclick'];
         $sURL = 'javascript:;';
       }
-
+    $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
     if($asChildren['name'] == 'KPI - totals')
     {
       //ChromePhp::log('HERE HERE HERE');
-      //$sURL = '#';
+      $sURL = 'href='.$mainPageUrl.'"/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0" target="_blank"';
       //$asChildren['onclick'] = '#';
     }
 
