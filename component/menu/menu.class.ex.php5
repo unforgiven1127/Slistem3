@@ -766,6 +766,13 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
       $asOption['onclick'] = "window.open('".$mainPageUrl."/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0','_blank');";
       //$asChildren['onclick'] = '#';
     }
+    else if($asChildren['name'] == 'Revenue chart')
+    {
+      //https://beta2.slate.co.jp/index.php5?uid=555-006&ppa=pprev&ppt=revenue&watercooler=1&ppk=0
+      $sURL = '#';
+      $asOption['onclick'] = "window.open('".$mainPageUrl."/index.php5?uid=555-006&ppa=pprev&ppt=revenue&watercooler=1&ppk=0','_blank');";
+      //$asChildren['onclick'] = '#';
+    }
 
     if($pbVertical)
       $asOption['onclick'].= ' toggleVerticalMenu(null, true); ';
