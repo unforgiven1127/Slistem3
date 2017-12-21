@@ -144,7 +144,6 @@ class CMenuEx extends CMenu
     $sEmbedUrl = $this->_oPage->getEmbedUrl();
     if(!empty($sEmbedUrl))
     {
-      ChromePhp::log('EMBEDED URL');
       $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'embedMenuLink'));
       $sHTML.= $this->_oDisplay->getLink('+ Open in new tab', $sEmbedUrl, array('target' => '_blank'));
       $sHTML.= $this->_oDisplay->getBlocEnd();
@@ -460,7 +459,7 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
           $onclickNew = "window.open('$mainPageUrl','_self');";
           if($asMenuItems['name'] == 'Reports')
           {
-            $onclickNew = "window.open('".$mainPageUrl."/index.php5?uid=555-006&amp;ppa=ppttc&amp;ppt=ttc&amp;ppk=0','_self');";
+            $onclickNew = "window.open('".$mainPageUrl."/index.php5?uid=555-006&amp;ppa=ppttc&amp;ppt=ttc&amp;ppk=0','_blank');";
           }
           else if($asMenuItems['name'] == 'Add')
           {
