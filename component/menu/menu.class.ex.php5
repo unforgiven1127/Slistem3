@@ -762,8 +762,8 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
 
     if($asChildren['name'] == 'KPI - totals')
     {
-      ChromePhp::log('HERE HERE HERE');
-      $sURL = '#';
+      //ChromePhp::log('HERE HERE HERE');
+      //$sURL = '#';
       //$asChildren['onclick'] = '#';
     }
 
