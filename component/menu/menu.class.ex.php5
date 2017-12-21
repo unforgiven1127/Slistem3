@@ -467,7 +467,8 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
           }
           else if($asMenuItems['name'] == 'Contact sheet')
           {
-            ChromePhp::log($asMenuItems);
+            //https://beta2.slate.co.jp/index.php5?uid=555-001&ppa=ppav&ppt=usr&ppk=0
+            $onclickNew = "window.open('".$mainPageUrl."/index.php5?uid=555-001&ppa=ppav&ppt=usr&ppk=0','_blank');";
           }
           /*else if($asMenuItems['name'] == 'KPI - totals')
           {
