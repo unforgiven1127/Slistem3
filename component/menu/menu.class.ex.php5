@@ -534,7 +534,7 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                 $asMenuItems['target'] = '#';
               }
 
-              $sItem = $this->_oDisplay->getLink($sPicture.$asMenuItems['name'], 'javascript:;', array('onclick' => $onclickNew, 'id'=>$id, 'class' => 'mainMenuPic mainMenuItems ', 'target' => $asMenuItems['target']));
+              $sItem = $this->_oDisplay->getLink($sPicture.$asMenuItems['name'], 'javascript:;', array('onclick' => $onclickNew, 'id'=>$id, 'class' => 'mainMenuPic mainMenuItems '));
               $sTextItem = $sItem;
 
             }
