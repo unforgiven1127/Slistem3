@@ -590,7 +590,11 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                   $sExtraClass.= ' menuNavText ';
                 }
 
-                if($asMenuItems['name'] == 'Contact sheet')
+                if($asMenuItems['name'] == 'Contact sheet' || $asMenuItems['name'] == 'Reports')
+                {
+                  $sLink = '#';
+                }
+                else if($asMenuItems['name'] == 'KPI - totals')
                 {
                   $sLink = '#';
                 }
