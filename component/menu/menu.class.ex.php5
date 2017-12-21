@@ -763,7 +763,8 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
     if($asChildren['name'] == 'KPI - totals')
     {
       //ChromePhp::log('HERE HERE HERE');
-      $sURL = 'href='.$mainPageUrl.'"/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0" target="_blank"';
+      $link = $mainPageUrl.'/index.php5?uid=555-006&ppa=ppttc&ppt=ttc&ppk=0';
+      $sURL = 'href="'.$mainPageUrl.'" target="_blank"';
       //$asChildren['onclick'] = '#';
     }
 
