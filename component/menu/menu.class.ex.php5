@@ -594,10 +594,6 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
                 {
                   $sLink = '#';
                 }
-                else if($asMenuItems['name'] == 'KPI - totals')
-                {
-                  $sLink = '#';
-                }
 
                 $id = str_replace (' ', '_', strtolower($asMenuItems['name']));
                 $mainPageUrl = "https://".$_SERVER['HTTP_HOST'];
@@ -714,6 +710,12 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
 
     if(!isset($asChildren['target']))
         $asChildren['target'] = '';
+
+
+    if($asChildren['name'] == 'KPI - totals')
+    {
+      $asChildren['target'] = '#';
+    }
 
     if(!isset($asChildren['icon']) || empty($asChildren['icon']))
         $asChildren['icon'] = '';
