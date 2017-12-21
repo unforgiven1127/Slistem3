@@ -741,11 +741,6 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
         $sURL = 'javascript:;';
      }
 
-    if($asChildren['name'] == 'KPI - totals')
-    {
-      $url = '#';
-    }
-
      $asOption = array('target'=>$asChildren['target'], 'onclick' => $asChildren['onclick']);
 
      if(isset($asChildren['option']) && !empty($asChildren['option']))
@@ -764,6 +759,13 @@ ChromePhp::log($this->getResourcePath().'js/menu.js');
         $asOption['onclick'] = $this->_oDisplay->getAjaxPopupJS($sURL, 'body', '', 0, 0, $asPopupParam). ' '.$asOption['onclick'];
         $sURL = 'javascript:;';
       }
+
+    if($asChildren['name'] == 'KPI - totals')
+    {
+      ChromePhp::log('HERE HERE HERE');
+      $url = '#';
+      //$asChildren['onclick'] = '#';
+    }
 
     if($pbVertical)
       $asOption['onclick'].= ' toggleVerticalMenu(null, true); ';
