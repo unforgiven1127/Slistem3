@@ -9,13 +9,6 @@
 					<div class="searchFormSwitchMode advanced" onclick="AjaxRequest('https://beta2.slate.co.jp/index.php5?uid=898-775&amp;ppa=ppasea&amp;ppt=&amp;ppk=0&amp;formType=advanced&amp;CpUid=555-001&amp;CpType=candi&amp;pg=ajx&amp;formType=complex&amp;formType=advanced', '', '', $(this).closest('.ui-dialog-content').attr('id'));">&nbsp;</div>
 		</td>
 	</tr>
-	<tr>
-		<td style="width: 100% !important;">
-			<div class="formFieldContainer fieldName5a415843a6341 formFieldWidth1">
-				<div class=" formFieldTitle">Complex search - New</div>
-			</div>
-		</td>
-	</tr>
 </table>
 
 <table  style='padding-top: 20px !important;'>
