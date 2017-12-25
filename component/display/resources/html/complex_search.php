@@ -10,8 +10,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<div class="formFieldContainer fieldName5a415843a6341 formFieldWidth1 "><div inajax="1" id="5a415843a6341Id" class=" formFieldTitle">Complex search - New</div><div class="floatHack"></div></div>
+		<td style="width: 100% !important;">
+			<div class="formFieldContainer fieldName5a415843a6341 formFieldWidth1">
+				<div class=" formFieldTitle">Complex search - New</div>
+			</div>
 		</td>
 	</tr>
 </table>
