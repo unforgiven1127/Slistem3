@@ -310,7 +310,7 @@ class CSearchEx extends CSearch
           //ChromePhp::log('COMPLEX HERE');
           $bIsComplex = true;
           $data['type'] = 'complex';
-          if($_SERVER['HTTP_HOST'] == "beta2.slate.co.jp")
+          if($_SERVER['HTTP_HOST'] == "beta3.slate.co.jp")
           {
             $complex_search = $this->_oDisplay->render('complex_search', $data);
             return $complex_search;
