@@ -14,6 +14,7 @@ class CSearchEx extends CSearch
   private $cbAllowComplexSearch = false;
   private $casSearchField = array();
   protected $coModel = null;
+  private $_oDisplay;
 
   private $coPage = null;
   private $coHTML = null;
@@ -22,6 +23,7 @@ class CSearchEx extends CSearch
   public function __construct()
   {
     $this->slate_vars = new CSlateVars();
+    $this->_oDisplay = CDependency::getCpHtml();
     $this->casSearchableComponent = CDependency::getComponentUidByInterface('searchable');
     $this->cnSearchableComponent = count($this->casSearchableComponent);
 
