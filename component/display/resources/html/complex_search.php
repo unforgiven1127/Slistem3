@@ -1,6 +1,6 @@
-<table>
+<table style='padding-top: 10px !important; padding-right: 10px !important;'>
 	<tr>
-		<td style='padding-top: 10px !important; padding-right: 10px !important;'>
+		<td>
 
 			<div class="searchActionBar">
 					<div class="formMenuItem savedSearch" onclick="AjaxRequest('https://beta2.slate.co.jp/index.php5?uid=898-775&amp;ppa=ppasea&amp;ppt=&amp;ppk=0&amp;formType=advanced&amp;CpUid=555-001&amp;CpType=candi&amp;pg=ajx&amp;formType=complex&amp;formType=global&amp;formType=complex&amp;formType=advanced&amp;formType=history', '', '', $(this).closest('.ui-dialog-content').attr('id'));">&nbsp;</div>
