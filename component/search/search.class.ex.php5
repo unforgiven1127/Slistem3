@@ -304,7 +304,7 @@ class CSearchEx extends CSearch
 
 
         if($psType == 'complex')
-        {
+        {ChromePhp::log('COMPLEX HERE');
           $bIsComplex = true;
           $oForm->addField('misc', '', array('type' => 'title', 'title' => 'Complex search - advanced mode'));
           $sExtraClass.= ' searchFormComplex ';
