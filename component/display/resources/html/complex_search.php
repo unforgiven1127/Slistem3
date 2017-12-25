@@ -9,6 +9,11 @@
 					<div class="searchFormSwitchMode advanced" onclick="AjaxRequest('https://beta2.slate.co.jp/index.php5?uid=898-775&amp;ppa=ppasea&amp;ppt=&amp;ppk=0&amp;formType=advanced&amp;CpUid=555-001&amp;CpType=candi&amp;pg=ajx&amp;formType=complex&amp;formType=advanced', '', '', $(this).closest('.ui-dialog-content').attr('id'));">&nbsp;</div>
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<div class="formFieldContainer fieldName5a415843a6341 formFieldWidth1 "><div inajax="1" id="5a415843a6341Id" class=" formFieldTitle">Complex search - New</div><div class="floatHack"></div></div>
+		</td>
+	</tr>
 </table>
 
 <table  style='padding-top: 20px !important;'>
