@@ -5039,8 +5039,8 @@ class CSl_candidateEx extends CSl_candidate
           }
           else
           {
-            $oForm->addField('input', 'lastname', array('readonly' => 'readonly', 'class' => 'disabled', 'label' => 'lastname', 'value' => $oDbResult->getFieldValue('lastname')));
-            $oForm->addField('input', 'firstname', array('readonly' => 'readonly', 'class' => 'disabled', 'label' => 'firstname', 'value' => $oDbResult->getFieldValue('firstname')));
+            $oForm->addField('input', 'lastname', array( 'class' => 'disabled', 'label' => 'lastname', 'value' => $oDbResult->getFieldValue('lastname')));
+            $oForm->addField('input', 'firstname', array( 'class' => 'disabled', 'label' => 'firstname', 'value' => $oDbResult->getFieldValue('firstname')));
           }
 
           $sDate = $oDbResult->getFieldValue('date_birth');

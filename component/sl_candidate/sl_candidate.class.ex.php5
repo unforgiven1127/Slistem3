@@ -7266,7 +7266,7 @@ ChromePhp::log($array);
       if(empty($pnCandidatePk) || $this->_oLogin->isAdmin())
         $readonly_name = '';
       else
-        $readonly_name = 'readonly';
+        $readonly_name = '';
 
       $nSex = (int)$oDbResult->getFieldValue('sex');
 
