@@ -144,7 +144,7 @@ class CSl_eventEx extends CSl_event
         $addNotes = $this->getNotes($pnItemPk, $psItemType, $value, $pasExcludeType);
         if(isset($addNotes) && !empty($addNotes))
         {
-          array_push($asNotes,$addNotes[0]);
+          //array_push($asNotes,$addNotes[0]);
         }
       }
     }
