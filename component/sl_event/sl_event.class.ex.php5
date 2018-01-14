@@ -171,7 +171,7 @@ class CSl_eventEx extends CSl_event
         $addArray['eventpk'] = '';
         $addArray['flag'] = 'a';
         $addArray['title'] = '';
-        $addArray['type'] = '';
+        $addArray['type'] = 'Fallen off';
         $addArray['updated_by'] = '';
         $addArray['_fts'] = $value['comment'];
         array_push($asNotes,$addArray);
