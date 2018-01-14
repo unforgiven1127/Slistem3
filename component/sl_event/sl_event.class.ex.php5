@@ -152,10 +152,12 @@ class CSl_eventEx extends CSl_event
     {
       $addFallenNotes = get_fallenoff_notes($pnItemPk);
       ChromePhp::log($addFallenNotes);
-      foreach ($addFallenNotes as $key => $value) {
+      foreach ($addFallenNotes as $key => $value)
+      {
         //array_push($asNotes,$value['comment']);
       }
     }
+    ChromePhp::log($psNoteType);
 ChromePhp::log($asNotes);
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
