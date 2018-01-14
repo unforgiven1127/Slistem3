@@ -1825,19 +1825,6 @@ var_dump($query);*/
     return $result;
   }
 
-  function get_fallenoff_notes($candidate_id)
-  {
-    $oDB = CDependency::getComponentByName('database');
-
-    $sQuery = "SELECT * FROM sl_position_link slp WHERE slp.candidatefk = '".$candidate_id."' AND slp.status = '200' AND slp.comment <> ''";
-
-    $db_result = $oDB->executeQuery($sQuery);
-
-    $result = $db_result->getAll();
-
-    return $result;
-  }
-
   function get_candidate_in_play($user_id, $start_date)
   {
     $oDB = CDependency::getComponentByName('database');
