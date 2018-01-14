@@ -144,17 +144,17 @@ class CSl_eventEx extends CSl_event
         $addNotes = $this->getNotes($pnItemPk, $psItemType, $value, $pasExcludeType);
         if(isset($addNotes) && !empty($addNotes))
         {
-          //array_push($asNotes,$addNotes[0]);
+          array_push($asNotes,$addNotes[0]);
         }
       }
     }
-    else
+    /*else
     {
       $addNotes = get_fallenoff_notes($pnItemPk);
       foreach ($addNotes as $key => $value) {
         array_push($asNotes,$value['comment']);
       }
-    }
+    }*/
 
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
