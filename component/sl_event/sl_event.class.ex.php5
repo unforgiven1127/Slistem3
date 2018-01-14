@@ -148,6 +148,13 @@ class CSl_eventEx extends CSl_event
         }
       }
     }
+    else
+    {
+      $addNotes = get_fallenoff_notes($pnItemPk);
+      foreach ($addNotes as $key => $value) {
+        array_push($asNotes,$value['comment']);
+      }
+    }
 
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
