@@ -148,13 +148,33 @@ class CSl_eventEx extends CSl_event
         }
       }
     }
-    else
+    else if($psNoteType == '')
     {
       $addFallenNotes = get_fallenoff_notes($pnItemPk);
       ChromePhp::log($addFallenNotes);
       foreach ($addFallenNotes as $key => $value)
       {
-        //array_push($asNotes,$value['comment']);
+        $addArray['companyName'] = '';
+        $addArray['content'] = $value['comment'];
+        $addArray['cp_action'] = 'ppav';
+        $addArray['cp_params'] = '';
+        $addArray['cp_pk'] = $pnItemPk;
+        $addArray['cp_type'] = 'candi';
+        $addArray['cp_uid'] = '555-001';
+        $addArray['created_by'] = $value['created_by'];
+        $addArray['custom_type'] = '1';
+        $addArray['date_create'] = $value['date_created'];
+        $addArray['date_display'] = $value['date_created'];
+        $addArray['date_update'] = '';
+        $addArray['event_linkpk'] = '';
+        $addArray['eventfk'] = '';
+        $addArray['eventpk'] = '';
+        $addArray['flag'] = 'a';
+        $addArray['title'] = '';
+        $addArray['type'] = '';
+        $addArray['updated_by'] = '';
+        $addArray['_fts'] = $value['comment'];
+        array_push($asNotes,$addArray);
       }
     }
     ChromePhp::log($psNoteType);
