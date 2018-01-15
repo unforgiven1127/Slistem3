@@ -8591,7 +8591,7 @@ die();*/
           }
         }
 
-        $testHTML = htmlentities($asData['lastname'],ENT_NOQUOTES);
+        $testHTML = htmlspecialchars_decode(getValue('lastname'), ENT_QUOTES);
 
         ChromePhp::log($testHTML);
 
