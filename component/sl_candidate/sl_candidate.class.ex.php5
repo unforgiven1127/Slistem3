@@ -8574,7 +8574,7 @@ die();*/
           return array('popupError' => 'Could not find the candidate you\'re trying to update. It may have been deleted.');
 
 
-        if(!$this->_oLogin->isAdmin() && $asData['firstname'] != getValue('firstname'))
+        if(!$this->_oLogin->isAdmin() && $asData['firstname'] != htmlspecialchars_decode(getValue('firstname'), ENT_QUOTES))
           return array('popupError' => 'Normal user cannot change candidate name');
 
         if(!$this->_oLogin->isAdmin() && $asData['keyword'] != '')
@@ -8591,11 +8591,7 @@ die();*/
           }
         }
 
-        $testHTML = htmlspecialchars_decode(getValue('lastname'), ENT_QUOTES);
-
-        ChromePhp::log($testHTML);
-
-        if(!$this->_oLogin->isAdmin() && $asData['lastname'] != getValue('lastname'))
+        if(!$this->_oLogin->isAdmin() && $asData['lastname'] != htmlspecialchars_decode(getValue('lastname'), ENT_QUOTES))
           return array('popupError' => 'Normal user cannot change candidate name');
 
         //Date created is use and overwritten everywhere... so we're using an alias
