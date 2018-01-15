@@ -8591,7 +8591,7 @@ die();*/
           }
         }
 
-        ChromePhp::log($asData['lastname']);
+        ChromePhp::log(htmlspecialchars_decode($asData['lastname']));
 
         if(!$this->_oLogin->isAdmin() && $asData['lastname'] != getValue('lastname'))
           return array('popupError' => 'Normal user cannot change candidate name');
