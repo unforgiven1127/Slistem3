@@ -4308,6 +4308,7 @@ function get_fallenoff_notes($candidate_id)
     {
         //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
         //$slistemMongo = $mongo->selectDB('slistem');
+
 $mongo = new MongoClient("mongodb://127.0.0.1", array("username" => $username, "password" => $password,'db' => 'slistem'));
         /*$mongo = new MongoClient('mongodb://localhost', array(
             'username' => $username,
@@ -6043,4 +6044,3 @@ function currency_html_code($currency)
   }
   return $currency_code;
 }
-
