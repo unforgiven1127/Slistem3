@@ -1856,10 +1856,11 @@ class CLoginEx extends CLogin
 
           /* @var $oForm CFormEx */
           $oForm = $oHTML->initForm('loginFormData');
+
           $oForm->setFormParams('', true, array('submitLabel' => $this->casText['LOGIN_SIGNIN'], 'action' => $sURL));
 
 
-          $oForm->setFormDisplayParams(array('noCancelButton' => 1, 'columns' => 1));
+         $oForm->setFormDisplayParams(array('noCancelButton' => 1, 'columns' => 1));
 
           //$oForm->addField('input', 'login', array('label'=>$this->casText['LOGIN_LOGIN'], 'class' => 'loginWideField'));
           //$oForm->addField('input', 'password', array('label'=>$this->casText['LOGIN_PASSWORD'], 'type'=> 'password', 'class' => 'loginWideField'));
@@ -1870,6 +1871,7 @@ class CLoginEx extends CLogin
             $oForm->addField('input', 'redirect', array('type'=> 'hidden', 'value' => CONST_CRM_DOMAIN.$_SERVER['REQUEST_URI']));
 
           $sHTML.= $oForm->getDisplay().$oHTML->getBloc('missingPwdLink', $sLink);
+          // echo "<pre>".print_r($sHTML, true);die;
 
         $sHTML.= $oHTML->getBlocEnd();
 
@@ -2145,7 +2147,8 @@ class CLoginEx extends CLogin
 
     $_SESSION['userRight'] = array();
 
-    $oSetting->loadUserPreferences($_SESSION['userData']['pk']);
+
+   $oSetting->loadUserPreferences($_SESSION['userData']['pk']);
 
     $oRight = CDependency::getComponentByName('right');
     $oRight->loadUserRights($_SESSION['userData']['pk']);
@@ -2160,6 +2163,7 @@ class CLoginEx extends CLogin
     //redirections
 
     $sRedirectUrl = getValue('redirect');
+    
 
     if(!empty($sRedirectUrl))
     {
@@ -3356,24 +3360,18 @@ class CLoginEx extends CLogin
     $oPage->addCssFile(array($this->getResourcePath().'css/login.form.css'));
     $nGroupFk = (int)getValue('login_groupfk', CONST_LOGIN_DEFAULT_LIST_GRP);
 
-
     $oRight = CDependency::getComponentByName('right');
     if($oRight->canAccess($this->csUid, CONST_ACTION_MANAGE, CONST_LOGIN_TYPE_USER))
       $bAdmin = true;
     else
       $bAdmin = false;
 
-//ChromePhp::log($nGroupFk);
+
     if($nGroupFk >= 0 && $nGroupFk < 999)
     {
       $aUserList = $this->getUserByTeam($nGroupFk);
       if($nGroupFk == 0)
         $sTitle = 'Users with no group';
-      elseif($nGroupFk == 116)
-      {
-        $sTitle = 'Active Users';
-        $aUserList = getStatusActiveUsers();
-      }
       else
       {
         $aUserGroups = $this->_getModel()->getUserGroup(0, true, true);
@@ -3383,9 +3381,7 @@ class CLoginEx extends CLogin
     else
     {
       $sTitle = 'All Users';
-      $aUserList = getStatusActiveUsers();
-      //ChromePhp::log($aUserList);
-      //$aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
+      $aUserList = $this->getUserList(0, false, true, 'l.status DESC, l.firstname, l.lastname');
     }
 
     //Full list container
@@ -3419,7 +3415,7 @@ class CLoginEx extends CLogin
       foreach($aUserGroups as $aGroup)
         $aActions[] = array('label' => $aGroup['title'], 'url' => $sURL.'&login_groupfk='.$aGroup['login_grouppk']);
 
-      //$aActions[] = array('label' => 'No Group',  'url' => $sURL.'&login_groupfk=0');
+      $aActions[] = array('label' => 'No Group',  'url' => $sURL.'&login_groupfk=0');
     }
     else
     {
@@ -3428,7 +3424,7 @@ class CLoginEx extends CLogin
       foreach($aUserGroups as $aGroup)
         $aActions[] = array('label' => $aGroup['title'], 'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk='.$aGroup['login_grouppk'].'\', \'body\', false, \'area_users\'); ');
 
-      //$aActions[] = array('label' => 'No Group',  'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk=0\', \'body\', false, \'area_users\')' );
+      $aActions[] = array('label' => 'No Group',  'url' => 'javascript:;', 'onclick' => 'AjaxRequest(\''.$sURL.'&login_groupfk=0\', \'body\', false, \'area_users\')' );
     }
 
     $sHTML.= $oHTML->getActionButtons($aActions, 1, $sTitle, array('width' => 225, 'id' => 'displayUsers'));
@@ -3437,13 +3433,9 @@ class CLoginEx extends CLogin
     //create list rows
     $aData = array();
     $nInactive = 0;
-    if(!$bAdmin)
-    {
-      $aUserList = array_filter($aUserList,function($val){return $val['phone_ext'] > 0;});
-    }
     foreach($aUserList as $aUser)
     {
-      if($nGroupFk == 999 || $aUser['contact_flag'] == 'a')
+      if($aUser['contact_flag'] == 'a')
       {
         $aRow = array();
 
@@ -3513,7 +3505,7 @@ class CLoginEx extends CLogin
 
         $aData[] = $aRow;
       }
-
+      
    }
 
 

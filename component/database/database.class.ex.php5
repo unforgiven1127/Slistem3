@@ -67,6 +67,7 @@ class CDatabaseEx extends CDatabase
 
   function ExecuteQuery($psQuery)
   {
+
     if(CONST_CRM_DOMAIN != 'https://beta2.slate.co.jp' && CONST_CRM_DOMAIN != 'https://slistem.slate.co.jp')
     {
       exit();

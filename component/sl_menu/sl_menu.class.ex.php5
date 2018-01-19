@@ -449,8 +449,8 @@ class CSl_menuEx extends CSl_menu
 
     //Inline => always displayed, need to be compacted
     if($pbInline)
-    {//quickSearchContainerCp height changes here
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:180px !important;','class' => 'qs_inline hidden'));
+    {
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px;','class' => 'qs_inline hidden'));
       $sLabelClass = ' hidden';
 
       $sFieldJs = ' onfocus="if($(this).val() == $(this).attr(\'data-default\')){ $(this).val(\'\'); $(this).removeClass(\'defaultText\'); }"
@@ -464,41 +464,14 @@ class CSl_menuEx extends CSl_menu
     }
     else
     {
-      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px;','class' => 'hidden heightRise', 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
+      $sHTML = $this->_oDisplay->getBlocStart('quickSearchContainerCp', array('style' => 'height:150px;','class' => 'hidden', 'data-height' => 160, 'data-width' => 340, 'data-persistent' => 1, 'data-position' => '[15,85]', 'data-class' => 'noTitle','data-title' => 'Quick search...', 'data-draggable' => 0, 'data-resizable' => 0));
       $sLabelClass = $sNameField = $sIndustryField = $sContactField = $sOwnerField = $sLabelClass = '';
     }
 
     $sHTML.= '<form id="quickSearchFormCp" class="quickSearchForm" onsubmit="$(\'#alt_submit\', this).click(); return false;">';
     $sHTML.= '<input type="hidden" name="data_type" value="comp"/>';
 
-    $activeUsers = getStatusActiveUsers();
-    $creatorUsers = getCreators();
-    $eliminateArray = array('442','477','241','300','515','240','407','448','406','518','309','478','482','530','517','215','2','498','315','529','274','199');
-    //<option value="101_0">Administrator </option>
-    $options = "<option value=''>Owner</option>";
-    $optionsCreator = "<option value=''>Creator</option>";
 
-    foreach ($activeUsers as $key => $value)
-    {
-      $username = $value['firstname'].' '.$value['lastname'];
-      $userID = $value['loginpk'];
-      if(!in_array($userID,$eliminateArray))
-      {
-        $options .= "<option value='".$userID."'>".$username."</option>";
-      }
-    }
-
-    foreach ($creatorUsers as $key => $value)
-    {
-      $username = $value['firstname'].' '.$value['lastname'];
-      $userID = $value['loginpk'];
-      if(!in_array($userID,$eliminateArray))
-      {
-        $optionsCreator .= "<option value='".$userID."'>".$username."</option>";
-      }
-    }
-
-//<input type="text" name="owner"'.$sOwnerField.' /></div>
     $sHTML.= '<div><div class="label '.$sLabelClass.'">company</div><div class="field">
       <input type="text" name="company" class="defaultText" '.$sNameField.'/>
       </div></div>
@@ -511,17 +484,8 @@ class CSl_menuEx extends CSl_menu
       <div><div class="label '.$sLabelClass.'">contact</div><div class="field">
       <input type="text" name="contact" '.$sContactField.'/></div></div>
 
-      <div><div class="label '.$sLabelClass.'">owner</div><div class="field">
-        <select style="background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="owner" label="Owner" inajax="" id="owner" >
-           '.$options.'
-        </select>
-      </div></div>
-
-      <div><div class="label '.$sLabelClass.'">creator</div><div class="field">
-        <select style="margin-bottom:7px; background-color: #f0f0f0; border-color: #f0f0f0; border-bottom: 1px solid #ccc; color:#2a5389; font-size:12px; height:21px; font-weight: bold;" name="creator" label="Creator" inajax="" id="creator" >
-           '.$optionsCreator.'
-        </select>
-      </div></div>
+      <div><div class="label '.$sLabelClass.'">creator/owner</div><div class="field">
+      <input type="text" name="owner"'.$sOwnerField.' /></div></div>
 
     <div><br />
     <a class="floatLeft" href="javascript:;" onclick="$(this).closest(\'form\').find(\'input:visible\').val(\'\').blur();">&nbsp;<img src="/component/form/resources/pictures/tree_clear.png" title="Clear quick search form" onclick="tp(this);"/>&nbsp;</a>';
@@ -545,6 +509,8 @@ class CSl_menuEx extends CSl_menu
   {
     $oPage = CDependency::getComponentByName('page');
     $sURL = $oPage->getAjaxUrl('sl_position', CONST_ACTION_SEARCH, CONST_POSITION_TYPE_JD, 0, array('qs' => 1));
+
+
     //Inline => always displayed, need to be compacted
     if($pbInline)
     {

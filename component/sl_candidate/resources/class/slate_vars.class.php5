@@ -161,21 +161,6 @@ class CSlateVars
     return $asOccupation;
   }
 
-  public function getLocations()
-  {
-    if(isset($_SESSION['locationList']))
-      return $_SESSION['locationList'];
-
-    $oDb = CDependency::getComponentByName('database');
-    $sQuery = 'SELECT * FROM sl_location WHERE flag = "a" ORDER BY location';
-    $oDbResult = $oDb->executeQuery($sQuery);
-
-    $result = $oDbResult->getAll();
-    $_SESSION['locationList'] = $result;
-
-    return $result;
-  }
-
   public function getLocationList()
   {
     if(isset($_SESSION['sl_location_list']))
@@ -196,48 +181,18 @@ class CSlateVars
     $_SESSION['sl_location_list'] = $asLocation;
     return $asLocation;
   }
-
-  public function sort_by_id($a, $b)
-  {
-    return $a['sl_locationpk'] - $b['sl_locationpk'];
-  }
-
   public function getLocationOption($psValue = '')
   {
     $asList = $this->getLocationList();
-    $asList2 = $this->getLocations();
-
-    $parentLocations = array_filter($asList2,function($val){return $val['parentfk'] == 0;});
-    uasort($parentLocations, sort_multi_array_by_value('sl_locationpk'));
-    $childLocations = array_filter($asList2,function($val){return $val['parentfk'] > 0;});
 
     $sOption = '<option value=""> - </option>';
-    foreach ($parentLocations as $key1 => $value1)
-    {
-      $parent_id = $value1['sl_locationpk'];
-      $parent_title = $value1['location'];
-      $sOption .= '<option style="font-weight: bold;color:black;" disabled value="">'.$parent_title.'</option>';
-      foreach ($childLocations as $key2 => $value2)
-      {
-        if($value2['parentfk'] == $parent_id)
-        {
-          $child_id = $value2['sl_locationpk'];
-          $child_title = $value2['location'];
-
-          if($child_id == $psValue)
-            $sOption.= '<option value="'.$child_id.'" selected="selected">'.$child_title.'</option>';
-          else
-            $sOption.= '<option value="'.$child_id.'">'.$child_title.'</option>';
-        }
-      }
-    }
-    /*foreach($asList as $sValue => $sLabel)
+    foreach($asList as $sValue => $sLabel)
     {
       if($sValue == $psValue)
         $sOption.= '<option value="'.$sValue.'" selected="selected">'.$sLabel.'</option>';
       else
         $sOption.= '<option value="'.$sValue.'">'.$sLabel.'</option>';
-    }*/
+    }
 
     return $sOption;
   }

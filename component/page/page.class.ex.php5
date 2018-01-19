@@ -33,8 +33,10 @@ class CPageEx extends CPage
         $_SESSION['debug'] = $_GET['debug'];
     }
 
-    if($_SERVER['SERVER_PORT'] === '80')
+    if($_SERVER['SERVER_PORT'] === '80'){
+      echo "string";die;
       $this->csRequestedUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    }
     else
       $this->csRequestedUrl = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
@@ -282,7 +284,7 @@ class CPageEx extends CPage
     if($bIsLogged && $this->casUrlDetail['scheme'] !== 'https')
     {
       @header('location:https://'.$this->casUrlDetail['host'].$this->casUrlDetail['path'].'?'.$this->casUrlDetail['query']);
-      echo '<script>document.location.href = "https://'.$this->casUrlDetail['host'].$this->casUrlDetail['path'].'?'.$this->casUrlDetail['query'].'"; </script>';
+      // echo '<script>document.location.href = "https://'.$this->casUrlDetail['host'].$this->casUrlDetail['path'].'?'.$this->casUrlDetail['query'].'"; </script>';
       echo 'Being redirected to safer place. Click <a href=""/>here</a> if nothing happens in the next 5 seconds.';
       exit();
     }
@@ -666,6 +668,8 @@ class CPageEx extends CPage
 
     if($this->cbTestMode)
       $this->casUrl['ajax'][$sURL] = $sURL;
+
+  
 
     return $sURL;
   }

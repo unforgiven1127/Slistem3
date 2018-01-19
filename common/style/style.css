@@ -89,6 +89,18 @@ a
   color: #2A6991;
 }
 
+.lastnameClassShyam
+{
+  text-decoration:none;
+  color: #111111;
+}
+
+.lastnameClassShyam:hover
+{
+  text-decoration:none;
+  color: #04f504;
+}
+
 a:hover
 {
   text-decoration:none;

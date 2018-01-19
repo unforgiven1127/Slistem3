@@ -1,4 +1,6 @@
 #Symbolic link folders
 /tmp
 common/upload
+component/database/database.class.ex.php5
 /.htaccess
+/sqlTrack.txt

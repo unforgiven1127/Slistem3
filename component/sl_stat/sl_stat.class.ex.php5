@@ -4064,7 +4064,8 @@ class CSl_statEx extends CSl_stat
 
     private function get_revenue_chart($year = '',$chartName = '')
     {
-
+      //echo 'test'; // mca MCA
+      //exit;
       $revenueChartLoop = get_revenue_chart_loop();
       $nextloop = 0;
       if(isset($_GET['nextloop']))
@@ -4323,9 +4324,8 @@ class CSl_statEx extends CSl_stat
           $inplay_new_position_ip = rtrim($inplay_new_position_ip,';');
         }
         else
-        {//consultant and researcher revenue board consultant_revenue_chart
+        {
           $revenue_data = $this->_getModel()->get_revenue_data($year);
-          ChromePhp::log($revenue_data);
         }
 
 
@@ -4586,15 +4586,15 @@ class CSl_statEx extends CSl_stat
         $i ++;
 
       }*/
-//$localip = getenv('REMOTE_ADDR');
-//ChromePhp::log($_SERVER ['HTTP_USER_AGENT']);
+$localip = getenv('REMOTE_ADDR');
+ChromePhp::log($_SERVER ['HTTP_USER_AGENT']);
 
       //$test = json_encode($test);
 
       $data['test'] = $test;
 
-      $html = $this->_oDisplay->render('archive_main_page',$data);
-      //$html = $this->_oDisplay->render('position_archive_angular',$data);
+      //$html = $this->_oDisplay->render('archive_main_page',$data);
+      $html = $this->_oDisplay->render('position_archive_angular',$data);
 
       return $html;
     }
@@ -6178,16 +6178,6 @@ class CSl_statEx extends CSl_stat
         $data['researcherCandidates'] = $researcherCandidates;
         $data['researcherStatData'] = $researcherStatData;
 //ChromePhp::log($allCandidates);
-        $exportFlag = 'false';
-        $exportUserArray = array('101','343','494','480');
-        $oLogin = CDependency::getCpLogin();
-        $login_id = $oLogin->getUserPk();
-        if(in_array($login_id,$exportUserArray))
-        {
-          $exportFlag = 'true';
-        }
-        ChromePhp::log($exportFlag);
-        $data['exportFlag'] = $exportFlag;
         $html = $this->_oDisplay->render('totals_chart_ordered_new', $data);
       }
 

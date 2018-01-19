@@ -148,6 +148,7 @@ class CSl_eventEx extends CSl_event
         }
       }
     }
+
     else if($psNoteType == '')
     {
       $addFallenNotes = get_fallenoff_notes($pnItemPk);
@@ -178,8 +179,9 @@ class CSl_eventEx extends CSl_event
       }
     }
     ChromePhp::log($psNoteType);
-ChromePhp::log($asNotes);
+    ChromePhp::log($asNotes);
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+
 
     foreach ($asNotes as $key => $note)
     {
@@ -437,7 +439,7 @@ ChromePhp::log($asNotes);
     }
 //ChromePhp::log($asNotes);
     //uasort($asNotes, sort_multi_array_by_value('date_display', 'reverse'));
-    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+    uasort($asNotes, sort_multi_array_by_value('eventpk', 'reverse'));
 
     if(empty($asNotes))
     {
@@ -461,6 +463,7 @@ ChromePhp::log($asNotes);
       //$str = 'In My Cart : 11 12 items';
       //preg_match_all('!\d+!', $str, $matches);
 
+      // array gelmezse patliyo... duzelt... MCA
       foreach($asNotes as $asNote)
       {
         if (strpos($asNote['content'], 'for position #') !== false) {
@@ -1074,12 +1077,12 @@ ChromePhp::log($asNotes);
       $sQuery.= ' AND even.cp_type NOT IN ("'.implode('","', $pasExcludeType).'") ';
 
 
-    $sQuery.= ' GROUP BY elin.cp_uid, elin.cp_action, elin.cp_pk'; el.event_linkpk*/
+    $sQuery.= ' GROUP BY elin.cp_uid, elin.cp_action, elin.cp_pk';*/
     //dump($sQuery);
     $sQuery = "SELECT el.cp_pk,el.cp_type, e.* FROM event_link el
               INNER JOIN event e on e.eventpk = el.eventfk
               WHERE el.cp_pk = '".$panItem."' AND (e.type = 'character' OR e.type = 'note')
-              ORDER BY e.date_display DESC";
+              ORDER BY el.event_linkpk DESC";
 
     return $this->_getModel()->executeQuery($sQuery);
   }
@@ -1156,7 +1159,7 @@ ChromePhp::log($asNotes);
       $note = $userName." edited note #".$this->cnPk;
     }
 
-    insertLog($user_id, $candidate_id, $note);
+    //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note) && !empty($candidate_id))
     {
       insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
@@ -1400,8 +1403,8 @@ ChromePhp::log($asNotes);
                 else
                 {
                   insertNote($array);
-//ChromePhp::log('HERE 2');
-//ChromePhp::log($array);
+ChromePhp::log('HERE 2');
+ChromePhp::log($array);
                 }
                 /*if(isset($_GET['editCharacterNote']) || $EditTheNotes != false || $EditTheNotes != 'false')
                 {

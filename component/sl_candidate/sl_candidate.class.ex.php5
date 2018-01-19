@@ -5,6 +5,7 @@ require_once('component/sl_candidate/sl_candidate.model.php5');
 require_once('component/sl_candidate/sl_candidate.model.ex.php5');
 require_once('component/sl_candidate/resources/class/slate_vars.class.php5');
 require_once('common/lib/querybuilder.class.php5');
+require_once('common/lib/PHPExcel/Classes/PHPExcel.php');
 
 
 class CSl_candidateEx extends CSl_candidate
@@ -180,7 +181,6 @@ class CSl_candidateEx extends CSl_candidate
     }
 
 
-
     switch($this->csType)
     {
       case CANDIDATE_MAIL_SEND:
@@ -347,10 +347,6 @@ class CSl_candidateEx extends CSl_candidate
               return json_encode(array('alert' => $sError));
 
             $asHTML = $this->_getCompanyList($oQB);
-            if(!empty($asHTML['error']))
-            {
-              return json_encode(array('alert' => $asHTML['error']));
-            }
 
             return json_encode($oPage->getAjaxExtraContent(array('data' => convertToUtf8($asHTML['data']),
                 'action' => 'goPopup.removeActive(\'layer\'); initHeaderManager(); ')));
@@ -540,9 +536,9 @@ class CSl_candidateEx extends CSl_candidate
       $desctiption = '';
       $cp_type = "comp";
 
-      insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      //insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
       insertMongoLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);
-      insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      //insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
       insertMongoLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);
 
       $html = "Company deleted / merged succesfully...";
@@ -623,6 +619,11 @@ class CSl_candidateEx extends CSl_candidate
             return $this->_displayCandidateList();
             break;
 
+
+          case CONST_ACTION_EXPORT_CSV:
+            return $this->_export_candidates($this->cnPk);
+            break;
+
           case CONST_ACTION_ADD:
           case CONST_ACTION_EDIT:
             return $this->_getCandidateAddForm($this->cnPk);
@@ -690,6 +691,67 @@ class CSl_candidateEx extends CSl_candidate
           break;
     }
   }
+
+  public function _export_candidates()
+  {
+
+    $oLogin = CDependency::getComponentByName('login');
+    if(isset($_POST['registration']) &&  $_POST['registration'] == 'success') {
+
+        $oDB        = CDependency::getComponentByName('database');
+        $expQuery   = strstr($_POST['req_query'], " LIMIT", true);
+        
+        $oDbResult  = $oDB->ExecuteQuery($expQuery);
+        $results    = $oDbResult->getAll();
+        
+        $objPHPExcel= new PHPExcel();
+        $objPHPExcel->setActiveSheetIndex(0);
+
+        $objPHPExcel->getActiveSheet()->setTitle('Candidate List');
+
+        $objPHPExcel->getActiveSheet()
+            ->setCellValue('A1', 'Primary Id')
+            ->setCellValue('B1', 'Last Name')
+            ->setCellValue('C1', 'First Name');
+
+        $rowCount = 2;
+        foreach ($results as $key => $value){
+            if ($value['_sys_status'] > 0) {
+                $objPHPExcel->getActiveSheet()->getStyle($rowCount)->getFont()->getColor()->setARGB('FF0000');
+                // $objPHPExcel->getActiveSheet()->getStyle('B'.$rowCount)->getFont()->getColor()->setARGB('FF0000');
+                // $objPHPExcel->getActiveSheet()->getStyle('C'.$rowCount)->getFont()->getColor()->setARGB('FF0000');
+
+                $objPHPExcel->getActiveSheet()
+                    ->SetCellValue('A'.$rowCount, $value['sl_candidatepk'])
+                    ->SetCellValue('B'.$rowCount, $value['lastname'])
+                    ->SetCellValue('C'.$rowCount, $value['firstname']);
+            } else {
+                $objPHPExcel->getActiveSheet()
+                    ->SetCellValue('A'.$rowCount, $value['sl_candidatepk'])
+                    ->SetCellValue('B'.$rowCount, $value['lastname'])
+                    ->SetCellValue('C'.$rowCount, $value['firstname']);
+            }
+                $rowCount++;
+
+        }
+
+         function saveExcelFile($objWriter){
+            $filePath = 'common/upload/excel_file/Candidate List.xlsx';
+            $objWriter->save($filePath);
+            return $filePath;
+        }
+
+        $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+        $response = array(
+            'success' => true,
+            'url' => saveExcelFile($objWriter)
+        );
+        echo json_encode($response);
+        exit();
+
+    }
+  }
+
 
 
   //==> cron interface 1 fct
@@ -951,7 +1013,7 @@ class CSl_candidateEx extends CSl_candidate
           }
 
           $asDesc[3] = 'Created on the '.$asData['date_added'].' by '.$oLogin->getUserLink((int)$asData['created_by']);
-          $asItem[$nPk]['description'] = implode(' / ', $asDesc);
+          $asItem[$nPk]['description'] = implode('<br />', $asDesc);
         }
 
         break;
@@ -1188,10 +1250,8 @@ class CSl_candidateEx extends CSl_candidate
           $candidate_name = $candidate_information['firstname']." ".$candidate_information['lastname'];
           $company_name = $company_information['name'];
 
-          $phone_extension = $user_information['phone_ext'];
-
           $subject = "Contact Information Access";
-          $message = $user_name." (#".$user_id.") (phone ext: ".$phone_extension.") has accessed the contact information of ".$candidate_name." (#".$candidate_id."), who works at ".$company_name." (#".$company_id.") Date: ".$sDate;
+          $message = $user_name." (#".$user_id.") has accessed the contact information of ".$candidate_name." (#".$candidate_id."), who works at ".$company_name." (#".$company_id.") Date: ".$sDate;
 
 
           $oMail = CDependency::getComponentByName('mail');
@@ -1240,14 +1300,14 @@ class CSl_candidateEx extends CSl_candidate
       {
         $text = "Candidate viewed";
       }
-      insertLog($user_id, $candidate_id, $text, "user_history");
+      //insertLog($user_id, $candidate_id, $text, "user_history");
       insertMongoLog($user_id, $candidate_id, $text, "user_history");
     }
 
     private function _getCandidateView($pnPk, $pasRedirected = array())
     {
       //$searchID = $_GET['searchId'];
-//ChromePhp::log($pnPk);
+// ChromePhp::log($pnPk);
       if(isset($_GET['searchId']))
       {
         $searchID = $_GET['searchId'];
@@ -1490,7 +1550,6 @@ class CSl_candidateEx extends CSl_candidate
         $asContact['nb_result'] = '<span class="tab_number tab_level_1">'.$asContact['nb_result'].'</span>';
 
       $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
-
       if(empty($asNotes['nb_result']))
       {
         //$sNoteSelected = '';
@@ -1583,7 +1642,7 @@ class CSl_candidateEx extends CSl_candidate
         }
 
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTabsContent'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
+          // $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
           $sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
           $sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
           $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
@@ -1654,7 +1713,6 @@ class CSl_candidateEx extends CSl_candidate
       }
 
       $asNotes = $oNotes->displayNotes($pasCandidateData['sl_candidatepk'], CONST_CANDIDATE_TYPE_CANDI, '', array('character', 'cp_history', 'cp_hidden'), true, 'note');
-
       if(empty($asNotes['nb_result']))
       {
         $sNoteSelected = '';
@@ -3174,6 +3232,7 @@ class CSl_candidateEx extends CSl_candidate
         }
       }
 
+
       //-----------------------------------------------------------------------------
       //-----------------------------------------------------------------------------
 
@@ -3230,11 +3289,15 @@ class CSl_candidateEx extends CSl_candidate
       else*/
         $poQB->addOrder('scan.firstname DESC');
 
-
+    if(getValue('pipe_filter')) {
+      /*No Grouping here*/
+    }
+    else {
       if(empty($sGroupBy))
         $poQB->addGroup('scan.sl_candidatepk', false);
       else
         $poQB->addGroup($sGroupBy, false);
+    }
 
 
       $sMessage = $poQB->getTitle();
@@ -3270,8 +3333,12 @@ class CSl_candidateEx extends CSl_candidate
 
       if(!$bRead || $nResult == 0)
       {
-        $sDebug = '<a href="javascript:;" onclick="$(this).parent().find(\'.query\').toggle(); ">query... </a>
-          <span class="hidden query"><br />'.$sQuery.'</span><br /><br /><br />';
+        if($oLogin->getUserPk() == 367 || isDevelopment() )
+        {
+            $sDebug = '<a href="javascript:;" onclick="$(this).parent().find(\'.query\').toggle(); ">query... </a> <span class="hidden query"><br />'.$sQuery.'</span><br /><br /><br />';
+        }
+        else
+            $sDebug = '';
         return $this->_oDisplay->getBlocMessage('No candidate found for: '.implode(', ', $asListMsg)).$sDebug;
       }
 
@@ -3441,17 +3508,17 @@ class CSl_candidateEx extends CSl_candidate
         $searchTitle = $searchTitle[0];
         if($searchTitle == "QuickSearch")
         {
-          insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
           insertMongoLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
         }
         else if($searchTitle == "CpxSearch")
         {
-          insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
           insertMongoLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
         }
         else // mainpage search links...
         {
-          insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
+          //insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
           insertMongoLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
         }
       }
@@ -3475,6 +3542,16 @@ ChromePhp::log($sQuery);
       $theQuery = $sQuery;
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
+
+
+
+      //    $shyam = $poQB;
+
+      // $queryForExcel = $shyam->getSql();
+      $_SESSION['candidate_excel_data'] = $sQuery;
+      // setcookie('candidate_excel_data_cookie', $sQuery);
+
+
 
       if(!$bRead || !isset($nResult))
       {
@@ -3514,6 +3591,7 @@ ChromePhp::log($sQuery);
         $all = $oDbResult->getAll();
         $nResult = count($all);
       }
+
 //ChromePhp::log($sQuery);
       $oDbResult = $oDb->ExecuteQuery($sQuery);
       $bRead = $oDbResult->readFirst();
@@ -3557,7 +3635,6 @@ ChromePhp::log($sQuery);
 
         $bRead = $oDbResult->readNext();
       }
-
       //Template related -- #1
       //params for the sub-templates when required
       switch($sTemplate)
@@ -3720,8 +3797,13 @@ ChromePhp::log($sQuery);
           break;
       }
 
-      $oConf->addBlocMessage('<span class="search_result_title_nb">'.$nResult.' result(s)</span> '.implode(', ', $asListMsg), array(), 'title');
 
+      $excelLinkIcon = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array());
+      if($this->_oLogin->isAdmin() && $nResult > 0){
+            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('class'=>'access','style' => 'float:right'), 'title');
+      }
+      $oConf->addBlocMessage('<span class="search_result_title_nb">'.$nResult.' result(s)</span> '.implode(', ', $asListMsg), array(), 'title');
+      $sHTML = '';
       //$sURL = $this->_oPage->getAjaxUrl('sl_candidate', CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_CANDI, 0, array('searchId' => $this->csSearchId, '__filtered' => 1));
       $sURL = $this->_oPage->getAjaxUrl('sl_candidate', $this->csAction, CONST_CANDIDATE_TYPE_CANDI, 0, array('searchId' => $this->csSearchId, '__filtered' => 1, 'data_type' => CONST_CANDIDATE_TYPE_CANDI, 'replay_search' => $nHistoryPk));
       $oConf->setPagerTop(true, 'right', $nResult, $sURL.'&list=1', array('ajaxTarget' => '#'.$this->csSearchId));
@@ -3730,7 +3812,12 @@ ChromePhp::log($sQuery);
       //===========================================
       //===========================================
       //start building the HTML
-      $sHTML = '';
+
+
+    
+      // echo "<pre>".var_dump($sQuery, true)."</pre>";
+
+
 
       /* debug
        *
@@ -3738,6 +3825,16 @@ ChromePhp::log($sQuery);
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer')).' new list';
       else
         $sHTML.= 'replay a search, pager offset '.$nPagerOffset.', container/search ID '.$this->csSearchId;*/
+
+    $url =  $this->_oPage->getUrl('sl_candidate',  CONST_ACTION_EXPORT_CSV, CONST_CANDIDATE_TYPE_CANDI, $this->cnPk);
+      // if($this->_oLogin->isAdmin()) {
+    // $sHTML .= '<button type="button" class="access">Export Candidate</button>';
+
+    // $sHTML = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array('class'=>'access'));
+        // }
+     /* $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'placement_export_button access'));
+      $sHTML.= $this->_oDisplay->getLink('Export Candidate');
+      $sHTML.= $this->_oDisplay->getBlocEnd();*/
 
       if(!$bFilteredList)
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer'));
@@ -3820,6 +3917,7 @@ ChromePhp::log($sQuery);
 
         $test_value = getValue('pipe_filter');
 
+        
         if(isset($test_value) && $test_value == "placed")
         {
           // when add new candidate foreach does not work...
@@ -3831,16 +3929,15 @@ ChromePhp::log($sQuery);
 
         //Add the list template to the html
         //ChromePhp::log($sSortField);
-        //ChromePhp::log($sSortOrder);
 
         $sHTML.= $oTemplate->getDisplay($asData, $sSortField, $sSortOrder, 'safdassda');
-
 
         //---------------------------------------------
         //manage javascript action
         $sURL = $this->_oPage->getAjaxUrl('sl_folder', CONST_ACTION_SAVEADD, CONST_FOLDER_TYPE_ITEM, 0);
         $sHTML.='<script> initDragAndDrop(\''.$sURL.'\'); </script>';
-
+        $sHTML .= '<div id="dvData" class="hidden"></div>';
+   
         if(count($asData) == 1)
         {
           $asData = current($asData);
@@ -3856,12 +3953,50 @@ ChromePhp::log($sQuery);
           //$sHTML.='<script> view_candi(\''.$sURL.'\'); </script>';
         }
 
+
+        /**
+         * removes all the whitspaces, new line and more
+         */
+        $reqQuery1 = str_replace('`', '' ,$sQuery);
+        $reqQuery4 = str_replace("'", "\'" ,$reqQuery1);
+        $reqQuery3 = preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $reqQuery4));;
+
         //DEBUG: Dropp the query at the end
         if($oLogin->getUserPk() == 367 || isDevelopment() )
         {
-          $sHTML.= '<a href="javascript:;" onclick="$(this).parent().find(\'.query\').toggle(); ">query... </a>
+          $sHTML.= '<a href="javascript:;" onclick="$(this).parent().find(\'.query\').toggle(); "> query... </a>
             <span class="hidden query"><br />'.$sQuery.'</span><br /><br /><br />';
         }
+       
+       /**
+        *   sessionStorage stores the current query
+        *   ajax for exporting the excel file
+        */
+        $sHTML .= '<script type="text/javascript">
+                        $(document).ready(function(){
+
+                            var stored_query = `'.$reqQuery3.'`;
+                            sessionStorage.setItem("req_query", stored_query);
+
+                          $(".access").click(function(e){
+                            $.ajax({
+                                url     :   "'.$url.'", 
+                                type    :   "post",
+                                dataType:   "json",
+                                data    :   {
+                                    "registration": "success", 
+                                    "req_query": $.trim(sessionStorage.getItem("req_query"))
+                                },
+                                success: function (data) {
+                                    document.location.href =(data.url);
+                                    // var downloadDiv = $(\'#dvData\').html(data);
+                                    // window.open(\'data:application/vnd.ms-excel,\' + downloadDiv.html(), "cand.xls");
+                                    e.preventDefault();
+                                },
+                             });
+                          });
+                        });
+                      </script>';
 
         $sHTML .= '<script>
           $(function(){
@@ -4747,17 +4882,7 @@ ChromePhp::log($sQuery);
       $nType = (int)$oDbMeeting->getFieldValue('type');
       $oForm->addField('select', 'meeting_type', array('label' => 'Meeting type'));
 
-      $meeting_date = $oDbMeeting->getFieldValue('date_meeting');
-      if(isset($meeting_date))
-      {//if there is a meeting date is will be selected
-        $default_date = $meeting_date;
-      }
-      else
-      {//else select the current date time
-        $default_date = date('Y-m-d H:i');
-      }
-
-      //$default_date = date('Y-m-d H:i');
+      $default_date = date('Y-m-d H:i');
       $oForm->addField('input', 'date_met', array('id'=>'meetingDate','type' => 'datetime', 'label'=> 'Meeting date',
         'value' => $default_date, 'minDate' => '-4 day', 'maxDate' => 'now'));
 
@@ -5267,7 +5392,7 @@ ChromePhp::log($sQuery);
 
         $note = "Meeting created by ".$user_info['firstname']. ' '.$user_info['lastname'];
 
-        $addLog1 = insertLog($user_id, $target_candidate_id, $note);
+        //$addLog = insertLog($user_id, $target_candidate_id, $note);
         $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
         //add log end----------------------
 
@@ -6703,19 +6828,11 @@ ChromePhp::log($array);
               return array('error' => 'Error: Editing a contact detail that doesn\'t exist anymore.');
 
             $asOldData = $asPrevious[$asData['sl_contactpk']];
-
             if($asOldData['value'] != $asData['value'])//find the updated one
             {
               if($asOldData['value'] == $workPhone)
               {
                 updateLastWorkPhone($asData['itemfk'],$asData['value']);
-              }
-            }
-            if($asOldData['sl_contactpk'] == $asData['sl_contactpk'])
-            {
-              if($asOldData['value'] == $asData['value'] && $asOldData['type'] != $asData['type'])
-              {
-                updateLastWorkPhone($asData['itemfk']);
               }
             }
 
@@ -6997,7 +7114,8 @@ ChromePhp::log($array);
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-
+ChromePhp::log('SAAM EMAIL :');
+ChromePhp::log($_POST);
       $email = trim($_POST['receipent_email']);
 
       //$message = nl2br($_POST['message']);
@@ -7232,8 +7350,6 @@ ChromePhp::log($array);
           foreach($asToKeep as $sField => $vValue)
             $oDbResult->setFieldValue($sField, $vValue);
 
-//$result = $oDbResult->getAll();
-
           $oDbResult->readFirst();
         }
       }
@@ -7312,16 +7428,6 @@ ChromePhp::log($array);
       $industry_tree = $oForm->getField('paged_tree', 'industrypk', array('text' => '-- Industry --',
         'label' => '', 'value' => $oDbResult->getFieldValue('industryfk'), 'style' => 'width: 165px; min-width: 145px;'));
       $industry_tree->addOption($this->_getTreeData('industry'));
-
-
-$resultA = $oDbResult->getAll();
-ChromePhp::log($resultA);
-
-      $location_tree = $oForm->getField('paged_tree', 'occupationpk', array('text' => '-- Location --',
-        'label' => '', 'value' => $oDbResult->getFieldValue('occupationfk'), 'style' => 'width: 165px; min-width: 145px;'));
-      $location_tree->addOption($this->_getTreeData('location'));
-
-
 
       $candidate_salary = formatNumber(round($oDbResult->getFieldValue('salary')), $this->casSettings['candi_salary_format']);
       $candidate_salary_bonus = formatNumber(round($oDbResult->getFieldValue('bonus')), $this->casSettings['candi_salary_format']);
@@ -7547,7 +7653,7 @@ ChromePhp::log($resultA);
         'department' => $oDbResult->getFieldValue('department'), 'company_token_url' => $company_token_url,
         'company' => $oDbResult->getFieldValue('companyfk'), 'occupation_tree' => $occupation_tree->getDisplay(),
         'industry_tree' => $industry_tree->getDisplay(), 'candidate_salary' => $candidate_salary,
-        'money_unit' => $this->casSettings['candi_salary_format'], 'currency_code' => $currency_code,'location_tree' => $location_tree->getDisplay(),
+        'money_unit' => $this->casSettings['candi_salary_format'], 'currency_code' => $currency_code,
         'currency_list' => $asCurrency, 'candidate_salary_bonus' => $candidate_salary_bonus, 'target_low' => $target_low,
         'target_high' => $target_high, 'candidate_id' => $pnCandidatePk, 'status_options' => $asStatus,
         'is_client' => $is_client, 'grade' => $this->getVars()->getCandidateGradeOption($oDbResult->getFieldValue('grade')),
@@ -7597,15 +7703,18 @@ ChromePhp::log($resultA);
 
       $untouchedCompanyNameCount = strlen($company_name);
 
-      /*if($nameCount == 1)
+      if($nameCount == 1)
       {
         $stringCount = strlen($company_name);
         $stringCount = $stringCount;
-
+        /*$sQuery = "SELECT levenshtein('".$company_name."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
+                 FROM sl_company slc
+                 WHERE levenshtein('".$company_name."', TRIM(LOWER(slc.name))) < 2
+                 OR slc.name = '".$company_name."'";*/
         $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE slc.name LIKE '%".$company_name."%' AND slc.merged_company_id = 0 ORDER BY exact_name2 DESC, slc.name ASC";
 
-      }*/
-      /*else if($nameCount > 1)
+      }
+      else if($nameCount > 1)
       {
         foreach ($explodedCompanyName as $key => $value)
         {
@@ -7619,7 +7728,11 @@ ChromePhp::log($resultA);
         {
           $stringCount = strlen($explodedCompanyName[0]);
           $stringCount = $stringCount;
-
+          /*$sQuery = "SELECT levenshtein('".$explodedCompanyName[0]."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
+                 FROM sl_company slc
+                 WHERE levenshtein('".$explodedCompanyName[0]."', TRIM(LOWER(slc.name))) < 2
+                 OR slc.name = '".$explodedCompanyName[0]."' ";*/
+          //$sQuery = "SELECT * FROM sl_company slc WHERE slc.name LIKE '%".$explodedCompanyName[0]."%'";
           $sQuery = "SELECT IF(LEFT(slc.name , '".$stringCount."') LIKE '".$explodedCompanyName[0]."', 1, 0) as exact_name2, slc.* FROM sl_company slc WHERE slc.name LIKE '%".$explodedCompanyName[0]."%' AND slc.merged_company_id = 0 ORDER BY  slc.name ASC";
         }
         else
@@ -7627,13 +7740,15 @@ ChromePhp::log($resultA);
           $implodedName = implode(' ',$explodedCompanyName);
           $stringCount = strlen($implodedName);
           $stringCount = $stringCount;
-
+          /*$sQuery = "SELECT levenshtein('".$company_name."', TRIM(LOWER(slc.name))) AS name_lev, slc.*
+                 FROM sl_company slc
+                 WHERE ";*/
           $sQuery = "SELECT IF(LEFT(slc.name , '".$untouchedCompanyNameCount."') LIKE '".$company_name."', 1, 0) as exact_name2,slc.* FROM sl_company slc WHERE ( ";
           $addWhere = '';
           foreach ($explodedCompanyName as $key => $value)
           {
             $addWhere .= " slc.name LIKE '%".$value."%' OR ";
-
+            //$addWhere = " levenshtein('".$value."', TRIM(LOWER(slc.name))) < 2 OR slc.name == '".$value."' OR";
           }
           $sQuery .= $addWhere;
           $sQuery = trim($sQuery, "OR ");
@@ -7643,20 +7758,8 @@ ChromePhp::log($resultA);
 
         $sQuery = trim($sQuery, "OR ");
 
-      }*/
-      if($nameCount >= 1)
-      {
-        $addLast = '( ';
-        foreach ($explodedCompanyName as $key => $value)
-        {
-          $value = trim($value);
-          $addLast .= " scom.name RLIKE '[[:<:]]".$value."[[:>:]]' AND ";
-          //$addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
-        }
-        $addLast = rtrim($addLast,'AND ');
-        $addLast .= ')';
+        //$sQuery .= " OR slc.name LIKE '%".$company_name."%'";
 
-        $sQuery = "SELECT scom.* FROM sl_company as scom WHERE ".$addLast." GROUP BY scom.sl_companypk ORDER BY scom.name ASC ";
       }
       else
       {
@@ -8179,30 +8282,6 @@ ChromePhp::log($resultA);
     {
       global $gbNewSearch;
 
-      $sCompany = strtolower(trim(getValue('company')));
-      $sIndustry = trim(getValue('industry'));
-      $sContact = trim(getValue('contact'));
-      $sOwner = trim(getValue('owner'));
-      $sCreator = trim(getValue('creator'));
-
-      if($sCreator == "Creator")
-        $sCreator = '';
-      if($sOwner == "Owner")
-        $sOwner = '';
-      if($sIndustry == 'industry' || $sIndustry == 'Industry')
-        $sIndustry = '';
-      if($sContact == 'Contact')
-        $sContact = '';
-      if($sCompany == 'Company' || $sCompany == 'company name or id')
-        $sCompany = '';
-
-      if(empty($sCompany) && empty($sIndustry) && empty($sContact) && empty($sOwner) && empty($sCreator))
-      {
-        $errorArray = array();
-        $errorArray['error'] ='You need to input an ID, a name, a contact detail, an industry or an owner';
-        return $errorArray;
-      }
-
       $oLogin = CDependency::getCpLogin();
 
       $asListMsg = array();
@@ -8283,13 +8362,9 @@ ChromePhp::log($resultA);
       $sSortField = getValue('sortfield');
       $sSortOrder = getValue('sortorder', 'DESC');
 
-      if(!$this->_oLogin->isAdmin())
-      {
-        $oQb->addWhere('scom.merged_company_id = 0');
-      }
 
       if(!empty($sSortField))
-      {
+      {// calismiyor gibi...
         if ($sSortField == 'industry_list')
         {
           $oQb->addOrder("sind.label $sSortOrder");
@@ -8326,7 +8401,6 @@ ChromePhp::log($resultA);
 
       // multi industries --> we need to group by companypk --> number result = numrows
       //$oDbResult = $this->_getModel()->executeQuery($oQb->getCountSql());
-ChromePhp::log($sql);
 
       $oDbResult = $this->_getModel()->executeQuery($sql);
       $bRead = $oDbResult->readFirst();
@@ -10025,40 +10099,23 @@ $bonusManual = getValue('bonus');
 
     public function _getTreeData($psType)
     {
-      if(!assert('$psType == \'location\' || $psType == \'occupation\' || $psType == \'industry\' '))
+      if(!assert('$psType == \'occupation\' || $psType == \'industry\' '))
         return array();
 
       $sTable = 'sl_'.$psType;
       $sKey = 'sl_'.$psType.'pk';
-      $testFlag = false;
 
       if($psType == 'occupation')
         $asItemList = $this->getVars()->getOccupationList(true, true);
-      elseif($psType == 'location')
-      {
-        $testFlag = true;
-        $psType = 'occupation';
-        $sTable = 'sl_'.$psType;
-        $sKey = 'sl_'.$psType.'pk';
-        $asItemList = $this->getVars()->getOccupationList(true, true);
-      }
       else
         $asItemList = $this->getVars()->getIndustryList(true, true);
 
-//ChromePhp::log($asItemList);
       //$oDbResult = $this->_getModel()->getByWhere($sTable);
 
       $sQuery = 'SELECT main.* FROM '.$sTable.' as main
         LEFT JOIN '.$sTable.' as parent ON (parent.'.$sKey.' = main.parentfk)
         ORDER BY parent.label, main.label ';
       $oDbResult = $this->_getModel()->executeQuery($sQuery);
-
-      /*if($testFlag)
-      {
-        ChromePhp::log($sQuery);
-        $result = $oDbResult->getAll();
-        ChromePhp::log($result);
-      }*/
 
       $bRead = $oDbResult->readFirst();
       if(!$bRead)
@@ -11483,7 +11540,7 @@ $bonusManual = getValue('bonus');
                 $cp_pk = $pasOldData['sl_candidatepk'];
                 $text = '['.$sLabel.'] changed from: '.$old_variable.' -> to: '.$new_variable;
 
-                insertLog($loginfk, $cp_pk, $text, "company_history");
+                //insertLog($loginfk, $cp_pk, $text, "company_history");
                 insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
               }
@@ -11738,6 +11795,7 @@ $bonusManual = getValue('bonus');
 
   private function _buildCandidateQuickSearch($pbStrict = true, $name = 'test')
   {
+
     // sort ta da buraya
     if($pbStrict)
       $sOperator = ' AND ';

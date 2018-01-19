@@ -283,31 +283,33 @@ class CNotificationEx extends CNotification
     $this->casInitId[$psId]['user_msg'] = $psMessage;
 
     $sMessage = '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0 15px 0; line-height: 20px;" >';
-    //<br /><br />
-    $sMessage.= 'This concerns "'.$asItemData['link'].'" / ';
+    $sMessage.= 'This concerns "'.$asItemData['link'].'"<br /><br />';
 
     if(!empty($asItemData['description']))
     {
       $sMessage.= $asItemData['description'];
     }
 
+    $sMessage.= '</div>';
+
+
     //add a separator
-    //$sMessage.= '<div style="height: 5px; background-color: #ffffff;">&nbsp;</div>';
+    $sMessage.= '<div style="height: 12px; background-color: #ffffff;">&nbsp;</div>';
 
     if(!empty($psMessage))
     {
-      //$sMessage.= '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0; line-height: 20px;" >';
-      $sMessage.= '<b> / Message</b>: '.$psMessage;//<br/>
-      //$sMessage.= '</div>';
+      $sMessage.= '<div style="border-left: 1px solid #888888; padding: 2px 10px; margin: 5px 0; line-height: 20px;" >';
+      $sMessage.= '<b>Message</b>:<br/>'.$psMessage;
+      $sMessage.= '</div>';
     }
 
     if(empty($asItemData['description']) && empty($psMessage))
     {
-      //$sMessage.= '<div style="border-left: 1px solid #888888; padding: 5px 10px; margin: 5px 0;" >';
-      //$sMessage.= ' / No message<em>';//<br/>
-      //$sMessage.= '</div>';
+      $sMessage.= '<div style="border-left: 1px solid #888888; padding: 5px 10px; margin: 5px 0;" >';
+      $sMessage.= '<br/><am>No message<em>';
+      $sMessage.= '</div>';
     }
-    $sMessage.= '</div>';
+
     $nNotificationPk = $this->addReminder($psId, $pvRecipientfk, $sMessage, $psTitle, $psDate, $pnNaggy, $psNagFreq);
     if(!assert('!empty($nNotificationPk)'))
     {
@@ -638,7 +640,7 @@ class CNotificationEx extends CNotification
       //--------------------------------------------------------
       //start creating the mail content
 
-      $sMessage = '<div style="font-family: verdana; font-size: 12px;">';
+      $sMessage = '<div style="font-family: verdana; font-size: 12px;">Dear '.$sRecipient.',<br /><br />';
 
       foreach ($user_messages as $message_info)
       {
@@ -707,12 +709,12 @@ class CNotificationEx extends CNotification
           $sMessage.= '&nbsp;&nbsp;at&nbsp;&nbsp;<b>'.date('H:i a', $nNotif).'</b>.';
 
           $sDate = date('Y-m-d \a\t H:i', strtotime($message_info['date_created']));
-          $sMessage.= ' / <span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
+          $sMessage.= '<br /><span style="font-style: italic; color:#666;">Reminder created on the '.$sDate.'</span>.';
 
           $newDate = date('Y-m-d H:i:s');
           //$sMessage.= " ".$newDate;
-          //$sMessage.= '<br />';//<br />
-          $sMessage.= '<div style="padding: 1px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
+          $sMessage.= '<br /><br />';
+          $sMessage.= '<div style="padding: 10px; border: 1px solid #f0f0f0; line-height: 20px; background-color: #f2f2f2;">';
 
 
           //sending the message in html, so if its not a html format i convert it
@@ -1830,7 +1832,7 @@ class CNotificationEx extends CNotification
 
 
     $oForm->addField('textarea', 'message', array('label'=> 'Your message', 'class' => 'msgField', 'value' => $oDbMeeting->getFieldValue('description')));
-    $oForm->setFieldDisplayParams('message', array('style' => 'margin: 5px 0;'));
+    $oForm->setFieldDisplayParams('message', array('style' => 'margin: 12px 0;'));
 
 
 // ADVANCED START
@@ -2054,7 +2056,7 @@ class CNotificationEx extends CNotification
 
     $asReminder['message'] = getValue('message');
     if(empty($asReminder['message']))
-      $asReminder['message'] = '<em> -- no message -- </em>';
+      $asReminder['message'] = '<br /><em> -- no message -- </em>';
 
     $asReminder['naggy'] = (int)getValue('naggy', 0);
     $asReminder['naggy_frequency'] = getValue('naggy_frequency');
@@ -2122,7 +2124,7 @@ class CNotificationEx extends CNotification
       $csAction = "ppav";
       $csType= "candi";
 
-      $addLog1 = insertLog($user_id, $target_candidate_id, $note);
+      //$addLog = insertLog($user_id, $target_candidate_id, $note);
       $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
 
       //$sViewURL = $oPage->getAjaxUrl($csUid, CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_COMP, $user_id);

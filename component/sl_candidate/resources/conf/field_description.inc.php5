@@ -768,8 +768,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       )
     );
 
-  //$operators = $oSearch->getFieldOperators('string');
-  //unset($operators['different']);
+  $operators = $oSearch->getFieldOperators('string');
+  unset($operators['different']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['company_name'] = array(
       'display' => array
       (
@@ -777,7 +777,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', ''),
         'label' => 'Company name',
         'group' => 'Company',
-        'operator' => $oSearch->getFieldOperators('string'),
+        'operator' => $operators,
         'default_operator' => 'start',
         'option' => array(),
         'value' => array(),

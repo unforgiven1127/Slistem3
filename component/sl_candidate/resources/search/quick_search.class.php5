@@ -433,35 +433,8 @@ class CQuickSearch
     $sCompany = strtolower(trim(getValue('company')));
     $sIndustry = trim(getValue('industry'));
     $sContact = trim(getValue('contact'));
-    $sOwner = trim(getValue('owner'));
-    $sCreator = trim(getValue('creator'));
-    //ChromePhp::log($sOwner);
 
-    if($sCreator == "Creator")
-    {
-      $sCreator = '';
-    }
-    if(!empty($sCreator))
-    {
-      $this->coQb->addWhere('scom.created_by = '.$sCreator);
-      $asTitle[] = ' Created by = '.$sCreator;
-    }
-
-
-    if($sOwner == "Owner")
-    {
-      $sOwner = '';
-    }
-
-    if(!empty($sOwner))
-    {
-      //$sOwner = '101';
-      $this->coQb->addJoin('inner', 'client_owner_list', 'col', 'col.company_id = scom.sl_companypk');
-      $this->coQb->addWhere('col.user_id = '.$sOwner.' AND col.flag = a');
-      $asTitle[] = ' Owner = '.$sOwner;
-    }
-
-    if($sCompany == 'Company' || $sCompany == 'company name or id')
+    if($sCompany == 'Company')
       $sCompany = '';
 
     if(!empty($sCompany))
@@ -482,25 +455,7 @@ class CQuickSearch
 
         $this->coQb->addSelect('*, 100-(levenshtein("'.$sCompany.'", LOWER(scom.name))*100/LENGTH(scom.name)) AS ratio');
 
-        //$this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
-
-        $clean_code = preg_replace('/[^a-zA-Z0-9]/', ' ', $sCompany);
-        //ChromePhp::log($clean_code);
-        $cNameArray = explode(' ',$clean_code);
-        $cNameArray = array_filter($cNameArray, function($var){return !empty($var);} );
-        //ChromePhp::log($cNameArray);
-        $addLast = '( ';
-        foreach ($cNameArray as $key => $value)
-        {
-          $value = trim($value);
-          $addLast .= " scom.name RLIKE '[[:<:]]".$value."[[:>:]]' AND ";
-          //$addLast .= ' scom.name LIKE "%'.$value.'%" OR ';
-        }
-        $addLast = rtrim($addLast,'AND ');
-        $addLast .= ')';
-        //$addLast .= ' scom.name LIKE "%'.$sCompany.'%" )';
-        $this->coQb->addWhere($addLast);
-
+        $this->coQb->addWhere('scom.name LIKE "%'.$sCompany.'%" OR scom.corporate_name LIKE "'.$sCompany.'%" OR scom.name LIKE "%'.$no_spaces_company.'%"');
         $this->coQb->addOrder(' ratio DESC ');
 
         $asTitle[] = ' company name = '.$sCompany;
@@ -546,7 +501,7 @@ class CQuickSearch
     }
 
     $sIndustry = trim(getValue('industry'));
-    if($sIndustry == 'industry' || $sIndustry == 'Industry')
+    if($sIndustry == 'industry')
       $sIndustry = '';
 
     if(!empty($sIndustry))

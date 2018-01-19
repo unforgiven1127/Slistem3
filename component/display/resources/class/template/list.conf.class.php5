@@ -178,6 +178,12 @@ class CTplConfList extends CTplConf
     return true;
   }
 
+  public function addExcelDownload($psText = true, $pasParams = array(), $psType = true)
+  {
+    $this->casMessage[] = array('text' => $psText, 'type' => $psType, 'params' => $pasParams);
+    return true;
+  }
+
   public function clearBlocMessage()
   {
     $this->casMessage = array();

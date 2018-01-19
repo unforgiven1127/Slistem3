@@ -1,4 +1,3 @@
-<script src="./common/lib/htmlToExcel/src/jquery.table2excel.js"></script>
 <script>
 	//localStorage.setItem("loginFlag", "loginPage");
 	var nextloop = <?php echo $nextloop; ?>;
@@ -53,30 +52,7 @@
 		}, 30000);
 	}
 
-	$(function () {
-		$("#exportToExcel").click(function(){
-		  //alert('simple');
-		  $("#toExcel").table2excel({
-		  	exclude: ".noExl",
-		  	name: "Worksheet Name",
-		  	filename: "KPIexportSimple.xls"
-		  });
-
-		});
-
-		$("#exportDetail").click(function(){
-		  //alert('detailed');
-		  $("#toExcel").table2excel({
-		  	exclude: ".detailed",
-		  	name: "Worksheet Name",
-		  	filename: "KPIexportDetailed.xls"
-		  });
-
-		});
-	});
 </script>
-
-
 
 <style>
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
@@ -112,14 +88,6 @@
 		<div class="general_form_column add_margin_left_10">
 			<input type="submit" name="submit_totals" value="Get totals" />
 		</div>
-		<?php if($exportFlag == 'true'){ ?>
-		<div class="general_form_column ">
-			<input style="background-color: #4CAF50 !important;" type="button" id='exportToExcel' name="exportToExcel" value="Export Simple" />
-		</div>
-		<div class="general_form_column ">
-			<input style="background-color: #336699 !important;" type="button" id='exportDetail' name="exportDetail" value="Export Detailed" />
-		</div>
-		<?php } ?>
 	</div>
 </form>
 
@@ -137,7 +105,6 @@ $candidateArray[1] = $researcherCandidates;
 
 $user_position = array('Consultant','Researcher');
 
-echo "<div id='toExcel'>";
 foreach ($dataArray as $key_ => $value)
 {
 	$selectedStatData = $value;
@@ -145,7 +112,7 @@ foreach ($dataArray as $key_ => $value)
 	$selected_position = $user_position[$key_];
 
 
-echo "<table id='totals_table_id' class='totals_table toExcel_".$selected_position." '>
+echo "<table id='totals_table_id' class='totals_table '>
 	<tr>
 		<th style='background-color: #48768F !important;' class='revenueSize0' colspan='15'>".$selected_position." totals - ".date('M Y', strtotime($start_date))." </th>
 	</tr>
@@ -316,7 +283,7 @@ foreach ($selectedStatData as $key => $sd1)
 				{
 					$tB = 'border-top: solid black;';
 				}
-				$classHDI = $key.'_hidden noExl ';
+				$classHDI = $key.'_hidden ';
 				echo "<tr style='display: none;' class='hdi ".$classHDI.$insideC."'>";
 					echo "<td class='name_column revenueSize ".$even."'></td>";
 					echo "<td style='".$tB."'><div class='hover_row'><a ".$setH.">".$setC.$setT."</a></div></td>";
@@ -353,7 +320,6 @@ echo "<tr class='totals_table_footer'>
 if($key_ == 0)
 	{echo'<div class="general_form_row" style="height: 20px;"></div>';}
 }
-echo "</div>";
 ?>
 
 

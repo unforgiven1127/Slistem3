@@ -545,7 +545,7 @@ class CCandi_row extends CTemplate
 
 
       set_array($pasColumnParam[7]['tag'], '');
-      $asOption = array('class' => $pasColumnParam[7]['tag'].' tpl_link_cell');
+      $asOption = array('class' => $pasColumnParam[7]['tag'].' tpl_link_cell lastnameClass');
       $asOption['onclick'] = 'view_candi(\''.$sURL.'\');';
 
       if($pasData['_sys_status'] > 0)

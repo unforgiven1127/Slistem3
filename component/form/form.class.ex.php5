@@ -144,7 +144,8 @@ class CFormEx extends CForm
     if($pbAjax && isset($this->casFormParams['action']))
     {
 
-      $oPage = CDependency::getCpPage();
+
+      $oPage = CDependency::getCpPage(); 
       if(!$oPage->isAjaxUrl($this->casFormParams['action']))
       {
         assert('false; // ajax form with a regular url');
@@ -522,7 +523,8 @@ class CFormEx extends CForm
     //adding controls
 
     $oPage = CDependency::getCpPage();
-    $oPage->addJsFile(self::getResourcePath().'js/fieldControl.js');
+
+    $daa = $oPage->addJsFile(self::getResourcePath().'js/fieldControl.js');
 
     if(!isset($this->casFormParams['template']) || empty($this->casFormParams['template']))
       $oPage->addCssFile($this->getResourcePath().'css/form.css');
@@ -541,7 +543,7 @@ class CFormEx extends CForm
     $sJavascript.= "  { ";
 
     if($this->cbFormAjax)
-    {
+    { 
       $sJavascript.= " event.preventDefault(); ";
       $sJavascript.= ' '.$this->casFormParams['onBeforeSubmit'].' ';
 
@@ -798,6 +800,9 @@ class CFormEx extends CForm
   public function addJsFile($pasJsFile)
   {
     $oPage = CDependency::getComponentByName('page');
+    
+    echo "<pre>".print_r($this->oPage, true);
+      die;
     return $oPage->addJsFile($pasJsFile);
   }
 

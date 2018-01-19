@@ -385,11 +385,6 @@ span.alpha
 /****************************************************/
 /* quick search form  */
 
-.heightRise
-{
-  height: 180px !important;
-}
-
 .quickSearchForm > div
 {
   float: left;

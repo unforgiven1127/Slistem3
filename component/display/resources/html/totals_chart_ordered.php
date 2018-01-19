@@ -82,7 +82,7 @@ foreach ($stats_data as $key => $stat): $arrayPosition = $key ?>
 	$total_o = 0;
 	$total_p = 0;
 	 ?>
-<table id="totals_table_id" class="totals_table toExcel">
+<table id="totals_table_id" class="totals_table">
 	<tr>
 		<th class='revenueSize0' colspan="15"><?php echo ucfirst($key); ?> totals - <?php echo date('M Y', strtotime($start_date)); ?></th>
 	</tr>

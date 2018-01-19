@@ -65,7 +65,7 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
 function loading()
 {
   //alert('loading');
-    $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; ">      <div class="bg"></div><div class="ani"></div></div>');
+    $('body').addClass('noScroll').append('<div id="slLoadingScreen"  style="z-index: 99999; width: '+ ($(document).innerWidth() + 100) +'px; height: '+ ($(document).innerHeight() + 100) +'px; position: absolute; top: 0; left: 0; "><div class="bg"></div><div class="ani"></div></div>');
     $('body').append("<div id='overlay' class='overlay'></div>");
 }
 
@@ -76,8 +76,8 @@ function beforeCompanyAdd()
     //$('.ui-dialog').attr('id', 'companyAddNewId')
     //$('.ui-dialog').addClass("loadClass");
 
-    //loading();
     //alert(companyName);
+    //loading();
     psUrl = 'index.php5?uid=555-001&ppa=cdc&ppt=candi&ppk=0&pg=ajx';
 
     console.log(psUrl);
@@ -92,7 +92,6 @@ function beforeCompanyAdd()
           //$('.ui-dialog').removeClass("loadClass");
           //alert('Success');
           //$('#slLoadingScreen').remove();
-          //$('#overlay').remove();
 
           //console.log(oJsonData);
           var data = oJsonData.data;
@@ -143,7 +142,7 @@ function beforeCompanyAdd()
           //alert(parsedData);
           //var data = oJsonData.data;
           //alert(data);
-          //console.log(data);;
+          //console.log(data);
         //$(psToPrepend).append(oJsonData.data);
       },
       async: false,

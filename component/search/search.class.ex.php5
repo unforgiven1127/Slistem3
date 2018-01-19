@@ -159,6 +159,9 @@ class CSearchEx extends CSearch
         $sCpUid = getValue('CpUid');
         $sCpType = getValue('CpType');
         $sFormType = getValue('formType');
+
+        ChromePhp::log('FORM HO: ');
+        ChromePhp::log($sFormType.'-'.$sCpUid.'-'.$sCpType);
         return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_displaySearchForm($sFormType, $sCpUid, $sCpType, true))));
         break;
 
@@ -339,6 +342,9 @@ class CSearchEx extends CSearch
         else
           $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, '', 0);
 
+       ChromePhp::log('COMPLEX URL: ');
+       ChromePhp::log($sURL);
+
         $oForm->setFormParams('searchForm', $pbInAjax, array('action' => $sURL, 'class' => 'fullPageForm advancedSearchForm', 'submitLabel'=>'Search', 'onBeforeSubmit' => $sSubmit));
         $oForm->addField('input', 'complex_search', array('type' => 'hidden', 'value' => 1));
         $oForm->addField('input', 'component_uid', array('type' => 'hidden', 'value' => $psComponentUid));
@@ -354,8 +360,11 @@ class CSearchEx extends CSearch
 
         //Reload a previous search, or slice the array of fields and display the default form
         $asAllFields = $this->casSearchField[$psComponentType];
+
         foreach($asAllFields as $sFieldName => $asFieldData)
         {
+
+
           $oForm->addSection('', array('class' => 'advancedSearchRow', 'group_nb' => $nGroup, 'row_nb' => $nField,  'id' => 'search_row_'.$nField));
           if($bIsComplex)
           {
@@ -385,6 +394,51 @@ class CSearchEx extends CSearch
         $sForm = $oForm->getDisplay();
         break;
 
+        /**
+         * Starting of test complex search
+         */
+
+      case 'test':
+
+       $asSearchParam = CDependency::getComponentByUid($psComponentUid)->getSearchResultMeta($psComponentType);
+
+        $oForm  = $oHTML->initForm('testSearchForm');
+        $oForm->addField('misc', '', array('type' => 'title', 'title' => 'Test Search'));
+        // $oPage->addJsFile(self::getResourcePath().'/js/search_form.js');
+
+        // $sURL   = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, $psComponentType, 0);
+        if(isset($asSearchParam['custom_result_page']))
+        {
+          $sURL = $asSearchParam['custom_result_page'];
+        }
+        else
+          $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, '', 0);
+
+        ChromePhp::log('TEST URL: ');
+        ChromePhp::log($sURL);
+
+        $oForm->setFormParams('testSearchForm', $pbInAjax, array('action' => $sURL, 'class' => 'fullPageForm advancedSearchForm', 'noCancelButton' => 'noCancelButton', 'inajax' => 'inajax', 'submitLabel'=>'Test Search', 'ajaxTarget' => 'search-results-container'));
+
+        $oForm->addField('input', 'test_search', array('type' => 'hidden', 'value' => 1));
+        $oForm->addField('input', 'component_uid', array('type' => 'hidden', 'value' => $psComponentUid));
+        $oForm->addField('input', 'data_type', array('type' => 'hidden', 'value' => $psComponentType));
+        $oForm->addField('input', 'complex_mode', array('type' => 'hidden', 'value' => (int)$bIsComplex));
+
+        $oForm->addField('input', 'candidate_names', array('type' => 'text', 'label' => 'Candidate Names'));
+        $oForm->setFieldControl('candidate_names', array('jsFieldNotEmpty' => '','jsFieldMinSize' => '1','jsFieldMaxSize' => 10));
+
+
+        $oForm->addField('select', 'candidate_status', array('sortable' => 'sortable', 'label' => 'Candidate Status'));
+        $oForm->addOption('candidate_status', array('value' => 'active', 'label' => 'Active'));
+        $oForm->addOption('candidate_status', array('value' => 'passive', 'label' => 'Passive', 'selected' => 'selected'));
+        $oForm->setFieldControl('candidate_status', array('jsFieldNotEmpty' => ''));
+
+        $sForm          = $oForm->getDisplay();
+        break;
+
+        /**
+         * End of test complex form
+         */
 
       case 'global':
 
@@ -426,8 +480,9 @@ class CSearchEx extends CSearch
         break;
     }
 
-    if($this->cbAllowComplexSearch)
+    if($this->cbAllowComplexSearch && $psType !=='test'){
       $sHTML .= $oHTML->getBloc('search-form-container', $this->_getSearchFormMenu($psType, $pbInAjax, $bIsComplex) . $sForm, array('class' => $sExtraClass));
+    }
     else
       $sHTML .= $oHTML->getBloc('search-form-container', $sForm, array('class' => $sExtraClass));
 
@@ -1077,7 +1132,7 @@ class CSearchEx extends CSearch
         break;
 
       case 'string':
-        return array('equal' => ' Equals ', 'different' => ' Different ', 'contain' => ' Contains ', 'start' => ' Starts with ',
+        return array('equal' => ' Equals ', 'different' => ' Different ', 'contain' => ' Contains ', 'exact_contains' => ' Exact Contains', 'start' => ' Starts with ',
            'end' => ' Ends With ', 'in' => ' One of (, separated) ', 'all' => ' All (, separated) ');
         break;
 
@@ -1989,18 +2044,15 @@ $asSql = $oQB->getSqlArray();
 
     if($pasFieldType['type'] == 'fts')
     {
-      ChromePhp::log($pvValue);
+        
       if(strlen(trim($pvValue)) < 1)
       {
-        ChromePhp::log('HERE ???????????');
         $this->_addError('line '.__LINE__.' - text field, value is less than 1 characters ['.$pvValue.']');
         return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';
       }
 
       if($psOperator == 'different')
       {
-        ChromePhp::log('SHOULD BE HERE');
-        ChromePhp::log($psOperator);
         $returnCondition = " NOT LIKE '%".$pvValue."%' ";
         return $returnCondition;
         //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
@@ -2015,6 +2067,13 @@ $asSql = $oQB->getSqlArray();
       if($psOperator == 'contain')
       {
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
+      }
+      /**
+       * Searched only the filtered words / exactly the same word
+       */
+      if($psOperator == 'exact_contains')
+      {
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:<:]]' . $pvValue . '[[:>:]])" ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
@@ -2163,7 +2222,7 @@ $asSql = $oQB->getSqlArray();
       if($psOperator == 'contain' || $psOperator == 'equal')
         return ' LIKE ';
 
-      if($psOperator == 'in')
+      if($psOperator == 'in' || $psOperator == 'exact_contains')
       {
         $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
         return ' REGEXP ';
