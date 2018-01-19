@@ -694,10 +694,10 @@ class CSl_candidateEx extends CSl_candidate
 
   public function _export_candidates()
   {
-ChromePhp::log('_export_candidates');
+
     $oLogin = CDependency::getComponentByName('login');
     if(isset($_POST['registration']) &&  $_POST['registration'] == 'success') {
-
+ChromePhp::log('Export_candidates');
         $oDB        = CDependency::getComponentByName('database');
         $expQuery   = strstr($_POST['req_query'], " LIMIT", true);
         
