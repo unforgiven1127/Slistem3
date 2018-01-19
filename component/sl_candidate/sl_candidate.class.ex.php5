@@ -736,7 +736,7 @@ ChromePhp::log('Export_candidates');
         }
 
          function saveExcelFile($objWriter){
-            $filePath = 'common/upload/excel_file/Candidate List.xlsx_'.time();
+            $filePath = 'common/upload/excel_file/Candidate List_'.time().'.xlsx';
             $objWriter->save($filePath);
             return $filePath;
         }
