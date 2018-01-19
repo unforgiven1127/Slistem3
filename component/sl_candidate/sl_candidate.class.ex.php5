@@ -694,7 +694,7 @@ class CSl_candidateEx extends CSl_candidate
 
   public function _export_candidates()
   {
-
+ChromePhp::log('_export_candidates');
     $oLogin = CDependency::getComponentByName('login');
     if(isset($_POST['registration']) &&  $_POST['registration'] == 'success') {
 
@@ -3979,7 +3979,7 @@ ChromePhp::log($sQuery);
                             sessionStorage.setItem("req_query", stored_query);
 
                           $("#excelExport").click(function(e){
-                            alert("asdasdas");
+                            //alert("asdasdas");
                             $.ajax({
                                 url     :   "'.$url.'", 
                                 type    :   "post",
