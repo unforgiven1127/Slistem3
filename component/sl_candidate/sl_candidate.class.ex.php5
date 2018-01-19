@@ -736,7 +736,7 @@ class CSl_candidateEx extends CSl_candidate
         }
 
          function saveExcelFile($objWriter){
-            $filePath = 'common/upload/excel_file/Candidate List_'.time().'.xlsx';
+            $filePath = 'common/upload/excel_file/Candidate List.xlsx';
             $objWriter->save($filePath);
             return $filePath;
         }
