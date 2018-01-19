@@ -697,10 +697,10 @@ class CSl_candidateEx extends CSl_candidate
 
     $oLogin = CDependency::getComponentByName('login');
     if(isset($_POST['registration']) &&  $_POST['registration'] == 'success') {
-ChromePhp::log('Export_candidates');
+
         $oDB        = CDependency::getComponentByName('database');
         $expQuery   = strstr($_POST['req_query'], " LIMIT", true);
-        
+
         $oDbResult  = $oDB->ExecuteQuery($expQuery);
         $results    = $oDbResult->getAll();
         
@@ -3918,7 +3918,6 @@ ChromePhp::log($sQuery);
 
         $test_value = getValue('pipe_filter');
 
-        
         if(isset($test_value) && $test_value == "placed")
         {
           // when add new candidate foreach does not work...
@@ -3938,7 +3937,7 @@ ChromePhp::log($sQuery);
         $sURL = $this->_oPage->getAjaxUrl('sl_folder', CONST_ACTION_SAVEADD, CONST_FOLDER_TYPE_ITEM, 0);
         $sHTML.='<script> initDragAndDrop(\''.$sURL.'\'); </script>';
         $sHTML .= '<div id="dvData" class="hidden"></div>';
-   
+
         if(count($asData) == 1)
         {
           $asData = current($asData);
@@ -3968,7 +3967,7 @@ ChromePhp::log($sQuery);
           $sHTML.= '<a href="javascript:;" onclick="$(this).parent().find(\'.query\').toggle(); "> query... </a>
             <span class="hidden query"><br />'.$sQuery.'</span><br /><br /><br />';
         }
-       
+
        /**
         *   sessionStorage stores the current query
         *   ajax for exporting the excel file
@@ -3982,11 +3981,11 @@ ChromePhp::log($sQuery);
                           $("#excelExport").click(function(e){
                             //alert("asdasdas");
                             $.ajax({
-                                url     :   "'.$url.'", 
+                                url     :   "'.$url.'",
                                 type    :   "post",
                                 dataType:   "json",
                                 data    :   {
-                                    "registration": "success", 
+                                    "registration": "success",
                                     "req_query": $.trim(sessionStorage.getItem("req_query"))
                                 },
                                 success: function (data) {
