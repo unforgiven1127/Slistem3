@@ -746,6 +746,7 @@ ChromePhp::log('Export_candidates');
             'success' => true,
             'url' => saveExcelFile($objWriter)
         );
+        ChromePhp::log($response);
         echo json_encode($response);
         exit();
 
