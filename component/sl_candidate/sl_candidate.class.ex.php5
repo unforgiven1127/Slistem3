@@ -3800,7 +3800,7 @@ ChromePhp::log($sQuery);
 
       $excelLinkIcon = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array());
       if($this->_oLogin->isAdmin() && $nResult > 0){
-            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('class'=>'access','style' => 'float:right; margin-top:5px; margin-right:5px;'), 'title');
+            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('id'=>'excelExport','class'=>'access','style' => 'float:right; margin-top:5px; margin-right:5px;'), 'title');
       }
       $oConf->addBlocMessage('<span class="search_result_title_nb">'.$nResult.' result(s)</span> '.implode(', ', $asListMsg), array(), 'title');
       $sHTML = '';
@@ -3978,7 +3978,8 @@ ChromePhp::log($sQuery);
                             var stored_query = `'.$reqQuery3.'`;
                             sessionStorage.setItem("req_query", stored_query);
 
-                          $(".access").click(function(e){
+                          $("#excelExport").click(function(e){
+                            alert("asdasdas");
                             $.ajax({
                                 url     :   "'.$url.'", 
                                 type    :   "post",
