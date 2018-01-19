@@ -3800,7 +3800,7 @@ ChromePhp::log($sQuery);
 
       $excelLinkIcon = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array());
       if($this->_oLogin->isAdmin() && $nResult > 0){
-            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('class'=>'access','style' => 'float:right; margin-top:5px;'), 'title');
+            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('class'=>'access','style' => 'float:right; margin-top:5px; margin-right:5px;'), 'title');
       }
       $oConf->addBlocMessage('<span class="search_result_title_nb">'.$nResult.' result(s)</span> '.implode(', ', $asListMsg), array(), 'title');
       $sHTML = '';
