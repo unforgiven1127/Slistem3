@@ -14,7 +14,7 @@
 
     //$oEvent = CDependency::getComponentByName('sl_event');
 
-    $slistemQuery = " SELECT * FROM sl_notes ";
+    $slistemQuery = " SELECT * FROM sl_meeting s where s.created_by = '-1' LIMIT 100";
     $slistemQuery = mysql_query($slistemQuery);
 
     $allMeetings = array();
@@ -24,14 +24,15 @@
 
     //updateTest();
 
-    /*while($meetingData = mysql_fetch_assoc($slistemQuery))
+    while($meetingData = mysql_fetch_assoc($slistemQuery))
     {
-        $candidate_id = $meetingData['candidate_id'];
-        $type = $meetingData['type'];
-        $content = $meetingData['content'];
+        //$candidate_id = $meetingData['candidate_id'];
+        //$type = $meetingData['type'];
+        //$content = $meetingData['content'];
 
-        $asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
-    }*/
+        //$asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
+        echo $meetingData['sl_meetingpk'].'<br>';
+    }
 
     /*foreach ($allMeetings as $key => $meeting)
     {
