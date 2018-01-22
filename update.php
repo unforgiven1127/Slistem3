@@ -34,7 +34,7 @@
         $delete = "DELETE FROM sl_meeting WHERE sl_meetingpk = '".$meetingData['sl_meetingpk']."'" ;
         mysql_fetch_assoc($delete);
         $count++;
-        //echo $delete.'<br>';
+        echo $delete.'<br>';
     }
 echo $count.'deleted';
     /*foreach ($allMeetings as $key => $meeting)
