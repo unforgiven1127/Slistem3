@@ -14,7 +14,7 @@
 
     //$oEvent = CDependency::getComponentByName('sl_event');
 
-    $slistemQuery = " SELECT * FROM sl_meeting s where s.created_by = '-1' LIMIT 100";
+    $slistemQuery = " SELECT * FROM sl_meeting s where s.created_by = '-1' LIMIT 500";
     $slistemQuery = mysql_query($slistemQuery);
 
     $allMeetings = array();
