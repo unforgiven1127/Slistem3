@@ -32,7 +32,7 @@
 
         //$asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
         $delete = "DELETE FROM sl_meeting WHERE sl_meetingpk = '".$meetingData['sl_meetingpk']."'" ;
-        $slistemQuery = mysql_query($delete);
+        mysql_fetch_assoc($delete);
         $count++;
         //echo $delete.'<br>';
     }
