@@ -33,9 +33,10 @@
         //$asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
         $delete = "DELETE FROM sl_meeting WHERE sl_meetingpk = '".$meetingData['sl_meetingpk']."'" ;
         $slistemQuery = mysql_query($delete);
+        $count++;
         //echo $delete.'<br>';
     }
-
+echo $count.'deleted';
     /*foreach ($allMeetings as $key => $meeting)
     {
         $create_date = $meeting['date_meeting'];
