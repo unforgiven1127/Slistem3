@@ -27,7 +27,7 @@ echo '<br><br>';
     if ($handle) {
     while (($line = fgets($handle)) !== false) {
         $data = explode(',',$line);
-        if(count($data) == 14)
+        if(count($data) == 14 && $data[2] > 0)
         {
             $date_created = $data[0];
             $created_by = $data[2];
