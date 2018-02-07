@@ -41,7 +41,7 @@ echo '<br><br>';
 
             $query = "INSERT INTO sl_meeting (date_created,created_by,candidatefk,attendeefk,type,date_meeting,meeting_done,date_met) VALUES('$date_created','$created_by','$candidatefk','$attendeefk','$type','$date_meeting','$meeting_done','$date_met')";
             //var_dump($data);
-            $slistemQueryUpdate = mysql_query($query);
+            //$slistemQueryUpdate = mysql_query($query);
             //echo $query;
             echo '<br><br>';
         }
