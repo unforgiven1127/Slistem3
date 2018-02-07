@@ -29,7 +29,18 @@ echo '<br><br>';
         $data = explode(',',$line);
         if(count($data) == 14)
         {
-            var_dump($data);
+            $date_created = $data[0];
+            $created_by = $data[2];
+            $candidatefk = $data[3];
+            $attendeefk = $data[4];
+            $type = 1;
+            $date_meeting = $data[6];
+            $meeting_done = $data[12];
+            $date_met = $data[13];
+
+            $query = "INSERT INTO sl_meeting VALUES($date_created,$created_by,$candidatefk,$attendeefk,$type,$date_meeting,$meeting_done,$date_met )";
+            //var_dump($data);
+            echo $query;
             echo '<br><br>';
         }
     }
