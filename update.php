@@ -38,7 +38,7 @@ echo '<br><br>';
             $meeting_done = $data[12];
             $date_met = $data[13];
 
-            $query = "INSERT INTO sl_meeting VALUES('$date_created','$created_by','$candidatefk','$attendeefk','$type','$date_meeting','$meeting_done','$date_met')";
+            $query = "INSERT INTO sl_meeting ('date_created','created_by','candidatefk','attendeefk','type','date_meeting','meeting_done','date_met') VALUES('$date_created','$created_by','$candidatefk','$attendeefk','$type','$date_meeting','$meeting_done','$date_met')";
             //var_dump($data);
             echo $query;
             echo '<br><br>';
