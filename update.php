@@ -25,7 +25,9 @@
     $handle = fopen("add.csv", "r");
     if ($handle) {
     while (($line = fgets($handle)) !== false) {
-        echo $line.'<br>';
+        $data = explode(',',$line);
+        var_dump($data);
+        echo '<br><br>';
     }
 
     fclose($handle);
