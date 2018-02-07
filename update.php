@@ -21,13 +21,17 @@
     $allNotes = array();
 
     $count = 0;
-
+echo '<br><br>';
+echo '<br><br>';
     $handle = fopen("add.csv", "r");
     if ($handle) {
     while (($line = fgets($handle)) !== false) {
         $data = explode(',',$line);
-        var_dump($data);
-        echo '<br><br>';
+        if(count($data) == 14)
+        {
+            var_dump($data);
+            echo '<br><br>';
+        }
     }
 
     fclose($handle);
