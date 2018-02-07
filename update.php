@@ -22,17 +22,28 @@
 
     $count = 0;
 
+    $handle = fopen("add.xlsx", "r");
+    if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        echo $line.'<br>';
+    }
+
+    fclose($handle);
+} else {
+    echo 'error';
+}
+
     //updateTest();
 
-    while($meetingData = mysql_fetch_assoc($slistemQuery))
-    {
+    //while($meetingData = mysql_fetch_assoc($slistemQuery))
+    //{
         //$candidate_id = $meetingData['candidate_id'];
         //$type = $meetingData['type'];
         //$content = $meetingData['content'];
 
         //$asResult = $oEvent->addNote((int)$candidate_id, $type, $content);
 
-    }
+    //}
 
     /*foreach ($allMeetings as $key => $meeting)
     {
