@@ -22,7 +22,7 @@
 
     $count = 0;
 
-    $handle = fopen("add.xlsx", "r");
+    $handle = fopen("add.csv", "r");
     if ($handle) {
     while (($line = fgets($handle)) !== false) {
         echo $line.'<br>';
