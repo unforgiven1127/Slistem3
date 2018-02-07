@@ -29,6 +29,7 @@ echo '<br><br>';
         $data = explode(',',$line);
         if(count($data) == 14 && $data[2] > 0)
         {
+            $count ++;
             $date_created = $data[0];
             $created_by = $data[2];
             $candidatefk = $data[3];
@@ -40,7 +41,8 @@ echo '<br><br>';
 
             $query = "INSERT INTO sl_meeting (date_created,created_by,candidatefk,attendeefk,type,date_meeting,meeting_done,date_met) VALUES('$date_created','$created_by','$candidatefk','$attendeefk','$type','$date_meeting','$meeting_done','$date_met')";
             //var_dump($data);
-            echo $query;
+            $slistemQueryUpdate = mysql_query($query);
+            //echo $query;
             echo '<br><br>';
         }
     }
@@ -49,7 +51,7 @@ echo '<br><br>';
 } else {
     echo 'error';
 }
-
+echo $count;
     //updateTest();
 
     //while($meetingData = mysql_fetch_assoc($slistemQuery))
