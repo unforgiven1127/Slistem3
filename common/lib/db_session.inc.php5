@@ -12,9 +12,21 @@ class CDbSessionHandler
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
       }
 
-      exit('error - session unavailable');
+      exit('error - session unavailable1');
       return false;
     }
+
+    else if(trim($_SERVER['SERVER_NAME']) == "slistem.nep")
+    {
+      if ($this->coSessDb = mysqli_connect('localhost', 'pma_admin', 'KVW4PVVAWHASuRDz'))
+      {
+        return (bool)mysqli_select_db($this->coSessDb, 'php_session');
+      }
+
+      exit('error - session unavailable1');
+      return false;
+    }
+    
     else
     {
       if($this->coSessDb = mysqli_connect('127.0.0.1', 'pma_admin', 'KVW4PVVAWHASuRDz'))
@@ -22,11 +34,11 @@ class CDbSessionHandler
         return (bool)mysqli_select_db($this->coSessDb, 'php_session');
       }
 
-      exit('error - session unavailable');
+      exit('error - session unavailable2');
       return false;
     }
 
-    exit('error - session unavailable');
+    exit('error - session unavailable3');
     return false;
   }
 

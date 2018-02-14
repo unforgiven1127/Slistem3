@@ -161,7 +161,7 @@ class CSearchEx extends CSearch
         $sFormType = getValue('formType');
 
         ChromePhp::log('FORM HO: ');
-        ChromePhp::log($sFormType.'-'.$sCpUid.'-'.$sCpType);
+        // ChromePhp::log($sFormType.'-'.$sCpUid.'-'.$sCpType);
         return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_displaySearchForm($sFormType, $sCpUid, $sCpType, true))));
         break;
 
@@ -341,9 +341,6 @@ class CSearchEx extends CSearch
         }
         else
           $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, '', 0);
-
-       ChromePhp::log('COMPLEX URL: ');
-       ChromePhp::log($sURL);
 
         $oForm->setFormParams('searchForm', $pbInAjax, array('action' => $sURL, 'class' => 'fullPageForm advancedSearchForm', 'submitLabel'=>'Search', 'onBeforeSubmit' => $sSubmit));
         $oForm->addField('input', 'complex_search', array('type' => 'hidden', 'value' => 1));
@@ -2073,7 +2070,10 @@ ChromePhp::log($asSql);
        */
       if($psOperator == 'exact_contains')
       {
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:<:]]' . $pvValue . '[[:>:]])" ';
+        $reqClass = (preg_match("/^[.!?,;:]/", $pvValue)) ? ' "([[:punct:]]' . preg_replace('/^[.!?,;:]/', '', $pvValue) . '[[:>:]])" ' : ' "([[:<:]]' . $pvValue . '[[:>:]])" ' ;
+
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).$reqClass;
+        // return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:punct:]]' . $pvValue . '[[:>:]])" ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
@@ -2222,7 +2222,13 @@ ChromePhp::log($asSql);
       if($psOperator == 'contain' || $psOperator == 'equal')
         return ' LIKE ';
 
-      if($psOperator == 'in' || $psOperator == 'exact_contains')
+      if($psOperator == 'in')
+      {
+        $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
+        return ' REGEXP ';
+      }
+
+      if($psOperator == 'exact_contains')
       {
         $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
         return ' REGEXP ';
