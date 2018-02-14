@@ -2063,6 +2063,7 @@ ChromePhp::log($asSql);
 
       if($psOperator == 'contain')
       {
+        ChromePhp::log('contain');
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
       /**
@@ -2070,6 +2071,7 @@ ChromePhp::log($asSql);
        */
       if($psOperator == 'exact_contains')
       {
+ChromePhp::log('exact_contains');
         $reqClass = (preg_match("/^[.!?,;:]/", $pvValue)) ? ' "([[:punct:]]' . preg_replace('/^[.!?,;:]/', '', $pvValue) . '[[:>:]])" ' : ' "([[:<:]]' . $pvValue . '[[:>:]])" ' ;
 
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).$reqClass;
