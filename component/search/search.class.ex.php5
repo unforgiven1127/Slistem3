@@ -1677,6 +1677,10 @@ ChromePhp::log('MMMM2');
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
+                if($sFieldOperator == 'exact_contains')
+                {
+                  $sFieldOperator = 'contain';
+                }
                 ChromePhp::log($asFieldData['sql']['field']);
                 ChromePhp::log($sFieldOperator);
                 ChromePhp::log('MMMM4');
