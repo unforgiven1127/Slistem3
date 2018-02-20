@@ -2061,9 +2061,9 @@ class CSearchEx extends CSearch
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString(' '.$pvValue.' ').' ';
       }
 
-      if($psOperator == 'contain')
+      if($psOperator == 'contain' || $psOperator == 'exact_contains')
       {
-        ChromePhp::log('contain');
+        ChromePhp::log('containc  aaa');
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
       /**
