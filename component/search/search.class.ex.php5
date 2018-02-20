@@ -2071,7 +2071,7 @@ ChromePhp::log($asSql);
        */
       if($psOperator == 'exact_contains')
       {
-ChromePhp::log('exact_contains');
+ChromePhp::log('exact_contains 2');
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
 
@@ -2227,11 +2227,11 @@ ChromePhp::log('exact_contains');
         return ' REGEXP ';
       }
 
-      if($psOperator == 'exact_contains')
+      /*if($psOperator == 'exact_contains')
       {
         $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
         return ' REGEXP ';
-      }
+      }*/
 
       return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';
     }
