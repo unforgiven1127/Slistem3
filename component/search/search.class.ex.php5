@@ -1617,6 +1617,7 @@ class CSearchEx extends CSearch
               foreach($asMatch[1] as $sMatch)
               {
                 $asFieldData['data']['field'] = $sMatch;
+                ChromePhp::log('MMMM1');
                 $sSql = $this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
                 $sCondition =  str_replace('<<'.$sMatch.'>>', $sSql, $sCondition);
               }
@@ -1650,12 +1651,13 @@ class CSearchEx extends CSearch
                     $company_information = getCompanyInformation($vValue);
                     $company_name = $company_information['name'];
                     //$search_key = $company_name." ]";
-
+ChromePhp::log('MMMM2');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ';
 
                   }
                   else
                   {
+                    ChromePhp::log('MMMM3');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
@@ -1675,6 +1677,7 @@ class CSearchEx extends CSearch
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
+                ChromePhp::log('MMMM4');
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
@@ -1682,6 +1685,7 @@ class CSearchEx extends CSearch
               }
               elseif(isset($asFieldData['sql']['where']) && !empty($asFieldData['sql']['where']))
               {
+                ChromePhp::log('MMMM5');
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['where'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
                 //dump(' where => '.$sCondition);
@@ -2072,7 +2076,7 @@ class CSearchEx extends CSearch
       if($psOperator == 'exact_contains')
       {
 ChromePhp::log('exact_contains 2');
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %');
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
