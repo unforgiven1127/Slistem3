@@ -1677,6 +1677,7 @@ ChromePhp::log('MMMM2');
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
+                ChromePhp::log($asFieldData['sql']['field']);
                 ChromePhp::log('MMMM4');
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
