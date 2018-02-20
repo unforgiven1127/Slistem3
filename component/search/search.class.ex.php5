@@ -2072,10 +2072,7 @@ ChromePhp::log($asSql);
       if($psOperator == 'exact_contains')
       {
 ChromePhp::log('exact_contains');
-        //$reqClass = (preg_match("/^[.!?,;:]/", $pvValue)) ? ' "([[:punct:]]' . preg_replace('/^[.!?,;:]/', '', $pvValue) . '[[:>:]])" ' : ' "([[:<:]]' . $pvValue . '[[:>:]])" ' ;
-
-        $searchThis = " ".$pvValue." ";
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$searchThis.'%');
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
