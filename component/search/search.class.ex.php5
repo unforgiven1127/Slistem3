@@ -2074,8 +2074,9 @@ ChromePhp::log($asSql);
 ChromePhp::log('exact_contains');
         $reqClass = (preg_match("/^[.!?,;:]/", $pvValue)) ? ' "([[:punct:]]' . preg_replace('/^[.!?,;:]/', '', $pvValue) . '[[:>:]])" ' : ' "([[:<:]]' . $pvValue . '[[:>:]])" ' ;
 
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).$reqClass;
-        // return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:punct:]]' . $pvValue . '[[:>:]])" ';
+        $searchThis = " ".$pvValue." ";
+        //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).$reqClass;
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:<:]]' . $searchThis . '[[:>:]])" ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
