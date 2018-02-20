@@ -1677,15 +1677,17 @@ ChromePhp::log('MMMM2');
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
+                $exact = false;
                 if($sFieldOperator == 'exact_contains')
                 {
+                  $exact = true;
                   $sFieldOperator = 'contain';
                 }
-                ChromePhp::log($asFieldData['sql']['field']);
-                ChromePhp::log($sFieldOperator);
-                ChromePhp::log('MMMM4');
+                //ChromePhp::log($asFieldData['sql']['field']);
+                //ChromePhp::log($sFieldOperator);
+                //ChromePhp::log('MMMM4');
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
-                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
+                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue,$exact).' ';
 
                 //dump(' field => '.$sCondition);
               }
@@ -1835,7 +1837,7 @@ ChromePhp::log('MMMM2');
     return $explanation;
   }
 
-  private function _getSqlFromOperator($pasFieldType, $psOperator, $pvValue)
+  private function _getSqlFromOperator($pasFieldType, $psOperator, $pvValue,$exact=false)
   {
 
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
@@ -2073,8 +2075,16 @@ ChromePhp::log('MMMM2');
 
       if($psOperator == 'contain' || $psOperator == 'exact_contains')
       {
-        ChromePhp::log('containc  aaa');
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
+        if($exact)
+        {
+          ChromePhp::log('containc  EXATCT');
+          return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %');
+        }
+        else
+        {
+          ChromePhp::log('containc  aaa');
+          return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
+        }
       }
       /**
        * Searched only the filtered words / exactly the same word
