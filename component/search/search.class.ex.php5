@@ -2041,7 +2041,7 @@ ChromePhp::log($asSql);
 
     if($pasFieldType['type'] == 'fts')
     {
-        
+
       if(strlen(trim($pvValue)) < 1)
       {
         $this->_addError('line '.__LINE__.' - text field, value is less than 1 characters ['.$pvValue.']');
@@ -2075,8 +2075,7 @@ ChromePhp::log('exact_contains');
         $reqClass = (preg_match("/^[.!?,;:]/", $pvValue)) ? ' "([[:punct:]]' . preg_replace('/^[.!?,;:]/', '', $pvValue) . '[[:>:]])" ' : ' "([[:<:]]' . $pvValue . '[[:>:]])" ' ;
 
         $searchThis = " ".$pvValue." ";
-        //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).$reqClass;
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:<:]]' . $searchThis . '[[:>:]])" ';
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$searchThis.'%');
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
