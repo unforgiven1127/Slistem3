@@ -2076,7 +2076,7 @@ ChromePhp::log($asSql);
       if($psOperator == 'exact_contains')
       {
         // return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString(' '.$pvValue.' ').' ';
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\. ').') ';
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\. '.' | '.$pvValue.'\\, ').') ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
