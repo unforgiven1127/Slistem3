@@ -2079,6 +2079,7 @@ ChromePhp::log('MMMM2');
         {
           ChromePhp::log('containc  EXATCT');
           $returnThis = $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'. %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'.%').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
+          ChromePhp::log($returnThis);
           return $returnThis;
         }
         else
