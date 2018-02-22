@@ -160,8 +160,7 @@ class CSearchEx extends CSearch
         $sCpType = getValue('CpType');
         $sFormType = getValue('formType');
 
-        ChromePhp::log('FORM HO: ');
-        // ChromePhp::log($sFormType.'-'.$sCpUid.'-'.$sCpType);
+  ChromePhp::log('FORM HO: ');
         return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_displaySearchForm($sFormType, $sCpUid, $sCpType, true))));
         break;
 
@@ -1617,7 +1616,6 @@ class CSearchEx extends CSearch
               foreach($asMatch[1] as $sMatch)
               {
                 $asFieldData['data']['field'] = $sMatch;
-                ChromePhp::log('MMMM1');
                 $sSql = $this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue);
                 $sCondition =  str_replace('<<'.$sMatch.'>>', $sSql, $sCondition);
               }
@@ -1651,13 +1649,12 @@ class CSearchEx extends CSearch
                     $company_information = getCompanyInformation($vValue);
                     $company_name = $company_information['name'];
                     //$search_key = $company_name." ]";
-ChromePhp::log('MMMM2');
+
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $company_name).' ) ';
 
                   }
                   else
                   {
-                    ChromePhp::log('MMMM3');
                     $asArrayCondition[] = ' ('.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vValue).') ';
                   }
                 }
@@ -1677,23 +1674,13 @@ ChromePhp::log('MMMM2');
               }
               elseif(isset($asFieldData['sql']['field']) && !empty($asFieldData['sql']['field']))
               {
-                $exact = false;
-                if($sFieldOperator == 'exact_contains')
-                {
-                  $exact = true;
-                  $sFieldOperator = 'contain';
-                }
-                //ChromePhp::log($asFieldData['sql']['field']);
-                //ChromePhp::log($sFieldOperator);
-                //ChromePhp::log('MMMM4');
                 $asFieldData['data']['field'] = $asFieldData['sql']['field'];
-                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue,$exact).' ';
+                $sCondition = $sRowOperator.' '.$asFieldData['sql']['field'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
                 //dump(' field => '.$sCondition);
               }
               elseif(isset($asFieldData['sql']['where']) && !empty($asFieldData['sql']['where']))
               {
-                ChromePhp::log('MMMM5');
                 $sCondition = $sRowOperator.' '.$asFieldData['sql']['where'].' '.$this->_getSqlFromOperator($asFieldData['data'], $sFieldOperator, $vFieldValue).' ';
 
                 //dump(' where => '.$sCondition);
@@ -1780,8 +1767,8 @@ ChromePhp::log('MMMM2');
       $oQB->setTitle('CpxSearch: '.implode(' , ', $asMessage['long']));
     else
       $oQB->setTitle('CpxSearch: Some data is missing');
-//$asSql = $oQB->getSql();
-//ChromePhp::log($asSql);
+$asSql = $oQB->getSqlArray();
+ChromePhp::log($asSql);
     return $oQB;
   }
 
@@ -1837,7 +1824,7 @@ ChromePhp::log('MMMM2');
     return $explanation;
   }
 
-  private function _getSqlFromOperator($pasFieldType, $psOperator, $pvValue,$exact=false)
+  private function _getSqlFromOperator($pasFieldType, $psOperator, $pvValue)
   {
 
     // -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=-
@@ -1950,6 +1937,11 @@ ChromePhp::log('MMMM2');
       {
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
+      if($psOperator == 'exact_contains')
+      {
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\. ').') ';
+      }
+
       if($psOperator == 'start')
       {
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue.'%');
@@ -2053,7 +2045,7 @@ ChromePhp::log('MMMM2');
 
     if($pasFieldType['type'] == 'fts')
     {
-
+        
       if(strlen(trim($pvValue)) < 1)
       {
         $this->_addError('line '.__LINE__.' - text field, value is less than 1 characters ['.$pvValue.']');
@@ -2062,6 +2054,7 @@ ChromePhp::log('MMMM2');
 
       if($psOperator == 'different')
       {
+        ChromePhp::log('DIFFERENT: ');
         $returnCondition = " NOT LIKE '%".$pvValue."%' ";
         return $returnCondition;
         //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
@@ -2073,28 +2066,17 @@ ChromePhp::log('MMMM2');
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString(' '.$pvValue.' ').' ';
       }
 
-      if($psOperator == 'contain' || $psOperator == 'exact_contains')
+      if($psOperator == 'contain')
       {
-        if($exact)
-        {
-          ChromePhp::log('containc  EXATCT');
-          $returnThis = $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'. %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'.%').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
-          ChromePhp::log($returnThis);
-          return $returnThis;
-        }
-        else
-        {
-          ChromePhp::log('containc  aaa');
-          return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
-        }
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
       /**
        * Searched only the filtered words / exactly the same word
        */
       if($psOperator == 'exact_contains')
       {
-ChromePhp::log('exact_contains 2');
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %');
+        // return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString(' '.$pvValue.' ').' ';
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\. ').') ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
@@ -2189,6 +2171,12 @@ ChromePhp::log('exact_contains 2');
       if($psOperator == 'contain')
         return ' LIKE ';
 
+      if($psOperator == 'exact_contains')
+      {
+        $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
+        return ' REGEXP ';
+      }
+
       if($psOperator == 'start')
         return ' LIKE ';
 
@@ -2249,11 +2237,11 @@ ChromePhp::log('exact_contains 2');
         return ' REGEXP ';
       }
 
-      /*if($psOperator == 'exact_contains')
+      if($psOperator == 'exact_contains')
       {
         $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
         return ' REGEXP ';
-      }*/
+      }
 
       return ' <[ IS NULL '.__LINE__.' / '.$pasFieldType['type'].' / '.$psOperator.' ]> ';
     }

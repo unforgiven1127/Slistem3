@@ -468,7 +468,8 @@
 
 
 
-
+  $operators = $oSearch->getFieldOperators('string');
+  unset($operators['exact_contains']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['lastname'] = array(
       'display' => array
       (
@@ -476,7 +477,8 @@
         'type' => array('input', 'text'),
         'label' => 'Candidate lastname',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('string'),
+        'operator' => $operators,
+        // 'operator' => $oSearch->getFieldOperators('string'),
         'default_operator' => 'contains',
         'option' => array(),
         'value' => array(),
@@ -500,6 +502,8 @@
       )
     );
 
+  $operators = $oSearch->getFieldOperators('string');
+  unset($operators['exact_contains']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['firstname'] = array(
       'display' => array
       (
@@ -507,7 +511,8 @@
         'type' => array('input', 'text'),
         'label' => 'Candidate firstname',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('string'),
+        'operator' => $operators,
+        // 'operator' => $oSearch->getFieldOperators('string'),
         'default_operator' => 'contains',
         'option' => array(),
         'value' => array(),
@@ -530,7 +535,8 @@
       )
     );
 
-
+$operators = $oSearch->getFieldOperators('string');
+unset($operators['exact_contains']);
 $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
       'display' => array
       (
@@ -538,7 +544,8 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
         'type' => array('input', 'text'),
         'label' => 'Candidate keyword',
         'group' => 'personal_data',
-        'operator' => $oSearch->getFieldOperators('string'),
+        'operator' => $operators,
+        // 'operator' => $oSearch->getFieldOperators('string'),
         'default_operator' => 'contains',
         'option' => array(),
         'value' => array(),
@@ -770,6 +777,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
   $operators = $oSearch->getFieldOperators('string');
   unset($operators['different']);
+  unset($operators['exact_contains']);
   $asFields[CONST_CANDIDATE_TYPE_CANDI]['company_name'] = array(
       'display' => array
       (
@@ -803,6 +811,7 @@ $asFields[CONST_CANDIDATE_TYPE_CANDI]['keyword'] = array(
 
     $sURL = $this->_oPage->getAjaxUrl($this->csUid, CONST_ACTION_SEARCH, CONST_CANDIDATE_TYPE_COMP);
     $operators = $oSearch->getFieldOperators('string');
+    unset($operators['exact_contains']);
     unset($operators['start']);
     unset($operators['end']);
     $asFields[CONST_CANDIDATE_TYPE_CANDI]['company_prev'] = array(
