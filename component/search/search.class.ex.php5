@@ -2078,7 +2078,8 @@ ChromePhp::log('MMMM2');
         if($exact)
         {
           ChromePhp::log('containc  EXATCT');
-          return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %');
+          $returnThis = $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.' %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'. %').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('% '.$pvValue.'.%').' or '.$this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue);
+          return $returnThis;
         }
         else
         {
