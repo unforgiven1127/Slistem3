@@ -98,6 +98,7 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
 console.log(psIdToShow);
 console.log(oContainer);
 console.log(oElement);
+
       $(oElement).fadeOut(0, function()
       {
         $('#'+psIdToShow, oContainer).fadeIn(325, function()
@@ -106,6 +107,7 @@ console.log(oElement);
           //$(this).css('border', '1px solid red');
         });
       });
+      $('#'+psIdToShow).fadeIn();
     }
     else
       $('#'+psIdToShow).fadeIn(325);
