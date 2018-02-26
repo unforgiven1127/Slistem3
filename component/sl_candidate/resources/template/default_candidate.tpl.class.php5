@@ -333,7 +333,7 @@ class CDefault_candidate extends CTemplate
 
   if(isset($pasCandidateData['last_meeting']['date']))
   {
-    $dateShow = substr($pasCandidateData['last_meeting'], 0, 10);
+    $dateShow = substr($pasCandidateData['last_meeting']['date'], 0, 10);
   }
   else
   {
