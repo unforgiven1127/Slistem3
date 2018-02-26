@@ -95,9 +95,9 @@ function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_clie
         psContainer = '';
 
       var oElement = $(psContainer+' .aTabContent:visible', oContainer);
-console.log(psIdToShow);
-console.log(oContainer);
-console.log(oElement);
+//console.log(psIdToShow);
+//console.log(oContainer);
+//console.log(oElement);
 
       $(oElement).fadeOut(0, function()
       {
