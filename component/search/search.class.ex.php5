@@ -160,7 +160,8 @@ class CSearchEx extends CSearch
         $sCpType = getValue('CpType');
         $sFormType = getValue('formType');
 
-  ChromePhp::log('FORM HO: ');
+        ChromePhp::log('FORM HO: ');
+        ChromePhp::log($sFormType.'-'.$sCpUid.'-'.$sCpType);
         return json_encode($oPage->getAjaxExtraContent(array('data' => $this->_displaySearchForm($sFormType, $sCpUid, $sCpType, true))));
         break;
 
@@ -340,6 +341,9 @@ class CSearchEx extends CSearch
         }
         else
           $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, '', 0);
+
+       ChromePhp::log('COMPLEX URL: ');
+       ChromePhp::log($sURL);
 
         $oForm->setFormParams('searchForm', $pbInAjax, array('action' => $sURL, 'class' => 'fullPageForm advancedSearchForm', 'submitLabel'=>'Search', 'onBeforeSubmit' => $sSubmit));
         $oForm->addField('input', 'complex_search', array('type' => 'hidden', 'value' => 1));
@@ -1937,11 +1941,6 @@ ChromePhp::log($asSql);
       {
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
       }
-      if($psOperator == 'exact_contains')
-      {
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\. ').') ';
-      }
-
       if($psOperator == 'start')
       {
         return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString($pvValue.'%');
@@ -2054,7 +2053,6 @@ ChromePhp::log($asSql);
 
       if($psOperator == 'different')
       {
-        ChromePhp::log('DIFFERENT: ');
         $returnCondition = " NOT LIKE '%".$pvValue."%' ";
         return $returnCondition;
         //return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString('%'.$pvValue.'%');
@@ -2075,8 +2073,7 @@ ChromePhp::log($asSql);
        */
       if($psOperator == 'exact_contains')
       {
-        // return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' '.$this->_getModel()->dbEscapeString(' '.$pvValue.' ').' ';
-        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' ('.$this->_getModel()->dbEscapeString(' '.$pvValue.' | '.$pvValue.'\\.'.' | '.$pvValue.'\\, ').') ';
+        return $this->_getSqlOperator($pasFieldType, $psOperator, $pvValue).' "([[:<:]]' . $pvValue . '[[:>:]])" ';
       }
 
       if($psOperator == 'fts_in' || $psOperator == 'in')
@@ -2171,12 +2168,6 @@ ChromePhp::log($asSql);
       if($psOperator == 'contain')
         return ' LIKE ';
 
-      if($psOperator == 'exact_contains')
-      {
-        $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
-        return ' REGEXP ';
-      }
-
       if($psOperator == 'start')
         return ' LIKE ';
 
@@ -2231,13 +2222,7 @@ ChromePhp::log($asSql);
       if($psOperator == 'contain' || $psOperator == 'equal')
         return ' LIKE ';
 
-      if($psOperator == 'in')
-      {
-        $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
-        return ' REGEXP ';
-      }
-
-      if($psOperator == 'exact_contains')
+      if($psOperator == 'in' || $psOperator == 'exact_contains')
       {
         $pvValue = addcslashes($pvValue, '*+-./\\"\';?');
         return ' REGEXP ';

@@ -4308,23 +4308,19 @@ function get_fallenoff_notes($candidate_id)
     {
         //$mongo =new MongoClient("mongodb://localhost", array("username" => $username, "password" => $password));
         //$slistemMongo = $mongo->selectDB('slistem');
-      /*$mongo = new MongoDB\Driver\Manager("mongodb://localhost:27017", array(
-            'username' => $username,
-            'password' => $password
-        ));*/
 
-      $mongo = new MongoClient("mongodb://127.0.0.1", array("username" => $username, "password" => $password,'db' => 'slistem'));
+$mongo = new MongoClient("mongodb://127.0.0.1", array("username" => $username, "password" => $password,'db' => 'slistem'));
         /*$mongo = new MongoClient('mongodb://localhost', array(
             'username' => $username,
             'password' => $password,
             'db'       => 'slistem'
         ));*/
-
         $slistemMongo = $mongo->selectDB('slistem');
     } catch(MongoConnectionException $e) {
 
       $error = 'MONGO ERROR : ' . $e->getMessage();
       //echo $e->getMessage();//MONGO ERROR
+      ChromePhp::log($error);
 
       $array = array();
 
@@ -4410,10 +4406,10 @@ function get_fallenoff_notes($candidate_id)
             'db'       => 'slistem'
         ));*/
         $slistemMongo = $mongo->selectDB('slistem');
-
     } catch(MongoConnectionException $e) {
 
       $error = 'MONGO ERROR : ' . $e->getMessage();
+      ChromePhp::log($error);
 
       $array = array();
 
