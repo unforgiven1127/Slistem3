@@ -329,11 +329,20 @@ class CDefault_candidate extends CTemplate
         $sValue.= '<div class="candi_status_icon inactive meeting_history" style="float: right;" title="Meeting history">
             <a href="javascript:;" class="floatRight">#'.$pasCandidateData['nb_meeting'].'</a>
               </div>';
-ChromePhp::log($pasCandidateData['last_meeting']);
+//ChromePhp::log($pasCandidateData['last_meeting']['date']);
+
+  if(isset($pasCandidateData['last_meeting']['date']))
+  {
+    $dateShow = substr($pasCandidateData['last_meeting'], 0, 10);
+  }
+  else
+  {
+    $dateShow = "-";
+  }
 
         $sHTML.= $this->coDisplay->getBlocStart('', array('class' => 'candi_detail_row'));
           $sHTML.= $this->coDisplay->getBloc('', 'date met', array('class' => 'candi_detail_label'));
-          //$sHTML.= $this->coDisplay->getBloc('', '<a href="javascript:;" style="float: left;">'.substr($pasCandidateData['last_meeting'], 0, 10).'</a>'.$sValue, array('class' => 'candi_detail_value clickable', 'onclick' => $sJavascript));
+          $sHTML.= $this->coDisplay->getBloc('', '<a href="javascript:;" style="float: left;">'.$dateShow.'</a>'.$sValue, array('class' => 'candi_detail_value clickable', 'onclick' => $sJavascript));
         $sHTML.= $this->coDisplay->getBlocEnd();
 
 
