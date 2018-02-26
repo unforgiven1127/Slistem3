@@ -2,7 +2,7 @@
 function toggleCandiTab(poElement, psIdToShow, psContainer, candidate_id,is_client = false)
 {
   //psIdToShow acilacak olan tab
-document.write(psIdToShow);
+
   if(psIdToShow == 'candiTab2' &&  is_client != false &&  is_client != 'false')
   {
     if(confirm("This candidate works at a Slate client, if you access his contact information, a notification will be sent to the client\'s owner."))
@@ -95,7 +95,9 @@ document.write(psIdToShow);
         psContainer = '';
 
       var oElement = $(psContainer+' .aTabContent:visible', oContainer);
-
+console.log(psIdToShow);
+console.log(oContainer);
+console.log(oElement);
       $(oElement).fadeOut(0, function()
       {
         $('#'+psIdToShow, oContainer).fadeIn(325, function()
