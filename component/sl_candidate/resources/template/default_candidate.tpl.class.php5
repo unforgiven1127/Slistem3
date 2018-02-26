@@ -329,7 +329,7 @@ class CDefault_candidate extends CTemplate
         $sValue.= '<div class="candi_status_icon inactive meeting_history" style="float: right;" title="Meeting history">
             <a href="javascript:;" class="floatRight">#'.$pasCandidateData['nb_meeting'].'</a>
               </div>';
-
+ChromePhp::log($sValue);
         $sHTML.= $this->coDisplay->getBlocStart('', array('class' => 'candi_detail_row'));
           $sHTML.= $this->coDisplay->getBloc('', 'date met', array('class' => 'candi_detail_label'));
           $sHTML.= $this->coDisplay->getBloc('', '<a href="javascript:;" style="float: left;">'.substr($pasCandidateData['last_meeting'], 0, 10).'</a>'.$sValue, array('class' => 'candi_detail_value clickable', 'onclick' => $sJavascript));
