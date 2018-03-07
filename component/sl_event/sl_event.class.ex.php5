@@ -180,9 +180,9 @@ class CSl_eventEx extends CSl_event
       }
     }
     //ChromePhp::log($psNoteType);
-    ChromePhp::log($asNotes);
+    //ChromePhp::log($asNotes);
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
-    ChromePhp::log($asNotes);
+    //ChromePhp::log($asNotes);
 
     foreach ($asNotes as $key => $note)
     {
