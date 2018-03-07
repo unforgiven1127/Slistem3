@@ -155,6 +155,7 @@ class CSl_eventEx extends CSl_event
       ChromePhp::log($addFallenNotes);
       foreach ($addFallenNotes as $key => $value)
       {
+        ChromePhp::log($value['date_created']);
         $addArray['companyName'] = '';
         $addArray['content'] = $value['comment'];
         $addArray['cp_action'] = 'ppav';
@@ -178,10 +179,10 @@ class CSl_eventEx extends CSl_event
         array_push($asNotes,$addArray);
       }
     }
-    ChromePhp::log($psNoteType);
+    //ChromePhp::log($psNoteType);
     ChromePhp::log($asNotes);
     uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
-
+    ChromePhp::log($asNotes);
 
     foreach ($asNotes as $key => $note)
     {
