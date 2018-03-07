@@ -152,10 +152,10 @@ class CSl_eventEx extends CSl_event
     else if($psNoteType == '')
     {
       $addFallenNotes = get_fallenoff_notes($pnItemPk);
-      ChromePhp::log($addFallenNotes);
+      //ChromePhp::log($addFallenNotes);
       foreach ($addFallenNotes as $key => $value)
       {
-        ChromePhp::log($value['date_created']);
+        //ChromePhp::log($value['date_created']);
         $addArray['companyName'] = '';
         $addArray['content'] = $value['comment'];
         $addArray['cp_action'] = 'ppav';
@@ -440,8 +440,8 @@ class CSl_eventEx extends CSl_event
     }
 //ChromePhp::log($asNotes);
     //uasort($asNotes, sort_multi_array_by_value('date_display', 'reverse'));
-    uasort($asNotes, sort_multi_array_by_value('eventpk', 'reverse'));
-
+    //uasort($asNotes, sort_multi_array_by_value('eventpk', 'reverse'));
+uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     if(empty($asNotes))
     {
       $sHTML.= '<div class="entry"><div class="note_content"><em>No entry found.</em></div></div>';
@@ -551,7 +551,7 @@ class CSl_eventEx extends CSl_event
         $sHTML.= $oHTML->getBlocEnd();
       }
     }
-
+uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     return array('content' => $sHTML, 'nb_result' => count($asNotes), 'priority' => $nPriotity);
   }
 
