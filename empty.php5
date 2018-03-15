@@ -12,9 +12,9 @@
 <body>
 <table style="margin-top:20px;">
 	<tr>
-		<th style='padding-left: 5px;'>Search: </th>
+		<th style='padding-left: 10px;'>Search: </th>
 		<td style='padding-left: 5px;'><input style="width:150px;" type="text" class="form-control" id="search"></td>
-		<th>Sort by: </th>
+		<th style='padding-left: 10px;'>Sort by: </th>
 		<td style='padding-left: 5px;'>
 			<select class="form-control" id="sort">
 			    <option>Severity</option>
