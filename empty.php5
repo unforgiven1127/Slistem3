@@ -10,6 +10,20 @@
 </head>
 
 <body>
+<table>
+	<tr>
+		<th>Search: </th>
+		<td><input style="width:150px;" type="text" class="form-control" id="search"></td>
+		<th>Sort by: </th>
+		<td>
+			<select class="form-control" id="sort">
+			    <option>Severity</option>
+			    <option>Date Created</option>
+			    <option>Status</option>
+		  	</select>
+  		</td>
+	</tr>
+</table>
 <table class="table table-striped">
 	<tr>
 		<th style='width:10%;'>Severity</th>
@@ -37,7 +51,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>High</td>
@@ -53,7 +67,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Medium</td>
@@ -69,7 +83,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -85,7 +99,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -101,7 +115,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -117,7 +131,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
-		<td><a>Edit</a><a>Delete</a></td>
+		<td><a>Edit</a> / <a>Delete</a></td>
 	</tr>
 </table>
 
