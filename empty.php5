@@ -13,9 +13,9 @@
 <table style="margin-top:20px;">
 	<tr>
 		<th>Search: </th>
-		<td><input style="width:150px;" type="text" class="form-control" id="search"></td>
+		<td style='margin-left: 5px;'><input style="width:150px;" type="text" class="form-control" id="search"></td>
 		<th>Sort by: </th>
-		<td>
+		<td style='margin-left: 5px;'>
 			<select class="form-control" id="sort">
 			    <option>Severity</option>
 			    <option>Date Created</option>
