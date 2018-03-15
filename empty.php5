@@ -22,6 +22,7 @@
 			    <option>Status</option>
 		  	</select>
   		</td>
+  		<td style='padding-left: 10px;'><button type="button" class="btn btn-success">Add New</button></td>
 	</tr>
 </table>
 <table style="margin-top:20px;" class="table table-striped">
