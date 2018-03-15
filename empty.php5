@@ -18,9 +18,10 @@
 		<th style='width:20%;'>Notes</th>
 		<th style='width:5%;'>Date Created</th>
 		<th style='width:5%;'>Date Updated</th>
-		<th style='width:10%;'>Status</th>
+		<th style='width:5%;'>Status</th>
 		<th style='width:10%;'>Assignee</th>
 		<th style='width:10%;'>Attachment</th>
+		<th style='width:10%;'>Action</th>
 	</tr>
 	<tr>
 		<td>Critical</td>
@@ -36,6 +37,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>High</td>
@@ -51,6 +53,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Medium</td>
@@ -66,6 +69,7 @@
 		<td>Created</td>
 		<td>Munir Anameric</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -81,6 +85,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -96,6 +101,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 	<tr>
 		<td>Improvement</td>
@@ -111,6 +117,7 @@
 		<td>Created</td>
 		<td>Rossana</td>
 		<td><a>Attachment</a></td>
+		<td><a>Edit</a><a>Delete</a></td>
 	</tr>
 </table>
 
