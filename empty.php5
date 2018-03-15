@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<table style="padding-top:20px;">
+<table style="margin-top:20px;">
 	<tr>
 		<th>Search: </th>
 		<td><input style="width:150px;" type="text" class="form-control" id="search"></td>
@@ -23,8 +23,8 @@
 		  	</select>
   		</td>
 	</tr>
-</table style="padding-top:20px;">
-<table class="table table-striped">
+</table>
+<table style="margin-top:20px;" class="table table-striped">
 	<tr>
 		<th style='width:10%;'>Severity</th>
 		<th style='width:10%;'>Type</th>
