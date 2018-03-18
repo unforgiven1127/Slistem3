@@ -135,81 +135,157 @@ if(!empty($_POST['mail']))
 
 <body class="error_report_body" style="">
   <div class="error_main_container">
+    <table style="margin-top:20px;">
+  <tr>
+    <th style='padding-left: 10px;'>Search: </th>
+    <td style='padding-left: 5px;'><input style="width:150px;" type="text" class="form-control" id="search"></td>
+    <th style='padding-left: 10px;'>Sort by: </th>
+    <td style='padding-left: 5px;'>
+      <select class="form-control" id="sort">
+          <option>Severity</option>
+          <option>Date Created</option>
+          <option>Status</option>
+        </select>
+      </td>
+      <td style='padding-left: 10px;'>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New
+      </button>
+      </td>
+  </tr>
+</table>
+<table style="margin-top:20px;" class="table table-striped">
+  <tr>
+    <th style='width:10%;'>Severity</th>
+    <th style='width:10%;'>Type</th>
+    <th style='width:20%;'>Description</th>
+    <th style='width:20%;'>Notes</th>
+    <th style='width:5%;'>Date Created</th>
+    <th style='width:5%;'>Date Updated</th>
+    <th style='width:5%;'>Status</th>
+    <th style='width:10%;'>Assignee</th>
+    <th style='width:10%;'>Attachment</th>
+    <th style='width:10%;'>Action</th>
+  </tr>
+  <tr>
+    <td>Critical</td>
+    <td>Bug</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Munir Anameric</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+  <tr>
+    <td>High</td>
+    <td>Bug</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Munir Anameric</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+  <tr>
+    <td>Medium</td>
+    <td>New Development</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Munir Anameric</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+  <tr>
+    <td>Low</td>
+    <td>Research</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Rossana</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+  <tr>
+    <td>Low</td>
+    <td>Research</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Rossana</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+  <tr>
+    <td>Low</td>
+    <td>Research</td>
+    <td>
+      An 'error' is a deviation from accuracy or correctness. A 'mistake' is an error caused by a fault: the fault being misjudgment, carelessness, or forgetfulness. Now, say that I run a stop sign because I was in a hurry, and wasn't concentrating, and the police stop me, that is a mistake. If, however, I try to park in an area with conflicting signs, and I get a ticket because I was incorrect on my interpretation of what the signs meant, that would be an error. The first time it would be an error. The second time it would be a mistake since I should have known better
+    </td>
+    <td>
+      A note is a string of text placed at the bottom of a page in a book or document or at the end of a chapter, volume or the whole text. The note can provide an author's comments on the main text or citations of a reference work in support of the text, or both
+    </td>
+    <td>2018-03-14 20:30</td>
+    <td>2018-03-14 20:30</td>
+    <td>Created</td>
+    <td>Rossana</td>
+    <td><a>Attachment</a></td>
+    <td><a>Edit</a> / <a>Delete</a></td>
+  </tr>
+</table>
 
-<?php
 
-if(!empty($_POST['mail']))
-{
-  echo 'Error reporting form:<br/>
-  Thank you for your report. You will be redirected soon.
-  <br />
-  <br />
-  <br />
-  <img style="text-align: center;" src="/common/pictures/loading_8.gif" />
-  <br />
-  <br />
-  <script>setTimeout("document.location.href = \'/index.php5\'", 7000);</script>
-  <br />';
-}
-else
-{
-  echo '
- <fieldset>
- <legend style="font-size: 18px; font-weight: bold; color: #78A3D1; padding: 5px 10px;">Error report</legend>
- <br />
- Thank you for reporting an issue, we\'ll do our best to treat it as soon as possible.<br />
- Do not hesitate to contact us directly if you are stuck because of this error.<br />
- <br />
-
- <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
-
- <input type="hidden" name="mail" value="'.  uniqid() .'" />';
-
-
-
- if(!empty($_POST['dump']))
- {
-   /* send an email with everything we've got:
-    * http referer, session (user)
-    */
-   echo "<input type='hidden' name='dump' id='dumpId' value=\"".$_POST['dump']."\" />";
- }
-
- if(!empty($_POST['dump_html']))
- {
-   echo "<textarea style='display: none;' name='dump_html' id='dump_htmlId'>".htmlentities($_POST['dump_html'])."</textarea>";
- }
-
-
-  echo '
- <br />
- User name / account: <br/>
- <input type="text" name="user" value=""/> <br /><br />
-
- Problem description and/or error message: <br />
- <textarea name="description" cols="120" rows="5" ></textarea><br /><br />
-
- When did it occurred : <br />
- <textarea name="actions" cols="120" rows="5" ></textarea><br /><br />
-
- Your settings : <br />
- <span style="color: #aaa; font-style: italic; line-height: 22px;">(web-browser used, version...)</span><br />
- <textarea name="actions" cols="120" rows="5" ></textarea><br /><br />
-
-Screenshot : <br /><br />
- #1 <input type="file" name="screenshot_1" value="" /> <br />
- #2 <input type="file" name="screenshot_2" value="" /> <br />
- #3 <input type="file" name="screenshot_3" value="" /> <br />
-<br /><br />
-
- <br />
- <input type="submit" value="Send the error report" />
- <br /><br />
-
-
- </form>';
-}
-?>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <input id="attachment" type="file" name="attachment" />
+    <button id="upload">Upload</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id='add' class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </body>
 </html>
