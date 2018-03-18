@@ -109,10 +109,7 @@ else if(!empty($_POST['mail']))
   //header('location: /index.php5?sent='.(int)$bSent);
 
 }
-else
-{
-  echo "else";
-}
+
 ?>
 
 <html>
@@ -124,28 +121,38 @@ else
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style>
-  form
-  {
-    line-height: 20px;
-  }
-  input[type=text], textarea
-  {
-    width: 820px;
-  }
-  fieldset
-  {
-    padding: 0 15px;
-  }
-  .error_report_body{ font-size:12px; background-color: #f0f0f0; }
-  .error_main_container{ width: 900px; margin: 25px auto; }
+
   </style>
 </head>
 
 <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
-          <input id="attachment" type="file" name="attachment" /><br>
-          <input class="form-control" id='description' name='description' type="text"><br>
+<table>
+  <tr>
+    <td>
+      <label for="exampleFormControlSelect1">Priority</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option value='critical'>Critical</option>
+        <option value='high'>High</option>
+        <option value='medium'>Medium</option>
+        <option value='low'>Low</option>
+      </select>
+    </td>
+    <td>
+    <label for="exampleFormControlSelect1">Type</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option value='bug'>Bug</option>
+        <option value='development'>Development</option>
+        <option value='improvement'>Improvement</option>
+        <option value='research'>Research</option>
+      </select>
+    </td>
+    <td>
+          <input id="attachment" type="file" name="attachment" />
           <input type="submit" value="Send the error report" />
-        </form>
+    </td>
+  </tr>
+</table>
+</form>
 
 <br><br>
 
@@ -158,20 +165,19 @@ else
     <th style='padding-left: 10px;'>Sort by: </th>
     <td style='padding-left: 5px;'>
       <select class="form-control" id="sort">
-          <option>Severity</option>
+          <option>Priority</option>
           <option>Date Created</option>
           <option>Status</option>
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New
-      </button>
+        <button type="button" class="btn btn-success">Add New</button>
       </td>
   </tr>
 </table>
 <table style="margin-top:20px;" class="table table-striped">
   <tr>
-    <th style='width:10%;'>Severity</th>
+    <th style='width:10%;'>Priority</th>
     <th style='width:10%;'>Type</th>
     <th style='width:20%;'>Description</th>
     <th style='width:20%;'>Notes</th>
@@ -280,30 +286,6 @@ else
   </tr>
 </table>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
-          <input id="attachment" type="file" name="attachment" />
-          <input class="form-control" id='description' name='description' type="text">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input class="btn btn-secondary" type="submit" value="Add" />
-      </div>
-    </div>
-  </div>
-</div>
   </div>
 </body>
 </html>
