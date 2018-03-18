@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" >
-  $('#upload').on('click', function() {
+  $("#upload").click(function(){
   	alert('click');
     var file_data = $('#attachment').prop('files')[0];
     var form_data = new FormData();
