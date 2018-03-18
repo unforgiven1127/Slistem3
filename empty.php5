@@ -9,6 +9,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" >
+
+  $('#add').click(function(){
+  	alert('asdsad');
+  });
+
   $("#upload").click(function(){
   	alert('click');
     var file_data = $('#attachment').prop('files')[0];
@@ -179,7 +184,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" id='add' class="btn btn-primary">Add</button>
       </div>
     </div>
   </div>
