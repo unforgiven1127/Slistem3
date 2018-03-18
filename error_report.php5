@@ -126,9 +126,9 @@ else if(!empty($_POST['mail']))
 </head>
 
 <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
-<table>
+<table  style="margin-top:20px;">
   <tr>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="exampleFormControlSelect1">Priority</label>
       <select class="form-control" id="exampleFormControlSelect1">
         <option value='critical'>Critical</option>
@@ -137,7 +137,7 @@ else if(!empty($_POST['mail']))
         <option value='low'>Low</option>
       </select>
     </td>
-    <td>
+    <td style='padding-left: 10px;'>
     <label for="exampleFormControlSelect1">Type</label>
       <select class="form-control" id="exampleFormControlSelect1">
         <option value='bug'>Bug</option>
