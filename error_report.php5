@@ -33,6 +33,8 @@ else if(!empty($_POST['mail']))
         $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['screenshot_1']['tmp_name'];
     }
 
+  }
+
   if(isset($_POST['dump_html']) && !empty($_POST['dump_html']))
   {
     $sFile = '/common/upload/error/'.time().'_pagecontent.html';
