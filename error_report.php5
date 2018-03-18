@@ -125,7 +125,8 @@ else if(!empty($_POST['mail']))
   </style>
 </head>
 
-<form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
+<div style="background-color: grey;">
+<form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table  style="margin-top:20px;">
   <tr>
     <td style='padding-left: 10px;'>
@@ -193,6 +194,7 @@ else if(!empty($_POST['mail']))
   </tr>
 </table>
 </form>
+</div>
 
 <br><br>
 
