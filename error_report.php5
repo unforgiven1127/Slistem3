@@ -146,20 +146,48 @@ else if(!empty($_POST['mail']))
         <option value='research'>Research</option>
       </select>
     </td>
+    <td style='padding-left: 10px;'>
+      <label for="type">Status</label>
+      <select class="form-control" id="status" name="status">
+        <option value='created'>Created</option>
+        <option value='progress'>In progress</option>
+        <option value='completed'>Completed</option>
+        <option value='cancelled'>Cancelled</option>
+      </select>
+    </td>
+    <td style='padding-left: 10px;'>
+      <label for="type">Assignee</label>
+      <select class="form-control" id="assignee" name="assignee">
+        <option value='494'>Munir Anameric</option>
+        <option value='434'>Rossana Kyamu</option>
+        <option value='535'>Shyam Kumar</option>
+      </select>
+    </td>
     <td>
-          <input id="attachment" type="file" name="attachment" />
-          <input type="submit" value="Send the error report" />
+      <label for="estimated">Estimated Time</label>
+      <input class="form-control" type="text" id="estimated" name="estimated">
+    </td>
+    <td>
+      <label for="estimated">Completed Time</label>
+      <input class="form-control" type="text" id="completedTime" name="completedTime">
+    </td>
+    <td>
+      <label for="attachment">Attachment</label>
+      <input id="attachment" type="file" name="attachment" />
     </td>
   </tr>
   <tr>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="description">Description</label>
-      <textarea style="width: 300px;" class="form-control" id="description" name="description" rows="4"></textarea>
+      <textarea style="width: 600px;"class="form-control"id="description" name="description" rows="4"></textarea>
     </td>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="notes">Notes</label>
-      <textarea style="width: 300px;" class="form-control" id="notes" name="notes" rows="4"></textarea>
+      <textarea style="width: 600px;"class="form-control" id="notes" name="notes" rows="4"></textarea>
     </td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="Add Task" /></td>
   </tr>
 </table>
 </form>
