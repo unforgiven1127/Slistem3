@@ -106,6 +106,10 @@ if(!empty($_POST['mail']))
   //header('location: /index.php5?sent='.(int)$bSent);
 
 }
+else
+{
+  echo "else";
+}
 ?>
 
 <html>
