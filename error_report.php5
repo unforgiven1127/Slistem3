@@ -133,8 +133,8 @@ if(!empty($_POST['mail']))
   </style>
 </head>
 
-<body class="error_report_body" style="">
-  <div class="error_main_container">
+<body class="error_report_body_" style="">
+  <div class="error_main_container_">
     <table style="margin-top:20px;">
   <tr>
     <th style='padding-left: 10px;'>Search: </th>
