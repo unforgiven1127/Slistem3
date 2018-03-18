@@ -33,34 +33,6 @@ else if(!empty($_POST['mail']))
         $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['screenshot_1']['tmp_name'];
     }
 
-    if(!empty($_FILES['screenshot_2']['tmp_name']))
-    {
-      $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.time().'_screebshot_2_'.$_FILES['screenshot_2']['name'];
-      $bMoved = move_uploaded_file($_FILES['screenshot_2']['tmp_name'], $sPath);
-
-      //var_dump($_FILES['screenshot_2']['tmp_name']);
-
-      if($bMoved)
-        $sMessage.= "\n\n  file uploaded:  ".$sPath;
-      else
-        $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['screenshot_2']['tmp_name'];
-    }
-
-    if(!empty($_FILES['screenshot_3']['tmp_name']))
-    {
-      $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.time().'_screebshot_3_'.$_FILES['screenshot_3']['name'];
-      $bMoved = move_uploaded_file($_FILES['screenshot_3']['tmp_name'], $sPath);
-
-      //var_dump($_FILES['screenshot_3']['tmp_name']);
-
-      if($bMoved)
-        $sMessage.= "\n\n  file uploaded:  ".$sPath;
-      else
-        $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['screenshot_3']['tmp_name'];
-    }
-
-  }
-
   if(isset($_POST['dump_html']) && !empty($_POST['dump_html']))
   {
     $sFile = '/common/upload/error/'.time().'_pagecontent.html';
@@ -120,12 +92,19 @@ else if(!empty($_POST['mail']))
   <script src="/common/js/jquery.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript">
+    function toggleForm(){
+      alert('asdasd');
+      $("#bugForm").toggle();
+    }
+  </script>
+
   <style>
 
   </style>
 </head>
 
-<div style="background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
+<div id="bugForm" style="display: none; background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table>
   <tr>
@@ -137,10 +116,10 @@ else if(!empty($_POST['mail']))
     <td style='padding-left: 10px;'>
       <label for="priority">Priority</label>
       <select class="form-control" id="priority" name="priority">
-        <option value='critical'>Critical</option>
-        <option value='high'>High</option>
-        <option value='medium'>Medium</option>
-        <option value='low'>Low</option>
+        <option value='1'>Critical</option>
+        <option value='2'>High</option>
+        <option value='3'>Medium</option>
+        <option value='4'>Low</option>
       </select>
     </td>
     <td style='padding-left: 10px;'>
@@ -187,11 +166,11 @@ else if(!empty($_POST['mail']))
   <tr>
     <td style='padding-left: 10px;'>
       <label for="description">Description</label>
-      <textarea style="width: 600px;"class="form-control"id="description" name="description" rows="4"></textarea>
+      <textarea style="width: 600px;"class="form-control"id="description" name="description" rows="6"></textarea>
     </td>
     <td style='padding-left: 10px;'>
       <label for="notes">Notes</label>
-      <textarea style="width: 600px;"class="form-control" id="notes" name="notes" rows="4"></textarea>
+      <textarea style="width: 600px;"class="form-control" id="notes" name="notes" rows="6"></textarea>
     </td>
   </tr>
   <tr>
@@ -218,7 +197,7 @@ else if(!empty($_POST['mail']))
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button type="button" class="btn btn-success">Add New</button>
+        <button id="addNew" type="button" onclick="toggleForm();" class="btn btn-success">Add New</button>
       </td>
   </tr>
 </table>
