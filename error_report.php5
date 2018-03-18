@@ -129,8 +129,8 @@ else if(!empty($_POST['mail']))
 <table  style="margin-top:20px;">
   <tr>
     <td style='padding-left: 10px;'>
-      <label for="exampleFormControlSelect1">Priority</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <label for="priority">Priority</label>
+      <select class="form-control" id="priority" name="priority">
         <option value='critical'>Critical</option>
         <option value='high'>High</option>
         <option value='medium'>Medium</option>
@@ -138,8 +138,8 @@ else if(!empty($_POST['mail']))
       </select>
     </td>
     <td style='padding-left: 10px;'>
-    <label for="exampleFormControlSelect1">Type</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+    <label for="type">Type</label>
+      <select class="form-control" id="type" name="type">
         <option value='bug'>Bug</option>
         <option value='development'>Development</option>
         <option value='improvement'>Improvement</option>
@@ -149,6 +149,16 @@ else if(!empty($_POST['mail']))
     <td>
           <input id="attachment" type="file" name="attachment" />
           <input type="submit" value="Send the error report" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="description">Description</label>
+      <textarea style="width: 300px;" class="form-control" id="description" name="description" rows="4"></textarea>
+    </td>
+    <td>
+      <label for="notes">Notes</label>
+      <textarea style="width: 300px;" class="form-control" id="notes" name="notes" rows="4"></textarea>
     </td>
   </tr>
 </table>
