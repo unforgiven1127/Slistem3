@@ -176,6 +176,8 @@ else if(!empty($_POST['mail']))
       <input id="attachment" type="file" name="attachment" />
     </td>
   </tr>
+</table>
+<table>
   <tr>
     <td style='padding-left: 10px;'>
       <label for="description">Description</label>
