@@ -283,12 +283,12 @@ else
       <div class="modal-body">
         <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
           <input id="attachment" type="file" name="attachment" />
-
+          <input class="form-control" id='description' name='description' type="text">
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input type="submit" value="Add" />
+        <input class="btn btn-secondary" type="submit" value="Add" />
       </div>
     </div>
   </div>
