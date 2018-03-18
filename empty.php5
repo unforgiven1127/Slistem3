@@ -8,9 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script>
+  <script type="text/javascript" >
   $('#upload').on('click', function() {
-    var file_data = $('#sortpicture').prop('files')[0];
+  	alert('click');
+    var file_data = $('#attachment').prop('files')[0];
     var form_data = new FormData();
     form_data.append('file', file_data);
     alert(form_data);
