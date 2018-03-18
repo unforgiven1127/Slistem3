@@ -141,6 +141,13 @@ else
   </style>
 </head>
 
+<form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
+          <input id="attachment" type="file" name="attachment" />
+          <input class="form-control" id='description' name='description' type="text">
+        </form>
+
+<br><br>
+
 <body class="error_report_body_" style="">
   <div class="error_main_container_">
     <table style="margin-top:20px;">
