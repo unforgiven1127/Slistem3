@@ -163,21 +163,21 @@ else if(!empty($_POST['mail']))
         <option value='535'>Shyam Kumar</option>
       </select>
     </td>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="estimated">Estimated Time</label>
       <input class="form-control" type="text" id="estimated" name="estimated">
     </td>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="estimated">Completed Time</label>
       <input class="form-control" type="text" id="completedTime" name="completedTime">
     </td>
-    <td>
+    <td style='padding-left: 10px;'>
       <label for="attachment">Attachment</label>
       <input id="attachment" type="file" name="attachment" />
     </td>
   </tr>
 </table>
-<table>
+<table  style='margin-top: 10px;'>
   <tr>
     <td style='padding-left: 10px;'>
       <label for="description">Description</label>
@@ -189,7 +189,7 @@ else if(!empty($_POST['mail']))
     </td>
   </tr>
   <tr>
-    <td><input type="submit" value="Add Task" /></td>
+    <td style='padding-left: 10px; padding-top: 10px;'><input type="submit" value="Add Task" /></td>
   </tr>
 </table>
 </form>
