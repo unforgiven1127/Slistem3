@@ -125,11 +125,11 @@ else if(!empty($_POST['mail']))
   </style>
 </head>
 
-<div style="background-color: #D3D3D3; margin-left: 10px; margin-top: 10px width: 1300px;border-radius: 25px;padding: 20px;">
+<div style="background-color: #D3D3D3; margin-left: 10px; margin-top: 10px width: 1300px !important;border-radius: 25px;padding: 20px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table>
   <tr>
-    <td><h2>ADD NEW TASK</h2></td>
+    <td><h3>ADD NEW TASK</h3></td>
   </tr>
 </table>
 <table  style="margin-top:20px;">
