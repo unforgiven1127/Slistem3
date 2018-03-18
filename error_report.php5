@@ -277,12 +277,14 @@ if(!empty($_POST['mail']))
         </button>
       </div>
       <div class="modal-body">
-    <input id="attachment" type="file" name="attachment" />
-    <button id="upload">Upload</button>
+        <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
+          <input id="attachment" type="file" name="attachment" />
+
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id='add' class="btn btn-primary">Add</button>
+        <input type="submit" value="Add" />
       </div>
     </div>
   </div>
