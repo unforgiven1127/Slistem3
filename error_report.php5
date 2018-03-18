@@ -97,7 +97,7 @@ else if(!empty($_POST['mail']))
   </style>
 </head>
 
-<div id="bugForm" style="display: none; background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
+<div id="bu" style="display: none; background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table>
   <tr>
@@ -190,7 +190,7 @@ else if(!empty($_POST['mail']))
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button id="addNew" type="button" class="btn btn-success">Add New</button>
+        <button type="button" class="btn btn-success">Add New</button>
       </td>
   </tr>
 </table>
