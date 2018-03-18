@@ -94,12 +94,15 @@ else if(!empty($_POST['mail']))
   <script src="/common/js/jquery.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <style>
-
-  </style>
+    <script type="text/javascript">
+    function toggleForm(){
+      alert('asdasd');
+      $("#bugForm").toggle();
+    }
+  </script>
 </head>
 
-<div style="background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
+<div id="bugForm" style="background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table>
   <tr>
@@ -192,7 +195,7 @@ else if(!empty($_POST['mail']))
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button type="button" class="btn btn-success">Add New</button>
+        <button type="button" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
       </td>
   </tr>
 </table>
