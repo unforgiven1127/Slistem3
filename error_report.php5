@@ -142,8 +142,9 @@ else
 </head>
 
 <form name="dumpForm" method="post" enctype="multipart/form-data" action="" >
-          <input id="attachment" type="file" name="attachment" />
-          <input class="form-control" id='description' name='description' type="text">
+          <input id="attachment" type="file" name="attachment" /><br>
+          <input class="form-control" id='description' name='description' type="text"><br>
+          <input type="submit" value="Send the error report" />
         </form>
 
 <br><br>
