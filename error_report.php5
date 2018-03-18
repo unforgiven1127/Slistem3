@@ -125,7 +125,7 @@ else if(!empty($_POST['mail']))
   </style>
 </head>
 
-<div style="background-color: grey;">
+<div style="background-color: grey; width: 1300px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
 <table  style="margin-top:20px;">
   <tr>
