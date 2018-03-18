@@ -7,6 +7,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+  $('#upload').on('click', function() {
+    var file_data = $('#sortpicture').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    alert(form_data);
+    $.ajax({
+        url: 'upload.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(php_script_response){
+            alert(php_script_response); // display response from the PHP script, if any
+        }
+     });
+});
+  </script>
+
 </head>
 
 <body>
@@ -151,7 +173,8 @@
         </button>
       </div>
       <div class="modal-body">
-        TODO
+		<input id="attachment" type="file" name="attachment" />
+		<button id="upload">Upload</button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
