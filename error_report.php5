@@ -4,9 +4,12 @@ header("X-XSS-Protection: 0");
 require_once('./common/lib/db_session.inc.php5');
 session_start();
 
-
+if(!empty($_POST['description']))
+{
+  echo "asdsada";
+}
 //receive the ajax dump data
-if(!empty($_POST['mail']))
+else if(!empty($_POST['mail']))
 {
   /* send an email with everything we've got:
    * http referer, session (user), dump data received
