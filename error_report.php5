@@ -112,8 +112,7 @@ if(!empty($_POST['mail']))
 
 <head>
   <title>Slistem Error report</title>
-
-  <link media="screen" type="text/css" href="/common/style/style.css?n=1317368869" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="/common/js/jquery.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
