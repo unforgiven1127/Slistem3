@@ -91,6 +91,10 @@ else if(!empty($_POST['mail']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="/common/js/jquery.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+
+  </style>
 </head>
 
 <div id="bugForm" style="display: none; background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
@@ -186,7 +190,7 @@ else if(!empty($_POST['mail']))
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button id="addNew" type="button" onclick="toggleForm();" class="btn btn-success">Add New</button>
+        <button id="addNew" type="button" class="btn btn-success">Add New</button>
       </td>
   </tr>
 </table>
