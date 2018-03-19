@@ -2,6 +2,16 @@
 header("X-XSS-Protection: 0");
 //if you want session to be handled in database
 require_once('./common/lib/db_session.inc.php5');
+require_once './conf/main_config.inc.php5';
+require_once './common/lib/global_func.inc.php5';
+require_once './component/dependency.inc.php5';
+
+require_once './conf/custom_config/'.CONST_WEBSITE.'/config.inc.php5';
+
+define('DB_NAME_SLISTEM','slistem');
+define('DB_SERVER_SLISTEM', '127.0.0.1');
+define('DB_USER_SLISTEM', 'pma_admin');
+define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 session_start();
 
 if(!empty($_POST['description']))
@@ -16,16 +26,19 @@ if(!empty($_POST['description']))
   $notes = $_POST['notes'];
   $description = $_POST['description'];
 
-  $oLogin = CDependency::getCpLogin();
-  $user_id = $oLogin->getuserPk();
+  @mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+  mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
-  $oDB = CDependency::getComponentByName('database');
+  //$oLogin = CDependency::getCpLogin();
+  //$user_id = $oLogin->getuserPk();
+  $user_id = 1;
+  //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
   $sQuery = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`notes`,`date_created`,`date_updated`,`user_id`)
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
-  $db_result = $oDB->executeQuery($sQuery);
+  $slistemQuery = mysql_query($sQuery);
 
   echo "asdsada";
 }
