@@ -35,13 +35,13 @@ if(!empty($_POST['description']))
   //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
-  $sQuery = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`notes`,`date_created`,`date_updated`,`user_id`)
+  $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`notes`,`date_created`,`date_updated`,`user_id`)
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
-  $slistemQuery = mysql_query($sQuery);
-  $data = mysql_fetch_assoc($slistemQuery);
+  $slistemQueryUpdate = mysql_query($query);
+  echo $query;
 
-  echo "asdsada";
+  //echo "asdsada";
 }
 //receive the ajax dump data
 else if(!empty($_POST['mail']))
