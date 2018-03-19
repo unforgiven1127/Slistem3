@@ -54,7 +54,7 @@ if(!empty($_POST['description']))
   $array3 = ['test7' => 'asd','test8' => 'dfg','test9' => 'dfg'];
   $array4 = [$array1,$array2,$array3];
   $_POST['test'] = $array4;
-  $_POST['returnData'] = $this->get_all();
+  $_POST['returnData'] = get_all();
   //echo "asdsada";
 }
 //receive the ajax dump data
