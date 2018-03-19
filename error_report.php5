@@ -23,7 +23,13 @@ function get_all()
 
   $result = mysql_query($query);
 
-  return $result;
+  $array = array();
+  while($data = mysql_fetch_assoc($result))
+  {
+    $array[] = $data ;
+  }
+
+  return $array;
 }
 
 if(!empty($_POST['description']))
