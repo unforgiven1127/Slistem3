@@ -285,7 +285,7 @@ else
   $data = $_POST['returnData'];
   foreach ($data as $key => $value) {
     echo "<tr>";
-      echo "<td>".$value['priorty']."</td>";
+      echo "<td>".$value['priority']."</td>";
       echo "<td>".$value['type']."</td>";
       echo "<td>".$value['description']."</td>";
       echo "<td>".$value['notes']."</td>";
