@@ -39,8 +39,12 @@ if(!empty($_POST['description']))
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
   $slistemQueryUpdate = mysql_query($query);
-  echo $query;
-
+  //echo $query;
+  $array1 = ['test1' => 'asd','test2' => 'dfg','test3' => 'dfg'];
+  $array2 = ['test4' => 'asd','test5' => 'dfg','test6' => 'dfg'];
+  $array3 = ['test7' => 'asd','test8' => 'dfg','test9' => 'dfg'];
+  $array4 = [$array1,$array2,$array3];
+  $_POST['test'] = $array4;
   //echo "asdsada";
 }
 //receive the ajax dump data
@@ -136,6 +140,16 @@ else if(!empty($_POST['mail']))
     }
   </script>
 </head>
+
+<?php
+
+if(!empty($_POST['test']))
+{
+  $data = $_POST['test'];
+  var_dump($data);
+}
+
+ ?>
 
 <div id="bugForm" style="display: none; background-color: #D3D3D3; margin-left: 10px; margin-top: 10px; width: 1300px !important;border-radius: 25px;padding: 20px;">
 <form id="addNewBug" name="addNewBug" method="post" enctype="multipart/form-data" action="" >
