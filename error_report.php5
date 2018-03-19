@@ -285,14 +285,14 @@ else
   $data = $_POST['returnData'];
   foreach ($data as $key => $value) {
     echo "<tr>";
-      echo "<td>$value['priorty']</td>";
-      echo "<td>$value['type']</td>";
-      echo "<td>$value['description']</td>";
-      echo "<td>$value['notes']</td>";
-      echo "<td>$value['date_created']</td>";
-      echo "<td>$value['date_updated']</td>";
-      echo "<td>$value['status']</td>";
-      echo "<td>$value['assignee']</td>";
+      echo "<td>".$value['priorty']."</td>";
+      echo "<td>".$value['type']."</td>";
+      echo "<td>".$value['description']."</td>";
+      echo "<td>".$value['notes']."</td>";
+      echo "<td>".$value['date_created']."</td>";
+      echo "<td>".$value['date_updated']."</td>";
+      echo "<td>".$value['status']."</td>";
+      echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
       echo "<td>----</td>";
     echo "</tr>";
