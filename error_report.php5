@@ -6,6 +6,27 @@ session_start();
 
 if(!empty($_POST['description']))
 {
+  $priority = $_POST['priority'];
+  $type = $_POST['type'];
+  $status = $_POST['status'];
+  $assignee = $_POST['assignee'];
+  $estimated = $_POST['estimated'];
+  $completedTime = $_POST['completedTime'];
+  $attachment = $_POST['attachment'];
+  $notes = $_POST['notes'];
+  $description = $_POST['description'];
+
+  $oLogin = CDependency::getCpLogin();
+  $user_id = $oLogin->getuserPk();
+
+  $oDB = CDependency::getComponentByName('database');
+  $sDate = date('Y-m-d H:i:s');
+
+  $sQuery = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`notes`,`date_created`,`date_updated`,`user_id`)
+             VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
+
+  $db_result = $oDB->executeQuery($sQuery);
+
   echo "asdsada";
 }
 //receive the ajax dump data
@@ -96,7 +117,7 @@ else if(!empty($_POST['mail']))
 
     <script type="text/javascript">
     function toggleForm(){
-      alert('asdasd');
+      //alert('asdasd');
       $("#bugForm").toggle();
     }
   </script>
@@ -130,7 +151,7 @@ else if(!empty($_POST['mail']))
       </select>
     </td>
     <td style='padding-left: 10px;'>
-      <label for="type">Status</label>
+      <label for="status">Status</label>
       <select class="form-control" id="status" name="status">
         <option value='created'>Created</option>
         <option value='progress'>In progress</option>
@@ -139,7 +160,7 @@ else if(!empty($_POST['mail']))
       </select>
     </td>
     <td style='padding-left: 10px;'>
-      <label for="type">Assignee</label>
+      <label for="assignee">Assignee</label>
       <select class="form-control" id="assignee" name="assignee">
         <option value='494'>Munir Anameric</option>
         <option value='434'>Rossana Kyamu</option>
@@ -151,7 +172,7 @@ else if(!empty($_POST['mail']))
       <input class="form-control" type="text" id="estimated" name="estimated">
     </td>
     <td style='padding-left: 10px;'>
-      <label for="estimated">Completed Time</label>
+      <label for="completedTime">Completed Time</label>
       <input class="form-control" type="text" id="completedTime" name="completedTime">
     </td>
     <td style='padding-left: 10px;'>
