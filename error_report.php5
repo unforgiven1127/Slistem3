@@ -14,6 +14,18 @@ define('DB_USER_SLISTEM', 'pma_admin');
 define('DB_PASSWORD_SLISTEM', 'KVW4PVVAWHASuRDz');
 session_start();
 
+@mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
+mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
+
+function get_all()
+{
+  $query = "SELECT * FROM tasks t where t.flag = 'a'";
+
+  $result = mysql_query($query);
+
+  return $result;
+}
+
 if(!empty($_POST['description']))
 {
   $priority = $_POST['priority'];
@@ -25,9 +37,6 @@ if(!empty($_POST['description']))
   //$attachment = $_POST['attachment'];
   $notes = $_POST['notes'];
   $description = $_POST['description'];
-
-  @mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
-  mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
   //$oLogin = CDependency::getCpLogin();
   //$user_id = $oLogin->getuserPk();
@@ -45,6 +54,7 @@ if(!empty($_POST['description']))
   $array3 = ['test7' => 'asd','test8' => 'dfg','test9' => 'dfg'];
   $array4 = [$array1,$array2,$array3];
   $_POST['test'] = $array4;
+  $_POST['returnData'] = $this->get_all();
   //echo "asdsada";
 }
 //receive the ajax dump data
@@ -143,9 +153,9 @@ else if(!empty($_POST['mail']))
 
 <?php
 
-if(!empty($_POST['test']))
+if(!empty($_POST['returnData']))
 {
-  $data = $_POST['test'];
+  $data = $_POST['returnData'];
   var_dump($data);
 }
 
