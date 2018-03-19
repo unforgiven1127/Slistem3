@@ -26,6 +26,10 @@ function get_all()
   $array = array();
   while($data = mysql_fetch_assoc($result))
   {
+    if($data['priority'] == 1){$data['_priority'] = "Critical";}
+    if($data['priority'] == 2){$data['_priority'] = "High";}
+    if($data['priority'] == 3){$data['_priority'] = "Medium";}
+    if($data['priority'] == 4){$data['_priority'] = "Low";}
     $array[] = $data ;
   }
 
@@ -285,7 +289,7 @@ else
   $data = $_POST['returnData'];
   foreach ($data as $key => $value) {
     echo "<tr>";
-      echo "<td>".$value['priority']."</td>";
+      echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
       echo "<td>".$value['description']."</td>";
       echo "<td>".$value['notes']."</td>";
