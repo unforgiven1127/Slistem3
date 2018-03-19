@@ -22,7 +22,7 @@ if(!empty($_POST['description']))
   $assignee = $_POST['assignee'];
   $estimated = $_POST['estimated'];
   $completedTime = $_POST['completedTime'];
-  $attachment = $_POST['attachment'];
+  //$attachment = $_POST['attachment'];
   $notes = $_POST['notes'];
   $description = $_POST['description'];
 
