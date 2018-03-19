@@ -39,6 +39,7 @@ if(!empty($_POST['description']))
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
   $slistemQuery = mysql_query($sQuery);
+  $data = mysql_fetch_assoc($slistemQuery);
 
   echo "asdsada";
 }
