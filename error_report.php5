@@ -165,8 +165,11 @@ else
 
     function edit(id){
       var data = <?php echo json_encode($_POST['returnData']); ?>;
-
-      console.log(data[id]);
+      data = data[id];
+      $('#priority').val(data['priority']);
+      $('#type').val(data['type']);
+      $('#description').val(data['description']);
+      $('#notes').val(data['notes']);
     };
 
   </script>
