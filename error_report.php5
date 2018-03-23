@@ -163,13 +163,6 @@ else
       $("#bugForm").toggle();
     }
 
-    function edit(){
-      alert('edit');
-    }
-    function delete(){
-      alert('delete');
-    }
-
   </script>
 </head>
 
