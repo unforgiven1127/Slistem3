@@ -250,7 +250,7 @@ else
     </td>
   </tr>
   <tr>
-    <td style='padding-left: 10px; padding-top: 10px;'><button class="btn btn-primary" type="submit" value="Submit" /></td>
+    <td style='padding-left: 10px; padding-top: 10px;'><button class="btn btn-primary" type="submit" value="Submit" />Submit</td>
   </tr>
 </table>
 </form>
