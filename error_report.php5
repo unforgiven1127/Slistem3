@@ -162,6 +162,14 @@ else
       //alert('asdasd');
       $("#bugForm").toggle();
     }
+
+    function edit(id){
+      alert('edit');
+    }
+    function delete(id){
+      alert('delete');
+    }
+
   </script>
 </head>
 
@@ -298,7 +306,7 @@ else
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
-      echo "<td>----</td>";
+      echo "<td><a onclick='edit(".$value['id'].")'>Edit</a>/<a onclick='delete(".$value['id'].")'>Delete</a></td>";
     echo "</tr>";
   } ?>
 </table>
