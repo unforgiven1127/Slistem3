@@ -55,7 +55,7 @@ if(!empty($_POST['description']))
   //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
-  if(!isset($id))
+  if($id != null)
   {
     $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`)
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
