@@ -166,10 +166,16 @@ else
     function edit(id){
       var data = <?php echo json_encode($_POST['returnData']); ?>;
       data = data[id];
+      $("#bugForm").show();
       $('#priority').val(data['priority']);
       $('#type').val(data['type']);
+      $('#status').val(data['status']);
+      $('#assignee').val(data['assignee']);
+      $('#estimated').val(data['estimated']);
+      $('#completedTime').val(data['completedTime']);
       $('#description').val(data['description']);
       $('#notes').val(data['notes']);
+      $('#id').val(data['id']);
     };
 
   </script>
@@ -255,6 +261,7 @@ else
     </td>
   </tr>
   <tr>
+    <td><input id='id' name='id'></input></td>
     <td style='padding-left: 10px; padding-top: 10px;'><button class="btn btn-primary" type="submit" value="Submit" />Submit</td>
   </tr>
 </table>
