@@ -306,7 +306,7 @@ else
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
-      echo "<td><a onclick='edit(".$value['id'].")'>Edit</a>/<a onclick='delete(".$value['id'].")'>Delete</a></td>";
+      echo "<td><button onclick='edit(".$value['id'].")'>Edit</button>/<button onclick='delete(".$value['id'].")'>Delete</button></td>";
     echo "</tr>";
   } ?>
 </table>
