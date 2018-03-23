@@ -306,7 +306,7 @@ else
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
-      echo "<td><button onclick='toggleForm();'>Edit</button>/<button onclick='delete();'>Delete</button></td>";
+      echo "<td><button type='button' onclick='toggleForm();'>Edit</button></td>";
     echo "</tr>";
   } ?>
 </table>
