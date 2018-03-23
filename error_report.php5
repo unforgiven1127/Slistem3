@@ -55,16 +55,17 @@ if(!empty($_POST['description']))
   //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
-  if($id != null)
+  if($id > 0)
+  {
+    echo "id: ".$id."<br>";
+    var_dump($id);
+  }
+  else
   {
     $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`)
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
     $slistemQueryUpdate = mysql_query($query);
-  }
-  else
-  {
-    echo "id: ".$id;
   }
 
   $_POST['returnData'] = get_all();
