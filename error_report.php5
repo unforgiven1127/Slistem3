@@ -30,7 +30,7 @@ function get_all()
     if($data['priority'] == 2){$data['_priority'] = "High";}
     if($data['priority'] == 3){$data['_priority'] = "Medium";}
     if($data['priority'] == 4){$data['_priority'] = "Low";}
-    $array[] = $data ;
+    $array[$data['id']] = $data ;
   }
 
   return $array;
@@ -164,6 +164,9 @@ else
     };
 
     function edit(){
+      var myvar = <?php echo json_encode($_POST['returnData']); ?>;
+      //var data = <?php $_POST['returnData']; ?>;
+      console.log(myvar);
       alert('edit');
     };
 
@@ -303,7 +306,7 @@ else
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
-      echo "<td><button type='button' onclick='edit();'>Edit</button></td>";
+      echo "<td><button type='button' onclick='edit(".$value['id'].");'>Edit</button></td>";
     echo "</tr>";
   } ?>
 </table>
