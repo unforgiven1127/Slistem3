@@ -47,6 +47,7 @@ if(!empty($_POST['description']))
   //$attachment = $_POST['attachment'];
   $notes = $_POST['notes'];
   $description = $_POST['description'];
+  $id = $_POST['id'];
 
   //$oLogin = CDependency::getCpLogin();
   //$user_id = $oLogin->getuserPk();
@@ -54,16 +55,18 @@ if(!empty($_POST['description']))
   //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
-  $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`)
+  if(!isset($id))
+  {
+    $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`)
              VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
 
-  $slistemQueryUpdate = mysql_query($query);
-  //echo $query;
-  $array1 = ['test1' => 'asd','test2' => 'dfg','test3' => 'dfg'];
-  $array2 = ['test4' => 'asd','test5' => 'dfg','test6' => 'dfg'];
-  $array3 = ['test7' => 'asd','test8' => 'dfg','test9' => 'dfg'];
-  $array4 = [$array1,$array2,$array3];
-  $_POST['test'] = $array4;
+    $slistemQueryUpdate = mysql_query($query);
+  }
+  else
+  {
+    echo "id: ".$id;
+  }
+
   $_POST['returnData'] = get_all();
   //echo "asdsada";
 }
