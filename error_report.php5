@@ -163,11 +163,10 @@ else
       $("#bugForm").toggle();
     };
 
-    function edit(){
-      var myvar = <?php echo json_encode($_POST['returnData']); ?>;
-      //var data = <?php $_POST['returnData']; ?>;
-      console.log(myvar);
-      alert('edit');
+    function edit(id){
+      var data = <?php echo json_encode($_POST['returnData']); ?>;
+
+      console.log(data[id]);
     };
 
   </script>
