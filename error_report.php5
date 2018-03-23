@@ -163,10 +163,10 @@ else
       $("#bugForm").toggle();
     }
 
-    function edit(id){
+    function edit(){
       alert('edit');
     }
-    function delete(id){
+    function delete(){
       alert('delete');
     }
 
@@ -306,7 +306,7 @@ else
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
       echo "<td>----</td>";
-      echo "<td><button onclick='edit(".$value['id'].")'>Edit</button>/<button onclick='delete(".$value['id'].")'>Delete</button></td>";
+      echo "<td><button onclick='edit()'>Edit</button>/<button onclick='delete()'>Delete</button></td>";
     echo "</tr>";
   } ?>
 </table>
