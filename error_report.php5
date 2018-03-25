@@ -19,7 +19,7 @@ mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 function get_all()
 {
-  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee t.flag = 'a'";
+  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee where t.flag = 'a'";
 
   $result = mysql_query($query);
 
