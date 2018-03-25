@@ -59,7 +59,7 @@ if(!empty($_POST['description']))
   {
     $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id' WHERE id = '$id'";
 
-echo $query;
+//echo $query;
 
     $slistemQueryUpdate = mysql_query($query);
   }
@@ -298,7 +298,8 @@ else
 </table>
 <table style="margin-top:20px;" class="table table-striped">
   <tr>
-    <th style='width:10%;'>Priority</th>
+    <th style='width:2%;'>ID</th>
+    <th style='width:8%;'>Priority</th>
     <th style='width:10%;'>Type</th>
     <th style='width:20%;'>Description</th>
     <th style='width:20%;'>Notes</th>
@@ -313,6 +314,7 @@ else
   $data = $_POST['returnData'];
   foreach ($data as $key => $value) {
     echo "<tr>";
+      echo "<td>".$value['id']."</td>";
       echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
       echo "<td>".$value['description']."</td>";
