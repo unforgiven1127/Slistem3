@@ -59,6 +59,8 @@ if(!empty($_POST['description']))
   {
     $query = "UPDATE tasks SET priority = $priority, type = $type, status = $status, assignee = $assignee, estimated = $estimated, completedTime = $completedTime, notes = $notes, description = $description, date_updated = $sDate, user_id = $user_id WHERE id = $id";
 
+echo $query;
+
     $slistemQueryUpdate = mysql_query($query);
   }
   else
