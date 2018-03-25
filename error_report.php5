@@ -378,7 +378,7 @@ else
       echo "<td>".$value['date_updated']."</td>";
       echo "<td>".$value['status']."</td>";
       echo "<td>".$value['assignee']."</td>";
-      echo "<td><a href='".$value['attachment'].";target=_blank'>".$attachment."</a></td>";
+      echo "<td><a href='".$value['attachment']."' download>".$attachment."</a></td>";
       echo "<td><button type='button' onclick='edit(".$value['id'].");'>Edit</button></td>";
     echo "</tr>";
   } ?>
