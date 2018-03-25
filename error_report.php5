@@ -95,6 +95,11 @@ if(!empty($_POST['description']))
 
   if($id > 0)
   {
+    $flag = 'a';
+    if($status == 'deleted')
+    {
+      $flag = 'p';
+    }
     $oldData = get_selected($id);
     $attachment = $oldData[$id]['attachment'];
     if(isset($dPath))
@@ -102,7 +107,7 @@ if(!empty($_POST['description']))
       $attachment = $dPath;
     }
 
-    $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id', attachment = '$attachment' WHERE id = '$id'";
+    $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id', attachment = '$attachment', 'flag' = '$flag' WHERE id = '$id'";
 
 //echo $query;
 
@@ -110,15 +115,19 @@ if(!empty($_POST['description']))
   }
   else
   {
-
+    $flag = 'a';
+    if($status == 'deleted')
+    {
+      $flag = 'p';
+    }
     $attachment = '';
     if(isset($dPath))
     {
       $attachment = $dPath;
     }
 
-    $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`,`attachment`)
-             VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."','".$attachment."')";
+    $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`,`attachment`,`flag`)
+             VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."','".$attachment."','".$flag."')";
 
     $slistemQueryUpdate = mysql_query($query);
   }
@@ -284,6 +293,7 @@ else
         <option value='progress'>In progress</option>
         <option value='completed'>Completed</option>
         <option value='cancelled'>Cancelled</option>
+        <option value='deleted'>Deleted</option>
       </select>
     </td>
     <td style='padding-left: 10px;'>
