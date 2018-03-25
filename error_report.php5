@@ -108,8 +108,15 @@ if(!empty($_POST['description']))
   }
   else
   {
-    $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`)
-             VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."')";
+
+    $attachment = '';
+    if(isset($sPath))
+    {
+      $attachment = $sPath;
+    }
+
+    $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`,`attachment`)
+             VALUES('".$priority."','".$type."','".$status."','".$assignee."','".$estimated."','".$completedTime."','".$notes."','".$description."','".$sDate."','".$sDate."','".$user_id."','".$attachment."')";
 
     $slistemQueryUpdate = mysql_query($query);
   }
