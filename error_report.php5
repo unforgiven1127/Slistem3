@@ -232,6 +232,7 @@ else
     };
 
     function edit(id){
+      window.scrollTo(0, 0);
       var data = <?php echo json_encode($_POST['returnData']); ?>;
       data = data[id];
       $("#bugForm").show();
