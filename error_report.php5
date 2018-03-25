@@ -80,7 +80,7 @@ if(!empty($_POST['description']))
     {
       $time = time();
       $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.$time.'_attachment_'.$_FILES['attachment']['name'];
-      $dPath = $_SERVER['SERVER_NAME'].'/common/upload/error/'.$time.'_attachment_'.$_FILES['attachment']['name'];
+      $dPath = '/common/upload/error/'.$time.'_attachment_'.$_FILES['attachment']['name'];
       $bMoved = move_uploaded_file($_FILES['attachment']['tmp_name'], $sPath);
 
        //var_dump($_FILES['screenshot_1']['tmp_name']);
