@@ -360,7 +360,7 @@ else
 </table>
 <table style="margin-top:20px;" class="table table-striped">
   <tr>
-    <th style='width:2%; margin-left: 15px;'>ID</th>
+    <th style='width:2%; padding-left: 15px;'>ID</th>
     <th style='width:8%;'>Priority</th>
     <th style='width:10%;'>Type</th>
     <th style='width:20%;'>Description</th>
@@ -382,7 +382,7 @@ else
       $attachment = 'Attachemt';
     }
     echo "<tr>";
-      echo "<td style='margin-left: 15px;'>".$value['id']."</td>";
+      echo "<td style='padding-left: 15px;'>".$value['id']."</td>";
       echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
       echo "<td>".$value['description']."</td>";
