@@ -36,6 +36,25 @@ function get_all()
   return $array;
 }
 
+function get_selected($id)
+{
+  $query = "SELECT * FROM tasks t where t.id = '$id'";
+
+  $result = mysql_query($query);
+
+  $array = array();
+  while($data = mysql_fetch_assoc($result))
+  {
+    if($data['priority'] == 1){$data['_priority'] = "Critical";}
+    if($data['priority'] == 2){$data['_priority'] = "High";}
+    if($data['priority'] == 3){$data['_priority'] = "Medium";}
+    if($data['priority'] == 4){$data['_priority'] = "Low";}
+    $array[$data['id']] = $data ;
+  }
+
+  return $array;
+}
+
 if(!empty($_POST['description']))
 {
   $priority = $_POST['priority'];
@@ -55,9 +74,33 @@ if(!empty($_POST['description']))
   //$oDB = CDependency::getComponentByName('database');
   $sDate = date('Y-m-d H:i:s');
 
+  if(isset($_FILES) && !empty($_FILES))
+  {
+    if(!empty($_FILES['attachment']['tmp_name']))
+    {
+      $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.time().'_attachment_'.$_FILES['attachment']['name'];
+      $bMoved = move_uploaded_file($_FILES['attachment']['tmp_name'], $sPath);
+
+       //var_dump($_FILES['screenshot_1']['tmp_name']);
+
+      if($bMoved)
+        $sMessage.= "\n\n  file uploaded:  ".$sPath;
+      else
+        $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['attachment']['tmp_name'];
+    }
+
+  }
+
   if($id > 0)
   {
-    $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id' WHERE id = '$id'";
+    $oldData = get_selected($id);
+    $attachment = $oldData[$id]['attachment'];
+    if(isset($sPath))
+    {
+      $attachment = $sPath;
+    }
+
+    $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id', attachment = '$attachment' WHERE id = '$id'";
 
 //echo $query;
 
@@ -72,7 +115,7 @@ if(!empty($_POST['description']))
   }
 
   $_POST['returnData'] = get_all();
-  //echo "asdsada";
+  echo $sMessage;
 }
 //receive the ajax dump data
 else if(!empty($_POST['mail']))
