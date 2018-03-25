@@ -19,7 +19,7 @@ mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
 function get_all()
 {
-  $query = "SELECT * FROM tasks t where t.flag = 'a'";
+  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee t.flag = 'a'";
 
   $result = mysql_query($query);
 
@@ -38,7 +38,7 @@ function get_all()
 
 function get_selected($id)
 {
-  $query = "SELECT * FROM tasks t where t.id = '$id'";
+  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee where t.id = '$id'";
 
   $result = mysql_query($query);
 
@@ -390,7 +390,7 @@ else
       echo "<td>".$value['date_created']."</td>";
       echo "<td>".$value['date_updated']."</td>";
       echo "<td>".$value['status']."</td>";
-      echo "<td>".$value['assignee']."</td>";
+      echo "<td>".$value['firstname']." ".$value['lastname']."</td>";
       echo "<td><a href='".$value['attachment']."' target=_blank'>".$attachment."</a></td>";
       echo "<td><button type='button' onclick='edit(".$value['id'].");'>Edit</button></td>";
     echo "</tr>";
