@@ -78,7 +78,9 @@ if(!empty($_POST['description']))
   {
     if(!empty($_FILES['attachment']['tmp_name']))
     {
-      $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.time().'_attachment_'.$_FILES['attachment']['name'];
+      $time = time();
+      $sPath = $_SERVER['DOCUMENT_ROOT'].'/common/upload/error/'.$time.'_attachment_'.$_FILES['attachment']['name'];
+      $dPath = $_SERVER['SERVER_NAME'].'/common/upload/error/'.$time.'_attachment_'.$_FILES['attachment']['name'];
       $bMoved = move_uploaded_file($_FILES['attachment']['tmp_name'], $sPath);
 
        //var_dump($_FILES['screenshot_1']['tmp_name']);
@@ -95,9 +97,9 @@ if(!empty($_POST['description']))
   {
     $oldData = get_selected($id);
     $attachment = $oldData[$id]['attachment'];
-    if(isset($sPath))
+    if(isset($dPath))
     {
-      $attachment = $sPath;
+      $attachment = $dPath;
     }
 
     $query = "UPDATE tasks SET priority = '$priority', type = '$type', status = '$status', assignee = '$assignee', estimated = '$estimated', completedTime = '$completedTime', notes = '$notes', description = '$description', date_updated = '$sDate', user_id = '$user_id', attachment = '$attachment' WHERE id = '$id'";
@@ -110,9 +112,9 @@ if(!empty($_POST['description']))
   {
 
     $attachment = '';
-    if(isset($sPath))
+    if(isset($dPath))
     {
-      $attachment = $sPath;
+      $attachment = $dPath;
     }
 
     $query = "INSERT INTO `tasks` (`priority`,`type`,`status`,`assignee`,`estimated`,`completedTime`,`notes`,`description`,`date_created`,`date_updated`,`user_id`,`attachment`)
@@ -366,6 +368,7 @@ else
     $attachment = '';
     if($value['attachment'] != '')
     {
+      //$name = 'https://beta2.slate.co.jp/common/upload/error/1521949417_attachment_netTest.doc';
       $attachment = 'Attachemt';
     }
     echo "<tr>";
