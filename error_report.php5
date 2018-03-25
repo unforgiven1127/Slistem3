@@ -122,7 +122,7 @@ if(!empty($_POST['description']))
   }
 
   $_POST['returnData'] = get_all();
-  echo $sMessage;
+  //echo $sMessage;
 }
 //receive the ajax dump data
 else if(!empty($_POST['mail']))
@@ -318,7 +318,7 @@ else
     </td>
   </tr>
   <tr>
-    <td><input id='id' name='id'></input></td>
+    <td hidden="hidden" ><input id='id' name='id'></input></td>
     <td style='padding-left: 10px; padding-top: 10px;'><button class="btn btn-primary" type="submit" value="Submit" />Submit</td>
   </tr>
 </table>
@@ -348,7 +348,7 @@ else
 </table>
 <table style="margin-top:20px;" class="table table-striped">
   <tr>
-    <th style='width:2%;'>ID</th>
+    <th style='width:2%; margin-left: 5px;'>ID</th>
     <th style='width:8%;'>Priority</th>
     <th style='width:10%;'>Type</th>
     <th style='width:20%;'>Description</th>
@@ -364,7 +364,7 @@ else
   $data = $_POST['returnData'];
   foreach ($data as $key => $value) {
     echo "<tr>";
-      echo "<td>".$value['id']."</td>";
+      echo "<td style='margin-left: 5px;'>".$value['id']."</td>";
       echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
       echo "<td>".$value['description']."</td>";
