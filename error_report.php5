@@ -84,9 +84,9 @@ if(!empty($_POST['description']))
        //var_dump($_FILES['screenshot_1']['tmp_name']);
 
       if($bMoved)
-        $sMessage.= "\n\n  file uploaded:  ".$sPath;
+        $sMessage = "\n\n  file uploaded:  ".$sPath;
       else
-        $sMessage.= "\n\n  ERROR: could not move the file :  ".$_FILES['attachment']['tmp_name'];
+        $sMessage = "\n\n  ERROR: could not move the file :  ".$_FILES['attachment']['tmp_name'];
     }
 
   }
