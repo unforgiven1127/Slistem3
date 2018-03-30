@@ -3088,7 +3088,7 @@ class CLoginEx extends CLogin
 
     $oDB = CDependency::getComponentByName('database');
     $asResult = array();
-
+ChromePhp::log($sQuery);
     $oResult = $oDB->ExecuteQuery($sQuery);
     $bRead = $oResult->readFirst();
     while($bRead)
