@@ -301,7 +301,7 @@ else
       <label for="assignee">Assignee</label>
       <select class="form-control" id="assignee" name="assignee">
         <option value='494'>Munir Anameric</option>
-        <option value='434'>Rossana Kyamu</option>
+        <option value='343'>Rossana Kyamu</option>
         <option value='535'>Shyam Kumar</option>
       </select>
     </td>
