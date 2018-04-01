@@ -1250,11 +1250,12 @@ class CSl_positionEx extends CSl_position
       $oForm->closeSection();
 
       $oForm->addField('select', 'status', array('label' => 'Status', 'prev-status' => $nCurrentStatus, 'onchange' =>
-          'if($(this).val() == 101 && !$(this).attr(\'data-notified\'))
-           {
-             $(this).attr(\'data-notified\', 1);
-             alert(\'If this candidate is set to [ placed ], his company will automatically be updated and all other candidates in play for this position will fall off. \');
-           }
+          '
+          // if($(this).val() == 101 && !$(this).attr(\'data-notified\'))
+          //  { // disabled the alert of updating company level at changing the status of candidate on 2018/03 related to function updateCompanyLevel()
+          //    $(this).attr(\'data-notified\', 1);
+          //    alert(\'If this candidate is set to [ placed ], his company will automatically be updated and all other candidates in play for this position will fall off. \');
+          //  }
 
            if($(this).val() == 200 && !$(this).attr(\'data-alerted\'))
            {
@@ -1653,8 +1654,12 @@ class CSl_positionEx extends CSl_position
       $sURL = $oPage->getAjaxUrl('555-001', CONST_ACTION_VIEW, CONST_CANDIDATE_TYPE_CANDI, $asData['candidatefk'], array('check_profile' => 1));
       $asReturn = array();
 
+      /**
+       * Changing the level of company as changing the status of the candidate
+       */
+      
       if($asData['status'] == 2 || $asData['status'] == 51 || $asData['status'] == 101 )
-      {//company level update
+      {
         if($asData['status'] == 2){$level = 3;}
         if($asData['status'] == 51)
         {
@@ -1672,13 +1677,17 @@ class CSl_positionEx extends CSl_position
         $position_id = $asData['positionfk'];
         $company_info = getPositionInformation($position_id);
         $company_id = $company_info['sl_companypk'];
-
-        if($company_info['level'] >= $level || $company_info['level'] == 0)
-        {
-          updateCompanyLevel($company_id, $level,$user_id);
-        }
-
+        /**
+         * disabling the auto updating features of company level for new requirement on 2018/03
+         */
+        /*
+          if($company_info['level'] >= $level || $company_info['level'] == 0)
+          {
+            updateCompanyLevel($company_id, $level,$user_id);
+          }
+        */
       }
+      
       //====================================================================================
       //====================================================================================
       //====================================================================================
@@ -1729,7 +1738,8 @@ class CSl_positionEx extends CSl_position
         // open form update
         $sEditURL = $oPage->getAjaxUrl('555-001', CONST_ACTION_EDIT, CONST_CANDIDATE_TYPE_CANDI, $asData['candidatefk']);
         $asReturn = array('notice' => __LINE__.' - Candidate updated.',
-          'action' => ' alert(\'Candidate company has been changed, please update the rest of his profile.\');
+          // 'action' => ' alert(\'Candidate company has been changed, please update the rest of his profile.\'); // for disabling the automatic update level of company
+          'action' => ' alert(\'Candidate is placed on selected position, please update the rest of his profile.\');
             goPopup.removeLastByType(\'layer\');
             view_candi(\''.$sURL.'\', \'#tabLink8\');
             var oConf = goPopup.getConfig(); oConf.height = 725; oConf.width = 1080;
@@ -3664,8 +3674,8 @@ class CSl_positionEx extends CSl_position
       {
         $statusTite = getStatusTitle($asPosition['status']);
         $note = "Status ".$statusTite." (#".$pnLinkPk.") deleted";
-        //$addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
-        $addLog = insertMongoLog($user_id, $asPosition['candidatefk'], $note);
+        $addLog = insertLog($user_id, $asPosition['candidatefk'], $note);
+        // $addLog = insertMongoLog($user_id, $asPosition['candidatefk'], $note);
       }
 
       return array('data' => 'ok', 'notice' => 'Application / stage deleted', 'action' => ' goPopup.removeByType(\'layer\'); refresh_candi('.(int)$asPosition['candidatefk'].', true);');

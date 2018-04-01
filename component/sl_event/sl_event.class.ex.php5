@@ -1160,10 +1160,10 @@ uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
       $note = $userName." edited note #".$this->cnPk;
     }
 
-    //insertLog($user_id, $candidate_id, $note);
     if(isset($note) && !empty($note) && !empty($candidate_id))
     {
-      insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
+      insertLog($user_id, $candidate_id, $note);
+      // insertMongoLog($user_id, $candidate_id, $note,"user_history","noteAdded");
     }
 
     //EDIT KISMINDA DA KULLANABILMEK ICIN DISARI ADIK

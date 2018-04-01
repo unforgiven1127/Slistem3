@@ -410,9 +410,6 @@ class CSearchEx extends CSearch
         else
           $sURL = $oPage->getAjaxUrl($this->csUid, CONST_ACTION_RESULTS, '', 0);
 
-        ChromePhp::log('TEST URL: ');
-        ChromePhp::log($sURL);
-
         $oForm->setFormParams('testSearchForm', $pbInAjax, array('action' => $sURL, 'class' => 'fullPageForm advancedSearchForm', 'noCancelButton' => 'noCancelButton', 'inajax' => 'inajax', 'submitLabel'=>'Test Search', 'ajaxTarget' => 'search-results-container'));
 
         $oForm->addField('input', 'test_search', array('type' => 'hidden', 'value' => 1));

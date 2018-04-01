@@ -536,10 +536,10 @@ class CSl_candidateEx extends CSl_candidate
       $desctiption = '';
       $cp_type = "comp";
 
-      //insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
-      insertMongoLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);
-      //insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
-      insertMongoLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);
+      insertLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      insertLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);// ikisinede yazmamiz istendi
+      // insertMongoLog($loginfk, $old_company_id, $text,$table,$desctiption,$cp_type);
+      // insertMongoLog($loginfk, $new_company_id, $text,$table,$desctiption,$cp_type);
 
       $html = "Company deleted / merged succesfully...";
     }
@@ -699,7 +699,7 @@ class CSl_candidateEx extends CSl_candidate
     if(isset($_POST['registration']) &&  $_POST['registration'] == 'success') {
 
         $oDB        = CDependency::getComponentByName('database');
-        $expQuery   = strstr($_POST['req_query'], " LIMIT", true);
+        $expQuery   = strstr($_POST['req_query'], " LIMIT", true);  // removes the limits from query for downloading all the related datas
 
         $oDbResult  = $oDB->ExecuteQuery($expQuery);
         $results    = $oDbResult->getAll();
@@ -746,7 +746,7 @@ class CSl_candidateEx extends CSl_candidate
             'success' => true,
             'url' => saveExcelFile($objWriter)
         );
-        ChromePhp::log($response);
+        
         echo json_encode($response);
         exit();
 
@@ -1301,8 +1301,8 @@ class CSl_candidateEx extends CSl_candidate
       {
         $text = "Candidate viewed";
       }
-      //insertLog($user_id, $candidate_id, $text, "user_history");
-      insertMongoLog($user_id, $candidate_id, $text, "user_history");
+      insertLog($user_id, $candidate_id, $text, "user_history");
+      // insertMongoLog($user_id, $candidate_id, $text, "user_history");
     }
 
     private function _getCandidateView($pnPk, $pasRedirected = array())
@@ -1643,10 +1643,10 @@ class CSl_candidateEx extends CSl_candidate
         }
 
         $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'candiTabsContent'));
-           $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
-          $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
+        $sHTML.= $this->_oDisplay->getBloc('candiTab5', $asNotes['content'], array('class' => 'aTabContent hidden '.$sNoteSelected));
+        $sHTML.= $this->_oDisplay->getBloc('candiTab6', $asActivity['content'], array('class' => 'aTabContent hidden'));
+        $sHTML.= $this->_oDisplay->getBloc('candiTab7', $asCpHistory['content'], array('class' => 'aTabContent hidden'));
+        $sHTML.= $this->_oDisplay->getBloc('candiTab8', $asPosition['content'], array('class' => 'aTabContent hidden '.$sJdSelected));
         $sHTML.= $this->_oDisplay->getBlocEnd();
 
       $sHTML.= $this->_oDisplay->getBlocEnd();
@@ -3509,18 +3509,18 @@ class CSl_candidateEx extends CSl_candidate
         $searchTitle = $searchTitle[0];
         if($searchTitle == "QuickSearch")
         {
-          //insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
-          insertMongoLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
+          insertLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
+          // insertMongoLog($user_id, '-1', $limitlessQuery,"quick_search",$desc);
         }
         else if($searchTitle == "CpxSearch")
         {
-          //insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
-          insertMongoLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
+          insertLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
+          // insertMongoLog($user_id, '-1', $limitlessQuery,"complex_search",$desc);
         }
         else // mainpage search links...
         {
-          //insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
-          insertMongoLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
+          insertLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
+          // insertMongoLog($user_id, '-1', $limitlessQuery,"other_search",$desc);
         }
       }
 
@@ -3798,10 +3798,11 @@ ChromePhp::log($sQuery);
           break;
       }
 
+    $url =  $this->_oPage->getUrl('sl_candidate',  CONST_ACTION_EXPORT_CSV, CONST_CANDIDATE_TYPE_CANDI, $this->cnPk);
 
-      $excelLinkIcon = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array());
+      $excelLinkIcon = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', 'javascript:;', array('onclick'=>"return downloadExcelFile(event)"));
       if($this->_oLogin->isAdmin() && $nResult > 0){
-            $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('id'=>'excelExport','class'=>'access','style' => 'float:right; margin-top:5px; margin-right:5px;'), 'title');
+        $oConf->addExcelDownload('<span>'.$excelLinkIcon.'</span>', array('id'=>'excelExport','class'=>'access','style' => 'float:right; margin-top:5px; margin-right:5px;' ), 'title');
       }
       $oConf->addBlocMessage('<span class="search_result_title_nb">'.$nResult.' result(s)</span> '.implode(', ', $asListMsg), array(), 'title');
       $sHTML = '';
@@ -3826,16 +3827,6 @@ ChromePhp::log($sQuery);
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer')).' new list';
       else
         $sHTML.= 'replay a search, pager offset '.$nPagerOffset.', container/search ID '.$this->csSearchId;*/
-
-    $url =  $this->_oPage->getUrl('sl_candidate',  CONST_ACTION_EXPORT_CSV, CONST_CANDIDATE_TYPE_CANDI, $this->cnPk);
-      // if($this->_oLogin->isAdmin()) {
-    // $sHTML .= '<button type="button" class="access">Export Candidate</button>';
-
-    // $sHTML = $this->_oDisplay->getPicture('/common/pictures/Excel-icon.png', 'Export Candidate', '', array('class'=>'access'));
-        // }
-     /* $sHTML.= $this->_oDisplay->getBlocStart('', array('class' => 'placement_export_button access'));
-      $sHTML.= $this->_oDisplay->getLink('Export Candidate');
-      $sHTML.= $this->_oDisplay->getBlocEnd();*/
 
       if(!$bFilteredList)
         $sHTML.= $this->_oDisplay->getBlocStart($this->csSearchId, array('class' => 'scrollingContainer'));
@@ -3959,7 +3950,7 @@ ChromePhp::log($sQuery);
          */
         $reqQuery1 = str_replace('`', '' ,$sQuery);
         $reqQuery4 = str_replace("'", "\'" ,$reqQuery1);
-        $reqQuery3 = preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $reqQuery4));;
+        $reqQuery3 = preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $reqQuery4));
 
         //DEBUG: Dropp the query at the end
         if($oLogin->getUserPk() == 367 || isDevelopment() )
@@ -3968,18 +3959,18 @@ ChromePhp::log($sQuery);
             <span class="hidden query"><br />'.$sQuery.'</span><br /><br /><br />';
         }
 
+
        /**
         *   sessionStorage stores the current query
         *   ajax for exporting the excel file
         */
         $sHTML .= '<script type="text/javascript">
-                        $(document).ready(function(){
-
-                            var stored_query = `'.$reqQuery3.'`;
+                        function downloadExcelFile(event) {
+                            var stored_query = String.raw`'.$reqQuery3.'`; // String.raw is used for storing the query as it is, where special characters is not reoved. 
                             sessionStorage.setItem("req_query", stored_query);
 
-                          $("#excelExport").click(function(e){
-                            //alert("asdasdas");
+                          // $("#excelExport").click(function(e){
+                          // alert(stored_query);
                             $.ajax({
                                 url     :   "'.$url.'",
                                 type    :   "post",
@@ -3992,11 +3983,11 @@ ChromePhp::log($sQuery);
                                     document.location.href =(data.url);
                                     // var downloadDiv = $(\'#dvData\').html(data);
                                     // window.open(\'data:application/vnd.ms-excel,\' + downloadDiv.html(), "cand.xls");
-                                    e.preventDefault();
+                                    event.preventDefault();
                                 },
                              });
-                          });
-                        });
+                        // });
+                        }
                       </script>';
 
         $sHTML .= '<script>
@@ -5393,8 +5384,8 @@ ChromePhp::log($sQuery);
 
         $note = "Meeting created by ".$user_info['firstname']. ' '.$user_info['lastname'];
 
-        //$addLog = insertLog($user_id, $target_candidate_id, $note);
-        $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
+        $addLog = insertLog($user_id, $target_candidate_id, $note);
+        // $addLog = insertMongoLog($user_id, $target_candidate_id, $note);
         //add log end----------------------
 
         //Finally: notify people the candidate status has changed (remove the current user obviosuly)
@@ -7115,8 +7106,6 @@ ChromePhp::log($array);
 
     private function _candidate_mail_send_action($candidate_id = 0)
     {
-ChromePhp::log('SAAM EMAIL :');
-ChromePhp::log($_POST);
       $email = trim($_POST['receipent_email']);
 
       //$message = nl2br($_POST['message']);
@@ -7969,7 +7958,8 @@ ChromePhp::log($_POST);
       }
 
        $oForm->addField('select', 'level', array('label'=> 'Level'));
-       $oForm->addoption('level', array('label' => 'A', 'value' => '1', $selectA1 => $selectA));
+       if ($this->_oLogin->isAdmin())        
+            $oForm->addoption('level', array('label' => 'A', 'value' => '1', $selectA1 => $selectA));
        $oForm->addoption('level', array('label' => 'B', 'value' => '2', $selectB1 => $selectB));
        $oForm->addoption('level', array('label' => 'C', 'value' => '3', $selectC1 => $selectC));
        $oForm->addoption('level', array('label' => 'H', 'value' => '8', $selectH1 => $selectH));
@@ -11541,8 +11531,8 @@ $bonusManual = getValue('bonus');
                 $cp_pk = $pasOldData['sl_candidatepk'];
                 $text = '['.$sLabel.'] changed from: '.$old_variable.' -> to: '.$new_variable;
 
-                //insertLog($loginfk, $cp_pk, $text, "company_history");
-                insertMongoLog($loginfk, $cp_pk, $text, "company_history");
+                insertLog($loginfk, $cp_pk, $text, "company_history");
+                // insertMongoLog($loginfk, $cp_pk, $text, "company_history");
                 //insertEvent("company_history",$text,$loginfk,$cp_pk);
               }
               /*if($sLabel == 'company')
