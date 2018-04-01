@@ -3084,6 +3084,11 @@ class CLoginEx extends CLogin
     if ($search_type == 'searches')
       $sQuery.= ' AND text LIKE "%search%"';
 
+    else
+    {
+      $sQuery.= ' GROUP BY cp_pk ';
+    }
+
     $sQuery.= ' ORDER BY login_activitypk DESC LIMIT '.$pnLimit;
 
     $oDB = CDependency::getComponentByName('database');
