@@ -376,11 +376,11 @@ else
         </select>
       </td>
       <td style='padding-left: 10px;'>
-        <button type="button"  class="btn btn-warning">Filter</button>
+        <button type="submit"  class="btn btn-warning">Filter</button>
       </td>
 
       <td style='padding-left: 10px;'>
-        <button type="submit" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
+        <button type="button" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
       </td>
 
   </tr>
