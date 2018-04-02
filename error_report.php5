@@ -383,11 +383,21 @@ else
       //$name = 'https://beta2.slate.co.jp/common/upload/error/1521949417_attachment_netTest.doc';
       $attachment = 'Attachemt';
     }
+    $ET = "-$value['estimated']";
+    if($value['estimated'] != '')
+    {
+      $ET =$value['estimated'];
+    }
+    $CT = "-";
+    if($value['completedTime'] != '')
+    {
+      $CT =$value['completedTime'];
+    }
     echo "<tr>";
       echo "<td style='padding-left: 15px;'>".$value['id']."</td>";
       echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
-      echo "<td>".$value['estimated']."/".$value['completedTime']."</td>";
+      echo "<td>".$ET."/".$CT."</td>";
       echo "<td>".$value['description']."</td>";
       echo "<td>".$value['notes']."</td>";
       echo "<td>".$value['date_created']."</td>";
