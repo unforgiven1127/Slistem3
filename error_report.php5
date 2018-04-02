@@ -363,14 +363,14 @@ else
           <option value='535'>Shyam Kumar</option>
         </select>
       </td>
+      <td style='padding-left: 10px;'>
+        <button type="button"  class="btn btn-warning">Filter</button>
+      </td>
 
       <td style='padding-left: 10px;'>
         <button type="button" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
       </td>
 
-      <td style='padding-left: 10px;'>
-        <button type="button"  class="btn btn-success">Filter</button>
-      </td>
   </tr>
 </table>
 <table style="margin-top:20px;" class="table table-striped">
