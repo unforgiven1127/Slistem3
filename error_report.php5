@@ -383,7 +383,7 @@ else
       //$name = 'https://beta2.slate.co.jp/common/upload/error/1521949417_attachment_netTest.doc';
       $attachment = 'Attachemt';
     }
-    $ET = "-$value['estimated']";
+    $ET = "-";
     if($value['estimated'] != '')
     {
       $ET =$value['estimated'];
