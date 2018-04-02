@@ -17,9 +17,14 @@ session_start();
 @mysql_connect(DB_SERVER_SLISTEM, DB_USER_SLISTEM, DB_PASSWORD_SLISTEM) or die(mysql_error());
 mysql_select_db(DB_NAME_SLISTEM) or die(mysql_error());
 
-function get_all()
+function get_all($filter = '')
 {
-  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee where t.flag = 'a'";
+  $query = "SELECT t.*,l.firstname as firstname, l.lastname as lastname FROM tasks t inner join login l on l.loginpk = t.assignee where t.flag = 'a' ";
+
+  if($filter != '')
+  {
+    $query = $query."and t.assignee = '".$filter."'";
+  }
 
   $result = mysql_query($query);
 
@@ -210,6 +215,11 @@ else if(!empty($_POST['mail']))
   //header('location: /index.php5?sent='.(int)$bSent);
 
 }
+else if(!empty($_POST['userFilter']) && $_POST['userFilter'] > 0)
+{
+  $filter = $_POST['userFilter'];
+  $_POST['returnData'] = get_all($filter);
+}
 else
 {
   $_POST['returnData'] = get_all();
@@ -342,6 +352,7 @@ else
 
 <body class="error_report_body_" style="">
   <div class="error_main_container_">
+  <form id="filter" name="filter" method="post" enctype="multipart/form-data" action="" >
     <table style="margin-top:20px;">
   <tr>
     <th style='padding-left: 10px;'>Search: </th>
@@ -358,6 +369,7 @@ else
     <th style='padding-left: 10px;'>Filter by: </th>
     <td style='padding-left: 5px;'>
       <select class="form-control" id="userFilter" name='userFilter'>
+          <option value='0'>-</option>
           <option value='494'>Munir Anameric</option>
           <option value='343'>Rossana Kyamu</option>
           <option value='535'>Shyam Kumar</option>
@@ -368,11 +380,12 @@ else
       </td>
 
       <td style='padding-left: 10px;'>
-        <button type="button" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
+        <button type="submit" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
       </td>
 
   </tr>
 </table>
+</form>
 <table style="margin-top:20px;" class="table table-striped">
   <tr>
     <th style='width:2%; padding-left: 15px;'>ID</th>
