@@ -363,14 +363,15 @@ else
   <tr>
     <th style='width:2%; padding-left: 15px;'>ID</th>
     <th style='width:8%;'>Priority</th>
-    <th style='width:10%;'>Type</th>
+    <th style='width:8%;'>Type</th>
+    <th style='width:8%;'>ET/CT</th>
     <th style='width:20%;'>Description</th>
     <th style='width:20%;'>Notes</th>
     <th style='width:5%;'>Date Created</th>
     <th style='width:5%;'>Date Updated</th>
     <th style='width:5%;'>Status</th>
     <th style='width:10%;'>Assignee</th>
-    <th style='width:10%;'>Attachment</th>
+    <th style='width:8%;'>Attachment</th>
     <th style='width:10%;'>Action</th>
   </tr>
   <?php
@@ -386,6 +387,7 @@ else
       echo "<td style='padding-left: 15px;'>".$value['id']."</td>";
       echo "<td>".$value['_priority']."</td>";
       echo "<td>".$value['type']."</td>";
+      echo "<td>".$value['estimated']."/".$value['completedTime']."</td>";
       echo "<td>".$value['description']."</td>";
       echo "<td>".$value['notes']."</td>";
       echo "<td>".$value['date_created']."</td>";
