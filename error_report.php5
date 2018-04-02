@@ -354,8 +354,22 @@ else
           <option>Status</option>
         </select>
       </td>
+
+    <th style='padding-left: 10px;'>Filter by: </th>
+    <td style='padding-left: 5px;'>
+      <select class="form-control" id="userFilter" name='userFilter'>
+          <option value='494'>Munir Anameric</option>
+          <option value='343'>Rossana Kyamu</option>
+          <option value='535'>Shyam Kumar</option>
+        </select>
+      </td>
+
       <td style='padding-left: 10px;'>
         <button type="button" onclick="toggleForm();" class="btn btn-success">Add New Task</button>
+      </td>
+
+      <td style='padding-left: 10px;'>
+        <button type="button"  class="btn btn-success">Filter</button>
       </td>
   </tr>
 </table>
