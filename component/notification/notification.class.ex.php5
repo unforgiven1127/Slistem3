@@ -2091,7 +2091,7 @@ class CNotificationEx extends CNotification
     }
     else
     {
-      $popupMessage = 'DBA sent.';
+      $popupMessage = 'DBA sent successfully.';
       $sTitle = 'DBA request from '. $oLogin->getUserName(0, false);
 
       if(empty($asItem))
