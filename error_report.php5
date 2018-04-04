@@ -219,6 +219,7 @@ else if(!empty($_POST['userFilter']) && $_POST['userFilter'] > 0)
 {
   $filter = $_POST['userFilter'];
   $_POST['returnData'] = get_all($filter);
+  $_POST['userFilterReturn'] = $filter;
 }
 else
 {
