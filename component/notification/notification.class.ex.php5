@@ -2074,8 +2074,11 @@ class CNotificationEx extends CNotification
     $asSource = array(CONST_CP_UID => $this->csUid, CONST_CP_ACTION => CONST_ACTION_VIEW, CONST_CP_TYPE => CONST_NOTIFY_TYPE_NOTIFICATION, CONST_CP_PK => 0);
     $sId = $this->initNotifier($asSource);
 
+    $popupMessage = '';
+
     if($bReminder)
     {
+      $popupMessage = 'Reminder saved.';
       if(empty($asItem))
       {
 
@@ -2088,6 +2091,7 @@ class CNotificationEx extends CNotification
     }
     else
     {
+      $popupMessage = 'DBA sent.';
       $sTitle = 'DBA request from '. $oLogin->getUserName(0, false);
 
       if(empty($asItem))
@@ -2167,7 +2171,7 @@ class CNotificationEx extends CNotification
       }
     }*/
 
-    return array('notice' => 'Reminder saved.', 'action' => 'goPopup.removeLastByType(\'layer\');');
+    return array('notice' => $popupMessage, 'action' => 'goPopup.removeLastByType(\'layer\');');
   }
 
 
