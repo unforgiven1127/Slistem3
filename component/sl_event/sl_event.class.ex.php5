@@ -493,7 +493,7 @@ uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
         $sHTML.= $oHTML->getBlocStart('', array('class' => 'entry'));
 
           $sHTML.= $oHTML->getBlocStart('', array('class' => 'note_header'));
-            $sHTML.= '&rarr;&nbsp;&nbsp;'.$oHTML->getSpan('', getDateDifference($asNote['date_display'], $dNow).' ago' , array('class' => 'note_date'));
+            $sHTML.= '&rarr;&nbsp;&nbsp;'.$oHTML->getSpan('', getDateDifference($asNote['date_create'], $dNow).' ago' , array('class' => 'note_date'));
             $sHTML.= '&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;'.$oHTML->getSpan('', $sType, array('class' => 'note_type')).'&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;';
 
             $sHTML.= $oHTML->getSpanStart();
