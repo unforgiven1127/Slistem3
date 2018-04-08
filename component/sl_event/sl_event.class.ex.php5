@@ -505,8 +505,8 @@ uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
 
             $sHTML.= $oHTML->getSpanEnd();
 
-            $sHTML.= $oHTML->getSpanStart('', array('style'=>'margin-right:10px;','class' => 'note_chronology'));
-            $sHTML.= substr($asNote['date_created'], 0,-3);
+            $sHTML.= $oHTML->getSpanStart('', array('style'=>'margin-right:10px;','class' => 'note_chronology newClass'));
+            $sHTML.= substr($asNote['date_create'], 0,-3);
             $sHTML.= $oHTML->getSpanEnd();
 
           $sHTML.= $oHTML->getBlocEnd();
