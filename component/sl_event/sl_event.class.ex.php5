@@ -374,7 +374,7 @@ class CSl_eventEx extends CSl_event
         )
       );
 
-      $newLogs = getMongoLog($where);
+      /*$newLogs = getMongoLog($where);
       $newLogs = iterator_to_array($newLogs, false);
 
       $newLogs = array();
@@ -404,7 +404,7 @@ class CSl_eventEx extends CSl_event
         $addNotes['updated_by'] = '';
 
         array_push($asNotes,$addNotes);
-      }
+      }*/
       //BOTH SELECT SAME QUERY...
       /*if(isset($companyHistory[0]) && !empty($companyHistory[0]) && !empty($companyHistory[0]['table']))
       {
@@ -506,7 +506,7 @@ uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
             $sHTML.= $oHTML->getSpanEnd();
 
             $sHTML.= $oHTML->getSpanStart('', array('style'=>'margin-right:10px;','class' => 'note_chronology'));
-            $sHTML.= substr($asNote['date_display'], 0,-3);
+            $sHTML.= substr($asNote['date_created'], 0,-3);
             $sHTML.= $oHTML->getSpanEnd();
 
           $sHTML.= $oHTML->getBlocEnd();
@@ -551,7 +551,7 @@ uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
         $sHTML.= $oHTML->getBlocEnd();
       }
     }
-uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
+    uasort($asNotes, sort_multi_array_by_value('date_create', 'reverse'));
     return array('content' => $sHTML, 'nb_result' => count($asNotes), 'priority' => $nPriotity);
   }
 
